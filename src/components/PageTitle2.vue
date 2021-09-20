@@ -1,6 +1,9 @@
 <template>
     <h1>
-        {{ title }}<span v-if="subtitle">: <span class="rhmuted">{{ subtitle }} - 2</span></span>
+        {{ title
+        }}<span v-if="subtitle"
+            >: <span class="rhmuted">{{ subtitle }} - 2</span></span
+        >
     </h1>
 </template>
 <script>
@@ -10,6 +13,7 @@ export default {
             type: String,
             required: true,
         },
+
         subtitle: {
             type: String,
             default: null,

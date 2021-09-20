@@ -1,6 +1,8 @@
 {
   "name": "cs-vue-vite-plugin",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main": "./dist/bundle.umd.js",
+  "module": "./dist/bundle.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,11 +15,15 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.1",
     "@vue/compiler-sfc": "^3.2.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "prettier": "^2.4.1",
     "vite": "^2.5.4"
   },
   "files": [
     "dist"
-  ],
-  "main": "./dist/bundle.umd.js",
-  "module": "./dist/bundle.es.js"
+  ]
 }
