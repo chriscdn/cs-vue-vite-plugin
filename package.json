@@ -1,0 +1,23 @@
+{
+  "name": "cs-vue-vite-plugin",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.1",
+    "@vue/compiler-sfc": "^3.2.6",
+    "vite": "^2.5.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/bundle.umd.js",
+  "module": "./dist/bundle.es.js"
+}
