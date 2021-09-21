@@ -1,5 +1,8 @@
+import { Session } from '@kweli/cs-rest'
+import './styles.less'
+
 export default {
-    install(Vue, _options) {
+    install(Vue, options) {
         const components = import.meta.globEager('./components/**/*.vue')
 
         Object.entries(components).forEach(([path, definition]) => {
@@ -12,5 +15,12 @@ export default {
 
             Vue.component(componentName, definition.default)
         })
+
+        Vue.config.globalProperties.$img = options.img
+        Vue.config.globalProperties.$cgi = options.baseURL
+        Vue.config.globalProperties.$jsLongDateFormat = options.datelong
+        Vue.config.globalProperties.$jsShortDateFormat = options.dateshort
+
+        Vue.config.globalProperties.$session = new Session(options)
     },
 }
