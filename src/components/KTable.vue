@@ -1,8 +1,34 @@
 <template>
-    <table class="rhtable rhstriped">
+    <table class="rhtable" :class="classObj">
         <slot></slot>
     </table>
 </template>
+
+<script>
+export default {
+    props: {
+        properties: {
+            type: Boolean,
+            default: false,
+        },
+        striped: {
+            type: Boolean,
+            default: false,
+        },
+    },
+    computed: {
+        classObj() {
+            return {
+                rhproperties: this.properties,
+                rhstriped: this.isStriped,
+            }
+        },
+        isStriped() {
+            return this.striped && !this.properties
+        },
+    },
+}
+</script>
 
 <style lang="less" scoped>
 @color0: #b4b4b4; // Appears 6 times

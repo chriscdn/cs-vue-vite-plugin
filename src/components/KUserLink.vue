@@ -1,14 +1,14 @@
 <template>
-    <span v-if="localUserRec"
-        ><img v-if="gif" :src="gif_url" />&nbsp;<a href="#" @click.prevent="click">{{ displayName }}</a></span
-    >
+    <span v-if="localUserRec">
+        <KUserGIF :user-rec="localUserRec" v-if="gif" />&nbsp;<a href="#" @click.prevent="click">{{ displayName }}</a>
+    </span>
 </template>
 <script>
 import get from 'lodash.get'
 
 export default {
     props: {
-        userrec: {
+        userRec: {
             type: Object,
             default: null,
         },
@@ -32,18 +32,7 @@ export default {
         user_id() {
             return get(this.localUserRec, 'id') || get(this.localUserRec, 'userid')
         },
-        gif_url() {
-            if (this.type == 0) {
-                // user
-                return `${this.$img}guy.gif`
-            } else if (this.type == 1) {
-                // group
-                return `${this.$img}2-guys.gif`
-            } else {
-                // role?
-                return `${this.$img}projectgroup.gif`
-            }
-        },
+
         displayName() {
             return get(this.localUserRec, 'display_name') || get(this.localUserRec, 'displayname')
         },
@@ -60,9 +49,9 @@ export default {
             },
             immediate: true,
         },
-        userrec: {
+        userRec: {
             handler(value) {
-                if (value) {
+                if (this.userid == null) {
                     this.localUserRec = value
                 }
             },

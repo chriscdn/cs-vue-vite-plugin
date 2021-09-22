@@ -1,8 +1,10 @@
 <template>
-    <div v-click-away="fakeBlur" class="autocomplete" :style="[style]">
-        <div class="d-flex">
-            <slot name="prepend" :item="localValue"></slot>
+    <div v-click-away="setBlur" class="k-autocomplete" :style="[style]">
+        <slot name="prepend" :item="localValue"></slot>
+
+        <div class="k-autocomplete-input">
             <input
+                class="k-input"
                 ref="input"
                 v-model="inputText"
                 type="search"
@@ -10,28 +12,27 @@
                 :class="{ invalidSelection: !isValidSelection }"
                 :placeholder="placeholderText"
                 :readonly="!editable"
-                @keydown="keydown"
                 @search="clearInput"
                 @keydown.arrow-up.prevent="currentFocus = Math.max(-1, currentFocus - 1)"
                 @keydown.arrow-down.prevent="currentFocus = Math.min(items.length - 1, currentFocus + 1)"
                 @keydown.enter.prevent="select(currentFocus)"
                 @focus="setFocus"
-                @keydown.tab="fakeBlur"
+                @keydown.tab="setBlur"
+                @keyup="keyup"
             />
-        </div>
-        <!-- <transition name="custom"> -->
-        <div v-if="focus && items.length && !!inputText" class="autocomplete-items">
-            <div
-                v-for="(item, index) in itemsFiltered"
-                :key="index"
-                class="autocomplete-item"
-                :class="{ 'autocomplete-active': currentFocus == index }"
-                @click="select(index)"
-            >
-                <slot name="item" :item="item">{{ item }}</slot>
+
+            <div v-if="focus && items.length && !!inputText" class="k-autocomplete-items">
+                <div
+                    v-for="(item, index) in itemsFiltered"
+                    :key="index"
+                    class="k-autocomplete-item"
+                    :class="{ 'k-autocomplete-active': currentFocus == index }"
+                    @click="select(index)"
+                >
+                    <slot name="item" :item="item">{{ item }}</slot>
+                </div>
             </div>
         </div>
-        <!-- {{ localValue }} -->
     </div>
 </template>
 
@@ -100,9 +101,10 @@ export default {
     },
     data() {
         return {
-            inputText: '', // this.displayValueFormatter(this.value),
+            inputText: '', // this.displayValueFormatter(this.modelValue),
             currentFocus: -1,
             focus: false,
+            // captureKeyStrokes: true,
         }
     },
     computed: {
@@ -131,7 +133,7 @@ export default {
                 }
             },
             get() {
-                return this.isObject(this.value) ? this.value : this.items.find((item) => get(item, this.itemValue, item) == this.value)
+                return this.isObject(this.modelValue) ? this.modelValue : this.items.find((item) => get(item, this.itemValue, item) == this.modelValue)
             },
         },
         isValidSelection() {
@@ -147,7 +149,7 @@ export default {
             this.currentFocus = -1
 
             if (this.localValue) {
-                this.destroyWatcher()
+                // this.destroyWatcher()
 
                 if (!this.combobox) {
                     this.inputText = get(this.localValue, this.itemText, '')
@@ -157,7 +159,7 @@ export default {
 
         value: {
             handler(v) {
-                this.destroyWatcher()
+                // this.destroyWatcher()
 
                 // this check needs to be tested with combobox
                 // if (this.localValue) {
@@ -176,17 +178,17 @@ export default {
                     // all good, keep it
                 } else if (!this.combobox) {
                     // otherwise, clear the text field
-                    this.createWatcher()
+                    // this.createWatcher()
                     this.inputText = null
                 }
             }
         },
     },
     mounted() {
-        this.createWatcher()
+        // this.createWatcher()
     },
     methods: {
-        select(index) {
+        async select(index) {
             // default to first item
 
             if (!this.combobox) {
@@ -195,102 +197,93 @@ export default {
 
             const selectedItem = this.items[index]
 
-            // on selection we force an immediate blur
-            // this order matters...
-            this.$refs.input.blur()
-            this.fakeBlur()
-
             if (this.combobox) {
                 if (selectedItem) {
                     this.localValue = selectedItem
                 }
             } else {
                 this.localValue = selectedItem
-                this.destroyWatcher()
+                // this.destroyWatcher()
                 this.inputText = selectedItem[this.itemText]
             }
+
+            // Let the reactive system all sync before blurring the field.
+            await this.$nextTick()
+
+            this.setBlur()
         },
 
         setFocus() {
             this.focus = true
         },
-        // we fake blur due to an IE11 bug, which fires blur() when
-        // using the scrollbar
-        fakeBlur() {
+
+        setBlur() {
+            this.$refs.input.blur()
             this.focus = false
         },
         isObject(obj) {
             return typeof obj == 'object' && obj instanceof Object && !(obj instanceof Array)
         },
         clearInput(_event) {
-            this.createWatcher()
             this.localValue = null
         },
-        keydown(_event) {
-            this.createWatcher()
-        },
-        createWatcher() {
-            if (!this.$watcher) {
-                this.$watcher = this.$watch('inputText', (value) => {
-                    if (this.combobox) {
-                        this.localValue = value
-                    } else {
-                        this.localValue = null
-                    }
-                })
-            }
-        },
-        destroyWatcher() {
-            if (this.$watcher) {
-                this.$watcher()
-                this.$watcher = null
+
+        keyup(_event) {
+            if (this.combobox) {
+                this.localValue = this.inputText
+            } else {
+                this.localValue = null
             }
         },
     },
 }
 </script>
 <style lang="less" scoped>
-.autocomplete {
-    width: 100%;
-    display: inline-block;
-    position: relative;
+.k-autocomplete {
+    @apply flex items-center;
 
-    input {
-        width: 100%;
-        // padding: 0.5em;
-        border: 1px #ccc solid;
+    .k-autocomplete-input {
+        @apply flex-grow relative;
+        input {
+            @apply w-full;
+        }
     }
 
-    .autocomplete-items {
-        position: absolute;
-        border: 1px solid #d4d4d4;
+    .k-autocomplete-items {
+        @apply absolute;
+
+        // border: 1px solid #d4d4d4;
         border-bottom: none;
         border-top: none;
+        @apply border border-t-0 border-b-0 border-solid rounded border-gray-300;
+        @apply rounded;
+
         z-index: 99;
-        /*position the autocomplete items to be the same width as the container:*/
+
         top: 100%;
         left: 0;
         right: 0;
         max-height: 50em;
         overflow-y: scroll;
 
-        .autocomplete-item {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            border-bottom: 1px solid #d4d4d4;
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
+        .k-autocomplete-item {
+            @apply p-2 bg-white cursor-pointer;
+            // border-bottom: 1px solid #d4d4d4;
+            @apply border border-t-0 border-l-0 border-r-0  border-solid  border-gray-300;
+            @apply flex items-center;
 
-            &:hover {
-                /*when hovering an item:*/
-                background-color: #e9e9e9;
-            }
+            // font-size: 1.2em;
+
+            @apply hover:bg-gray-200;
+
+            // &:hover {
+            //     /*when hovering an item:*/
+            //     background-color: #e9e9e9;
+            // }
         }
     }
 
-    .autocomplete-active {
+    .k-autocomplete-active {
         /*when navigating through the items using the arrow keys:*/
         background-color: DodgerBlue !important;
         color: #ffffff;

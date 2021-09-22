@@ -1,8 +1,9 @@
 <template>
     <div>
-        <KUserPicker v-model="user" />
-
-        {{ user }}
+        <KSnackbar>
+            <KUserPicker v-model="user" />
+            <!-- <KInput type="password" /> -->
+        </KSnackbar>
     </div>
 </template>
 

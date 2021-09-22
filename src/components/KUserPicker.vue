@@ -10,10 +10,13 @@
         :combobox="combobox"
         :editable="editable"
     >
-        <template #item="data">
-            <img v-if="data.item.type == USER" :src="`${$img}guy.gif`" />
-            <img v-else-if="data.item.type == GROUP" :src="`${$img}2-guys.gif`" />
-            <span v-html="formatChoice(data)"></span>
+        <template #prepend="{ item }">
+            <KUserGIF :user-rec="item" />
+        </template>
+
+        <template #item="{ item }">
+            <KUserGIF :type="item.type" />
+            <span v-html="formatChoice(item)"></span>
         </template>
     </KAutocomplete>
 </template>
@@ -23,11 +26,6 @@ import get from 'lodash.get'
 import debounce from 'lodash.debounce'
 
 export default {
-    // model: {
-    //     prop: 'value',
-    //     event: 'change',
-    // },
-
     props: {
         modelValue: {
             type: [String, Number],
@@ -70,6 +68,12 @@ export default {
     },
 
     computed: {
+        USER() {
+            return this.$session.members.USER
+        },
+        GROUP() {
+            return this.$session.members.GROUP
+        },
         localValue: {
             set(value) {
                 this.$emit('update:modelValue', value)
@@ -78,6 +82,7 @@ export default {
                 return this.modelValue
             },
         },
+
         options() {
             let where_type = null
 
@@ -106,12 +111,12 @@ export default {
                 return ''
             }
         },
-        USER() {
-            return this.$session.members.USER
-        },
-        GROUP() {
-            return this.$session.members.GROUP
-        },
+        // USER() {
+        //     return this.$session.members.USER
+        // },
+        // GROUP() {
+        //     return this.$session.members.GROUP
+        // },
     },
 
     methods: {
@@ -145,12 +150,12 @@ export default {
                 .finally(() => (this.loading = false))
         }, 500),
 
-        formatChoice(slotProps) {
-            return get(slotProps, 'item.text', '')
+        formatChoice(item) {
+            return get(item, 'text', '')
         },
 
         loadInitialValue() {
-            let initialValue = this.value
+            let initialValue = this.modelValue
 
             if (initialValue && !this.combobox) {
                 this.pleaseWait = true

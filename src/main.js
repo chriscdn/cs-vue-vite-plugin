@@ -3,6 +3,12 @@ import App from './App.vue'
 
 import CSVueVite from './index'
 
+/**
+ * This file isn't part of the build and is just used for testing.
+ *
+ * yarn dev
+ */
+
 const options = {
     baseURL: '/Livelink100/livelink.exe',
     img: '/img/',
