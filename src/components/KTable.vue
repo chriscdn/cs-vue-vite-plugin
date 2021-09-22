@@ -4,10 +4,6 @@
     </table>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style lang="less" scoped>
 @color0: #b4b4b4; // Appears 6 times
 @color1: #f4f3f3; // Appears 5 times

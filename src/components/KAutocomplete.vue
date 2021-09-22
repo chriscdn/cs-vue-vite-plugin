@@ -34,6 +34,7 @@
         <!-- {{ localValue }} -->
     </div>
 </template>
+
 <script>
 import { directive } from 'vue3-click-away'
 
@@ -43,12 +44,12 @@ export default {
     directives: {
         ClickAway: directive,
     },
-    model: {
-        prop: 'value',
-        event: 'change',
-    },
+    // model: {
+    //     prop: 'value',
+    //     event: 'change',
+    // },
     props: {
-        value: {
+        modelValue: {
             type: [String, Object, Number],
             default: null,
         },
@@ -81,7 +82,6 @@ export default {
             default: () => [],
         },
         loading: {
-            // not implemented yet
             type: Boolean,
             default: false,
         },
@@ -123,11 +123,11 @@ export default {
         localValue: {
             set(value) {
                 if (!value) {
-                    this.$emit('change', null)
+                    this.$emit('update:modelValue', null)
                 } else if (this.returnObject) {
-                    this.$emit('change', value)
+                    this.$emit('update:modelValue', value)
                 } else {
-                    this.$emit('change', get(value, this.itemValue, value))
+                    this.$emit('update:modelValue', get(value, this.itemValue, value))
                 }
             },
             get() {

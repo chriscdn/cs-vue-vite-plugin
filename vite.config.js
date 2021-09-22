@@ -22,4 +22,14 @@ export default defineConfig({
             },
         },
     },
+    server: {
+        proxy: {
+            '/Livelink100/': {
+                target: 'http://localhost/',
+            },
+            '/img/': {
+                target: 'http://localhost/',
+            },
+        },
+    },
 })

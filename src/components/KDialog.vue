@@ -1,7 +1,7 @@
 <template>
     <transition name="fade">
         <div v-if="dialog" class="k-dialog">
-            <div ref="content" v-click-away="closeDialog" class="k-dialog-content" :style="[innerStyle]">
+            <div ref="content" v-click-away="clickAway" class="k-dialog-content" :style="[innerStyle]">
                 <slot></slot>
             </div>
         </div>
@@ -14,14 +14,15 @@ export default {
     directives: {
         ClickAway: directive,
     },
-    model: {
-        prop: 'value',
-        event: 'change',
-    },
+
     props: {
         modelValue: {
             type: Boolean,
             required: false,
+        },
+        persistent: {
+            type: Boolean,
+            default: false,
         },
         width: {
             type: String,
@@ -61,6 +62,11 @@ export default {
         },
     },
     methods: {
+        clickAway() {
+            if (!this.persistent) {
+                this.closeDialog()
+            }
+        },
         closeDialog() {
             if (this.dialog) {
                 this.dialog = false
@@ -70,26 +76,24 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .k-dialog {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    @apply fixed inset-0 z-10;
+    @apply bg-gray-900 bg-opacity-50;
+    @apply flex justify-center items-center;
 
     .k-dialog-content {
-        background-color: #fff;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 10px;
+        @apply bg-white p-3 rounded;
         max-height: 80vh;
         overflow: auto;
-        border-radius: 8px;
+        // background-color: #fff;
+        // position: fixed;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        // padding: 10px;
+
+        // border-radius: 8px;
     }
 }
 </style>

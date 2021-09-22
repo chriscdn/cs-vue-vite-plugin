@@ -23,13 +23,13 @@ import get from 'lodash.get'
 import debounce from 'lodash.debounce'
 
 export default {
-    model: {
-        prop: 'value',
-        event: 'change',
-    },
+    // model: {
+    //     prop: 'value',
+    //     event: 'change',
+    // },
 
     props: {
-        value: {
+        modelValue: {
             type: [String, Number],
             required: false,
         },
@@ -72,10 +72,10 @@ export default {
     computed: {
         localValue: {
             set(value) {
-                this.$emit('change', value)
+                this.$emit('update:modelValue', value)
             },
             get() {
-                return this.value
+                return this.modelValue
             },
         },
         options() {
