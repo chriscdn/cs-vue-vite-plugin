@@ -5,7 +5,9 @@ module.exports = {
         extend: {},
     },
     variants: {
-        extend: {},
+        extend: {
+            backgroundColor: ['active'], // permits active:bg-red-50 type classes
+        },
     },
     plugins: [],
 }

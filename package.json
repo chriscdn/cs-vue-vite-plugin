@@ -10,15 +10,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@kweli/cs-rest": "^1.0.21",
+    "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
-    "vue": "^3.2.6",
+    "vue": "^3.2.14",
     "vue3-click-away": "^1.2.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.6.1",
-    "@vue/compiler-sfc": "^3.2.6",
+    "@vitejs/plugin-vue": "^1.9.0",
+    "@vue/compiler-sfc": "^3.2.14",
     "autoprefixer": "^10.3.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
@@ -29,7 +29,7 @@
     "less-loader": "^10.0.1",
     "prettier": "^2.4.1",
     "tailwindcss": "^2.2.15",
-    "vite": "^2.5.4"
+    "vite": "^2.5.10"
   },
   "files": [
     "dist"

@@ -22,6 +22,9 @@ export default defineConfig({
             },
         },
     },
+    define: {
+        'process.env': {},
+    },
     server: {
         proxy: {
             '/Livelink100/': {
@@ -31,5 +34,8 @@ export default defineConfig({
                 target: 'http://localhost/',
             },
         },
+    },
+    optimizeDeps: {
+        include: ['util'],
     },
 })

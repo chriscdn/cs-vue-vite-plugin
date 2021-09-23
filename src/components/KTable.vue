@@ -1,5 +1,5 @@
 <template>
-    <table class="rhtable" :class="classObj">
+    <table class="k-table" :class="classObj">
         <slot></slot>
     </table>
 </template>
@@ -19,8 +19,8 @@ export default {
     computed: {
         classObj() {
             return {
-                rhproperties: this.properties,
-                rhstriped: this.isStriped,
+                'k-table--properties': this.properties,
+                'k-table--striped': this.isStriped,
             }
         },
         isStriped() {
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @color0: #b4b4b4; // Appears 6 times
 @color1: #f4f3f3; // Appears 5 times
 @color2: #cccccc; // Appears 4 times
@@ -41,10 +41,12 @@ export default {
 @tdpadding: 10px 8px;
 @tdpaddingcompact: 1px 4px;
 
-.rhtable {
+.k-table {
+    @apply border-collapse;
+
     background-color: @color3;
-    border-collapse: collapse;
-    border-spacing: 0;
+    // border-collapse: collapse;
+    // border-spacing: 0;
     border: 1px solid @color0;
     margin-bottom: 1.67em;
     width: 100%;
@@ -68,53 +70,6 @@ export default {
         }
     }
 
-    // .rhtitle {
-    //     td {
-    //         background-color: @color1;
-    //         font-weight: 700;
-    //     }
-    // }
-
-    // img {
-    //     vertical-align: middle;
-    // }
-
-    // .menuDivider {
-    //     img {
-    //         vertical-align: baseline;
-    //     }
-    // }
-
-    // td.rhpromoted {
-    //     a {
-    //         &:link {
-    //             color: @color5;
-    //             text-decoration: none;
-    //         }
-
-    //         &:visited {
-    //             color: @color5;
-    //             text-decoration: none;
-    //         }
-
-    //         &:hover {
-    //             text-decoration: underline;
-    //         }
-    //     }
-    // }
-
-    // tr.rhbrowserow {
-    //     td.rhpromoted {
-    //         a {
-    //             color: #999999;
-    //         }
-    //     }
-    // }
-
-    // tr.rhsection {
-    //     background-color: @color1;
-    // }
-
     tbody {
         td {
             border-top: 1px solid @color2;
@@ -136,18 +91,28 @@ export default {
             text-align: center;
         }
     }
-}
 
-.rhproperties {
-    td {
-        border: 1px solid @color0;
+    &.k-table--properties {
+        td {
+            border: 1px solid @color0;
 
-        &:nth-child(odd) {
-            background-color: @color1;
-            color: #333333;
-            font-weight: 700;
-            white-space: nowrap;
-            width: 1%;
+            &:nth-child(odd) {
+                background-color: @color1;
+                color: #333333;
+                font-weight: 700;
+                white-space: nowrap;
+                width: 1%;
+            }
+        }
+    }
+
+    &.k-table--striped {
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: #fafafa;
+                }
+            }
         }
     }
 }
