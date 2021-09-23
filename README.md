@@ -10,3 +10,5 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## WHAT THIS IS!
 
 This project demonstrates how to bundle a library of Vue components for use in another Vite project.
+
+[Got the idea here](https://github.com/vitejs/vite/issues/1182)

@@ -184,9 +184,7 @@ export default {
             }
         },
     },
-    mounted() {
-        // this.createWatcher()
-    },
+
     methods: {
         async select(index) {
             // default to first item
@@ -268,18 +266,9 @@ export default {
 
         .k-autocomplete-item {
             @apply p-2 bg-white cursor-pointer;
-            // border-bottom: 1px solid #d4d4d4;
             @apply border border-t-0 border-l-0 border-r-0  border-solid  border-gray-300;
             @apply flex items-center;
-
-            // font-size: 1.2em;
-
             @apply hover:bg-gray-200;
-
-            // &:hover {
-            //     /*when hovering an item:*/
-            //     background-color: #e9e9e9;
-            // }
         }
     }
 
