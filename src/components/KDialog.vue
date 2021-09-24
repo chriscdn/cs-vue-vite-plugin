@@ -1,4 +1,5 @@
 <template>
+    <slot name="activator" :on="on"></slot>
     <transition name="fade">
         <div v-if="dialog" class="k-dialog">
             <div ref="content" v-click-away="clickAway" class="k-dialog-content" :style="[innerStyle]">
@@ -72,11 +73,14 @@ export default {
                 this.dialog = false
             }
         },
+        on() {
+            this.dialog = !this.dialog
+        },
     },
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .k-dialog {
     @apply fixed inset-0 z-10;
     @apply bg-gray-900 bg-opacity-50;
