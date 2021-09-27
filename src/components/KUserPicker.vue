@@ -24,11 +24,14 @@
 <script>
 import get from 'lodash.get'
 import debounce from 'lodash.debounce'
+import UserLookup from '../utils/user-lookup'
+
+const userLookup = new UserLookup()
 
 export default {
     props: {
         modelValue: {
-            type: [String, Number],
+            type: [String, Number, Object],
             required: false,
         },
         users: {
@@ -111,74 +114,64 @@ export default {
                 return ''
             }
         },
-        // USER() {
-        //     return this.$session.members.USER
-        // },
-        // GROUP() {
-        //     return this.$session.members.GROUP
-        // },
     },
 
     methods: {
-        querySelections: debounce(function (v) {
-            this.loading = true
+        querySelections: debounce(async function (v) {
+            try {
+                this.loading = true
 
-            this.$session.members
-                .userQuery(v, this.options, 'v1')
-                .then((response) => {
-                    // v1
-                    this.items = response.data.data.map((item) => ({
-                        text: get(item, 'name_formatted'),
-                        value: get(item, 'id'),
-                        type: get(item, 'type'),
-                    }))
-                    //
+                const response = await this.$session.members.userQuery(v, this.options, 'v1')
 
-                    // v2
-                    // this.items = response.data.results.map((item) => ({
-                    //     id: item.data.properties.id,
-                    //     first_name: item.data.properties.first_name,
-                    //     last_name: item.data.properties.last_name,
-                    //     name: item.data.properties.name,
-                    //     name_formatted: item.data.properties.name_formatted,
-                    //     group_id: item.data.properties.group_id,
-                    //     text: item.data.properties.name_formatted,
-                    //     value: item.data.properties.id,
-                    //     type: item.data.properties.type,
-                    // }))
-                })
-                .finally(() => (this.loading = false))
+                this.items = response.data.data.map((item) => ({
+                    text: get(item, 'name_formatted'),
+                    value: get(item, 'id'),
+                    type: get(item, 'type'),
+                }))
+
+                userLookup.registerUsers(this.items)
+
+                // v2
+                // this.items = response.data.results.map((item) => ({
+                //     id: item.data.properties.id,
+                //     first_name: item.data.properties.first_name,
+                //     last_name: item.data.properties.last_name,
+                //     name: item.data.properties.name,
+                //     name_formatted: item.data.properties.name_formatted,
+                //     group_id: item.data.properties.group_id,
+                //     text: item.data.properties.name_formatted,
+                //     value: item.data.properties.id,
+                //     type: item.data.properties.type,
+                // }))
+            } finally {
+                this.loading = false
+            }
         }, 500),
 
         formatChoice(item) {
             return get(item, 'text', '')
         },
 
-        loadInitialValue() {
-            let initialValue = this.modelValue
+        async loadInitialValue() {
+            const initialValue = this.modelValue
 
             if (initialValue && !this.combobox) {
-                this.pleaseWait = true
-                this.readonly = true
-                this.loading = true
+                try {
+                    this.pleaseWait = true
+                    this.readonly = true
+                    this.loading = true
 
-                this.$session.members
-                    .member(initialValue, 'v1')
-                    .then((response) => {
-                        let value = get(response, 'data.data.id')
-                        let type = get(response, 'data.data.type')
-                        let text = get(response, 'data.data.name')
+                    const user = await userLookup.lookup(this.$session, initialValue)
 
-                        if (value) {
-                            this.items = [{ type, text, value }]
-                            this.select = value
-                        }
-                    })
-                    .finally(() => {
-                        this.pleaseWait = false
-                        this.readonly = false
-                        this.loading = false
-                    })
+                    if (user) {
+                        this.items = [user]
+                        this.select = user.value
+                    }
+                } finally {
+                    this.pleaseWait = false
+                    this.readonly = false
+                    this.loading = false
+                }
             }
         },
     },
@@ -195,9 +188,6 @@ export default {
             },
             immediate: true,
         },
-    },
-    mounted() {
-        // this.loadInitialValue()
     },
 }
 </script>

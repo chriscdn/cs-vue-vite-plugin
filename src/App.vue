@@ -1,7 +1,7 @@
 <template>
     <div>
         <KSnackbar>
-            <KUserPicker v-model="user" />
+            <!-- <KUserPicker v-model="user" /> -->
             <!-- <KInput type="password" /> -->
 
             <!-- <KButton>Hello</KButton> -->
@@ -9,15 +9,61 @@
                 <thead>
                     <tr>
                         <td>hello</td>
+                        <td>hello</td>
                     </tr>
                 </thead>
                 <body>
                     <tr>
-                        <td>hello</td>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
                     </tr>
                 </body>
             </KTable>
         </KSnackbar>
+
+        <KDialog :modelValue="true">
+            <KCard>
+                <KCardTitle style="background-color: yellow">Title</KCardTitle>
+                <KCardText style="background-color: green">
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                    <p>Sed ut perspiciatis.</p>
+                </KCardText>
+                <KCardActions style="background-color: orange">Actions</KCardActions>
+            </KCard>
+        </KDialog>
     </div>
 </template>
 
@@ -25,10 +71,11 @@
 export default {
     data() {
         return {
-            user: null,
+            user: 1000,
+            d: '1974-06-20',
         }
     },
 }
 </script>
 
-<style></style>
+<style lang="less"></style>

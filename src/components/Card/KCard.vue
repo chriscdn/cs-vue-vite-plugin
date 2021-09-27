@@ -14,31 +14,21 @@ export default {
         },
     },
     render() {
+        // we'll probably need to revisit this if we ever create a clickable card.
         const { tag, data } = this.generateRouteLink()
 
-        return h(tag, data, [
-            h(
-                'div',
-                {
-                    class: this.classObj,
-                    style: [this.measurableStyles],
-                    props: {
-                        // details: this.details,
-                    },
-                },
-                [...this.$slots.default()],
-            ),
-        ])
+        return h(tag, { ...data, class: this.classObj, style: [this.measurableStyles] }, [...this.$slots.default()])
     },
 }
 </script>
 
 <style lang="less">
 .k-card {
-    @apply flex flex-col;
-    &.k-card-clickable {
-        // @apply bg-g;
-        // @apply hover:bg-support-4;
-    }
+    @apply flex flex-col block;
+
+    // &.k-card-clickable {
+    //     // @apply bg-g;
+    //     // @apply hover:bg-support-4;
+    // }
 }
 </style>

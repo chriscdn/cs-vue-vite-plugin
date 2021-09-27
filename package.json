@@ -10,7 +10,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@chriscdn/promise-semaphore": "^1.0.6",
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
+    "date-fns": "^2.24.0",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
     "vue": "^3.2.14",

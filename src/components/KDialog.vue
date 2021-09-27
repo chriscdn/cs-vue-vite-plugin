@@ -2,7 +2,7 @@
     <slot name="activator" :on="on"></slot>
     <transition name="fade">
         <div v-if="dialog" class="k-dialog">
-            <div ref="content" v-click-away="clickAway" class="k-dialog-content" :style="[innerStyle]">
+            <div ref="content" v-click-away="clickAway" class="k-dialog-content" :class="classObj" :style="[measurableStyles]">
                 <slot></slot>
             </div>
         </div>
@@ -11,7 +11,9 @@
 
 <script>
 import { directive } from 'vue3-click-away'
+import measurables from '../mixins/measurables'
 export default {
+    mixins: [measurables],
     directives: {
         ClickAway: directive,
     },
@@ -25,9 +27,17 @@ export default {
             type: Boolean,
             default: false,
         },
+        scrollable: {
+            type: Boolean,
+            default: false,
+        },
         width: {
-            type: String,
-            default: '600px',
+            type: [Number, String],
+            default: 600,
+        },
+        maxHeight: {
+            type: [Number, String],
+            default: '90%',
         },
     },
     data() {
@@ -36,9 +46,9 @@ export default {
         }
     },
     computed: {
-        innerStyle() {
+        classObj() {
             return {
-                width: this.width,
+                'k-dialog--scrollable': this.scrollable,
             }
         },
     },
@@ -88,16 +98,18 @@ export default {
 
     .k-dialog-content {
         @apply bg-white p-3 rounded;
-        max-height: 80vh;
-        overflow: auto;
-        // background-color: #fff;
-        // position: fixed;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        // padding: 10px;
+        @apply overflow-y-auto;
+    }
 
-        // border-radius: 8px;
+    .k-dialog--scrollable {
+        @apply flex;
+        .k-card {
+            @apply flex-grow;
+
+            .k-card-text {
+                @apply overflow-y-auto;
+            }
+        }
     }
 }
 </style>

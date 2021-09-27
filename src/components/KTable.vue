@@ -93,25 +93,25 @@ export default {
     }
 
     &.k-table--properties {
-        td {
-            border: 1px solid @color0;
+        > tbody {
+            td {
+                border: 1px solid @color0;
 
-            &:nth-child(odd) {
-                background-color: @color1;
-                color: #333333;
-                font-weight: 700;
-                white-space: nowrap;
-                width: 1%;
+                &:nth-child(odd) {
+                    background-color: @color1;
+                    color: #333333;
+                    font-weight: 700;
+                    white-space: nowrap;
+                    width: 1%;
+                }
             }
         }
     }
 
     &.k-table--striped {
-        tbody {
-            tr {
-                &:nth-child(even) {
-                    background-color: #fafafa;
-                }
+        > tbody {
+            > tr:nth-child(even) {
+                background-color: #fafafa;
             }
         }
     }

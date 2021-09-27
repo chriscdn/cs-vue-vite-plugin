@@ -1,5 +1,5 @@
 <template>
-    <textarea v-model="valueLocal" v-bind="$attrs" @keydown.tab.prevent="tabber" spellcheck="false" class="k-textarea" :rows="rows"></textarea>
+    <textarea v-model="valueLocal" v-bind="$attrs" @keydown.tab.prevent="tabber" spellcheck="false" class="k-input k-textarea" :rows="rows"></textarea>
 </template>
 
 <script>

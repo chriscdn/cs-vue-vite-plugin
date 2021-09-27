@@ -36,6 +36,6 @@ export default defineConfig({
         },
     },
     optimizeDeps: {
-        include: ['util'],
+        // include: ['util'],
     },
 })
