@@ -12,6 +12,7 @@
   "dependencies": {
     "@chriscdn/promise-semaphore": "^1.0.6",
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.24.0",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",

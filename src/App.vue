@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="dialog = true">dialog</button>
         <KSnackbar>
             <!-- <KUserPicker v-model="user" /> -->
             <!-- <KInput type="password" /> -->
@@ -25,11 +26,131 @@
                         <td><KDateTimePicker v-model="d" time /></td>
                         <td>{{ JSON.stringify(d) }}</td>
                     </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KUserPicker v-model="user" /></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
+                    <tr>
+                        <td><KDateTimePicker v-model="d" time /></td>
+                        <td>{{ JSON.stringify(d) }}</td>
+                    </tr>
                 </body>
             </KTable>
         </KSnackbar>
 
-        <KDialog :modelValue="true">
+        <KDialog scrollable v-model="dialog">
             <KCard>
                 <KCardTitle style="background-color: yellow">Title</KCardTitle>
                 <KCardText style="background-color: green">
@@ -73,9 +194,8 @@ export default {
         return {
             user: 1000,
             d: '1974-06-20',
+            dialog: false,
         }
     },
 }
 </script>
-
-<style lang="less"></style>

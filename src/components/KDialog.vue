@@ -3,7 +3,7 @@
     <transition name="fade">
         <div v-if="dialog" class="k-dialog">
             <div ref="content" v-click-away="clickAway" class="k-dialog-content" :class="classObj" :style="[measurableStyles]">
-                <slot></slot>
+                <slot :on="on"></slot>
             </div>
         </div>
     </transition>
@@ -12,6 +12,8 @@
 <script>
 import { directive } from 'vue3-click-away'
 import measurables from '../mixins/measurables'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+
 export default {
     mixins: [measurables],
     directives: {
@@ -33,7 +35,7 @@ export default {
         },
         width: {
             type: [Number, String],
-            default: 600,
+            default: '75vw',
         },
         maxHeight: {
             type: [Number, String],
@@ -56,7 +58,6 @@ export default {
     watch: {
         modelValue: {
             handler(value) {
-                // console.log(value)
                 this.dialog = value
             },
             immediate: true,
@@ -64,12 +65,12 @@ export default {
         async dialog(value) {
             this.$emit('update:modelValue', value)
 
-            /*if (value) {
-				await this.$nextTick()
-				disableBodyScroll(this.$refs.content)
-			} else {
-				enableBodyScroll(this.$refs.content)
-			}*/
+            if (value) {
+                await this.$nextTick()
+                disableBodyScroll(this.$refs.content)
+            } else {
+                enableBodyScroll(this.$refs.content)
+            }
         },
     },
     methods: {
