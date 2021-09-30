@@ -5,6 +5,8 @@
             <!-- <KUserPicker v-model="user" /> -->
             <!-- <KInput type="password" /> -->
 
+            <KSwitch />
+
             <!-- <KButton>Hello</KButton> -->
             <KTable>
                 <thead>
