@@ -16,13 +16,13 @@
     "date-fns": "^2.24.0",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
-    "vue": "^3.2.14",
+    "vue": "^3.2.19",
     "vue3-click-away": "^1.2.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.0",
-    "@vue/compiler-sfc": "^3.2.14",
-    "autoprefixer": "^10.3.5",
+    "@vitejs/plugin-vue": "^1.9.2",
+    "@vue/compiler-sfc": "^3.2.19",
+    "autoprefixer": "^10.3.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -31,8 +31,8 @@
     "less": "^4.1.1",
     "less-loader": "^10.0.1",
     "prettier": "^2.4.1",
-    "tailwindcss": "^2.2.15",
-    "vite": "^2.5.10"
+    "tailwindcss": "^2.2.16",
+    "vite": "^2.6.2"
   },
   "files": [
     "dist"
