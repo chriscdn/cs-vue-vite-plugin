@@ -8,26 +8,41 @@
 // https://www.w3schools.com/howto/howto_css_switch.asp
 import { convertToUnit } from '../mixins/measurables'
 export default {
+    props: {
+        modelValue: {
+            type: Boolean,
+            default: false,
+        },
+    },
+
     data() {
         return {
-            on: false,
+            padding: 4,
+            height: 26,
+            trans: 20,
         }
     },
 
+    methods: {
+        clicked() {
+            this.on = !this.one
+        },
+    },
+
     computed: {
+        on: {
+            get() {
+                return this.modelValue
+            },
+            set(value) {
+                this.$emit('update:modelValue', value)
+            },
+        },
+
         classObj() {
             return {
                 'k-switch--on': this.on,
             }
-        },
-        padding() {
-            return 5
-        },
-        height() {
-            return 36
-        },
-        trans() {
-            return 60
         },
         innerSize() {
             return this.height - 2 * this.padding
@@ -58,35 +73,27 @@ export default {
     display: inline-block;
     width: v-bind(switchWidthPx);
     height: v-bind(heightPx);
-}
-
-/* The slider */
-.k-switch-slider {
-    @apply absolute bg-gray-400;
-    @apply cursor-pointer inset-0;
+    @apply cursor-pointer;
+    @apply bg-gray-400;
     @apply rounded-full;
-    @apply duration-300;
-}
 
-/* this is the ball */
-.k-switch-slider:before {
-    @apply rounded-full;
-    @apply absolute;
-    @apply duration-300;
-    content: '';
-    height: v-bind(innerSizePx);
-    width: v-bind(innerSizePx);
-    left: v-bind(paddingPx);
-    bottom: v-bind(paddingPx);
-    background-color: white;
-}
-
-.k-switch--on {
+    /* The slider */
     .k-switch-slider {
-        @apply bg-blue-500;
-    }
+        @apply absolute;
+        @apply rounded-full;
+        @apply duration-300;
 
-    .k-switch-slider:before {
+        height: v-bind(innerSizePx);
+        width: v-bind(innerSizePx);
+        left: v-bind(paddingPx);
+        bottom: v-bind(paddingPx);
+        background-color: white;
+    }
+}
+.k-switch--on {
+    @apply bg-blue-500;
+
+    .k-switch-slider {
         transform: v-bind(transPx);
     }
 }

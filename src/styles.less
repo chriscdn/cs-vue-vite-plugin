@@ -1,7 +1,3 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.3s;
@@ -10,6 +6,10 @@
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+}
+
+.fade-move, .slide-move {
+    transition: transform 0.3s;
 }
 
 .slide-leave-active,
@@ -28,6 +28,4 @@
     @apply focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-600;
 }
 
-.animate-move-move {
-    transition: transform 0.3s;
-  }
+
