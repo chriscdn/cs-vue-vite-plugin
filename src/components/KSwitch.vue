@@ -69,8 +69,8 @@ export default {
 
 <style lang="less">
 .k-switch {
-    position: relative;
-    display: inline-block;
+    @apply relative inline-block align-middle;
+
     width: v-bind(switchWidthPx);
     height: v-bind(heightPx);
     @apply cursor-pointer;

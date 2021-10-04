@@ -24,18 +24,18 @@ var _export_sfc = (sfc, props) => {
   }
   return sfc;
 };
-const _sfc_main$n = {};
-const _hoisted_1$j = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
-const _hoisted_2$9 = ["href"];
-function _sfc_render$m(_ctx, _cache) {
+const _sfc_main$p = {};
+const _hoisted_1$l = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
+const _hoisted_2$a = ["href"];
+function _sfc_render$o(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
-    _hoisted_1$j,
+    _hoisted_1$l,
     createElementVNode("a", {
       href: `${_ctx.$cgi}?func=admin.index`
-    }, "Admin Home", 8, _hoisted_2$9)
+    }, "Admin Home", 8, _hoisted_2$a)
   ], 64);
 }
-var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
+var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
 var __glob_2_0 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -362,7 +362,7 @@ function get$4(object, path, defaultValue) {
 }
 var lodash_get$1 = get$4;
 var KAutocomplete_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$m = {
+const _sfc_main$o = {
   directives: {
     ClickAway: directive
   },
@@ -518,21 +518,21 @@ const _sfc_main$m = {
     }
   }
 };
-const _hoisted_1$i = { class: "k-autocomplete-input" };
-const _hoisted_2$8 = ["placeholder", "readonly"];
-const _hoisted_3$6 = {
+const _hoisted_1$k = { class: "k-autocomplete-input" };
+const _hoisted_2$9 = ["placeholder", "readonly"];
+const _hoisted_3$7 = {
   key: 0,
   class: "k-autocomplete-items"
 };
-const _hoisted_4$3 = ["onClick"];
-function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_4$4 = ["onClick"];
+function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return withDirectives((openBlock(), createElementBlock("div", {
     class: "k-autocomplete",
     style: normalizeStyle([$options.style])
   }, [
     renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
-    createElementVNode("div", _hoisted_1$i, [
+    createElementVNode("div", _hoisted_1$k, [
       withDirectives(createElementVNode("input", {
         class: normalizeClass(["k-input", { invalidSelection: !$options.isValidSelection }]),
         ref: "input",
@@ -550,10 +550,10 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
         ],
         onFocus: _cache[5] || (_cache[5] = (...args) => $options.setFocus && $options.setFocus(...args)),
         onKeyup: _cache[7] || (_cache[7] = (...args) => $options.keyup && $options.keyup(...args))
-      }, null, 42, _hoisted_2$8), [
+      }, null, 42, _hoisted_2$9), [
         [vModelText, $data.inputText]
       ]),
-      $data.focus && $props.items.length && !!$data.inputText ? (openBlock(), createElementBlock("div", _hoisted_3$6, [
+      $data.focus && $props.items.length && !!$data.inputText ? (openBlock(), createElementBlock("div", _hoisted_3$7, [
         (openBlock(true), createElementBlock(Fragment, null, renderList($options.itemsFiltered, (item, index2) => {
           return openBlock(), createElementBlock("div", {
             key: index2,
@@ -563,7 +563,7 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
             renderSlot(_ctx.$slots, "item", { item }, () => [
               createTextVNode(toDisplayString(item), 1)
             ], true)
-          ], 10, _hoisted_4$3);
+          ], 10, _hoisted_4$4);
         }), 128))
       ])) : createCommentVNode("", true)
     ])
@@ -571,13 +571,13 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-e3e33c7e"]]);
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-e3e33c7e"]]);
 var __glob_2_1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KAutocomplete
 });
-const _sfc_main$l = {
+const _sfc_main$n = {
   props: {
     nodeRec: {
       type: Object,
@@ -593,24 +593,24 @@ const _sfc_main$l = {
     }
   }
 };
-const _hoisted_1$h = { key: 0 };
-const _hoisted_2$7 = ["src"];
-const _hoisted_3$5 = /* @__PURE__ */ createTextVNode("\xA0");
-const _hoisted_4$2 = ["href"];
+const _hoisted_1$j = { key: 0 };
+const _hoisted_2$8 = ["src"];
+const _hoisted_3$6 = /* @__PURE__ */ createTextVNode("\xA0");
+const _hoisted_4$3 = ["href"];
 const _hoisted_5 = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_6 = /* @__PURE__ */ createTextVNode();
 const _hoisted_7 = ["innerHTML"];
-function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
-  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$h, [
+  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$j, [
     $props.image ? (openBlock(), createElementBlock("img", {
       key: 0,
       src: $props.nodeRec.gif
-    }, null, 8, _hoisted_2$7)) : createCommentVNode("", true),
-    _hoisted_3$5,
+    }, null, 8, _hoisted_2$8)) : createCommentVNode("", true),
+    _hoisted_3$6,
     createElementVNode("a", {
       href: $props.nodeRec.url
-    }, toDisplayString($props.nodeRec.name), 9, _hoisted_4$2),
+    }, toDisplayString($props.nodeRec.name), 9, _hoisted_4$3),
     _hoisted_5,
     $props.clickable ? (openBlock(), createBlock(_component_KFunctionMenu, {
       key: 1,
@@ -622,14 +622,14 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, _hoisted_7)
   ])) : createCommentVNode("", true);
 }
-var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k]]);
+var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
 var __glob_2_2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KBrowseLink
 });
 var KButton_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$k = {
+const _sfc_main$m = {
   emits: ["click"],
   props: {
     small: {
@@ -645,7 +645,7 @@ const _sfc_main$k = {
     }
   }
 };
-function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("button", mergeProps({
     class: ["k-button", $options.classObj],
     type: "button"
@@ -655,7 +655,7 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ], 16);
 }
-var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
+var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
 var __glob_2_3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2122,7 +2122,7 @@ function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 function cleanEscapedString(input) {
   return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
 }
-const _sfc_main$j = {
+const _sfc_main$l = {
   props: {
     modelValue: {
       type: [String, Date],
@@ -2167,17 +2167,17 @@ const _sfc_main$j = {
     }
   }
 };
-const _hoisted_1$g = ["type"];
-const _hoisted_2$6 = /* @__PURE__ */ createTextVNode("Now");
-const _hoisted_3$4 = /* @__PURE__ */ createTextVNode("Clear");
-function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$i = ["type"];
+const _hoisted_2$7 = /* @__PURE__ */ createTextVNode("Now");
+const _hoisted_3$5 = /* @__PURE__ */ createTextVNode("Clear");
+function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   return openBlock(), createElementBlock("div", null, [
     withDirectives(createElementVNode("input", {
       class: "k-input",
       type: $options.type,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event)
-    }, null, 8, _hoisted_1$g), [
+    }, null, 8, _hoisted_1$i), [
       [vModelDynamic, $options.localModelValue]
     ]),
     createVNode(_component_KButton, {
@@ -2186,7 +2186,7 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: $options.setToNow
     }, {
       default: withCtx(() => [
-        _hoisted_2$6
+        _hoisted_2$7
       ]),
       _: 1
     }, 8, ["onClick"]),
@@ -2196,13 +2196,13 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("update:modelValue", null))
     }, {
       default: withCtx(() => [
-        _hoisted_3$4
+        _hoisted_3$5
       ]),
       _: 1
     })
   ]);
 }
-var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
+var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k]]);
 var __glob_2_4 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2452,7 +2452,7 @@ var enableBodyScroll = function enableBodyScroll2(targetElement) {
   }
 };
 var KDialog_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$i = {
+const _sfc_main$k = {
   mixins: [measurables],
   directives: {
     ClickAway: directive
@@ -2524,17 +2524,17 @@ const _sfc_main$i = {
     }
   }
 };
-const _hoisted_1$f = {
+const _hoisted_1$h = {
   key: 0,
   class: "k-dialog"
 };
-function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
     createVNode(Transition, { name: "fade" }, {
       default: withCtx(() => [
-        $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$f, [
+        $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$h, [
           withDirectives(createElementVNode("div", {
             ref: "content",
             class: normalizeClass(["k-dialog-content", $options.classObj]),
@@ -2550,13 +2550,13 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     })
   ], 64);
 }
-var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
+var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
 var __glob_2_5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KDialog
 });
-const _sfc_main$h = {
+const _sfc_main$j = {
   props: {
     dataid: {
       type: Number,
@@ -2619,12 +2619,12 @@ const _sfc_main$h = {
     }
   }
 };
-const _hoisted_1$e = { key: 0 };
-const _hoisted_2$5 = ["id"];
-const _hoisted_3$3 = ["src"];
-const _hoisted_4$1 = ["id", "src"];
-function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.dataid ? (openBlock(), createElementBlock("span", _hoisted_1$e, [
+const _hoisted_1$g = { key: 0 };
+const _hoisted_2$6 = ["id"];
+const _hoisted_3$4 = ["src"];
+const _hoisted_4$2 = ["id", "src"];
+function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  return $props.dataid ? (openBlock(), createElementBlock("span", _hoisted_1$g, [
     createElementVNode("a", {
       id: $options.aid,
       href: "#",
@@ -2635,7 +2635,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
         key: 0,
         src: `${_ctx.$img}spacer.gif`,
         alt: "Functions"
-      }, null, 8, _hoisted_3$3)) : (openBlock(), createElementBlock("img", {
+      }, null, 8, _hoisted_3$4)) : (openBlock(), createElementBlock("img", {
         key: 1,
         id: $options.xid,
         src: $data.image,
@@ -2644,8 +2644,8 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
         title: "Functions",
         onMouseover: _cache[0] || (_cache[0] = (...args) => $options.onmouseover && $options.onmouseover(...args)),
         onMouseout: _cache[1] || (_cache[1] = (...args) => $options.onmouseout && $options.onmouseout(...args))
-      }, null, 40, _hoisted_4$1))
-    ], 8, _hoisted_2$5),
+      }, null, 40, _hoisted_4$2))
+    ], 8, _hoisted_2$6),
     _cache[3] || (setBlockTracking(-1), _cache[3] = createElementVNode("div", {
       id: $options.zid,
       ref: "functionMenuDiv",
@@ -2653,14 +2653,14 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, ["id"]), setBlockTracking(1), _cache[3])
   ])) : createCommentVNode("", true);
 }
-var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
+var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
 var __glob_2_6 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KFunctionMenu
 });
 var KPageTitle_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$g = {
+const _sfc_main$i = {
   props: {
     title: {
       type: String,
@@ -2672,25 +2672,25 @@ const _sfc_main$g = {
     }
   }
 };
-const _hoisted_1$d = { key: 0 };
-const _hoisted_2$4 = /* @__PURE__ */ createTextVNode(": ");
-const _hoisted_3$2 = { class: "rhmuted" };
-function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$f = { key: 0 };
+const _hoisted_2$5 = /* @__PURE__ */ createTextVNode(": ");
+const _hoisted_3$3 = { class: "rhmuted" };
+function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("h1", null, [
     createTextVNode(toDisplayString($props.title), 1),
-    $props.subtitle ? (openBlock(), createElementBlock("span", _hoisted_1$d, [
-      _hoisted_2$4,
-      createElementVNode("span", _hoisted_3$2, toDisplayString($props.subtitle) + " - 2", 1)
+    $props.subtitle ? (openBlock(), createElementBlock("span", _hoisted_1$f, [
+      _hoisted_2$5,
+      createElementVNode("span", _hoisted_3$3, toDisplayString($props.subtitle) + " - 2", 1)
     ])) : createCommentVNode("", true)
   ]);
 }
-var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-6b5d45ef"]]);
+var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-6b5d45ef"]]);
 var __glob_2_7 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KPageTitle
 });
-const _sfc_main$f = {
+const _sfc_main$h = {
   inject: ["ksnackbar"],
   methods: {
     click() {
@@ -2698,20 +2698,20 @@ const _sfc_main$f = {
     }
   }
 };
-function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [
     createElementVNode("button", {
       onClick: _cache[0] || (_cache[0] = (...args) => $options.click && $options.click(...args))
     }, "click")
   ]);
 }
-var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
+var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
 var __glob_2_8 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KScratch
 });
-const _sfc_main$e = {
+const _sfc_main$g = {
   props: {
     modelValue: {
       type: [String, Object, Number],
@@ -2742,8 +2742,8 @@ const _sfc_main$e = {
     }
   }
 };
-const _hoisted_1$c = ["value"];
-function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$e = ["value"];
+function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   return withDirectives((openBlock(), createElementBlock("select", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
     class: "k-input"
@@ -2752,20 +2752,20 @@ function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
       return openBlock(), createElementBlock("option", {
         key: item[$props.itemValue],
         value: item[$props.itemValue]
-      }, toDisplayString(item[$props.itemText]), 9, _hoisted_1$c);
+      }, toDisplayString(item[$props.itemText]), 9, _hoisted_1$e);
     }), 128))
   ], 512)), [
     [vModelSelect, $options.localValue]
   ]);
 }
-var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d]]);
+var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
 var __glob_2_9 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSelect
 });
 var KSnackbar_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$d = {
+const _sfc_main$f = {
   data() {
     return {
       index: 0,
@@ -2812,11 +2812,11 @@ const _sfc_main$d = {
     }
   }
 };
-const _hoisted_1$b = { class: "k-snackbar" };
-function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$d = { class: "k-snackbar" };
+function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "default"),
-    createElementVNode("div", _hoisted_1$b, [
+    createElementVNode("div", _hoisted_1$d, [
       createVNode(TransitionGroup, {
         name: "slide",
         tag: "div",
@@ -2835,13 +2835,13 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ], 64);
 }
-var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c]]);
+var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
 var __glob_2_10 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSnackbar
 });
-const _sfc_main$c = {
+const _sfc_main$e = {
   props: {
     keypath: {
       type: String,
@@ -2873,64 +2873,64 @@ const _sfc_main$c = {
     }
   }
 };
-const _hoisted_1$a = /* @__PURE__ */ createTextVNode();
-const _hoisted_2$3 = { key: 0 };
-const _hoisted_3$1 = { key: 1 };
-function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$c = /* @__PURE__ */ createTextVNode();
+const _hoisted_2$4 = { key: 0 };
+const _hoisted_3$2 = { key: 1 };
+function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("a", {
     href: "#",
     onClick: _cache[0] || (_cache[0] = withModifiers((...args) => $options.emitClick && $options.emitClick(...args), ["prevent"]))
   }, [
     renderSlot(_ctx.$slots, "default"),
-    _hoisted_1$a,
-    $options.isActive && $options.sortAsc ? (openBlock(), createElementBlock("span", _hoisted_2$3, "\u2193")) : $options.isActive ? (openBlock(), createElementBlock("span", _hoisted_3$1, "\u2191")) : createCommentVNode("", true)
+    _hoisted_1$c,
+    $options.isActive && $options.sortAsc ? (openBlock(), createElementBlock("span", _hoisted_2$4, "\u2193")) : $options.isActive ? (openBlock(), createElementBlock("span", _hoisted_3$2, "\u2191")) : createCommentVNode("", true)
   ]);
 }
-var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
+var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d]]);
 var __glob_2_11 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSortHeader
 });
 var KSpacer_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$b = {};
-const _hoisted_1$9 = { class: "k-spacer" };
-function _sfc_render$a(_ctx, _cache) {
-  return openBlock(), createElementBlock("div", _hoisted_1$9);
+const _sfc_main$d = {};
+const _hoisted_1$b = { class: "k-spacer" };
+function _sfc_render$c(_ctx, _cache) {
+  return openBlock(), createElementBlock("div", _hoisted_1$b);
 }
-var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-8f2ba526"]]);
+var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-8f2ba526"]]);
 var __glob_2_12 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSpacer
 });
 var KSpinner_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$a = {};
-const _hoisted_1$8 = {
+const _sfc_main$c = {};
+const _hoisted_1$a = {
   class: "k-spinner",
   xmlns: "http://www.w3.org/2000/svg",
   fill: "none",
   viewBox: "0 0 24 24"
 };
-const _hoisted_2$2 = /* @__PURE__ */ createElementVNode("circle", {
+const _hoisted_2$3 = /* @__PURE__ */ createElementVNode("circle", {
   cx: "12",
   cy: "12",
   r: "10",
   stroke: "currentColor",
   "stroke-width": "4"
 }, null, -1);
-const _hoisted_3 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_3$1 = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
 }, null, -1);
-const _hoisted_4 = [
-  _hoisted_2$2,
-  _hoisted_3
+const _hoisted_4$1 = [
+  _hoisted_2$3,
+  _hoisted_3$1
 ];
-function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$8, _hoisted_4);
+function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$a, _hoisted_4$1);
 }
-var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
+var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
 var __glob_2_13 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2992,11 +2992,11 @@ const __default__ = {
 };
 const __injectCSSVars__ = () => {
   useCssVars((_ctx) => ({
-    "80a7e4fa": _ctx.switchWidthPx,
-    "b713a1f4": _ctx.heightPx,
-    "9f6e71f0": _ctx.innerSizePx,
-    "4147193c": _ctx.paddingPx,
-    "2f21b30e": _ctx.transPx
+    "1ed91f10": _ctx.switchWidthPx,
+    "70fd9959": _ctx.heightPx,
+    "1a925056": _ctx.innerSizePx,
+    "b87b5922": _ctx.paddingPx,
+    "a610b474": _ctx.transPx
   }));
 };
 const __setup__ = __default__.setup;
@@ -3004,25 +3004,25 @@ __default__.setup = __setup__ ? (props, ctx) => {
   __injectCSSVars__();
   return __setup__(props, ctx);
 } : __injectCSSVars__;
-const _sfc_main$9 = __default__;
-const _hoisted_1$7 = /* @__PURE__ */ createElementVNode("span", { class: "k-switch-slider" }, null, -1);
-const _hoisted_2$1 = [
-  _hoisted_1$7
+const _sfc_main$b = __default__;
+const _hoisted_1$9 = /* @__PURE__ */ createElementVNode("span", { class: "k-switch-slider" }, null, -1);
+const _hoisted_2$2 = [
+  _hoisted_1$9
 ];
-function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: normalizeClass(["k-switch", $options.classObj]),
     onClick: _cache[0] || (_cache[0] = ($event) => $options.on = !$options.on)
-  }, _hoisted_2$1, 2);
+  }, _hoisted_2$2, 2);
 }
-var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
+var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
 var __glob_2_14 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSwitch
 });
 var KTable_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$8 = {
+const _sfc_main$a = {
   props: {
     properties: {
       type: Boolean,
@@ -3045,21 +3045,21 @@ const _sfc_main$8 = {
     }
   }
 };
-function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("table", {
     class: normalizeClass(["k-table", $options.classObj])
   }, [
     renderSlot(_ctx.$slots, "default")
   ], 2);
 }
-var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
+var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
 var __glob_2_15 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTable
 });
 var KTextArea_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$7 = {
+const _sfc_main$9 = {
   inheritAttrs: false,
   props: {
     modelValue: {
@@ -3118,8 +3118,8 @@ const _sfc_main$7 = {
     }
   }
 };
-const _hoisted_1$6 = ["rows"];
-function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$8 = ["rows"];
+function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   return withDirectives((openBlock(), createElementBlock("textarea", mergeProps({
     "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.valueLocal = $event)
   }, _ctx.$attrs, {
@@ -3127,17 +3127,17 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     spellcheck: "false",
     class: "k-input k-textarea",
     rows: $props.rows
-  }), null, 16, _hoisted_1$6)), [
+  }), null, 16, _hoisted_1$8)), [
     [vModelText, $options.valueLocal]
   ]);
 }
-var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
+var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
 var __glob_2_16 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTextArea
 });
-const _sfc_main$6 = {
+const _sfc_main$8 = {
   mixins: [measurables],
   props: {
     userRec: {
@@ -3174,21 +3174,21 @@ const _sfc_main$6 = {
     }
   }
 };
-const _hoisted_1$5 = ["src"];
-function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$7 = ["src"];
+function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   return $options.url ? (openBlock(), createElementBlock("img", {
     key: 0,
     src: $options.url,
     style: normalizeStyle([_ctx.measurableStyles])
-  }, null, 12, _hoisted_1$5)) : createCommentVNode("", true);
+  }, null, 12, _hoisted_1$7)) : createCommentVNode("", true);
 }
-var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
+var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
 var __glob_2_17 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserGIF
 });
-const _sfc_main$5 = {
+const _sfc_main$7 = {
   props: {
     userRec: {
       type: Object,
@@ -3244,23 +3244,23 @@ const _sfc_main$5 = {
     }
   }
 };
-const _hoisted_1$4 = { key: 0 };
-const _hoisted_2 = /* @__PURE__ */ createTextVNode("\xA0");
-function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$6 = { key: 0 };
+const _hoisted_2$1 = /* @__PURE__ */ createTextVNode("\xA0");
+function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KUserGIF = resolveComponent("KUserGIF");
-  return $data.localUserRec ? (openBlock(), createElementBlock("span", _hoisted_1$4, [
+  return $data.localUserRec ? (openBlock(), createElementBlock("span", _hoisted_1$6, [
     $props.gif ? (openBlock(), createBlock(_component_KUserGIF, {
       key: 0,
       "user-rec": $data.localUserRec
     }, null, 8, ["user-rec"])) : createCommentVNode("", true),
-    _hoisted_2,
+    _hoisted_2$1,
     createElementVNode("a", {
       href: "#",
       onClick: _cache[0] || (_cache[0] = withModifiers((...args) => $options.click && $options.click(...args), ["prevent"]))
     }, toDisplayString($options.displayName), 1)
   ])) : createCommentVNode("", true);
 }
-var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4]]);
+var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
 var __glob_2_18 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -3483,7 +3483,7 @@ class UserLookup {
 }
 var KUserPicker_vue_vue_type_style_index_0_scoped_true_lang = "";
 const userLookup = new UserLookup();
-const _sfc_main$4 = {
+const _sfc_main$6 = {
   props: {
     modelValue: {
       type: [String, Number, Object],
@@ -3615,8 +3615,8 @@ const _sfc_main$4 = {
     }
   }
 };
-const _hoisted_1$3 = ["innerHTML"];
-function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$5 = ["innerHTML"];
+function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KUserGIF = resolveComponent("KUserGIF");
   const _component_KAutocomplete = resolveComponent("KAutocomplete");
   return openBlock(), createBlock(_component_KAutocomplete, {
@@ -3641,12 +3641,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, ["type"]),
       createElementVNode("span", {
         innerHTML: $options.formatChoice(item)
-      }, null, 8, _hoisted_1$3)
+      }, null, 8, _hoisted_1$5)
     ]),
     _: 1
   }, 8, ["modelValue", "placeholder", "width", "loading", "search-input", "items", "return-object", "combobox", "editable"]);
 }
-var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-4c6f6e70"]]);
+var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-4c6f6e70"]]);
 var __glob_2_19 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -3712,7 +3712,7 @@ var clickable = {
   }
 };
 var KCard_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$3 = {
+const _sfc_main$5 = {
   mixins: [measurables, clickable],
   computed: {
     classObj() {
@@ -3730,49 +3730,138 @@ const _sfc_main$3 = {
 var __glob_2_20 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _sfc_main$3
+  "default": _sfc_main$5
 });
 var KCardActions_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$2 = {};
-const _hoisted_1$2 = { class: "k-card-actions" };
-function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$2, [
+const _sfc_main$4 = {};
+const _hoisted_1$4 = { class: "k-card-actions" };
+function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$4, [
     renderSlot(_ctx.$slots, "default")
   ]);
 }
-var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
+var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
 var __glob_2_21 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardActions
 });
 var KCardText_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$1 = {};
-const _hoisted_1$1 = { class: "k-card-text" };
-function _sfc_render$1(_ctx, _cache) {
-  return openBlock(), createElementBlock("div", _hoisted_1$1, [
+const _sfc_main$3 = {};
+const _hoisted_1$3 = { class: "k-card-text" };
+function _sfc_render$3(_ctx, _cache) {
+  return openBlock(), createElementBlock("div", _hoisted_1$3, [
     renderSlot(_ctx.$slots, "default")
   ]);
 }
-var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
+var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
 var __glob_2_22 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardText
 });
 var KCardTitle_vue_vue_type_style_index_0_lang = "";
-const _sfc_main = {};
-const _hoisted_1 = { class: "k-card-title" };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1, [
+const _sfc_main$2 = {};
+const _hoisted_1$2 = { class: "k-card-title" };
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$2, [
     renderSlot(_ctx.$slots, "default")
   ]);
 }
-var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
 var __glob_2_23 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardTitle
+});
+const _sfc_main$1 = {
+  inject: ["tabs"],
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    isSelected() {
+      return this.name == this.tabs.selectedTab;
+    }
+  }
+};
+const _hoisted_1$1 = { key: 0 };
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return $options.isSelected ? (openBlock(), createElementBlock("div", _hoisted_1$1, [
+    renderSlot(_ctx.$slots, "default")
+  ])) : createCommentVNode("", true);
+}
+var TabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
+var __glob_2_24 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": TabItem
+});
+var Tabs_vue_vue_type_style_index_0_lang = "";
+const _sfc_main = {
+  provide() {
+    return {
+      tabs: this
+    };
+  },
+  data() {
+    return {
+      tabs: [],
+      selectedTab: null
+    };
+  },
+  methods: {
+    selectTab(tab) {
+      this.selectedTab = tab.props.name;
+    },
+    classObj(tab) {
+      return {
+        "k-tabs-nav-tab": true,
+        "k-tabs-active": this.selectedTab == tab.props.name
+      };
+    }
+  },
+  created() {
+    this.tabs = this.$slots.default();
+    this.selectedTab = lodash_get$1(this.tabs, "[0].props.name");
+  }
+};
+const _hoisted_1 = { class: "k-tabs" };
+const _hoisted_2 = { class: "k-tabs-nav" };
+const _hoisted_3 = ["href", "onClick"];
+const _hoisted_4 = { class: "k-tabs-content" };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1, [
+    createElementVNode("div", _hoisted_2, [
+      (openBlock(true), createElementBlock(Fragment, null, renderList($data.tabs, (tab) => {
+        return openBlock(), createElementBlock("div", {
+          key: tab.props.name,
+          class: normalizeClass($options.classObj(tab))
+        }, [
+          createElementVNode("a", {
+            href: `#${tab.props.name}`,
+            onClick: ($event) => $options.selectTab(tab)
+          }, toDisplayString(tab.props.title), 9, _hoisted_3)
+        ], 2);
+      }), 128))
+    ]),
+    createElementVNode("div", _hoisted_4, [
+      renderSlot(_ctx.$slots, "default")
+    ])
+  ]);
+}
+var Tabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+var __glob_2_25 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Tabs
 });
 var axios$3 = { exports: {} };
 var bind$2 = function bind(fn, thisArg) {
@@ -6291,7 +6380,7 @@ var Session_1 = Session2;
 var styles = "";
 var index = {
   install(Vue, options) {
-    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageTitle.vue": __glob_2_7, "./components/KScratch.vue": __glob_2_8, "./components/KSelect.vue": __glob_2_9, "./components/KSnackbar.vue": __glob_2_10, "./components/KSortHeader.vue": __glob_2_11, "./components/KSpacer.vue": __glob_2_12, "./components/KSpinner.vue": __glob_2_13, "./components/KSwitch.vue": __glob_2_14, "./components/KTable.vue": __glob_2_15, "./components/KTextArea.vue": __glob_2_16, "./components/KUserGIF.vue": __glob_2_17, "./components/KUserLink.vue": __glob_2_18, "./components/KUserPicker.vue": __glob_2_19, "./components/Card/KCard.vue": __glob_2_20, "./components/Card/KCardActions.vue": __glob_2_21, "./components/Card/KCardText.vue": __glob_2_22, "./components/Card/KCardTitle.vue": __glob_2_23 };
+    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageTitle.vue": __glob_2_7, "./components/KScratch.vue": __glob_2_8, "./components/KSelect.vue": __glob_2_9, "./components/KSnackbar.vue": __glob_2_10, "./components/KSortHeader.vue": __glob_2_11, "./components/KSpacer.vue": __glob_2_12, "./components/KSpinner.vue": __glob_2_13, "./components/KSwitch.vue": __glob_2_14, "./components/KTable.vue": __glob_2_15, "./components/KTextArea.vue": __glob_2_16, "./components/KUserGIF.vue": __glob_2_17, "./components/KUserLink.vue": __glob_2_18, "./components/KUserPicker.vue": __glob_2_19, "./components/Card/KCard.vue": __glob_2_20, "./components/Card/KCardActions.vue": __glob_2_21, "./components/Card/KCardText.vue": __glob_2_22, "./components/Card/KCardTitle.vue": __glob_2_23, "./components/Tabs/TabItem.vue": __glob_2_24, "./components/Tabs/Tabs.vue": __glob_2_25 };
     Object.entries(components).forEach(([path, definition]) => {
       const componentName = path.split("/").pop().replace(/\.\w+$/, "");
       Vue.component(componentName, definition.default);
