@@ -12,7 +12,7 @@ This package is an opinionated Vue component library for creating user interface
 ## Installation
 
 ```bash
-yarn add https://github.com/chriscdn/cs-vue-vite-plugin
+$ yarn add https://github.com/chriscdn/cs-vue-vite-plugin
 ```
 
 In your Vue/Vite project (likely in `main.js`):
@@ -32,4 +32,4 @@ const initialState = {
 app.use(CSVueVite, initialState)
 ```
 
-This automatically registers all components in `~/src/components/`.
+This automatically registers all components in `~/src/components/`.  It also registers a global `$session` (see [@kweli/cs-rest](https://github.com/chriscdn/cs-rest)) for issuing REST and RPC requests to Content Server.
