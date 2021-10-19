@@ -74,21 +74,21 @@ const directive = {
   unmounted: onUnmounted
 };
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
-var FUNC_ERROR_TEXT$1 = "Expected a function";
-var HASH_UNDEFINED = "__lodash_hash_undefined__";
-var INFINITY = 1 / 0;
-var funcTag = "[object Function]", genTag = "[object GeneratorFunction]", symbolTag$1 = "[object Symbol]";
-var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, reIsPlainProp = /^\w*$/, reLeadingDot = /^\./, rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-var reEscapeChar = /\\(\\)?/g;
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-var freeGlobal$1 = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
-var freeSelf$1 = typeof self == "object" && self && self.Object === Object && self;
-var root$1 = freeGlobal$1 || freeSelf$1 || Function("return this")();
-function getValue(object, key) {
+var FUNC_ERROR_TEXT$2 = "Expected a function";
+var HASH_UNDEFINED$1 = "__lodash_hash_undefined__";
+var INFINITY$1 = 1 / 0;
+var funcTag$1 = "[object Function]", genTag$1 = "[object GeneratorFunction]", symbolTag$2 = "[object Symbol]";
+var reIsDeepProp$1 = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, reIsPlainProp$1 = /^\w*$/, reLeadingDot$1 = /^\./, rePropName$1 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+var reRegExpChar$1 = /[\\^$.*+?()[\]{}|]/g;
+var reEscapeChar$1 = /\\(\\)?/g;
+var reIsHostCtor$1 = /^\[object .+?Constructor\]$/;
+var freeGlobal$2 = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+var freeSelf$2 = typeof self == "object" && self && self.Object === Object && self;
+var root$2 = freeGlobal$2 || freeSelf$2 || Function("return this")();
+function getValue$1(object, key) {
   return object == null ? void 0 : object[key];
 }
-function isHostObject(value) {
+function isHostObject$1(value) {
   var result = false;
   if (value != null && typeof value.toString != "function") {
     try {
@@ -98,20 +98,20 @@ function isHostObject(value) {
   }
   return result;
 }
-var arrayProto = Array.prototype, funcProto = Function.prototype, objectProto$1 = Object.prototype;
-var coreJsData = root$1["__core-js_shared__"];
-var maskSrcKey = function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || "");
+var arrayProto$1 = Array.prototype, funcProto$1 = Function.prototype, objectProto$2 = Object.prototype;
+var coreJsData$1 = root$2["__core-js_shared__"];
+var maskSrcKey$1 = function() {
+  var uid = /[^.]+$/.exec(coreJsData$1 && coreJsData$1.keys && coreJsData$1.keys.IE_PROTO || "");
   return uid ? "Symbol(src)_1." + uid : "";
 }();
-var funcToString = funcProto.toString;
-var hasOwnProperty = objectProto$1.hasOwnProperty;
-var objectToString$1 = objectProto$1.toString;
-var reIsNative = RegExp("^" + funcToString.call(hasOwnProperty).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$");
-var Symbol$1 = root$1.Symbol, splice = arrayProto.splice;
-var Map = getNative(root$1, "Map"), nativeCreate = getNative(Object, "create");
-var symbolProto = Symbol$1 ? Symbol$1.prototype : void 0, symbolToString = symbolProto ? symbolProto.toString : void 0;
-function Hash(entries) {
+var funcToString$1 = funcProto$1.toString;
+var hasOwnProperty$1 = objectProto$2.hasOwnProperty;
+var objectToString$2 = objectProto$2.toString;
+var reIsNative$1 = RegExp("^" + funcToString$1.call(hasOwnProperty$1).replace(reRegExpChar$1, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$");
+var Symbol$2 = root$2.Symbol, splice$1 = arrayProto$1.splice;
+var Map$1 = getNative$1(root$2, "Map"), nativeCreate$1 = getNative$1(Object, "create");
+var symbolProto$1 = Symbol$2 ? Symbol$2.prototype : void 0, symbolToString$1 = symbolProto$1 ? symbolProto$1.toString : void 0;
+function Hash$1(entries) {
   var index2 = -1, length = entries ? entries.length : 0;
   this.clear();
   while (++index2 < length) {
@@ -119,35 +119,35 @@ function Hash(entries) {
     this.set(entry[0], entry[1]);
   }
 }
-function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+function hashClear$1() {
+  this.__data__ = nativeCreate$1 ? nativeCreate$1(null) : {};
 }
-function hashDelete(key) {
+function hashDelete$1(key) {
   return this.has(key) && delete this.__data__[key];
 }
-function hashGet(key) {
+function hashGet$1(key) {
   var data = this.__data__;
-  if (nativeCreate) {
+  if (nativeCreate$1) {
     var result = data[key];
-    return result === HASH_UNDEFINED ? void 0 : result;
+    return result === HASH_UNDEFINED$1 ? void 0 : result;
   }
-  return hasOwnProperty.call(data, key) ? data[key] : void 0;
+  return hasOwnProperty$1.call(data, key) ? data[key] : void 0;
 }
-function hashHas(key) {
+function hashHas$1(key) {
   var data = this.__data__;
-  return nativeCreate ? data[key] !== void 0 : hasOwnProperty.call(data, key);
+  return nativeCreate$1 ? data[key] !== void 0 : hasOwnProperty$1.call(data, key);
 }
-function hashSet(key, value) {
+function hashSet$1(key, value) {
   var data = this.__data__;
-  data[key] = nativeCreate && value === void 0 ? HASH_UNDEFINED : value;
+  data[key] = nativeCreate$1 && value === void 0 ? HASH_UNDEFINED$1 : value;
   return this;
 }
-Hash.prototype.clear = hashClear;
-Hash.prototype["delete"] = hashDelete;
-Hash.prototype.get = hashGet;
-Hash.prototype.has = hashHas;
-Hash.prototype.set = hashSet;
-function ListCache(entries) {
+Hash$1.prototype.clear = hashClear$1;
+Hash$1.prototype["delete"] = hashDelete$1;
+Hash$1.prototype.get = hashGet$1;
+Hash$1.prototype.has = hashHas$1;
+Hash$1.prototype.set = hashSet$1;
+function ListCache$1(entries) {
   var index2 = -1, length = entries ? entries.length : 0;
   this.clear();
   while (++index2 < length) {
@@ -155,11 +155,11 @@ function ListCache(entries) {
     this.set(entry[0], entry[1]);
   }
 }
-function listCacheClear() {
+function listCacheClear$1() {
   this.__data__ = [];
 }
-function listCacheDelete(key) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
+function listCacheDelete$1(key) {
+  var data = this.__data__, index2 = assocIndexOf$1(data, key);
   if (index2 < 0) {
     return false;
   }
@@ -167,19 +167,19 @@ function listCacheDelete(key) {
   if (index2 == lastIndex) {
     data.pop();
   } else {
-    splice.call(data, index2, 1);
+    splice$1.call(data, index2, 1);
   }
   return true;
 }
-function listCacheGet(key) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
+function listCacheGet$1(key) {
+  var data = this.__data__, index2 = assocIndexOf$1(data, key);
   return index2 < 0 ? void 0 : data[index2][1];
 }
-function listCacheHas(key) {
-  return assocIndexOf(this.__data__, key) > -1;
+function listCacheHas$1(key) {
+  return assocIndexOf$1(this.__data__, key) > -1;
 }
-function listCacheSet(key, value) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
+function listCacheSet$1(key, value) {
+  var data = this.__data__, index2 = assocIndexOf$1(data, key);
   if (index2 < 0) {
     data.push([key, value]);
   } else {
@@ -187,12 +187,12 @@ function listCacheSet(key, value) {
   }
   return this;
 }
-ListCache.prototype.clear = listCacheClear;
-ListCache.prototype["delete"] = listCacheDelete;
-ListCache.prototype.get = listCacheGet;
-ListCache.prototype.has = listCacheHas;
-ListCache.prototype.set = listCacheSet;
-function MapCache(entries) {
+ListCache$1.prototype.clear = listCacheClear$1;
+ListCache$1.prototype["delete"] = listCacheDelete$1;
+ListCache$1.prototype.get = listCacheGet$1;
+ListCache$1.prototype.has = listCacheHas$1;
+ListCache$1.prototype.set = listCacheSet$1;
+function MapCache$1(entries) {
   var index2 = -1, length = entries ? entries.length : 0;
   this.clear();
   while (++index2 < length) {
@@ -200,115 +200,115 @@ function MapCache(entries) {
     this.set(entry[0], entry[1]);
   }
 }
-function mapCacheClear() {
+function mapCacheClear$1() {
   this.__data__ = {
-    "hash": new Hash(),
-    "map": new (Map || ListCache)(),
-    "string": new Hash()
+    "hash": new Hash$1(),
+    "map": new (Map$1 || ListCache$1)(),
+    "string": new Hash$1()
   };
 }
-function mapCacheDelete(key) {
-  return getMapData(this, key)["delete"](key);
+function mapCacheDelete$1(key) {
+  return getMapData$1(this, key)["delete"](key);
 }
-function mapCacheGet(key) {
-  return getMapData(this, key).get(key);
+function mapCacheGet$1(key) {
+  return getMapData$1(this, key).get(key);
 }
-function mapCacheHas(key) {
-  return getMapData(this, key).has(key);
+function mapCacheHas$1(key) {
+  return getMapData$1(this, key).has(key);
 }
-function mapCacheSet(key, value) {
-  getMapData(this, key).set(key, value);
+function mapCacheSet$1(key, value) {
+  getMapData$1(this, key).set(key, value);
   return this;
 }
-MapCache.prototype.clear = mapCacheClear;
-MapCache.prototype["delete"] = mapCacheDelete;
-MapCache.prototype.get = mapCacheGet;
-MapCache.prototype.has = mapCacheHas;
-MapCache.prototype.set = mapCacheSet;
-function assocIndexOf(array, key) {
+MapCache$1.prototype.clear = mapCacheClear$1;
+MapCache$1.prototype["delete"] = mapCacheDelete$1;
+MapCache$1.prototype.get = mapCacheGet$1;
+MapCache$1.prototype.has = mapCacheHas$1;
+MapCache$1.prototype.set = mapCacheSet$1;
+function assocIndexOf$1(array, key) {
   var length = array.length;
   while (length--) {
-    if (eq(array[length][0], key)) {
+    if (eq$1(array[length][0], key)) {
       return length;
     }
   }
   return -1;
 }
-function baseGet(object, path) {
-  path = isKey(path, object) ? [path] : castPath(path);
+function baseGet$1(object, path) {
+  path = isKey$1(path, object) ? [path] : castPath$1(path);
   var index2 = 0, length = path.length;
   while (object != null && index2 < length) {
-    object = object[toKey(path[index2++])];
+    object = object[toKey$1(path[index2++])];
   }
   return index2 && index2 == length ? object : void 0;
 }
-function baseIsNative(value) {
-  if (!isObject$4(value) || isMasked(value)) {
+function baseIsNative$1(value) {
+  if (!isObject$5(value) || isMasked$1(value)) {
     return false;
   }
-  var pattern = isFunction$1(value) || isHostObject(value) ? reIsNative : reIsHostCtor;
-  return pattern.test(toSource(value));
+  var pattern = isFunction$2(value) || isHostObject$1(value) ? reIsNative$1 : reIsHostCtor$1;
+  return pattern.test(toSource$1(value));
 }
-function baseToString(value) {
+function baseToString$1(value) {
   if (typeof value == "string") {
     return value;
   }
-  if (isSymbol$1(value)) {
-    return symbolToString ? symbolToString.call(value) : "";
+  if (isSymbol$2(value)) {
+    return symbolToString$1 ? symbolToString$1.call(value) : "";
   }
   var result = value + "";
-  return result == "0" && 1 / value == -INFINITY ? "-0" : result;
+  return result == "0" && 1 / value == -INFINITY$1 ? "-0" : result;
 }
-function castPath(value) {
-  return isArray$1(value) ? value : stringToPath(value);
+function castPath$1(value) {
+  return isArray$2(value) ? value : stringToPath$1(value);
 }
-function getMapData(map, key) {
+function getMapData$1(map, key) {
   var data = map.__data__;
-  return isKeyable(key) ? data[typeof key == "string" ? "string" : "hash"] : data.map;
+  return isKeyable$1(key) ? data[typeof key == "string" ? "string" : "hash"] : data.map;
 }
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : void 0;
+function getNative$1(object, key) {
+  var value = getValue$1(object, key);
+  return baseIsNative$1(value) ? value : void 0;
 }
-function isKey(value, object) {
-  if (isArray$1(value)) {
+function isKey$1(value, object) {
+  if (isArray$2(value)) {
     return false;
   }
   var type = typeof value;
-  if (type == "number" || type == "symbol" || type == "boolean" || value == null || isSymbol$1(value)) {
+  if (type == "number" || type == "symbol" || type == "boolean" || value == null || isSymbol$2(value)) {
     return true;
   }
-  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) || object != null && value in Object(object);
+  return reIsPlainProp$1.test(value) || !reIsDeepProp$1.test(value) || object != null && value in Object(object);
 }
-function isKeyable(value) {
+function isKeyable$1(value) {
   var type = typeof value;
   return type == "string" || type == "number" || type == "symbol" || type == "boolean" ? value !== "__proto__" : value === null;
 }
-function isMasked(func) {
-  return !!maskSrcKey && maskSrcKey in func;
+function isMasked$1(func) {
+  return !!maskSrcKey$1 && maskSrcKey$1 in func;
 }
-var stringToPath = memoize(function(string) {
-  string = toString$1(string);
+var stringToPath$1 = memoize$1(function(string) {
+  string = toString$2(string);
   var result = [];
-  if (reLeadingDot.test(string)) {
+  if (reLeadingDot$1.test(string)) {
     result.push("");
   }
-  string.replace(rePropName, function(match2, number, quote, string2) {
-    result.push(quote ? string2.replace(reEscapeChar, "$1") : number || match2);
+  string.replace(rePropName$1, function(match2, number, quote, string2) {
+    result.push(quote ? string2.replace(reEscapeChar$1, "$1") : number || match2);
   });
   return result;
 });
-function toKey(value) {
-  if (typeof value == "string" || isSymbol$1(value)) {
+function toKey$1(value) {
+  if (typeof value == "string" || isSymbol$2(value)) {
     return value;
   }
   var result = value + "";
-  return result == "0" && 1 / value == -INFINITY ? "-0" : result;
+  return result == "0" && 1 / value == -INFINITY$1 ? "-0" : result;
 }
-function toSource(func) {
+function toSource$1(func) {
   if (func != null) {
     try {
-      return funcToString.call(func);
+      return funcToString$1.call(func);
     } catch (e) {
     }
     try {
@@ -318,9 +318,9 @@ function toSource(func) {
   }
   return "";
 }
-function memoize(func, resolver) {
+function memoize$1(func, resolver) {
   if (typeof func != "function" || resolver && typeof resolver != "function") {
-    throw new TypeError(FUNC_ERROR_TEXT$1);
+    throw new TypeError(FUNC_ERROR_TEXT$2);
   }
   var memoized = function() {
     var args = arguments, key = resolver ? resolver.apply(this, args) : args[0], cache = memoized.cache;
@@ -331,36 +331,36 @@ function memoize(func, resolver) {
     memoized.cache = cache.set(key, result);
     return result;
   };
-  memoized.cache = new (memoize.Cache || MapCache)();
+  memoized.cache = new (memoize$1.Cache || MapCache$1)();
   return memoized;
 }
-memoize.Cache = MapCache;
-function eq(value, other) {
+memoize$1.Cache = MapCache$1;
+function eq$1(value, other) {
   return value === other || value !== value && other !== other;
 }
-var isArray$1 = Array.isArray;
-function isFunction$1(value) {
-  var tag = isObject$4(value) ? objectToString$1.call(value) : "";
-  return tag == funcTag || tag == genTag;
+var isArray$2 = Array.isArray;
+function isFunction$2(value) {
+  var tag = isObject$5(value) ? objectToString$2.call(value) : "";
+  return tag == funcTag$1 || tag == genTag$1;
 }
-function isObject$4(value) {
+function isObject$5(value) {
   var type = typeof value;
   return !!value && (type == "object" || type == "function");
 }
-function isObjectLike$1(value) {
+function isObjectLike$2(value) {
   return !!value && typeof value == "object";
 }
-function isSymbol$1(value) {
-  return typeof value == "symbol" || isObjectLike$1(value) && objectToString$1.call(value) == symbolTag$1;
+function isSymbol$2(value) {
+  return typeof value == "symbol" || isObjectLike$2(value) && objectToString$2.call(value) == symbolTag$2;
 }
-function toString$1(value) {
-  return value == null ? "" : baseToString(value);
+function toString$2(value) {
+  return value == null ? "" : baseToString$1(value);
 }
-function get$3(object, path, defaultValue) {
-  var result = object == null ? void 0 : baseGet(object, path);
+function get$4(object, path, defaultValue) {
+  var result = object == null ? void 0 : baseGet$1(object, path);
   return result === void 0 ? defaultValue : result;
 }
-var lodash_get = get$3;
+var lodash_get$1 = get$4;
 var KAutocomplete_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$o = {
   directives: {
@@ -438,11 +438,11 @@ const _sfc_main$o = {
         } else if (this.returnObject) {
           this.$emit("update:modelValue", value);
         } else {
-          this.$emit("update:modelValue", lodash_get(value, this.itemValue, value));
+          this.$emit("update:modelValue", lodash_get$1(value, this.itemValue, value));
         }
       },
       get() {
-        return this.isObject(this.modelValue) ? this.modelValue : this.items.find((item) => lodash_get(item, this.itemValue, item) == this.modelValue);
+        return this.isObject(this.modelValue) ? this.modelValue : this.items.find((item) => lodash_get$1(item, this.itemValue, item) == this.modelValue);
       }
     },
     isValidSelection() {
@@ -457,13 +457,13 @@ const _sfc_main$o = {
       this.currentFocus = -1;
       if (this.localValue) {
         if (!this.combobox) {
-          this.inputText = lodash_get(this.localValue, this.itemText, "");
+          this.inputText = lodash_get$1(this.localValue, this.itemText, "");
         }
       }
     },
     value: {
       handler(v) {
-        this.inputText = lodash_get(this.localValue, this.itemText, v);
+        this.inputText = lodash_get$1(this.localValue, this.itemText, v);
       },
       immediate: true
     },
@@ -571,7 +571,7 @@ function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-5d5ae3fe"]]);
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-e3e33c7e"]]);
 var __glob_2_1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2684,7 +2684,7 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     ])) : createCommentVNode("", true)
   ]);
 }
-var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-d88a8dd6"]]);
+var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-6b5d45ef"]]);
 var __glob_2_7 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2898,7 +2898,7 @@ const _hoisted_1$b = { class: "k-spacer" };
 function _sfc_render$c(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$b);
 }
-var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-6a80ea12"]]);
+var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-8f2ba526"]]);
 var __glob_2_12 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2992,11 +2992,11 @@ const __default__ = {
 };
 const __injectCSSVars__ = () => {
   useCssVars((_ctx) => ({
-    "112ec90a": _ctx.switchWidthPx,
-    "18f01b1f": _ctx.heightPx,
-    "2882b84f": _ctx.innerSizePx,
-    "0bbfeb2e": _ctx.paddingPx,
-    "592a5980": _ctx.transPx
+    "1ed91f10": _ctx.switchWidthPx,
+    "70fd9959": _ctx.heightPx,
+    "1a925056": _ctx.innerSizePx,
+    "b87b5922": _ctx.paddingPx,
+    "a610b474": _ctx.transPx
   }));
 };
 const __setup__ = __default__.setup;
@@ -3159,7 +3159,7 @@ const _sfc_main$8 = {
   },
   computed: {
     userType() {
-      return lodash_get(this.userRec, "type", this.type);
+      return lodash_get$1(this.userRec, "type", this.type);
     },
     url() {
       if (this.userType == 0) {
@@ -3210,20 +3210,20 @@ const _sfc_main$7 = {
   },
   computed: {
     user_id() {
-      return lodash_get(this.localUserRec, "id") || lodash_get(this.localUserRec, "userid");
+      return lodash_get$1(this.localUserRec, "id") || lodash_get$1(this.localUserRec, "userid");
     },
     displayName() {
-      return lodash_get(this.localUserRec, "display_name") || lodash_get(this.localUserRec, "displayname");
+      return lodash_get$1(this.localUserRec, "display_name") || lodash_get$1(this.localUserRec, "displayname");
     },
     type() {
-      return lodash_get(this.localUserRec, "type");
+      return lodash_get$1(this.localUserRec, "type");
     }
   },
   watch: {
     userid: {
       handler(value) {
         if (value) {
-          this.$session.members.member(value, "v1").then((response) => this.localUserRec = lodash_get(response, "data.data"));
+          this.$session.members.member(value, "v1").then((response) => this.localUserRec = lodash_get$1(response, "data.data"));
         }
       },
       immediate: true
@@ -3266,30 +3266,30 @@ var __glob_2_18 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": KUserLink
 });
-var FUNC_ERROR_TEXT = "Expected a function";
+var FUNC_ERROR_TEXT$1 = "Expected a function";
 var NAN = 0 / 0;
-var symbolTag = "[object Symbol]";
+var symbolTag$1 = "[object Symbol]";
 var reTrim = /^\s+|\s+$/g;
 var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
 var reIsBinary = /^0b[01]+$/i;
 var reIsOctal = /^0o[0-7]+$/i;
 var freeParseInt = parseInt;
-var freeGlobal = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
-var freeSelf = typeof self == "object" && self && self.Object === Object && self;
-var root = freeGlobal || freeSelf || Function("return this")();
-var objectProto = Object.prototype;
-var objectToString = objectProto.toString;
+var freeGlobal$1 = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+var freeSelf$1 = typeof self == "object" && self && self.Object === Object && self;
+var root$1 = freeGlobal$1 || freeSelf$1 || Function("return this")();
+var objectProto$1 = Object.prototype;
+var objectToString$1 = objectProto$1.toString;
 var nativeMax = Math.max, nativeMin = Math.min;
 var now = function() {
-  return root.Date.now();
+  return root$1.Date.now();
 };
 function debounce(func, wait, options) {
   var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
   if (typeof func != "function") {
-    throw new TypeError(FUNC_ERROR_TEXT);
+    throw new TypeError(FUNC_ERROR_TEXT$1);
   }
   wait = toNumber(wait) || 0;
-  if (isObject$3(options)) {
+  if (isObject$4(options)) {
     leading = !!options.leading;
     maxing = "maxWait" in options;
     maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
@@ -3363,26 +3363,26 @@ function debounce(func, wait, options) {
   debounced.flush = flush;
   return debounced;
 }
-function isObject$3(value) {
+function isObject$4(value) {
   var type = typeof value;
   return !!value && (type == "object" || type == "function");
 }
-function isObjectLike(value) {
+function isObjectLike$1(value) {
   return !!value && typeof value == "object";
 }
-function isSymbol(value) {
-  return typeof value == "symbol" || isObjectLike(value) && objectToString.call(value) == symbolTag;
+function isSymbol$1(value) {
+  return typeof value == "symbol" || isObjectLike$1(value) && objectToString$1.call(value) == symbolTag$1;
 }
 function toNumber(value) {
   if (typeof value == "number") {
     return value;
   }
-  if (isSymbol(value)) {
+  if (isSymbol$1(value)) {
     return NAN;
   }
-  if (isObject$3(value)) {
+  if (isObject$4(value)) {
     var other = typeof value.valueOf == "function" ? value.valueOf() : value;
-    value = isObject$3(other) ? other + "" : other;
+    value = isObject$4(other) ? other + "" : other;
   }
   if (typeof value != "string") {
     return value === 0 ? value : +value;
@@ -3468,9 +3468,9 @@ class UserLookup {
       await semaphore.acquire(userId);
       if (!this.users[userId]) {
         const response = await session.members.member(userId, "v1");
-        const value = lodash_get(response, "data.data.id");
-        const type = lodash_get(response, "data.data.type");
-        const text = lodash_get(response, "data.data.name");
+        const value = lodash_get$1(response, "data.data.id");
+        const type = lodash_get$1(response, "data.data.type");
+        const text = lodash_get$1(response, "data.data.name");
         if (value) {
           this.users[userId] = { type, text, value };
         }
@@ -3571,9 +3571,9 @@ const _sfc_main$6 = {
         this.loading = true;
         const response = await this.$session.members.userQuery(v, this.options, "v1");
         this.items = response.data.data.map((item) => ({
-          text: lodash_get(item, "name_formatted"),
-          value: lodash_get(item, "id"),
-          type: lodash_get(item, "type")
+          text: lodash_get$1(item, "name_formatted"),
+          value: lodash_get$1(item, "id"),
+          type: lodash_get$1(item, "type")
         }));
         userLookup.registerUsers(this.items);
       } finally {
@@ -3581,7 +3581,7 @@ const _sfc_main$6 = {
       }
     }, 500),
     formatChoice(item) {
-      return lodash_get(item, "text", "");
+      return lodash_get$1(item, "text", "");
     },
     async loadInitialValue() {
       const initialValue = this.modelValue;
@@ -3646,7 +3646,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   }, 8, ["modelValue", "placeholder", "width", "loading", "search-input", "items", "return-object", "combobox", "editable"]);
 }
-var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-c73887b6"]]);
+var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-4c6f6e70"]]);
 var __glob_2_19 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -3830,7 +3830,7 @@ const _sfc_main = {
   },
   created() {
     this.tabs = this.$slots.default();
-    this.selectedTab = lodash_get(this.tabs, "[0].props.name");
+    this.selectedTab = lodash_get$1(this.tabs, "[0].props.name");
   }
 };
 const _hoisted_1 = { class: "k-tabs" };
@@ -3874,9 +3874,9 @@ var bind$2 = function bind(fn, thisArg) {
   };
 };
 var bind$1 = bind$2;
-var toString = Object.prototype.toString;
-function isArray(val) {
-  return toString.call(val) === "[object Array]";
+var toString$1 = Object.prototype.toString;
+function isArray$1(val) {
+  return toString$1.call(val) === "[object Array]";
 }
 function isUndefined(val) {
   return typeof val === "undefined";
@@ -3885,7 +3885,7 @@ function isBuffer(val) {
   return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor) && typeof val.constructor.isBuffer === "function" && val.constructor.isBuffer(val);
 }
 function isArrayBuffer(val) {
-  return toString.call(val) === "[object ArrayBuffer]";
+  return toString$1.call(val) === "[object ArrayBuffer]";
 }
 function isFormData(val) {
   return typeof FormData !== "undefined" && val instanceof FormData;
@@ -3905,30 +3905,30 @@ function isString(val) {
 function isNumber(val) {
   return typeof val === "number";
 }
-function isObject$2(val) {
+function isObject$3(val) {
   return val !== null && typeof val === "object";
 }
 function isPlainObject(val) {
-  if (toString.call(val) !== "[object Object]") {
+  if (toString$1.call(val) !== "[object Object]") {
     return false;
   }
   var prototype = Object.getPrototypeOf(val);
   return prototype === null || prototype === Object.prototype;
 }
 function isDate(val) {
-  return toString.call(val) === "[object Date]";
+  return toString$1.call(val) === "[object Date]";
 }
 function isFile(val) {
-  return toString.call(val) === "[object File]";
+  return toString$1.call(val) === "[object File]";
 }
 function isBlob(val) {
-  return toString.call(val) === "[object Blob]";
+  return toString$1.call(val) === "[object Blob]";
 }
-function isFunction(val) {
-  return toString.call(val) === "[object Function]";
+function isFunction$1(val) {
+  return toString$1.call(val) === "[object Function]";
 }
 function isStream(val) {
-  return isObject$2(val) && isFunction(val.pipe);
+  return isObject$3(val) && isFunction$1(val.pipe);
 }
 function isURLSearchParams(val) {
   return typeof URLSearchParams !== "undefined" && val instanceof URLSearchParams;
@@ -3949,7 +3949,7 @@ function forEach(obj, fn) {
   if (typeof obj !== "object") {
     obj = [obj];
   }
-  if (isArray(obj)) {
+  if (isArray$1(obj)) {
     for (var i = 0, l = obj.length; i < l; i++) {
       fn.call(null, obj[i], i, obj);
     }
@@ -3968,7 +3968,7 @@ function merge() {
       result[key] = merge(result[key], val);
     } else if (isPlainObject(val)) {
       result[key] = merge({}, val);
-    } else if (isArray(val)) {
+    } else if (isArray$1(val)) {
       result[key] = val.slice();
     } else {
       result[key] = val;
@@ -3996,20 +3996,20 @@ function stripBOM(content) {
   return content;
 }
 var utils$d = {
-  isArray,
+  isArray: isArray$1,
   isArrayBuffer,
   isBuffer,
   isFormData,
   isArrayBufferView,
   isString,
   isNumber,
-  isObject: isObject$2,
+  isObject: isObject$3,
   isPlainObject,
   isUndefined,
   isDate,
   isFile,
   isBlob,
-  isFunction,
+  isFunction: isFunction$1,
   isStream,
   isURLSearchParams,
   isStandardBrowserEnv,
@@ -4877,7 +4877,7 @@ var Axios_1 = Axios$1;
 function Cancel$1(message) {
   this.message = message;
 }
-Cancel$1.prototype.toString = function toString2() {
+Cancel$1.prototype.toString = function toString() {
   return "Cancel" + (this.message ? ": " + this.message : "");
 };
 Cancel$1.prototype.__CANCEL__ = true;
@@ -4952,6 +4952,293 @@ axios$2.isAxiosError = isAxiosError;
 axios$3.exports = axios$2;
 axios$3.exports.default = axios$2;
 var axios$1 = axios$3.exports;
+var FUNC_ERROR_TEXT = "Expected a function";
+var HASH_UNDEFINED = "__lodash_hash_undefined__";
+var INFINITY = 1 / 0;
+var funcTag = "[object Function]", genTag = "[object GeneratorFunction]", symbolTag = "[object Symbol]";
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/, reIsPlainProp = /^\w*$/, reLeadingDot = /^\./, rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+var reEscapeChar = /\\(\\)?/g;
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+var freeGlobal = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+var freeSelf = typeof self == "object" && self && self.Object === Object && self;
+var root = freeGlobal || freeSelf || Function("return this")();
+function getValue(object, key) {
+  return object == null ? void 0 : object[key];
+}
+function isHostObject(value) {
+  var result = false;
+  if (value != null && typeof value.toString != "function") {
+    try {
+      result = !!(value + "");
+    } catch (e) {
+    }
+  }
+  return result;
+}
+var arrayProto = Array.prototype, funcProto = Function.prototype, objectProto = Object.prototype;
+var coreJsData = root["__core-js_shared__"];
+var maskSrcKey = function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || "");
+  return uid ? "Symbol(src)_1." + uid : "";
+}();
+var funcToString = funcProto.toString;
+var hasOwnProperty = objectProto.hasOwnProperty;
+var objectToString = objectProto.toString;
+var reIsNative = RegExp("^" + funcToString.call(hasOwnProperty).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$");
+var Symbol$1 = root.Symbol, splice = arrayProto.splice;
+var Map = getNative(root, "Map"), nativeCreate = getNative(Object, "create");
+var symbolProto = Symbol$1 ? Symbol$1.prototype : void 0, symbolToString = symbolProto ? symbolProto.toString : void 0;
+function Hash(entries) {
+  var index2 = -1, length = entries ? entries.length : 0;
+  this.clear();
+  while (++index2 < length) {
+    var entry = entries[index2];
+    this.set(entry[0], entry[1]);
+  }
+}
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+}
+function hashDelete(key) {
+  return this.has(key) && delete this.__data__[key];
+}
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? void 0 : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : void 0;
+}
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== void 0 : hasOwnProperty.call(data, key);
+}
+function hashSet(key, value) {
+  var data = this.__data__;
+  data[key] = nativeCreate && value === void 0 ? HASH_UNDEFINED : value;
+  return this;
+}
+Hash.prototype.clear = hashClear;
+Hash.prototype["delete"] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+function ListCache(entries) {
+  var index2 = -1, length = entries ? entries.length : 0;
+  this.clear();
+  while (++index2 < length) {
+    var entry = entries[index2];
+    this.set(entry[0], entry[1]);
+  }
+}
+function listCacheClear() {
+  this.__data__ = [];
+}
+function listCacheDelete(key) {
+  var data = this.__data__, index2 = assocIndexOf(data, key);
+  if (index2 < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index2 == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index2, 1);
+  }
+  return true;
+}
+function listCacheGet(key) {
+  var data = this.__data__, index2 = assocIndexOf(data, key);
+  return index2 < 0 ? void 0 : data[index2][1];
+}
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+function listCacheSet(key, value) {
+  var data = this.__data__, index2 = assocIndexOf(data, key);
+  if (index2 < 0) {
+    data.push([key, value]);
+  } else {
+    data[index2][1] = value;
+  }
+  return this;
+}
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype["delete"] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+function MapCache(entries) {
+  var index2 = -1, length = entries ? entries.length : 0;
+  this.clear();
+  while (++index2 < length) {
+    var entry = entries[index2];
+    this.set(entry[0], entry[1]);
+  }
+}
+function mapCacheClear() {
+  this.__data__ = {
+    "hash": new Hash(),
+    "map": new (Map || ListCache)(),
+    "string": new Hash()
+  };
+}
+function mapCacheDelete(key) {
+  return getMapData(this, key)["delete"](key);
+}
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+function mapCacheSet(key, value) {
+  getMapData(this, key).set(key, value);
+  return this;
+}
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype["delete"] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+function baseGet(object, path) {
+  path = isKey(path, object) ? [path] : castPath(path);
+  var index2 = 0, length = path.length;
+  while (object != null && index2 < length) {
+    object = object[toKey(path[index2++])];
+  }
+  return index2 && index2 == length ? object : void 0;
+}
+function baseIsNative(value) {
+  if (!isObject$2(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = isFunction(value) || isHostObject(value) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+function baseToString(value) {
+  if (typeof value == "string") {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : "";
+  }
+  var result = value + "";
+  return result == "0" && 1 / value == -INFINITY ? "-0" : result;
+}
+function castPath(value) {
+  return isArray(value) ? value : stringToPath(value);
+}
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key) ? data[typeof key == "string" ? "string" : "hash"] : data.map;
+}
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : void 0;
+}
+function isKey(value, object) {
+  if (isArray(value)) {
+    return false;
+  }
+  var type = typeof value;
+  if (type == "number" || type == "symbol" || type == "boolean" || value == null || isSymbol(value)) {
+    return true;
+  }
+  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) || object != null && value in Object(object);
+}
+function isKeyable(value) {
+  var type = typeof value;
+  return type == "string" || type == "number" || type == "symbol" || type == "boolean" ? value !== "__proto__" : value === null;
+}
+function isMasked(func) {
+  return !!maskSrcKey && maskSrcKey in func;
+}
+var stringToPath = memoize(function(string) {
+  string = toString2(string);
+  var result = [];
+  if (reLeadingDot.test(string)) {
+    result.push("");
+  }
+  string.replace(rePropName, function(match2, number, quote, string2) {
+    result.push(quote ? string2.replace(reEscapeChar, "$1") : number || match2);
+  });
+  return result;
+});
+function toKey(value) {
+  if (typeof value == "string" || isSymbol(value)) {
+    return value;
+  }
+  var result = value + "";
+  return result == "0" && 1 / value == -INFINITY ? "-0" : result;
+}
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {
+    }
+    try {
+      return func + "";
+    } catch (e) {
+    }
+  }
+  return "";
+}
+function memoize(func, resolver) {
+  if (typeof func != "function" || resolver && typeof resolver != "function") {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments, key = resolver ? resolver.apply(this, args) : args[0], cache = memoized.cache;
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result);
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache)();
+  return memoized;
+}
+memoize.Cache = MapCache;
+function eq(value, other) {
+  return value === other || value !== value && other !== other;
+}
+var isArray = Array.isArray;
+function isFunction(value) {
+  var tag = isObject$2(value) ? objectToString.call(value) : "";
+  return tag == funcTag || tag == genTag;
+}
+function isObject$2(value) {
+  var type = typeof value;
+  return !!value && (type == "object" || type == "function");
+}
+function isObjectLike(value) {
+  return !!value && typeof value == "object";
+}
+function isSymbol(value) {
+  return typeof value == "symbol" || isObjectLike(value) && objectToString.call(value) == symbolTag;
+}
+function toString2(value) {
+  return value == null ? "" : baseToString(value);
+}
+function get$3(object, path, defaultValue) {
+  var result = object == null ? void 0 : baseGet(object, path);
+  return result === void 0 ? defaultValue : result;
+}
+var lodash_get = get$3;
 function isNil(value) {
   return value == null;
 }
