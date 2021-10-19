@@ -1,14 +1,35 @@
-# Vue 3 + Vite
+# @kweli/cs-vue-vite-plugin
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## What is this?
 
-## Recommended IDE Setup
+This package is an opinionated Vue component library for creating user interfaces in OpenText Content Server.  It can be seen as a rewrite of [cs-vue-plugin](https://github.com/chriscdn/cs-vue-plugin), but with some key differences:
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+- written in ES6, which makes it work nicely with [Vite](https://vitejs.dev/)
+- compatible with [Vue 3](https://v3.vuejs.org/)
+- uses [Tailwind CSS](https://tailwindcss.com/) for styling
+- dropped support for Vuetify
 
+## Installation
 
-## WHAT THIS IS!
+```bash
+yarn add https://github.com/chriscdn/cs-vue-vite-plugin
+```
 
-This project demonstrates how to bundle a library of Vue components for use in another Vite project.
+In your Vue/Vite project (likely in `main.js`):
 
-[Got the idea here](https://github.com/vitejs/vite/issues/1182)
+```js
+import CSVueVite from '@kweli/cs-vue-vite-plugin'
+import '@kweli/cs-vue-vite-plugin/dist/style.css'
+
+const initialState = {
+	baseURL: '/otcs/cs.exe',
+	img: '/img/',
+	otcsticket: 'ZZZZZZZ',
+	datelong: 'YYYY-MM-DD HH:mm',
+	dateshort: 'YYYY-MM-DD'
+}
+
+app.use(CSVueVite, initialState)
+```
+
+This automatically registers all components in `~/src/components/`.

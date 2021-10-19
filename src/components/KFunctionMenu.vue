@@ -8,8 +8,16 @@
     </span>
 </template>
 <script>
+/**
+ * Creates a Content Server function menu.
+ *
+ * ```
+ * <KFunctionMenu :dataid="2000" />
+ * ```
+ */
 export default {
     props: {
+        // The DataId of the node.
         dataid: {
             type: Number,
             required: true,

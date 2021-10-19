@@ -3798,13 +3798,13 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ])) : createCommentVNode("", true);
 }
-var TabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
+var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
 var __glob_2_24 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": TabItem
+  "default": KTabItem
 });
-var Tabs_vue_vue_type_style_index_0_lang = "";
+var KTabs_vue_vue_type_style_index_0_lang = "";
 const _sfc_main = {
   provide() {
     return {
@@ -3857,11 +3857,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-var Tabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 var __glob_2_25 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": Tabs
+  "default": KTabs
 });
 var axios$3 = { exports: {} };
 var bind$2 = function bind(fn, thisArg) {
@@ -6380,7 +6380,7 @@ var Session_1 = Session2;
 var styles = "";
 var index = {
   install(Vue, options) {
-    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageTitle.vue": __glob_2_7, "./components/KScratch.vue": __glob_2_8, "./components/KSelect.vue": __glob_2_9, "./components/KSnackbar.vue": __glob_2_10, "./components/KSortHeader.vue": __glob_2_11, "./components/KSpacer.vue": __glob_2_12, "./components/KSpinner.vue": __glob_2_13, "./components/KSwitch.vue": __glob_2_14, "./components/KTable.vue": __glob_2_15, "./components/KTextArea.vue": __glob_2_16, "./components/KUserGIF.vue": __glob_2_17, "./components/KUserLink.vue": __glob_2_18, "./components/KUserPicker.vue": __glob_2_19, "./components/Card/KCard.vue": __glob_2_20, "./components/Card/KCardActions.vue": __glob_2_21, "./components/Card/KCardText.vue": __glob_2_22, "./components/Card/KCardTitle.vue": __glob_2_23, "./components/Tabs/TabItem.vue": __glob_2_24, "./components/Tabs/Tabs.vue": __glob_2_25 };
+    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageTitle.vue": __glob_2_7, "./components/KScratch.vue": __glob_2_8, "./components/KSelect.vue": __glob_2_9, "./components/KSnackbar.vue": __glob_2_10, "./components/KSortHeader.vue": __glob_2_11, "./components/KSpacer.vue": __glob_2_12, "./components/KSpinner.vue": __glob_2_13, "./components/KSwitch.vue": __glob_2_14, "./components/KTable.vue": __glob_2_15, "./components/KTextArea.vue": __glob_2_16, "./components/KUserGIF.vue": __glob_2_17, "./components/KUserLink.vue": __glob_2_18, "./components/KUserPicker.vue": __glob_2_19, "./components/Card/KCard.vue": __glob_2_20, "./components/Card/KCardActions.vue": __glob_2_21, "./components/Card/KCardText.vue": __glob_2_22, "./components/Card/KCardTitle.vue": __glob_2_23, "./components/Tabs/KTabItem.vue": __glob_2_24, "./components/Tabs/KTabs.vue": __glob_2_25 };
     Object.entries(components).forEach(([path, definition]) => {
       const componentName = path.split("/").pop().replace(/\.\w+$/, "");
       Vue.component(componentName, definition.default);
