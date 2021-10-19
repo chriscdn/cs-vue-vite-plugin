@@ -32,4 +32,10 @@ const initialState = {
 app.use(CSVueVite, initialState)
 ```
 
-This automatically registers all components in `~/src/components/`.  It also registers a global `$session` (see [@kweli/cs-rest](https://github.com/chriscdn/cs-rest)) for issuing REST and RPC requests to Content Server.
+This automatically registers all components in `~/src/components/`.  
+
+The package also uses [@kweli/cs-rest](https://github.com/chriscdn/cs-rest) to create a global `$session` object, which can be used to issue REST and RPC calls to Content Server.  E.g., from within your component:
+
+```js
+const response = await this.$session.get('/api/v1/nodes/2000')
+```
