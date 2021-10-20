@@ -24,10 +24,10 @@ var _export_sfc = (sfc, props) => {
   }
   return sfc;
 };
-const _sfc_main$p = {};
+const _sfc_main$q = {};
 const _hoisted_1$l = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
 const _hoisted_2$a = ["href"];
-function _sfc_render$o(_ctx, _cache) {
+function _sfc_render$p(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
     _hoisted_1$l,
     createElementVNode("a", {
@@ -35,7 +35,7 @@ function _sfc_render$o(_ctx, _cache) {
     }, "Admin Home", 8, _hoisted_2$a)
   ], 64);
 }
-var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
+var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
 var __glob_2_0 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -362,7 +362,7 @@ function get$4(object, path, defaultValue) {
 }
 var lodash_get$1 = get$4;
 var KAutocomplete_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$o = {
+const _sfc_main$p = {
   directives: {
     ClickAway: directive
   },
@@ -525,7 +525,7 @@ const _hoisted_3$7 = {
   class: "k-autocomplete-items"
 };
 const _hoisted_4$4 = ["onClick"];
-function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return withDirectives((openBlock(), createElementBlock("div", {
     class: "k-autocomplete",
@@ -571,13 +571,13 @@ function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-e3e33c7e"]]);
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__scopeId", "data-v-e3e33c7e"]]);
 var __glob_2_1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KAutocomplete
 });
-const _sfc_main$n = {
+const _sfc_main$o = {
   props: {
     nodeRec: {
       type: Object,
@@ -600,7 +600,7 @@ const _hoisted_4$3 = ["href"];
 const _hoisted_5 = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_6 = /* @__PURE__ */ createTextVNode();
 const _hoisted_7 = ["innerHTML"];
-function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
   return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$j, [
     $props.image ? (openBlock(), createElementBlock("img", {
@@ -622,14 +622,14 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, _hoisted_7)
   ])) : createCommentVNode("", true);
 }
-var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
+var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
 var __glob_2_2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KBrowseLink
 });
 var KButton_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$m = {
+const _sfc_main$n = {
   emits: ["click"],
   props: {
     small: {
@@ -645,7 +645,7 @@ const _sfc_main$m = {
     }
   }
 };
-function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("button", mergeProps({
     class: ["k-button", $options.classObj],
     type: "button"
@@ -655,7 +655,7 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ], 16);
 }
-var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
+var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
 var __glob_2_3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2122,7 +2122,7 @@ function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 function cleanEscapedString(input) {
   return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
 }
-const _sfc_main$l = {
+const _sfc_main$m = {
   props: {
     modelValue: {
       type: [String, Date],
@@ -2170,7 +2170,7 @@ const _sfc_main$l = {
 const _hoisted_1$i = ["type"];
 const _hoisted_2$7 = /* @__PURE__ */ createTextVNode("Now");
 const _hoisted_3$5 = /* @__PURE__ */ createTextVNode("Clear");
-function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   return openBlock(), createElementBlock("div", null, [
     withDirectives(createElementVNode("input", {
@@ -2202,7 +2202,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     })
   ]);
 }
-var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k]]);
+var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
 var __glob_2_4 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2452,7 +2452,7 @@ var enableBodyScroll = function enableBodyScroll2(targetElement) {
   }
 };
 var KDialog_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$k = {
+const _sfc_main$l = {
   mixins: [measurables],
   directives: {
     ClickAway: directive
@@ -2528,7 +2528,7 @@ const _hoisted_1$h = {
   key: 0,
   class: "k-dialog"
 };
-function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
@@ -2550,13 +2550,13 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     })
   ], 64);
 }
-var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
+var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k]]);
 var __glob_2_5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KDialog
 });
-const _sfc_main$j = {
+const _sfc_main$k = {
   props: {
     dataid: {
       type: Number,
@@ -2623,7 +2623,7 @@ const _hoisted_1$g = { key: 0 };
 const _hoisted_2$6 = ["id"];
 const _hoisted_3$4 = ["src"];
 const _hoisted_4$2 = ["id", "src"];
-function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   return $props.dataid ? (openBlock(), createElementBlock("span", _hoisted_1$g, [
     createElementVNode("a", {
       id: $options.aid,
@@ -2653,11 +2653,80 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, ["id"]), setBlockTracking(1), _cache[3])
   ])) : createCommentVNode("", true);
 }
-var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
+var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
 var __glob_2_6 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KFunctionMenu
+});
+const _sfc_main$j = {
+  props: {
+    mimetypes: {
+      type: Array,
+      default: null
+    }
+  },
+  data() {
+    return {
+      active: false,
+      lastTarget: null
+    };
+  },
+  mounted() {
+    window.addEventListener("dragenter", this.dragenter);
+    window.addEventListener("dragleave", this.dragleave);
+    window.addEventListener("dragover", this.dragover);
+    window.addEventListener("drop", this.drop);
+  },
+  beforeUnmount() {
+    window.removeEventListener("dragenter", this.dragenter);
+    window.removeEventListener("dragleave", this.dragleave);
+    window.removeEventListener("dragover", this.dragover);
+    window.removeEventListener("drop", this.drop);
+  },
+  methods: {
+    isFile(event) {
+      return event.dataTransfer.types.some((item) => item === "Files");
+    },
+    dragenter(event) {
+      if (this.isFile(event)) {
+        this.lastTarget = event.target;
+        this.active = true;
+      }
+    },
+    dragleave(event) {
+      event.preventDefault();
+      if (event.target === this.lastTarget || event.target === window.document) {
+        this.active = false;
+      }
+    },
+    dragover(event) {
+      event.preventDefault();
+    },
+    drop(event) {
+      event.preventDefault();
+      if (event.dataTransfer && event.dataTransfer.files.length) {
+        this.$emit("predrop");
+        let files = Array.from(event.dataTransfer.files);
+        if (this.mimetypes) {
+          files = files.filter((file) => this.mimetypes.includes(file.type));
+        }
+        this.$emit("drop", files);
+      }
+      this.active = false;
+    }
+  }
+};
+function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [
+    renderSlot(_ctx.$slots, "default", { active: $data.active })
+  ]);
+}
+var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
+var __glob_2_7 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": KPageDropZone
 });
 var KPageTitle_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$i = {
@@ -2685,7 +2754,7 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-6b5d45ef"]]);
-var __glob_2_7 = /* @__PURE__ */ Object.freeze({
+var __glob_2_8 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KPageTitle
@@ -2706,7 +2775,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
-var __glob_2_8 = /* @__PURE__ */ Object.freeze({
+var __glob_2_9 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KScratch
@@ -2759,7 +2828,7 @@ function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
-var __glob_2_9 = /* @__PURE__ */ Object.freeze({
+var __glob_2_10 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSelect
@@ -2836,7 +2905,7 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
-var __glob_2_10 = /* @__PURE__ */ Object.freeze({
+var __glob_2_11 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSnackbar
@@ -2887,7 +2956,7 @@ function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d]]);
-var __glob_2_11 = /* @__PURE__ */ Object.freeze({
+var __glob_2_12 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSortHeader
@@ -2899,7 +2968,7 @@ function _sfc_render$c(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$b);
 }
 var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-8f2ba526"]]);
-var __glob_2_12 = /* @__PURE__ */ Object.freeze({
+var __glob_2_13 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSpacer
@@ -2931,7 +3000,7 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("svg", _hoisted_1$a, _hoisted_4$1);
 }
 var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
-var __glob_2_13 = /* @__PURE__ */ Object.freeze({
+var __glob_2_14 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSpinner
@@ -3016,7 +3085,7 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_2$2, 2);
 }
 var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
-var __glob_2_14 = /* @__PURE__ */ Object.freeze({
+var __glob_2_15 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSwitch
@@ -3053,7 +3122,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2);
 }
 var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
-var __glob_2_15 = /* @__PURE__ */ Object.freeze({
+var __glob_2_16 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTable
@@ -3132,7 +3201,7 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
-var __glob_2_16 = /* @__PURE__ */ Object.freeze({
+var __glob_2_17 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTextArea
@@ -3183,7 +3252,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 12, _hoisted_1$7)) : createCommentVNode("", true);
 }
 var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
-var __glob_2_17 = /* @__PURE__ */ Object.freeze({
+var __glob_2_18 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserGIF
@@ -3261,7 +3330,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
-var __glob_2_18 = /* @__PURE__ */ Object.freeze({
+var __glob_2_19 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserLink
@@ -3647,7 +3716,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["modelValue", "placeholder", "width", "loading", "search-input", "items", "return-object", "combobox", "editable"]);
 }
 var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-4c6f6e70"]]);
-var __glob_2_19 = /* @__PURE__ */ Object.freeze({
+var __glob_2_20 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserPicker
@@ -3727,7 +3796,7 @@ const _sfc_main$5 = {
     return h(tag, __spreadProps(__spreadValues({}, data), { class: this.classObj, style: [this.measurableStyles] }), [...this.$slots.default()]);
   }
 };
-var __glob_2_20 = /* @__PURE__ */ Object.freeze({
+var __glob_2_21 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _sfc_main$5
@@ -3741,7 +3810,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
-var __glob_2_21 = /* @__PURE__ */ Object.freeze({
+var __glob_2_22 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardActions
@@ -3755,7 +3824,7 @@ function _sfc_render$3(_ctx, _cache) {
   ]);
 }
 var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
-var __glob_2_22 = /* @__PURE__ */ Object.freeze({
+var __glob_2_23 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardText
@@ -3769,7 +3838,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
-var __glob_2_23 = /* @__PURE__ */ Object.freeze({
+var __glob_2_24 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardTitle
@@ -3799,7 +3868,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
-var __glob_2_24 = /* @__PURE__ */ Object.freeze({
+var __glob_2_25 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTabItem
@@ -3858,7 +3927,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-var __glob_2_25 = /* @__PURE__ */ Object.freeze({
+var __glob_2_26 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTabs
@@ -6380,7 +6449,7 @@ var Session_1 = Session2;
 var styles = "";
 var index = {
   install(Vue, options) {
-    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageTitle.vue": __glob_2_7, "./components/KScratch.vue": __glob_2_8, "./components/KSelect.vue": __glob_2_9, "./components/KSnackbar.vue": __glob_2_10, "./components/KSortHeader.vue": __glob_2_11, "./components/KSpacer.vue": __glob_2_12, "./components/KSpinner.vue": __glob_2_13, "./components/KSwitch.vue": __glob_2_14, "./components/KTable.vue": __glob_2_15, "./components/KTextArea.vue": __glob_2_16, "./components/KUserGIF.vue": __glob_2_17, "./components/KUserLink.vue": __glob_2_18, "./components/KUserPicker.vue": __glob_2_19, "./components/Card/KCard.vue": __glob_2_20, "./components/Card/KCardActions.vue": __glob_2_21, "./components/Card/KCardText.vue": __glob_2_22, "./components/Card/KCardTitle.vue": __glob_2_23, "./components/Tabs/KTabItem.vue": __glob_2_24, "./components/Tabs/KTabs.vue": __glob_2_25 };
+    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAutocomplete.vue": __glob_2_1, "./components/KBrowseLink.vue": __glob_2_2, "./components/KButton.vue": __glob_2_3, "./components/KDateTimePicker.vue": __glob_2_4, "./components/KDialog.vue": __glob_2_5, "./components/KFunctionMenu.vue": __glob_2_6, "./components/KPageDropZone.vue": __glob_2_7, "./components/KPageTitle.vue": __glob_2_8, "./components/KScratch.vue": __glob_2_9, "./components/KSelect.vue": __glob_2_10, "./components/KSnackbar.vue": __glob_2_11, "./components/KSortHeader.vue": __glob_2_12, "./components/KSpacer.vue": __glob_2_13, "./components/KSpinner.vue": __glob_2_14, "./components/KSwitch.vue": __glob_2_15, "./components/KTable.vue": __glob_2_16, "./components/KTextArea.vue": __glob_2_17, "./components/KUserGIF.vue": __glob_2_18, "./components/KUserLink.vue": __glob_2_19, "./components/KUserPicker.vue": __glob_2_20, "./components/Card/KCard.vue": __glob_2_21, "./components/Card/KCardActions.vue": __glob_2_22, "./components/Card/KCardText.vue": __glob_2_23, "./components/Card/KCardTitle.vue": __glob_2_24, "./components/Tabs/KTabItem.vue": __glob_2_25, "./components/Tabs/KTabs.vue": __glob_2_26 };
     Object.entries(components).forEach(([path, definition]) => {
       const componentName = path.split("/").pop().replace(/\.\w+$/, "");
       Vue.component(componentName, definition.default);

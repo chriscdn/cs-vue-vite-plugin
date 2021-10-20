@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             index: 0,
-            nitems: [],
+            nitems: {},
         }
     },
     provide() {
