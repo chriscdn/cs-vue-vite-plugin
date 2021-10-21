@@ -1,41 +1,16 @@
 <template>
     <div v-click-away="setBlur" class="k-autocomplete" :style="[style]">
         <slot name="prepend" :item="localValue"></slot>
-
         <div class="k-autocomplete-input">
-            <input
-                class="k-input"
-                ref="input"
-                v-model="inputText"
-                type="search"
-                autocomplete="off"
-                :class="{ invalidSelection: !isValidSelection }"
-                :placeholder="placeholderText"
-                :readonly="!editable"
-                @search="clearInput"
-                @keydown.arrow-up.prevent="currentFocus = Math.max(-1, currentFocus - 1)"
-                @keydown.arrow-down.prevent="currentFocus = Math.min(items.length - 1, currentFocus + 1)"
-                @keydown.enter.prevent="select(currentFocus)"
-                @focus="setFocus"
-                @keydown.tab="setBlur"
-                @keyup="keyup"
-            />
-
+            <input class="k-input" ref="input" v-model="inputText" type="search" autocomplete="off" :class="{ invalidSelection: !isValidSelection }" :placeholder="placeholderText" :readonly="!editable" @search="clearInput" @keydown.arrow-up.prevent="currentFocus = Math.max(-1, currentFocus - 1)" @keydown.arrow-down.prevent="currentFocus = Math.min(items.length - 1, currentFocus + 1)" @keydown.enter.prevent="select(currentFocus)" @focus="setFocus" @keydown.tab="setBlur" @keyup="keyup" />
             <div v-if="focus && items.length && !!inputText" class="k-autocomplete-items">
-                <div
-                    v-for="(item, index) in itemsFiltered"
-                    :key="index"
-                    class="k-autocomplete-item"
-                    :class="{ 'k-autocomplete-active': currentFocus == index }"
-                    @click="select(index)"
-                >
+                <div v-for="(item, index) in itemsFiltered" :key="index" class="k-autocomplete-item" :class="{ 'k-autocomplete-active': currentFocus == index }" @click="select(index)">
                     <slot name="item" :item="item">{{ item }}</slot>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
 <script>
 import { directive } from 'vue3-click-away'
 
@@ -71,8 +46,8 @@ export default {
             default: 'Start typing...',
         },
         // readonly: {
-        // 	type: Boolean,
-        // 	default: false
+        //  type: Boolean,
+        //  default: false
         // },
         width: {
             type: [String, Number],
@@ -151,8 +126,11 @@ export default {
             if (this.localValue) {
                 // this.destroyWatcher()
 
+                // if (!this.combobox) {
+                // this.inputText = get(this.localValue, this.itemText, '')
+                // }
                 if (!this.combobox) {
-                    this.inputText = get(this.localValue, this.itemText, '')
+                    this.inputText = this.isObject(this.localValue) ? get(this.localValue, this.itemText, '') : this.localValue
                 }
             }
         },
@@ -242,6 +220,7 @@ export default {
 
     .k-autocomplete-input {
         @apply flex-grow relative;
+
         input {
             @apply w-full;
         }
@@ -266,9 +245,9 @@ export default {
 
         .k-autocomplete-item {
             @apply p-2 bg-white cursor-pointer;
-            @apply border border-t-0 border-l-0 border-r-0  border-solid  border-gray-300;
+            @apply border border-t-0 border-l-0 border-r-0 border-solid border-gray-300;
             @apply flex items-center;
-            @apply hover:bg-gray-200;
+            @apply hover: bg-gray-200;
         }
     }
 
