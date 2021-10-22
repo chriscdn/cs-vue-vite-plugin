@@ -22,24 +22,29 @@ export default {
 
     data() {
         return {
-            tabs: [],
+            // tabs: [],
             selectedTab: null,
         }
     },
 
     methods: {
         selectTab(tab) {
-            this.selectedTab = tab.props.name
+            this.selectedTab = get(tab, 'props.name')
         },
         classObj(tab) {
             return {
                 'k-tabs-nav-tab': true,
-                'k-tabs-active': this.selectedTab == tab.props.name,
+                'k-tabs-active': this.selectedTab == get(tab, 'props.name'),
             }
         },
     },
-    created() {
-        this.tabs = this.$slots.default()
+    computed: {
+        tabs() {
+            return this.$slots.default().filter((item) => Boolean(item.props))
+        },
+    },
+    mounted() {
+        // this.tabs = this.$slots.default()
         // todo - use the #anchor
         this.selectedTab = get(this.tabs, '[0].props.name')
     },
@@ -51,11 +56,10 @@ export default {
     // margin-top: 1em;
     @apply my-4;
     .k-tabs-nav {
-        @apply border border-solid  border-gray-400 border-t-0 border-l-0 border-r-0;
+        @apply border border-solid border-gray-400 border-t-0 border-l-0 border-r-0;
         @apply flex;
 
         .k-tabs-nav-tab {
-            // @apply inline;
             @apply ml-2;
             @apply px-2 py-1;
             @apply whitespace-nowrap;

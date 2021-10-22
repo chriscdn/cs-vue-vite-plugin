@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import get from 'lodash.get'
+
 export default {
     inject: ['tabs'],
     props: {
@@ -19,7 +21,7 @@ export default {
     },
     computed: {
         isSelected() {
-            return this.name == this.tabs.selectedTab
+            return this.name == get(this.tabs, 'selectedTab')
         },
     },
 }

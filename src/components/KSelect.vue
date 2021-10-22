@@ -1,7 +1,12 @@
 <template>
-    <select v-model="localValue" class="k-input">
-        <option v-for="item in items" :key="getItemValue(item)" :value="getItemValue(item)">{{ getItemText(item) }}</option>
-    </select>
+    <div class="k-select">
+        <select v-model="localValue" class="k-input">
+            <option v-for="item in items" :key="getItemValue(item)" :value="getItemValue(item)">{{ getItemText(item) }}</option>
+        </select>
+        <transition name="fade">
+            <KSpinner v-if="loading" class="k-select--spinner" />
+        </transition>
+    </div>
 </template>
 
 <script>
@@ -19,6 +24,10 @@ export default {
         items: {
             type: Array,
             default: () => [],
+        },
+        loading: {
+            type: Boolean,
+            default: false,
         },
         itemValue: {
             type: String,
@@ -57,3 +66,12 @@ export default {
     },
 }
 </script>
+
+<style lang="less">
+.k-select {
+    @apply flex items-center;
+    .k-select--spinner {
+        @apply ml-1;
+    }
+}
+</style>

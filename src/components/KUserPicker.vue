@@ -1,5 +1,6 @@
 <template>
     <KAutocomplete
+        class="k-user-picker"
         v-model="localValue"
         :placeholder="placeholder"
         :width="width"
@@ -191,9 +192,11 @@ export default {
     },
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 // spacing between user/group icon and label
-img {
-    margin-right: 0.5em;
+.k-user-picker {
+    img {
+        @apply mr-1;
+    }
 }
 </style>

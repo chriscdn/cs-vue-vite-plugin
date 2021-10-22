@@ -3,22 +3,30 @@
 
     <div class="k-snackbar">
         <transition-group name="slide" tag="div" mode="out-in">
-            <div v-for="item in items" :key="item.index" class="k-snackbar-item" :class="classObj(item)">{{ item.msg }}</div>
+            <div v-for="item in items" :key="item.index" class="k-snackbar-item" :class="classObj(item)">
+                <div class="flex-grow">
+                    <div v-if="item.title" class="k-snackbar-title">{{ item.title }}</div>
+                    <div v-if="item.message" class="k-snackbar-text">{{ item.message }}</div>
+                </div>
+                <div v-if="item.action" class="pl-5 k-snackbar-action">
+                    <a href="#" @click.prevent="action(item)">{{ item.actionLabel }}</a>
+                </div>
+            </div>
         </transition-group>
     </div>
 </template>
 
 <script>
 export default {
+    provide() {
+        return {
+            ksnackbar: this,
+        }
+    },
     data() {
         return {
             index: 0,
             nitems: {},
-        }
-    },
-    provide() {
-        return {
-            ksnackbar: this,
         }
     },
     computed: {
@@ -33,28 +41,49 @@ export default {
                 'k-snackbar-item--error': item.type == 'error',
             }
         },
+        action(item) {
+            const cb = item.action
+            cb(() => this.dismiss(item.index))
+        },
+        dismiss(index) {
+            // this.$delete(this.nitems, index)
+            delete this.nitems[index]
+        },
         nextIndex() {
             this.index += 1
             return this.index
         },
-        success(msg, timeout = 6000) {
-            this.queue(msg, timeout, 'success')
+        success({ title, message, timeout, actionLabel, action }) {
+            this.queue('success', { message, title, timeout, actionLabel, action })
         },
-        error(msg, timeout = 6000) {
-            this.queue(msg, timeout, 'error')
+        error({ title, message, timeout, actionLabel, action }) {
+            this.queue('error', { message, title, timeout, actionLabel, action })
         },
-        queue(msg, timeout, type) {
+        queue(type, { title, message, timeout = 6000, actionLabel = 'close', action }) {
             const index = this.nextIndex()
 
-            this.nitems[index] = {
-                msg,
-                index,
-                type,
+            if (action == null) {
+                // if no action is specified, then make the default the close action
+                action = () => this.dismiss(index)
             }
 
-            setInterval(() => {
-                delete this.nitems[index]
-            }, timeout)
+            this.nitems[index] = {
+                title,
+                message,
+                index,
+                type,
+                actionLabel,
+                action,
+            }
+
+            // Vue3
+            // this.nitems[index] = {
+            // 	message,
+            // 	index,
+            // 	type,
+            // }
+
+            setInterval(() => this.dismiss(index), timeout)
         },
     },
 }
@@ -62,33 +91,42 @@ export default {
 
 <style lang="less">
 .k-snackbar {
-    // z-20 puts it above the KDialog overlay, which has z-10
-    @apply fixed top-0 right-0 z-20;
+    @apply fixed top-0 right-0 z-20 w-80;
     .k-snackbar-item {
-        @apply py-3 px-6  my-3 mx-6 rounded text-lg;
+        @apply py-5 px-4 my-3 mx-4 rounded flex items-center;
+
+        .k-snackbar-title {
+            @apply flex items-center;
+            @apply text-lg;
+        }
+        .k-snackbar-text {
+            @apply flex items-center;
+            @apply text-base;
+        }
+        .k-snackbar-action a {
+            @apply flex items-center;
+            @apply text-sm text-white;
+        }
+
         &.k-snackbar-item--success {
             @apply text-white bg-green-700 bg-opacity-95;
+            @apply bg-opacity-95;
         }
         &.k-snackbar-item--error {
             @apply text-white bg-red-700 bg-opacity-95;
+            @apply bg-opacity-95;
         }
     }
 }
 
-/*
-
- twsnackbar
-            mx-4
-            text-${this.fontColor}-${this.fontTone}
-            px-6
-            py-4
-            border-0
-            ${this.shape}
-            relative
-            mb-4
-            ${this.color}
-            flex
-            items-center
-            justify-center
-*/
+.slide-leave-active,
+.slide-enter-active {
+    transition: 0.3s;
+}
+.slide-enter-from, /* Vue3 */
+.slide-enter, /* Vue2 */
+.slide-leave-to {
+    transform: translate(100%, 0);
+    opacity: 0;
+}
 </style>

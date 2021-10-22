@@ -1,4 +1,5 @@
 <template>
+    <KLinearProgressIndicator v-if="loading" />
     <table class="k-table" :class="classObj">
         <slot></slot>
     </table>
@@ -12,6 +13,10 @@ export default {
             default: false,
         },
         striped: {
+            type: Boolean,
+            default: false,
+        },
+        loading: {
             type: Boolean,
             default: false,
         },
