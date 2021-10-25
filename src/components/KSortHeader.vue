@@ -1,5 +1,11 @@
 <template>
-    <a href="#" @click.prevent="emitClick"><slot></slot> <span v-if="isActive && sortAsc">&#8595;</span> <span v-else-if="isActive">&#8593;</span> </a>
+    <a href="#" @click.prevent="emitClick">
+        <slot></slot>
+        <transition name="fade" mode="out-in">
+            <span class="j-sort-header-arrow" v-if="isActive && sortAsc">&#8595;</span>
+            <span class="j-sort-header-arrow" v-else-if="isActive">&#8593;</span>
+        </transition>
+    </a>
 </template>
 
 <script>
@@ -35,3 +41,9 @@ export default {
     },
 }
 </script>
+
+<style>
+.j-sort-header-arrow {
+    @apply ml-px;
+}
+</style>

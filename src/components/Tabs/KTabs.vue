@@ -22,7 +22,6 @@ export default {
 
     data() {
         return {
-            // tabs: [],
             selectedTab: null,
         }
     },
@@ -44,9 +43,10 @@ export default {
         },
     },
     mounted() {
-        // this.tabs = this.$slots.default()
-        // todo - use the #anchor
-        this.selectedTab = get(this.tabs, '[0].props.name')
+        const hash = window.location.hash.replace('#', '')
+        const firstTab = get(this.tabs, '[0].props.name')
+
+        this.selectedTab = [hash, firstTab].find((item) => Boolean(item))
     },
 }
 </script>
