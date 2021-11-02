@@ -2827,9 +2827,6 @@ const _sfc_main$l = {
       default: null
     }
   },
-  data() {
-    return {};
-  },
   computed: {
     valueLocal: {
       get() {
@@ -3654,7 +3651,7 @@ const _sfc_main$f = {
   }
 };
 const _hoisted_1$d = { class: "k-snackbar" };
-const _hoisted_2$5 = { class: "flex-grow" };
+const _hoisted_2$5 = { class: "k-snackbar-item-message" };
 const _hoisted_3$2 = {
   key: 0,
   class: "k-snackbar-title"
@@ -3665,7 +3662,7 @@ const _hoisted_4$1 = {
 };
 const _hoisted_5 = {
   key: 0,
-  class: "pl-5 k-snackbar-action"
+  class: "k-snackbar-action"
 };
 const _hoisted_6 = ["onClick"];
 function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {

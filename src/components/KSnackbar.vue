@@ -4,11 +4,11 @@
     <div class="k-snackbar">
         <transition-group name="slide" tag="div" mode="out-in">
             <div v-for="item in items" :key="item.index" class="k-snackbar-item" :class="classObj(item)">
-                <div class="flex-grow">
+                <div class="k-snackbar-item-message">
                     <div v-if="item.title" class="k-snackbar-title">{{ item.title }}</div>
                     <div v-if="item.message" class="k-snackbar-text">{{ item.message }}</div>
                 </div>
-                <div v-if="item.action" class="pl-5 k-snackbar-action">
+                <div v-if="item.action" class="k-snackbar-action">
                     <a href="#" @click.prevent="action(item)">{{ item.actionLabel }}</a>
                 </div>
             </div>
@@ -95,17 +95,25 @@ export default {
     .k-snackbar-item {
         @apply py-5 px-4 my-3 mx-4 rounded flex items-center;
 
-        .k-snackbar-title {
-            @apply flex items-center;
-            @apply text-lg;
+        .k-snackbar-item-message {
+            @apply flex-grow;
+
+            .k-snackbar-title {
+                @apply flex items-center;
+                @apply text-lg;
+            }
+            .k-snackbar-text {
+                @apply flex items-center;
+                @apply text-base;
+            }
         }
-        .k-snackbar-text {
-            @apply flex items-center;
-            @apply text-base;
-        }
-        .k-snackbar-action a {
-            @apply flex items-center;
-            @apply text-sm text-white;
+
+        .k-snackbar-action {
+            @apply pl-5;
+            a {
+                @apply flex items-center;
+                @apply text-sm text-white;
+            }
         }
 
         &.k-snackbar-item--success {
