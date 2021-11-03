@@ -1,17 +1,23 @@
 <template>
-    <div class="k-select">
-        <select v-model="localValue" class="k-input">
-            <option v-for="item in items" :key="getItemValue(item)" :value="getItemValue(item)">{{ getItemText(item) }}</option>
-        </select>
-        <transition name="fade">
-            <KSpinner v-if="loading" class="k-select--spinner" />
-        </transition>
+    <div>
+        <KFormFieldWrapper :label="label" :success-messages="successMessages" :error-messages="errorMessages">
+            <div class="k-select">
+                <select v-model="localValue" :class="classObj">
+                    <option v-for="item in items" :key="getItemValue(item)" :value="getItemValue(item)">{{ getItemText(item) }}</option>
+                </select>
+                <transition name="fade">
+                    <KSpinner v-if="loading" class="k-select--spinner" />
+                </transition>
+            </div>
+        </KFormFieldWrapper>
     </div>
 </template>
 
 <script>
 import get from 'lodash.get'
+import { mixin } from './KFormFieldWrapper.vue'
 export default {
+    mixins: [mixin],
     props: {
         modelValue: {
             type: [String, Object, Number],
