@@ -3,6 +3,7 @@
     <table class="k-table" :class="classObj">
         <slot></slot>
     </table>
+    <!-- <KLinearProgressIndicator v-if="loading" /> -->
 </template>
 
 <script>

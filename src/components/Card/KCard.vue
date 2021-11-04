@@ -2,15 +2,16 @@
 import measurables from '../../mixins/measurables'
 import clickable from '../../mixins/clickable'
 import { h } from 'vue'
-import KLinearProgressIndicator from '../KLinearProgressIndicator.vue'
+// import KLinearProgressIndicator from '../KLinearProgressIndicator.vue'
+
 export default {
     mixins: [measurables, clickable],
-    props: {
-        loading: {
-            type: Boolean,
-            default: false,
-        },
-    },
+    // props: {
+    //     loading: {
+    //         type: Boolean,
+    //         default: false,
+    //     },
+    // },
     computed: {
         classObj() {
             return {
@@ -20,9 +21,9 @@ export default {
         },
     },
     methods: {
-        renderLoading() {
-            return this.loading ? h(KLinearProgressIndicator) : null
-        },
+        // renderLoading() {
+        //     return this.loading ? h(KLinearProgressIndicator) : null
+        // },
         renderCard() {
             const { tag, data } = this.generateRouteLink()
 
@@ -38,7 +39,8 @@ export default {
         },
     },
     render() {
-        return h('div', {}, [this.renderLoading(), this.renderCard()])
+        // return h('div', {}, [this.renderLoading(), this.renderCard()])
+        return this.renderCard()
     },
 }
 </script>
