@@ -1,9 +1,23 @@
 <template>
-    <textarea v-model="valueLocal" v-bind="$attrs" @keydown.tab.prevent="tabber" spellcheck="false" class="k-input k-textarea" :rows="rows"></textarea>
+    <div>
+        <KFormFieldWrapper :label="label" :success-messages="successMessages" :error-messages="errorMessages">
+            <textarea
+                v-model="valueLocal"
+                v-bind="$attrs"
+                @keydown.tab.prevent="tabber"
+                spellcheck="false"
+                :class="classObj"
+                class="k-textarea"
+                :rows="rows"
+            ></textarea>
+        </KFormFieldWrapper>
+    </div>
 </template>
 
 <script>
+import { mixin } from './KFormFieldWrapper.vue'
 export default {
+    mixins: [mixin],
     inheritAttrs: false,
     props: {
         modelValue: {

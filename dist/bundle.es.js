@@ -4173,6 +4173,7 @@ var __glob_2_23 = /* @__PURE__ */ Object.freeze({
 });
 var KTextArea_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$a = {
+  mixins: [mixin],
   inheritAttrs: false,
   props: {
     modelValue: {
@@ -4233,15 +4234,27 @@ const _sfc_main$a = {
 };
 const _hoisted_1$9 = ["rows"];
 function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return withDirectives((openBlock(), createElementBlock("textarea", mergeProps({
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.valueLocal = $event)
-  }, _ctx.$attrs, {
-    onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"])),
-    spellcheck: "false",
-    class: "k-input k-textarea",
-    rows: $props.rows
-  }), null, 16, _hoisted_1$9)), [
-    [vModelText, $options.valueLocal]
+  const _component_KFormFieldWrapper = resolveComponent("KFormFieldWrapper");
+  return openBlock(), createElementBlock("div", null, [
+    createVNode(_component_KFormFieldWrapper, {
+      label: _ctx.label,
+      "success-messages": _ctx.successMessages,
+      "error-messages": _ctx.errorMessages
+    }, {
+      default: withCtx(() => [
+        withDirectives(createElementVNode("textarea", mergeProps({
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.valueLocal = $event)
+        }, _ctx.$attrs, {
+          onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"])),
+          spellcheck: "false",
+          class: [_ctx.classObj, "k-textarea"],
+          rows: $props.rows
+        }), null, 16, _hoisted_1$9), [
+          [vModelText, $options.valueLocal]
+        ])
+      ]),
+      _: 1
+    }, 8, ["label", "success-messages", "error-messages"])
   ]);
 }
 var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
