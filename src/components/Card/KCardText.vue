@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<style lang="postcss">
+<style lang="less">
 .k-card-text {
     @apply flex-grow;
     @apply p-3;
