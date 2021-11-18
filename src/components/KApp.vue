@@ -1,7 +1,9 @@
 <template>
-    <KConfirm>
-        <KSnackbar>
-            <slot></slot>
-        </KSnackbar>
-    </KConfirm>
+    <div class="k-app">
+        <KConfirm>
+            <KSnackbar>
+                <slot></slot>
+            </KSnackbar>
+        </KConfirm>
+    </div>
 </template>

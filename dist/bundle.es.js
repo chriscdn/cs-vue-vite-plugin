@@ -17,7 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { openBlock, createElementBlock, Fragment, createElementVNode, resolveComponent, createBlock, withCtx, createVNode, renderSlot, resolveDirective, withDirectives, normalizeStyle, normalizeClass, withKeys, withModifiers, vModelText, renderList, createTextVNode, toDisplayString, createCommentVNode, mergeProps, vModelDynamic, Transition, setBlockTracking, TransitionGroup, getCurrentInstance, vModelRadio, vModelSelect, useCssVars, h } from "vue";
+import { openBlock, createElementBlock, Fragment, createElementVNode, resolveComponent, createVNode, withCtx, renderSlot, resolveDirective, withDirectives, normalizeStyle, normalizeClass, withKeys, withModifiers, vModelText, renderList, createTextVNode, toDisplayString, createCommentVNode, createBlock, mergeProps, vModelDynamic, Teleport, Transition, setBlockTracking, TransitionGroup, getCurrentInstance, vModelRadio, vModelSelect, useCssVars, h } from "vue";
 var _export_sfc = (sfc, props) => {
   for (const [key, val] of props) {
     sfc[key] = val;
@@ -25,11 +25,11 @@ var _export_sfc = (sfc, props) => {
   return sfc;
 };
 const _sfc_main$z = {};
-const _hoisted_1$t = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
+const _hoisted_1$u = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
 const _hoisted_2$g = ["href"];
 function _sfc_render$y(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
-    _hoisted_1$t,
+    _hoisted_1$u,
     createElementVNode("a", {
       href: `${_ctx.$cgi}?func=admin.index`
     }, "Admin Home", 8, _hoisted_2$g)
@@ -42,20 +42,23 @@ var __glob_2_0 = /* @__PURE__ */ Object.freeze({
   "default": KAdminLink
 });
 const _sfc_main$y = {};
+const _hoisted_1$t = { class: "k-app" };
 function _sfc_render$x(_ctx, _cache) {
   const _component_KSnackbar = resolveComponent("KSnackbar");
   const _component_KConfirm = resolveComponent("KConfirm");
-  return openBlock(), createBlock(_component_KConfirm, null, {
-    default: withCtx(() => [
-      createVNode(_component_KSnackbar, null, {
-        default: withCtx(() => [
-          renderSlot(_ctx.$slots, "default")
-        ]),
-        _: 3
-      })
-    ]),
-    _: 3
-  });
+  return openBlock(), createElementBlock("div", _hoisted_1$t, [
+    createVNode(_component_KConfirm, null, {
+      default: withCtx(() => [
+        createVNode(_component_KSnackbar, null, {
+          default: withCtx(() => [
+            renderSlot(_ctx.$slots, "default")
+          ]),
+          _: 3
+        })
+      ]),
+      _: 3
+    })
+  ]);
 }
 var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
 var __glob_2_1 = /* @__PURE__ */ Object.freeze({
@@ -2675,22 +2678,24 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
-    createVNode(Transition, { name: "fade" }, {
-      default: withCtx(() => [
-        $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$o, [
-          withDirectives(createElementVNode("div", {
-            ref: "content",
-            class: normalizeClass(["k-dialog-content", $options.classObj]),
-            style: normalizeStyle([_ctx.measurableStyles])
-          }, [
-            renderSlot(_ctx.$slots, "default", { on: $options.on })
-          ], 6), [
-            [_directive_click_away, $options.clickAway]
-          ])
-        ])) : createCommentVNode("", true)
-      ]),
-      _: 3
-    })
+    (openBlock(), createBlock(Teleport, { to: ".k-app" }, [
+      createVNode(Transition, { name: "fade" }, {
+        default: withCtx(() => [
+          $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$o, [
+            withDirectives(createElementVNode("div", {
+              ref: "content",
+              class: normalizeClass(["k-dialog-content", $options.classObj]),
+              style: normalizeStyle([_ctx.measurableStyles])
+            }, [
+              renderSlot(_ctx.$slots, "default", { on: $options.on })
+            ], 6), [
+              [_directive_click_away, $options.clickAway]
+            ])
+          ])) : createCommentVNode("", true)
+        ]),
+        _: 3
+      })
+    ]))
   ], 64);
 }
 var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);

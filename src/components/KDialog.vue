@@ -1,12 +1,14 @@
 <template>
     <slot name="activator" :on="on"></slot>
-    <transition name="fade">
-        <div v-if="dialog" class="k-dialog">
-            <div ref="content" v-click-away="clickAway" class="k-dialog-content" :class="classObj" :style="[measurableStyles]">
-                <slot :on="on"></slot>
+    <teleport to=".k-app">
+        <transition name="fade">
+            <div v-if="dialog" class="k-dialog">
+                <div ref="content" v-click-away="clickAway" class="k-dialog-content" :class="classObj" :style="[measurableStyles]">
+                    <slot :on="on"></slot>
+                </div>
             </div>
-        </div>
-    </transition>
+        </transition>
+    </teleport>
 </template>
 
 <script>
