@@ -2627,7 +2627,8 @@ const _sfc_main$s = {
   },
   data() {
     return {
-      dialog: false
+      dialog: false,
+      mounted: false
     };
   },
   computed: {
@@ -2636,6 +2637,9 @@ const _sfc_main$s = {
         "k-dialog--scrollable": this.scrollable
       };
     }
+  },
+  mounted() {
+    this.mounted = true;
   },
   watch: {
     modelValue: {
@@ -2678,7 +2682,10 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
-    (openBlock(), createBlock(Teleport, { to: ".k-app" }, [
+    $data.mounted ? (openBlock(), createBlock(Teleport, {
+      key: 0,
+      to: ".k-app"
+    }, [
       createVNode(Transition, { name: "fade" }, {
         default: withCtx(() => [
           $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$o, [
@@ -2695,7 +2702,7 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
         ]),
         _: 3
       })
-    ]))
+    ])) : createCommentVNode("", true)
   ], 64);
 }
 var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);

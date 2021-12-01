@@ -1,6 +1,6 @@
 <template>
     <slot name="activator" :on="on"></slot>
-    <teleport to=".k-app">
+    <teleport to=".k-app" v-if="mounted">
         <transition name="fade">
             <div v-if="dialog" class="k-dialog">
                 <div ref="content" v-click-away="clickAway" class="k-dialog-content" :class="classObj" :style="[measurableStyles]">
@@ -47,6 +47,7 @@ export default {
     data() {
         return {
             dialog: false,
+            mounted: false
         }
     },
     computed: {
@@ -56,7 +57,10 @@ export default {
             }
         },
     },
-
+    mounted() {
+        // this ensures the target .k-app is rendered before we try to teleport to it
+        this.mounted = true
+    },
     watch: {
         modelValue: {
             handler(value) {
