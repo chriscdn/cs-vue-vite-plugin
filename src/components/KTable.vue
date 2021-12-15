@@ -1,9 +1,9 @@
 <template>
+    <KOneMoment :loading="loading" />
     <KLinearProgressIndicator v-if="loading" />
     <table class="k-table" :class="classObj">
         <slot></slot>
     </table>
-    <!-- <KLinearProgressIndicator v-if="loading" /> -->
 </template>
 
 <script>
