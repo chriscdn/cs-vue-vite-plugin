@@ -1,43 +1,42 @@
 {
-  "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.1",
-  "main": "./dist/bundle.umd.js",
-  "module": "./dist/bundle.es.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "watch": "vite build --watch",
-    "serve": "vite preview",
-    "docs": "vuese gen"
-  },
-  "dependencies": {
-    "@chriscdn/promise-semaphore": "^1.0.6",
-    "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
-    "body-scroll-lock": "^4.0.0-beta.0",
-    "build-url": "^6.0.1",
-    "date-fns": "^2.25.0",
-    "js-cookie": "^3.0.1",
-    "lodash.debounce": "^4.0.8",
-    "lodash.get": "^4.4.2",
-    "vue": "^3.2.20",
-    "vue3-click-away": "^1.2.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "@vue/compiler-sfc": "^3.2.20",
-    "autoprefixer": "^10.3.7",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^7.20.0",
-    "less": "^4.1.2",
-    "less-loader": "^10.2.0",
-    "prettier": "^2.4.1",
-    "tailwindcss": "^2.2.17",
-    "vite": "^2.6.10"
-  },
-  "files": [
-    "dist"
-  ]
+    "name": "@kweli/cs-vue-vite-plugin",
+    "version": "0.0.1",
+    "main": "./dist/bundle.umd.js",
+    "module": "./dist/bundle.es.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "watch": "vite build --watch",
+        "serve": "vite preview",
+        "docs": "vuese gen"
+    },
+    "dependencies": {
+        "@chriscdn/promise-semaphore": "^1.0.6",
+        "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
+        "body-scroll-lock": "^4.0.0-beta.0",
+        "build-url": "^6.0.1",
+        "date-fns": "^2.25.0",
+        "js-cookie": "^3.0.1",
+        "lodash.debounce": "^4.0.8",
+        "lodash.get": "^4.4.2",
+        "vue": "^3.2.20",
+        "vue3-click-away": "^1.2.1"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^1.9.3",
+        "@vue/compiler-sfc": "^3.2.20",
+        "autoprefixer": "^10.3.7",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^8.0.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-vue": "^7.20.0",
+        "less": "^4.1.2",
+        "less-loader": "^10.2.0",
+        "prettier": "^2.4.1",
+        "tailwindcss": "^2.2.17",
+        "vite": "^2.6.10"
+    },
+    "files": ["dist"],
+    "license": "MIT"
 }
