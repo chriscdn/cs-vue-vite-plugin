@@ -364,6 +364,9 @@
 .k-radiogroup {
   display: flex;
 }
+.k-radiogroup .k-radiogroup-item {
+  margin-bottom: 0.25rem;
+}
 .k-radiogroup.k-radiogroup--vertical {
   flex-direction: column;
 }

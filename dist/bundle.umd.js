@@ -3805,6 +3805,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
               }, [
                 (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($props.items, (item) => {
                   return vue.openBlock(), vue.createElementBlock("div", {
+                    class: "k-radiogroup-item",
                     key: $options.getItemValue(item)
                   }, [
                     vue.withDirectives(vue.createElementVNode("input", {

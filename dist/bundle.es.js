@@ -3802,6 +3802,7 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
             }, [
               (openBlock(true), createElementBlock(Fragment, null, renderList($props.items, (item) => {
                 return openBlock(), createElementBlock("div", {
+                  class: "k-radiogroup-item",
                   key: $options.getItemValue(item)
                 }, [
                   withDirectives(createElementVNode("input", {

@@ -4,7 +4,7 @@
             <transition name="fade" mode="out-in">
                 <KSpinner v-if="loading" />
                 <div class="k-radiogroup" :class="classObj" v-else>
-                    <div v-for="item in items" :key="getItemValue(item)">
+                    <div class="k-radiogroup-item" v-for="item in items" :key="getItemValue(item)">
                         <input type="radio" :id="getItemValue(item)" :value="getItemValue(item)" v-model="localValue" />
                         <label :for="getItemValue(item)">{{ getItemText(item) }}</label>
                     </div>
@@ -82,6 +82,10 @@ export default {
 <style lang="less">
 .k-radiogroup {
     @apply flex;
+
+    .k-radiogroup-item {
+        @apply mb-1;
+    }
 
     &.k-radiogroup--vertical {
         @apply flex-col;
