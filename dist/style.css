@@ -1,4 +1,3 @@
-/*purgecss start ignore*/
 .k-autocomplete[data-v-75343781] {
   display: flex;
   align-items: center;
@@ -14,13 +13,12 @@
   position: absolute;
   border-bottom: none;
   border-top: none;
-  border-radius: 0.25rem;
   border-width: 1px;
   border-top-width: 0px;
   border-bottom-width: 0px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
   border-radius: 0.25rem;
   z-index: 99;
   top: 100%;
@@ -32,30 +30,27 @@
 .k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-75343781] {
   cursor: pointer;
   --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0.5rem;
   border-width: 1px;
   border-top-width: 0px;
-  border-right-width: 0px;
   border-left-width: 0px;
+  border-right-width: 0px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
   display: flex;
   align-items: center;
 }
 .k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-75343781]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 .k-autocomplete .k-autocomplete-active[data-v-75343781] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
-
-/*purgecss end ignore*/
-/* purgecss start ignore */
 .k-button {
   border-radius: 9999px;
   border-width: 1px;
@@ -66,40 +61,33 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-}
-.k-button:focus {
+}.k-button:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-}
-.k-button {
+  --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}.k-button {
   --tw-border-opacity: 1;
-  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-.k-button:hover {
+}.k-button:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
-}
-.k-button:active {
-  --tw-bg-opacity: 1;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
-}
-.k-button:hover {
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-.k-button {
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}.k-button:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}.k-button {
   white-space: nowrap;
   min-width: 5rem;
 }
@@ -125,46 +113,39 @@
 }
 .k-button.k-button--disabled:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-dialog {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  z-index: 10;
-  --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 .k-dialog .k-dialog-content {
-  border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  padding: 0.75rem;
-  overflow-y: auto;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.75rem;
+    overflow-y: auto
 }
 .k-dialog .k-dialog--scrollable {
-  display: flex;
+    display: flex
 }
 .k-dialog .k-dialog--scrollable .k-card {
-  flex-grow: 1;
+    flex-grow: 1
 }
 .k-dialog .k-dialog--scrollable .k-card .k-card-text {
-  overflow-y: auto;
+    overflow-y: auto
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-form-field-label {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -174,13 +155,12 @@
 }
 .k-input {
   min-width: 7rem;
-  border-radius: 0.25rem;
   padding: 0.25rem;
   border-radius: 0.25rem;
   border-width: 1px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .k-input:focus {
   border-color: transparent;
@@ -190,39 +170,32 @@
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(37, 99, 235, var(--tw-ring-opacity));
+  --tw-ring-color: rgb(37 99 235 / var(--tw-ring-opacity));
 }
 .k-input.k-input--success {
   --tw-border-opacity: 1;
-  border-color: rgba(4, 120, 87, var(--tw-border-opacity));
+  border-color: rgb(21 128 61 / var(--tw-border-opacity));
 }
 .k-input.k-input--error {
   --tw-border-opacity: 1;
-  border-color: rgba(220, 38, 38, var(--tw-border-opacity));
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 .k-formfield--success {
   --tw-text-opacity: 1;
-  color: rgba(4, 120, 87, var(--tw-text-opacity));
+  color: rgb(21 128 61 / var(--tw-text-opacity));
   margin-top: 1px;
   margin-bottom: 1px;
 }
 .k-formfield--error {
   --tw-text-opacity: 1;
-  color: rgba(220, 38, 38, var(--tw-text-opacity));
+  color: rgb(220 38 38 / var(--tw-text-opacity));
   margin-top: 1px;
   margin-bottom: 1px;
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-progress-line,
 .k-progress-line:before {
   height: 2px;
-}
-.k-progress-line, .k-progress-line:before {
   width: 100%;
-}
-.k-progress-line, .k-progress-line:before {
   margin: 0px;
 }
 .k-progress-line {
@@ -263,31 +236,25 @@
     margin-right: 0;
 }
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-multi .k-multi-item {
-  display: flex;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem
 }
 .k-multi .k-multi-item .k-multi-widget {
-  white-space: nowrap;
-  flex-grow: 1;
+    white-space: nowrap;
+    flex-grow: 1
 }
 .k-multi .k-multi-item .k-multi-buttons {
-  white-space: nowrap;
+    white-space: nowrap
 }
 .k-multi .k-multi-item .k-multi-buttons > * {
-  margin-left: 0.25rem;
+    margin-left: 0.25rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-node-picker-field {
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
-  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
   padding: 0.5rem;
 }
 .k-node-picker-field input[type='text'] {
@@ -302,87 +269,70 @@
 .k-node-picker-field .k-button {
   margin-left: 0.25rem;
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-one-moment {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center
 }
 .k-one-moment .k-one-moment-label {
-  white-space: nowrap;
-  padding: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+    white-space: nowrap;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .rhmuted[data-v-6b5d45ef] {
-  color: #999;
+    color: #999;
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }
 .k-pagination .k-pagination-buttons {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center
 }
 .k-pagination .k-pagination-buttons .k-pagination-button {
-  display: inline-block;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  display: flex;
-  height: 1.5rem;
-  width: 2rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    display: flex;
+    height: 1.5rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem
 }
 .k-pagination .k-pagination-buttons .k-pagination-button.k-pagination-button-selected {
-  --tw-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 .k-pagination .k-pagination-buttons .k-pagination-button.k-pagination-button-border {
-  border-width: 1px;
-  border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgba(59, 130, 246, var(--tw-border-opacity));
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity))
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-radiogroup {
-  display: flex;
+    display: flex
 }
 .k-radiogroup .k-radiogroup-item {
-  margin-bottom: 0.25rem;
+    margin-bottom: 0.25rem
 }
 .k-radiogroup.k-radiogroup--vertical {
-  flex-direction: column;
+    flex-direction: column
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-select {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center
 }
 .k-select .k-select--spinner {
-  margin-left: 0.25rem;
+    margin-left: 0.25rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-snackbar {
   position: fixed;
   top: 0px;
@@ -391,17 +341,17 @@
   width: 20rem;
 }
 .k-snackbar .k-snackbar-item {
-  margin-left: 1rem;
-  margin-right: 1rem;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   border-radius: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .k-snackbar .k-snackbar-item .k-snackbar-item-message {
   flex-grow: 1;
@@ -427,22 +377,18 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .k-snackbar .k-snackbar-item.k-snackbar-item--success {
-  --tw-bg-opacity: 1;
-  background-color: rgba(4, 120, 87, var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.95;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-bg-opacity: 0.95;
 }
 .k-snackbar .k-snackbar-item.k-snackbar-item--error {
-  --tw-bg-opacity: 1;
-  background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.95;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-bg-opacity: 0.95;
 }
 .slide-leave-active,
@@ -456,20 +402,23 @@
   opacity: 0;
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .j-sort-header-arrow {
-  margin-left: 1px;
+    margin-left: 1px
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-spacer[data-v-8f2ba526] {
-  flex-grow: 1;
+    flex-grow: 1
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
+@-webkit-keyframes spin {
+to {
+    transform: rotate(360deg);
+}
+}
+@keyframes spin {
+to {
+    transform: rotate(360deg);
+}
+}
 .k-spinner {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
@@ -481,14 +430,6 @@
 .k-spinner path {
   opacity: 0.75;
 }
-@-webkit-keyframes spin {
-from {
-    transform: rotate(0deg);
-}
-to {
-    transform: rotate(360deg);
-}
-}
 @keyframes spin {
 from {
     transform: rotate(0deg);
@@ -497,9 +438,6 @@ to {
     transform: rotate(360deg);
 }
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-switch {
   position: relative;
   display: inline-block;
@@ -508,7 +446,7 @@ to {
   height: var(--70fd9959);
   cursor: pointer;
   --tw-bg-opacity: 1;
-  background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
   border-radius: 9999px;
   /* The slider */
 }
@@ -524,14 +462,11 @@ to {
 }
 .k-switch--on {
   --tw-bg-opacity: 1;
-  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 .k-switch--on .k-switch-slider {
   transform: var(--a610b474);
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-table {
   border-collapse: collapse;
   background-color: #ffffff;
@@ -584,67 +519,46 @@ to {
   background-color: #fafafa;
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-textarea {
-  width: 100%;
-  resize: vertical;
-  border-radius: 0.25rem;
-  border-width: 1px;
-  padding: 0.5rem;
+    width: 100%;
+    resize: vertical;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    padding: 0.5rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-input-text-field {
-  width: 100%;
+    width: 100%
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-user-picker img {
-  margin-right: 0.25rem;
+    margin-right: 0.25rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-card {
-  display: block;
-  display: flex;
-  flex-direction: column;
+    display: block;
+    display: flex;
+    flex-direction: column
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-card-actions {
-  display: flex;
-  flex-grow: 0;
-  padding: 0.5rem;
+    display: flex;
+    flex-grow: 0;
+    padding: 0.5rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-card-text {
-  flex-grow: 1;
-  padding: 0.75rem;
+    flex-grow: 1;
+    padding: 0.75rem
 }
 .k-card-title + .k-card-text {
-  padding-top: 0px;
+    padding-top: 0px
 }
 
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-card-title {
-  display: flex;
-  flex-grow: 0;
-  flex-wrap: wrap;
-  padding: 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+    display: flex;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
 .k-tabs {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -652,11 +566,11 @@ to {
 .k-tabs .k-tabs-nav {
   border-width: 1px;
   border-top-width: 0px;
-  border-right-width: 0px;
   border-left-width: 0px;
+  border-right-width: 0px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
   display: flex;
 }
 .k-tabs .k-tabs-nav .k-tabs-nav-tab {
@@ -667,19 +581,20 @@ to {
   padding-bottom: 0.25rem;
   white-space: nowrap;
   --tw-bg-opacity: 1;
-  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   border-width: 1px;
   border-bottom-width: 0px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .k-tabs .k-tabs-nav .k-tabs-nav-tab a {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  text-decoration: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .k-tabs .k-tabs-nav .k-tabs-nav-tab.k-tabs-active {
   margin-bottom: -1px;
@@ -688,40 +603,30 @@ to {
 }
 .k-tabs .k-tabs-nav .k-tabs-nav-tab.k-tabs-active a {
   --tw-text-opacity: 1;
-  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .k-tabs .k-tabs-content {
   padding: 0.5rem;
   padding-top: 0.75rem;
 }
-
-/* purgecss end ignore */
-/* purgecss start ignore */
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 250ms;
 }
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
-
 .fade-move,
 .slide-move {
   transition: transform 250ms;
 }
-
 .slide-leave-active,
 .slide-enter-active {
   transition: 250ms;
 }
-
 .slide-enter-from,
 .slide-leave-to {
   transform: translate(100%, 0);
   opacity: 0;
 }
-
-/* purgecss end ignore */

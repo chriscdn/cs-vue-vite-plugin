@@ -22,10 +22,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 })(this, function(vue) {
   "use strict";
   var _export_sfc = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
-      sfc[key] = val;
+      target[key] = val;
     }
-    return sfc;
+    return target;
   };
   const _sfc_main$A = {};
   const _hoisted_1$v = /* @__PURE__ */ vue.createElementVNode("hr", null, null, -1);
@@ -1321,62 +1322,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     var amount = toInteger(dirtyAmount);
     return addMilliseconds(dirtyDate, -amount);
   }
-  function addLeadingZeros(number, targetLength) {
-    var sign = number < 0 ? "-" : "";
-    var output = Math.abs(number).toString();
-    while (output.length < targetLength) {
-      output = "0" + output;
-    }
-    return sign + output;
-  }
-  var formatters$2 = {
-    y: function(date, token) {
-      var signedYear = date.getUTCFullYear();
-      var year = signedYear > 0 ? signedYear : 1 - signedYear;
-      return addLeadingZeros(token === "yy" ? year % 100 : year, token.length);
-    },
-    M: function(date, token) {
-      var month = date.getUTCMonth();
-      return token === "M" ? String(month + 1) : addLeadingZeros(month + 1, 2);
-    },
-    d: function(date, token) {
-      return addLeadingZeros(date.getUTCDate(), token.length);
-    },
-    a: function(date, token) {
-      var dayPeriodEnumValue = date.getUTCHours() / 12 >= 1 ? "pm" : "am";
-      switch (token) {
-        case "a":
-        case "aa":
-          return dayPeriodEnumValue.toUpperCase();
-        case "aaa":
-          return dayPeriodEnumValue;
-        case "aaaaa":
-          return dayPeriodEnumValue[0];
-        case "aaaa":
-        default:
-          return dayPeriodEnumValue === "am" ? "a.m." : "p.m.";
-      }
-    },
-    h: function(date, token) {
-      return addLeadingZeros(date.getUTCHours() % 12 || 12, token.length);
-    },
-    H: function(date, token) {
-      return addLeadingZeros(date.getUTCHours(), token.length);
-    },
-    m: function(date, token) {
-      return addLeadingZeros(date.getUTCMinutes(), token.length);
-    },
-    s: function(date, token) {
-      return addLeadingZeros(date.getUTCSeconds(), token.length);
-    },
-    S: function(date, token) {
-      var numberOfDigits = token.length;
-      var milliseconds = date.getUTCMilliseconds();
-      var fractionalSeconds = Math.floor(milliseconds * Math.pow(10, numberOfDigits - 3));
-      return addLeadingZeros(fractionalSeconds, token.length);
-    }
-  };
-  var formatters$3 = formatters$2;
   var MILLISECONDS_IN_DAY = 864e5;
   function getUTCDayOfYear(dirtyDate) {
     requiredArgs(1, arguments);
@@ -1453,7 +1398,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }
   function getUTCWeekYear(dirtyDate, dirtyOptions) {
     requiredArgs(1, arguments);
-    var date = toDate(dirtyDate, dirtyOptions);
+    var date = toDate(dirtyDate);
     var year = date.getUTCFullYear();
     var options = dirtyOptions || {};
     var locale2 = options.locale;
@@ -1500,6 +1445,62 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     var diff = startOfUTCWeek(date, options).getTime() - startOfUTCWeekYear(date, options).getTime();
     return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
   }
+  function addLeadingZeros(number, targetLength) {
+    var sign = number < 0 ? "-" : "";
+    var output = Math.abs(number).toString();
+    while (output.length < targetLength) {
+      output = "0" + output;
+    }
+    return sign + output;
+  }
+  var formatters$2 = {
+    y: function(date, token) {
+      var signedYear = date.getUTCFullYear();
+      var year = signedYear > 0 ? signedYear : 1 - signedYear;
+      return addLeadingZeros(token === "yy" ? year % 100 : year, token.length);
+    },
+    M: function(date, token) {
+      var month = date.getUTCMonth();
+      return token === "M" ? String(month + 1) : addLeadingZeros(month + 1, 2);
+    },
+    d: function(date, token) {
+      return addLeadingZeros(date.getUTCDate(), token.length);
+    },
+    a: function(date, token) {
+      var dayPeriodEnumValue = date.getUTCHours() / 12 >= 1 ? "pm" : "am";
+      switch (token) {
+        case "a":
+        case "aa":
+          return dayPeriodEnumValue.toUpperCase();
+        case "aaa":
+          return dayPeriodEnumValue;
+        case "aaaaa":
+          return dayPeriodEnumValue[0];
+        case "aaaa":
+        default:
+          return dayPeriodEnumValue === "am" ? "a.m." : "p.m.";
+      }
+    },
+    h: function(date, token) {
+      return addLeadingZeros(date.getUTCHours() % 12 || 12, token.length);
+    },
+    H: function(date, token) {
+      return addLeadingZeros(date.getUTCHours(), token.length);
+    },
+    m: function(date, token) {
+      return addLeadingZeros(date.getUTCMinutes(), token.length);
+    },
+    s: function(date, token) {
+      return addLeadingZeros(date.getUTCSeconds(), token.length);
+    },
+    S: function(date, token) {
+      var numberOfDigits = token.length;
+      var milliseconds = date.getUTCMilliseconds();
+      var fractionalSeconds = Math.floor(milliseconds * Math.pow(10, numberOfDigits - 3));
+      return addLeadingZeros(fractionalSeconds, token.length);
+    }
+  };
+  var formatters$3 = formatters$2;
   var dayPeriodEnum = {
     am: "am",
     pm: "pm",
@@ -2140,7 +2141,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }
   }
   function dateTimeLongFormatter(pattern, formatLong2) {
-    var matchResult = pattern.match(/(P+)(p+)?/);
+    var matchResult = pattern.match(/(P+)(p+)?/) || [];
     var datePattern = matchResult[1];
     var timePattern = matchResult[2];
     if (!timePattern) {
@@ -2692,13 +2693,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         vue.createVNode(vue.Transition, { name: "fade" }, {
           default: vue.withCtx(() => [
             $data.dialog ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$p, [
-              vue.withDirectives(vue.createElementVNode("div", {
+              vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", {
                 ref: "content",
                 class: vue.normalizeClass(["k-dialog-content", $options.classObj]),
                 style: vue.normalizeStyle([_ctx.measurableStyles])
               }, [
                 vue.renderSlot(_ctx.$slots, "default", { on: $options.on })
-              ], 6), [
+              ], 6)), [
                 [_directive_click_away, $options.clickAway]
               ])
             ])) : vue.createCommentVNode("", true)
