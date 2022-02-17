@@ -1,3 +1,6 @@
+.k-app * {
+    box-sizing: border-box
+}
 .k-autocomplete[data-v-75343781] {
   display: flex;
   align-items: center;

@@ -42,6 +42,7 @@ var __glob_2_0 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": KAdminLink
 });
+var KApp_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$z = {};
 const _hoisted_1$u = { class: "k-app" };
 function _sfc_render$y(_ctx, _cache) {

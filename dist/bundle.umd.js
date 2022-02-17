@@ -45,6 +45,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     [Symbol.toStringTag]: "Module",
     "default": KAdminLink
   });
+  var KApp_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$z = {};
   const _hoisted_1$u = { class: "k-app" };
   function _sfc_render$y(_ctx, _cache) {
