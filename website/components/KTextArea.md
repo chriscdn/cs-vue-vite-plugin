@@ -11,3 +11,13 @@
 <!-- @vuese:KTextArea:props:end -->
 
 
+## MixIns
+
+<!-- @vuese:KTextArea:mixIns:start -->
+|MixIn|
+|---|
+|mixin|
+
+<!-- @vuese:KTextArea:mixIns:end -->
+
+

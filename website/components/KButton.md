@@ -6,6 +6,8 @@
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
 |small|-|`Boolean`|`false`|false|
+|text|-|`Boolean`|`false`|false|
+|disabled|-|`Boolean`|`false`|false|
 
 <!-- @vuese:KButton:props:end -->
 

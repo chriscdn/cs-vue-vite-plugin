@@ -1,27 +1,27 @@
-# KSelect
+# KRadioGroup
 
 ## Props
 
-<!-- @vuese:KSelect:props:start -->
+<!-- @vuese:KRadioGroup:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
 |modelValue|-|`String` /  `Object` /  `Number`|`false`|null|
-|multiple|-|`Boolean`|`false`|false|
 |items|-|`Array`|`false`|[]|
 |loading|-|`Boolean`|`false`|false|
 |itemValue|-|`String`|`false`|value|
 |itemText|-|`String`|`false`|text|
+|vertical|-|`Boolean`|`false`|false|
 
-<!-- @vuese:KSelect:props:end -->
+<!-- @vuese:KRadioGroup:props:end -->
 
 
 ## MixIns
 
-<!-- @vuese:KSelect:mixIns:start -->
+<!-- @vuese:KRadioGroup:mixIns:start -->
 |MixIn|
 |---|
 |mixin|
 
-<!-- @vuese:KSelect:mixIns:end -->
+<!-- @vuese:KRadioGroup:mixIns:end -->
 
 
