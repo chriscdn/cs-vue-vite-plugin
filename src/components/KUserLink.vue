@@ -1,12 +1,12 @@
 <template>
-  <span v-if="localUserRec">
-    <KUserGIF
-      v-if="gif"
-      :user-rec="localUserRec"
-    />&nbsp;<a
+  <!-- testing flex -->
+  <span v-if="userRecLocal" class="flex items-center">
+    <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;<a
       href="#"
       @click.prevent="click"
-    >{{ displayName }}</a>
+    >
+      {{ displayName }}
+    </a>
   </span>
 </template>
 <script>
@@ -14,14 +14,21 @@ import get from 'lodash.get'
 
 export default {
   props: {
+    user: {
+      type: [Number, Object],
+      default: null,
+    },
+    // @deprecated
     userRec: {
       type: Object,
       default: null,
     },
+    // @deprecated
     userid: {
       type: Number,
       default: null,
     },
+
     gif: {
       type: Boolean,
       default: false,
@@ -30,42 +37,39 @@ export default {
 
   data() {
     return {
-      localUserRec: null,
+      // userIdLocal: null,
+      userRecLocal: null,
     }
   },
 
   computed: {
-    user_id() {
-      return get(this.localUserRec, 'id') || get(this.localUserRec, 'userid')
+    userIdLocal() {
+      return get(this.userRecLocal, 'id') ?? get(this.userRecLocal, 'userid')
+    },
+    userLocal() {
+      return this.user ?? this.userid ?? this.userRec
     },
 
     displayName() {
       return (
-        get(this.localUserRec, 'display_name') ||
-        get(this.localUserRec, 'displayname')
+        get(this.userRecLocal, 'display_name') ??
+        get(this.userRecLocal, 'displayname') ??
+        get(this.userRecLocal, 'name')
       )
     },
     type() {
-      return get(this.localUserRec, 'type')
+      return get(this.userRecLocal, 'type')
     },
   },
   watch: {
-    userid: {
-      handler(value) {
-        if (value) {
-          this.$session.members
-            .member(value, 'v1')
-            .then(
-              (response) => (this.localUserRec = get(response, 'data.data')),
-            )
-        }
-      },
-      immediate: true,
-    },
-    userRec: {
-      handler(value) {
-        if (this.userid == null) {
-          this.localUserRec = value
+    userLocal: {
+      async handler(value) {
+        if (this.isInteger(value)) {
+          const response = await this.$session.members.member(value, 'v1')
+
+          this.userRecLocal = get(response, 'data.data')
+        } else {
+          this.userRecLocal = value
         }
       },
       immediate: true,
@@ -73,9 +77,12 @@ export default {
   },
 
   methods: {
+    isInteger(value) {
+      return !isNaN(value) && typeof value == 'number'
+    },
     click() {
       window.baseUrl = window.baseURL
-      window.doUserDialog(this.user_id)
+      window.doUserDialog(this.userIdLocal)
     },
   },
 }

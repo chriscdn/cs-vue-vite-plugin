@@ -1,12 +1,19 @@
 <template>
   <div>
-    <input v-model="localModelValue" class="k-input" :type="type">
-    <KButton class="ml-1" small @click="setToNow">
-      Now
-    </KButton>
-    <KButton class="ml-1" small @click="$emit('update:modelValue', null)">
-      Clear
-    </KButton>
+    <input
+      v-model="localModelValue"
+      class="k-input"
+      :type="type"
+      :readonly="!editable"
+    >
+    <template v-if="editable">
+      <KButton class="ml-1" small @click="setToNow">
+        Now
+      </KButton>
+      <KButton class="ml-1" small @click="$emit('update:modelValue', null)">
+        Clear
+      </KButton>
+    </template>
   </div>
 </template>
 
@@ -21,6 +28,10 @@ export default {
     time: {
       type: Boolean,
       default: false,
+    },
+    editable: {
+      type: Boolean,
+      default: true,
     },
   },
   emits: ['update:modelValue'],

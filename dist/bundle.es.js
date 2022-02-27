@@ -25,10 +25,10 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$A = {};
+const _sfc_main$B = {};
 const _hoisted_1$v = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
 const _hoisted_2$h = ["href"];
-function _sfc_render$z(_ctx, _cache) {
+function _sfc_render$A(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
     _hoisted_1$v,
     createElementVNode("a", {
@@ -36,16 +36,16 @@ function _sfc_render$z(_ctx, _cache) {
     }, "Admin Home", 8, _hoisted_2$h)
   ], 64);
 }
-var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z]]);
+var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A]]);
 var __glob_2_0 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KAdminLink
 });
 var KApp_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$z = {};
+const _sfc_main$A = {};
 const _hoisted_1$u = { class: "k-app" };
-function _sfc_render$y(_ctx, _cache) {
+function _sfc_render$z(_ctx, _cache) {
   const _component_KSnackbar = resolveComponent("KSnackbar");
   const _component_KConfirm = resolveComponent("KConfirm");
   return openBlock(), createElementBlock("div", _hoisted_1$u, [
@@ -62,7 +62,7 @@ function _sfc_render$y(_ctx, _cache) {
     })
   ]);
 }
-var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y]]);
+var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z]]);
 var __glob_2_1 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -153,20 +153,20 @@ function hashDelete(key) {
   return this.has(key) && delete this.__data__[key];
 }
 function hashGet(key) {
-  var data = this.__data__;
+  var data2 = this.__data__;
   if (nativeCreate) {
-    var result = data[key];
+    var result = data2[key];
     return result === HASH_UNDEFINED ? void 0 : result;
   }
-  return hasOwnProperty.call(data, key) ? data[key] : void 0;
+  return hasOwnProperty.call(data2, key) ? data2[key] : void 0;
 }
 function hashHas(key) {
-  var data = this.__data__;
-  return nativeCreate ? data[key] !== void 0 : hasOwnProperty.call(data, key);
+  var data2 = this.__data__;
+  return nativeCreate ? data2[key] !== void 0 : hasOwnProperty.call(data2, key);
 }
 function hashSet(key, value) {
-  var data = this.__data__;
-  data[key] = nativeCreate && value === void 0 ? HASH_UNDEFINED : value;
+  var data2 = this.__data__;
+  data2[key] = nativeCreate && value === void 0 ? HASH_UNDEFINED : value;
   return this;
 }
 Hash.prototype.clear = hashClear;
@@ -186,31 +186,31 @@ function listCacheClear() {
   this.__data__ = [];
 }
 function listCacheDelete(key) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
+  var data2 = this.__data__, index2 = assocIndexOf(data2, key);
   if (index2 < 0) {
     return false;
   }
-  var lastIndex = data.length - 1;
+  var lastIndex = data2.length - 1;
   if (index2 == lastIndex) {
-    data.pop();
+    data2.pop();
   } else {
-    splice.call(data, index2, 1);
+    splice.call(data2, index2, 1);
   }
   return true;
 }
 function listCacheGet(key) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
-  return index2 < 0 ? void 0 : data[index2][1];
+  var data2 = this.__data__, index2 = assocIndexOf(data2, key);
+  return index2 < 0 ? void 0 : data2[index2][1];
 }
 function listCacheHas(key) {
   return assocIndexOf(this.__data__, key) > -1;
 }
 function listCacheSet(key, value) {
-  var data = this.__data__, index2 = assocIndexOf(data, key);
+  var data2 = this.__data__, index2 = assocIndexOf(data2, key);
   if (index2 < 0) {
-    data.push([key, value]);
+    data2.push([key, value]);
   } else {
-    data[index2][1] = value;
+    data2[index2][1] = value;
   }
   return this;
 }
@@ -290,8 +290,8 @@ function castPath(value) {
   return isArray$1(value) ? value : stringToPath(value);
 }
 function getMapData(map, key) {
-  var data = map.__data__;
-  return isKeyable(key) ? data[typeof key == "string" ? "string" : "hash"] : data.map;
+  var data2 = map.__data__;
+  return isKeyable(key) ? data2[typeof key == "string" ? "string" : "hash"] : data2.map;
 }
 function getNative(object, key) {
   var value = getValue(object, key);
@@ -389,7 +389,7 @@ function get$3(object, path, defaultValue) {
 }
 var lodash_get = get$3;
 var KAutocomplete_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$y = {
+const _sfc_main$z = {
   directives: {
     ClickAway: directive
   },
@@ -552,7 +552,7 @@ const _hoisted_3$a = {
   class: "k-autocomplete-items"
 };
 const _hoisted_4$6 = ["onClick"];
-function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return withDirectives((openBlock(), createElementBlock("div", {
     class: "k-autocomplete",
@@ -598,13 +598,13 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-4dd30455"]]);
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-4dd30455"]]);
 var __glob_2_2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KAutocomplete
 });
-const _sfc_main$x = {
+const _sfc_main$y = {
   props: {
     nodeRec: {
       type: Object,
@@ -626,7 +626,7 @@ const _hoisted_3$9 = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_4$5 = ["href"];
 const _hoisted_5$2 = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_6$2 = ["innerHTML"];
-function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
   return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$s, [
     $props.image ? (openBlock(), createElementBlock("img", {
@@ -647,14 +647,14 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, _hoisted_6$2)
   ])) : createCommentVNode("", true);
 }
-var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
+var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
 var __glob_2_3 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KBrowseLink
 });
 var KButton_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$w = {
+const _sfc_main$x = {
   props: {
     small: {
       type: Boolean,
@@ -681,7 +681,7 @@ const _sfc_main$w = {
   }
 };
 const _hoisted_1$r = ["disabled"];
-function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("button", mergeProps({
     class: ["k-button", $options.classObj],
     disabled: $props.disabled,
@@ -692,13 +692,13 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ], 16, _hoisted_1$r);
 }
-var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
+var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
 var __glob_2_4 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KButton
 });
-const _sfc_main$v = {
+const _sfc_main$w = {
   provide() {
     return {
       kconfirm: this,
@@ -735,7 +735,7 @@ const _sfc_main$v = {
     }
   }
 };
-function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KCardTitle = resolveComponent("KCardTitle");
   const _component_KCardText = resolveComponent("KCardText");
   const _component_KSpacer = resolveComponent("KSpacer");
@@ -801,7 +801,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["modelValue"])
   ], 64);
 }
-var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
+var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
 var __glob_2_5 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2268,7 +2268,7 @@ function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 function cleanEscapedString(input) {
   return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
 }
-const _sfc_main$u = {
+const _sfc_main$v = {
   props: {
     modelValue: {
       type: [String, Date],
@@ -2277,6 +2277,10 @@ const _sfc_main$u = {
     time: {
       type: Boolean,
       default: false
+    },
+    editable: {
+      type: Boolean,
+      default: true
     }
   },
   emits: ["update:modelValue"],
@@ -2314,42 +2318,45 @@ const _sfc_main$u = {
     }
   }
 };
-const _hoisted_1$q = ["type"];
+const _hoisted_1$q = ["type", "readonly"];
 const _hoisted_2$e = /* @__PURE__ */ createTextVNode(" Now ");
 const _hoisted_3$8 = /* @__PURE__ */ createTextVNode(" Clear ");
-function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   return openBlock(), createElementBlock("div", null, [
     withDirectives(createElementVNode("input", {
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event),
       class: "k-input",
-      type: $options.type
+      type: $options.type,
+      readonly: !$props.editable
     }, null, 8, _hoisted_1$q), [
       [vModelDynamic, $options.localModelValue]
     ]),
-    createVNode(_component_KButton, {
-      class: "ml-1",
-      small: "",
-      onClick: $options.setToNow
-    }, {
-      default: withCtx(() => [
-        _hoisted_2$e
-      ]),
-      _: 1
-    }, 8, ["onClick"]),
-    createVNode(_component_KButton, {
-      class: "ml-1",
-      small: "",
-      onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("update:modelValue", null))
-    }, {
-      default: withCtx(() => [
-        _hoisted_3$8
-      ]),
-      _: 1
-    })
+    $props.editable ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
+      createVNode(_component_KButton, {
+        class: "ml-1",
+        small: "",
+        onClick: $options.setToNow
+      }, {
+        default: withCtx(() => [
+          _hoisted_2$e
+        ]),
+        _: 1
+      }, 8, ["onClick"]),
+      createVNode(_component_KButton, {
+        class: "ml-1",
+        small: "",
+        onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("update:modelValue", null))
+      }, {
+        default: withCtx(() => [
+          _hoisted_3$8
+        ]),
+        _: 1
+      })
+    ], 64)) : createCommentVNode("", true)
   ]);
 }
-var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
+var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
 var __glob_2_6 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -2599,7 +2606,7 @@ var enableBodyScroll = function enableBodyScroll2(targetElement) {
   }
 };
 var KDialog_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$t = {
+const _sfc_main$u = {
   directives: {
     ClickAway: directive
   },
@@ -2680,7 +2687,7 @@ const _hoisted_1$p = {
   key: 0,
   class: "k-dialog"
 };
-function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
@@ -2707,11 +2714,67 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     ])) : createCommentVNode("", true)
   ], 64);
 }
-var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
+var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
 var __glob_2_7 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KDialog
+});
+var KDot_vue_vue_type_style_index_0_lang = "";
+const _sfc_main$t = {
+  props: {
+    color: {
+      type: String,
+      default: "green"
+    },
+    size: {
+      type: [String, Number],
+      default: "0.75em"
+    },
+    outline: {
+      type: Boolean,
+      default: false
+    },
+    outlineWidth: {
+      type: [String, Number],
+      default: 2
+    }
+  },
+  computed: {
+    style() {
+      const size = convertToUnit(this.size);
+      if (this.outline) {
+        const borderSize = convertToUnit(this.outlineWidth);
+        return {
+          borderStyle: "solid",
+          borderWidth: borderSize,
+          borderColor: this.color,
+          width: size,
+          height: size
+        };
+      } else {
+        return {
+          width: size,
+          height: size,
+          backgroundColor: this.color
+        };
+      }
+    }
+  }
+};
+function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", {
+    class: "k-dot",
+    style: normalizeStyle([$options.style])
+  }, [
+    renderSlot(_ctx.$slots, "default")
+  ], 4);
+}
+var KDot = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
+var __glob_2_8 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": KDot
 });
 var KFormFieldWrapper_vue_vue_type_style_index_0_lang = "";
 const mixin = {
@@ -2771,7 +2834,7 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KFormFieldWrapper = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);
-var __glob_2_8 = /* @__PURE__ */ Object.freeze({
+var __glob_2_9 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   mixin,
@@ -2875,7 +2938,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q]]);
-var __glob_2_9 = /* @__PURE__ */ Object.freeze({
+var __glob_2_10 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KFunctionMenu
@@ -2887,7 +2950,7 @@ function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$m);
 }
 var KLinearProgressIndicator = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
-var __glob_2_10 = /* @__PURE__ */ Object.freeze({
+var __glob_2_11 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KLinearProgressIndicator
@@ -3013,7 +3076,7 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var KMulti = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
-var __glob_2_11 = /* @__PURE__ */ Object.freeze({
+var __glob_2_12 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KMulti
@@ -3469,7 +3532,7 @@ function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KNodePickerField = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
-var __glob_2_12 = /* @__PURE__ */ Object.freeze({
+var __glob_2_13 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KNodePickerField
@@ -3509,7 +3572,7 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["model-value"]);
 }
 var KOneMoment = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
-var __glob_2_13 = /* @__PURE__ */ Object.freeze({
+var __glob_2_14 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KOneMoment
@@ -3578,7 +3641,7 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
-var __glob_2_14 = /* @__PURE__ */ Object.freeze({
+var __glob_2_15 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KPageDropZone
@@ -3609,7 +3672,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
-var __glob_2_15 = /* @__PURE__ */ Object.freeze({
+var __glob_2_16 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KPageTitle
@@ -3727,7 +3790,7 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
-var __glob_2_16 = /* @__PURE__ */ Object.freeze({
+var __glob_2_17 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KPagination
@@ -3838,7 +3901,7 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KRadioGroup = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
-var __glob_2_17 = /* @__PURE__ */ Object.freeze({
+var __glob_2_18 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KRadioGroup
@@ -3859,7 +3922,7 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
-var __glob_2_18 = /* @__PURE__ */ Object.freeze({
+var __glob_2_19 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KScratch
@@ -3961,7 +4024,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
-var __glob_2_19 = /* @__PURE__ */ Object.freeze({
+var __glob_2_20 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSelect
@@ -4074,7 +4137,7 @@ function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
-var __glob_2_20 = /* @__PURE__ */ Object.freeze({
+var __glob_2_21 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSnackbar
@@ -4138,7 +4201,7 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
-var __glob_2_21 = /* @__PURE__ */ Object.freeze({
+var __glob_2_22 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSortHeader
@@ -4150,7 +4213,7 @@ function _sfc_render$d(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$c);
 }
 var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
-var __glob_2_22 = /* @__PURE__ */ Object.freeze({
+var __glob_2_23 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSpacer
@@ -4209,7 +4272,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_3$1, 4);
 }
 var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c]]);
-var __glob_2_23 = /* @__PURE__ */ Object.freeze({
+var __glob_2_24 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSpinner
@@ -4295,7 +4358,7 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_2$2, 2);
 }
 var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
-var __glob_2_24 = /* @__PURE__ */ Object.freeze({
+var __glob_2_25 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KSwitch
@@ -4329,10 +4392,8 @@ const _sfc_main$b = {
   }
 };
 function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_KOneMoment = resolveComponent("KOneMoment");
   const _component_KLinearProgressIndicator = resolveComponent("KLinearProgressIndicator");
   return openBlock(), createElementBlock(Fragment, null, [
-    createVNode(_component_KOneMoment, { loading: $props.loading }, null, 8, ["loading"]),
     $props.loading ? (openBlock(), createBlock(_component_KLinearProgressIndicator, { key: 0 })) : createCommentVNode("", true),
     createElementVNode("table", {
       class: normalizeClass(["k-table", $options.classObj])
@@ -4342,7 +4403,7 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
-var __glob_2_25 = /* @__PURE__ */ Object.freeze({
+var __glob_2_26 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTable
@@ -4436,7 +4497,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
-var __glob_2_26 = /* @__PURE__ */ Object.freeze({
+var __glob_2_27 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTextArea
@@ -4489,7 +4550,7 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextField = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
-var __glob_2_27 = /* @__PURE__ */ Object.freeze({
+var __glob_2_28 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTextField
@@ -4540,13 +4601,17 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 12, _hoisted_1$7)) : createCommentVNode("", true);
 }
 var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
-var __glob_2_28 = /* @__PURE__ */ Object.freeze({
+var __glob_2_29 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserGIF
 });
 const _sfc_main$7 = {
   props: {
+    user: {
+      type: [Number, Object],
+      default: null
+    },
     userRec: {
       type: Object,
       default: null
@@ -4562,53 +4627,60 @@ const _sfc_main$7 = {
   },
   data() {
     return {
-      localUserRec: null
+      userRecLocal: null
     };
   },
   computed: {
-    user_id() {
-      return lodash_get(this.localUserRec, "id") || lodash_get(this.localUserRec, "userid");
+    userIdLocal() {
+      var _a;
+      return (_a = lodash_get(this.userRecLocal, "id")) != null ? _a : lodash_get(this.userRecLocal, "userid");
+    },
+    userLocal() {
+      var _a, _b;
+      return (_b = (_a = this.user) != null ? _a : this.userid) != null ? _b : this.userRec;
     },
     displayName() {
-      return lodash_get(this.localUserRec, "display_name") || lodash_get(this.localUserRec, "displayname");
+      var _a, _b;
+      return (_b = (_a = lodash_get(this.userRecLocal, "display_name")) != null ? _a : lodash_get(this.userRecLocal, "displayname")) != null ? _b : lodash_get(this.userRecLocal, "name");
     },
     type() {
-      return lodash_get(this.localUserRec, "type");
+      return lodash_get(this.userRecLocal, "type");
     }
   },
   watch: {
-    userid: {
-      handler(value) {
-        if (value) {
-          this.$session.members.member(value, "v1").then((response) => this.localUserRec = lodash_get(response, "data.data"));
-        }
-      },
-      immediate: true
-    },
-    userRec: {
-      handler(value) {
-        if (this.userid == null) {
-          this.localUserRec = value;
+    userLocal: {
+      async handler(value) {
+        if (this.isInteger(value)) {
+          const response = await this.$session.members.member(value, "v1");
+          this.userRecLocal = lodash_get(response, "data.data");
+        } else {
+          this.userRecLocal = value;
         }
       },
       immediate: true
     }
   },
   methods: {
+    isInteger(value) {
+      return !isNaN(value) && typeof value == "number";
+    },
     click() {
       window.baseUrl = window.baseURL;
-      window.doUserDialog(this.user_id);
+      window.doUserDialog(this.userIdLocal);
     }
   }
 };
-const _hoisted_1$6 = { key: 0 };
+const _hoisted_1$6 = {
+  key: 0,
+  class: "flex items-center"
+};
 const _hoisted_2$1 = /* @__PURE__ */ createTextVNode("\xA0");
 function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KUserGIF = resolveComponent("KUserGIF");
-  return $data.localUserRec ? (openBlock(), createElementBlock("span", _hoisted_1$6, [
+  return $data.userRecLocal ? (openBlock(), createElementBlock("span", _hoisted_1$6, [
     $props.gif ? (openBlock(), createBlock(_component_KUserGIF, {
       key: 0,
-      "user-rec": $data.localUserRec
+      "user-rec": $data.userRecLocal
     }, null, 8, ["user-rec"])) : createCommentVNode("", true),
     _hoisted_2$1,
     createElementVNode("a", {
@@ -4618,7 +4690,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
-var __glob_2_29 = /* @__PURE__ */ Object.freeze({
+var __glob_2_30 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserLink
@@ -4916,7 +4988,9 @@ const _hoisted_1$5 = ["innerHTML"];
 function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KUserGIF = resolveComponent("KUserGIF");
   const _component_KAutocomplete = resolveComponent("KAutocomplete");
-  return openBlock(), createBlock(_component_KAutocomplete, {
+  const _component_KUserLink = resolveComponent("KUserLink");
+  return $props.editable ? (openBlock(), createBlock(_component_KAutocomplete, {
+    key: 0,
     modelValue: $options.localValue,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
     "search-input": $data.searchText,
@@ -4927,8 +5001,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     loading: $data.loading,
     items: $data.items,
     "return-object": $props.returnObject,
-    combobox: $props.combobox,
-    editable: $props.editable
+    combobox: $props.combobox
   }, {
     prepend: withCtx(({ item }) => [
       createVNode(_component_KUserGIF, { "user-rec": item }, null, 8, ["user-rec"])
@@ -4942,10 +5015,14 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, _hoisted_1$5)
     ]),
     _: 1
-  }, 8, ["modelValue", "search-input", "placeholder", "width", "loading", "items", "return-object", "combobox", "editable"]);
+  }, 8, ["modelValue", "search-input", "placeholder", "width", "loading", "items", "return-object", "combobox"])) : (openBlock(), createBlock(_component_KUserLink, {
+    key: 1,
+    user: $props.modelValue,
+    gif: ""
+  }, null, 8, ["user"]));
 }
 var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
-var __glob_2_30 = /* @__PURE__ */ Object.freeze({
+var __glob_2_31 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KUserPicker
@@ -4988,10 +5065,10 @@ var clickable = {
     },
     generateRouteLink() {
       let tag = "div";
-      let data = {};
+      let data2 = {};
       if (this.href) {
         tag = "a";
-        data = {
+        data2 = {
           attrs: {
             href: this.href,
             target: this.target
@@ -4999,13 +5076,13 @@ var clickable = {
         };
       } else if (this.to) {
         tag = this.nuxt ? "nuxt-link" : "router-link";
-        data = {
+        data2 = {
           props: {
             to: this.to
           }
         };
       }
-      return { tag, data };
+      return { tag, data: data2 };
     }
   }
 };
@@ -5022,8 +5099,8 @@ const _sfc_main$5 = {
   },
   methods: {
     renderCard() {
-      const { tag, data } = this.generateRouteLink();
-      return h(tag, __spreadProps(__spreadValues({}, data), {
+      const { tag, data: data2 } = this.generateRouteLink();
+      return h(tag, __spreadProps(__spreadValues({}, data2), {
         class: this.classObj,
         style: [this.measurableStyles]
       }), [...this.$slots.default()]);
@@ -5033,7 +5110,7 @@ const _sfc_main$5 = {
     return this.renderCard();
   }
 };
-var __glob_2_31 = /* @__PURE__ */ Object.freeze({
+var __glob_2_32 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _sfc_main$5
@@ -5047,7 +5124,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
-var __glob_2_32 = /* @__PURE__ */ Object.freeze({
+var __glob_2_33 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardActions
@@ -5061,7 +5138,7 @@ function _sfc_render$3(_ctx, _cache) {
   ]);
 }
 var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
-var __glob_2_33 = /* @__PURE__ */ Object.freeze({
+var __glob_2_34 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardText
@@ -5075,7 +5152,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
-var __glob_2_34 = /* @__PURE__ */ Object.freeze({
+var __glob_2_35 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KCardTitle
@@ -5105,7 +5182,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
-var __glob_2_35 = /* @__PURE__ */ Object.freeze({
+var __glob_2_36 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTabItem
@@ -5169,7 +5246,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-var __glob_2_36 = /* @__PURE__ */ Object.freeze({
+var __glob_2_37 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": KTabs
@@ -5187,7 +5264,7 @@ var bind$2 = function bind(fn, thisArg) {
 var bind$1 = bind$2;
 var toString = Object.prototype.toString;
 function isArray(val) {
-  return toString.call(val) === "[object Array]";
+  return Array.isArray(val);
 }
 function isUndefined(val) {
   return typeof val === "undefined";
@@ -5199,14 +5276,14 @@ function isArrayBuffer(val) {
   return toString.call(val) === "[object ArrayBuffer]";
 }
 function isFormData(val) {
-  return typeof FormData !== "undefined" && val instanceof FormData;
+  return toString.call(val) === "[object FormData]";
 }
 function isArrayBufferView(val) {
   var result;
   if (typeof ArrayBuffer !== "undefined" && ArrayBuffer.isView) {
     result = ArrayBuffer.isView(val);
   } else {
-    result = val && val.buffer && val.buffer instanceof ArrayBuffer;
+    result = val && val.buffer && isArrayBuffer(val.buffer);
   }
   return result;
 }
@@ -5242,7 +5319,7 @@ function isStream(val) {
   return isObject$2(val) && isFunction(val.pipe);
 }
 function isURLSearchParams(val) {
-  return typeof URLSearchParams !== "undefined" && val instanceof URLSearchParams;
+  return toString.call(val) === "[object URLSearchParams]";
 }
 function trim(str) {
   return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, "");
@@ -5306,7 +5383,7 @@ function stripBOM(content) {
   }
   return content;
 }
-var utils$d = {
+var utils$e = {
   isArray,
   isArrayBuffer,
   isBuffer,
@@ -5330,7 +5407,7 @@ var utils$d = {
   trim,
   stripBOM
 };
-var utils$c = utils$d;
+var utils$d = utils$e;
 function encode(val) {
   return encodeURIComponent(val).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]");
 }
@@ -5341,23 +5418,23 @@ var buildURL$2 = function buildURL(url, params, paramsSerializer) {
   var serializedParams;
   if (paramsSerializer) {
     serializedParams = paramsSerializer(params);
-  } else if (utils$c.isURLSearchParams(params)) {
+  } else if (utils$d.isURLSearchParams(params)) {
     serializedParams = params.toString();
   } else {
     var parts = [];
-    utils$c.forEach(params, function serialize(val, key) {
+    utils$d.forEach(params, function serialize(val, key) {
       if (val === null || typeof val === "undefined") {
         return;
       }
-      if (utils$c.isArray(val)) {
+      if (utils$d.isArray(val)) {
         key = key + "[]";
       } else {
         val = [val];
       }
-      utils$c.forEach(val, function parseValue(v) {
-        if (utils$c.isDate(v)) {
+      utils$d.forEach(val, function parseValue(v) {
+        if (utils$d.isDate(v)) {
           v = v.toISOString();
-        } else if (utils$c.isObject(v)) {
+        } else if (utils$d.isObject(v)) {
           v = JSON.stringify(v);
         }
         parts.push(encode(key) + "=" + encode(v));
@@ -5374,7 +5451,7 @@ var buildURL$2 = function buildURL(url, params, paramsSerializer) {
   }
   return url;
 };
-var utils$b = utils$d;
+var utils$c = utils$e;
 function InterceptorManager$1() {
   this.handlers = [];
 }
@@ -5393,19 +5470,19 @@ InterceptorManager$1.prototype.eject = function eject(id) {
   }
 };
 InterceptorManager$1.prototype.forEach = function forEach2(fn) {
-  utils$b.forEach(this.handlers, function forEachHandler(h2) {
+  utils$c.forEach(this.handlers, function forEachHandler(h2) {
     if (h2 !== null) {
       fn(h2);
     }
   });
 };
 var InterceptorManager_1 = InterceptorManager$1;
-var utils$a = utils$d;
+var utils$b = utils$e;
 var normalizeHeaderName$1 = function normalizeHeaderName(headers, normalizedName) {
-  utils$a.forEach(headers, function processHeader(value, name2) {
-    if (name2 !== normalizedName && name2.toUpperCase() === normalizedName.toUpperCase()) {
+  utils$b.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
       headers[normalizedName] = value;
-      delete headers[name2];
+      delete headers[name];
     }
   });
 };
@@ -5428,7 +5505,8 @@ var enhanceError$2 = function enhanceError(error, config, code, request2, respon
       columnNumber: this.columnNumber,
       stack: this.stack,
       config: this.config,
-      code: this.code
+      code: this.code,
+      status: this.response && this.response.status ? this.response.status : null
     };
   };
   return error;
@@ -5447,19 +5525,19 @@ var settle$1 = function settle(resolve, reject, response) {
     reject(createError$1("Request failed with status code " + response.status, response.config, null, response.request, response));
   }
 };
-var utils$9 = utils$d;
-var cookies$1 = utils$9.isStandardBrowserEnv() ? function standardBrowserEnv() {
+var utils$a = utils$e;
+var cookies$1 = utils$a.isStandardBrowserEnv() ? function standardBrowserEnv() {
   return {
-    write: function write(name2, value, expires, path, domain, secure) {
+    write: function write(name, value, expires, path, domain, secure) {
       var cookie = [];
-      cookie.push(name2 + "=" + encodeURIComponent(value));
-      if (utils$9.isNumber(expires)) {
+      cookie.push(name + "=" + encodeURIComponent(value));
+      if (utils$a.isNumber(expires)) {
         cookie.push("expires=" + new Date(expires).toGMTString());
       }
-      if (utils$9.isString(path)) {
+      if (utils$a.isString(path)) {
         cookie.push("path=" + path);
       }
-      if (utils$9.isString(domain)) {
+      if (utils$a.isString(domain)) {
         cookie.push("domain=" + domain);
       }
       if (secure === true) {
@@ -5467,12 +5545,12 @@ var cookies$1 = utils$9.isStandardBrowserEnv() ? function standardBrowserEnv() {
       }
       document.cookie = cookie.join("; ");
     },
-    read: function read(name2) {
-      var match2 = document.cookie.match(new RegExp("(^|;\\s*)(" + name2 + ")=([^;]*)"));
+    read: function read(name) {
+      var match2 = document.cookie.match(new RegExp("(^|;\\s*)(" + name + ")=([^;]*)"));
       return match2 ? decodeURIComponent(match2[3]) : null;
     },
-    remove: function remove(name2) {
-      this.write(name2, "", Date.now() - 864e5);
+    remove: function remove(name) {
+      this.write(name, "", Date.now() - 864e5);
     }
   };
 }() : function nonStandardBrowserEnv() {
@@ -5487,7 +5565,7 @@ var cookies$1 = utils$9.isStandardBrowserEnv() ? function standardBrowserEnv() {
   };
 }();
 var isAbsoluteURL$1 = function isAbsoluteURL(url) {
-  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+  return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
 };
 var combineURLs$1 = function combineURLs(baseURL, relativeURL) {
   return relativeURL ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "") : baseURL;
@@ -5500,7 +5578,7 @@ var buildFullPath$1 = function buildFullPath(baseURL, requestedURL) {
   }
   return requestedURL;
 };
-var utils$8 = utils$d;
+var utils$9 = utils$e;
 var ignoreDuplicateOf = [
   "age",
   "authorization",
@@ -5528,10 +5606,10 @@ var parseHeaders$1 = function parseHeaders(headers) {
   if (!headers) {
     return parsed;
   }
-  utils$8.forEach(headers.split("\n"), function parser(line) {
+  utils$9.forEach(headers.split("\n"), function parser(line) {
     i = line.indexOf(":");
-    key = utils$8.trim(line.substr(0, i)).toLowerCase();
-    val = utils$8.trim(line.substr(i + 1));
+    key = utils$9.trim(line.substr(0, i)).toLowerCase();
+    val = utils$9.trim(line.substr(i + 1));
     if (key) {
       if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
         return;
@@ -5545,8 +5623,8 @@ var parseHeaders$1 = function parseHeaders(headers) {
   });
   return parsed;
 };
-var utils$7 = utils$d;
-var isURLSameOrigin$1 = utils$7.isStandardBrowserEnv() ? function standardBrowserEnv2() {
+var utils$8 = utils$e;
+var isURLSameOrigin$1 = utils$8.isStandardBrowserEnv() ? function standardBrowserEnv2() {
   var msie = /(msie|trident)/i.test(navigator.userAgent);
   var urlParsingNode = document.createElement("a");
   var originURL;
@@ -5570,7 +5648,7 @@ var isURLSameOrigin$1 = utils$7.isStandardBrowserEnv() ? function standardBrowse
   }
   originURL = resolveURL(window.location.href);
   return function isURLSameOrigin2(requestURL) {
-    var parsed = utils$7.isString(requestURL) ? resolveURL(requestURL) : requestURL;
+    var parsed = utils$8.isString(requestURL) ? resolveURL(requestURL) : requestURL;
     return parsed.protocol === originURL.protocol && parsed.host === originURL.host;
   };
 }() : function nonStandardBrowserEnv2() {
@@ -5578,7 +5656,15 @@ var isURLSameOrigin$1 = utils$7.isStandardBrowserEnv() ? function standardBrowse
     return true;
   };
 }();
-var utils$6 = utils$d;
+function Cancel$3(message) {
+  this.message = message;
+}
+Cancel$3.prototype.toString = function toString2() {
+  return "Cancel" + (this.message ? ": " + this.message : "");
+};
+Cancel$3.prototype.__CANCEL__ = true;
+var Cancel_1 = Cancel$3;
+var utils$7 = utils$e;
 var settle2 = settle$1;
 var cookies = cookies$1;
 var buildURL$1 = buildURL$2;
@@ -5586,12 +5672,23 @@ var buildFullPath2 = buildFullPath$1;
 var parseHeaders2 = parseHeaders$1;
 var isURLSameOrigin = isURLSameOrigin$1;
 var createError2 = createError$2;
+var defaults$4 = defaults_1;
+var Cancel$2 = Cancel_1;
 var xhr = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
     var requestData = config.data;
     var requestHeaders = config.headers;
     var responseType = config.responseType;
-    if (utils$6.isFormData(requestData)) {
+    var onCanceled;
+    function done() {
+      if (config.cancelToken) {
+        config.cancelToken.unsubscribe(onCanceled);
+      }
+      if (config.signal) {
+        config.signal.removeEventListener("abort", onCanceled);
+      }
+    }
+    if (utils$7.isFormData(requestData)) {
       delete requestHeaders["Content-Type"];
     }
     var request2 = new XMLHttpRequest();
@@ -5617,7 +5714,13 @@ var xhr = function xhrAdapter(config) {
         config,
         request: request2
       };
-      settle2(resolve, reject, response);
+      settle2(function _resolve(value) {
+        resolve(value);
+        done();
+      }, function _reject(err) {
+        reject(err);
+        done();
+      }, response);
       request2 = null;
     }
     if ("onloadend" in request2) {
@@ -5645,21 +5748,22 @@ var xhr = function xhrAdapter(config) {
       request2 = null;
     };
     request2.ontimeout = function handleTimeout() {
-      var timeoutErrorMessage = "timeout of " + config.timeout + "ms exceeded";
+      var timeoutErrorMessage = config.timeout ? "timeout of " + config.timeout + "ms exceeded" : "timeout exceeded";
+      var transitional2 = config.transitional || defaults$4.transitional;
       if (config.timeoutErrorMessage) {
         timeoutErrorMessage = config.timeoutErrorMessage;
       }
-      reject(createError2(timeoutErrorMessage, config, config.transitional && config.transitional.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED", request2));
+      reject(createError2(timeoutErrorMessage, config, transitional2.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED", request2));
       request2 = null;
     };
-    if (utils$6.isStandardBrowserEnv()) {
+    if (utils$7.isStandardBrowserEnv()) {
       var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ? cookies.read(config.xsrfCookieName) : void 0;
       if (xsrfValue) {
         requestHeaders[config.xsrfHeaderName] = xsrfValue;
       }
     }
     if ("setRequestHeader" in request2) {
-      utils$6.forEach(requestHeaders, function setRequestHeader(val, key) {
+      utils$7.forEach(requestHeaders, function setRequestHeader(val, key) {
         if (typeof requestData === "undefined" && key.toLowerCase() === "content-type") {
           delete requestHeaders[key];
         } else {
@@ -5667,7 +5771,7 @@ var xhr = function xhrAdapter(config) {
         }
       });
     }
-    if (!utils$6.isUndefined(config.withCredentials)) {
+    if (!utils$7.isUndefined(config.withCredentials)) {
       request2.withCredentials = !!config.withCredentials;
     }
     if (responseType && responseType !== "json") {
@@ -5679,15 +5783,19 @@ var xhr = function xhrAdapter(config) {
     if (typeof config.onUploadProgress === "function" && request2.upload) {
       request2.upload.addEventListener("progress", config.onUploadProgress);
     }
-    if (config.cancelToken) {
-      config.cancelToken.promise.then(function onCanceled(cancel) {
+    if (config.cancelToken || config.signal) {
+      onCanceled = function(cancel) {
         if (!request2) {
           return;
         }
+        reject(!cancel || cancel && cancel.type ? new Cancel$2("canceled") : cancel);
         request2.abort();
-        reject(cancel);
         request2 = null;
-      });
+      };
+      config.cancelToken && config.cancelToken.subscribe(onCanceled);
+      if (config.signal) {
+        config.signal.aborted ? onCanceled() : config.signal.addEventListener("abort", onCanceled);
+      }
     }
     if (!requestData) {
       requestData = null;
@@ -5695,14 +5803,14 @@ var xhr = function xhrAdapter(config) {
     request2.send(requestData);
   });
 };
-var utils$5 = utils$d;
+var utils$6 = utils$e;
 var normalizeHeaderName2 = normalizeHeaderName$1;
 var enhanceError2 = enhanceError$2;
 var DEFAULT_CONTENT_TYPE = {
   "Content-Type": "application/x-www-form-urlencoded"
 };
 function setContentTypeIfUnset(headers, value) {
-  if (!utils$5.isUndefined(headers) && utils$5.isUndefined(headers["Content-Type"])) {
+  if (!utils$6.isUndefined(headers) && utils$6.isUndefined(headers["Content-Type"])) {
     headers["Content-Type"] = value;
   }
 }
@@ -5716,10 +5824,10 @@ function getDefaultAdapter() {
   return adapter;
 }
 function stringifySafely(rawValue, parser, encoder) {
-  if (utils$5.isString(rawValue)) {
+  if (utils$6.isString(rawValue)) {
     try {
       (parser || JSON.parse)(rawValue);
-      return utils$5.trim(rawValue);
+      return utils$6.trim(rawValue);
     } catch (e) {
       if (e.name !== "SyntaxError") {
         throw e;
@@ -5735,33 +5843,33 @@ var defaults$3 = {
     clarifyTimeoutError: false
   },
   adapter: getDefaultAdapter(),
-  transformRequest: [function transformRequest(data, headers) {
+  transformRequest: [function transformRequest(data2, headers) {
     normalizeHeaderName2(headers, "Accept");
     normalizeHeaderName2(headers, "Content-Type");
-    if (utils$5.isFormData(data) || utils$5.isArrayBuffer(data) || utils$5.isBuffer(data) || utils$5.isStream(data) || utils$5.isFile(data) || utils$5.isBlob(data)) {
-      return data;
+    if (utils$6.isFormData(data2) || utils$6.isArrayBuffer(data2) || utils$6.isBuffer(data2) || utils$6.isStream(data2) || utils$6.isFile(data2) || utils$6.isBlob(data2)) {
+      return data2;
     }
-    if (utils$5.isArrayBufferView(data)) {
-      return data.buffer;
+    if (utils$6.isArrayBufferView(data2)) {
+      return data2.buffer;
     }
-    if (utils$5.isURLSearchParams(data)) {
+    if (utils$6.isURLSearchParams(data2)) {
       setContentTypeIfUnset(headers, "application/x-www-form-urlencoded;charset=utf-8");
-      return data.toString();
+      return data2.toString();
     }
-    if (utils$5.isObject(data) || headers && headers["Content-Type"] === "application/json") {
+    if (utils$6.isObject(data2) || headers && headers["Content-Type"] === "application/json") {
       setContentTypeIfUnset(headers, "application/json");
-      return stringifySafely(data);
+      return stringifySafely(data2);
     }
-    return data;
+    return data2;
   }],
-  transformResponse: [function transformResponse(data) {
-    var transitional2 = this.transitional;
+  transformResponse: [function transformResponse(data2) {
+    var transitional2 = this.transitional || defaults$3.transitional;
     var silentJSONParsing = transitional2 && transitional2.silentJSONParsing;
     var forcedJSONParsing = transitional2 && transitional2.forcedJSONParsing;
     var strictJSONParsing = !silentJSONParsing && this.responseType === "json";
-    if (strictJSONParsing || forcedJSONParsing && utils$5.isString(data) && data.length) {
+    if (strictJSONParsing || forcedJSONParsing && utils$6.isString(data2) && data2.length) {
       try {
-        return JSON.parse(data);
+        return JSON.parse(data2);
       } catch (e) {
         if (strictJSONParsing) {
           if (e.name === "SyntaxError") {
@@ -5771,7 +5879,7 @@ var defaults$3 = {
         }
       }
     }
-    return data;
+    return data2;
   }],
   timeout: 0,
   xsrfCookieName: "XSRF-TOKEN",
@@ -5780,47 +5888,51 @@ var defaults$3 = {
   maxBodyLength: -1,
   validateStatus: function validateStatus(status) {
     return status >= 200 && status < 300;
+  },
+  headers: {
+    common: {
+      "Accept": "application/json, text/plain, */*"
+    }
   }
 };
-defaults$3.headers = {
-  common: {
-    "Accept": "application/json, text/plain, */*"
-  }
-};
-utils$5.forEach(["delete", "get", "head"], function forEachMethodNoData(method) {
+utils$6.forEach(["delete", "get", "head"], function forEachMethodNoData(method) {
   defaults$3.headers[method] = {};
 });
-utils$5.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
-  defaults$3.headers[method] = utils$5.merge(DEFAULT_CONTENT_TYPE);
+utils$6.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
+  defaults$3.headers[method] = utils$6.merge(DEFAULT_CONTENT_TYPE);
 });
 var defaults_1 = defaults$3;
-var utils$4 = utils$d;
+var utils$5 = utils$e;
 var defaults$2 = defaults_1;
-var transformData$1 = function transformData(data, headers, fns) {
+var transformData$1 = function transformData(data2, headers, fns) {
   var context = this || defaults$2;
-  utils$4.forEach(fns, function transform(fn) {
-    data = fn.call(context, data, headers);
+  utils$5.forEach(fns, function transform(fn) {
+    data2 = fn.call(context, data2, headers);
   });
-  return data;
+  return data2;
 };
 var isCancel$1 = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
-var utils$3 = utils$d;
+var utils$4 = utils$e;
 var transformData2 = transformData$1;
 var isCancel2 = isCancel$1;
 var defaults$1 = defaults_1;
+var Cancel$1 = Cancel_1;
 function throwIfCancellationRequested(config) {
   if (config.cancelToken) {
     config.cancelToken.throwIfRequested();
+  }
+  if (config.signal && config.signal.aborted) {
+    throw new Cancel$1("canceled");
   }
 }
 var dispatchRequest$1 = function dispatchRequest(config) {
   throwIfCancellationRequested(config);
   config.headers = config.headers || {};
   config.data = transformData2.call(config, config.data, config.headers, config.transformRequest);
-  config.headers = utils$3.merge(config.headers.common || {}, config.headers[config.method] || {}, config.headers);
-  utils$3.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function cleanHeaderConfig(method) {
+  config.headers = utils$4.merge(config.headers.common || {}, config.headers[config.method] || {}, config.headers);
+  utils$4.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function cleanHeaderConfig(method) {
     delete config.headers[method];
   });
   var adapter = config.adapter || defaults$1.adapter;
@@ -5838,185 +5950,85 @@ var dispatchRequest$1 = function dispatchRequest(config) {
     return Promise.reject(reason);
   });
 };
-var utils$2 = utils$d;
+var utils$3 = utils$e;
 var mergeConfig$2 = function mergeConfig(config1, config2) {
   config2 = config2 || {};
   var config = {};
-  var valueFromConfig2Keys = ["url", "method", "data"];
-  var mergeDeepPropertiesKeys = ["headers", "auth", "proxy", "params"];
-  var defaultToConfig2Keys = [
-    "baseURL",
-    "transformRequest",
-    "transformResponse",
-    "paramsSerializer",
-    "timeout",
-    "timeoutMessage",
-    "withCredentials",
-    "adapter",
-    "responseType",
-    "xsrfCookieName",
-    "xsrfHeaderName",
-    "onUploadProgress",
-    "onDownloadProgress",
-    "decompress",
-    "maxContentLength",
-    "maxBodyLength",
-    "maxRedirects",
-    "transport",
-    "httpAgent",
-    "httpsAgent",
-    "cancelToken",
-    "socketPath",
-    "responseEncoding"
-  ];
-  var directMergeKeys = ["validateStatus"];
   function getMergedValue(target, source2) {
-    if (utils$2.isPlainObject(target) && utils$2.isPlainObject(source2)) {
-      return utils$2.merge(target, source2);
-    } else if (utils$2.isPlainObject(source2)) {
-      return utils$2.merge({}, source2);
-    } else if (utils$2.isArray(source2)) {
+    if (utils$3.isPlainObject(target) && utils$3.isPlainObject(source2)) {
+      return utils$3.merge(target, source2);
+    } else if (utils$3.isPlainObject(source2)) {
+      return utils$3.merge({}, source2);
+    } else if (utils$3.isArray(source2)) {
       return source2.slice();
     }
     return source2;
   }
   function mergeDeepProperties(prop) {
-    if (!utils$2.isUndefined(config2[prop])) {
-      config[prop] = getMergedValue(config1[prop], config2[prop]);
-    } else if (!utils$2.isUndefined(config1[prop])) {
-      config[prop] = getMergedValue(void 0, config1[prop]);
+    if (!utils$3.isUndefined(config2[prop])) {
+      return getMergedValue(config1[prop], config2[prop]);
+    } else if (!utils$3.isUndefined(config1[prop])) {
+      return getMergedValue(void 0, config1[prop]);
     }
   }
-  utils$2.forEach(valueFromConfig2Keys, function valueFromConfig2(prop) {
-    if (!utils$2.isUndefined(config2[prop])) {
-      config[prop] = getMergedValue(void 0, config2[prop]);
+  function valueFromConfig2(prop) {
+    if (!utils$3.isUndefined(config2[prop])) {
+      return getMergedValue(void 0, config2[prop]);
     }
-  });
-  utils$2.forEach(mergeDeepPropertiesKeys, mergeDeepProperties);
-  utils$2.forEach(defaultToConfig2Keys, function defaultToConfig2(prop) {
-    if (!utils$2.isUndefined(config2[prop])) {
-      config[prop] = getMergedValue(void 0, config2[prop]);
-    } else if (!utils$2.isUndefined(config1[prop])) {
-      config[prop] = getMergedValue(void 0, config1[prop]);
+  }
+  function defaultToConfig2(prop) {
+    if (!utils$3.isUndefined(config2[prop])) {
+      return getMergedValue(void 0, config2[prop]);
+    } else if (!utils$3.isUndefined(config1[prop])) {
+      return getMergedValue(void 0, config1[prop]);
     }
-  });
-  utils$2.forEach(directMergeKeys, function merge2(prop) {
+  }
+  function mergeDirectKeys(prop) {
     if (prop in config2) {
-      config[prop] = getMergedValue(config1[prop], config2[prop]);
+      return getMergedValue(config1[prop], config2[prop]);
     } else if (prop in config1) {
-      config[prop] = getMergedValue(void 0, config1[prop]);
+      return getMergedValue(void 0, config1[prop]);
     }
+  }
+  var mergeMap = {
+    "url": valueFromConfig2,
+    "method": valueFromConfig2,
+    "data": valueFromConfig2,
+    "baseURL": defaultToConfig2,
+    "transformRequest": defaultToConfig2,
+    "transformResponse": defaultToConfig2,
+    "paramsSerializer": defaultToConfig2,
+    "timeout": defaultToConfig2,
+    "timeoutMessage": defaultToConfig2,
+    "withCredentials": defaultToConfig2,
+    "adapter": defaultToConfig2,
+    "responseType": defaultToConfig2,
+    "xsrfCookieName": defaultToConfig2,
+    "xsrfHeaderName": defaultToConfig2,
+    "onUploadProgress": defaultToConfig2,
+    "onDownloadProgress": defaultToConfig2,
+    "decompress": defaultToConfig2,
+    "maxContentLength": defaultToConfig2,
+    "maxBodyLength": defaultToConfig2,
+    "transport": defaultToConfig2,
+    "httpAgent": defaultToConfig2,
+    "httpsAgent": defaultToConfig2,
+    "cancelToken": defaultToConfig2,
+    "socketPath": defaultToConfig2,
+    "responseEncoding": defaultToConfig2,
+    "validateStatus": mergeDirectKeys
+  };
+  utils$3.forEach(Object.keys(config1).concat(Object.keys(config2)), function computeConfigValue(prop) {
+    var merge2 = mergeMap[prop] || mergeDeepProperties;
+    var configValue = merge2(prop);
+    utils$3.isUndefined(configValue) && merge2 !== mergeDirectKeys || (config[prop] = configValue);
   });
-  var axiosKeys = valueFromConfig2Keys.concat(mergeDeepPropertiesKeys).concat(defaultToConfig2Keys).concat(directMergeKeys);
-  var otherKeys = Object.keys(config1).concat(Object.keys(config2)).filter(function filterAxiosKeys(key) {
-    return axiosKeys.indexOf(key) === -1;
-  });
-  utils$2.forEach(otherKeys, mergeDeepProperties);
   return config;
 };
-const name = "axios";
-const version = "0.21.4";
-const description = "Promise based HTTP client for the browser and node.js";
-const main = "index.js";
-const scripts = {
-  test: "grunt test",
-  start: "node ./sandbox/server.js",
-  build: "NODE_ENV=production grunt build",
-  preversion: "npm test",
-  version: "npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json",
-  postversion: "git push && git push --tags",
-  examples: "node ./examples/server.js",
-  coveralls: "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-  fix: "eslint --fix lib/**/*.js"
+var data = {
+  "version": "0.26.0"
 };
-const repository = {
-  type: "git",
-  url: "https://github.com/axios/axios.git"
-};
-const keywords = [
-  "xhr",
-  "http",
-  "ajax",
-  "promise",
-  "node"
-];
-const author = "Matt Zabriskie";
-const license = "MIT";
-const bugs = {
-  url: "https://github.com/axios/axios/issues"
-};
-const homepage = "https://axios-http.com";
-const devDependencies = {
-  coveralls: "^3.0.0",
-  "es6-promise": "^4.2.4",
-  grunt: "^1.3.0",
-  "grunt-banner": "^0.6.0",
-  "grunt-cli": "^1.2.0",
-  "grunt-contrib-clean": "^1.1.0",
-  "grunt-contrib-watch": "^1.0.0",
-  "grunt-eslint": "^23.0.0",
-  "grunt-karma": "^4.0.0",
-  "grunt-mocha-test": "^0.13.3",
-  "grunt-ts": "^6.0.0-beta.19",
-  "grunt-webpack": "^4.0.2",
-  "istanbul-instrumenter-loader": "^1.0.0",
-  "jasmine-core": "^2.4.1",
-  karma: "^6.3.2",
-  "karma-chrome-launcher": "^3.1.0",
-  "karma-firefox-launcher": "^2.1.0",
-  "karma-jasmine": "^1.1.1",
-  "karma-jasmine-ajax": "^0.1.13",
-  "karma-safari-launcher": "^1.0.0",
-  "karma-sauce-launcher": "^4.3.6",
-  "karma-sinon": "^1.0.5",
-  "karma-sourcemap-loader": "^0.3.8",
-  "karma-webpack": "^4.0.2",
-  "load-grunt-tasks": "^3.5.2",
-  minimist: "^1.2.0",
-  mocha: "^8.2.1",
-  sinon: "^4.5.0",
-  "terser-webpack-plugin": "^4.2.3",
-  typescript: "^4.0.5",
-  "url-search-params": "^0.10.0",
-  webpack: "^4.44.2",
-  "webpack-dev-server": "^3.11.0"
-};
-const browser = {
-  "./lib/adapters/http.js": "./lib/adapters/xhr.js"
-};
-const jsdelivr = "dist/axios.min.js";
-const unpkg = "dist/axios.min.js";
-const typings = "./index.d.ts";
-const dependencies = {
-  "follow-redirects": "^1.14.0"
-};
-const bundlesize = [
-  {
-    path: "./dist/axios.min.js",
-    threshold: "5kB"
-  }
-];
-var require$$0$1 = {
-  name,
-  version,
-  description,
-  main,
-  scripts,
-  repository,
-  keywords,
-  author,
-  license,
-  bugs,
-  homepage,
-  devDependencies,
-  browser,
-  jsdelivr,
-  unpkg,
-  typings,
-  dependencies,
-  bundlesize
-};
-var pkg = require$$0$1;
+var VERSION = data.version;
 var validators$1 = {};
 ["object", "boolean", "number", "function", "string", "symbol"].forEach(function(type, i) {
   validators$1[type] = function validator2(thing) {
@@ -6024,31 +6036,17 @@ var validators$1 = {};
   };
 });
 var deprecatedWarnings = {};
-var currentVerArr = pkg.version.split(".");
-function isOlderVersion(version2, thanVersion) {
-  var pkgVersionArr = thanVersion ? thanVersion.split(".") : currentVerArr;
-  var destVer = version2.split(".");
-  for (var i = 0; i < 3; i++) {
-    if (pkgVersionArr[i] > destVer[i]) {
-      return true;
-    } else if (pkgVersionArr[i] < destVer[i]) {
-      return false;
-    }
-  }
-  return false;
-}
-validators$1.transitional = function transitional(validator2, version2, message) {
-  var isDeprecated = version2 && isOlderVersion(version2);
+validators$1.transitional = function transitional(validator2, version, message) {
   function formatMessage(opt, desc) {
-    return "[Axios v" + pkg.version + "] Transitional option '" + opt + "'" + desc + (message ? ". " + message : "");
+    return "[Axios v" + VERSION + "] Transitional option '" + opt + "'" + desc + (message ? ". " + message : "");
   }
   return function(value, opt, opts) {
     if (validator2 === false) {
-      throw new Error(formatMessage(opt, " has been removed in " + version2));
+      throw new Error(formatMessage(opt, " has been removed" + (version ? " in " + version : "")));
     }
-    if (isDeprecated && !deprecatedWarnings[opt]) {
+    if (version && !deprecatedWarnings[opt]) {
       deprecatedWarnings[opt] = true;
-      console.warn(formatMessage(opt, " has been deprecated since v" + version2 + " and will be removed in the near future"));
+      console.warn(formatMessage(opt, " has been deprecated since v" + version + " and will be removed in the near future"));
     }
     return validator2 ? validator2(value, opt, opts) : true;
   };
@@ -6076,11 +6074,10 @@ function assertOptions(options, schema, allowUnknown) {
   }
 }
 var validator$1 = {
-  isOlderVersion,
   assertOptions,
   validators: validators$1
 };
-var utils$1 = utils$d;
+var utils$2 = utils$e;
 var buildURL2 = buildURL$2;
 var InterceptorManager = InterceptorManager_1;
 var dispatchRequest2 = dispatchRequest$1;
@@ -6094,12 +6091,12 @@ function Axios$1(instanceConfig) {
     response: new InterceptorManager()
   };
 }
-Axios$1.prototype.request = function request(config) {
-  if (typeof config === "string") {
-    config = arguments[1] || {};
-    config.url = arguments[0];
-  } else {
+Axios$1.prototype.request = function request(configOrUrl, config) {
+  if (typeof configOrUrl === "string") {
     config = config || {};
+    config.url = configOrUrl;
+  } else {
+    config = configOrUrl || {};
   }
   config = mergeConfig$1(this.defaults, config);
   if (config.method) {
@@ -6112,9 +6109,9 @@ Axios$1.prototype.request = function request(config) {
   var transitional2 = config.transitional;
   if (transitional2 !== void 0) {
     validator.assertOptions(transitional2, {
-      silentJSONParsing: validators.transitional(validators.boolean, "1.0.0"),
-      forcedJSONParsing: validators.transitional(validators.boolean, "1.0.0"),
-      clarifyTimeoutError: validators.transitional(validators.boolean, "1.0.0")
+      silentJSONParsing: validators.transitional(validators.boolean),
+      forcedJSONParsing: validators.transitional(validators.boolean),
+      clarifyTimeoutError: validators.transitional(validators.boolean)
     }, false);
   }
   var requestInterceptorChain = [];
@@ -6166,7 +6163,7 @@ Axios$1.prototype.getUri = function getUri(config) {
   config = mergeConfig$1(this.defaults, config);
   return buildURL2(config.url, config.params, config.paramsSerializer).replace(/^\?/, "");
 };
-utils$1.forEach(["delete", "get", "head", "options"], function forEachMethodNoData2(method) {
+utils$2.forEach(["delete", "get", "head", "options"], function forEachMethodNoData2(method) {
   Axios$1.prototype[method] = function(url, config) {
     return this.request(mergeConfig$1(config || {}, {
       method,
@@ -6175,24 +6172,16 @@ utils$1.forEach(["delete", "get", "head", "options"], function forEachMethodNoDa
     }));
   };
 });
-utils$1.forEach(["post", "put", "patch"], function forEachMethodWithData2(method) {
-  Axios$1.prototype[method] = function(url, data, config) {
+utils$2.forEach(["post", "put", "patch"], function forEachMethodWithData2(method) {
+  Axios$1.prototype[method] = function(url, data2, config) {
     return this.request(mergeConfig$1(config || {}, {
       method,
       url,
-      data
+      data: data2
     }));
   };
 });
 var Axios_1 = Axios$1;
-function Cancel$1(message) {
-  this.message = message;
-}
-Cancel$1.prototype.toString = function toString2() {
-  return "Cancel" + (this.message ? ": " + this.message : "");
-};
-Cancel$1.prototype.__CANCEL__ = true;
-var Cancel_1 = Cancel$1;
 var Cancel = Cancel_1;
 function CancelToken(executor) {
   if (typeof executor !== "function") {
@@ -6203,6 +6192,27 @@ function CancelToken(executor) {
     resolvePromise = resolve;
   });
   var token = this;
+  this.promise.then(function(cancel) {
+    if (!token._listeners)
+      return;
+    var i;
+    var l = token._listeners.length;
+    for (i = 0; i < l; i++) {
+      token._listeners[i](cancel);
+    }
+    token._listeners = null;
+  });
+  this.promise.then = function(onfulfilled) {
+    var _resolve;
+    var promise = new Promise(function(resolve) {
+      token.subscribe(resolve);
+      _resolve = resolve;
+    }).then(onfulfilled);
+    promise.cancel = function reject() {
+      token.unsubscribe(_resolve);
+    };
+    return promise;
+  };
   executor(function cancel(message) {
     if (token.reason) {
       return;
@@ -6214,6 +6224,26 @@ function CancelToken(executor) {
 CancelToken.prototype.throwIfRequested = function throwIfRequested() {
   if (this.reason) {
     throw this.reason;
+  }
+};
+CancelToken.prototype.subscribe = function subscribe(listener) {
+  if (this.reason) {
+    listener(this.reason);
+    return;
+  }
+  if (this._listeners) {
+    this._listeners.push(listener);
+  } else {
+    this._listeners = [listener];
+  }
+};
+CancelToken.prototype.unsubscribe = function unsubscribe(listener) {
+  if (!this._listeners) {
+    return;
+  }
+  var index2 = this._listeners.indexOf(listener);
+  if (index2 !== -1) {
+    this._listeners.splice(index2, 1);
   }
 };
 CancelToken.source = function source() {
@@ -6232,10 +6262,11 @@ var spread = function spread2(callback) {
     return callback.apply(null, arr);
   };
 };
+var utils$1 = utils$e;
 var isAxiosError = function isAxiosError2(payload) {
-  return typeof payload === "object" && payload.isAxiosError === true;
+  return utils$1.isObject(payload) && payload.isAxiosError === true;
 };
-var utils = utils$d;
+var utils = utils$e;
 var bind2 = bind$2;
 var Axios = Axios_1;
 var mergeConfig2 = mergeConfig$2;
@@ -6245,16 +6276,17 @@ function createInstance(defaultConfig) {
   var instance = bind2(Axios.prototype.request, context);
   utils.extend(instance, Axios.prototype, context);
   utils.extend(instance, context);
+  instance.create = function create(instanceConfig) {
+    return createInstance(mergeConfig2(defaultConfig, instanceConfig));
+  };
   return instance;
 }
 var axios$2 = createInstance(defaults);
 axios$2.Axios = Axios;
-axios$2.create = function create(instanceConfig) {
-  return createInstance(mergeConfig2(axios$2.defaults, instanceConfig));
-};
 axios$2.Cancel = Cancel_1;
 axios$2.CancelToken = CancelToken_1;
 axios$2.isCancel = isCancel$1;
+axios$2.VERSION = data.version;
 axios$2.all = function all(promises) {
   return Promise.all(promises);
 };
@@ -6830,7 +6862,7 @@ var nodes$1 = (session) => ({
     parent_id,
     fileHandler,
     apiVersion = "v1",
-    name: name2 = null,
+    name = null,
     options = {}
   }) {
     console.assert(parent_id != null, "parent_id cannot be null");
@@ -6838,7 +6870,7 @@ var nodes$1 = (session) => ({
     console.assert(["v1", "v2"].includes(apiVersion), "apiVersion must be in ['v1','v2']");
     const url = `api/${apiVersion}/nodes`;
     {
-      const csName = name2 || fileHandler.name;
+      const csName = name || fileHandler.name;
       const params = __spreadProps(__spreadValues({}, options), {
         type: SubTypes.Document,
         name: csName,
@@ -6854,14 +6886,14 @@ var nodes$1 = (session) => ({
   async addDocumentMajor({
     parent_id,
     fileHandler,
-    name: name2 = null,
-    description: description2 = null,
+    name = null,
+    description = null,
     options = {}
   }) {
     const response = await this.addDocument({
       parent_id,
       fileHandler,
-      name: name2,
+      name,
       options: __spreadProps(__spreadValues({}, options), {
         advanced_versioning: true
       })
@@ -6870,7 +6902,7 @@ var nodes$1 = (session) => ({
     await session.versions.promote({
       dataid,
       versionNumber: 1,
-      description: description2
+      description
     });
     await session.versions.deleteVersion({
       dataid,
@@ -6878,11 +6910,11 @@ var nodes$1 = (session) => ({
     });
     return response;
   },
-  addItem(type, parent_id, name2, params = {}) {
+  addItem(type, parent_id, name, params = {}) {
     return session.postBody("api/v2/nodes", __spreadValues({
       type,
       parent_id,
-      name: name2
+      name
     }, params));
   },
   node({ dataid, apiVersion = "v2", params = {} }) {
@@ -6901,11 +6933,11 @@ var nodes$1 = (session) => ({
   volumes() {
     return session.get("api/v2/volumes");
   },
-  addFolder(parent_id, name2, params = {}) {
-    return this.addItem(SubTypes.Folder, parent_id, name2, params);
+  addFolder(parent_id, name, params = {}) {
+    return this.addItem(SubTypes.Folder, parent_id, name, params);
   },
-  addGeneration(parent_id, name2, original_id, version_number, params = {}) {
-    return this.addItem(SubTypes.Generation, parent_id, name2, __spreadValues({
+  addGeneration(parent_id, name, original_id, version_number, params = {}) {
+    return this.addItem(SubTypes.Generation, parent_id, name, __spreadValues({
       original_id,
       version_number
     }, params));
@@ -6976,16 +7008,16 @@ var search$1 = (session) => ({
 var members$1 = (session) => ({
   USER: 0,
   GROUP: 1,
-  userQuery(query, options = {}, version2 = "v2") {
+  userQuery(query, options = {}, version = "v2") {
     const params = __spreadValues({
       limit: 20,
       where_type: JSON.stringify([this.USER, this.GROUP]),
       query
     }, options);
-    return session.get(`api/${version2}/members`, { params });
+    return session.get(`api/${version}/members`, { params });
   },
-  member(id, version2 = "v2") {
-    return session.get(`api/${version2}/members/${id}`);
+  member(id, version = "v2") {
+    return session.get(`api/${version}/members/${id}`);
   }
 });
 var versions$1 = (session) => ({
@@ -7000,11 +7032,11 @@ var versions$1 = (session) => ({
     console.assert(fileHandler != null, "fileHandler cannot be null");
     const url = `api/${apiVersion}/nodes/${dataid}/versions`;
     {
-      const name2 = fileName || fileHandler.name;
+      const name = fileName || fileHandler.name;
       const params = __spreadValues({
         file: {
           file: fileHandler,
-          name: name2
+          name
         }
       }, options);
       return session.postForm(url, params);
@@ -7012,11 +7044,11 @@ var versions$1 = (session) => ({
   },
   async download({
     dataid,
-    version: version2,
+    version,
     filePath
   }) {
     console.assert(dataid != null, "dataid cannot be null");
-    console.assert(version2 != null, "version cannot be null");
+    console.assert(version != null, "version cannot be null");
     console.assert(filePath != null, "filePath cannot be null");
     {
       return Promise.reject("Not implemented yet");
@@ -7033,13 +7065,13 @@ var versions$1 = (session) => ({
   async promote({
     dataid,
     versionNumber,
-    description: description2 = null
+    description = null
   }) {
     console.assert(dataid != null, "dataid cannot be null");
     console.assert(versionNumber != null, "number_to_keep must be an integer");
     const url = `api/v2/nodes/${dataid}/versions/${versionNumber}/promote`;
-    return session.postBody(url, __spreadValues({}, !!description2 && {
-      description: description2
+    return session.postBody(url, __spreadValues({}, !!description && {
+      description
     }));
   },
   async deleteVersion({
@@ -7094,7 +7126,7 @@ const ErrorCodes = {
   }
 };
 class CustomError$1 extends Error {
-  constructor(message = ErrorCodes.INTERNALERROR.message, data = null, code = ErrorCodes.INTERNALERROR.code) {
+  constructor(message = ErrorCodes.INTERNALERROR.message, data2 = null, code = ErrorCodes.INTERNALERROR.code) {
     if (isObject2(message)) {
       super(message.message);
       this.code = message.code;
@@ -7102,7 +7134,7 @@ class CustomError$1 extends Error {
     } else {
       super(message);
       this.code = code;
-      this.data = data;
+      this.data = data2;
     }
   }
 }
@@ -7135,11 +7167,11 @@ var rpcClient = class RPCClient {
       params
     };
   }
-  handleResponse(data) {
-    if (Object.prototype.hasOwnProperty.call(data, "result")) {
-      return data.result;
-    } else if (Object.prototype.hasOwnProperty.call(data, "error")) {
-      const err = data.error;
+  handleResponse(data2) {
+    if (Object.prototype.hasOwnProperty.call(data2, "result")) {
+      return data2.result;
+    } else if (Object.prototype.hasOwnProperty.call(data2, "error")) {
+      const err = data2.error;
       throw new CustomError(err.message, err.data, err.code);
     } else {
       throw Error("The server did not respond correctly.");
@@ -7404,7 +7436,7 @@ var Session_1 = Session2;
 var styles = "";
 var index = {
   install(Vue, options) {
-    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KApp.vue": __glob_2_1, "./components/KAutocomplete.vue": __glob_2_2, "./components/KBrowseLink.vue": __glob_2_3, "./components/KButton.vue": __glob_2_4, "./components/KConfirm.vue": __glob_2_5, "./components/KDateTimePicker.vue": __glob_2_6, "./components/KDialog.vue": __glob_2_7, "./components/KFormFieldWrapper.vue": __glob_2_8, "./components/KFunctionMenu.vue": __glob_2_9, "./components/KLinearProgressIndicator.vue": __glob_2_10, "./components/KMulti.vue": __glob_2_11, "./components/KNodePickerField.vue": __glob_2_12, "./components/KOneMoment.vue": __glob_2_13, "./components/KPageDropZone.vue": __glob_2_14, "./components/KPageTitle.vue": __glob_2_15, "./components/KPagination.vue": __glob_2_16, "./components/KRadioGroup.vue": __glob_2_17, "./components/KScratch.vue": __glob_2_18, "./components/KSelect.vue": __glob_2_19, "./components/KSnackbar.vue": __glob_2_20, "./components/KSortHeader.vue": __glob_2_21, "./components/KSpacer.vue": __glob_2_22, "./components/KSpinner.vue": __glob_2_23, "./components/KSwitch.vue": __glob_2_24, "./components/KTable.vue": __glob_2_25, "./components/KTextArea.vue": __glob_2_26, "./components/KTextField.vue": __glob_2_27, "./components/KUserGIF.vue": __glob_2_28, "./components/KUserLink.vue": __glob_2_29, "./components/KUserPicker.vue": __glob_2_30, "./components/Card/KCard.vue": __glob_2_31, "./components/Card/KCardActions.vue": __glob_2_32, "./components/Card/KCardText.vue": __glob_2_33, "./components/Card/KCardTitle.vue": __glob_2_34, "./components/Tabs/KTabItem.vue": __glob_2_35, "./components/Tabs/KTabs.vue": __glob_2_36 };
+    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KApp.vue": __glob_2_1, "./components/KAutocomplete.vue": __glob_2_2, "./components/KBrowseLink.vue": __glob_2_3, "./components/KButton.vue": __glob_2_4, "./components/KConfirm.vue": __glob_2_5, "./components/KDateTimePicker.vue": __glob_2_6, "./components/KDialog.vue": __glob_2_7, "./components/KDot.vue": __glob_2_8, "./components/KFormFieldWrapper.vue": __glob_2_9, "./components/KFunctionMenu.vue": __glob_2_10, "./components/KLinearProgressIndicator.vue": __glob_2_11, "./components/KMulti.vue": __glob_2_12, "./components/KNodePickerField.vue": __glob_2_13, "./components/KOneMoment.vue": __glob_2_14, "./components/KPageDropZone.vue": __glob_2_15, "./components/KPageTitle.vue": __glob_2_16, "./components/KPagination.vue": __glob_2_17, "./components/KRadioGroup.vue": __glob_2_18, "./components/KScratch.vue": __glob_2_19, "./components/KSelect.vue": __glob_2_20, "./components/KSnackbar.vue": __glob_2_21, "./components/KSortHeader.vue": __glob_2_22, "./components/KSpacer.vue": __glob_2_23, "./components/KSpinner.vue": __glob_2_24, "./components/KSwitch.vue": __glob_2_25, "./components/KTable.vue": __glob_2_26, "./components/KTextArea.vue": __glob_2_27, "./components/KTextField.vue": __glob_2_28, "./components/KUserGIF.vue": __glob_2_29, "./components/KUserLink.vue": __glob_2_30, "./components/KUserPicker.vue": __glob_2_31, "./components/Card/KCard.vue": __glob_2_32, "./components/Card/KCardActions.vue": __glob_2_33, "./components/Card/KCardText.vue": __glob_2_34, "./components/Card/KCardTitle.vue": __glob_2_35, "./components/Tabs/KTabItem.vue": __glob_2_36, "./components/Tabs/KTabs.vue": __glob_2_37 };
     Object.entries(components).forEach(([path, definition]) => {
       const componentName = path.split("/").pop().replace(/\.\w+$/, "");
       Vue.component(componentName, definition.default);

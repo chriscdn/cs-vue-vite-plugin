@@ -13,6 +13,8 @@ export default {
         .pop()
         .replace(/\.\w+$/, '')
 
+      // console.log(componentName)
+
       Vue.component(componentName, definition.default)
     })
 

@@ -1,5 +1,6 @@
 <template>
   <KAutocomplete
+    v-if="editable"
     v-model="localValue"
     v-model:search-input="searchText"
     class="k-user-picker"
@@ -9,7 +10,6 @@
     :items="items"
     :return-object="returnObject"
     :combobox="combobox"
-    :editable="editable"
   >
     <template #prepend="{ item }">
       <KUserGIF :user-rec="item" />
@@ -17,9 +17,11 @@
 
     <template #item="{ item }">
       <KUserGIF :type="item.type" />
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <span v-html="formatChoice(item)" />
     </template>
   </KAutocomplete>
+  <KUserLink v-else :user="modelValue" gif />
 </template>
 
 <script>

@@ -2,9 +2,9 @@
   <div class="k-tabs">
     <div class="k-tabs-nav">
       <div v-for="tab in tabs" :key="tab.props.name" :class="classObj(tab)">
-        <a :href="`#${tab.props.name}`" @click="selectTab(tab)">{{
-          tab.props.title
-        }}</a>
+        <a :href="`#${tab.props.name}`" @click="selectTab(tab)">
+          {{ tab.props.title }}
+        </a>
       </div>
     </div>
     <div class="k-tabs-content">
