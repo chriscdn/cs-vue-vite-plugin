@@ -1,38 +1,41 @@
 <template>
-    <KOneMoment :loading="loading" />
-    <KLinearProgressIndicator v-if="loading" />
-    <table class="k-table" :class="classObj">
-        <slot></slot>
-    </table>
+  <KOneMoment :loading="loading" />
+  <KLinearProgressIndicator v-if="loading" />
+  <table
+    class="k-table"
+    :class="classObj"
+  >
+    <slot />
+  </table>
 </template>
 
 <script>
 export default {
-    props: {
-        properties: {
-            type: Boolean,
-            default: false,
-        },
-        striped: {
-            type: Boolean,
-            default: false,
-        },
-        loading: {
-            type: Boolean,
-            default: false,
-        },
+  props: {
+    properties: {
+      type: Boolean,
+      default: false,
     },
-    computed: {
-        classObj() {
-            return {
-                'k-table--properties': this.properties,
-                'k-table--striped': this.isStriped,
-            }
-        },
-        isStriped() {
-            return this.striped && !this.properties
-        },
+    striped: {
+      type: Boolean,
+      default: false,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    classObj() {
+      return {
+        'k-table--properties': this.properties,
+        'k-table--striped': this.isStriped,
+      }
+    },
+    isStriped() {
+      return this.striped && !this.properties
+    },
+  },
 }
 </script>
 
@@ -48,78 +51,78 @@ export default {
 @tdpaddingcompact: 1px 4px;
 
 .k-table {
-    @apply border-collapse;
+  @apply border-collapse;
 
-    background-color: @color3;
-    // border-collapse: collapse;
-    // border-spacing: 0;
-    border: 1px solid @color0;
-    margin-bottom: 1.67em;
-    width: 100%;
+  background-color: @color3;
+  // border-collapse: collapse;
+  // border-spacing: 0;
+  border: 1px solid @color0;
+  margin-bottom: 1.67em;
+  width: 100%;
 
-    thead {
-        td,
-        th {
-            a {
-                color: @color4;
-                text-decoration: none;
-            }
+  thead {
+    td,
+    th {
+      a {
+        color: @color4;
+        text-decoration: none;
+      }
 
-            background-color: @color1;
-            border-bottom: 1px solid @color0;
-            font-weight: 700;
-            padding: @tdpadding;
-            white-space: nowrap;
-            &.min-width {
-                width: 1%;
-            }
-        }
+      background-color: @color1;
+      border-bottom: 1px solid @color0;
+      font-weight: 700;
+      padding: @tdpadding;
+      white-space: nowrap;
+      &.min-width {
+        width: 1%;
+      }
     }
+  }
 
-    tbody {
-        td {
-            border-top: 1px solid @color2;
-            padding: @tdpadding;
+  tbody {
+    td {
+      border-top: 1px solid @color2;
+      padding: @tdpadding;
 
-            &:first-child {
-                border-left: 1px solid @color0;
-            }
+      &:first-child {
+        border-left: 1px solid @color0;
+      }
 
-            &:last-child {
-                border-right: 1px solid @color0;
-            }
-        }
+      &:last-child {
+        border-right: 1px solid @color0;
+      }
     }
+  }
 
-    tfoot {
-        td {
-            padding: @tdpadding;
-            text-align: center;
-        }
+  tfoot {
+    td {
+      padding: @tdpadding;
+      text-align: center;
     }
+  }
 
-    &.k-table--properties {
-        > tbody {
-            td {
-                border: 1px solid @color0;
+  &.k-table--properties {
+    > tbody {
+      td {
+        border: 1px solid @color0;
 
-                &:nth-child(odd) {
-                    background-color: @color1;
-                    color: #333333;
-                    font-weight: 700;
-                    white-space: nowrap;
-                    width: 1%;
-                }
-            }
+        &:nth-child(odd) {
+          background-color: @color1;
+          color: #333333;
+          font-weight: 700;
+          white-space: nowrap;
+          width: 1%;
         }
+      }
     }
+  }
 
-    &.k-table--striped {
-        > tbody {
-            > tr:nth-child(even) {
-                background-color: #fafafa;
-            }
-        }
+  &.k-table--striped {
+    > tbody {
+      > tr:nth-child(even) {
+        background-color: #fafafa;
+      }
     }
+  }
 }
 </style>

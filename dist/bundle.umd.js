@@ -564,9 +564,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       vue.renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
       vue.createElementVNode("div", _hoisted_1$t, [
         vue.withDirectives(vue.createElementVNode("input", {
-          class: vue.normalizeClass(["k-input", { invalidSelection: !$options.isValidSelection }]),
           ref: "input",
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputText = $event),
+          class: vue.normalizeClass(["k-input", { invalidSelection: !$options.isValidSelection }]),
           type: "search",
           autocomplete: "off",
           placeholder: $options.placeholderText,
@@ -601,7 +601,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       [_directive_click_away, $options.setBlur]
     ]);
   }
-  var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-75343781"]]);
+  var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-4dd30455"]]);
   var __glob_2_2 = /* @__PURE__ */ Object.freeze({
     __proto__: null,
     [Symbol.toStringTag]: "Module",
@@ -628,8 +628,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   const _hoisted_3$9 = /* @__PURE__ */ vue.createTextVNode("\xA0");
   const _hoisted_4$5 = ["href"];
   const _hoisted_5$2 = /* @__PURE__ */ vue.createTextVNode("\xA0");
-  const _hoisted_6$2 = /* @__PURE__ */ vue.createTextVNode();
-  const _hoisted_7$1 = ["innerHTML"];
+  const _hoisted_6$2 = ["innerHTML"];
   function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_KFunctionMenu = vue.resolveComponent("KFunctionMenu");
     return $props.nodeRec ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$s, [
@@ -646,10 +645,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         key: 1,
         dataid: $props.nodeRec.dataid
       }, null, 8, ["dataid"])) : vue.createCommentVNode("", true),
-      _hoisted_6$2,
       vue.createElementVNode("span", {
         innerHTML: $props.nodeRec.modifiedImageCallback
-      }, null, 8, _hoisted_7$1)
+      }, null, 8, _hoisted_6$2)
     ])) : vue.createCommentVNode("", true);
   }
   var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
@@ -660,7 +658,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   });
   var KButton_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$w = {
-    emits: ["click"],
     props: {
       small: {
         type: Boolean,
@@ -675,6 +672,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: false
       }
     },
+    emits: ["click"],
     computed: {
       classObj() {
         return {
@@ -787,8 +785,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
                   $data.yesLabel ? (vue.openBlock(), vue.createBlock(_component_KButton, {
                     key: 1,
                     small: "",
-                    onClick: _cache[1] || (_cache[1] = ($event) => $options.dismiss(true)),
-                    class: "ml-1"
+                    class: "ml-1",
+                    onClick: _cache[1] || (_cache[1] = ($event) => $options.dismiss(true))
                   }, {
                     default: vue.withCtx(() => [
                       vue.createTextVNode(vue.toDisplayString($data.yesLabel), 1)
@@ -2284,6 +2282,20 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: false
       }
     },
+    emits: ["update:modelValue"],
+    computed: {
+      type() {
+        return this.time ? "datetime-local" : "date";
+      },
+      localModelValue: {
+        set(value) {
+          this.$emit("update:modelValue", this.formatForDatePicker(value));
+        },
+        get() {
+          return this.formatForDatePicker(this.modelValue);
+        }
+      }
+    },
     methods: {
       parse(value) {
         return value ? new Date(value) : null;
@@ -2303,31 +2315,18 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           return null;
         }
       }
-    },
-    computed: {
-      type() {
-        return this.time ? "datetime-local" : "date";
-      },
-      localModelValue: {
-        set(value) {
-          this.$emit("update:modelValue", this.formatForDatePicker(value));
-        },
-        get() {
-          return this.formatForDatePicker(this.modelValue);
-        }
-      }
     }
   };
   const _hoisted_1$q = ["type"];
-  const _hoisted_2$e = /* @__PURE__ */ vue.createTextVNode("Now");
-  const _hoisted_3$8 = /* @__PURE__ */ vue.createTextVNode("Clear");
+  const _hoisted_2$e = /* @__PURE__ */ vue.createTextVNode(" Now ");
+  const _hoisted_3$8 = /* @__PURE__ */ vue.createTextVNode(" Clear ");
   function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_KButton = vue.resolveComponent("KButton");
     return vue.openBlock(), vue.createElementBlock("div", null, [
       vue.withDirectives(vue.createElementVNode("input", {
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event),
         class: "k-input",
-        type: $options.type,
-        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event)
+        type: $options.type
       }, null, 8, _hoisted_1$q), [
         [vue.vModelDynamic, $options.localModelValue]
       ]),
@@ -2604,10 +2603,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   };
   var KDialog_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$t = {
-    mixins: [measurables],
     directives: {
       ClickAway: directive
     },
+    mixins: [measurables],
     props: {
       modelValue: {
         type: Boolean,
@@ -2630,6 +2629,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: "90%"
       }
     },
+    emits: ["update:modelValue"],
     data() {
       return {
         dialog: false,
@@ -2642,9 +2642,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           "k-dialog--scrollable": this.scrollable
         };
       }
-    },
-    mounted() {
-      this.mounted = true;
     },
     watch: {
       modelValue: {
@@ -2662,6 +2659,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           enableBodyScroll(this.$refs.content);
         }
       }
+    },
+    mounted() {
+      this.mounted = true;
     },
     methods: {
       clickAway() {
@@ -2915,6 +2915,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: null
       }
     },
+    emits: ["update:modelValue"],
     computed: {
       valueLocal: {
         get() {
@@ -3380,7 +3381,14 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         return (this.breadcrumb || "").split(":").slice(-1)[0];
       },
       windowParams() {
-        const windowParams = { width: this.width, height: this.height, resizable: "yes", menubar: "no", scrollbars: "yes", toolbar: "yes" };
+        const windowParams = {
+          width: this.width,
+          height: this.height,
+          resizable: "yes",
+          menubar: "no",
+          scrollbars: "yes",
+          toolbar: "yes"
+        };
         return Object.entries(windowParams).map(([key, value]) => `${key}=${value}`).join(",");
       }
     },
@@ -3603,7 +3611,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       ])) : vue.createCommentVNode("", true)
     ]);
   }
-  var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-6b5d45ef"]]);
+  var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
   var __glob_2_15 = /* @__PURE__ */ Object.freeze({
     __proto__: null,
     [Symbol.toStringTag]: "Module",
@@ -3700,25 +3708,25 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     const _component_KSelect = vue.resolveComponent("KSelect");
     return $props.pagination.hasOtherPages ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$h, [
       vue.createVNode(_component_KSelect, {
-        items: $options.pageSizes,
         modelValue: $options.pageSize,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.pageSize = $event),
+        items: $options.pageSizes,
         label: "Page Size"
-      }, null, 8, ["items", "modelValue"]),
+      }, null, 8, ["modelValue", "items"]),
       vue.createElementVNode("div", _hoisted_2$8, [
         $options.hasPrevious ? (vue.openBlock(), vue.createElementBlock("a", _hoisted_3$3, _hoisted_5$1)) : vue.createCommentVNode("", true),
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($options.pageRange, (page) => {
           return vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: page }, [
-            page == "|" ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$1, "...")) : (vue.openBlock(), vue.createElementBlock("a", {
+            page == "|" ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$1, " ... ")) : (vue.openBlock(), vue.createElementBlock("a", {
               key: 1,
-              onClick: ($event) => _ctx.$emit("update:modelValue", page),
-              class: vue.normalizeClass(["k-pagination-button k-pagination-button-border", $options.classObj(page)])
+              class: vue.normalizeClass(["k-pagination-button k-pagination-button-border", $options.classObj(page)]),
+              onClick: ($event) => _ctx.$emit("update:modelValue", page)
             }, vue.toDisplayString(page), 11, _hoisted_7))
           ], 64);
         }), 128)),
         $options.hasNext ? (vue.openBlock(), vue.createElementBlock("a", _hoisted_8, _hoisted_10)) : vue.createCommentVNode("", true)
       ]),
-      vue.createElementVNode("div", null, "Displaying " + vue.toDisplayString($props.pagination.startIndex) + "-" + vue.toDisplayString($props.pagination.endIndex) + " of " + vue.toDisplayString($props.pagination.count) + " items.", 1)
+      vue.createElementVNode("div", null, " Displaying " + vue.toDisplayString($props.pagination.startIndex) + "-" + vue.toDisplayString($props.pagination.endIndex) + " of " + vue.toDisplayString($props.pagination.count) + " items. ", 1)
     ])) : vue.createCommentVNode("", true);
   }
   var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
@@ -3807,14 +3815,14 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
               }, [
                 (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($props.items, (item) => {
                   return vue.openBlock(), vue.createElementBlock("div", {
-                    class: "k-radiogroup-item",
-                    key: $options.getItemValue(item)
+                    key: $options.getItemValue(item),
+                    class: "k-radiogroup-item"
                   }, [
                     vue.withDirectives(vue.createElementVNode("input", {
-                      type: "radio",
                       id: $options.getItemValue(item),
-                      value: $options.getItemValue(item),
-                      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event)
+                      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
+                      type: "radio",
+                      value: $options.getItemValue(item)
                     }, null, 8, _hoisted_1$g), [
                       [vue.vModelRadio, $options.localValue]
                     ]),
@@ -3850,7 +3858,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     return vue.openBlock(), vue.createElementBlock("div", null, [
       vue.createElementVNode("button", {
         onClick: _cache[0] || (_cache[0] = (...args) => $options.click && $options.click(...args))
-      }, "click")
+      }, " click ")
     ]);
   }
   var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
@@ -4144,7 +4152,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   function _sfc_render$d(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$c);
   }
-  var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-8f2ba526"]]);
+  var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
   var __glob_2_22 = /* @__PURE__ */ Object.freeze({
     __proto__: null,
     [Symbol.toStringTag]: "Module",
@@ -4170,7 +4178,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   };
   const __injectCSSVars__$1 = () => {
     vue.useCssVars((_ctx) => ({
-      "bff76602": _ctx.color
+      "3c497448": _ctx.color
     }));
   };
   const __setup__$1 = __default__$1.setup;
@@ -4217,17 +4225,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: false
       }
     },
+    emits: ["update:modelValue"],
     data() {
       return {
         padding: 4,
         height: 26,
         trans: 20
       };
-    },
-    methods: {
-      clicked() {
-        this.on = !this.one;
-      }
     },
     computed: {
       on: {
@@ -4261,15 +4265,20 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       transPx() {
         return `translateX(${convertToUnit(this.trans)})`;
       }
+    },
+    methods: {
+      clicked() {
+        this.on = !this.one;
+      }
     }
   };
   const __injectCSSVars__ = () => {
     vue.useCssVars((_ctx) => ({
-      "1ed91f10": _ctx.switchWidthPx,
-      "70fd9959": _ctx.heightPx,
-      "1a925056": _ctx.innerSizePx,
-      "b87b5922": _ctx.paddingPx,
-      "a610b474": _ctx.transPx
+      "9e4f3e2a": _ctx.switchWidthPx,
+      "cd254ac4": _ctx.heightPx,
+      "d07a5720": _ctx.innerSizePx,
+      "ed6a8a6c": _ctx.paddingPx,
+      "0ecfb03e": _ctx.transPx
     }));
   };
   const __setup__ = __default__.setup;
@@ -4347,13 +4356,15 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     inheritAttrs: false,
     props: {
       modelValue: {
-        type: String
+        type: String,
+        default: null
       },
       rows: {
         type: Number,
         default: 5
       }
     },
+    emits: ["update:modelValue"],
     computed: {
       outerStyle() {
         return {
@@ -4415,10 +4426,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           vue.withDirectives(vue.createElementVNode("textarea", vue.mergeProps({
             "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.valueLocal = $event)
           }, _ctx.$attrs, {
-            onKeydown: _cache[1] || (_cache[1] = vue.withKeys(vue.withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"])),
             spellcheck: "false",
             class: [_ctx.classObj, "k-textarea"],
-            rows: $props.rows
+            rows: $props.rows,
+            onKeydown: _cache[1] || (_cache[1] = vue.withKeys(vue.withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"]))
           }), null, 16, _hoisted_1$9), [
             [vue.vModelText, $options.valueLocal]
           ])
@@ -4446,6 +4457,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: null
       }
     },
+    emits: ["update:modelValue"],
     computed: {
       value: {
         get() {
@@ -4468,8 +4480,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }, {
         default: vue.withCtx(() => [
           vue.withDirectives(vue.createElementVNode("input", {
-            class: vue.normalizeClass(["k-input-text-field", _ctx.classObj]),
             "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.value = $event),
+            class: vue.normalizeClass(["k-input-text-field", _ctx.classObj]),
             placeholder: $props.placeholder
           }, null, 10, _hoisted_1$8), [
             [vue.vModelText, $options.value]
@@ -4774,7 +4786,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     props: {
       modelValue: {
         type: [String, Number, Object],
-        required: false
+        default: null
       },
       users: {
         type: Boolean,
@@ -4801,6 +4813,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         default: true
       }
     },
+    emits: ["update:modelValue"],
     data() {
       return {
         loading: false,
@@ -4852,6 +4865,17 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         }
       }
     },
+    watch: {
+      searchText(val) {
+        val && val !== this.select && this.querySelections(val);
+      },
+      value: {
+        handler() {
+          this.loadInitialValue();
+        },
+        immediate: true
+      }
+    },
     methods: {
       querySelections: lodash_debounce(async function(v) {
         try {
@@ -4889,17 +4913,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           }
         }
       }
-    },
-    watch: {
-      searchText(val) {
-        val && val !== this.select && this.querySelections(val);
-      },
-      value: {
-        handler() {
-          this.loadInitialValue();
-        },
-        immediate: true
-      }
     }
   };
   const _hoisted_1$5 = ["innerHTML"];
@@ -4907,14 +4920,14 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     const _component_KUserGIF = vue.resolveComponent("KUserGIF");
     const _component_KAutocomplete = vue.resolveComponent("KAutocomplete");
     return vue.openBlock(), vue.createBlock(_component_KAutocomplete, {
-      class: "k-user-picker",
       modelValue: $options.localValue,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
+      "search-input": $data.searchText,
+      "onUpdate:search-input": _cache[1] || (_cache[1] = ($event) => $data.searchText = $event),
+      class: "k-user-picker",
       placeholder: $options.placeholder,
       width: $props.width,
       loading: $data.loading,
-      "search-input": $data.searchText,
-      "onUpdate:search-input": _cache[1] || (_cache[1] = ($event) => $data.searchText = $event),
       items: $data.items,
       "return-object": $props.returnObject,
       combobox: $props.combobox,
@@ -4932,7 +4945,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         }, null, 8, _hoisted_1$5)
       ]),
       _: 1
-    }, 8, ["modelValue", "placeholder", "width", "loading", "search-input", "items", "return-object", "combobox", "editable"]);
+    }, 8, ["modelValue", "search-input", "placeholder", "width", "loading", "items", "return-object", "combobox", "editable"]);
   }
   var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
   var __glob_2_30 = /* @__PURE__ */ Object.freeze({
@@ -5112,6 +5125,16 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         selectedTab: null
       };
     },
+    computed: {
+      tabs() {
+        return this.$slots.default().filter((item) => Boolean(item.props));
+      }
+    },
+    mounted() {
+      const hash = window.location.hash.replace("#", "");
+      const firstTab = lodash_get(this.tabs, "[0].props.name");
+      this.selectedTab = [hash, firstTab].find((item) => Boolean(item));
+    },
     methods: {
       selectTab(tab) {
         this.selectedTab = lodash_get(tab, "props.name");
@@ -5122,16 +5145,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           "k-tabs-active": this.selectedTab == lodash_get(tab, "props.name")
         };
       }
-    },
-    computed: {
-      tabs() {
-        return this.$slots.default().filter((item) => Boolean(item.props));
-      }
-    },
-    mounted() {
-      const hash = window.location.hash.replace("#", "");
-      const firstTab = lodash_get(this.tabs, "[0].props.name");
-      this.selectedTab = [hash, firstTab].find((item) => Boolean(item));
     }
   };
   const _hoisted_1 = { class: "k-tabs" };

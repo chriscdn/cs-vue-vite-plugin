@@ -1,17 +1,17 @@
 <template>
-    <div class="k-app">
-        <KConfirm>
-            <KSnackbar>
-                <slot></slot>
-            </KSnackbar>
-        </KConfirm>
-    </div>
+  <div class="k-app">
+    <KConfirm>
+      <KSnackbar>
+        <slot />
+      </KSnackbar>
+    </KConfirm>
+  </div>
 </template>
 
 <style lang="less">
 .k-app {
-    * {
-        @apply box-border;
-    }
+  * {
+    @apply box-border;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <div class="k-card-title">
-        <slot></slot>
-    </div>
+  <div class="k-card-title">
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -10,6 +10,6 @@ export default {}
 
 <style>
 .k-card-title {
-    @apply flex flex-grow-0 flex-wrap p-3 text-xl;
+  @apply flex flex-grow-0 flex-wrap p-3 text-xl;
 }
 </style>

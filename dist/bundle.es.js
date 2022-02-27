@@ -561,9 +561,9 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
     createElementVNode("div", _hoisted_1$t, [
       withDirectives(createElementVNode("input", {
-        class: normalizeClass(["k-input", { invalidSelection: !$options.isValidSelection }]),
         ref: "input",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputText = $event),
+        class: normalizeClass(["k-input", { invalidSelection: !$options.isValidSelection }]),
         type: "search",
         autocomplete: "off",
         placeholder: $options.placeholderText,
@@ -598,7 +598,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-75343781"]]);
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__scopeId", "data-v-4dd30455"]]);
 var __glob_2_2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -625,8 +625,7 @@ const _hoisted_2$f = ["src"];
 const _hoisted_3$9 = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_4$5 = ["href"];
 const _hoisted_5$2 = /* @__PURE__ */ createTextVNode("\xA0");
-const _hoisted_6$2 = /* @__PURE__ */ createTextVNode();
-const _hoisted_7$1 = ["innerHTML"];
+const _hoisted_6$2 = ["innerHTML"];
 function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
   return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$s, [
@@ -643,10 +642,9 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
       key: 1,
       dataid: $props.nodeRec.dataid
     }, null, 8, ["dataid"])) : createCommentVNode("", true),
-    _hoisted_6$2,
     createElementVNode("span", {
       innerHTML: $props.nodeRec.modifiedImageCallback
-    }, null, 8, _hoisted_7$1)
+    }, null, 8, _hoisted_6$2)
   ])) : createCommentVNode("", true);
 }
 var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
@@ -657,7 +655,6 @@ var __glob_2_3 = /* @__PURE__ */ Object.freeze({
 });
 var KButton_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$w = {
-  emits: ["click"],
   props: {
     small: {
       type: Boolean,
@@ -672,6 +669,7 @@ const _sfc_main$w = {
       default: false
     }
   },
+  emits: ["click"],
   computed: {
     classObj() {
       return {
@@ -784,8 +782,8 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
                 $data.yesLabel ? (openBlock(), createBlock(_component_KButton, {
                   key: 1,
                   small: "",
-                  onClick: _cache[1] || (_cache[1] = ($event) => $options.dismiss(true)),
-                  class: "ml-1"
+                  class: "ml-1",
+                  onClick: _cache[1] || (_cache[1] = ($event) => $options.dismiss(true))
                 }, {
                   default: withCtx(() => [
                     createTextVNode(toDisplayString($data.yesLabel), 1)
@@ -2281,6 +2279,20 @@ const _sfc_main$u = {
       default: false
     }
   },
+  emits: ["update:modelValue"],
+  computed: {
+    type() {
+      return this.time ? "datetime-local" : "date";
+    },
+    localModelValue: {
+      set(value) {
+        this.$emit("update:modelValue", this.formatForDatePicker(value));
+      },
+      get() {
+        return this.formatForDatePicker(this.modelValue);
+      }
+    }
+  },
   methods: {
     parse(value) {
       return value ? new Date(value) : null;
@@ -2300,31 +2312,18 @@ const _sfc_main$u = {
         return null;
       }
     }
-  },
-  computed: {
-    type() {
-      return this.time ? "datetime-local" : "date";
-    },
-    localModelValue: {
-      set(value) {
-        this.$emit("update:modelValue", this.formatForDatePicker(value));
-      },
-      get() {
-        return this.formatForDatePicker(this.modelValue);
-      }
-    }
   }
 };
 const _hoisted_1$q = ["type"];
-const _hoisted_2$e = /* @__PURE__ */ createTextVNode("Now");
-const _hoisted_3$8 = /* @__PURE__ */ createTextVNode("Clear");
+const _hoisted_2$e = /* @__PURE__ */ createTextVNode(" Now ");
+const _hoisted_3$8 = /* @__PURE__ */ createTextVNode(" Clear ");
 function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   return openBlock(), createElementBlock("div", null, [
     withDirectives(createElementVNode("input", {
+      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event),
       class: "k-input",
-      type: $options.type,
-      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localModelValue = $event)
+      type: $options.type
     }, null, 8, _hoisted_1$q), [
       [vModelDynamic, $options.localModelValue]
     ]),
@@ -2601,10 +2600,10 @@ var enableBodyScroll = function enableBodyScroll2(targetElement) {
 };
 var KDialog_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$t = {
-  mixins: [measurables],
   directives: {
     ClickAway: directive
   },
+  mixins: [measurables],
   props: {
     modelValue: {
       type: Boolean,
@@ -2627,6 +2626,7 @@ const _sfc_main$t = {
       default: "90%"
     }
   },
+  emits: ["update:modelValue"],
   data() {
     return {
       dialog: false,
@@ -2639,9 +2639,6 @@ const _sfc_main$t = {
         "k-dialog--scrollable": this.scrollable
       };
     }
-  },
-  mounted() {
-    this.mounted = true;
   },
   watch: {
     modelValue: {
@@ -2659,6 +2656,9 @@ const _sfc_main$t = {
         enableBodyScroll(this.$refs.content);
       }
     }
+  },
+  mounted() {
+    this.mounted = true;
   },
   methods: {
     clickAway() {
@@ -2912,6 +2912,7 @@ const _sfc_main$p = {
       default: null
     }
   },
+  emits: ["update:modelValue"],
   computed: {
     valueLocal: {
       get() {
@@ -3377,7 +3378,14 @@ const _sfc_main$o = {
       return (this.breadcrumb || "").split(":").slice(-1)[0];
     },
     windowParams() {
-      const windowParams = { width: this.width, height: this.height, resizable: "yes", menubar: "no", scrollbars: "yes", toolbar: "yes" };
+      const windowParams = {
+        width: this.width,
+        height: this.height,
+        resizable: "yes",
+        menubar: "no",
+        scrollbars: "yes",
+        toolbar: "yes"
+      };
       return Object.entries(windowParams).map(([key, value]) => `${key}=${value}`).join(",");
     }
   },
@@ -3600,7 +3608,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     ])) : createCommentVNode("", true)
   ]);
 }
-var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-6b5d45ef"]]);
+var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
 var __glob_2_15 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -3697,25 +3705,25 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KSelect = resolveComponent("KSelect");
   return $props.pagination.hasOtherPages ? (openBlock(), createElementBlock("div", _hoisted_1$h, [
     createVNode(_component_KSelect, {
-      items: $options.pageSizes,
       modelValue: $options.pageSize,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.pageSize = $event),
+      items: $options.pageSizes,
       label: "Page Size"
-    }, null, 8, ["items", "modelValue"]),
+    }, null, 8, ["modelValue", "items"]),
     createElementVNode("div", _hoisted_2$8, [
       $options.hasPrevious ? (openBlock(), createElementBlock("a", _hoisted_3$3, _hoisted_5$1)) : createCommentVNode("", true),
       (openBlock(true), createElementBlock(Fragment, null, renderList($options.pageRange, (page) => {
         return openBlock(), createElementBlock(Fragment, { key: page }, [
-          page == "|" ? (openBlock(), createElementBlock("div", _hoisted_6$1, "...")) : (openBlock(), createElementBlock("a", {
+          page == "|" ? (openBlock(), createElementBlock("div", _hoisted_6$1, " ... ")) : (openBlock(), createElementBlock("a", {
             key: 1,
-            onClick: ($event) => _ctx.$emit("update:modelValue", page),
-            class: normalizeClass(["k-pagination-button k-pagination-button-border", $options.classObj(page)])
+            class: normalizeClass(["k-pagination-button k-pagination-button-border", $options.classObj(page)]),
+            onClick: ($event) => _ctx.$emit("update:modelValue", page)
           }, toDisplayString(page), 11, _hoisted_7))
         ], 64);
       }), 128)),
       $options.hasNext ? (openBlock(), createElementBlock("a", _hoisted_8, _hoisted_10)) : createCommentVNode("", true)
     ]),
-    createElementVNode("div", null, "Displaying " + toDisplayString($props.pagination.startIndex) + "-" + toDisplayString($props.pagination.endIndex) + " of " + toDisplayString($props.pagination.count) + " items.", 1)
+    createElementVNode("div", null, " Displaying " + toDisplayString($props.pagination.startIndex) + "-" + toDisplayString($props.pagination.endIndex) + " of " + toDisplayString($props.pagination.count) + " items. ", 1)
   ])) : createCommentVNode("", true);
 }
 var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
@@ -3804,14 +3812,14 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
             }, [
               (openBlock(true), createElementBlock(Fragment, null, renderList($props.items, (item) => {
                 return openBlock(), createElementBlock("div", {
-                  class: "k-radiogroup-item",
-                  key: $options.getItemValue(item)
+                  key: $options.getItemValue(item),
+                  class: "k-radiogroup-item"
                 }, [
                   withDirectives(createElementVNode("input", {
-                    type: "radio",
                     id: $options.getItemValue(item),
-                    value: $options.getItemValue(item),
-                    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event)
+                    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
+                    type: "radio",
+                    value: $options.getItemValue(item)
                   }, null, 8, _hoisted_1$g), [
                     [vModelRadio, $options.localValue]
                   ]),
@@ -3847,7 +3855,7 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [
     createElementVNode("button", {
       onClick: _cache[0] || (_cache[0] = (...args) => $options.click && $options.click(...args))
-    }, "click")
+    }, " click ")
   ]);
 }
 var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
@@ -4141,7 +4149,7 @@ const _hoisted_1$c = { class: "k-spacer" };
 function _sfc_render$d(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$c);
 }
-var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-8f2ba526"]]);
+var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
 var __glob_2_22 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
@@ -4167,7 +4175,7 @@ const __default__$1 = {
 };
 const __injectCSSVars__$1 = () => {
   useCssVars((_ctx) => ({
-    "bff76602": _ctx.color
+    "3c497448": _ctx.color
   }));
 };
 const __setup__$1 = __default__$1.setup;
@@ -4214,17 +4222,13 @@ const __default__ = {
       default: false
     }
   },
+  emits: ["update:modelValue"],
   data() {
     return {
       padding: 4,
       height: 26,
       trans: 20
     };
-  },
-  methods: {
-    clicked() {
-      this.on = !this.one;
-    }
   },
   computed: {
     on: {
@@ -4258,15 +4262,20 @@ const __default__ = {
     transPx() {
       return `translateX(${convertToUnit(this.trans)})`;
     }
+  },
+  methods: {
+    clicked() {
+      this.on = !this.one;
+    }
   }
 };
 const __injectCSSVars__ = () => {
   useCssVars((_ctx) => ({
-    "1ed91f10": _ctx.switchWidthPx,
-    "70fd9959": _ctx.heightPx,
-    "1a925056": _ctx.innerSizePx,
-    "b87b5922": _ctx.paddingPx,
-    "a610b474": _ctx.transPx
+    "9e4f3e2a": _ctx.switchWidthPx,
+    "cd254ac4": _ctx.heightPx,
+    "d07a5720": _ctx.innerSizePx,
+    "ed6a8a6c": _ctx.paddingPx,
+    "0ecfb03e": _ctx.transPx
   }));
 };
 const __setup__ = __default__.setup;
@@ -4344,13 +4353,15 @@ const _sfc_main$a = {
   inheritAttrs: false,
   props: {
     modelValue: {
-      type: String
+      type: String,
+      default: null
     },
     rows: {
       type: Number,
       default: 5
     }
   },
+  emits: ["update:modelValue"],
   computed: {
     outerStyle() {
       return {
@@ -4412,10 +4423,10 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
         withDirectives(createElementVNode("textarea", mergeProps({
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.valueLocal = $event)
         }, _ctx.$attrs, {
-          onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"])),
           spellcheck: "false",
           class: [_ctx.classObj, "k-textarea"],
-          rows: $props.rows
+          rows: $props.rows,
+          onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => $options.tabber && $options.tabber(...args), ["prevent"]), ["tab"]))
         }), null, 16, _hoisted_1$9), [
           [vModelText, $options.valueLocal]
         ])
@@ -4443,6 +4454,7 @@ const _sfc_main$9 = {
       default: null
     }
   },
+  emits: ["update:modelValue"],
   computed: {
     value: {
       get() {
@@ -4465,8 +4477,8 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     }, {
       default: withCtx(() => [
         withDirectives(createElementVNode("input", {
-          class: normalizeClass(["k-input-text-field", _ctx.classObj]),
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.value = $event),
+          class: normalizeClass(["k-input-text-field", _ctx.classObj]),
           placeholder: $props.placeholder
         }, null, 10, _hoisted_1$8), [
           [vModelText, $options.value]
@@ -4771,7 +4783,7 @@ const _sfc_main$6 = {
   props: {
     modelValue: {
       type: [String, Number, Object],
-      required: false
+      default: null
     },
     users: {
       type: Boolean,
@@ -4798,6 +4810,7 @@ const _sfc_main$6 = {
       default: true
     }
   },
+  emits: ["update:modelValue"],
   data() {
     return {
       loading: false,
@@ -4849,6 +4862,17 @@ const _sfc_main$6 = {
       }
     }
   },
+  watch: {
+    searchText(val) {
+      val && val !== this.select && this.querySelections(val);
+    },
+    value: {
+      handler() {
+        this.loadInitialValue();
+      },
+      immediate: true
+    }
+  },
   methods: {
     querySelections: lodash_debounce(async function(v) {
       try {
@@ -4886,17 +4910,6 @@ const _sfc_main$6 = {
         }
       }
     }
-  },
-  watch: {
-    searchText(val) {
-      val && val !== this.select && this.querySelections(val);
-    },
-    value: {
-      handler() {
-        this.loadInitialValue();
-      },
-      immediate: true
-    }
   }
 };
 const _hoisted_1$5 = ["innerHTML"];
@@ -4904,14 +4917,14 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KUserGIF = resolveComponent("KUserGIF");
   const _component_KAutocomplete = resolveComponent("KAutocomplete");
   return openBlock(), createBlock(_component_KAutocomplete, {
-    class: "k-user-picker",
     modelValue: $options.localValue,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
+    "search-input": $data.searchText,
+    "onUpdate:search-input": _cache[1] || (_cache[1] = ($event) => $data.searchText = $event),
+    class: "k-user-picker",
     placeholder: $options.placeholder,
     width: $props.width,
     loading: $data.loading,
-    "search-input": $data.searchText,
-    "onUpdate:search-input": _cache[1] || (_cache[1] = ($event) => $data.searchText = $event),
     items: $data.items,
     "return-object": $props.returnObject,
     combobox: $props.combobox,
@@ -4929,7 +4942,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, _hoisted_1$5)
     ]),
     _: 1
-  }, 8, ["modelValue", "placeholder", "width", "loading", "search-input", "items", "return-object", "combobox", "editable"]);
+  }, 8, ["modelValue", "search-input", "placeholder", "width", "loading", "items", "return-object", "combobox", "editable"]);
 }
 var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
 var __glob_2_30 = /* @__PURE__ */ Object.freeze({
@@ -5109,6 +5122,16 @@ const _sfc_main = {
       selectedTab: null
     };
   },
+  computed: {
+    tabs() {
+      return this.$slots.default().filter((item) => Boolean(item.props));
+    }
+  },
+  mounted() {
+    const hash = window.location.hash.replace("#", "");
+    const firstTab = lodash_get(this.tabs, "[0].props.name");
+    this.selectedTab = [hash, firstTab].find((item) => Boolean(item));
+  },
   methods: {
     selectTab(tab) {
       this.selectedTab = lodash_get(tab, "props.name");
@@ -5119,16 +5142,6 @@ const _sfc_main = {
         "k-tabs-active": this.selectedTab == lodash_get(tab, "props.name")
       };
     }
-  },
-  computed: {
-    tabs() {
-      return this.$slots.default().filter((item) => Boolean(item.props));
-    }
-  },
-  mounted() {
-    const hash = window.location.hash.replace("#", "");
-    const firstTab = lodash_get(this.tabs, "[0].props.name");
-    this.selectedTab = [hash, firstTab].find((item) => Boolean(item));
   }
 };
 const _hoisted_1 = { class: "k-tabs" };
