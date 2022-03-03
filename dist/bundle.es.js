@@ -37,11 +37,10 @@ function _sfc_render$A(_ctx, _cache) {
   ], 64);
 }
 var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A]]);
-var __glob_2_0 = /* @__PURE__ */ Object.freeze({
+var __glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KAdminLink
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KApp_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$A = {};
 const _hoisted_1$u = { class: "k-app" };
@@ -63,11 +62,10 @@ function _sfc_render$z(_ctx, _cache) {
   ]);
 }
 var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z]]);
-var __glob_2_1 = /* @__PURE__ */ Object.freeze({
+var __glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KApp
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const clickEventType = document.ontouchstart !== null ? "click" : "touchstart";
 const UNIQUE_ID = "__vue_click_away__";
 const onMounted = function(el, binding, vnode) {
@@ -599,11 +597,10 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-4dd30455"]]);
-var __glob_2_2 = /* @__PURE__ */ Object.freeze({
+var __glob_2_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KAutocomplete
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$y = {
   props: {
     nodeRec: {
@@ -648,11 +645,10 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
-var __glob_2_3 = /* @__PURE__ */ Object.freeze({
+var __glob_2_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KBrowseLink
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KButton_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$x = {
   props: {
@@ -693,11 +689,10 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
   ], 16, _hoisted_1$r);
 }
 var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
-var __glob_2_4 = /* @__PURE__ */ Object.freeze({
+var __glob_2_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KButton
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$w = {
   provide() {
     return {
@@ -802,11 +797,10 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
-var __glob_2_5 = /* @__PURE__ */ Object.freeze({
+var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KConfirm
-});
+}, Symbol.toStringTag, { value: "Module" }));
 function toInteger(dirtyNumber) {
   if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
     return NaN;
@@ -2357,11 +2351,10 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
-var __glob_2_6 = /* @__PURE__ */ Object.freeze({
+var __glob_2_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KDateTimePicker
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const convertToUnit = (str, unit = "px") => {
   if (str == null || str === "") {
     return void 0;
@@ -2715,11 +2708,10 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
-var __glob_2_7 = /* @__PURE__ */ Object.freeze({
+var __glob_2_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KDialog
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KDot_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$t = {
   props: {
@@ -2771,11 +2763,10 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
   ], 4);
 }
 var KDot = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
-var __glob_2_8 = /* @__PURE__ */ Object.freeze({
+var __glob_2_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KDot
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KFormFieldWrapper_vue_vue_type_style_index_0_lang = "";
 const mixin = {
   props: {
@@ -2834,12 +2825,11 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KFormFieldWrapper = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);
-var __glob_2_9 = /* @__PURE__ */ Object.freeze({
+var __glob_2_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   mixin,
   "default": KFormFieldWrapper
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$r = {
   props: {
     dataid: {
@@ -2938,11 +2928,10 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q]]);
-var __glob_2_10 = /* @__PURE__ */ Object.freeze({
+var __glob_2_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KFunctionMenu
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KLinearProgressIndicator_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$q = {};
 const _hoisted_1$m = { class: "k-progress-line" };
@@ -2950,11 +2939,10 @@ function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$m);
 }
 var KLinearProgressIndicator = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
-var __glob_2_11 = /* @__PURE__ */ Object.freeze({
+var __glob_2_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KLinearProgressIndicator
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KMulti_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$p = {
   props: {
@@ -3076,11 +3064,10 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var KMulti = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
-var __glob_2_12 = /* @__PURE__ */ Object.freeze({
+var __glob_2_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KMulti
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var buildUrl$1 = { exports: {} };
 /**
  * build-url - A small library that builds a URL given its components
@@ -3264,8 +3251,11 @@ class SemaphoreItem {
     this.max = max;
     this.count = 0;
   }
+  get canAcquire() {
+    return this.count < this.max;
+  }
   acquire() {
-    if (this.count < this.max) {
+    if (this.canAcquire) {
       this.count++;
       return Promise.resolve();
     } else {
@@ -3275,7 +3265,7 @@ class SemaphoreItem {
     }
   }
   release() {
-    let resolveFunc = this.queue.shift();
+    const resolveFunc = this.queue.shift();
     if (resolveFunc) {
       setTimeout(resolveFunc, 0);
     } else {
@@ -3300,6 +3290,9 @@ class Semaphore {
       delete this.semaphoreItems[key];
     }
   }
+  canAcquire(key = defaultKey) {
+    return this._getSemaphoreInstance(key).canAcquire;
+  }
   acquire(key = defaultKey) {
     return this._getSemaphoreInstance(key).acquire();
   }
@@ -3316,6 +3309,21 @@ class Semaphore {
   }
   hasTasks(key = defaultKey) {
     return this.count(key) > 0;
+  }
+  async request(fn, key = defaultKey) {
+    try {
+      await this.acquire(key);
+      return await fn();
+    } finally {
+      this.release(key);
+    }
+  }
+  async requestIfAvailable(fn, key = defaultKey) {
+    if (this.canAcquire(key)) {
+      return this.request(fn, key);
+    } else {
+      return null;
+    }
   }
 }
 var src = Semaphore;
@@ -3532,11 +3540,10 @@ function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KNodePickerField = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
-var __glob_2_13 = /* @__PURE__ */ Object.freeze({
+var __glob_2_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KNodePickerField
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KOneMoment_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$n = {
   props: {
@@ -3572,11 +3579,10 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["model-value"]);
 }
 var KOneMoment = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
-var __glob_2_14 = /* @__PURE__ */ Object.freeze({
+var __glob_2_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KOneMoment
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$m = {
   props: {
     mimetypes: {
@@ -3641,11 +3647,10 @@ function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
-var __glob_2_15 = /* @__PURE__ */ Object.freeze({
+var __glob_2_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KPageDropZone
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KPageTitle_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$l = {
   props: {
@@ -3672,11 +3677,10 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
-var __glob_2_16 = /* @__PURE__ */ Object.freeze({
+var __glob_2_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KPageTitle
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KPagination_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$k = {
   props: {
@@ -3790,11 +3794,10 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
-var __glob_2_17 = /* @__PURE__ */ Object.freeze({
+var __glob_2_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KPagination
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KRadioGroup_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$j = {
   mixins: [mixin],
@@ -3849,10 +3852,13 @@ const _sfc_main$j = {
     },
     getItemValue(item) {
       return this.isObject(item) ? lodash_get(item, this.itemValue) : item;
+    },
+    getItemDisabled(item) {
+      return this.isObject(item) ? lodash_get(item, "disabled", false) : false;
     }
   }
 };
-const _hoisted_1$g = ["id", "value"];
+const _hoisted_1$g = ["id", "value", "disabled"];
 const _hoisted_2$7 = ["for"];
 function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KSpinner = resolveComponent("KSpinner");
@@ -3882,7 +3888,8 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
                     id: $options.getItemValue(item),
                     "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
                     type: "radio",
-                    value: $options.getItemValue(item)
+                    value: $options.getItemValue(item),
+                    disabled: $options.getItemDisabled(item)
                   }, null, 8, _hoisted_1$g), [
                     [vModelRadio, $options.localValue]
                   ]),
@@ -3901,11 +3908,10 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KRadioGroup = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
-var __glob_2_18 = /* @__PURE__ */ Object.freeze({
+var __glob_2_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KRadioGroup
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$i = {
   inject: ["ksnackbar"],
   methods: {
@@ -3922,11 +3928,10 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
-var __glob_2_19 = /* @__PURE__ */ Object.freeze({
+var __glob_2_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KScratch
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSelect_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$h = {
   mixins: [mixin],
@@ -4024,11 +4029,10 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
-var __glob_2_20 = /* @__PURE__ */ Object.freeze({
+var __glob_2_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSelect
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSnackbar_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$g = {
   provide() {
@@ -4137,11 +4141,10 @@ function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
-var __glob_2_21 = /* @__PURE__ */ Object.freeze({
+var __glob_2_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSnackbar
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSortHeader_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$f = {
   props: {
@@ -4201,11 +4204,10 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
-var __glob_2_22 = /* @__PURE__ */ Object.freeze({
+var __glob_2_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSortHeader
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSpacer_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$e = {};
 const _hoisted_1$c = { class: "k-spacer" };
@@ -4213,11 +4215,10 @@ function _sfc_render$d(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$c);
 }
 var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
-var __glob_2_23 = /* @__PURE__ */ Object.freeze({
+var __glob_2_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSpacer
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSpinner_vue_vue_type_style_index_0_lang = "";
 const __default__$1 = {
   mixins: [measurables],
@@ -4272,11 +4273,10 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_3$1, 4);
 }
 var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c]]);
-var __glob_2_24 = /* @__PURE__ */ Object.freeze({
+var __glob_2_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSpinner
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KSwitch_vue_vue_type_style_index_0_lang = "";
 const __default__ = {
   props: {
@@ -4358,11 +4358,10 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_2$2, 2);
 }
 var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
-var __glob_2_25 = /* @__PURE__ */ Object.freeze({
+var __glob_2_25 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KSwitch
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KTable_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$b = {
   props: {
@@ -4403,11 +4402,10 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
-var __glob_2_26 = /* @__PURE__ */ Object.freeze({
+var __glob_2_26 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KTable
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KTextArea_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$a = {
   mixins: [mixin],
@@ -4497,11 +4495,10 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
-var __glob_2_27 = /* @__PURE__ */ Object.freeze({
+var __glob_2_27 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KTextArea
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KTextField_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$9 = {
   mixins: [mixin],
@@ -4550,11 +4547,10 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextField = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
-var __glob_2_28 = /* @__PURE__ */ Object.freeze({
+var __glob_2_28 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KTextField
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$8 = {
   mixins: [measurables],
   props: {
@@ -4601,11 +4597,10 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 12, _hoisted_1$7)) : createCommentVNode("", true);
 }
 var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
-var __glob_2_29 = /* @__PURE__ */ Object.freeze({
+var __glob_2_29 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KUserGIF
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$7 = {
   props: {
     user: {
@@ -4690,11 +4685,10 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
-var __glob_2_30 = /* @__PURE__ */ Object.freeze({
+var __glob_2_30 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KUserLink
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var FUNC_ERROR_TEXT = "Expected a function";
 var NAN = 0 / 0;
 var symbolTag = "[object Symbol]";
@@ -5022,11 +5016,10 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["user"]));
 }
 var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
-var __glob_2_31 = /* @__PURE__ */ Object.freeze({
+var __glob_2_31 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KUserPicker
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var clickable = {
   props: {
     disabled: {
@@ -5110,11 +5103,10 @@ const _sfc_main$5 = {
     return this.renderCard();
   }
 };
-var __glob_2_32 = /* @__PURE__ */ Object.freeze({
+var __glob_2_32 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": _sfc_main$5
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KCardActions_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$4 = {};
 const _hoisted_1$4 = { class: "k-card-actions" };
@@ -5124,11 +5116,10 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
-var __glob_2_33 = /* @__PURE__ */ Object.freeze({
+var __glob_2_33 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KCardActions
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KCardText_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$3 = {};
 const _hoisted_1$3 = { class: "k-card-text" };
@@ -5138,11 +5129,10 @@ function _sfc_render$3(_ctx, _cache) {
   ]);
 }
 var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
-var __glob_2_34 = /* @__PURE__ */ Object.freeze({
+var __glob_2_34 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KCardText
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KCardTitle_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$2 = {};
 const _hoisted_1$2 = { class: "k-card-title" };
@@ -5152,11 +5142,10 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
-var __glob_2_35 = /* @__PURE__ */ Object.freeze({
+var __glob_2_35 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KCardTitle
-});
+}, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$1 = {
   inject: ["tabs"],
   props: {
@@ -5182,11 +5171,10 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
-var __glob_2_36 = /* @__PURE__ */ Object.freeze({
+var __glob_2_36 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KTabItem
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var KTabs_vue_vue_type_style_index_0_lang = "";
 const _sfc_main = {
   provide() {
@@ -5246,11 +5234,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-var __glob_2_37 = /* @__PURE__ */ Object.freeze({
+var __glob_2_37 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  [Symbol.toStringTag]: "Module",
   "default": KTabs
-});
+}, Symbol.toStringTag, { value: "Module" }));
 var axios$3 = { exports: {} };
 var bind$2 = function bind(fn, thisArg) {
   return function wrap() {

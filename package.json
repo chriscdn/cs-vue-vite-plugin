@@ -1,6 +1,6 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/bundle.umd.js",
   "module": "./dist/bundle.es.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "docs": "vuese gen"
   },
   "dependencies": {
-    "@chriscdn/promise-semaphore": "^1.0.6",
+    "@chriscdn/promise-semaphore": "^1.0.9",
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
     "body-scroll-lock": "^4.0.0-beta.0",
     "build-url": "^6.0.1",
@@ -23,19 +23,19 @@
     "vue3-click-away": "^1.2.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.2.2",
+    "@vitejs/plugin-vue": "^2.2.4",
     "@vue/compiler-sfc": "^3.2.31",
     "autoprefixer": "^10.4.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.10.0",
-    "eslint-config-prettier": "^8.4.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.23",
-    "vite": "^2.8.4"
+    "vite": "^2.8.6"
   },
   "files": [
     "dist"

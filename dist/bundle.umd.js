@@ -40,11 +40,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 64);
   }
   var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A]]);
-  var __glob_2_0 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KAdminLink
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KApp_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$A = {};
   const _hoisted_1$u = { class: "k-app" };
@@ -66,11 +65,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z]]);
-  var __glob_2_1 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KApp
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const clickEventType = document.ontouchstart !== null ? "click" : "touchstart";
   const UNIQUE_ID = "__vue_click_away__";
   const onMounted = function(el, binding, vnode) {
@@ -602,11 +600,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-4dd30455"]]);
-  var __glob_2_2 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KAutocomplete
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$y = {
     props: {
       nodeRec: {
@@ -651,11 +648,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ])) : vue.createCommentVNode("", true);
   }
   var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
-  var __glob_2_3 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KBrowseLink
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KButton_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$x = {
     props: {
@@ -696,11 +692,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 16, _hoisted_1$r);
   }
   var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
-  var __glob_2_4 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KButton
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$w = {
     provide() {
       return {
@@ -805,11 +800,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 64);
   }
   var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
-  var __glob_2_5 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KConfirm
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   function toInteger(dirtyNumber) {
     if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
       return NaN;
@@ -2360,11 +2354,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
-  var __glob_2_6 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KDateTimePicker
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const convertToUnit = (str, unit = "px") => {
     if (str == null || str === "") {
       return void 0;
@@ -2718,11 +2711,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 64);
   }
   var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
-  var __glob_2_7 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KDialog
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KDot_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$t = {
     props: {
@@ -2774,11 +2766,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 4);
   }
   var KDot = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
-  var __glob_2_8 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KDot
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KFormFieldWrapper_vue_vue_type_style_index_0_lang = "";
   const mixin = {
     props: {
@@ -2837,12 +2828,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KFormFieldWrapper = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);
-  var __glob_2_9 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     mixin,
     "default": KFormFieldWrapper
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$r = {
     props: {
       dataid: {
@@ -2941,11 +2931,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ])) : vue.createCommentVNode("", true);
   }
   var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q]]);
-  var __glob_2_10 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KFunctionMenu
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KLinearProgressIndicator_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$q = {};
   const _hoisted_1$m = { class: "k-progress-line" };
@@ -2953,11 +2942,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$m);
   }
   var KLinearProgressIndicator = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
-  var __glob_2_11 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KLinearProgressIndicator
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KMulti_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$p = {
     props: {
@@ -3079,11 +3067,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     });
   }
   var KMulti = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
-  var __glob_2_12 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KMulti
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var buildUrl$1 = { exports: {} };
   /**
    * build-url - A small library that builds a URL given its components
@@ -3267,8 +3254,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       this.max = max;
       this.count = 0;
     }
+    get canAcquire() {
+      return this.count < this.max;
+    }
     acquire() {
-      if (this.count < this.max) {
+      if (this.canAcquire) {
         this.count++;
         return Promise.resolve();
       } else {
@@ -3278,7 +3268,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
     release() {
-      let resolveFunc = this.queue.shift();
+      const resolveFunc = this.queue.shift();
       if (resolveFunc) {
         setTimeout(resolveFunc, 0);
       } else {
@@ -3303,6 +3293,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         delete this.semaphoreItems[key];
       }
     }
+    canAcquire(key = defaultKey) {
+      return this._getSemaphoreInstance(key).canAcquire;
+    }
     acquire(key = defaultKey) {
       return this._getSemaphoreInstance(key).acquire();
     }
@@ -3319,6 +3312,21 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }
     hasTasks(key = defaultKey) {
       return this.count(key) > 0;
+    }
+    async request(fn, key = defaultKey) {
+      try {
+        await this.acquire(key);
+        return await fn();
+      } finally {
+        this.release(key);
+      }
+    }
+    async requestIfAvailable(fn, key = defaultKey) {
+      if (this.canAcquire(key)) {
+        return this.request(fn, key);
+      } else {
+        return null;
+      }
     }
   }
   var src = Semaphore;
@@ -3535,11 +3543,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KNodePickerField = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
-  var __glob_2_13 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KNodePickerField
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KOneMoment_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$n = {
     props: {
@@ -3575,11 +3582,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }, 8, ["model-value"]);
   }
   var KOneMoment = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
-  var __glob_2_14 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KOneMoment
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$m = {
     props: {
       mimetypes: {
@@ -3644,11 +3650,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
-  var __glob_2_15 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KPageDropZone
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KPageTitle_vue_vue_type_style_index_0_scoped_true_lang = "";
   const _sfc_main$l = {
     props: {
@@ -3675,11 +3680,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
-  var __glob_2_16 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KPageTitle
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KPagination_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$k = {
     props: {
@@ -3793,11 +3797,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ])) : vue.createCommentVNode("", true);
   }
   var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
-  var __glob_2_17 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KPagination
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KRadioGroup_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$j = {
     mixins: [mixin],
@@ -3852,10 +3855,13 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       },
       getItemValue(item) {
         return this.isObject(item) ? lodash_get(item, this.itemValue) : item;
+      },
+      getItemDisabled(item) {
+        return this.isObject(item) ? lodash_get(item, "disabled", false) : false;
       }
     }
   };
-  const _hoisted_1$g = ["id", "value"];
+  const _hoisted_1$g = ["id", "value", "disabled"];
   const _hoisted_2$7 = ["for"];
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_KSpinner = vue.resolveComponent("KSpinner");
@@ -3885,7 +3891,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
                       id: $options.getItemValue(item),
                       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.localValue = $event),
                       type: "radio",
-                      value: $options.getItemValue(item)
+                      value: $options.getItemValue(item),
+                      disabled: $options.getItemDisabled(item)
                     }, null, 8, _hoisted_1$g), [
                       [vue.vModelRadio, $options.localValue]
                     ]),
@@ -3904,11 +3911,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KRadioGroup = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
-  var __glob_2_18 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KRadioGroup
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$i = {
     inject: ["ksnackbar"],
     methods: {
@@ -3925,11 +3931,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
-  var __glob_2_19 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KScratch
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSelect_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$h = {
     mixins: [mixin],
@@ -4027,11 +4032,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
-  var __glob_2_20 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSelect
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSnackbar_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$g = {
     provide() {
@@ -4140,11 +4144,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 64);
   }
   var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
-  var __glob_2_21 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSnackbar
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSortHeader_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$f = {
     props: {
@@ -4204,11 +4207,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
-  var __glob_2_22 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSortHeader
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSpacer_vue_vue_type_style_index_0_scoped_true_lang = "";
   const _sfc_main$e = {};
   const _hoisted_1$c = { class: "k-spacer" };
@@ -4216,11 +4218,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$c);
   }
   var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
-  var __glob_2_23 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSpacer
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSpinner_vue_vue_type_style_index_0_lang = "";
   const __default__$1 = {
     mixins: [measurables],
@@ -4275,11 +4276,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }, _hoisted_3$1, 4);
   }
   var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c]]);
-  var __glob_2_24 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSpinner
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KSwitch_vue_vue_type_style_index_0_lang = "";
   const __default__ = {
     props: {
@@ -4361,11 +4361,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }, _hoisted_2$2, 2);
   }
   var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
-  var __glob_2_25 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_25 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KSwitch
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KTable_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$b = {
     props: {
@@ -4406,11 +4405,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ], 64);
   }
   var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
-  var __glob_2_26 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_26 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KTable
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KTextArea_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$a = {
     mixins: [mixin],
@@ -4500,11 +4498,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
-  var __glob_2_27 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_27 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KTextArea
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KTextField_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$9 = {
     mixins: [mixin],
@@ -4553,11 +4550,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KTextField = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
-  var __glob_2_28 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_28 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KTextField
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$8 = {
     mixins: [measurables],
     props: {
@@ -4604,11 +4600,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }, null, 12, _hoisted_1$7)) : vue.createCommentVNode("", true);
   }
   var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
-  var __glob_2_29 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_29 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KUserGIF
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$7 = {
     props: {
       user: {
@@ -4693,11 +4688,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ])) : vue.createCommentVNode("", true);
   }
   var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
-  var __glob_2_30 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_30 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KUserLink
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var FUNC_ERROR_TEXT = "Expected a function";
   var NAN = 0 / 0;
   var symbolTag = "[object Symbol]";
@@ -5025,11 +5019,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }, null, 8, ["user"]));
   }
   var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
-  var __glob_2_31 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_31 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KUserPicker
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var clickable = {
     props: {
       disabled: {
@@ -5113,11 +5106,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       return this.renderCard();
     }
   };
-  var __glob_2_32 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_32 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": _sfc_main$5
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KCardActions_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$4 = {};
   const _hoisted_1$4 = { class: "k-card-actions" };
@@ -5127,11 +5119,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
-  var __glob_2_33 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_33 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KCardActions
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KCardText_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$3 = {};
   const _hoisted_1$3 = { class: "k-card-text" };
@@ -5141,11 +5132,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
-  var __glob_2_34 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_34 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KCardText
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KCardTitle_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$2 = {};
   const _hoisted_1$2 = { class: "k-card-title" };
@@ -5155,11 +5145,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
-  var __glob_2_35 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_35 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KCardTitle
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   const _sfc_main$1 = {
     inject: ["tabs"],
     props: {
@@ -5185,11 +5174,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ])) : vue.createCommentVNode("", true);
   }
   var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
-  var __glob_2_36 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_36 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KTabItem
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var KTabs_vue_vue_type_style_index_0_lang = "";
   const _sfc_main = {
     provide() {
@@ -5249,11 +5237,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     ]);
   }
   var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-  var __glob_2_37 = /* @__PURE__ */ Object.freeze({
+  var __glob_2_37 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    [Symbol.toStringTag]: "Module",
     "default": KTabs
-  });
+  }, Symbol.toStringTag, { value: "Module" }));
   var axios$3 = { exports: {} };
   var bind$2 = function bind2(fn, thisArg) {
     return function wrap() {

@@ -18,7 +18,9 @@
               v-model="localValue"
               type="radio"
               :value="getItemValue(item)"
+              :disabled="getItemDisabled(item)"
             >
+
             <label :for="getItemValue(item)">{{ getItemText(item) }}</label>
           </div>
         </div>
@@ -91,6 +93,9 @@ export default {
     },
     getItemValue(item) {
       return this.isObject(item) ? get(item, this.itemValue) : item
+    },
+    getItemDisabled(item) {
+      return this.isObject(item) ? get(item, 'disabled', false) : false
     },
   },
 }
