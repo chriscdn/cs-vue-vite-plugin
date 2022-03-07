@@ -4604,6 +4604,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     __proto__: null,
     "default": KUserGIF
   }, Symbol.toStringTag, { value: "Module" }));
+  var KUserLink_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$7 = {
     props: {
       user: {
@@ -4670,7 +4671,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   };
   const _hoisted_1$6 = {
     key: 0,
-    class: "flex items-center"
+    class: "k-user-link"
   };
   const _hoisted_2$1 = /* @__PURE__ */ vue.createTextVNode("\xA0");
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {

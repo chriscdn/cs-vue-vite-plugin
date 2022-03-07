@@ -1,6 +1,6 @@
 <template>
   <!-- testing flex -->
-  <span v-if="userRecLocal" class="flex items-center">
+  <span v-if="userRecLocal" class="k-user-link">
     <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;<a
       href="#"
       @click.prevent="click"
@@ -87,3 +87,9 @@ export default {
   },
 }
 </script>
+
+<style lang="less">
+.k-user-link {
+  @apply inline-flex items-center;
+}
+</style>
