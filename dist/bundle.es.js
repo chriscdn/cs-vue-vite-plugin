@@ -17,7 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { openBlock, createElementBlock, Fragment, createElementVNode, resolveComponent, createVNode, withCtx, renderSlot, resolveDirective, withDirectives, normalizeStyle, normalizeClass, withKeys, withModifiers, vModelText, renderList, createTextVNode, toDisplayString, createCommentVNode, createBlock, mergeProps, vModelDynamic, Teleport, Transition, setBlockTracking, TransitionGroup, getCurrentInstance, vModelRadio, vModelSelect, useCssVars, h } from "vue";
+import { openBlock, createElementBlock, Fragment, createElementVNode, resolveComponent, createBlock, Transition, withCtx, normalizeStyle, renderSlot, createVNode, createCommentVNode, createTextVNode, resolveDirective, withDirectives, normalizeClass, withKeys, withModifiers, vModelText, renderList, toDisplayString, mergeProps, vModelDynamic, Teleport, setBlockTracking, TransitionGroup, getCurrentInstance, vModelRadio, vModelSelect, useCssVars, h } from "vue";
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -25,29 +25,114 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$B = {};
-const _hoisted_1$v = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
-const _hoisted_2$h = ["href"];
-function _sfc_render$A(_ctx, _cache) {
+const _sfc_main$D = {};
+const _hoisted_1$x = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
+const _hoisted_2$j = ["href"];
+function _sfc_render$C(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
-    _hoisted_1$v,
+    _hoisted_1$x,
     createElementVNode("a", {
       href: `${_ctx.$cgi}?func=admin.index`
-    }, "Admin Home", 8, _hoisted_2$h)
+    }, "Admin Home", 8, _hoisted_2$j)
   ], 64);
 }
-var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A]]);
+var KAdminLink = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C]]);
 var __glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KAdminLink
 }, Symbol.toStringTag, { value: "Module" }));
+var colorable = {
+  props: {
+    color: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    resolvedColor() {
+      return this.color;
+    },
+    colorableTextStyle() {
+      return {
+        color: this.resolvedColor
+      };
+    },
+    colorableBackgroundStyle() {
+      return {
+        backgroundColor: this.resolvedColor
+      };
+    }
+  }
+};
+const _sfc_main$C = {
+  mixins: [colorable],
+  props: {
+    visible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data() {
+    return {
+      visibleLocal: true
+    };
+  },
+  watch: {
+    visible: {
+      handler(value) {
+        this.visibleLocal = value;
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    dismiss() {
+      this.visibleLocal = false;
+    }
+  }
+};
+const _hoisted_1$w = { class: "flex-grow" };
+const _hoisted_2$i = /* @__PURE__ */ createTextVNode(" icon-x ");
+function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_JIcon = resolveComponent("JIcon");
+  return openBlock(), createBlock(Transition, { name: "fade" }, {
+    default: withCtx(() => [
+      $data.visibleLocal ? (openBlock(), createElementBlock("div", {
+        key: 0,
+        class: "flex items-center rounded text-main-bright p-2",
+        style: normalizeStyle([_ctx.colorableBackgroundStyle])
+      }, [
+        createElementVNode("div", _hoisted_1$w, [
+          renderSlot(_ctx.$slots, "default")
+        ]),
+        createElementVNode("button", {
+          class: "flex-grow-0",
+          onClick: _cache[0] || (_cache[0] = (...args) => $options.dismiss && $options.dismiss(...args))
+        }, [
+          createVNode(_component_JIcon, { class: "text-main-bright" }, {
+            default: withCtx(() => [
+              _hoisted_2$i
+            ]),
+            _: 1
+          })
+        ])
+      ], 4)) : createCommentVNode("", true)
+    ]),
+    _: 3
+  });
+}
+var KAlert = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B]]);
+var __glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  "default": KAlert
+}, Symbol.toStringTag, { value: "Module" }));
 var KApp_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$A = {};
-const _hoisted_1$u = { class: "k-app" };
-function _sfc_render$z(_ctx, _cache) {
+const _sfc_main$B = {};
+const _hoisted_1$v = { class: "k-app" };
+function _sfc_render$A(_ctx, _cache) {
   const _component_KSnackbar = resolveComponent("KSnackbar");
   const _component_KConfirm = resolveComponent("KConfirm");
-  return openBlock(), createElementBlock("div", _hoisted_1$u, [
+  return openBlock(), createElementBlock("div", _hoisted_1$v, [
     createVNode(_component_KConfirm, null, {
       default: withCtx(() => [
         createVNode(_component_KSnackbar, null, {
@@ -61,12 +146,14 @@ function _sfc_render$z(_ctx, _cache) {
     })
   ]);
 }
-var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z]]);
-var __glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KApp = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A]]);
+var __glob_2_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KApp
 }, Symbol.toStringTag, { value: "Module" }));
-const clickEventType = document.ontouchstart !== null ? "click" : "touchstart";
+const clickEventType = function() {
+  return document.ontouchstart !== null ? "click" : "touchstart";
+};
 const UNIQUE_ID = "__vue_click_away__";
 const onMounted = function(el, binding, vnode) {
   onUnmounted(el);
@@ -81,10 +168,10 @@ const onMounted = function(el, binding, vnode) {
       return callback.call(vm, event);
     }
   };
-  document.addEventListener(clickEventType, el[UNIQUE_ID], false);
+  document.addEventListener(clickEventType(), el[UNIQUE_ID], false);
 };
 const onUnmounted = function(el) {
-  document.removeEventListener(clickEventType, el[UNIQUE_ID], false);
+  document.removeEventListener(clickEventType(), el[UNIQUE_ID], false);
   delete el[UNIQUE_ID];
 };
 const onUpdated = function(el, binding, vnode) {
@@ -387,7 +474,7 @@ function get$3(object, path, defaultValue) {
 }
 var lodash_get = get$3;
 var KAutocomplete_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$z = {
+const _sfc_main$A = {
   directives: {
     ClickAway: directive
   },
@@ -543,21 +630,21 @@ const _sfc_main$z = {
     }
   }
 };
-const _hoisted_1$t = { class: "k-autocomplete-input" };
-const _hoisted_2$g = ["placeholder", "readonly"];
-const _hoisted_3$a = {
+const _hoisted_1$u = { class: "k-autocomplete-input" };
+const _hoisted_2$h = ["placeholder", "readonly"];
+const _hoisted_3$b = {
   key: 0,
   class: "k-autocomplete-items"
 };
-const _hoisted_4$6 = ["onClick"];
-function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_4$7 = ["onClick"];
+function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return withDirectives((openBlock(), createElementBlock("div", {
     class: "k-autocomplete",
     style: normalizeStyle([$options.style])
   }, [
     renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
-    createElementVNode("div", _hoisted_1$t, [
+    createElementVNode("div", _hoisted_1$u, [
       withDirectives(createElementVNode("input", {
         ref: "input",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputText = $event),
@@ -575,10 +662,10 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
         ],
         onFocus: _cache[5] || (_cache[5] = (...args) => $options.setFocus && $options.setFocus(...args)),
         onKeyup: _cache[7] || (_cache[7] = (...args) => $options.keyup && $options.keyup(...args))
-      }, null, 42, _hoisted_2$g), [
+      }, null, 42, _hoisted_2$h), [
         [vModelText, $data.inputText]
       ]),
-      $data.focus && $props.items.length && !!$data.inputText ? (openBlock(), createElementBlock("div", _hoisted_3$a, [
+      $data.focus && $props.items.length && !!$data.inputText ? (openBlock(), createElementBlock("div", _hoisted_3$b, [
         (openBlock(true), createElementBlock(Fragment, null, renderList($options.itemsFiltered, (item, index2) => {
           return openBlock(), createElementBlock("div", {
             key: index2,
@@ -588,7 +675,7 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
             renderSlot(_ctx.$slots, "item", { item }, () => [
               createTextVNode(toDisplayString(item), 1)
             ], true)
-          ], 10, _hoisted_4$6);
+          ], 10, _hoisted_4$7);
         }), 128))
       ])) : createCommentVNode("", true)
     ])
@@ -596,12 +683,12 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     [_directive_click_away, $options.setBlur]
   ]);
 }
-var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-4dd30455"]]);
-var __glob_2_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KAutocomplete = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-a2dcf178"]]);
+var __glob_2_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KAutocomplete
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$y = {
+const _sfc_main$z = {
   props: {
     nodeRec: {
       type: Object,
@@ -617,40 +704,38 @@ const _sfc_main$y = {
     }
   }
 };
-const _hoisted_1$s = { key: 0 };
-const _hoisted_2$f = ["src"];
-const _hoisted_3$9 = /* @__PURE__ */ createTextVNode("\xA0");
-const _hoisted_4$5 = ["href"];
-const _hoisted_5$2 = /* @__PURE__ */ createTextVNode("\xA0");
-const _hoisted_6$2 = ["innerHTML"];
-function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$t = { key: 0 };
+const _hoisted_2$g = ["src"];
+const _hoisted_3$a = /* @__PURE__ */ createTextVNode("\xA0");
+const _hoisted_4$6 = ["href"];
+const _hoisted_5$3 = ["innerHTML"];
+function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
-  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$s, [
+  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$t, [
     $props.image ? (openBlock(), createElementBlock("img", {
       key: 0,
       src: $props.nodeRec.gif
-    }, null, 8, _hoisted_2$f)) : createCommentVNode("", true),
-    _hoisted_3$9,
+    }, null, 8, _hoisted_2$g)) : createCommentVNode("", true),
+    _hoisted_3$a,
     createElementVNode("a", {
       href: $props.nodeRec.url
-    }, toDisplayString($props.nodeRec.name), 9, _hoisted_4$5),
-    _hoisted_5$2,
+    }, toDisplayString($props.nodeRec.name), 9, _hoisted_4$6),
     $props.clickable ? (openBlock(), createBlock(_component_KFunctionMenu, {
       key: 1,
       dataid: $props.nodeRec.dataid
     }, null, 8, ["dataid"])) : createCommentVNode("", true),
     createElementVNode("span", {
       innerHTML: $props.nodeRec.modifiedImageCallback
-    }, null, 8, _hoisted_6$2)
+    }, null, 8, _hoisted_5$3)
   ])) : createCommentVNode("", true);
 }
-var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
-var __glob_2_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KBrowseLink = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y]]);
+var __glob_2_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KBrowseLink
 }, Symbol.toStringTag, { value: "Module" }));
 var KButton_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$x = {
+const _sfc_main$y = {
   props: {
     small: {
       type: Boolean,
@@ -676,8 +761,8 @@ const _sfc_main$x = {
     }
   }
 };
-const _hoisted_1$r = ["disabled"];
-function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$s = ["disabled"];
+function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("button", mergeProps({
     class: ["k-button", $options.classObj],
     disabled: $props.disabled,
@@ -686,14 +771,14 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
   }), [
     renderSlot(_ctx.$slots, "default")
-  ], 16, _hoisted_1$r);
+  ], 16, _hoisted_1$s);
 }
-var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
-var __glob_2_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
+var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KButton
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$w = {
+const _sfc_main$x = {
   provide() {
     return {
       kconfirm: this,
@@ -730,7 +815,7 @@ const _sfc_main$w = {
     }
   }
 };
-function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KCardTitle = resolveComponent("KCardTitle");
   const _component_KCardText = resolveComponent("KCardText");
   const _component_KSpacer = resolveComponent("KSpacer");
@@ -796,8 +881,8 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["modelValue"])
   ], 64);
 }
-var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
-var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KConfirm = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w]]);
+var __glob_2_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KConfirm
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2262,7 +2347,7 @@ function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 function cleanEscapedString(input) {
   return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
 }
-const _sfc_main$v = {
+const _sfc_main$w = {
   props: {
     modelValue: {
       type: [String, Date],
@@ -2312,10 +2397,10 @@ const _sfc_main$v = {
     }
   }
 };
-const _hoisted_1$q = ["type", "readonly"];
-const _hoisted_2$e = /* @__PURE__ */ createTextVNode(" Now ");
-const _hoisted_3$8 = /* @__PURE__ */ createTextVNode(" Clear ");
-function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$r = ["type", "readonly"];
+const _hoisted_2$f = /* @__PURE__ */ createTextVNode(" Now ");
+const _hoisted_3$9 = /* @__PURE__ */ createTextVNode(" Clear ");
+function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   return openBlock(), createElementBlock("div", null, [
     withDirectives(createElementVNode("input", {
@@ -2323,7 +2408,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
       class: "k-input",
       type: $options.type,
       readonly: !$props.editable
-    }, null, 8, _hoisted_1$q), [
+    }, null, 8, _hoisted_1$r), [
       [vModelDynamic, $options.localModelValue]
     ]),
     $props.editable ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
@@ -2333,7 +2418,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: $options.setToNow
       }, {
         default: withCtx(() => [
-          _hoisted_2$e
+          _hoisted_2$f
         ]),
         _: 1
       }, 8, ["onClick"]),
@@ -2343,15 +2428,15 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
         onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("update:modelValue", null))
       }, {
         default: withCtx(() => [
-          _hoisted_3$8
+          _hoisted_3$9
         ]),
         _: 1
       })
     ], 64)) : createCommentVNode("", true)
   ]);
 }
-var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
-var __glob_2_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KDateTimePicker = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v]]);
+var __glob_2_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KDateTimePicker
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2599,7 +2684,7 @@ var enableBodyScroll = function enableBodyScroll2(targetElement) {
   }
 };
 var KDialog_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$u = {
+const _sfc_main$v = {
   directives: {
     ClickAway: directive
   },
@@ -2676,11 +2761,11 @@ const _sfc_main$u = {
     }
   }
 };
-const _hoisted_1$p = {
+const _hoisted_1$q = {
   key: 0,
   class: "k-dialog"
 };
-function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
     renderSlot(_ctx.$slots, "activator", { on: $options.on }),
@@ -2690,7 +2775,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     }, [
       createVNode(Transition, { name: "fade" }, {
         default: withCtx(() => [
-          $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$p, [
+          $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$q, [
             withDirectives((openBlock(), createElementBlock("div", {
               ref: "content",
               class: normalizeClass(["k-dialog-content", $options.classObj]),
@@ -2707,13 +2792,13 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     ])) : createCommentVNode("", true)
   ], 64);
 }
-var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
-var __glob_2_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KDialog = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u]]);
+var __glob_2_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KDialog
 }, Symbol.toStringTag, { value: "Module" }));
 var KDot_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$t = {
+const _sfc_main$u = {
   props: {
     color: {
       type: String,
@@ -2754,7 +2839,7 @@ const _sfc_main$t = {
     }
   }
 };
-function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: "k-dot",
     style: normalizeStyle([$options.style])
@@ -2762,8 +2847,8 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ], 4);
 }
-var KDot = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
-var __glob_2_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KDot = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t]]);
+var __glob_2_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KDot
 }, Symbol.toStringTag, { value: "Module" }));
@@ -2799,16 +2884,16 @@ const mixin = {
     }
   }
 };
-const _sfc_main$s = {
+const _sfc_main$t = {
   mixins: [mixin]
 };
-const _hoisted_1$o = {
+const _hoisted_1$p = {
   key: 0,
   class: "k-form-field-label"
 };
-function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [
-    _ctx.label ? (openBlock(), createElementBlock("div", _hoisted_1$o, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
+    _ctx.label ? (openBlock(), createElementBlock("div", _hoisted_1$p, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
     renderSlot(_ctx.$slots, "default"),
     (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.successMessages, (successMessage, index2) => {
       return openBlock(), createElementBlock("div", {
@@ -2824,13 +2909,13 @@ function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
     }), 128))
   ]);
 }
-var KFormFieldWrapper = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);
-var __glob_2_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KFormFieldWrapper = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s]]);
+var __glob_2_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   mixin,
   "default": KFormFieldWrapper
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$r = {
+const _sfc_main$s = {
   props: {
     dataid: {
       type: Number,
@@ -2893,12 +2978,12 @@ const _sfc_main$r = {
     }
   }
 };
-const _hoisted_1$n = { key: 0 };
-const _hoisted_2$d = ["id"];
-const _hoisted_3$7 = ["src"];
-const _hoisted_4$4 = ["id", "src"];
-function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.dataid ? (openBlock(), createElementBlock("span", _hoisted_1$n, [
+const _hoisted_1$o = { key: 0 };
+const _hoisted_2$e = ["id"];
+const _hoisted_3$8 = ["src"];
+const _hoisted_4$5 = ["id", "src"];
+function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  return $props.dataid ? (openBlock(), createElementBlock("span", _hoisted_1$o, [
     createElementVNode("a", {
       id: $options.aid,
       href: "#",
@@ -2909,7 +2994,7 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
         key: 0,
         src: `${_ctx.$img}spacer.gif`,
         alt: "Functions"
-      }, null, 8, _hoisted_3$7)) : (openBlock(), createElementBlock("img", {
+      }, null, 8, _hoisted_3$8)) : (openBlock(), createElementBlock("img", {
         key: 1,
         id: $options.xid,
         src: $data.image,
@@ -2918,8 +3003,8 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
         title: "Functions",
         onMouseover: _cache[0] || (_cache[0] = (...args) => $options.onmouseover && $options.onmouseover(...args)),
         onMouseout: _cache[1] || (_cache[1] = (...args) => $options.onmouseout && $options.onmouseout(...args))
-      }, null, 40, _hoisted_4$4))
-    ], 8, _hoisted_2$d),
+      }, null, 40, _hoisted_4$5))
+    ], 8, _hoisted_2$e),
     _cache[3] || (setBlockTracking(-1), _cache[3] = createElementVNode("div", {
       id: $options.zid,
       ref: "functionMenuDiv",
@@ -2927,24 +3012,24 @@ function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, ["id"]), setBlockTracking(1), _cache[3])
   ])) : createCommentVNode("", true);
 }
-var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q]]);
-var __glob_2_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KFunctionMenu = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r]]);
+var __glob_2_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KFunctionMenu
 }, Symbol.toStringTag, { value: "Module" }));
 var KLinearProgressIndicator_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$q = {};
-const _hoisted_1$m = { class: "k-progress-line" };
-function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$m);
+const _sfc_main$r = {};
+const _hoisted_1$n = { class: "k-progress-line" };
+function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$n);
 }
-var KLinearProgressIndicator = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
-var __glob_2_11 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KLinearProgressIndicator = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q]]);
+var __glob_2_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KLinearProgressIndicator
 }, Symbol.toStringTag, { value: "Module" }));
 var KMulti_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$p = {
+const _sfc_main$q = {
   props: {
     modelValue: {
       type: Array,
@@ -2996,9 +3081,9 @@ const _sfc_main$p = {
     }
   }
 };
-const _hoisted_1$l = { class: "k-multi-widget" };
-const _hoisted_2$c = { class: "k-multi-buttons" };
-const _hoisted_3$6 = /* @__PURE__ */ createElementVNode("svg", {
+const _hoisted_1$m = { class: "k-multi-widget" };
+const _hoisted_2$d = { class: "k-multi-buttons" };
+const _hoisted_3$7 = /* @__PURE__ */ createElementVNode("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: "24",
   height: "24",
@@ -3006,7 +3091,7 @@ const _hoisted_3$6 = /* @__PURE__ */ createElementVNode("svg", {
 }, [
   /* @__PURE__ */ createElementVNode("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" })
 ], -1);
-const _hoisted_4$3 = /* @__PURE__ */ createElementVNode("svg", {
+const _hoisted_4$4 = /* @__PURE__ */ createElementVNode("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: "24",
   height: "24",
@@ -3014,7 +3099,7 @@ const _hoisted_4$3 = /* @__PURE__ */ createElementVNode("svg", {
 }, [
   /* @__PURE__ */ createElementVNode("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" })
 ], -1);
-function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
   const _component_KCard = resolveComponent("KCard");
   return openBlock(), createBlock(_component_KCard, { class: "k-multi" }, {
@@ -3029,17 +3114,17 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
               key: `k-multi-${i}`,
               class: "k-multi-item"
             }, [
-              createElementVNode("div", _hoisted_1$l, [
+              createElementVNode("div", _hoisted_1$m, [
                 renderSlot(_ctx.$slots, "default", { index: i })
               ]),
-              createElementVNode("div", _hoisted_2$c, [
+              createElementVNode("div", _hoisted_2$d, [
                 $options.canRemove ? (openBlock(), createBlock(_component_KButton, {
                   key: 0,
                   text: "",
                   onClick: ($event) => $options.remove(i)
                 }, {
                   default: withCtx(() => [
-                    _hoisted_3$6
+                    _hoisted_3$7
                   ]),
                   _: 2
                 }, 1032, ["onClick"])) : createCommentVNode("", true),
@@ -3049,7 +3134,7 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
                   onClick: ($event) => $options.add(i)
                 }, {
                   default: withCtx(() => [
-                    _hoisted_4$3
+                    _hoisted_4$4
                   ]),
                   _: 2
                 }, 1032, ["onClick"])) : createCommentVNode("", true)
@@ -3063,8 +3148,8 @@ function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   });
 }
-var KMulti = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
-var __glob_2_12 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KMulti = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p]]);
+var __glob_2_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KMulti
 }, Symbol.toStringTag, { value: "Module" }));
@@ -3352,7 +3437,7 @@ class AncestorLookup {
 }
 var KNodePickerField_vue_vue_type_style_index_0_lang = "";
 const ancestorLookup = new AncestorLookup();
-const _sfc_main$o = {
+const _sfc_main$p = {
   props: {
     modelValue: {
       type: Number,
@@ -3502,19 +3587,19 @@ const _sfc_main$o = {
     }
   }
 };
-const _hoisted_1$k = { class: "k-node-picker-field" };
-const _hoisted_2$b = ["value"];
-const _hoisted_3$5 = ["innerHTML"];
-function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$l = { class: "k-node-picker-field" };
+const _hoisted_2$c = ["value"];
+const _hoisted_3$6 = ["innerHTML"];
+function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KButton = resolveComponent("KButton");
-  return openBlock(), createElementBlock("div", _hoisted_1$k, [
+  return openBlock(), createElementBlock("div", _hoisted_1$l, [
     createElementVNode("input", {
       ref: "input",
       type: "text",
       class: "k-input",
       value: $options.name,
       onFocus: _cache[0] || (_cache[0] = (...args) => $options.openWindow && $options.openWindow(...args))
-    }, null, 40, _hoisted_2$b),
+    }, null, 40, _hoisted_2$c),
     createVNode(_component_KButton, {
       small: "",
       onClick: $options.openWindow
@@ -3536,16 +3621,16 @@ function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     createElementVNode("div", {
       class: "k-node-picker-breadcrumb",
       innerHTML: $options.breadcrumbString
-    }, null, 8, _hoisted_3$5)
+    }, null, 8, _hoisted_3$6)
   ]);
 }
-var KNodePickerField = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
-var __glob_2_13 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KNodePickerField = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o]]);
+var __glob_2_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KNodePickerField
 }, Symbol.toStringTag, { value: "Module" }));
 var KOneMoment_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$n = {
+const _sfc_main$o = {
   props: {
     loading: {
       type: Boolean,
@@ -3557,9 +3642,9 @@ const _sfc_main$n = {
     }
   }
 };
-const _hoisted_1$j = { class: "k-one-moment" };
-const _hoisted_2$a = { class: "k-one-moment-label" };
-function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$k = { class: "k-one-moment" };
+const _hoisted_2$b = { class: "k-one-moment-label" };
+function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KSpinner = resolveComponent("KSpinner");
   const _component_KDialog = resolveComponent("KDialog");
   return openBlock(), createBlock(_component_KDialog, {
@@ -3567,23 +3652,23 @@ function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     width: null
   }, {
     default: withCtx(() => [
-      createElementVNode("div", _hoisted_1$j, [
+      createElementVNode("div", _hoisted_1$k, [
         createVNode(_component_KSpinner, {
           height: 36,
           width: 36
         }),
-        createElementVNode("div", _hoisted_2$a, toDisplayString($props.label), 1)
+        createElementVNode("div", _hoisted_2$b, toDisplayString($props.label), 1)
       ])
     ]),
     _: 1
   }, 8, ["model-value"]);
 }
-var KOneMoment = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
-var __glob_2_14 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KOneMoment = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n]]);
+var __glob_2_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KOneMoment
 }, Symbol.toStringTag, { value: "Module" }));
-const _sfc_main$m = {
+const _sfc_main$n = {
   props: {
     mimetypes: {
       type: Array,
@@ -3641,18 +3726,18 @@ const _sfc_main$m = {
     }
   }
 };
-function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [
     renderSlot(_ctx.$slots, "default", { active: $data.active })
   ]);
 }
-var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l]]);
-var __glob_2_15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KPageDropZone = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m]]);
+var __glob_2_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KPageDropZone
 }, Symbol.toStringTag, { value: "Module" }));
 var KPageTitle_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$l = {
+const _sfc_main$m = {
   props: {
     title: {
       type: String,
@@ -3664,25 +3749,25 @@ const _sfc_main$l = {
     }
   }
 };
-const _hoisted_1$i = { key: 0 };
-const _hoisted_2$9 = /* @__PURE__ */ createTextVNode(": ");
-const _hoisted_3$4 = { class: "rhmuted" };
-function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$j = { key: 0 };
+const _hoisted_2$a = /* @__PURE__ */ createTextVNode(": ");
+const _hoisted_3$5 = { class: "rhmuted" };
+function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("h1", null, [
     createTextVNode(toDisplayString($props.title), 1),
-    $props.subtitle ? (openBlock(), createElementBlock("span", _hoisted_1$i, [
-      _hoisted_2$9,
-      createElementVNode("span", _hoisted_3$4, toDisplayString($props.subtitle) + " - 2", 1)
+    $props.subtitle ? (openBlock(), createElementBlock("span", _hoisted_1$j, [
+      _hoisted_2$a,
+      createElementVNode("span", _hoisted_3$5, toDisplayString($props.subtitle) + " - 2", 1)
     ])) : createCommentVNode("", true)
   ]);
 }
-var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-3c9ef876"]]);
-var __glob_2_16 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KPageTitle = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-773f6da2"]]);
+var __glob_2_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KPageTitle
 }, Symbol.toStringTag, { value: "Module" }));
 var KPagination_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$k = {
+const _sfc_main$l = {
   props: {
     modelValue: {
       type: Number,
@@ -3731,16 +3816,16 @@ const _sfc_main$k = {
     }
   }
 };
-const _hoisted_1$h = {
+const _hoisted_1$i = {
   key: 0,
   class: "k-pagination"
 };
-const _hoisted_2$8 = { class: "k-pagination-buttons" };
-const _hoisted_3$3 = {
+const _hoisted_2$9 = { class: "k-pagination-buttons" };
+const _hoisted_3$4 = {
   key: 0,
   class: "k-pagination-button"
 };
-const _hoisted_4$2 = /* @__PURE__ */ createElementVNode("svg", {
+const _hoisted_4$3 = /* @__PURE__ */ createElementVNode("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   width: "16",
   height: "16",
@@ -3748,11 +3833,11 @@ const _hoisted_4$2 = /* @__PURE__ */ createElementVNode("svg", {
 }, [
   /* @__PURE__ */ createElementVNode("path", { d: "M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" })
 ], -1);
-const _hoisted_5$1 = [
-  _hoisted_4$2
+const _hoisted_5$2 = [
+  _hoisted_4$3
 ];
-const _hoisted_6$1 = { key: 0 };
-const _hoisted_7 = ["onClick"];
+const _hoisted_6$2 = { key: 0 };
+const _hoisted_7$1 = ["onClick"];
 const _hoisted_8 = {
   key: 1,
   class: "k-pagination-button"
@@ -3768,24 +3853,24 @@ const _hoisted_9 = /* @__PURE__ */ createElementVNode("svg", {
 const _hoisted_10 = [
   _hoisted_9
 ];
-function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KSelect = resolveComponent("KSelect");
-  return $props.pagination.hasOtherPages ? (openBlock(), createElementBlock("div", _hoisted_1$h, [
+  return $props.pagination.hasOtherPages ? (openBlock(), createElementBlock("div", _hoisted_1$i, [
     createVNode(_component_KSelect, {
       modelValue: $options.pageSize,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.pageSize = $event),
       items: $options.pageSizes,
       label: "Page Size"
     }, null, 8, ["modelValue", "items"]),
-    createElementVNode("div", _hoisted_2$8, [
-      $options.hasPrevious ? (openBlock(), createElementBlock("a", _hoisted_3$3, _hoisted_5$1)) : createCommentVNode("", true),
+    createElementVNode("div", _hoisted_2$9, [
+      $options.hasPrevious ? (openBlock(), createElementBlock("a", _hoisted_3$4, _hoisted_5$2)) : createCommentVNode("", true),
       (openBlock(true), createElementBlock(Fragment, null, renderList($options.pageRange, (page) => {
         return openBlock(), createElementBlock(Fragment, { key: page }, [
-          page == "|" ? (openBlock(), createElementBlock("div", _hoisted_6$1, " ... ")) : (openBlock(), createElementBlock("a", {
+          page == "|" ? (openBlock(), createElementBlock("div", _hoisted_6$2, "...")) : (openBlock(), createElementBlock("a", {
             key: 1,
             class: normalizeClass(["k-pagination-button k-pagination-button-border", $options.classObj(page)]),
             onClick: ($event) => _ctx.$emit("update:modelValue", page)
-          }, toDisplayString(page), 11, _hoisted_7))
+          }, toDisplayString(page), 11, _hoisted_7$1))
         ], 64);
       }), 128)),
       $options.hasNext ? (openBlock(), createElementBlock("a", _hoisted_8, _hoisted_10)) : createCommentVNode("", true)
@@ -3793,10 +3878,160 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     createElementVNode("div", null, " Displaying " + toDisplayString($props.pagination.startIndex) + "-" + toDisplayString($props.pagination.endIndex) + " of " + toDisplayString($props.pagination.count) + " items. ", 1)
   ])) : createCommentVNode("", true);
 }
-var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
-var __glob_2_17 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var KPagination = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k]]);
+var __glob_2_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KPagination
+}, Symbol.toStringTag, { value: "Module" }));
+var KPagination2_vue_vue_type_style_index_0_lang = "";
+const _sfc_main$k = {
+  props: {
+    modelValue: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      pageSizes: [10, 25, 50, 100]
+    };
+  },
+  computed: {
+    pageSize: {
+      get() {
+        return this.limit;
+      },
+      set(value) {
+        this.$emit("update:modelValue", __spreadProps(__spreadValues({}, this.pagination), {
+          offset: 0,
+          limit: value
+        }));
+      }
+    },
+    pagination() {
+      return this.modelValue;
+    },
+    offset() {
+      return lodash_get(this.pagination, "offset", 0);
+    },
+    limit() {
+      return lodash_get(this.pagination, "limit", 0);
+    },
+    count() {
+      return lodash_get(this.pagination, "count", 0);
+    },
+    lastPageNumber0() {
+      return Math.ceil(this.count / this.limit) - 1;
+    },
+    lastPageNumber() {
+      return this.lastPageNumber0 + 1;
+    },
+    pageCount() {
+      return this.lastPageNumber;
+    },
+    pageRange0() {
+      const rang = [];
+      const plusMinus = 5;
+      const plusMinus2 = 2 * plusMinus;
+      const min1 = Math.max(0, this.pageNumber0 - plusMinus);
+      const max = Math.min(this.lastPageNumber0, min1 + plusMinus2);
+      const min = Math.max(0, max - plusMinus2);
+      for (let i = min; i <= max; i++) {
+        rang.push(i);
+      }
+      return rang;
+    },
+    pageNumber0() {
+      return Math.floor(this.offset / this.limit);
+    },
+    pageNumber() {
+      return this.pageNumber0 + 1;
+    },
+    hasPrevious() {
+      return this.pageNumber0 > 0;
+    },
+    hasNext() {
+      return this.pageNumber0 < this.lastPageNumber0;
+    }
+  },
+  methods: {
+    classObj(pageNumber) {
+      return {
+        "k-pagination2-button-selected": pageNumber == this.pageNumber0
+      };
+    },
+    clickedPageNumber(pageNumber0) {
+      const p = Math.max(0, Math.min(pageNumber0, this.lastPageNumber0));
+      this.$emit("update:modelValue", __spreadProps(__spreadValues({}, this.pagination), {
+        offset: p * this.limit
+      }));
+    }
+  }
+};
+const _hoisted_1$h = { class: "k-pagination2" };
+const _hoisted_2$8 = { class: "k-pagination2-buttons" };
+const _hoisted_3$3 = /* @__PURE__ */ createElementVNode("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24"
+}, [
+  /* @__PURE__ */ createElementVNode("path", { d: "M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" })
+], -1);
+const _hoisted_4$2 = [
+  _hoisted_3$3
+];
+const _hoisted_5$1 = ["onClick"];
+const _hoisted_6$1 = /* @__PURE__ */ createElementVNode("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "16",
+  height: "16",
+  viewBox: "0 0 24 24"
+}, [
+  /* @__PURE__ */ createElementVNode("path", { d: "M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" })
+], -1);
+const _hoisted_7 = [
+  _hoisted_6$1
+];
+function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_KSelect = resolveComponent("KSelect");
+  return openBlock(), createElementBlock("div", _hoisted_1$h, [
+    createElementVNode("div", null, [
+      createVNode(_component_KSelect, {
+        modelValue: $options.pageSize,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $options.pageSize = $event),
+        items: $data.pageSizes,
+        label: "Page Size"
+      }, null, 8, ["modelValue", "items"])
+    ]),
+    $options.pageCount > 1 ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
+      createElementVNode("div", _hoisted_2$8, [
+        $options.hasPrevious ? (openBlock(), createElementBlock("a", {
+          key: 0,
+          class: "k-pagination2-arrow-button",
+          onClick: _cache[1] || (_cache[1] = ($event) => $options.clickedPageNumber($options.pageNumber0 - 1))
+        }, _hoisted_4$2)) : createCommentVNode("", true),
+        (openBlock(true), createElementBlock(Fragment, null, renderList($options.pageRange0, (page) => {
+          return openBlock(), createElementBlock("div", {
+            key: page,
+            class: normalizeClass(["k-pagination2-button", $options.classObj(page)]),
+            onClick: ($event) => $options.clickedPageNumber(page)
+          }, toDisplayString(page + 1), 11, _hoisted_5$1);
+        }), 128)),
+        $options.hasNext ? (openBlock(), createElementBlock("a", {
+          key: 1,
+          class: "k-pagination2-arrow-button",
+          onClick: _cache[2] || (_cache[2] = ($event) => $options.clickedPageNumber($options.pageNumber0 + 1))
+        }, _hoisted_7)) : createCommentVNode("", true)
+      ]),
+      createElementVNode("div", null, toDisplayString($options.pageNumber) + " of " + toDisplayString($options.pageCount) + " pages", 1)
+    ], 64)) : createCommentVNode("", true)
+  ]);
+}
+var KPagination2 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j]]);
+var __glob_2_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  "default": KPagination2
 }, Symbol.toStringTag, { value: "Module" }));
 var KRadioGroup_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$j = {
@@ -3908,7 +4143,7 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KRadioGroup = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i]]);
-var __glob_2_18 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KRadioGroup
 }, Symbol.toStringTag, { value: "Module" }));
@@ -3924,11 +4159,11 @@ function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", null, [
     createElementVNode("button", {
       onClick: _cache[0] || (_cache[0] = (...args) => $options.click && $options.click(...args))
-    }, " click ")
+    }, "click")
   ]);
 }
 var KScratch = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h]]);
-var __glob_2_19 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KScratch
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4029,7 +4264,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSelect = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g]]);
-var __glob_2_20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSelect
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4141,7 +4376,7 @@ function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KSnackbar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f]]);
-var __glob_2_21 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSnackbar
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4204,7 +4439,7 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KSortHeader = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e]]);
-var __glob_2_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSortHeader
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4215,7 +4450,7 @@ function _sfc_render$d(_ctx, _cache) {
   return openBlock(), createElementBlock("div", _hoisted_1$c);
 }
 var KSpacer = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-3b45ed3e"]]);
-var __glob_2_23 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_25 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSpacer
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4239,7 +4474,7 @@ const __default__$1 = {
 };
 const __injectCSSVars__$1 = () => {
   useCssVars((_ctx) => ({
-    "3c497448": _ctx.color
+    "6a37926a": _ctx.color
   }));
 };
 const __setup__$1 = __default__$1.setup;
@@ -4273,7 +4508,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_3$1, 4);
 }
 var KSpinner = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c]]);
-var __glob_2_24 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_26 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSpinner
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4358,7 +4593,7 @@ function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_2$2, 2);
 }
 var KSwitch = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b]]);
-var __glob_2_25 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_27 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KSwitch
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4402,7 +4637,7 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   ], 64);
 }
 var KTable = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a]]);
-var __glob_2_26 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_28 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KTable
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4495,7 +4730,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextArea = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9]]);
-var __glob_2_27 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_29 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KTextArea
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4547,7 +4782,7 @@ function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTextField = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8]]);
-var __glob_2_28 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_30 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KTextField
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4597,7 +4832,7 @@ function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 12, _hoisted_1$7)) : createCommentVNode("", true);
 }
 var KUserGIF = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7]]);
-var __glob_2_29 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_31 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KUserGIF
 }, Symbol.toStringTag, { value: "Module" }));
@@ -4686,7 +4921,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KUserLink = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6]]);
-var __glob_2_30 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_32 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KUserLink
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5017,7 +5252,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["user"]));
 }
 var KUserPicker = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5]]);
-var __glob_2_31 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_33 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KUserPicker
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5104,7 +5339,7 @@ const _sfc_main$5 = {
     return this.renderCard();
   }
 };
-var __glob_2_32 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_34 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": _sfc_main$5
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5117,7 +5352,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardActions = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4]]);
-var __glob_2_33 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_35 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KCardActions
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5130,7 +5365,7 @@ function _sfc_render$3(_ctx, _cache) {
   ]);
 }
 var KCardText = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3]]);
-var __glob_2_34 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_36 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KCardText
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5143,7 +5378,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KCardTitle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
-var __glob_2_35 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_37 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KCardTitle
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5172,7 +5407,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   ])) : createCommentVNode("", true);
 }
 var KTabItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
-var __glob_2_36 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_38 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KTabItem
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5235,7 +5470,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var KTabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-var __glob_2_37 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var __glob_2_39 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": KTabs
 }, Symbol.toStringTag, { value: "Module" }));
@@ -5499,6 +5734,11 @@ var enhanceError$2 = function enhanceError(error, config, code, request2, respon
   };
   return error;
 };
+var transitional = {
+  silentJSONParsing: true,
+  forcedJSONParsing: true,
+  clarifyTimeoutError: false
+};
 var enhanceError$1 = enhanceError$2;
 var createError$2 = function createError(message, config, code, request2, response) {
   var error = new Error(message);
@@ -5660,7 +5900,7 @@ var buildFullPath2 = buildFullPath$1;
 var parseHeaders2 = parseHeaders$1;
 var isURLSameOrigin = isURLSameOrigin$1;
 var createError2 = createError$2;
-var defaults$4 = defaults_1;
+var transitionalDefaults$1 = transitional;
 var Cancel$2 = Cancel_1;
 var xhr = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -5737,11 +5977,11 @@ var xhr = function xhrAdapter(config) {
     };
     request2.ontimeout = function handleTimeout() {
       var timeoutErrorMessage = config.timeout ? "timeout of " + config.timeout + "ms exceeded" : "timeout exceeded";
-      var transitional2 = config.transitional || defaults$4.transitional;
+      var transitional3 = config.transitional || transitionalDefaults$1;
       if (config.timeoutErrorMessage) {
         timeoutErrorMessage = config.timeoutErrorMessage;
       }
-      reject(createError2(timeoutErrorMessage, config, transitional2.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED", request2));
+      reject(createError2(timeoutErrorMessage, config, transitional3.clarifyTimeoutError ? "ETIMEDOUT" : "ECONNABORTED", request2));
       request2 = null;
     };
     if (utils$7.isStandardBrowserEnv()) {
@@ -5794,6 +6034,7 @@ var xhr = function xhrAdapter(config) {
 var utils$6 = utils$e;
 var normalizeHeaderName2 = normalizeHeaderName$1;
 var enhanceError2 = enhanceError$2;
+var transitionalDefaults = transitional;
 var DEFAULT_CONTENT_TYPE = {
   "Content-Type": "application/x-www-form-urlencoded"
 };
@@ -5825,11 +6066,7 @@ function stringifySafely(rawValue, parser, encoder) {
   return (encoder || JSON.stringify)(rawValue);
 }
 var defaults$3 = {
-  transitional: {
-    silentJSONParsing: true,
-    forcedJSONParsing: true,
-    clarifyTimeoutError: false
-  },
+  transitional: transitionalDefaults,
   adapter: getDefaultAdapter(),
   transformRequest: [function transformRequest(data2, headers) {
     normalizeHeaderName2(headers, "Accept");
@@ -5851,9 +6088,9 @@ var defaults$3 = {
     return data2;
   }],
   transformResponse: [function transformResponse(data2) {
-    var transitional2 = this.transitional || defaults$3.transitional;
-    var silentJSONParsing = transitional2 && transitional2.silentJSONParsing;
-    var forcedJSONParsing = transitional2 && transitional2.forcedJSONParsing;
+    var transitional3 = this.transitional || defaults$3.transitional;
+    var silentJSONParsing = transitional3 && transitional3.silentJSONParsing;
+    var forcedJSONParsing = transitional3 && transitional3.forcedJSONParsing;
     var strictJSONParsing = !silentJSONParsing && this.responseType === "json";
     if (strictJSONParsing || forcedJSONParsing && utils$6.isString(data2) && data2.length) {
       try {
@@ -6014,7 +6251,7 @@ var mergeConfig$2 = function mergeConfig(config1, config2) {
   return config;
 };
 var data = {
-  "version": "0.26.0"
+  "version": "0.26.1"
 };
 var VERSION = data.version;
 var validators$1 = {};
@@ -6024,7 +6261,7 @@ var validators$1 = {};
   };
 });
 var deprecatedWarnings = {};
-validators$1.transitional = function transitional(validator2, version, message) {
+validators$1.transitional = function transitional2(validator2, version, message) {
   function formatMessage(opt, desc) {
     return "[Axios v" + VERSION + "] Transitional option '" + opt + "'" + desc + (message ? ". " + message : "");
   }
@@ -6094,9 +6331,9 @@ Axios$1.prototype.request = function request(configOrUrl, config) {
   } else {
     config.method = "get";
   }
-  var transitional2 = config.transitional;
-  if (transitional2 !== void 0) {
-    validator.assertOptions(transitional2, {
+  var transitional3 = config.transitional;
+  if (transitional3 !== void 0) {
+    validator.assertOptions(transitional3, {
       silentJSONParsing: validators.transitional(validators.boolean),
       forcedJSONParsing: validators.transitional(validators.boolean),
       clarifyTimeoutError: validators.transitional(validators.boolean)
@@ -7424,7 +7661,7 @@ var Session_1 = Session2;
 var styles = "";
 var index = {
   install(Vue, options) {
-    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KApp.vue": __glob_2_1, "./components/KAutocomplete.vue": __glob_2_2, "./components/KBrowseLink.vue": __glob_2_3, "./components/KButton.vue": __glob_2_4, "./components/KConfirm.vue": __glob_2_5, "./components/KDateTimePicker.vue": __glob_2_6, "./components/KDialog.vue": __glob_2_7, "./components/KDot.vue": __glob_2_8, "./components/KFormFieldWrapper.vue": __glob_2_9, "./components/KFunctionMenu.vue": __glob_2_10, "./components/KLinearProgressIndicator.vue": __glob_2_11, "./components/KMulti.vue": __glob_2_12, "./components/KNodePickerField.vue": __glob_2_13, "./components/KOneMoment.vue": __glob_2_14, "./components/KPageDropZone.vue": __glob_2_15, "./components/KPageTitle.vue": __glob_2_16, "./components/KPagination.vue": __glob_2_17, "./components/KRadioGroup.vue": __glob_2_18, "./components/KScratch.vue": __glob_2_19, "./components/KSelect.vue": __glob_2_20, "./components/KSnackbar.vue": __glob_2_21, "./components/KSortHeader.vue": __glob_2_22, "./components/KSpacer.vue": __glob_2_23, "./components/KSpinner.vue": __glob_2_24, "./components/KSwitch.vue": __glob_2_25, "./components/KTable.vue": __glob_2_26, "./components/KTextArea.vue": __glob_2_27, "./components/KTextField.vue": __glob_2_28, "./components/KUserGIF.vue": __glob_2_29, "./components/KUserLink.vue": __glob_2_30, "./components/KUserPicker.vue": __glob_2_31, "./components/Card/KCard.vue": __glob_2_32, "./components/Card/KCardActions.vue": __glob_2_33, "./components/Card/KCardText.vue": __glob_2_34, "./components/Card/KCardTitle.vue": __glob_2_35, "./components/Tabs/KTabItem.vue": __glob_2_36, "./components/Tabs/KTabs.vue": __glob_2_37 };
+    const components = { "./components/KAdminLink.vue": __glob_2_0, "./components/KAlert.vue": __glob_2_1, "./components/KApp.vue": __glob_2_2, "./components/KAutocomplete.vue": __glob_2_3, "./components/KBrowseLink.vue": __glob_2_4, "./components/KButton.vue": __glob_2_5, "./components/KConfirm.vue": __glob_2_6, "./components/KDateTimePicker.vue": __glob_2_7, "./components/KDialog.vue": __glob_2_8, "./components/KDot.vue": __glob_2_9, "./components/KFormFieldWrapper.vue": __glob_2_10, "./components/KFunctionMenu.vue": __glob_2_11, "./components/KLinearProgressIndicator.vue": __glob_2_12, "./components/KMulti.vue": __glob_2_13, "./components/KNodePickerField.vue": __glob_2_14, "./components/KOneMoment.vue": __glob_2_15, "./components/KPageDropZone.vue": __glob_2_16, "./components/KPageTitle.vue": __glob_2_17, "./components/KPagination.vue": __glob_2_18, "./components/KPagination2.vue": __glob_2_19, "./components/KRadioGroup.vue": __glob_2_20, "./components/KScratch.vue": __glob_2_21, "./components/KSelect.vue": __glob_2_22, "./components/KSnackbar.vue": __glob_2_23, "./components/KSortHeader.vue": __glob_2_24, "./components/KSpacer.vue": __glob_2_25, "./components/KSpinner.vue": __glob_2_26, "./components/KSwitch.vue": __glob_2_27, "./components/KTable.vue": __glob_2_28, "./components/KTextArea.vue": __glob_2_29, "./components/KTextField.vue": __glob_2_30, "./components/KUserGIF.vue": __glob_2_31, "./components/KUserLink.vue": __glob_2_32, "./components/KUserPicker.vue": __glob_2_33, "./components/Card/KCard.vue": __glob_2_34, "./components/Card/KCardActions.vue": __glob_2_35, "./components/Card/KCardText.vue": __glob_2_36, "./components/Card/KCardTitle.vue": __glob_2_37, "./components/Tabs/KTabItem.vue": __glob_2_38, "./components/Tabs/KTabs.vue": __glob_2_39 };
     Object.entries(components).forEach(([path, definition]) => {
       const componentName = path.split("/").pop().replace(/\.\w+$/, "");
       Vue.component(componentName, definition.default);

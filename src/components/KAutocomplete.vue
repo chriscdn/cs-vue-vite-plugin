@@ -22,7 +22,7 @@
         @focus="setFocus"
         @keydown.tab="setBlur"
         @keyup="keyup"
-      >
+      />
       <div
         v-if="focus && items.length && !!inputText"
         class="k-autocomplete-items"

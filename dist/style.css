@@ -1,18 +1,18 @@
 .k-app * {
     box-sizing: border-box
 }
-.k-autocomplete[data-v-4dd30455] {
+.k-autocomplete[data-v-a2dcf178] {
   display: flex;
   align-items: center;
 }
-.k-autocomplete .k-autocomplete-input[data-v-4dd30455] {
+.k-autocomplete .k-autocomplete-input[data-v-a2dcf178] {
   position: relative;
   flex-grow: 1;
 }
-.k-autocomplete .k-autocomplete-input input[data-v-4dd30455] {
+.k-autocomplete .k-autocomplete-input input[data-v-a2dcf178] {
   width: 100%;
 }
-.k-autocomplete .k-autocomplete-items[data-v-4dd30455] {
+.k-autocomplete .k-autocomplete-items[data-v-a2dcf178] {
   position: absolute;
   border-bottom: none;
   border-top: none;
@@ -30,7 +30,7 @@
   max-height: 50em;
   overflow-y: scroll;
 }
-.k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-4dd30455] {
+.k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-a2dcf178] {
   cursor: pointer;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -45,11 +45,11 @@
   display: flex;
   align-items: center;
 }
-.k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-4dd30455]:hover {
+.k-autocomplete .k-autocomplete-items .k-autocomplete-item[data-v-a2dcf178]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.k-autocomplete .k-autocomplete-active[data-v-4dd30455] {
+.k-autocomplete .k-autocomplete-active[data-v-a2dcf178] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
@@ -282,7 +282,7 @@
     line-height: 1.75rem
 }
 
-.rhmuted[data-v-3c9ef876] {
+.rhmuted[data-v-773f6da2] {
   color: #999;
 }
 .k-pagination {
@@ -318,6 +318,50 @@
     border-style: solid;
     --tw-border-opacity: 1;
     border-color: rgb(59 130 246 / var(--tw-border-opacity))
+}
+.k-pagination2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.k-pagination2 .k-pagination2-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.k-pagination2 .k-pagination2-buttons .k-pagination2-button {
+    margin-left: 0.25rem;
+    display: flex;
+    height: 1.25rem;
+    width: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center
+}
+.k-pagination2 .k-pagination2-buttons .k-pagination2-button:hover {
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+}
+.k-pagination2 .k-pagination2-buttons .k-pagination2-button.k-pagination2-button-selected {
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+.k-pagination2 .k-pagination2-buttons .k-pagination2-arrow-button {
+    margin-left: 0.25rem;
+    display: flex;
+    height: 1.25rem;
+    width: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center
 }
 .k-radiogroup {
     display: flex
@@ -424,7 +468,7 @@ to {
 .k-spinner {
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
-  color: var(--3c497448);
+  color: var(--6a37926a);
 }
 .k-spinner circle {
   opacity: 0.25;

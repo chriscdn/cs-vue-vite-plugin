@@ -1,5 +1,5 @@
 <template>
-  <img v-if="url" :src="url" :style="[measurableStyles]">
+  <img v-if="url" :src="url" :style="[measurableStyles]" />
 </template>
 
 <script>

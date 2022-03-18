@@ -1,4 +1,5 @@
 import { Session } from '@kweli/cs-rest'
+// import dateFormat from './mixins/date-format'
 import './styles.less'
 
 export default {
@@ -26,3 +27,5 @@ export default {
     Vue.config.globalProperties.$session = new Session(options)
   },
 }
+
+// export { dateFormat }

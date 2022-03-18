@@ -19,7 +19,7 @@
               type="radio"
               :value="getItemValue(item)"
               :disabled="getItemDisabled(item)"
-            >
+            />
 
             <label :for="getItemValue(item)">{{ getItemText(item) }}</label>
           </div>

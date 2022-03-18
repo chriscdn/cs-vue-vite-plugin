@@ -10,7 +10,7 @@
         class="k-input-text-field"
         :placeholder="placeholder"
         :class="classObj"
-      >
+      />
     </KFormFieldWrapper>
   </div>
 </template>

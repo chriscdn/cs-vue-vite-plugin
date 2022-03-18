@@ -6,7 +6,7 @@
       class="k-input"
       :value="name"
       @focus="openWindow"
-    >
+    />
     <KButton small @click="openWindow">
       {{ browseButtonLabel }}
     </KButton>

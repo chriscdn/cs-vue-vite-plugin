@@ -12,14 +12,10 @@
       <KCardActions>
         <KSpacer />
         <KButton v-if="noLabel" small @click="dismiss(false)">
-          {{
-            noLabel
-          }}
+          {{ noLabel }}
         </KButton>
         <KButton v-if="yesLabel" small class="ml-1" @click="dismiss(true)">
-          {{
-            yesLabel
-          }}
+          {{ yesLabel }}
         </KButton>
       </KCardActions>
     </KCard>

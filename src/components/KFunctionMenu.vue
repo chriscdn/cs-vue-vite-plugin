@@ -5,7 +5,7 @@
         v-if="isModernFunctionMenu"
         :src="`${$img}spacer.gif`"
         alt="Functions"
-      >
+      />
       <img
         v-else
         :id="xid"
@@ -15,7 +15,7 @@
         title="Functions"
         @mouseover="onmouseover"
         @mouseout="onmouseout"
-      >
+      />
     </a>
     <div v-once :id="zid" ref="functionMenuDiv" class="functionMenuDiv" />
   </span>

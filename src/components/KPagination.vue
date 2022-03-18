@@ -15,9 +15,7 @@
         </svg>
       </a>
       <template v-for="page in pageRange" :key="page">
-        <div v-if="page == '|'">
-          ...
-        </div>
+        <div v-if="page == '|'">...</div>
 
         <a
           v-else

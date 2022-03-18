@@ -2,13 +2,10 @@
   <div>
     <KMulti v-model="scope">
       <template #default="{ index }">
-        <!-- <KNodePickerField v-model="scope[index]" /> -->
-        <!-- {{ index }} -->
-
         <KTextArea v-model="scope[index]" :error-messages="errors.abc" />
       </template>
     </KMulti>
-    <br>
+    <br />
     <div>{{ scope }}</div>
   </div>
 </template>
