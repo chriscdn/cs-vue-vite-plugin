@@ -5,7 +5,7 @@
 <!-- @vuese:KUserPicker:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
-|modelValue|-|`String` /  `Number` /  `Object`|`false`|-|
+|modelValue|-|`String` /  `Number` /  `Object`|`false`|null|
 |users|-|`Boolean`|`false`|true|
 |groups|-|`Boolean`|`false`|false|
 |width|-|`String` /  `Number`|`false`|100%|

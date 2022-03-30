@@ -5418,24 +5418,46 @@ const _sfc_main = {
       tabs: this
     };
   },
+  emits: ["update:modelValue"],
+  props: {
+    modelValue: {
+      type: String,
+      default: null
+    }
+  },
   data() {
     return {
-      selectedTab: null
+      selectedTab: this.modelValue
     };
   },
   computed: {
     tabs() {
       return this.$slots.default().filter((item) => Boolean(item.props));
+    },
+    tabNames() {
+      return this.tabs.map((tab) => tab.props.name);
     }
   },
   mounted() {
-    const hash = window.location.hash.replace("#", "");
-    const firstTab = lodash_get(this.tabs, "[0].props.name");
-    this.selectedTab = [hash, firstTab].find((item) => Boolean(item));
+    this.selectedTab = this.initialSelectedTab();
+  },
+  watch: {
+    selectedTab(value) {
+      this.$emit("update:modelValue", value);
+    },
+    modelValue(value) {
+      debugger;
+      this.selectTab(value);
+    }
   },
   methods: {
-    selectTab(tab) {
-      this.selectedTab = lodash_get(tab, "props.name");
+    initialSelectedTab() {
+      const hash = window.location.hash.replace("#", "");
+      const firstTab = this.tabNames[0];
+      return [this.selectedTab, hash, firstTab].find((item) => Boolean(item));
+    },
+    selectTab(tabName) {
+      this.selectedTab = this.tabNames.includes(tabName) ? tabName : this.tabNames[0];
     },
     classObj(tab) {
       return {
@@ -5459,7 +5481,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         }, [
           createElementVNode("a", {
             href: `#${tab.props.name}`,
-            onClick: ($event) => $options.selectTab(tab)
+            onClick: ($event) => $options.selectTab(tab.props.name)
           }, toDisplayString(tab.props.title), 9, _hoisted_3)
         ], 2);
       }), 128))

@@ -2,7 +2,7 @@
   <div class="k-tabs">
     <div class="k-tabs-nav">
       <div v-for="tab in tabs" :key="tab.props.name" :class="classObj(tab)">
-        <a :href="`#${tab.props.name}`" @click="selectTab(tab)">
+        <a :href="`#${tab.props.name}`" @click="selectTab(tab.props.name)">
           {{ tab.props.title }}
         </a>
       </div>
@@ -21,28 +21,57 @@ export default {
       tabs: this,
     }
   },
+  emits: ['update:modelValue'],
+  props: {
+    modelValue: {
+      type: String,
+      default: null,
+    },
+  },
 
   data() {
     return {
-      selectedTab: null,
+      selectedTab: this.modelValue,
     }
   },
+
   computed: {
     tabs() {
       return this.$slots.default().filter((item) => Boolean(item.props))
     },
+    tabNames() {
+      return this.tabs.map((tab) => tab.props.name)
+    },
   },
-  mounted() {
-    const hash = window.location.hash.replace('#', '')
-    const firstTab = get(this.tabs, '[0].props.name')
 
-    this.selectedTab = [hash, firstTab].find((item) => Boolean(item))
+  mounted() {
+    this.selectedTab = this.initialSelectedTab()
+  },
+
+  watch: {
+    selectedTab(value) {
+      this.$emit('update:modelValue', value)
+    },
+    modelValue(value) {
+      debugger
+      this.selectTab(value)
+    },
   },
 
   methods: {
-    selectTab(tab) {
-      this.selectedTab = get(tab, 'props.name')
+    initialSelectedTab() {
+      const hash = window.location.hash.replace('#', '')
+      const firstTab = this.tabNames[0]
+
+      return [this.selectedTab, hash, firstTab].find((item) => Boolean(item))
     },
+
+    selectTab(tabName) {
+      this.selectedTab = this.tabNames.includes(tabName)
+        ? tabName
+        : this.tabNames[0]
+    },
+
     classObj(tab) {
       return {
         'k-tabs-nav-tab': true,

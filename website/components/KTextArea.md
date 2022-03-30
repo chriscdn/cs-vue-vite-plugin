@@ -5,7 +5,7 @@
 <!-- @vuese:KTextArea:props:start -->
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
-|modelValue|-|`String`|`false`|-|
+|modelValue|-|`String`|`false`|null|
 |rows|-|`Number`|`false`|5|
 
 <!-- @vuese:KTextArea:props:end -->
