@@ -5449,7 +5449,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         this.$emit("update:modelValue", value);
       },
       modelValue(value) {
-        debugger;
         this.selectTab(value);
       }
     },

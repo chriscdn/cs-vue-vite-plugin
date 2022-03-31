@@ -5446,7 +5446,6 @@ const _sfc_main = {
       this.$emit("update:modelValue", value);
     },
     modelValue(value) {
-      debugger;
       this.selectTab(value);
     }
   },

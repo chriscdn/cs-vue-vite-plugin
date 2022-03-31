@@ -53,7 +53,6 @@ export default {
       this.$emit('update:modelValue', value)
     },
     modelValue(value) {
-      debugger
       this.selectTab(value)
     },
   },
