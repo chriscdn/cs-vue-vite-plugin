@@ -26,11 +26,11 @@ var _export_sfc = (sfc, props) => {
   return target;
 };
 const _sfc_main$D = {};
-const _hoisted_1$x = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
+const _hoisted_1$w = /* @__PURE__ */ createElementVNode("hr", null, null, -1);
 const _hoisted_2$j = ["href"];
 function _sfc_render$C(_ctx, _cache) {
   return openBlock(), createElementBlock(Fragment, null, [
-    _hoisted_1$x,
+    _hoisted_1$w,
     createElementVNode("a", {
       href: `${_ctx.$cgi}?func=admin.index`
     }, "Admin Home", 8, _hoisted_2$j)
@@ -91,7 +91,7 @@ const _sfc_main$C = {
     }
   }
 };
-const _hoisted_1$w = { class: "flex-grow" };
+const _hoisted_1$v = { class: "flex-grow" };
 const _hoisted_2$i = /* @__PURE__ */ createTextVNode(" icon-x ");
 function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_JIcon = resolveComponent("JIcon");
@@ -102,7 +102,7 @@ function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
         class: "flex items-center rounded text-main-bright p-2",
         style: normalizeStyle([_ctx.colorableBackgroundStyle])
       }, [
-        createElementVNode("div", _hoisted_1$w, [
+        createElementVNode("div", _hoisted_1$v, [
           renderSlot(_ctx.$slots, "default")
         ]),
         createElementVNode("button", {
@@ -128,11 +128,11 @@ var __glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
 }, Symbol.toStringTag, { value: "Module" }));
 var KApp_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$B = {};
-const _hoisted_1$v = { class: "k-app" };
+const _hoisted_1$u = { class: "k-app" };
 function _sfc_render$A(_ctx, _cache) {
   const _component_KSnackbar = resolveComponent("KSnackbar");
   const _component_KConfirm = resolveComponent("KConfirm");
-  return openBlock(), createElementBlock("div", _hoisted_1$v, [
+  return openBlock(), createElementBlock("div", _hoisted_1$u, [
     createVNode(_component_KConfirm, null, {
       default: withCtx(() => [
         createVNode(_component_KSnackbar, null, {
@@ -630,7 +630,7 @@ const _sfc_main$A = {
     }
   }
 };
-const _hoisted_1$u = { class: "k-autocomplete-input" };
+const _hoisted_1$t = { class: "k-autocomplete-input" };
 const _hoisted_2$h = ["placeholder", "readonly"];
 const _hoisted_3$b = {
   key: 0,
@@ -644,7 +644,7 @@ function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
     style: normalizeStyle([$options.style])
   }, [
     renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
-    createElementVNode("div", _hoisted_1$u, [
+    createElementVNode("div", _hoisted_1$t, [
       withDirectives(createElementVNode("input", {
         ref: "input",
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputText = $event),
@@ -704,14 +704,14 @@ const _sfc_main$z = {
     }
   }
 };
-const _hoisted_1$t = { key: 0 };
+const _hoisted_1$s = { key: 0 };
 const _hoisted_2$g = ["src"];
 const _hoisted_3$a = /* @__PURE__ */ createTextVNode("\xA0");
 const _hoisted_4$6 = ["href"];
 const _hoisted_5$3 = ["innerHTML"];
 function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_KFunctionMenu = resolveComponent("KFunctionMenu");
-  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$t, [
+  return $props.nodeRec ? (openBlock(), createElementBlock("span", _hoisted_1$s, [
     $props.image ? (openBlock(), createElementBlock("img", {
       key: 0,
       src: $props.nodeRec.gif
@@ -761,7 +761,7 @@ const _sfc_main$y = {
     }
   }
 };
-const _hoisted_1$s = ["disabled"];
+const _hoisted_1$r = ["disabled"];
 function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("button", mergeProps({
     class: ["k-button", $options.classObj],
@@ -771,7 +771,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
   }), [
     renderSlot(_ctx.$slots, "default")
-  ], 16, _hoisted_1$s);
+  ], 16, _hoisted_1$r);
 }
 var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
 var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -2397,7 +2397,7 @@ const _sfc_main$w = {
     }
   }
 };
-const _hoisted_1$r = ["type", "readonly"];
+const _hoisted_1$q = ["type", "readonly"];
 const _hoisted_2$f = /* @__PURE__ */ createTextVNode(" Now ");
 const _hoisted_3$9 = /* @__PURE__ */ createTextVNode(" Clear ");
 function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
@@ -2408,7 +2408,7 @@ function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
       class: "k-input",
       type: $options.type,
       readonly: !$props.editable
-    }, null, 8, _hoisted_1$r), [
+    }, null, 8, _hoisted_1$q), [
       [vModelDynamic, $options.localModelValue]
     ]),
     $props.editable ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
@@ -2709,6 +2709,10 @@ const _sfc_main$v = {
     maxHeight: {
       type: [Number, String],
       default: "90%"
+    },
+    zIndex: {
+      type: [Number],
+      default: 10
     }
   },
   emits: ["update:modelValue"],
@@ -2722,6 +2726,11 @@ const _sfc_main$v = {
     classObj() {
       return {
         "k-dialog--scrollable": this.scrollable
+      };
+    },
+    style() {
+      return {
+        zIndex: this.zIndex
       };
     }
   },
@@ -2761,10 +2770,6 @@ const _sfc_main$v = {
     }
   }
 };
-const _hoisted_1$q = {
-  key: 0,
-  class: "k-dialog"
-};
 function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_click_away = resolveDirective("click-away");
   return openBlock(), createElementBlock(Fragment, null, [
@@ -2775,7 +2780,11 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     }, [
       createVNode(Transition, { name: "fade" }, {
         default: withCtx(() => [
-          $data.dialog ? (openBlock(), createElementBlock("div", _hoisted_1$q, [
+          $data.dialog ? (openBlock(), createElementBlock("div", {
+            key: 0,
+            class: "k-dialog",
+            style: normalizeStyle([$options.style])
+          }, [
             withDirectives((openBlock(), createElementBlock("div", {
               ref: "content",
               class: normalizeClass(["k-dialog-content", $options.classObj]),
@@ -2785,7 +2794,7 @@ function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
             ], 6)), [
               [_directive_click_away, $options.clickAway]
             ])
-          ])) : createCommentVNode("", true)
+          ], 4)) : createCommentVNode("", true)
         ]),
         _: 3
       })

@@ -126,7 +126,6 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    z-index: 10;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
     --tw-bg-opacity: 0.5;
     display: flex;

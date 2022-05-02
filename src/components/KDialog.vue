@@ -2,7 +2,7 @@
   <slot name="activator" :on="on" />
   <teleport v-if="mounted" to=".k-app">
     <transition name="fade">
-      <div v-if="dialog" class="k-dialog">
+      <div v-if="dialog" class="k-dialog" :style="[style]">
         <div
           ref="content"
           v-click-away="clickAway"
@@ -49,6 +49,10 @@ export default {
       type: [Number, String],
       default: '90%',
     },
+    zIndex: {
+      type: [Number],
+      default: 10,
+    },
   },
   emits: ['update:modelValue'],
   data() {
@@ -61,6 +65,11 @@ export default {
     classObj() {
       return {
         'k-dialog--scrollable': this.scrollable,
+      }
+    },
+    style() {
+      return {
+        zIndex: this.zIndex,
       }
     },
   },
@@ -106,7 +115,7 @@ export default {
 
 <style lang="less">
 .k-dialog {
-  @apply fixed inset-0 z-10;
+  @apply fixed inset-0;
   @apply bg-gray-900 bg-opacity-50;
   @apply flex justify-center items-center;
 

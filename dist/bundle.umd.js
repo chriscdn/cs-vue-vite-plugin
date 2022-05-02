@@ -29,11 +29,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     return target;
   };
   const _sfc_main$D = {};
-  const _hoisted_1$x = /* @__PURE__ */ vue.createElementVNode("hr", null, null, -1);
+  const _hoisted_1$w = /* @__PURE__ */ vue.createElementVNode("hr", null, null, -1);
   const _hoisted_2$j = ["href"];
   function _sfc_render$C(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
-      _hoisted_1$x,
+      _hoisted_1$w,
       vue.createElementVNode("a", {
         href: `${_ctx.$cgi}?func=admin.index`
       }, "Admin Home", 8, _hoisted_2$j)
@@ -94,7 +94,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$w = { class: "flex-grow" };
+  const _hoisted_1$v = { class: "flex-grow" };
   const _hoisted_2$i = /* @__PURE__ */ vue.createTextVNode(" icon-x ");
   function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_JIcon = vue.resolveComponent("JIcon");
@@ -105,7 +105,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
           class: "flex items-center rounded text-main-bright p-2",
           style: vue.normalizeStyle([_ctx.colorableBackgroundStyle])
         }, [
-          vue.createElementVNode("div", _hoisted_1$w, [
+          vue.createElementVNode("div", _hoisted_1$v, [
             vue.renderSlot(_ctx.$slots, "default")
           ]),
           vue.createElementVNode("button", {
@@ -131,11 +131,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }, Symbol.toStringTag, { value: "Module" }));
   var KApp_vue_vue_type_style_index_0_lang = "";
   const _sfc_main$B = {};
-  const _hoisted_1$v = { class: "k-app" };
+  const _hoisted_1$u = { class: "k-app" };
   function _sfc_render$A(_ctx, _cache) {
     const _component_KSnackbar = vue.resolveComponent("KSnackbar");
     const _component_KConfirm = vue.resolveComponent("KConfirm");
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$v, [
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$u, [
       vue.createVNode(_component_KConfirm, null, {
         default: vue.withCtx(() => [
           vue.createVNode(_component_KSnackbar, null, {
@@ -633,7 +633,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$u = { class: "k-autocomplete-input" };
+  const _hoisted_1$t = { class: "k-autocomplete-input" };
   const _hoisted_2$h = ["placeholder", "readonly"];
   const _hoisted_3$b = {
     key: 0,
@@ -647,7 +647,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       style: vue.normalizeStyle([$options.style])
     }, [
       vue.renderSlot(_ctx.$slots, "prepend", { item: $options.localValue }, void 0, true),
-      vue.createElementVNode("div", _hoisted_1$u, [
+      vue.createElementVNode("div", _hoisted_1$t, [
         vue.withDirectives(vue.createElementVNode("input", {
           ref: "input",
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputText = $event),
@@ -707,14 +707,14 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$t = { key: 0 };
+  const _hoisted_1$s = { key: 0 };
   const _hoisted_2$g = ["src"];
   const _hoisted_3$a = /* @__PURE__ */ vue.createTextVNode("\xA0");
   const _hoisted_4$6 = ["href"];
   const _hoisted_5$3 = ["innerHTML"];
   function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_KFunctionMenu = vue.resolveComponent("KFunctionMenu");
-    return $props.nodeRec ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$t, [
+    return $props.nodeRec ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_1$s, [
       $props.image ? (vue.openBlock(), vue.createElementBlock("img", {
         key: 0,
         src: $props.nodeRec.gif
@@ -764,7 +764,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$s = ["disabled"];
+  const _hoisted_1$r = ["disabled"];
   function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("button", vue.mergeProps({
       class: ["k-button", $options.classObj],
@@ -774,7 +774,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
     }), [
       vue.renderSlot(_ctx.$slots, "default")
-    ], 16, _hoisted_1$s);
+    ], 16, _hoisted_1$r);
   }
   var KButton = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x]]);
   var __glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -2400,7 +2400,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$r = ["type", "readonly"];
+  const _hoisted_1$q = ["type", "readonly"];
   const _hoisted_2$f = /* @__PURE__ */ vue.createTextVNode(" Now ");
   const _hoisted_3$9 = /* @__PURE__ */ vue.createTextVNode(" Clear ");
   function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
@@ -2411,7 +2411,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         class: "k-input",
         type: $options.type,
         readonly: !$props.editable
-      }, null, 8, _hoisted_1$r), [
+      }, null, 8, _hoisted_1$q), [
         [vue.vModelDynamic, $options.localModelValue]
       ]),
       $props.editable ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
@@ -2712,6 +2712,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       maxHeight: {
         type: [Number, String],
         default: "90%"
+      },
+      zIndex: {
+        type: [Number],
+        default: 10
       }
     },
     emits: ["update:modelValue"],
@@ -2725,6 +2729,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       classObj() {
         return {
           "k-dialog--scrollable": this.scrollable
+        };
+      },
+      style() {
+        return {
+          zIndex: this.zIndex
         };
       }
     },
@@ -2764,10 +2773,6 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }
     }
   };
-  const _hoisted_1$q = {
-    key: 0,
-    class: "k-dialog"
-  };
   function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     const _directive_click_away = vue.resolveDirective("click-away");
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
@@ -2778,7 +2783,11 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       }, [
         vue.createVNode(vue.Transition, { name: "fade" }, {
           default: vue.withCtx(() => [
-            $data.dialog ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$q, [
+            $data.dialog ? (vue.openBlock(), vue.createElementBlock("div", {
+              key: 0,
+              class: "k-dialog",
+              style: vue.normalizeStyle([$options.style])
+            }, [
               vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", {
                 ref: "content",
                 class: vue.normalizeClass(["k-dialog-content", $options.classObj]),
@@ -2788,7 +2797,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
               ], 6)), [
                 [_directive_click_away, $options.clickAway]
               ])
-            ])) : vue.createCommentVNode("", true)
+            ], 4)) : vue.createCommentVNode("", true)
           ]),
           _: 3
         })
