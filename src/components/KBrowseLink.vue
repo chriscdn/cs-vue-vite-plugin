@@ -11,31 +11,30 @@
   </span>
 </template>
 
-<script>
-import { defineComponent, inject } from 'vue'
+<script lang="ts">
+import { defineComponent, inject, type PropType } from 'vue'
 import nodeLookup from '../utils/node-lookup'
 
 export default defineComponent({
   setup() {
     const session = inject('session', {})
-
     return { session }
   },
   props: {
     nodeRec: {
-      type: Object,
+      type: Object as PropType<Record<string, any> | null>,
       default: null,
     },
     dataid: {
-      type: Number,
+      type: Number as PropType<number | null>,
       default: null,
     },
     image: {
-      type: Boolean,
+      type: Boolean as PropType<boolean | null>,
       default: true,
     },
     clickable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean | null>,
       default: true,
     },
   },

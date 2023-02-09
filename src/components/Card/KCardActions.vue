@@ -4,11 +4,13 @@
   </div>
 </template>
 
-<script>
-export default {}
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
 </script>
 
-<style>
+<style lang="postcss">
 .k-card-actions {
   @apply flex flex-grow-0 p-2 gap-2;
 }

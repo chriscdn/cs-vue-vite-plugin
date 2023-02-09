@@ -4,11 +4,7 @@
   </div>
 </template>
 
-<script>
-export default {}
-</script>
-
-<style>
+<style lang="postcss">
 .k-card-title {
   @apply flex flex-grow-0 flex-wrap p-3 text-xl;
 }

@@ -1,0 +1,20 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["package.json", "src/**/*.ts", "src/**/*.js", "src/**/*.vue"],
+  "compilerOptions": {
+    // "target": "es2017",
+    "lib": ["esnext", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true,
+    "types": ["vite/client"]
+    // "declaration": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}
