@@ -1,8 +1,8 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
   "version": "0.0.8",
-  "module": "./dist/bundle.mjs",
-  "types": "./dist/bundle.d.ts",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@chriscdn/promise-semaphore": "^1.0.9",
-    "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
     "body-scroll-lock": "^4.0.0-beta.0",
     "build-url": "^6.0.1",
     "date-fns": "^2.28.0",

@@ -9,8 +9,6 @@ import type { App } from 'vue'
  */
 // let session
 
-import KCard from './components/Card/KCard.vue'
-
 interface Configuration {
   img: string
   baseURL: string
@@ -20,29 +18,21 @@ interface Configuration {
 
 export default {
   install(app: App, options: Record<string, string>) {
-    // const components = import.meta.glob('./components/**/*.vue', {
-    //   eager: true,
-    // })
+    const components = import.meta.glob('./components/**/*.vue', {
+      eager: true,
+    })
 
-    // Object.entries(components).forEach(([item, definition]: [string, any]) => {
-    //   // Get name of component, based on filename
-    //   // "./components/Fruits.vue" will become "Fruits"
+    Object.entries(components).forEach(([item, definition]: [string, any]) => {
+      // Get name of component, based on filename
+      // "./components/Fruits.vue" will become "Fruits"
 
-    //   const componentName = item
-    //     ?.split('/')
-    //     ?.pop()
-    //     ?.replace(/\.\w+$/, '')
+      const componentName = item
+        ?.split('/')
+        ?.pop()
+        ?.replace(/\.\w+$/, '')
 
-    //   app.component(componentName!, definition.default)
-    // })
-
-    // app.config.globalProperties.$img = options.img
-    // app.config.globalProperties.$cgi = options.baseURL
-    // app.config.globalProperties.$jsLongDateFormat = options.datelong
-    // app.config.globalProperties.$jsShortDateFormat = options.dateshort
-    // app.config.globalProperties.$session = new Session(options)
-
-    app.component('KCard', KCard)
+      app.component(componentName!, definition.default)
+    })
 
     const session = new Session(options)
 

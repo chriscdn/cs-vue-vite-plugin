@@ -3,11 +3,18 @@ import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
+
+import pkg from './package.json' assert { type: 'json' }
 //
 // https://vitejs.dev/guide/build.html#library-mode
 //
 export default defineConfig({
-  // plugins: [vue()],
+  plugins: [
+    vue(),
+    dts({
+      // insertTypesEntry: true,
+    }),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -43,14 +50,18 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'index',
     },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled into your library
+      // external: ['vue'],
+      external: [...Object.keys(pkg.dependencies || {})],
+      output: {
+        // Provide global variables to use in the UMD build for externalized deps
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
   },
-  plugins: [
-    vue(),
-    dts({
-      insertTypesEntry: true,
-    }),
-  ],
-
   define: {
     'process.env': {},
   },
