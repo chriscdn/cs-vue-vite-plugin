@@ -1,7 +1,7 @@
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
+import pkg from './package.json'
 const path = require('path')
-
 //
 // https://vitejs.dev/guide/build.html#library-mode
 //
@@ -16,7 +16,8 @@ export default defineConfig({
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
-      external: ['vue'],
+      // external: ['vue'],
+      external: [...Object.keys(pkg.dependencies || {})],
       output: {
         // Provide global variables to use in the UMD build for externalized deps
         globals: {

@@ -3,9 +3,10 @@
     <a :id="aid" href="#" class="functionMenuHotspot" @click.prevent="onclick">
       <img
         v-if="isModernFunctionMenu"
-        :src="`${$img}spacer.gif`"
+        :src="`${config.img}spacer.gif`"
         alt="Functions"
       />
+
       <img
         v-else
         :id="xid"
@@ -20,6 +21,7 @@
     <div v-once :id="zid" ref="functionMenuDiv" class="functionMenuDiv" />
   </span>
 </template>
+
 <script>
 /**
  * Creates a Content Server function menu.
@@ -28,7 +30,14 @@
  * <KFunctionMenu :dataid="2000" />
  * ```
  */
-export default {
+
+import { defineComponent, inject } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const config = inject('config', {})
+    return { config }
+  },
   props: {
     // The DataId of the node.
     dataid: {
@@ -87,11 +96,11 @@ export default {
       return false
     },
     onmouseover() {
-      this.image = `${this.$img}webdoc/actions_hover.png`
+      this.image = `${this.config.img}webdoc/actions_hover.png`
     },
     onmouseout() {
-      this.image = `${this.$img}webdoc/actions.png`
+      this.image = `${this.config.img}webdoc/actions.png`
     },
   },
-}
+})
 </script>

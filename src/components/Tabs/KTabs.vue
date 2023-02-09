@@ -81,9 +81,9 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-tabs {
-  // margin-top: 1em;
+  /* margin-top: 1em; */
   @apply my-4;
   .k-tabs-nav {
     @apply border border-solid border-gray-400 border-t-0 border-l-0 border-r-0;

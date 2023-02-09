@@ -1,7 +1,7 @@
 <script>
-import measurables from '../../mixins/measurables'
-import clickable from '../../mixins/clickable'
 import { h } from 'vue'
+import clickable from '../../mixins/clickable'
+import measurables from '../../mixins/measurables'
 // import KLinearProgressIndicator from '../KLinearProgressIndicator.vue'
 
 export default {
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-card {
   @apply flex flex-col block;
 }

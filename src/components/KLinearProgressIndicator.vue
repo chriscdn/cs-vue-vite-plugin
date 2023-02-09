@@ -6,7 +6,7 @@
 export default {}
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-progress-line,
 .k-progress-line:before {
   height: 2px;

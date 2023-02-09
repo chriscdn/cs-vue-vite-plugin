@@ -18,9 +18,9 @@
 </template>
 
 <script>
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { directive } from 'vue3-click-away'
 import measurables from '../mixins/measurables'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 export default {
   directives: {
@@ -113,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-dialog {
   @apply fixed inset-0;
   @apply bg-gray-900 bg-opacity-50;

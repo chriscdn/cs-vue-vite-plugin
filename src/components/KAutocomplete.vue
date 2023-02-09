@@ -255,7 +255,7 @@ export default {
   },
 }
 </script>
-<style lang="less" scoped>
+<style lang="postcss">
 .k-autocomplete {
   @apply flex items-center;
 
@@ -270,7 +270,7 @@ export default {
   .k-autocomplete-items {
     @apply absolute;
 
-    // border: 1px solid #d4d4d4;
+    /* border: 1px solid #d4d4d4; */
     border-bottom: none;
     border-top: none;
     @apply border border-t-0 border-b-0 border-solid rounded border-gray-300;
@@ -293,7 +293,7 @@ export default {
   }
 
   .k-autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
+    /* when navigating through the items using the arrow keys: */
     background-color: DodgerBlue !important;
     color: #ffffff;
   }

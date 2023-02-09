@@ -1,5 +1,4 @@
 <template>
-  <!-- testing flex -->
   <span v-if="userRecLocal" class="k-user-link">
     <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;<a
       href="#"
@@ -11,8 +10,16 @@
 </template>
 <script>
 import get from 'lodash.get'
+import { defineComponent, inject } from 'vue'
 
-export default {
+import userLookup from '../utils/user-lookup'
+
+export default defineComponent({
+  setup() {
+    const session = inject('session', {})
+    return { session }
+  },
+
   props: {
     user: {
       type: [Number, Object],
@@ -65,9 +72,13 @@ export default {
     userLocal: {
       async handler(value) {
         if (this.isInteger(value)) {
-          const response = await this.$session.members.member(value, 'v1')
+          const response = await userLookup.lookup(this.session, value)
 
-          this.userRecLocal = get(response, 'data.data')
+          this.userRecLocal = {
+            name: response.text,
+            id: response.value,
+            type: response.type,
+          }
         } else {
           this.userRecLocal = value
         }
@@ -78,17 +89,17 @@ export default {
 
   methods: {
     isInteger(value) {
-      return !isNaN(value) && typeof value == 'number'
+      return !isNaN(value) && typeof value === 'number'
     },
     click() {
       window.baseUrl = window.baseURL
       window.doUserDialog(this.userIdLocal)
     },
   },
-}
+})
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-user-link {
   @apply inline-flex items-center;
 }

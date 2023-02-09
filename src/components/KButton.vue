@@ -1,3 +1,4 @@
+y
 <template>
   <button
     class="k-button"
@@ -44,7 +45,7 @@ export default {
   },
 }
 </script>
-<style lang="less">
+<style lang="postcss">
 .k-button {
   @apply px-3 py-1 rounded-full text-sm font-medium border;
   @apply focus:outline-none focus:ring focus:ring-gray-300;
@@ -65,10 +66,10 @@ export default {
     min-width: 0;
   }
 
-  // &.k-button--icon {
-  //     @apply rounded-full;
-  //     @apply w-10 h-10;
-  // }
+  /* &.k-button--icon {
+      @apply rounded-full;
+      @apply w-10 h-10;
+  } */
 
   &.k-button--disabled {
     @apply cursor-not-allowed;

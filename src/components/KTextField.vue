@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <KFormFieldWrapper
-      :label="label"
-      :success-messages="successMessages"
-      :error-messages="errorMessages"
-    >
-      <input
-        v-model="value"
-        class="k-input-text-field"
-        :placeholder="placeholder"
-        :class="classObj"
-      />
-    </KFormFieldWrapper>
-  </div>
+  <KFormFieldWrapper
+    :label="label"
+    :success-messages="successMessages"
+    :error-messages="errorMessages"
+  >
+    <input
+      v-model="value"
+      class="k-input-text-field"
+      :placeholder="placeholder"
+      :class="classObj"
+    />
+  </KFormFieldWrapper>
 </template>
 
 <script>
@@ -43,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-input-text-field {
   @apply w-full;
 }

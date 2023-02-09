@@ -9,9 +9,19 @@ class UserLookup {
   }
 
   registerUsers(items) {
-    items.forEach((user) => {
-      this.users[user.value] = user
-    })
+    items.forEach((user) => (this.users[user.value] = user))
+  }
+
+  fullName(userRec) {
+    const firstName = userRec.first_name
+    const lastName = userRec.last_name
+    const username = userRec.name
+
+    if (firstName || lastName) {
+      return [firstName, lastName, `(${username})`].join(' ')
+    } else {
+      return username
+    }
   }
 
   async lookup(session, userId) {
@@ -23,7 +33,7 @@ class UserLookup {
 
         const value = get(response, 'data.data.id')
         const type = get(response, 'data.data.type')
-        const text = get(response, 'data.data.name')
+        const text = this.fullName(get(response, 'data.data')) // get(response, 'data.data.name')
 
         if (value) {
           this.users[userId] = { type, text, value }
@@ -37,4 +47,4 @@ class UserLookup {
   }
 }
 
-export default UserLookup
+export default new UserLookup()

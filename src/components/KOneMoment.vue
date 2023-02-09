@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-one-moment {
   @apply flex items-center;
   .k-one-moment-label {

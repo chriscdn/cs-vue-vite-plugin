@@ -30,4 +30,4 @@ class AncestorLookup {
   }
 }
 
-export default AncestorLookup
+export default new AncestorLookup()

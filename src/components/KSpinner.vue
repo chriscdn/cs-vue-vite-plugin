@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import measurables from '../mixins/measurables'
+import measurables from '../mixins/measurables';
 export default {
   mixins: [measurables],
   props: {
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-spinner {
   @apply animate-spin;
   color: v-bind(color);

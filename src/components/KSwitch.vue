@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-switch {
   @apply relative inline-block align-middle;
 

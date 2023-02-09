@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import CSVueVite from './index'
 
+import './assets/tailwind.css'
+
 /**
  * This file isn't part of the build and is just used for testing.
  *

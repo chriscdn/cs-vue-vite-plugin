@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="k-date-time-picker">
     <input
       v-model="localModelValue"
       class="k-input"
@@ -7,10 +7,8 @@
       :readonly="!editable"
     />
     <template v-if="editable">
-      <KButton class="ml-1" small @click="setToNow"> Now </KButton>
-      <KButton class="ml-1" small @click="$emit('update:modelValue', null)">
-        Clear
-      </KButton>
+      <KButton small @click="setToNow"> Now </KButton>
+      <KButton small @click="$emit('update:modelValue', null)"> Clear </KButton>
     </template>
   </div>
 </template>
@@ -69,3 +67,9 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss">
+.k-date-time-picker {
+  @apply flex gap-2 items-center;
+}
+</style>

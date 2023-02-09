@@ -10,25 +10,28 @@
     <KButton small @click="openWindow">
       {{ browseButtonLabel }}
     </KButton>
-    <KButton small @click="clear">
+
+    <KButton small @click="clear" v-if="clearable">
       {{ clearButtonLabel }}
     </KButton>
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="k-node-picker-breadcrumb" v-html="breadcrumbString" />
+
+    <KNodeAncestor :dataid="dataid" v-if="dataid" />
   </div>
 </template>
 
 <script>
 import buildUrl from 'build-url'
-
 import cookies from 'js-cookie'
-import { getCurrentInstance } from 'vue'
+import { defineComponent, getCurrentInstance, inject } from 'vue'
+import ancestorLookup from '../utils/ancestor-lookup'
+import KNodeAncestor from './KNodeAncestor.vue'
 
-import AncestorLookup from '../utils/ancestor-lookup'
-
-const ancestorLookup = new AncestorLookup()
-
-export default {
+export default defineComponent({
+  setup() {
+    const session = inject('session', {})
+    const config = inject('config', {})
+    return { session, config }
+  },
   props: {
     modelValue: {
       type: Number,
@@ -62,6 +65,10 @@ export default {
       type: String,
       default: 'Browse Content Server...',
     },
+    clearable: {
+      type: Boolean,
+      defalut: true,
+    },
     clearButtonLabel: {
       type: String,
       default: 'clear',
@@ -69,7 +76,7 @@ export default {
   },
   data() {
     return {
-      breadcrumb: null,
+      breadcrumb: [],
     }
   },
   computed: {
@@ -81,24 +88,20 @@ export default {
         return this.modelValue
       },
     },
-
     uniqueID() {
       const uid = getCurrentInstance().uid
       return `targetbrowse_${uid}`
     },
-
-    breadcrumbString() {
-      if (this.breadcrumb) {
-        return `Path: ${this.breadcrumb.replace(':', ' &#9654; ')}`
-      } else {
-        return null
-      }
-    },
-
+    // breadcrumbString() {
+    //   if (this.breadcrumb) {
+    //     return `Path: ${this.breadcrumb.replace(':', ' &#9654; ')}`
+    //   } else {
+    //     return null
+    //   }
+    // },
     globalCallbackFunctionName() {
       return `${this.uniqueID}_DoSelection`
     },
-
     selectScreenString() {
       if (this.selectScreen.length) {
         return {
@@ -108,7 +111,6 @@ export default {
         return null
       }
     },
-
     urlParams() {
       return {
         func: 'll',
@@ -121,17 +123,14 @@ export default {
         fieldPrefix: this.uniqueID,
       }
     },
-
     url() {
-      return buildUrl(this.$cgi, {
+      return buildUrl(this.config.baseURL, {
         queryParams: this.urlParams,
       })
     },
-
     name() {
-      return (this.breadcrumb || '').split(':').slice(-1)[0]
+      return this.breadcrumb[this.breadcrumb.length - 1]?.name
     },
-
     windowParams() {
       const windowParams = {
         width: this.width,
@@ -141,38 +140,32 @@ export default {
         scrollbars: 'yes',
         toolbar: 'yes',
       }
-
       return Object.entries(windowParams)
         .map(([key, value]) => `${key}=${value}`)
         .join(',')
     },
   },
-
   watch: {
     dataid: {
       async handler() {
-        if (this.dataid && !this.breadcrumb) {
-          const ancestors = await ancestorLookup.lookup(
-            this.$session,
+        if (this.dataid) {
+          this.breadcrumb = await ancestorLookup.lookup(
+            this.session,
             this.dataid,
           )
-          this.breadcrumb = ancestors.map((item) => item.name).join(':')
-        } else if (!this.dataid) {
-          this.breadcrumb = null
+        } else {
+          this.breadcrumb = []
         }
       },
       immediate: true,
     },
   },
-
   async mounted() {
     window[this.globalCallbackFunctionName] = this.callback
   },
-
   beforeUnmount() {
     delete window[this.globalCallbackFunctionName]
   },
-
   methods: {
     openWindow() {
       window.open(this.url, 'WindowName', this.windowParams)
@@ -180,7 +173,6 @@ export default {
         this.$refs.input.blur()
       }
     },
-
     targetBrowseObjID() {
       // not computed, since cookies are not reactive
       return this.objid || parseInt(cookies.get('TargetBrowseObjID')) || 0
@@ -189,26 +181,25 @@ export default {
       console.log('didClose')
     },
     callback(dataid, breadcrumb) {
-      this.breadcrumb = breadcrumb
+      // debugger
+      // this.breadcrumb = breadcrumb.split(':')
       this.dataid = dataid
     },
     clear() {
-      this.breadcrumb = null
+      this.breadcrumb = []
       this.dataid = null
     },
   },
-}
+  components: { KNodeAncestor },
+})
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-node-picker-field {
   @apply bg-gray-100 rounded p-2;
 
   input[type='text'] {
     width: 20em;
-  }
-  .k-node-picker-breadcrumb {
-    @apply text-xs mt-1 ml-1;
   }
 
   .k-button {

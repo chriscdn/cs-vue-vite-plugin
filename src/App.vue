@@ -5,7 +5,9 @@
         <KTextArea v-model="scope[index]" :error-messages="errors.abc" />
       </template>
     </KMulti>
+
     <br />
+
     <div>{{ scope }}</div>
 
     <KDialog :z-index="100">

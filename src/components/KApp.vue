@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="postcss">
 .k-app {
   * {
     @apply box-border;

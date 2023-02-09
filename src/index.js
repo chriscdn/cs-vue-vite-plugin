@@ -1,9 +1,16 @@
 import { Session } from '@kweli/cs-rest'
-// import dateFormat from './mixins/date-format'
-import './styles.less'
+import './styles.css'
+
+// import './assets/tailwind.css'
+
+/**
+ * This variable gets assigned in the install, and is made available to the
+ * useSession composible.
+ */
+// let session
 
 export default {
-  install(Vue, options) {
+  install(app, options) {
     const components = import.meta.globEager('./components/**/*.vue')
 
     Object.entries(components).forEach(([path, definition]) => {
@@ -14,18 +21,29 @@ export default {
         .pop()
         .replace(/\.\w+$/, '')
 
-      // console.log(componentName)
-
-      Vue.component(componentName, definition.default)
+      app.component(componentName, definition.default)
     })
 
-    Vue.config.globalProperties.$img = options.img
-    Vue.config.globalProperties.$cgi = options.baseURL
-    Vue.config.globalProperties.$jsLongDateFormat = options.datelong
-    Vue.config.globalProperties.$jsShortDateFormat = options.dateshort
+    // app.config.globalProperties.$img = options.img
+    // app.config.globalProperties.$cgi = options.baseURL
+    // app.config.globalProperties.$jsLongDateFormat = options.datelong
+    // app.config.globalProperties.$jsShortDateFormat = options.dateshort
+    // app.config.globalProperties.$session = new Session(options)
 
-    Vue.config.globalProperties.$session = new Session(options)
+    const session = new Session(options)
+
+    app.provide('session', session)
+    app.provide('config', {
+      img: options.img,
+      baseURL: options.baseURL,
+      jsLongDateFormat: options.datelong,
+      jsShortDateFormat: options.dateshort,
+    })
   },
 }
 
-// export { dateFormat }
+// function useSession() {
+//   return session
+// }
+
+// export { useSession }

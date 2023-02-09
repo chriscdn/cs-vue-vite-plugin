@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-select {
   @apply flex items-center;
   .k-select--spinner {

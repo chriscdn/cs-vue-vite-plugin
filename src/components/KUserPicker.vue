@@ -1,37 +1,51 @@
 <template>
-  <KAutocomplete
-    v-if="editable"
-    v-model="localValue"
-    v-model:search-input="searchText"
-    class="k-user-picker"
-    :placeholder="placeholder"
-    :width="width"
-    :loading="loading"
-    :items="items"
-    :return-object="returnObject"
-    :combobox="combobox"
+  <KFormFieldWrapper
+    :label="label"
+    :success-messages="successMessages"
+    :error-messages="errorMessages"
   >
-    <template #prepend="{ item }">
-      <KUserGIF :user-rec="item" />
-    </template>
+    <KAutocomplete
+      v-if="editable"
+      v-model="valueLocal"
+      v-model:search-input="searchText"
+      class="k-user-picker"
+      :placeholder="placeholder"
+      :width="width"
+      :loading="loading"
+      :items="items"
+      :return-object="returnObject"
+      :combobox="false"
+    >
+      <template #prepend="{ item }">
+        <KUserGIF :user-rec="item" />
+      </template>
 
-    <template #item="{ item }">
-      <KUserGIF :type="item.type" />
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <span v-html="formatChoice(item)" />
-    </template>
-  </KAutocomplete>
-  <KUserLink v-else :user="modelValue" gif />
+      <template #item="{ item }">
+        <KUserGIF :type="item.type" />
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <span v-html="formatChoice(item)" />
+      </template>
+    </KAutocomplete>
+    <KUserLink v-else :user="modelValue" gif />
+  </KFormFieldWrapper>
 </template>
 
 <script>
-import get from 'lodash.get'
 import debounce from 'lodash.debounce'
-import UserLookup from '../utils/user-lookup'
+import get from 'lodash.get'
+import { defineComponent, inject } from 'vue'
+import { mixin } from './KFormFieldWrapper.vue'
 
-const userLookup = new UserLookup()
+import userLookup from '../utils/user-lookup'
+// const userLookup = new UserLookup()
 
-export default {
+export default defineComponent({
+  mixins: [mixin],
+  setup() {
+    const session = inject('session', {})
+    return { session }
+  },
+
   props: {
     modelValue: {
       type: [String, Number, Object],
@@ -53,10 +67,11 @@ export default {
       type: Boolean,
       default: false,
     },
-    combobox: {
-      type: Boolean,
-      default: false,
-    },
+    // Why?  document if you add this back
+    // combobox: {
+    //   type: Boolean,
+    //   default: false,
+    // },
     editable: {
       type: Boolean,
       default: true,
@@ -76,12 +91,15 @@ export default {
 
   computed: {
     USER() {
-      return this.$session.members.USER
+      return this.session.members.USER
     },
     GROUP() {
-      return this.$session.members.GROUP
+      return this.session.members.GROUP
     },
-    localValue: {
+    valueLocal: {
+      /**
+       * @param {number} value
+       */
       set(value) {
         this.$emit('update:modelValue', value)
       },
@@ -138,7 +156,7 @@ export default {
       try {
         this.loading = true
 
-        const response = await this.$session.members.userQuery(
+        const response = await this.session.members.userQuery(
           v,
           this.options,
           'v1',
@@ -175,14 +193,14 @@ export default {
 
     async loadInitialValue() {
       const initialValue = this.modelValue
-
+      // debugger
       if (initialValue && !this.combobox) {
         try {
           this.pleaseWait = true
           this.readonly = true
           this.loading = true
 
-          const user = await userLookup.lookup(this.$session, initialValue)
+          const user = await userLookup.lookup(this.session, initialValue)
 
           if (user) {
             this.items = [user]
@@ -196,13 +214,12 @@ export default {
       }
     },
   },
-}
+})
 </script>
-<style lang="less">
-// spacing between user/group icon and label
+
+<style lang="postcss">
+/* spacing between user/group icon and label */
 .k-user-picker {
-  img {
-    @apply mr-1;
-  }
+  @apply gap-1;
 }
 </style>

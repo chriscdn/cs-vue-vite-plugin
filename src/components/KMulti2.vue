@@ -7,20 +7,15 @@
         class="k-multi-item"
       >
         <div class="k-multi-widget">
-          <slot
-            name="default"
-            :index="index"
-            :value="value"
-            :update="(updatedValue) => update(index, updatedValue)"
-          />
+          <slot name="readonly" :index="index" :value="value">{{ value }}</slot>
         </div>
 
         <div class="k-multi-buttons">
-          <KButton v-if="canRemove" text @click="remove(index)">
+          <KButton text @click="remove(index)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
             >
               <path
@@ -28,21 +23,10 @@
               />
             </svg>
           </KButton>
-          <KButton v-if="canAdd" text @click="add(index)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
-              />
-            </svg>
-          </KButton>
         </div>
       </div>
     </transition-group>
+    <slot name="add" :add="add" v-if="canAdd" />
   </KCard>
 </template>
 <script>
@@ -52,56 +36,46 @@ export default {
       type: Array,
       required: true,
     },
-    minItems: {
-      type: Number,
-      default: 0,
-    },
     maxItems: {
       type: Number,
       default: 100,
     },
-    template: {
-      type: Object,
-      // default: () => {},
-      default: null,
+    readonly: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ['update:modelValue'],
   computed: {
     valueLocal: {
       get() {
-        return this.modelValue.length == 0 ? [this.template] : this.modelValue
+        return this.modelValue
       },
       set(value) {
         this.$emit('update:modelValue', value)
       },
     },
-    canAdd() {
-      return this.count < this.maxItems
-    },
-    canRemove() {
-      return this.minItems < this.count
-    },
+
     count() {
-      return this.valueLocal.length
+      return this.valueLocal?.length ?? 0
+    },
+
+    canAdd() {
+      return this.count < this.maxItems && !this.readonly
     },
   },
   methods: {
-    add(index) {
-      // debugger
-      const items = [...this.valueLocal]
-      items.splice(index + 1, 0, this.template)
-      this.valueLocal = items
+    add(item) {
+      if (item) {
+        this.valueLocal = [...this.valueLocal, item].filter(
+          (item, index, items) => items.indexOf(item) === index,
+        )
+      }
     },
     remove(index) {
       const myArray = [...this.valueLocal]
       myArray.splice(index, 1)
       this.valueLocal = myArray
-    },
-    update(index, value) {
-      const items = [...this.valueLocal]
-      items[index] = value
-      this.valueLocal = items
     },
   },
 }

@@ -4,8 +4,13 @@
 
 <script>
 import get from 'lodash.get'
+import { defineComponent, inject } from 'vue'
 import measurable from '../mixins/measurables'
-export default {
+export default defineComponent({
+  setup() {
+    const config = inject('config')
+    return { config }
+  },
   mixins: [measurable],
   props: {
     userRec: {
@@ -33,17 +38,17 @@ export default {
     url() {
       if (this.userType == 0) {
         // user
-        return `${this.$img}guy.gif`
+        return `${this.config.img}guy.gif`
       } else if (this.userType == 1) {
         // group
-        return `${this.$img}2-guys.gif`
+        return `${this.config.img}2-guys.gif`
       } else if (this.userType > 0) {
         // role?
-        return `${this.$img}projectgroup.gif`
+        return `${this.config.img}projectgroup.gif`
       } else {
         return null
       }
     },
   },
-}
+})
 </script>

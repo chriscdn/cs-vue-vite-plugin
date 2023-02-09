@@ -1,21 +1,19 @@
 <template>
-  <div>
-    <KFormFieldWrapper
-      :label="label"
-      :success-messages="successMessages"
-      :error-messages="errorMessages"
-    >
-      <textarea
-        v-model="valueLocal"
-        v-bind="$attrs"
-        spellcheck="false"
-        :class="classObj"
-        class="k-textarea"
-        :rows="rows"
-        @keydown.tab.prevent="tabber"
-      />
-    </KFormFieldWrapper>
-  </div>
+  <KFormFieldWrapper
+    :label="label"
+    :success-messages="successMessages"
+    :error-messages="errorMessages"
+  >
+    <textarea
+      v-model="valueLocal"
+      v-bind="$attrs"
+      spellcheck="false"
+      :class="classObj"
+      class="k-textarea"
+      :rows="rows"
+      @keydown.tab.prevent="tabber"
+    />
+  </KFormFieldWrapper>
 </template>
 
 <script>

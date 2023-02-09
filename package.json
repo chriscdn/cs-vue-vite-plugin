@@ -1,14 +1,14 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./dist/bundle.umd.js",
   "module": "./dist/bundle.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build2": "vue-tsc && vite build",
     "watch": "vite build --watch",
-    "serve": "vite preview",
-    "docs": "vuese gen"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@chriscdn/promise-semaphore": "^1.0.9",
@@ -19,17 +19,17 @@
     "js-cookie": "^3.0.1",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
-    "vue": "3.2.31",
+    "vue": "3.2.45",
     "vue3-click-away": "^1.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.2.4",
+    "@vitejs/plugin-vue": "^4.0.0",
     "@vue/compiler-sfc": "^3.2.31",
-    "autoprefixer": "^10.4.4",
-    "less": "^4.1.2",
-    "less-loader": "^10.2.0",
-    "tailwindcss": "^3.0.23",
-    "vite": "^2.8.6"
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.2.4",
+    "vite": "^4.0.4"
   },
   "files": [
     "dist"

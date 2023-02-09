@@ -61,7 +61,7 @@ export default {
 export { mixin }
 </script>
 
-<style lang="less">
+<style lang="postcss">
 .k-form-field-label {
   @apply text-xs font-thin;
   @apply my-px;
@@ -71,7 +71,7 @@ export { mixin }
   min-width: 7rem;
   @apply rounded p-1;
   @apply border border-solid rounded border-gray-300;
-  // @apply focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-600;
+  /* @apply focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-600; */
   @apply focus:border-transparent  focus:outline-blue-500;
 
   &.k-input--success {
