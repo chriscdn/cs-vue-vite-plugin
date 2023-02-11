@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 /**
  *
  * Example:
@@ -17,7 +18,7 @@
  *    </template>
  *  </KPageDropZone>
  */
-export default {
+export default defineComponent({
   props: {
     mimetypes: {
       type: Array,
@@ -27,7 +28,7 @@ export default {
   data() {
     return {
       active: false,
-      lastTarget: null,
+      lastTarget: null as EventTarget | null,
     }
   },
   mounted() {
@@ -43,16 +44,16 @@ export default {
     window.removeEventListener('drop', this.drop)
   },
   methods: {
-    isFile(event) {
-      return event.dataTransfer.types.some((item) => item === 'Files')
+    isFile(event: DragEvent): boolean {
+      return event.dataTransfer?.types.some((item) => item === 'Files') ?? false
     },
-    dragenter(event) {
+    dragenter(event: DragEvent) {
       if (this.isFile(event)) {
         this.lastTarget = event.target
         this.active = true
       }
     },
-    dragleave(event) {
+    dragleave(event: DragEvent) {
       event.preventDefault()
 
       if (
@@ -62,10 +63,10 @@ export default {
         this.active = false
       }
     },
-    dragover(event) {
+    dragover(event: DragEvent) {
       event.preventDefault()
     },
-    drop(event) {
+    drop(event: DragEvent) {
       event.preventDefault()
 
       if (event.dataTransfer && event.dataTransfer.files.length) {
@@ -83,5 +84,5 @@ export default {
       this.active = false
     },
   },
-}
+})
 </script>

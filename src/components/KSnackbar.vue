@@ -25,17 +25,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  provide() {
-    return {
-      ksnackbar: this,
-    }
-  },
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { emitter, type SnackbarInterface } from '../snackbar'
+
+interface SnackbarQueueInterface extends SnackbarInterface {
+  index: number
+  type: 'success' | 'error'
+}
+
+export default defineComponent({
   data() {
     return {
       index: 0,
-      nitems: {},
+      nitems: {} as Array<SnackbarQueueInterface>,
     }
   },
   computed: {
@@ -43,62 +46,91 @@ export default {
       return Object.values(this.nitems).sort((a, b) => b.index - a.index)
     },
   },
+  mounted() {
+    // debugger
+    emitter.on('success', this.success)
+    emitter.on('error', this.error)
+  },
+
+  unmounted() {
+    emitter.off('success', this.success)
+    emitter.off('error', this.error)
+  },
+
   methods: {
-    classObj(item) {
+    classObj(item: SnackbarQueueInterface) {
       return {
-        'k-snackbar-item--success': item.type == 'success',
-        'k-snackbar-item--error': item.type == 'error',
+        'k-snackbar-item--success': item.type === 'success',
+        'k-snackbar-item--error': item.type === 'error',
       }
     },
-    action(item) {
+    action(item: SnackbarQueueInterface) {
       const cb = item.action
-      cb(() => this.dismiss(item.index))
+      if (cb) {
+        cb(() => this.dismiss(item.index))
+      }
     },
-    dismiss(index) {
-      // this.$delete(this.nitems, index)
+    dismiss(index: number) {
       delete this.nitems[index]
     },
     nextIndex() {
       this.index += 1
       return this.index
     },
-    success({ title, message, timeout, actionLabel, action }) {
-      this.queue('success', { message, title, timeout, actionLabel, action })
+
+    success(params: SnackbarInterface) {
+      // debugger
+      this.queue('success', params)
     },
-    error({ title, message, timeout, actionLabel, action }) {
-      this.queue('error', { message, title, timeout, actionLabel, action })
+    error(params: SnackbarInterface) {
+      this.queue('error', params)
     },
+
     queue(
-      type,
-      { title, message, timeout = 6000, actionLabel = 'close', action },
+      type: 'success' | 'error',
+      {
+        title,
+        message,
+        timeout = 6000,
+        actionLabel = 'close',
+        action,
+      }: SnackbarInterface,
     ) {
       const index = this.nextIndex()
+      // const timeout = snackbar.timeout ?? 6000
+
+      // let { action } = snackbar
 
       if (action == null) {
         // if no action is specified, then make the default the close action
         action = () => this.dismiss(index)
       }
 
-      this.nitems[index] = {
+      const item: SnackbarQueueInterface = {
         title,
         message,
-        index,
-        type,
+        timeout,
         actionLabel,
         action,
+        type,
+        index,
       }
-
-      // Vue3
-      // this.nitems[index] = {
-      // 	message,
-      // 	index,
-      // 	type,
+      // const item: SnackbarQueueInterface = {
+      //   ...snackbar,
+      //   index,
+      //   type,
+      //   action,
       // }
+
+      this.nitems[index] = item
+
+      console.log(timeout)
+      // console.log(this.nitems)
 
       setInterval(() => this.dismiss(index), timeout)
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

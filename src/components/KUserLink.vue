@@ -1,31 +1,45 @@
 <template>
   <span v-if="userRecLocal" class="k-user-link">
-    <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;<a
-      href="#"
-      @click.prevent="click"
-    >
+    <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;
+
+    <a href="#" @click.prevent="click">
       {{ displayName }}
     </a>
   </span>
 </template>
-<script>
-import get from 'lodash.get'
-import { defineComponent, inject } from 'vue'
 
+<script lang="ts">
+import get from 'lodash.get'
+import { defineComponent, PropType } from 'vue'
 import userLookup from '../utils/user-lookup'
+import { sessionKey, injectStrict } from '@/injection'
+
+declare global {
+  interface Window {
+    baseUrl?: Function
+    baseURL?: Function
+    doUserDialog?: Function
+  }
+}
+
+export type UserRecType = {
+  name: string
+  id: number
+  type: number
+}
 
 export default defineComponent({
   setup() {
-    const session = inject('session', {})
+    const session = injectStrict(sessionKey)
     return { session }
   },
 
   props: {
     user: {
-      type: [Number, Object],
+      type: [Number, Object] as PropType<number | Record<string, any>>,
       default: null,
     },
-    // @deprecated
+    //  this is deprecated
     userRec: {
       type: Object,
       default: null,
@@ -44,8 +58,7 @@ export default defineComponent({
 
   data() {
     return {
-      // userIdLocal: null,
-      userRecLocal: null,
+      userRecLocal: null as UserRecType | null,
     }
   },
 
@@ -88,12 +101,14 @@ export default defineComponent({
   },
 
   methods: {
-    isInteger(value) {
+    isInteger(value: any) {
       return !isNaN(value) && typeof value === 'number'
     },
     click() {
-      window.baseUrl = window.baseURL
-      window.doUserDialog(this.userIdLocal)
+      if (window.baseURL && window.doUserDialog) {
+        window.baseUrl = window.baseURL
+        window.doUserDialog(this.userIdLocal)
+      }
     },
   },
 })

@@ -16,9 +16,11 @@
   </KFormFieldWrapper>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { mixin } from './KFormFieldWrapper.vue'
-export default {
+
+export default defineComponent({
   mixins: [mixin],
   inheritAttrs: false,
   props: {
@@ -34,57 +36,62 @@ export default {
   emits: ['update:modelValue'],
 
   computed: {
-    outerStyle() {
-      return {
-        width: this.width,
-        height: this.height,
-      }
-    },
-    lineNumberItemStyle() {
-      return {
-        // height: this.lineHeight,
-        lineHeight: this.lineHeight,
-        fontSize: '1em',
-      }
-    },
-    textareaStyle() {
-      return {
-        lineHeight: this.lineHeight,
-        fontSize: this.fontSize,
-      }
-    },
-    lineCount() {
-      return (this.valueLocal || '').split(/\r\n|\r|\n/).length
-    },
-    effectiveLineCount() {
-      return Math.max(this.lineCount, this.minLineNumbers)
-    },
+    // outerStyle() {
+    //   return {
+    //     width: this.width,
+    //     height: this.height,
+    //   }
+    // },
+    // lineNumberItemStyle() {
+    //   return {
+    //     // height: this.lineHeight,
+    //     lineHeight: this.lineHeight,
+    //     fontSize: '1em',
+    //   }
+    // },
+    // textareaStyle() {
+    //   return {
+    //     lineHeight: this.lineHeight,
+    //     fontSize: this.fontSize,
+    //   }
+    // },
+    // lineCount() {
+    //   return (this.valueLocal || '').split(/\r\n|\r|\n/).length
+    // },
+    // effectiveLineCount() {
+    //   return Math.max(this.lineCount, this.minLineNumbers)
+    // },
     valueLocal: {
-      set(value) {
+      set(value: string) {
         this.$emit('update:modelValue', value)
       },
-      get() {
+      get(): string {
         return this.modelValue
       },
     },
   },
   methods: {
-    tabber(event) {
+    tabber(event: Event) {
+      const target = event.target as HTMLInputElement
+
       const text = this.valueLocal
-      const originalSelectionStart = event.target.selectionStart
-      const textStart = text.slice(0, originalSelectionStart)
-      const textEnd = text.slice(originalSelectionStart)
+      const originalSelectionStart = target.selectionStart
 
-      const newText = `${textStart}\t${textEnd}`
+      if (originalSelectionStart) {
+        const textStart = text.slice(0, originalSelectionStart)
+        const textEnd = text.slice(originalSelectionStart)
 
-      this.valueLocal = newText
+        const newText = `${textStart}\t${textEnd}`
 
-      event.target.value = newText
-      event.target.selectionStart = originalSelectionStart + 1
-      event.target.selectionEnd = originalSelectionStart + 1
+        this.valueLocal = newText
+
+        target.value = newText
+        target.selectionStart = originalSelectionStart + 1
+        target.selectionEnd = originalSelectionStart + 1
+      }
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

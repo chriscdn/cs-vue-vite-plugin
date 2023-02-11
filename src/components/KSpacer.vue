@@ -2,7 +2,7 @@
   <div class="k-spacer" />
 </template>
 
-<style scoped>
+<style lang="postcss">
 .k-spacer {
   @apply flex-grow;
 }

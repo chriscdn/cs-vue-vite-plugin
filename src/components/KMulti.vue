@@ -11,7 +11,7 @@
             name="default"
             :index="index"
             :value="value"
-            :update="(updatedValue) => update(index, updatedValue)"
+            :update="(updatedValue:any) => update(index, updatedValue)"
           />
         </div>
 
@@ -45,11 +45,12 @@
     </transition-group>
   </KCard>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+export default defineComponent({
   props: {
     modelValue: {
-      type: Array,
+      type: Array as PropType<Array<any>>,
       required: true,
     },
     minItems: {
@@ -72,7 +73,7 @@ export default {
       get() {
         return this.modelValue.length == 0 ? [this.template] : this.modelValue
       },
-      set(value) {
+      set(value: Array<any>) {
         this.$emit('update:modelValue', value)
       },
     },
@@ -87,24 +88,24 @@ export default {
     },
   },
   methods: {
-    add(index) {
+    add(index: number) {
       // debugger
       const items = [...this.valueLocal]
       items.splice(index + 1, 0, this.template)
       this.valueLocal = items
     },
-    remove(index) {
+    remove(index: number) {
       const myArray = [...this.valueLocal]
       myArray.splice(index, 1)
       this.valueLocal = myArray
     },
-    update(index, value) {
+    update(index: number, value: any) {
       const items = [...this.valueLocal]
       items[index] = value
       this.valueLocal = items
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

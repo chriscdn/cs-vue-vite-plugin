@@ -57,7 +57,8 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import get from 'lodash.get'
 
 // const schema = {
@@ -70,7 +71,7 @@ import get from 'lodash.get'
 //   required: ['offset', 'limit', 'count'],
 // }
 
-export default {
+export default defineComponent({
   props: {
     modelValue: {
       type: Object,
@@ -87,7 +88,7 @@ export default {
       get() {
         return this.limit
       },
-      set(value) {
+      set(value: number) {
         this.$emit('update:modelValue', {
           ...this.pagination,
           offset: 0,
@@ -156,12 +157,12 @@ export default {
     },
   },
   methods: {
-    classObj(pageNumber) {
+    classObj(pageNumber: number) {
       return {
         'k-pagination2-button-selected': pageNumber == this.pageNumber0,
       }
     },
-    clickedPageNumber(pageNumber0) {
+    clickedPageNumber(pageNumber0: number) {
       const p = Math.max(0, Math.min(pageNumber0, this.lastPageNumber0))
 
       this.$emit('update:modelValue', {
@@ -170,7 +171,7 @@ export default {
       })
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

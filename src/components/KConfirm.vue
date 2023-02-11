@@ -22,8 +22,9 @@
   </KDialog>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   provide() {
     return {
       kconfirm: this,
@@ -32,25 +33,46 @@ export default {
   },
   data() {
     return {
-      dialog: false,
-      noLabel: 'Cancel',
-      yesLabel: 'OK',
-      title: null,
-      message: null,
+      dialog: false as boolean,
+      noLabel: 'Cancel' as string | null,
+      yesLabel: 'OK' as string | null,
+      title: null as string | null,
+      message: null as string | null,
+      resolve: null as Function | null,
     }
   },
   methods: {
-    dismiss(bool) {
+    dismiss(bool: boolean) {
       this.dialog = false
-      this.resolve(bool)
-      this.resolve = false
+      if (this.resolve) {
+        this.resolve(bool)
+        this.resolve = null
+      }
     },
 
-    alert({ yesLabel = 'OK', title, message }) {
+    alert({
+      yesLabel = 'OK',
+      title,
+      message,
+    }: {
+      yesLabel: string
+      title: string | null
+      message: string | null
+    }) {
       return this.confirm({ yesLabel, title, message })
     },
 
-    confirm({ noLabel = 'Cancel', yesLabel = 'OK', title, message }) {
+    confirm({
+      noLabel = 'Cancel',
+      yesLabel = 'OK',
+      title,
+      message,
+    }: {
+      noLabel?: string
+      yesLabel: string
+      title: string | null
+      message: string | null
+    }) {
       this.noLabel = noLabel
       this.yesLabel = yesLabel
       this.title = title
@@ -62,5 +84,5 @@ export default {
       })
     },
   },
-}
+})
 </script>

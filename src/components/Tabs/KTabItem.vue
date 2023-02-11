@@ -4,10 +4,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import get from 'lodash.get'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   inject: ['tabs'],
   props: {
     title: {
@@ -24,5 +25,5 @@ export default {
       return this.name == get(this.tabs, 'selectedTab')
     },
   },
-}
+})
 </script>

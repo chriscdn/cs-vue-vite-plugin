@@ -4,15 +4,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { success } from '@/snackbar'
+
+export default defineComponent({
   inject: ['ksnackbar'],
   methods: {
     click() {
-      this.ksnackbar.success('hello')
+      success({ message: 'hello' })
     },
   },
-}
+})
 </script>
 
 <style></style>

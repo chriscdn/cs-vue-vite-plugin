@@ -1,57 +1,49 @@
 import { Session } from '@kweli/cs-rest'
 import './styles.css'
 import type { App } from 'vue'
-// import './assets/tailwind.css'
+import { sessionKey, configKey } from '@/injection'
+import type { ConfigurationType } from '@/injection'
+import { success, error } from './snackbar'
+const snackbar = { success, error }
 
+// export { globz }
 /**
  * This variable gets assigned in the install, and is made available to the
  * useSession composible.
  */
-// let session
-
-interface Configuration {
-  img: string
-  baseURL: string
-  jsLongDateFormat: string
-  jsShortDateFormat: string
-}
+const globalComponents = import.meta.glob('./components/**/*.vue', {
+  eager: true,
+})
 
 export default {
   install(app: App, options: Record<string, string>) {
-    const components = import.meta.glob('./components/**/*.vue', {
-      eager: true,
-    })
+    Object.entries(globalComponents).forEach(
+      ([item, definition]: [string, any]) => {
+        // Get name of component, based on filename
+        // "./components/Fruits.vue" will become "Fruits"
 
-    Object.entries(components).forEach(([item, definition]: [string, any]) => {
-      // Get name of component, based on filename
-      // "./components/Fruits.vue" will become "Fruits"
+        const componentName = item
+          ?.split('/')
+          ?.pop()
+          ?.replace(/\.\w+$/, '')
 
-      const componentName = item
-        ?.split('/')
-        ?.pop()
-        ?.replace(/\.\w+$/, '')
-
-      app.component(componentName!, definition.default)
-    })
+        app.component(componentName!, definition.default)
+      },
+    )
 
     const session = new Session(options)
 
-    const configuration: Configuration = {
+    const configuration: ConfigurationType = {
       img: options.img,
       baseURL: options.baseURL,
       jsLongDateFormat: options.datelong,
       jsShortDateFormat: options.dateshort,
     }
 
-    app.provide('session', session)
-    app.provide('config', configuration)
+    app.provide(sessionKey, session)
+    app.provide(configKey, configuration)
   },
 }
 
-// const SessionKey: InjectionKey<Session> = Symbol('Session')
-
-// function useSession() {
-//   return session
-// }
-
-// export { useSession }
+export { snackbar }
+export * from './injection'

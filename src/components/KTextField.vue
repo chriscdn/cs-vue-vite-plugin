@@ -13,32 +13,34 @@
   </KFormFieldWrapper>
 </template>
 
-<script>
+<script lang="ts">
 import { mixin } from './KFormFieldWrapper.vue'
-export default {
+
+import { defineComponent, PropType } from 'vue'
+export default defineComponent({
   mixins: [mixin],
   props: {
     modelValue: {
-      type: String,
+      type: String as PropType<string | null>,
       default: null,
     },
     placeholder: {
-      type: String,
-      default: null,
+      type: String as PropType<string | undefined>,
+      default: undefined,
     },
   },
   emits: ['update:modelValue'],
   computed: {
     value: {
-      get() {
+      get(): string | null {
         return this.modelValue
       },
-      set(value) {
+      set(value: string | null) {
         this.$emit('update:modelValue', value)
       },
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

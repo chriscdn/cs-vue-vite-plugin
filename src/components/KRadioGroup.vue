@@ -29,13 +29,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
 /**
  * This component is based on KSelect
  */
 import get from 'lodash.get'
 import { mixin } from './KFormFieldWrapper.vue'
-export default {
+export default defineComponent({
   mixins: [mixin],
   props: {
     modelValue: {
@@ -44,7 +45,7 @@ export default {
     },
 
     items: {
-      type: Array,
+      type: Array as PropType<Array<any>>,
       default: () => [],
     },
     loading: {
@@ -70,7 +71,7 @@ export default {
       get() {
         return this.modelValue
       },
-      set(value) {
+      set(value: any) {
         this.$emit('update:modelValue', value)
       },
     },
@@ -81,24 +82,24 @@ export default {
     },
   },
   methods: {
-    isObject(obj) {
+    isObject(obj: any) {
       return (
         typeof obj == 'object' &&
         obj instanceof Object &&
         !(obj instanceof Array)
       )
     },
-    getItemText(item) {
+    getItemText(item: string) {
       return this.isObject(item) ? get(item, this.itemText) : item
     },
-    getItemValue(item) {
+    getItemValue(item: any) {
       return this.isObject(item) ? get(item, this.itemValue) : item
     },
-    getItemDisabled(item) {
+    getItemDisabled(item: any) {
       return this.isObject(item) ? get(item, 'disabled', false) : false
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

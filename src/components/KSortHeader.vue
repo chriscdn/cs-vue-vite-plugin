@@ -10,8 +10,9 @@
   </a>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   props: {
     keypath: {
       type: String,
@@ -41,10 +42,10 @@ export default {
       })
     },
   },
-}
+})
 </script>
 
-<style>
+<style lang="postcss">
 .j-sort-header-arrow {
   @apply ml-px;
 }

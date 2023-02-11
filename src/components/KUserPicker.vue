@@ -4,6 +4,7 @@
     :success-messages="successMessages"
     :error-messages="errorMessages"
   >
+    <!-- <KFormFieldWrapper> -->
     <KAutocomplete
       v-if="editable"
       v-model="valueLocal"
@@ -30,33 +31,35 @@
   </KFormFieldWrapper>
 </template>
 
-<script>
-import debounce from 'lodash.debounce'
+<script lang="ts">
+// import debounce from 'lodash.debounce'
 import get from 'lodash.get'
-import { defineComponent, inject } from 'vue'
+import { defineComponent, inject, PropType } from 'vue'
 import { mixin } from './KFormFieldWrapper.vue'
 
 import userLookup from '../utils/user-lookup'
-// const userLookup = new UserLookup()
+import { Session } from '@kweli/cs-rest'
+
+type asdfa = Array<Record<string, any>>
 
 export default defineComponent({
   mixins: [mixin],
   setup() {
-    const session = inject('session', {})
+    const session = inject('session', {}) as Session
     return { session }
   },
 
   props: {
     modelValue: {
-      type: [String, Number, Object],
+      type: [Number, Object] as PropType<number | Record<string, any>>,
       default: null,
     },
     users: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     groups: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     width: {
@@ -64,7 +67,7 @@ export default defineComponent({
       default: '100%',
     },
     returnObject: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     // Why?  document if you add this back
@@ -73,7 +76,7 @@ export default defineComponent({
     //   default: false,
     // },
     editable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
   },
@@ -81,11 +84,12 @@ export default defineComponent({
 
   data() {
     return {
-      loading: false,
+      loading: false as boolean,
+      readonly: false as boolean,
+      pleaseWait: false as boolean,
       searchText: null,
-      readonly: false,
-      pleaseWait: false,
-      items: [],
+      items: [] as Array<Record<number, any>>,
+      select: null as any,
     }
   },
 
@@ -100,7 +104,7 @@ export default defineComponent({
       /**
        * @param {number} value
        */
-      set(value) {
+      set(value: number) {
         this.$emit('update:modelValue', value)
       },
       get() {
@@ -109,18 +113,18 @@ export default defineComponent({
     },
 
     options() {
-      let where_type = null
+      let whereType: number | null = null
 
       if (this.users && this.groups) {
-        where_type = null // defaults to both
+        whereType = null // defaults to both
       } else if (this.users) {
-        where_type = this.USER
+        whereType = this.USER
       } else if (this.groups) {
-        where_type = this.GROUP
+        whereType = this.GROUP
       }
 
       return {
-        where_type,
+        where_type: whereType,
       }
     },
     placeholder() {
@@ -152,7 +156,10 @@ export default defineComponent({
     },
   },
   methods: {
-    querySelections: debounce(async function (v) {
+    // querySelections: debounce(async function (v) {
+    async querySelections(v: string) {
+      console.log('KUserPicker: needs debounce')
+
       try {
         this.loading = true
 
@@ -162,7 +169,7 @@ export default defineComponent({
           'v1',
         )
 
-        this.items = response.data.data.map((item) => ({
+        this.items = response.data.data.map((item: Record<string, any>) => ({
           text: get(item, 'name_formatted'),
           value: get(item, 'id'),
           type: get(item, 'type'),
@@ -185,16 +192,18 @@ export default defineComponent({
       } finally {
         this.loading = false
       }
-    }, 500),
+    },
+    // }, 500),
 
-    formatChoice(item) {
+    formatChoice(item: Record<string, any>) {
       return get(item, 'text', '')
     },
 
     async loadInitialValue() {
       const initialValue = this.modelValue
-      // debugger
-      if (initialValue && !this.combobox) {
+
+      if (initialValue) {
+        // && !this.combobox) {
         try {
           this.pleaseWait = true
           this.readonly = true

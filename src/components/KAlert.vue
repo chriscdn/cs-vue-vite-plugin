@@ -10,17 +10,18 @@
       </div>
 
       <button class="flex-grow-0" @click="dismiss">
-        <JIcon class="text-main-bright"> icon-x </JIcon>
+        <!-- <KIcon class="text-main-bright"> icon-x </KIcon> -->
       </button>
     </div>
   </transition>
 </template>
 
-<script>
+<script lang="ts">
 // INCOMPLEtE!  Actually, this doesn't work at all
-
+import { defineComponent } from 'vue'
 import colorable from '../mixins/colorable'
-export default {
+
+export default defineComponent({
   mixins: [colorable],
   props: {
     visible: {
@@ -46,5 +47,5 @@ export default {
       this.visibleLocal = false
     },
   },
-}
+})
 </script>

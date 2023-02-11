@@ -1,5 +1,6 @@
 <template>
-  <KDialog :model-value="loading" :width="null">
+  <!-- <KDialog :model-value="loading" :width="null"> -->
+  <KDialog :model-value="loading">
     <div class="k-one-moment">
       <KSpinner :height="36" :width="36" />
       <div class="k-one-moment-label">
@@ -9,8 +10,9 @@
   </KDialog>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   props: {
     loading: {
       type: Boolean,
@@ -21,7 +23,7 @@ export default {
       default: 'One moment...',
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

@@ -1,7 +1,7 @@
 <template>
   <div class="k-tabs">
     <div class="k-tabs-nav">
-      <div v-for="tab in tabs" :key="tab.props.name" :class="classObj(tab)">
+      <div v-for="tab in tabs" :key="tab.props!.name" :class="classObj(tab)">
         <a :href="`#${tab.props.name}`" @click="selectTab(tab.props.name)">
           {{ tab.props.title }}
         </a>
@@ -13,9 +13,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import get from 'lodash.get'
-export default {
+import { defineComponent } from 'vue'
+import { KTabItem } from '..'
+
+export default defineComponent({
   provide() {
     return {
       tabs: this,
@@ -36,8 +39,9 @@ export default {
   },
 
   computed: {
-    tabs() {
-      return this.$slots.default().filter((item) => Boolean(item.props))
+    // no types for VNode?
+    tabs(): Array<any> {
+      return this.$slots.default!().filter((item) => Boolean(item.props))
     },
     tabNames() {
       return this.tabs.map((tab) => tab.props.name)
@@ -65,20 +69,20 @@ export default {
       return [this.selectedTab, hash, firstTab].find((item) => Boolean(item))
     },
 
-    selectTab(tabName) {
+    selectTab(tabName: string) {
       this.selectedTab = this.tabNames.includes(tabName)
         ? tabName
         : this.tabNames[0]
     },
 
-    classObj(tab) {
+    classObj(tab: typeof KTabItem) {
       return {
         'k-tabs-nav-tab': true,
         'k-tabs-active': this.selectedTab == get(tab, 'props.name'),
       }
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

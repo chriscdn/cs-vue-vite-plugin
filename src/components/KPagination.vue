@@ -15,12 +15,12 @@
         </svg>
       </a>
       <template v-for="page in pageRange" :key="page">
-        <div v-if="page == '|'">...</div>
+        <div v-if="page === '|'">...</div>
 
         <a
           v-else
           class="k-pagination-button k-pagination-button-border"
-          :class="classObj(page)"
+          :class="classObj(page as number)"
           @click="$emit('update:modelValue', page)"
         >
           {{ page }}
@@ -48,9 +48,10 @@
   <!-- <div>{{ pagination }}</div> -->
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import get from 'lodash.get'
-export default {
+export default defineComponent({
   props: {
     modelValue: {
       type: Number,
@@ -67,38 +68,38 @@ export default {
   },
   emits: ['update:modelValue', 'update:pageSize'],
   computed: {
-    pageRange() {
+    pageRange(): Array<number | string> {
       return get(this.pagination, 'pageRange', [])
     },
-    pageSizes() {
+    pageSizes(): Array<number> {
       return get(this.pagination, 'pageSizes', [])
     },
-    pageNumber() {
+    pageNumber(): number {
       return get(this.pagination, 'pageNumber', 0)
     },
     pageSize: {
       get() {
-        return get(this.pagination, 'pageSize', [])
+        return get(this.pagination, 'pageSize', 0)
       },
-      set(value) {
+      set(value: number) {
         this.$emit('update:pageSize', value)
       },
     },
-    hasPrevious() {
+    hasPrevious(): boolean {
       return get(this.pagination, 'hasPrevious', false)
     },
-    hasNext() {
+    hasNext(): boolean {
       return get(this.pagination, 'hasNext', false)
     },
   },
   methods: {
-    classObj(pageNumber) {
+    classObj(pageNumber: number) {
       return {
         'k-pagination-button-selected': pageNumber == this.pageNumber,
       }
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

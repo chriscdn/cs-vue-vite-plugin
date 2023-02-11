@@ -7,12 +7,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Session } from '@kweli/cs-rest'
 import { defineComponent, inject } from 'vue'
 import ancestorLookup from '../utils/ancestor-lookup'
 export default defineComponent({
   setup() {
-    const session = inject('session', {})
+    const session = inject('session', {}) as Session
     return { session }
   },
   props: {
@@ -24,7 +25,7 @@ export default defineComponent({
 
   data() {
     return {
-      breadcrumb: [],
+      breadcrumb: [] as Array<Record<string, any>>,
     }
   },
 

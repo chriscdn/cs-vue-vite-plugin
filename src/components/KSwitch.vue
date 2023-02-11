@@ -4,13 +4,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
 // https://www.w3schools.com/howto/howto_css_switch.asp
 import { convertToUnit } from '../mixins/measurables'
-export default {
+export default defineComponent({
   props: {
     modelValue: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
   },
@@ -29,7 +30,7 @@ export default {
       get() {
         return this.modelValue
       },
-      set(value) {
+      set(value: boolean) {
         this.$emit('update:modelValue', value)
       },
     },
@@ -59,13 +60,7 @@ export default {
       return `translateX(${convertToUnit(this.trans)})`
     },
   },
-
-  methods: {
-    clicked() {
-      this.on = !this.one
-    },
-  },
-}
+})
 </script>
 
 <style lang="postcss">

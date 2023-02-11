@@ -1,6 +1,6 @@
 <template>
   <svg
-    :style="[measurableStyles]"
+    :style="measurableStyles"
     class="k-spinner"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -14,9 +14,10 @@
   </svg>
 </template>
 
-<script>
-import measurables from '../mixins/measurables';
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import measurables from '../mixins/measurables'
+export default defineComponent({
   mixins: [measurables],
   props: {
     color: {
@@ -32,7 +33,7 @@ export default {
       default: '1.25rem',
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

@@ -17,12 +17,13 @@
   </teleport>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { directive } from 'vue3-click-away'
 import measurables from '../mixins/measurables'
 
-export default {
+export default defineComponent({
   directives: {
     ClickAway: directive,
   },
@@ -85,9 +86,9 @@ export default {
 
       if (value) {
         await this.$nextTick()
-        disableBodyScroll(this.$refs.content)
+        disableBodyScroll(this.$refs.content as Element)
       } else {
-        enableBodyScroll(this.$refs.content)
+        enableBodyScroll(this.$refs.content as Element)
       }
     },
   },
@@ -110,7 +111,7 @@ export default {
       this.dialog = !this.dialog
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

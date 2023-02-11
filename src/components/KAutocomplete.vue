@@ -42,12 +42,13 @@
     </div>
   </div>
 </template>
-<script>
+
+<script lang="ts">
 import { directive } from 'vue3-click-away'
-
 import get from 'lodash.get'
-
-export default {
+import { defineComponent, PropType } from 'vue'
+import { convertToUnit } from '../mixins/measurables'
+export default defineComponent({
   directives: {
     ClickAway: directive,
   },
@@ -69,7 +70,7 @@ export default {
       default: 'text',
     },
     returnObject: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     placeholder: {
@@ -85,29 +86,29 @@ export default {
       default: '100%',
     },
     items: {
-      type: Array,
+      type: Array as PropType<Array<string | Record<string, any>>>,
       default: () => [],
     },
     loading: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     combobox: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     filter: {
       type: Function,
-      default: (item) => !!item,
+      default: (item: any) => !!item,
     },
     editable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
   },
   data() {
     return {
-      inputText: '', // this.displayValueFormatter(this.modelValue),
+      inputText: null as string | null, // this.displayValueFormatter(this.modelValue),
       currentFocus: -1,
       focus: false,
       // captureKeyStrokes: true,
@@ -116,20 +117,22 @@ export default {
   computed: {
     style() {
       return {
-        width: isNaN(this.width) ? this.width : `${this.width}px`,
+        width: convertToUnit(this.width),
       }
     },
 
     itemsFiltered() {
-      return this.items.filter((item) => this.filter(item))
+      return this.items.filter((item: string | Record<string, any>) =>
+        this.filter(item),
+      )
     },
 
     placeholderText() {
-      return this.editable ? this.placeholder : null
+      return this.editable ? this.placeholder : undefined
     },
 
     localValue: {
-      set(value) {
+      set(value: any) {
         if (!value) {
           this.$emit('update:modelValue', null)
         } else if (this.returnObject) {
@@ -138,11 +141,11 @@ export default {
           this.$emit('update:modelValue', get(value, this.itemValue, value))
         }
       },
-      get() {
+      get(): any {
         return this.isObject(this.modelValue)
           ? this.modelValue
           : this.items.find(
-              (item) => get(item, this.itemValue, item) == this.modelValue,
+              (item: any) => get(item, this.itemValue, item) == this.modelValue,
             )
       },
     },
@@ -159,15 +162,12 @@ export default {
       this.currentFocus = -1
 
       if (this.localValue) {
-        // this.destroyWatcher()
-
-        // if (!this.combobox) {
-        // this.inputText = get(this.localValue, this.itemText, '')
-        // }
         if (!this.combobox) {
-          this.inputText = this.isObject(this.localValue)
-            ? get(this.localValue, this.itemText, '')
-            : this.localValue
+          this.inputText = String(
+            this.isObject(this.localValue)
+              ? get(this.localValue, this.itemText, '')
+              : this.localValue,
+          )
         }
       }
     },
@@ -201,7 +201,7 @@ export default {
   },
 
   methods: {
-    async select(index) {
+    async select(index: number) {
       // default to first item
 
       if (!this.combobox) {
@@ -217,7 +217,11 @@ export default {
       } else {
         this.localValue = selectedItem
         // this.destroyWatcher()
-        this.inputText = selectedItem[this.itemText]
+        this.inputText = get(
+          selectedItem,
+          this.itemText,
+          selectedItem,
+        ) as string
       }
 
       // Let the reactive system all sync before blurring the field.
@@ -231,21 +235,22 @@ export default {
     },
 
     setBlur() {
-      this.$refs.input.blur()
+      const inputElmenet = this.$refs.input as HTMLInputElement
+      inputElmenet.blur()
       this.focus = false
     },
-    isObject(obj) {
+    isObject(obj: any): boolean {
       return (
         typeof obj == 'object' &&
         obj instanceof Object &&
         !(obj instanceof Array)
       )
     },
-    clearInput(_event) {
+    clearInput() {
       this.localValue = null
     },
 
-    keyup(_event) {
+    keyup() {
       if (this.combobox) {
         this.localValue = this.inputText
       } else {
@@ -253,7 +258,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 <style lang="postcss">
 .k-autocomplete {

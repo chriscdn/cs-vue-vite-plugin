@@ -19,77 +19,85 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import type { Session } from '@kweli/cs-rest'
 import buildUrl from 'build-url'
 import cookies from 'js-cookie'
-import { defineComponent, getCurrentInstance, inject } from 'vue'
+import { defineComponent, getCurrentInstance, inject, PropType } from 'vue'
 import ancestorLookup from '../utils/ancestor-lookup'
 import KNodeAncestor from './KNodeAncestor.vue'
 
+declare global {
+  interface Window {
+    PGDLORCOJEEWEAQEFAUS?: Function
+  }
+}
+
 export default defineComponent({
   setup() {
-    const session = inject('session', {})
-    const config = inject('config', {})
+    const session = inject('session', {}) as Session
+    // TODO
+    const config = inject('config', {}) as any
     return { session, config }
   },
   props: {
     modelValue: {
-      type: Number,
+      type: Number as PropType<number | null>,
       default: null,
     },
     title: {
-      type: String,
+      type: String as PropType<string>,
       default: 'Target Browse',
     },
     objid: {
-      type: Number,
+      type: Number as PropType<number>,
       default: null,
     },
     selectPerm: {
-      type: Number,
+      type: Number as PropType<number>,
       default: 2, // read permissions
     },
     width: {
-      type: Number,
+      type: Number as PropType<number>,
       default: 800,
     },
     height: {
-      type: Number,
+      type: Number as PropType<number>,
       default: 600,
     },
     selectScreen: {
-      type: Array,
+      type: Array as PropType<Array<number>>,
       default: () => [],
     },
     browseButtonLabel: {
-      type: String,
+      type: String as PropType<string>,
       default: 'Browse Content Server...',
     },
     clearable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       defalut: true,
     },
     clearButtonLabel: {
-      type: String,
+      type: String as PropType<string>,
       default: 'clear',
     },
   },
   data() {
     return {
-      breadcrumb: [],
+      breadcrumb: [] as Array<Record<string, any>>,
     }
   },
   computed: {
     dataid: {
-      set(value) {
+      set(value: number) {
         this.$emit('update:modelValue', value)
       },
-      get() {
+      get(): number | null {
         return this.modelValue
       },
     },
     uniqueID() {
-      const uid = getCurrentInstance().uid
+      const uid = getCurrentInstance()!.uid
       return `targetbrowse_${uid}`
     },
     // breadcrumbString() {
@@ -99,7 +107,7 @@ export default defineComponent({
     //     return null
     //   }
     // },
-    globalCallbackFunctionName() {
+    globalCallbackFunctionName(): string {
       return `${this.uniqueID}_DoSelection`
     },
     selectScreenString() {
@@ -116,8 +124,8 @@ export default defineComponent({
         func: 'll',
         objAction: 'TargetBrowse',
         headerLabel: this.title,
-        objid: this.targetBrowseObjID(),
-        selectPerm: this.selectperm,
+        objid: String(this.targetBrowseObjID()),
+        selectPerm: String(this.selectPerm),
         ...this.selectScreenString,
         formname: 'ignored',
         fieldPrefix: this.uniqueID,
@@ -161,26 +169,30 @@ export default defineComponent({
     },
   },
   async mounted() {
-    window[this.globalCallbackFunctionName] = this.callback
+    window['PGDLORCOJEEWEAQEFAUS'] = this.callback
   },
   beforeUnmount() {
-    delete window[this.globalCallbackFunctionName]
+    delete window['PGDLORCOJEEWEAQEFAUS']
   },
   methods: {
     openWindow() {
       window.open(this.url, 'WindowName', this.windowParams)
-      if (this.$refs.input) {
-        this.$refs.input.blur()
+
+      const inputElmenet = this.$refs.input as HTMLInputElement
+
+      if (inputElmenet) {
+        inputElmenet.blur()
       }
     },
-    targetBrowseObjID() {
+    targetBrowseObjID(): number {
       // not computed, since cookies are not reactive
-      return this.objid || parseInt(cookies.get('TargetBrowseObjID')) || 0
+      return this.objid ?? parseInt(cookies.get('TargetBrowseObjID') ?? '0')
     },
     didCloseWindow() {
       console.log('didClose')
     },
-    callback(dataid, breadcrumb) {
+    // callback(dataid: number, breadcrumb: string) {
+    callback(dataid: number) {
       // debugger
       // this.breadcrumb = breadcrumb.split(':')
       this.dataid = dataid

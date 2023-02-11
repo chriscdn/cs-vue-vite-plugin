@@ -4,9 +4,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { convertToUnit } from '../mixins/measurables'
-export default {
+export default defineComponent({
   props: {
     color: {
       type: String,
@@ -51,7 +52,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

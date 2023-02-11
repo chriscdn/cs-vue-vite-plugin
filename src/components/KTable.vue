@@ -6,8 +6,9 @@
   </table>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   props: {
     properties: {
       type: Boolean,
@@ -33,7 +34,7 @@ export default {
       return this.striped && !this.properties
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

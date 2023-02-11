@@ -1,0 +1,128 @@
+import { PropType } from 'vue';
+import { Session } from '@kweli/cs-rest';
+declare const _default: import("vue").DefineComponent<{
+    modelValue: {
+        type: PropType<number | Record<string, any>>;
+        default: null;
+    };
+    users: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    groups: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    width: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: string;
+    };
+    returnObject: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    editable: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+}, {
+    session: Session;
+}, {
+    loading: boolean;
+    readonly: boolean;
+    pleaseWait: boolean;
+    searchText: null;
+    items: Record<number, any>[];
+    select: any;
+}, {
+    USER(): 0;
+    GROUP(): 1;
+    valueLocal: {
+        /**
+         * @param {number} value
+         */
+        set(value: number): void;
+        get(): number | Record<string, any>;
+    };
+    options(): {
+        where_type: number | null;
+    };
+    placeholder(): "" | "Loading..." | "Search for user or group..." | "Search for user..." | "Search for group...";
+}, {
+    querySelections(v: string): Promise<void>;
+    formatChoice(item: Record<string, any>): any;
+    loadInitialValue(): Promise<void>;
+}, import("vue").DefineComponent<{
+    label: {
+        type: StringConstructor;
+        default: null;
+    };
+    successMessages: {
+        type: ArrayConstructor;
+        default: () => never[];
+    };
+    errorMessages: {
+        type: ArrayConstructor;
+        default: () => never[];
+    };
+}, unknown, unknown, {
+    hasSuccess(): boolean;
+    hasError(): boolean;
+    classObj(): {
+        'k-input': boolean;
+        'k-input--success': boolean;
+        'k-input--error': boolean;
+    };
+}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    label: {
+        type: StringConstructor;
+        default: null;
+    };
+    successMessages: {
+        type: ArrayConstructor;
+        default: () => never[];
+    };
+    errorMessages: {
+        type: ArrayConstructor;
+        default: () => never[];
+    };
+}>>, {
+    label: string;
+    successMessages: unknown[];
+    errorMessages: unknown[];
+}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    modelValue: {
+        type: PropType<number | Record<string, any>>;
+        default: null;
+    };
+    users: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    groups: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    width: {
+        type: (NumberConstructor | StringConstructor)[];
+        default: string;
+    };
+    returnObject: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    editable: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+}, {
+    modelValue: number | Record<string, any>;
+    width: string | number;
+    returnObject: boolean;
+    editable: boolean;
+    users: boolean;
+    groups: boolean;
+}>;
+export default _default;

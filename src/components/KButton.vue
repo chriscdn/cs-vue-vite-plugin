@@ -12,8 +12,9 @@ y
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   props: {
     small: {
       type: Boolean,
@@ -43,8 +44,9 @@ export default {
       }
     },
   },
-}
+})
 </script>
+
 <style lang="postcss">
 .k-button {
   @apply px-3 py-1 rounded-full text-sm font-medium border;

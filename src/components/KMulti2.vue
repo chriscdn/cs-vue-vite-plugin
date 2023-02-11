@@ -29,11 +29,13 @@
     <slot name="add" :add="add" v-if="canAdd" />
   </KCard>
 </template>
-<script>
-export default {
+
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+export default defineComponent({
   props: {
     modelValue: {
-      type: Array,
+      type: Array as PropType<Array<any>>,
       required: true,
     },
     maxItems: {
@@ -51,34 +53,34 @@ export default {
       get() {
         return this.modelValue
       },
-      set(value) {
+      set(value: Array<any>) {
         this.$emit('update:modelValue', value)
       },
     },
 
-    count() {
+    count(): number {
       return this.valueLocal?.length ?? 0
     },
 
-    canAdd() {
+    canAdd(): boolean {
       return this.count < this.maxItems && !this.readonly
     },
   },
   methods: {
-    add(item) {
+    add(item: any) {
       if (item) {
         this.valueLocal = [...this.valueLocal, item].filter(
           (item, index, items) => items.indexOf(item) === index,
         )
       }
     },
-    remove(index) {
+    remove(index: number) {
       const myArray = [...this.valueLocal]
       myArray.splice(index, 1)
       this.valueLocal = myArray
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

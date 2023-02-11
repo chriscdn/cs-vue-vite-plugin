@@ -1,32 +1,31 @@
 <template>
-  <div>
-    <KFormFieldWrapper
-      :label="label"
-      :success-messages="successMessages"
-      :error-messages="errorMessages"
-    >
-      <div class="k-select">
-        <select v-model="localValue" :class="classObj">
-          <option
-            v-for="item in items"
-            :key="getItemValue(item)"
-            :value="getItemValue(item)"
-          >
-            {{ getItemText(item) }}
-          </option>
-        </select>
-        <transition name="fade">
-          <KSpinner v-if="loading" class="k-select--spinner" />
-        </transition>
-      </div>
-    </KFormFieldWrapper>
-  </div>
+  <KFormFieldWrapper
+    :label="label"
+    :success-messages="successMessages"
+    :error-messages="errorMessages"
+  >
+    <div class="k-select">
+      <select v-model="localValue" :class="classObj">
+        <option
+          v-for="item in items"
+          :key="getItemValue(item)"
+          :value="getItemValue(item)"
+        >
+          {{ getItemText(item) }}
+        </option>
+      </select>
+      <transition name="fade">
+        <KSpinner v-if="loading" class="k-select--spinner" />
+      </transition>
+    </div>
+  </KFormFieldWrapper>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
 import get from 'lodash.get'
 import { mixin } from './KFormFieldWrapper.vue'
-export default {
+export default defineComponent({
   mixins: [mixin],
   props: {
     modelValue: {
@@ -34,23 +33,23 @@ export default {
       default: null,
     },
     multiple: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     items: {
-      type: Array,
+      type: Array as PropType<string | Record<string, any>>,
       default: () => [],
     },
     loading: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     itemValue: {
-      type: String,
+      type: String as PropType<string>,
       default: 'value',
     },
     itemText: {
-      type: String,
+      type: String as PropType<string>,
       default: 'text',
     },
   },
@@ -60,31 +59,31 @@ export default {
       get() {
         return this.multiple ? this.arrify(this.modelValue) : this.modelValue
       },
-      set(value) {
+      set(value: any) {
         this.$emit('update:modelValue', value)
       },
     },
   },
   methods: {
-    isObject(obj) {
+    isObject(obj: any) {
       return (
         typeof obj == 'object' &&
         obj instanceof Object &&
         !(obj instanceof Array)
       )
     },
-    getItemText(item) {
+    getItemText(item: string) {
       return this.isObject(item) ? get(item, this.itemText) : item
     },
-    getItemValue(item) {
+    getItemValue(item: any) {
       return this.isObject(item) ? get(item, this.itemValue) : item
     },
 
-    arrify(item) {
+    arrify(item: any): Array<any> {
       return Array.isArray(item) ? item : [item]
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

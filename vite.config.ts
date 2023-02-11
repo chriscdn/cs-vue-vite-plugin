@@ -1,81 +1,33 @@
-import { resolve } from 'path'
-import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import path from 'path'
 import vue from '@vitejs/plugin-vue'
+import pkg from './package.json'
 
-import pkg from './package.json' assert { type: 'json' }
-//
-// https://vitejs.dev/guide/build.html#library-mode
-//
+// https://jivancic.com/posts/build-a-component-library.html
 export default defineConfig({
-  plugins: [
-    vue(),
-    dts({
-      // insertTypesEntry: true,
-    }),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@/': new URL('./src/', import.meta.url).pathname,
     },
   },
-
-  // build: {
-  //   minify: false,
-
-  //   // https://vitejs.dev/guide/build.html#library-mode
-  //   lib: {
-  //     entry: path.resolve(__dirname, 'src/index.js'),
-  //     name: 'CSVueVitePlugin',
-  //     fileName: (format) => `bundle.${format}.js`,
-  //   },
-  //   rollupOptions: {
-  //     // make sure to externalize deps that shouldn't be bundled into your library
-  //     // external: ['vue'],
-  //     external: [...Object.keys(pkg.dependencies || {})],
-  //     output: {
-  //       // Provide global variables to use in the UMD build for externalized deps
-  //       globals: {
-  //         vue: 'Vue',
-  //       },
-  //     },
-  //   },
-  // },
-
   build: {
+    target: 'esnext',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      // name: 'MyLib',
       formats: ['es'],
-      fileName: 'index',
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      fileName: (format) => `bundle.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
-      // external: ['vue'],
       external: [...Object.keys(pkg.dependencies || {})],
       output: {
-        // Provide global variables to use in the UMD build for externalized deps
+        // Provide global variables to use in the UMD build
+        // for externalized deps
         globals: {
           vue: 'Vue',
         },
       },
     },
-  },
-  define: {
-    'process.env': {},
-  },
-  server: {
-    proxy: {
-      '/Livelink100/': {
-        target: 'http://localhost/',
-      },
-      '/img/': {
-        target: 'http://localhost/',
-      },
-    },
-  },
-  optimizeDeps: {
-    // include: ['util'],
   },
 })

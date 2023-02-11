@@ -13,9 +13,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { format } from 'date-fns'
-export default {
+export default defineComponent({
   props: {
     modelValue: {
       type: [String, Date],
@@ -36,22 +37,22 @@ export default {
       return this.time ? 'datetime-local' : 'date'
     },
     localModelValue: {
-      set(value) {
+      set(value: string | Date | null) {
         this.$emit('update:modelValue', this.formatForDatePicker(value))
       },
-      get() {
+      get(): string | Date | null {
         return this.formatForDatePicker(this.modelValue)
       },
     },
   },
   methods: {
-    parse(value) {
+    parse(value: string | Date | null) {
       return value ? new Date(value) : null
     },
     setToNow() {
       this.localModelValue = new Date()
     },
-    formatForDatePicker(value) {
+    formatForDatePicker(value: string | Date | null): string | null {
       const d = this.parse(value)
 
       if (d) {
@@ -65,7 +66,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style lang="postcss">

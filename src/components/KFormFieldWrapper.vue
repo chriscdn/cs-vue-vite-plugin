@@ -21,8 +21,9 @@
   </div>
 </template>
 
-<script>
-const mixin = {
+<script lang="ts">
+import { defineComponent } from 'vue'
+const mixin = defineComponent({
   props: {
     label: {
       type: String,
@@ -52,7 +53,7 @@ const mixin = {
       }
     },
   },
-}
+})
 
 export default {
   mixins: [mixin],

@@ -2,19 +2,23 @@
   <img v-if="url" :src="url" :style="[measurableStyles]" />
 </template>
 
-<script>
+<script lang="ts">
 import get from 'lodash.get'
-import { defineComponent, inject } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import measurable from '../mixins/measurables'
+import { configKey, sessionKey, injectStrict } from '@/injection'
+import type { UserRecType } from './KUserLink.vue'
+
 export default defineComponent({
   setup() {
-    const config = inject('config')
-    return { config }
+    const config = injectStrict(configKey)
+    const session = injectStrict(sessionKey)
+    return { config, session }
   },
   mixins: [measurable],
   props: {
     userRec: {
-      type: Object,
+      type: Object as PropType<UserRecType>,
       default: null,
     },
     type: {
@@ -36,10 +40,10 @@ export default defineComponent({
     },
 
     url() {
-      if (this.userType == 0) {
+      if (this.userType === this.session.members.USER) {
         // user
         return `${this.config.img}guy.gif`
-      } else if (this.userType == 1) {
+      } else if (this.userType === this.session.members.GROUP) {
         // group
         return `${this.config.img}2-guys.gif`
       } else if (this.userType > 0) {
