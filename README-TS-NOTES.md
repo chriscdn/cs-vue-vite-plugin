@@ -31,6 +31,10 @@ https://www.npmjs.com/package/unplugin-vue-components
 
 I don't mind explicit imports since it's clear what's happening.
 
+Also, here:
+
+https://github.com/IsraelDCastro/my-library-vue-ts/issues/6
+
 ## Issue 2 - Context in debounce
 
 TypeScript doesn't like my `debounce` usage. The `this` context is broken. Search project for debouce to see where this is applicable.

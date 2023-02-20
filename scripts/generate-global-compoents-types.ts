@@ -1,4 +1,9 @@
 /**
+ * This deno scrip generates a `global-components.d.ts` file, which can be used
+ * in dependent projects for typing global components.
+ *
+ * Usage:
+ *
  * deno run --allow-read --allow-write ./scripts/generate-global-compoents-types.ts
  */
 

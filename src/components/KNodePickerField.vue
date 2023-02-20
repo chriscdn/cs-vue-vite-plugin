@@ -20,25 +20,27 @@
 </template>
 
 <script lang="ts">
-import type { Session } from '@kweli/cs-rest'
+import { configKey, injectStrict, sessionKey } from '@/injection'
 import buildUrl from 'build-url'
 import cookies from 'js-cookie'
-import { defineComponent, getCurrentInstance, inject, PropType } from 'vue'
 import ancestorLookup from '../utils/ancestor-lookup'
 import KNodeAncestor from './KNodeAncestor.vue'
+import { defineComponent, PropType } from 'vue'
 
-declare global {
-  interface Window {
-    PGDLORCOJEEWEAQEFAUS?: Function
-  }
-}
+// declare global {
+//   interface Window {
+//     PGDLORCOJEEWEAQEFAUS?: Function
+//   }
+// }
 
 export default defineComponent({
+  components: { KNodeAncestor },
+
   setup() {
-    const session = inject('session', {}) as Session
-    // TODO
-    const config = inject('config', {}) as any
-    return { session, config }
+    return {
+      session: injectStrict(sessionKey),
+      config: injectStrict(configKey),
+    }
   },
   props: {
     modelValue: {
@@ -96,9 +98,10 @@ export default defineComponent({
         return this.modelValue
       },
     },
-    uniqueID() {
-      const uid = getCurrentInstance()!.uid
-      return `targetbrowse_${uid}`
+
+    uniqueid() {
+      const id = Math.random().toString(36).substring(2, 15)
+      return `targetbrowse_${id}`
     },
     // breadcrumbString() {
     //   if (this.breadcrumb) {
@@ -108,7 +111,7 @@ export default defineComponent({
     //   }
     // },
     globalCallbackFunctionName(): string {
-      return `${this.uniqueID}_DoSelection`
+      return `${this.uniqueid}_DoSelection`
     },
     selectScreenString() {
       if (this.selectScreen.length) {
@@ -127,8 +130,8 @@ export default defineComponent({
         objid: String(this.targetBrowseObjID()),
         selectPerm: String(this.selectPerm),
         ...this.selectScreenString,
-        formname: 'ignored',
-        fieldPrefix: this.uniqueID,
+        formname: 'theFormName',
+        fieldPrefix: this.uniqueid,
       }
     },
     url() {
@@ -169,11 +172,20 @@ export default defineComponent({
     },
   },
   async mounted() {
-    window['PGDLORCOJEEWEAQEFAUS'] = this.callback
+    // @ts-ignore
+    window[this.globalCallbackFunctionName] = this.callback
   },
   beforeUnmount() {
-    delete window['PGDLORCOJEEWEAQEFAUS']
+    // @ts-ignore
+    delete window[this.globalCallbackFunctionName]
   },
+
+  // async mounted() {
+  //   window['PGDLORCOJEEWEAQEFAUS'] = this.callback
+  // },
+  // beforeUnmount() {
+  //   delete window['PGDLORCOJEEWEAQEFAUS']
+  // },
   methods: {
     openWindow() {
       window.open(this.url, 'WindowName', this.windowParams)
@@ -202,7 +214,6 @@ export default defineComponent({
       this.dataid = null
     },
   },
-  components: { KNodeAncestor },
 })
 </script>
 

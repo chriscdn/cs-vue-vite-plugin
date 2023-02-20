@@ -10,7 +10,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, unknown, unknown, {
     value: {
-        get(): string | null;
+        get(): string | undefined;
         set(value: string | null): void;
     };
 }, {}, import("vue").DefineComponent<{

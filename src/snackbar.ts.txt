@@ -1,11 +1,12 @@
 /**
- * Any project using this package should place `KApp` at the root of their project.
- * This includes the `KSnackbar` and `KConfirm` components, which can be used to
- * display snackbars and confirm dialogs to the user.
+ * Any project using this package should place `KApp` at the root of the
+ * project. This includes the `KSnackbar` and `KConfirm` components, which can
+ * be used to display snackbars and confirm dialogs to the user.
  *
- * This used to work with provide/inject to send messages to the KSnackbar compoment.
- * This gets a bit hairy with TypeScript.  To simplify this, we use an event emitter
- * to send messages.  This gets exported in the entry file to make usage simply:
+ * This used to work with provide/inject to send messages to the KSnackbar
+ * compoment. This gets a bit hairy with TypeScript. To simplify this, we use
+ * an event emitter to send messages. This gets exported in the entry file to
+ * make usage simply:
  *
  * import { snackbar } from '@kweli/cs-vue-vite-plugin'
  *
@@ -15,8 +16,8 @@
  *
  * Fully typed, which is nice.
  *
- * TODO: Bring confirm into this.  This file could probably be renamed to something
- * more generic.
+ * TODO: Bring confirm into this.  This file could probably be renamed to
+ * something more generic.
  */
 import mitt, { Emitter } from 'mitt'
 

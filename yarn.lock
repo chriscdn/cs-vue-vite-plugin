@@ -7,10 +7,9 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.20.15.tgz#eec9f36d8eaf0948bb88c87a46784b5ee9fd0c89"
   integrity sha512-DI4a1oZuf8wC+oAJA9RW6ga3Zbe8RZFt7kD9i4qAspz3I/yHet1VvC3DiSy/fsUvv5pvJuNPh0LPOdCcqinDPg==
 
-"@chriscdn/promise-semaphore@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@chriscdn/promise-semaphore/-/promise-semaphore-1.0.9.tgz#bdd1f4922767bc965a5018b76dc375a8c0b2f7a9"
-  integrity sha512-eiR69JvgO4EGHbH8YOKIWioh6icP25boCKvDZeRZfWav6KFRbsJLVU/pHBrV4fne/eLXapKlijp9WXX1skp56A==
+"@chriscdn/promise-semaphore@https://github.com/chriscdn/promise-semaphore":
+  version "2.0.0"
+  resolved "https://github.com/chriscdn/promise-semaphore#0593ed475519239f25f81d3890685e9f4438373c"
 
 "@esbuild/android-arm64@0.16.17":
   version "0.16.17"
@@ -1636,11 +1635,6 @@ minimist@^1.2.6:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
-
-mitt@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/mitt/-/mitt-3.0.0.tgz#69ef9bd5c80ff6f57473e8d89326d01c414be0bd"
-  integrity sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==
 
 ms@2.1.2:
   version "2.1.2"

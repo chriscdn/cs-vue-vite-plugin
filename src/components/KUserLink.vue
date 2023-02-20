@@ -30,13 +30,12 @@ export type UserRecType = {
 
 export default defineComponent({
   setup() {
-    const session = injectStrict(sessionKey)
-    return { session }
+    return { session: injectStrict(sessionKey) }
   },
 
   props: {
     user: {
-      type: [Number, Object] as PropType<number | Record<string, any>>,
+      type: [Number, Object] as PropType<number | Record<string, any> | null>,
       default: null,
     },
     //  this is deprecated

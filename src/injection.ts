@@ -16,9 +16,9 @@
  *
  * Motivated by this blog post: https://logaretm.com/blog/type-safe-provide-inject/
  */
-import { inject, InjectionKey } from 'vue'
+import { inject, type InjectionKey } from 'vue'
 import type { Session } from '@kweli/cs-rest'
-import { type SnackbarInterface } from './snackbar'
+// import { type SnackbarInterface } from './snackbar'
 
 export interface ConfigurationType {
   img: string
@@ -35,8 +35,52 @@ function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
   return resolved
 }
 
+type ConfirmDialogParameters = {
+  noLabel?: string
+  yesLabel?: string
+  title?: string
+  message?: string
+}
+
+interface ConfirmDialog {
+  confirm({
+    noLabel,
+    yesLabel,
+    title,
+    message,
+  }: ConfirmDialogParameters): Promise<boolean>
+
+  alert({ yesLabel, title, message }: ConfirmDialogParameters): Promise<boolean>
+}
+
+export type SnackbarParameters = {
+  title?: string
+  message?: string
+  timeout?: number
+  actionLabel?: string
+  action?(cb: Function): void
+}
+
+type Snackbar = {
+  success({
+    title,
+    message,
+    timeout,
+    actionLabel,
+    action,
+  }: SnackbarParameters): void
+  error({
+    title,
+    message,
+    timeout,
+    actionLabel,
+    action,
+  }: SnackbarParameters): void
+}
+
 const sessionKey: InjectionKey<Session> = Symbol('session')
 const configKey: InjectionKey<ConfigurationType> = Symbol('config')
-const snackbarKey: InjectionKey<SnackbarInterface> = Symbol('snackbar')
+const snackbarKey: InjectionKey<Snackbar> = Symbol('snackbar')
+const confirmDialogKey: InjectionKey<ConfirmDialog> = Symbol('confirmDialogKey')
 
-export { injectStrict, sessionKey, configKey, snackbarKey }
+export { injectStrict, sessionKey, configKey, snackbarKey, confirmDialogKey }

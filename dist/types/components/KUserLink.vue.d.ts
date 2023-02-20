@@ -13,7 +13,7 @@ export type UserRecType = {
 };
 declare const _default: import("vue").DefineComponent<{
     user: {
-        type: PropType<number | Record<string, any>>;
+        type: PropType<number | Record<string, any> | null>;
         default: null;
     };
     userRec: {
@@ -42,7 +42,7 @@ declare const _default: import("vue").DefineComponent<{
     click(): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     user: {
-        type: PropType<number | Record<string, any>>;
+        type: PropType<number | Record<string, any> | null>;
         default: null;
     };
     userRec: {
@@ -59,7 +59,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     gif: boolean;
-    user: number | Record<string, any>;
+    user: number | Record<string, any> | null;
     userRec: Record<string, any>;
     userid: number;
 }>;

@@ -1,18 +1,27 @@
 import Semaphore from '@chriscdn/promise-semaphore'
+import { Session } from '@kweli/cs-rest'
 import get from 'lodash.get'
 
 const semaphore = new Semaphore()
 
+export type UserSimple = {
+  value: number
+  type: number
+  text: string
+}
+
 class UserLookup {
+  users: Record<string, any>
+
   constructor() {
     this.users = {}
   }
 
-  registerUsers(items) {
+  registerUsers(items: Array<UserSimple>) {
     items.forEach((user) => (this.users[user.value] = user))
   }
 
-  fullName(userRec) {
+  fullName(userRec: Record<string, any>) {
     const firstName = userRec.first_name
     const lastName = userRec.last_name
     const username = userRec.name
@@ -24,7 +33,7 @@ class UserLookup {
     }
   }
 
-  async lookup(session, userId) {
+  async lookup(session: Session, userId: number) {
     try {
       await semaphore.acquire(userId)
 

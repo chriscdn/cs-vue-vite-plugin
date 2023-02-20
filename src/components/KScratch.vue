@@ -6,13 +6,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { success } from '@/snackbar'
 
 export default defineComponent({
   inject: ['ksnackbar'],
   methods: {
     click() {
-      success({ message: 'hello' })
+      // success({ message: 'hello' })
     },
   },
 })

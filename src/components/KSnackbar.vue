@@ -27,14 +27,21 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { emitter, type SnackbarInterface } from '../snackbar'
-
-interface SnackbarQueueInterface extends SnackbarInterface {
+// import { emitter, type SnackbarParameters } from '../snackbar'
+import { snackbarKey, SnackbarParameters } from '../injection'
+interface SnackbarQueueInterface extends SnackbarParameters {
   index: number
   type: 'success' | 'error'
 }
 
 export default defineComponent({
+  provide() {
+    return {
+      // @ts-ignore - not sure why this complains
+      [snackbarKey]: this,
+    }
+  },
+
   data() {
     return {
       index: 0,
@@ -46,16 +53,16 @@ export default defineComponent({
       return Object.values(this.nitems).sort((a, b) => b.index - a.index)
     },
   },
-  mounted() {
-    // debugger
-    emitter.on('success', this.success)
-    emitter.on('error', this.error)
-  },
+  // mounted() {
+  //   // debugger
+  //   emitter.on('success', this.success)
+  //   emitter.on('error', this.error)
+  // },
 
-  unmounted() {
-    emitter.off('success', this.success)
-    emitter.off('error', this.error)
-  },
+  // unmounted() {
+  //   emitter.off('success', this.success)
+  //   emitter.off('error', this.error)
+  // },
 
   methods: {
     classObj(item: SnackbarQueueInterface) {
@@ -78,11 +85,11 @@ export default defineComponent({
       return this.index
     },
 
-    success(params: SnackbarInterface) {
+    success(params: SnackbarParameters) {
       // debugger
       this.queue('success', params)
     },
-    error(params: SnackbarInterface) {
+    error(params: SnackbarParameters) {
       this.queue('error', params)
     },
 
@@ -94,7 +101,7 @@ export default defineComponent({
         timeout = 6000,
         actionLabel = 'close',
         action,
-      }: SnackbarInterface,
+      }: SnackbarParameters,
     ) {
       const index = this.nextIndex()
       // const timeout = snackbar.timeout ?? 6000

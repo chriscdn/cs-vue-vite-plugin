@@ -32,11 +32,11 @@ export default defineComponent({
   emits: ['update:modelValue'],
   computed: {
     value: {
-      get(): string | null {
-        return this.modelValue
+      get(): string | undefined {
+        return this.modelValue || undefined
       },
       set(value: string | null) {
-        this.$emit('update:modelValue', value)
+        this.$emit('update:modelValue', value || null)
       },
     },
   },

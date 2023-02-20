@@ -14,7 +14,7 @@
         <KButton v-if="noLabel" small @click="dismiss(false)">
           {{ noLabel }}
         </KButton>
-        <KButton v-if="yesLabel" small class="ml-1" @click="dismiss(true)">
+        <KButton v-if="yesLabel" small @click="dismiss(true)">
           {{ yesLabel }}
         </KButton>
       </KCardActions>
@@ -24,11 +24,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { confirmDialogKey } from '../injection'
+
 export default defineComponent({
   provide() {
     return {
-      kconfirm: this,
-      resolve: null,
+      // @ts-ignore - not sure why this complains
+      [confirmDialogKey]: this,
     }
   },
   data() {

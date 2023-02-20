@@ -8,14 +8,14 @@
 </template>
 
 <script lang="ts">
-import { Session } from '@kweli/cs-rest'
-import { defineComponent, inject } from 'vue'
+import { injectStrict, sessionKey } from '@/injection'
+import { defineComponent } from 'vue'
 import ancestorLookup from '../utils/ancestor-lookup'
 export default defineComponent({
   setup() {
-    const session = inject('session', {}) as Session
-    return { session }
+    return { session: injectStrict(sessionKey) }
   },
+
   props: {
     dataid: {
       type: Number,
@@ -29,7 +29,6 @@ export default defineComponent({
     }
   },
 
-  //   computed: {},
   watch: {
     dataid: {
       async handler(value) {

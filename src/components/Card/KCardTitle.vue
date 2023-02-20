@@ -11,6 +11,6 @@ export default defineComponent({})
 
 <style lang="postcss">
 .k-card-title {
-  @apply flex flex-grow-0 flex-wrap p-3 text-xl;
+  @apply flex flex-grow-0 flex-wrap p-3 text-lg;
 }
 </style>

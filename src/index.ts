@@ -3,8 +3,8 @@ import './styles.css'
 import type { App } from 'vue'
 import { sessionKey, configKey } from '@/injection'
 import type { ConfigurationType } from '@/injection'
-import { success, error } from './snackbar'
-const snackbar = { success, error }
+// import { success, error } from './snackbar'
+// const snackbar = { success, error }
 
 // export { globz }
 /**
@@ -45,5 +45,6 @@ export default {
   },
 }
 
-export { snackbar }
+// export { snackbar }
+
 export * from './injection'

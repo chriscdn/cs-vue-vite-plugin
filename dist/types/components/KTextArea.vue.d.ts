@@ -1,16 +1,17 @@
+import { type PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: StringConstructor;
+        type: PropType<string | null>;
         default: null;
     };
     rows: {
-        type: NumberConstructor;
+        type: PropType<number>;
         default: number;
     };
 }, unknown, unknown, {
     valueLocal: {
-        set(value: string): void;
-        get(): string;
+        get(): string | undefined;
+        set(value: string | null): void;
     };
 }, {
     tabber(event: Event): void;
@@ -54,17 +55,17 @@ declare const _default: import("vue").DefineComponent<{
     errorMessages: unknown[];
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: StringConstructor;
+        type: PropType<string | null>;
         default: null;
     };
     rows: {
-        type: NumberConstructor;
+        type: PropType<number>;
         default: number;
     };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: string;
+    modelValue: string | null;
     rows: number;
 }>;
 export default _default;

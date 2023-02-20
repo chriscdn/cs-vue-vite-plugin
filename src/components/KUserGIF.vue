@@ -11,9 +11,10 @@ import type { UserRecType } from './KUserLink.vue'
 
 export default defineComponent({
   setup() {
-    const config = injectStrict(configKey)
-    const session = injectStrict(sessionKey)
-    return { config, session }
+    return {
+      config: injectStrict(configKey),
+      session: injectStrict(sessionKey),
+    }
   },
   mixins: [measurable],
   props: {
@@ -40,6 +41,11 @@ export default defineComponent({
     },
 
     url() {
+      // console.log(this.session.members.USER)
+
+      // const UUUU = this.session.members
+      // console.log(UUUU)
+
       if (this.userType === this.session.members.USER) {
         // user
         return `${this.config.img}guy.gif`

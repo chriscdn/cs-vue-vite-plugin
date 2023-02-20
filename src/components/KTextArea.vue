@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type PropType } from 'vue'
 import { mixin } from './KFormFieldWrapper.vue'
 
 export default defineComponent({
@@ -25,48 +25,25 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     modelValue: {
-      type: String,
+      type: String as PropType<string | null>,
       default: null,
     },
     rows: {
-      type: Number,
+      type: Number as PropType<number>,
       default: 5,
     },
   },
   emits: ['update:modelValue'],
 
   computed: {
-    // outerStyle() {
-    //   return {
-    //     width: this.width,
-    //     height: this.height,
-    //   }
-    // },
-    // lineNumberItemStyle() {
-    //   return {
-    //     // height: this.lineHeight,
-    //     lineHeight: this.lineHeight,
-    //     fontSize: '1em',
-    //   }
-    // },
-    // textareaStyle() {
-    //   return {
-    //     lineHeight: this.lineHeight,
-    //     fontSize: this.fontSize,
-    //   }
-    // },
-    // lineCount() {
-    //   return (this.valueLocal || '').split(/\r\n|\r|\n/).length
-    // },
-    // effectiveLineCount() {
-    //   return Math.max(this.lineCount, this.minLineNumbers)
-    // },
     valueLocal: {
-      set(value: string) {
-        this.$emit('update:modelValue', value)
+      // The <textarea> element expects a string or undefined.
+      get(): string | undefined {
+        return this.modelValue || undefined
       },
-      get(): string {
-        return this.modelValue
+      // We emit a string or null.
+      set(value: string | null) {
+        this.$emit('update:modelValue', value || null)
       },
     },
   },
@@ -77,7 +54,7 @@ export default defineComponent({
       const text = this.valueLocal
       const originalSelectionStart = target.selectionStart
 
-      if (originalSelectionStart) {
+      if (text && originalSelectionStart) {
         const textStart = text.slice(0, originalSelectionStart)
         const textEnd = text.slice(originalSelectionStart)
 

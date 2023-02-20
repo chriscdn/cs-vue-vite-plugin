@@ -1,8 +1,8 @@
 import { PropType } from 'vue';
-import { Session } from '@kweli/cs-rest';
+import { type UserSimple } from '../utils/user-lookup';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: PropType<number | Record<string, any>>;
+        type: PropType<number | null>;
         default: null;
     };
     users: {
@@ -26,23 +26,23 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
 }, {
-    session: Session;
+    session: import("@kweli/cs-rest").Session;
 }, {
     loading: boolean;
     readonly: boolean;
     pleaseWait: boolean;
     searchText: null;
-    items: Record<number, any>[];
+    items: UserSimple[];
     select: any;
 }, {
-    USER(): 0;
-    GROUP(): 1;
+    USER(): number;
+    GROUP(): number;
     valueLocal: {
         /**
          * @param {number} value
          */
         set(value: number): void;
-        get(): number | Record<string, any>;
+        get(): number | null;
     };
     options(): {
         where_type: number | null;
@@ -50,7 +50,6 @@ declare const _default: import("vue").DefineComponent<{
     placeholder(): "" | "Loading..." | "Search for user or group..." | "Search for user..." | "Search for group...";
 }, {
     querySelections(v: string): Promise<void>;
-    formatChoice(item: Record<string, any>): any;
     loadInitialValue(): Promise<void>;
 }, import("vue").DefineComponent<{
     label: {
@@ -92,7 +91,7 @@ declare const _default: import("vue").DefineComponent<{
     errorMessages: unknown[];
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: PropType<number | Record<string, any>>;
+        type: PropType<number | null>;
         default: null;
     };
     users: {
@@ -118,7 +117,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: number | Record<string, any>;
+    modelValue: number | null;
     width: string | number;
     returnObject: boolean;
     editable: boolean;

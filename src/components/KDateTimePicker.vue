@@ -14,12 +14,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { format } from 'date-fns'
 export default defineComponent({
   props: {
     modelValue: {
-      type: [String, Date],
+      type: [String, Date] as PropType<Date | string | null>,
       default: null,
     },
     time: {

@@ -1,10 +1,4 @@
-import type { Session } from '@kweli/cs-rest';
 import { PropType } from 'vue';
-declare global {
-    interface Window {
-        PGDLORCOJEEWEAQEFAUS?: Function;
-    }
-}
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<number | null>;
@@ -47,8 +41,8 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }, {
-    session: Session;
-    config: any;
+    session: import("@kweli/cs-rest").Session;
+    config: import("@/injection").ConfigurationType;
 }, {
     breadcrumb: Record<string, any>[];
 }, {
@@ -56,7 +50,7 @@ declare const _default: import("vue").DefineComponent<{
         set(value: number): void;
         get(): number | null;
     };
-    uniqueID(): string;
+    uniqueid(): string;
     globalCallbackFunctionName(): string;
     selectScreenString(): {
         selectScreen: string;

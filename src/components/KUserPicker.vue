@@ -17,14 +17,12 @@
       :return-object="returnObject"
       :combobox="false"
     >
-      <template #prepend="{ item }">
-        <KUserGIF :user-rec="item" />
+      <template #prepend="{ item }: { item: UserSimple }">
+        <KUserGIF :type="item?.type" />
       </template>
 
-      <template #item="{ item }">
-        <KUserGIF :type="item.type" />
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <span v-html="formatChoice(item)" />
+      <template #item="{ item }: { item: UserSimple }">
+        <KUserGIF :type="item.type" /> {{ item.text }}
       </template>
     </KAutocomplete>
     <KUserLink v-else :user="modelValue" gif />
@@ -33,25 +31,24 @@
 
 <script lang="ts">
 // import debounce from 'lodash.debounce'
+
 import get from 'lodash.get'
-import { defineComponent, inject, PropType } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { mixin } from './KFormFieldWrapper.vue'
-
 import userLookup from '../utils/user-lookup'
-import { Session } from '@kweli/cs-rest'
-
-type asdfa = Array<Record<string, any>>
+import { type UserSimple } from '../utils/user-lookup'
+import { injectStrict, sessionKey } from '@/injection'
 
 export default defineComponent({
   mixins: [mixin],
   setup() {
-    const session = inject('session', {}) as Session
-    return { session }
+    return { session: injectStrict(sessionKey) }
   },
 
   props: {
     modelValue: {
-      type: [Number, Object] as PropType<number | Record<string, any>>,
+      // type: [Number, Object] as PropType<number | Record<string, any> | null>,
+      type: Number as PropType<number | null>,
       default: null,
     },
     users: {
@@ -88,7 +85,7 @@ export default defineComponent({
       readonly: false as boolean,
       pleaseWait: false as boolean,
       searchText: null,
-      items: [] as Array<Record<number, any>>,
+      items: [] as Array<UserSimple>,
       select: null as any,
     }
   },
@@ -173,7 +170,7 @@ export default defineComponent({
           text: get(item, 'name_formatted'),
           value: get(item, 'id'),
           type: get(item, 'type'),
-        }))
+        })) as Array<UserSimple>
 
         userLookup.registerUsers(this.items)
 
@@ -195,9 +192,9 @@ export default defineComponent({
     },
     // }, 500),
 
-    formatChoice(item: Record<string, any>) {
-      return get(item, 'text', '')
-    },
+    // formatChoice(item: Record<string, any>) {
+    //   return get(item, 'text', '')
+    // },
 
     async loadInitialValue() {
       const initialValue = this.modelValue

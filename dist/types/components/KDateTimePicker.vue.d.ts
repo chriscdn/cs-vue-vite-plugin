@@ -1,6 +1,7 @@
+import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: (StringConstructor | DateConstructor)[];
+        type: PropType<string | Date | null>;
         default: null;
     };
     time: {
@@ -23,7 +24,7 @@ declare const _default: import("vue").DefineComponent<{
     formatForDatePicker(value: string | Date | null): string | null;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (StringConstructor | DateConstructor)[];
+        type: PropType<string | Date | null>;
         default: null;
     };
     time: {
@@ -37,7 +38,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: string | Date;
+    modelValue: string | Date | null;
     time: boolean;
     editable: boolean;
 }>;

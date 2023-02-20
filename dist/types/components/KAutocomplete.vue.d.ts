@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: (NumberConstructor | ObjectConstructor | StringConstructor)[];
+        type: PropType<string | number | Record<string, any> | null>;
         default: null;
     };
     itemValue: {
@@ -68,7 +68,7 @@ declare const _default: import("vue").DefineComponent<{
     keyup(): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (NumberConstructor | ObjectConstructor | StringConstructor)[];
+        type: PropType<string | number | Record<string, any> | null>;
         default: null;
     };
     itemValue: {
@@ -113,7 +113,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     filter: Function;
-    modelValue: string | number | Record<string, any>;
+    modelValue: string | number | Record<string, any> | null;
     width: string | number;
     items: (string | Record<string, any>)[];
     itemValue: string;

@@ -58,7 +58,9 @@ export default defineComponent({
   // },
   props: {
     modelValue: {
-      type: [String, Object, Number],
+      type: [String, Object, Number] as PropType<
+        string | Record<string, any> | number | null
+      >,
       default: null,
     },
     itemValue: {
