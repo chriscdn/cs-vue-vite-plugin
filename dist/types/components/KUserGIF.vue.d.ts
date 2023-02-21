@@ -10,69 +10,69 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
 }, {
-    config: import("@/injection").ConfigurationType;
+    config: import("@/injection").Configuration;
     session: import("@kweli/cs-rest").Session;
 }, unknown, {
     userType(): number;
     url(): string | null;
 }, {}, import("vue").DefineComponent<{
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
 }, unknown, unknown, {
     measurableStyles(): import("vue").CSSProperties;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
 }>>, {
@@ -92,11 +92,11 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
 }>>, {

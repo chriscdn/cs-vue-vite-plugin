@@ -42,7 +42,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, {
     session: import("@kweli/cs-rest").Session;
-    config: import("@/injection").ConfigurationType;
+    config: import("@/injection").Configuration;
 }, {
     breadcrumb: Record<string, any>[];
 }, {
@@ -116,10 +116,10 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    modelValue: number | null;
+    title: string;
     height: number;
     width: number;
-    title: string;
+    modelValue: number | null;
     objid: number;
     selectPerm: number;
     selectScreen: number[];

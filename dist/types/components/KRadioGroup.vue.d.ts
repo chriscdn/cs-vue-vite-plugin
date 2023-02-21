@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: (NumberConstructor | ObjectConstructor | StringConstructor)[];
+        type: (StringConstructor | ObjectConstructor | NumberConstructor)[];
         default: null;
     };
     items: {
@@ -77,7 +77,7 @@ declare const _default: import("vue").DefineComponent<{
     errorMessages: unknown[];
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (NumberConstructor | ObjectConstructor | StringConstructor)[];
+        type: (StringConstructor | ObjectConstructor | NumberConstructor)[];
         default: null;
     };
     items: {
@@ -103,8 +103,8 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: string | number | Record<string, any>;
     items: any[];
+    modelValue: string | number | Record<string, any>;
     itemValue: string;
     itemText: string;
     loading: boolean;

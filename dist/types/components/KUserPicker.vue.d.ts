@@ -14,7 +14,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     returnObject: {
@@ -103,7 +103,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     returnObject: {
@@ -117,8 +117,8 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: number | null;
     width: string | number;
+    modelValue: number | null;
     returnObject: boolean;
     editable: boolean;
     users: boolean;

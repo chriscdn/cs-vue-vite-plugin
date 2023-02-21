@@ -10,7 +10,7 @@
       </div>
 
       <button class="flex-grow-0" @click="dismiss">
-        <!-- <KIcon class="text-main-bright"> icon-x </KIcon> -->
+        <KIcon class="text-main-bright"> icon-x </KIcon>
       </button>
     </div>
   </transition>

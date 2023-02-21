@@ -9,6 +9,7 @@ import get from 'lodash.get'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'KTabItem', // Name required by KTabs to detecting which children are tabs
   inject: ['tabs'],
   props: {
     title: {

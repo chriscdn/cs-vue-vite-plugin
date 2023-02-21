@@ -21,7 +21,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     items: {
@@ -88,7 +88,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     items: {
@@ -113,9 +113,9 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     filter: Function;
-    modelValue: string | number | Record<string, any> | null;
     width: string | number;
     items: (string | Record<string, any>)[];
+    modelValue: string | number | Record<string, any> | null;
     itemValue: string;
     itemText: string;
     returnObject: boolean;

@@ -24,7 +24,7 @@ declare namespace _default {
             export { _default_3 as default };
         }
         namespace to {
-            const type_4: (ObjectConstructor | StringConstructor)[];
+            const type_4: (StringConstructor | ObjectConstructor)[];
             export { type_4 as type };
             const _default_4: null;
             export { _default_4 as default };

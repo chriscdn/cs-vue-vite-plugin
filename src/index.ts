@@ -1,12 +1,11 @@
 import { Session } from '@kweli/cs-rest'
 import './styles.css'
 import type { App } from 'vue'
-import { sessionKey, configKey } from '@/injection'
-import type { ConfigurationType } from '@/injection'
-// import { success, error } from './snackbar'
-// const snackbar = { success, error }
+import { sessionKey, configKey, WindowInitialState } from './injection'
+import type { Configuration } from './injection'
 
-// export { globz }
+export * from './injection'
+
 /**
  * This variable gets assigned in the install, and is made available to the
  * useSession composible.
@@ -16,12 +15,11 @@ const globalComponents = import.meta.glob('./components/**/*.vue', {
 })
 
 export default {
-  install(app: App, options: Record<string, string>) {
+  install(app: App, options: WindowInitialState) {
     Object.entries(globalComponents).forEach(
       ([item, definition]: [string, any]) => {
         // Get name of component, based on filename
         // "./components/Fruits.vue" will become "Fruits"
-
         const componentName = item
           ?.split('/')
           ?.pop()
@@ -33,9 +31,9 @@ export default {
 
     const session = new Session(options)
 
-    const configuration: ConfigurationType = {
+    const configuration: Configuration = {
       img: options.img,
-      baseURL: options.baseURL,
+      baseUrl: options.baseUrl,
       jsLongDateFormat: options.datelong,
       jsShortDateFormat: options.dateshort,
     }
@@ -44,7 +42,3 @@ export default {
     app.provide(configKey, configuration)
   },
 }
-
-// export { snackbar }
-
-export * from './injection'

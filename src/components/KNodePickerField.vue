@@ -135,7 +135,7 @@ export default defineComponent({
       }
     },
     url() {
-      return buildUrl(this.config.baseURL, {
+      return buildUrl(this.config.baseUrl, {
         queryParams: this.urlParams,
       })
     },

@@ -1,12 +1,13 @@
 <template>
   <div class="k-tabs">
     <div class="k-tabs-nav">
-      <div v-for="tab in tabs" :key="tab.props!.name" :class="classObj(tab)">
-        <a :href="`#${tab.props.name}`" @click="selectTab(tab.props.name)">
-          {{ tab.props.title }}
+      <div v-for="tab in tabs" :key="tab.name" :class="classObj(tab)">
+        <a :href="`#${tab.name}`" @click="selectTab(tab.name)">
+          {{ tab.title }}
         </a>
       </div>
     </div>
+
     <div class="k-tabs-content">
       <slot />
     </div>
@@ -14,9 +15,12 @@
 </template>
 
 <script lang="ts">
-import get from 'lodash.get'
-import { defineComponent } from 'vue'
-import { KTabItem } from '..'
+import { defineComponent, PropType } from 'vue'
+
+type Tab = {
+  name: string
+  title: string
+}
 
 export default defineComponent({
   provide() {
@@ -27,7 +31,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   props: {
     modelValue: {
-      type: String,
+      type: String as PropType<string>,
       default: null,
     },
   },
@@ -39,12 +43,37 @@ export default defineComponent({
   },
 
   computed: {
-    // no types for VNode?
-    tabs(): Array<any> {
-      return this.$slots.default!().filter((item) => Boolean(item.props))
+    /**
+     * This implementation has to do with tabs being dynamically rendered with a for loop.
+     * The child is not of type KTabItem if rendered in a loop.  The `.children` lookup
+     * takes care of that.
+     */
+    tabs(): Array<Tab> {
+      const isTab = (node: any) => node.type.name === 'KTabItem'
+
+      const isFragment = (node: any) =>
+        typeof node.type === 'symbol' && node.type.description === 'Fragment'
+
+      const hasTabs = (node: any) =>
+        node.children && node.children.length && node.children.some(isTab)
+
+      const isTabParent = (node: any) => isFragment(node) && hasTabs(node)
+
+      const slots = this.$slots.default ? this.$slots.default() : []
+
+      return slots
+        .filter((node) => isTab(node) || isTabParent(node))
+        .flatMap((node) => (isTabParent(node) ? node.children : node))
+        .map((node: any) => {
+          return {
+            name: node.props.name,
+            title: node.props.title,
+          } as Tab
+        })
     },
+
     tabNames() {
-      return this.tabs.map((tab) => tab.props.name)
+      return this.tabs.map((tab) => tab.name)
     },
   },
 
@@ -62,11 +91,13 @@ export default defineComponent({
   },
 
   methods: {
-    initialSelectedTab() {
+    initialSelectedTab(): string {
       const hash = window.location.hash.replace('#', '')
       const firstTab = this.tabNames[0]
 
-      return [this.selectedTab, hash, firstTab].find((item) => Boolean(item))
+      return [this.selectedTab, hash, firstTab].find((item) =>
+        Boolean(item),
+      ) as string
     },
 
     selectTab(tabName: string) {
@@ -75,10 +106,10 @@ export default defineComponent({
         : this.tabNames[0]
     },
 
-    classObj(tab: typeof KTabItem) {
+    classObj(tab: Tab) {
       return {
         'k-tabs-nav-tab': true,
-        'k-tabs-active': this.selectedTab == get(tab, 'props.name'),
+        'k-tabs-active': this.selectedTab == tab.name,
       }
     },
   },

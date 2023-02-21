@@ -18,9 +18,24 @@
  */
 import { type InjectionKey } from 'vue';
 import type { Session } from '@kweli/cs-rest';
-export interface ConfigurationType {
+export interface WindowInitialState {
+    baseUrl: string;
     img: string;
-    baseURL: string;
+    otcsticket: string;
+    datelong: string;
+    dateshort: string;
+}
+declare global {
+    interface Window {
+        __INITIAL_STATE__: WindowInitialState;
+    }
+    interface document {
+        location: Location;
+    }
+}
+export interface Configuration {
+    img: string;
+    baseUrl: string;
     jsLongDateFormat: string;
     jsShortDateFormat: string;
 }
@@ -47,7 +62,7 @@ type Snackbar = {
     error({ title, message, timeout, actionLabel, action, }: SnackbarParameters): void;
 };
 declare const sessionKey: InjectionKey<Session>;
-declare const configKey: InjectionKey<ConfigurationType>;
+declare const configKey: InjectionKey<Configuration>;
 declare const snackbarKey: InjectionKey<Snackbar>;
 declare const confirmDialogKey: InjectionKey<ConfirmDialog>;
 export { injectStrict, sessionKey, configKey, snackbarKey, confirmDialogKey };
