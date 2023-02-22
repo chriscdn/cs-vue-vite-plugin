@@ -142,7 +142,7 @@ export default defineComponent({
     searchText(val) {
       val && val !== this.select && this.querySelections(val)
     },
-    value: {
+    valueLocal: {
       handler() {
         // TODO: this catches ALL changes, including edits using the widget.
         // this might not be so bad... but it does create extra network requests

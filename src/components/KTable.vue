@@ -93,12 +93,11 @@ export default defineComponent({
   &.k-table--properties {
     > tbody {
       td {
-        border: 1px solid #b4b4b4;
+        /* border: 1px solid #b4b4b4; */
+        @apply border border-solid border-gray-300;
 
         &:nth-child(odd) {
-          color: #333333;
-          font-weight: 700;
-          white-space: nowrap;
+          @apply bg-gray-200 font-bold whitespace-nowrap;
           width: 1%;
         }
       }

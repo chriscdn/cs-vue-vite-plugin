@@ -17,6 +17,7 @@ export { default as KFunctionMenu } from './KFunctionMenu.vue';
 export { default as KLinearProgressIndicator } from './KLinearProgressIndicator.vue';
 export { default as KMulti } from './KMulti.vue';
 export { default as KMulti2 } from './KMulti2.vue';
+export { default as KMultiUserPicker } from './KMultiUserPicker.vue';
 export { default as KNodeAncestor } from './KNodeAncestor.vue';
 export { default as KNodePickerField } from './KNodePickerField.vue';
 export { default as KOneMoment } from './KOneMoment.vue';
