@@ -59,8 +59,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     gif: boolean;
+    userid: number;
     user: number | Record<string, any> | null;
     userRec: Record<string, any>;
-    userid: number;
 }>;
 export default _default;
