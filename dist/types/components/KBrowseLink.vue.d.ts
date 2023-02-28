@@ -1,7 +1,8 @@
+import { type RHNodeSerializer } from '@/types/RHNodeSerializer';
 import { type PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     nodeRec: {
-        type: PropType<Record<string, any> | null>;
+        type: PropType<RHNodeSerializer | null>;
         default: null;
     };
     dataid: {
@@ -17,14 +18,14 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
 }, {
-    session: {};
+    session: import("@kweli/cs-rest").Session;
 }, {
-    nodeRecLocal: null;
+    nodeRecLocal: RHNodeSerializer | null;
 }, {
-    nodeRecResolved(): Record<string, any> | null;
+    nodeRecResolved(): RHNodeSerializer | null;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     nodeRec: {
-        type: PropType<Record<string, any> | null>;
+        type: PropType<RHNodeSerializer | null>;
         default: null;
     };
     dataid: {
@@ -42,7 +43,7 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     image: boolean | null;
     dataid: number | null;
-    nodeRec: Record<string, any> | null;
+    nodeRec: RHNodeSerializer | null;
     clickable: boolean | null;
 }>;
 export default _default;

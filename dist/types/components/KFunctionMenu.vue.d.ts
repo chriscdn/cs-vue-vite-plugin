@@ -5,13 +5,21 @@ declare global {
         showFunctionMenu2: Function;
     }
 }
+/**
+ * Creates a Content Server function menu.
+ *
+ * ```
+ * <KFunctionMenu :dataid="2000" />
+ * ```
+ */
+import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     dataid: {
-        type: NumberConstructor;
+        type: PropType<number>;
         required: true;
     };
     func: {
-        type: StringConstructor;
+        type: PropType<string>;
         default: string;
     };
 }, {
@@ -30,11 +38,11 @@ declare const _default: import("vue").DefineComponent<{
     onmouseout(): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     dataid: {
-        type: NumberConstructor;
+        type: PropType<number>;
         required: true;
     };
     func: {
-        type: StringConstructor;
+        type: PropType<string>;
         default: string;
     };
 }>>, {

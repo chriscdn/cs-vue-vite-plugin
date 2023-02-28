@@ -1,8 +1,8 @@
 import { PropType } from 'vue';
-import type { UserRecType } from './KUserLink.vue';
+import { RHUserSerializer } from '@/types/RHUserSerializer';
 declare const _default: import("vue").DefineComponent<{
     userRec: {
-        type: PropType<UserRecType>;
+        type: PropType<RHUserSerializer>;
         default: null;
     };
     type: {
@@ -84,7 +84,7 @@ declare const _default: import("vue").DefineComponent<{
     width: string | number;
 }>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     userRec: {
-        type: PropType<UserRecType>;
+        type: PropType<RHUserSerializer>;
         default: null;
     };
     type: {
@@ -103,6 +103,6 @@ declare const _default: import("vue").DefineComponent<{
     type: number;
     height: string | number;
     width: string | number;
-    userRec: UserRecType;
+    userRec: RHUserSerializer;
 }>;
 export default _default;

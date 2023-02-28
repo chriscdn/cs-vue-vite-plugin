@@ -39,7 +39,7 @@ declare global {
  * ```
  */
 
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { configKey, injectStrict } from '@/injection'
 export default defineComponent({
   setup() {
@@ -49,11 +49,11 @@ export default defineComponent({
   props: {
     // The DataId of the node.
     dataid: {
-      type: Number,
+      type: Number as PropType<number>,
       required: true,
     },
     func: {
-      type: String,
+      type: String as PropType<string>,
       default: '',
     },
   },

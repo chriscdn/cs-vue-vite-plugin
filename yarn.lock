@@ -7,9 +7,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.1.tgz#a8f81ee2fe872af23faea4b17a08fcc869de7bcc"
   integrity sha512-JzhBFpkuhBNYUY7qs+wTzNmyCWUHEaAFpQQD2YfU1rPL38/L43Wvid0fFkiOCnHvsGncRZgEPyGnltABLcVDTg==
 
-"@chriscdn/promise-semaphore@https://github.com/chriscdn/promise-semaphore":
+"@chriscdn/promise-semaphore@^2.0.0":
   version "2.0.0"
-  resolved "https://github.com/chriscdn/promise-semaphore#0593ed475519239f25f81d3890685e9f4438373c"
+  resolved "https://registry.yarnpkg.com/@chriscdn/promise-semaphore/-/promise-semaphore-2.0.0.tgz#d1ea314271047b868592ae339443cd9af060fc95"
+  integrity sha512-LJ/3NmzmBEI+szr0WlU6LsL/lR+HsQl0fIEIn2941BIoasFl9TFVqEdHCMc4VPwzv/SGDXg5rG9Vo0T1GBQYkw==
 
 "@esbuild/android-arm64@0.16.17":
   version "0.16.17"
@@ -2341,7 +2342,7 @@ vue3-click-away@^1.2.4:
   resolved "https://registry.yarnpkg.com/vue3-click-away/-/vue3-click-away-1.2.4.tgz#ee76a241e7cff2a345e14342d558f4801d14cc26"
   integrity sha512-O9Z2KlvIhJT8OxaFy04eiZE9rc1Mk/bp+70dLok68ko3Kr8AW5dU+j8avSk4GDQu94FllSr4m5ul4BpzlKOw1A==
 
-vue@3.2.47:
+vue@^3.2.47:
   version "3.2.47"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.47.tgz#3eb736cbc606fc87038dbba6a154707c8a34cff0"
   integrity sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==

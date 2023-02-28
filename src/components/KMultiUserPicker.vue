@@ -18,7 +18,6 @@
 import { defineComponent, type PropType } from 'vue'
 
 export default defineComponent({
-  setup() {},
   props: {
     modelValue: {
       type: Array as PropType<number[]>,

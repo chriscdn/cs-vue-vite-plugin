@@ -1,4 +1,5 @@
 import { PropType } from 'vue';
+import { type RHUserSerializer } from '@/types/RHUserSerializer';
 declare global {
     interface Window {
         baseUrl?: Function;
@@ -6,22 +7,9 @@ declare global {
         doUserDialog?: Function;
     }
 }
-export type UserRecType = {
-    name: string;
-    id: number;
-    type: number;
-};
 declare const _default: import("vue").DefineComponent<{
     user: {
-        type: PropType<number | Record<string, any> | null>;
-        default: null;
-    };
-    userRec: {
-        type: ObjectConstructor;
-        default: null;
-    };
-    userid: {
-        type: NumberConstructor;
+        type: PropType<number | RHUserSerializer | null>;
         default: null;
     };
     gif: {
@@ -31,10 +19,9 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     session: import("@kweli/cs-rest").Session;
 }, {
-    userRecLocal: UserRecType | null;
+    userRecLocal: RHUserSerializer | null;
 }, {
     userIdLocal(): number | undefined;
-    userLocal(): number | Record<string, any>;
     displayName(): string | undefined;
     type(): number | undefined;
 }, {
@@ -42,15 +29,7 @@ declare const _default: import("vue").DefineComponent<{
     click(): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     user: {
-        type: PropType<number | Record<string, any> | null>;
-        default: null;
-    };
-    userRec: {
-        type: ObjectConstructor;
-        default: null;
-    };
-    userid: {
-        type: NumberConstructor;
+        type: PropType<number | RHUserSerializer | null>;
         default: null;
     };
     gif: {
@@ -59,8 +38,6 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     gif: boolean;
-    userid: number;
-    user: number | Record<string, any> | null;
-    userRec: Record<string, any>;
+    user: number | RHUserSerializer | null;
 }>;
 export default _default;

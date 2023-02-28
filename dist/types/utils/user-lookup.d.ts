@@ -1,9 +1,5 @@
+import { type RHUserSerializer } from '@/types/RHUserSerializer';
 import { Session } from '@kweli/cs-rest';
-export type UserSimple = {
-    value: number;
-    type: number;
-    text: string;
-};
 declare class UserLookupQueue {
     session: Session | null;
     private queueItems;
@@ -17,8 +13,8 @@ declare class UserLookup {
     users: Record<number, any>;
     userLookupQueue: UserLookupQueue;
     constructor();
-    registerUsers(items: Array<UserSimple>): void;
-    lookup(session: Session, userId: number): Promise<any>;
+    registerUsers(items: Array<RHUserSerializer>): void;
+    lookup(session: Session, userId: number): Promise<RHUserSerializer>;
     lookup2(session: Session, userId: number): Promise<any>;
 }
 declare const _default: UserLookup;

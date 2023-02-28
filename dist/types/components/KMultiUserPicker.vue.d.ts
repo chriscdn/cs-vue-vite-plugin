@@ -12,7 +12,7 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}, void, unknown, {
+}, unknown, unknown, {
     userIdsLocal: {
         set(value: Array<number | null>): void;
         get(): Array<number | null>;

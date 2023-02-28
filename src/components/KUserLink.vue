@@ -13,6 +13,7 @@ import get from 'lodash.get'
 import { defineComponent, PropType } from 'vue'
 import userLookup from '../utils/user-lookup'
 import { sessionKey, injectStrict } from '@/injection'
+import { type RHUserSerializer } from '@/types/RHUserSerializer'
 
 declare global {
   interface Window {
@@ -22,11 +23,11 @@ declare global {
   }
 }
 
-export type UserRecType = {
-  name: string
-  id: number
-  type: number
-}
+// export type UserRecType = {
+//   name: string
+//   id: number
+//   type: number
+// }
 
 export default defineComponent({
   setup() {
@@ -35,19 +36,19 @@ export default defineComponent({
 
   props: {
     user: {
-      type: [Number, Object] as PropType<number | Record<string, any> | null>,
+      type: [Number, Object] as PropType<number | RHUserSerializer | null>,
       default: null,
     },
-    //  this is deprecated
-    userRec: {
-      type: Object,
-      default: null,
-    },
-    // @deprecated
-    userid: {
-      type: Number,
-      default: null,
-    },
+    // //  this is deprecated
+    // userRec: {
+    //   type: Object,
+    //   default: null,
+    // },
+    // // @deprecated
+    // userid: {
+    //   type: Number,
+    //   default: null,
+    // },
 
     gif: {
       type: Boolean,
@@ -57,7 +58,7 @@ export default defineComponent({
 
   data() {
     return {
-      userRecLocal: null as UserRecType | null,
+      userRecLocal: null as RHUserSerializer | null,
     }
   },
 
@@ -65,9 +66,9 @@ export default defineComponent({
     userIdLocal() {
       return get(this.userRecLocal, 'id') ?? get(this.userRecLocal, 'userid')
     },
-    userLocal() {
-      return this.user ?? this.userid ?? this.userRec
-    },
+    // userLocal() {
+    //   return this.user ?? this.userid ?? this.userRec
+    // },
 
     displayName() {
       return (
@@ -81,16 +82,10 @@ export default defineComponent({
     },
   },
   watch: {
-    userLocal: {
+    user: {
       async handler(value) {
         if (this.isInteger(value)) {
-          const response = await userLookup.lookup(this.session, value)
-
-          this.userRecLocal = {
-            name: response.text,
-            id: response.value,
-            type: response.type,
-          }
+          this.userRecLocal = await userLookup.lookup(this.session, value)
         } else {
           this.userRecLocal = value
         }

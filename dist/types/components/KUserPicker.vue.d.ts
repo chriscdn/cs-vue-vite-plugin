@@ -1,5 +1,9 @@
 import { PropType } from 'vue';
-import { type UserSimple } from '../utils/user-lookup';
+type UserPickerItem = {
+    text: string;
+    type: number;
+    value: number;
+};
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<number | null>;
@@ -32,7 +36,7 @@ declare const _default: import("vue").DefineComponent<{
     readonly: boolean;
     pleaseWait: boolean;
     searchText: null;
-    items: UserSimple[];
+    items: UserPickerItem[];
     select: any;
 }, {
     USER(): number;

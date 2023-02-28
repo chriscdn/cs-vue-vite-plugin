@@ -1,13 +1,8 @@
+import { type RHUserSerializer } from '@/types/RHUserSerializer'
 import Semaphore from '@chriscdn/promise-semaphore'
 import { Session } from '@kweli/cs-rest'
 
 const semaphore = new Semaphore()
-
-export type UserSimple = {
-  value: number
-  type: number
-  text: string
-}
 
 class UserLookupQueue {
   session: Session | null
@@ -50,16 +45,14 @@ class UserLookupQueue {
     })
 
     try {
-      const responses: Array<Record<string, any>> = await rpcClient.batch(true)
+      const responses: Array<RHUserSerializer> = await rpcClient.batch(true)
 
-      // console.log(responses)
+      responses.forEach((user, index) => {
+        // const value: number = item.userid
+        // const type: number = item.type
+        // const text: string = item.displayname
 
-      responses.forEach((item, index) => {
-        const value: number = item.userid
-        const type: number = item.type
-        const text: string = item.displayname
-
-        const user = { type, text, value }
+        // const user = { type, text, value }
 
         const resolveFunc = queueItems[index].resolveFunc
 
@@ -81,11 +74,11 @@ class UserLookup {
     this.userLookupQueue = new UserLookupQueue()
   }
 
-  registerUsers(items: Array<UserSimple>) {
-    items.forEach((user) => (this.users[user.value] = user))
+  registerUsers(items: Array<RHUserSerializer>) {
+    items.forEach((user) => (this.users[user.userid] = user))
   }
 
-  async lookup(session: Session, userId: number) {
+  async lookup(session: Session, userId: number): Promise<RHUserSerializer> {
     await semaphore.acquire(userId)
 
     if (this.users[userId]) {
@@ -95,7 +88,7 @@ class UserLookup {
       // The userLookupQueue makes a single request for a batch of independent
       // requests.
       return new Promise((resolve) => {
-        const resolver = (user: UserSimple) => {
+        const resolver = (user: RHUserSerializer) => {
           this.users[userId] = user
 
           resolve(user)

@@ -17,12 +17,15 @@
       :return-object="returnObject"
       :combobox="false"
     >
-      <template #prepend="{ item }: { item: UserSimple }">
-        <KUserGIF :type="item?.type" />
+      <template #prepend="{ item }: { item: UserPickerItem }">
+        <KUserGIF :type="item.type" v-if="item" />
+        <KUserGIF :type="USER" v-else />
       </template>
 
-      <template #item="{ item }: { item: UserSimple }">
-        <KUserGIF :type="item.type" /> {{ item.text }}
+      <template #item="{ item }: { item: UserPickerItem }">
+        <div class="flex items-center gap-1">
+          <KUserGIF :type="item.type" /> {{ item.text }}
+        </div>
       </template>
     </KAutocomplete>
     <KUserLink v-else :user="modelValue" gif />
@@ -30,14 +33,18 @@
 </template>
 
 <script lang="ts">
-// import debounce from 'lodash.debounce'
-
 import get from 'lodash.get'
 import { defineComponent, PropType } from 'vue'
 import { mixin } from './KFormFieldWrapper.vue'
 import userLookup from '../utils/user-lookup'
-import { type UserSimple } from '../utils/user-lookup'
 import { injectStrict, sessionKey } from '@/injection'
+import { RHUserSerializer } from '@/types/RHUserSerializer'
+
+type UserPickerItem = {
+  text: string
+  type: number
+  value: number
+}
 
 export default defineComponent({
   mixins: [mixin],
@@ -47,7 +54,6 @@ export default defineComponent({
 
   props: {
     modelValue: {
-      // type: [Number, Object] as PropType<number | Record<string, any> | null>,
       type: Number as PropType<number | null>,
       default: null,
     },
@@ -85,7 +91,7 @@ export default defineComponent({
       readonly: false as boolean,
       pleaseWait: false as boolean,
       searchText: null,
-      items: [] as Array<UserSimple>,
+      items: [] as Array<UserPickerItem>,
       select: null as any,
     }
   },
@@ -170,9 +176,9 @@ export default defineComponent({
           text: get(item, 'name_formatted'),
           value: get(item, 'id'),
           type: get(item, 'type'),
-        })) as Array<UserSimple>
+        }))
 
-        userLookup.registerUsers(this.items)
+        // userLookup.registerUsers(this.items)
 
         // v2
         // this.items = response.data.results.map((item) => ({
@@ -206,11 +212,20 @@ export default defineComponent({
           this.readonly = true
           this.loading = true
 
-          const user = await userLookup.lookup(this.session, initialValue)
+          const user: RHUserSerializer = await userLookup.lookup(
+            this.session,
+            initialValue,
+          )
 
           if (user) {
-            this.items = [user]
-            this.select = user.value
+            this.items = [
+              {
+                text: user.displayname,
+                type: user.type,
+                value: user.userid,
+              },
+            ]
+            this.select = user.displayname
           }
         } finally {
           this.pleaseWait = false

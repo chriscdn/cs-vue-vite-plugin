@@ -7,7 +7,7 @@ import get from 'lodash.get'
 import { defineComponent, PropType } from 'vue'
 import measurable from '../mixins/measurables'
 import { configKey, sessionKey, injectStrict } from '@/injection'
-import type { UserRecType } from './KUserLink.vue'
+import { RHUserSerializer } from '@/types/RHUserSerializer'
 
 export default defineComponent({
   setup() {
@@ -19,7 +19,7 @@ export default defineComponent({
   mixins: [measurable],
   props: {
     userRec: {
-      type: Object as PropType<UserRecType>,
+      type: Object as PropType<RHUserSerializer>,
       default: null,
     },
     type: {
@@ -41,11 +41,6 @@ export default defineComponent({
     },
 
     url() {
-      // console.log(this.session.members.USER)
-
-      // const UUUU = this.session.members
-      // console.log(UUUU)
-
       if (this.userType === this.session.members.USER) {
         // user
         return `${this.config.img}guy.gif`

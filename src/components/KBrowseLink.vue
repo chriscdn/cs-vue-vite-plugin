@@ -1,7 +1,7 @@
 <template>
   <span v-if="nodeRecResolved">
     <img v-if="image" :src="nodeRecResolved.gif" />&nbsp;<a
-      :href="nodeRecResolved.url"
+      :href="nodeRecResolved.url!"
     >
       {{ nodeRecResolved.name }}
     </a>
@@ -12,17 +12,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, type PropType } from 'vue'
+import { injectStrict, sessionKey } from '@/injection'
+import { type RHNodeSerializer } from '@/types/RHNodeSerializer'
+import { defineComponent, type PropType } from 'vue'
 import nodeLookup from '../utils/node-lookup'
 
 export default defineComponent({
   setup() {
-    const session = inject('session', {})
-    return { session }
+    return { session: injectStrict(sessionKey) }
   },
   props: {
     nodeRec: {
-      type: Object as PropType<Record<string, any> | null>,
+      type: Object as PropType<RHNodeSerializer | null>,
       default: null,
     },
     dataid: {
@@ -40,7 +41,7 @@ export default defineComponent({
   },
   data() {
     return {
-      nodeRecLocal: null,
+      nodeRecLocal: null as null | RHNodeSerializer,
     }
   },
   computed: {
