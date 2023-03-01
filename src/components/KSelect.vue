@@ -5,7 +5,7 @@
     :error-messages="errorMessages"
   >
     <div class="k-select">
-      <select v-model="localValue" :class="classObj">
+      <select v-model="localValue" :class="classObj" :disabled="disabled">
         <option
           v-for="item in items"
           :key="getItemValue(item)"
@@ -51,6 +51,10 @@ export default defineComponent({
     itemText: {
       type: String as PropType<string>,
       default: 'text',
+    },
+    disabled: {
+      type: Boolean as PropType<boolean>,
+      default: false,
     },
   },
   emits: ['update:modelValue'],

@@ -11,6 +11,6 @@ export default defineComponent({})
 
 <style lang="postcss">
 .k-card-actions {
-  @apply flex flex-grow-0 p-2 gap-2;
+  @apply flex flex-grow-0 p-2 gap-2 items-center;
 }
 </style>

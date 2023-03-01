@@ -1,7 +1,12 @@
 <template>
-  <div v-if="pagination.hasOtherPages" class="k-pagination">
-    <KSelect v-model="pageSize" :items="pageSizes" label="Page Size" />
-    <div class="k-pagination-buttons">
+  <div class="k-pagination">
+    <KSelect
+      v-if="potentiallyMultiplePages"
+      v-model="pageSize"
+      :items="pageSizes"
+      label="Page Size"
+    />
+    <div class="k-pagination-buttons" v-if="hasPrevious || hasNext">
       <a v-if="hasPrevious" class="k-pagination-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +45,7 @@
         </svg>
       </a>
     </div>
-    <div>
+    <div v-if="potentiallyMultiplePages">
       Displaying {{ pagination.startIndex }}-{{ pagination.endIndex }} of
       {{ pagination.count }} items.
     </div>
@@ -49,8 +54,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import get from 'lodash.get'
+import { PaginatorSerializer } from '@/types/PaginatorSerializer'
 export default defineComponent({
   props: {
     modelValue: {
@@ -58,16 +64,21 @@ export default defineComponent({
       required: true,
     },
     pagination: {
-      type: Object,
+      type: Object as PropType<PaginatorSerializer>,
       required: true,
     },
-    length: {
-      type: Number,
-      required: true,
-    },
+    // length: {
+    //   type: Number,
+    //   required: true,
+    // },
   },
   emits: ['update:modelValue', 'update:pageSize'],
   computed: {
+    potentiallyMultiplePages() {
+      const smallestPageSize = Math.min(...this.pageSizes)
+      return smallestPageSize < this.pagination.count
+    },
+
     pageRange(): Array<number | string> {
       return get(this.pagination, 'pageRange', [])
     },

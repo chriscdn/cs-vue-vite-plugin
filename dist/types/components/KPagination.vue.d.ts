@@ -1,22 +1,21 @@
+import { PropType } from 'vue';
+import { PaginatorSerializer } from '@/types/PaginatorSerializer';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: NumberConstructor;
         required: true;
     };
     pagination: {
-        type: ObjectConstructor;
-        required: true;
-    };
-    length: {
-        type: NumberConstructor;
+        type: PropType<PaginatorSerializer>;
         required: true;
     };
 }, unknown, unknown, {
+    potentiallyMultiplePages(): boolean;
     pageRange(): Array<number | string>;
     pageSizes(): Array<number>;
     pageNumber(): number;
     pageSize: {
-        get(): any;
+        get(): number;
         set(value: number): void;
     };
     hasPrevious(): boolean;
@@ -31,11 +30,7 @@ declare const _default: import("vue").DefineComponent<{
         required: true;
     };
     pagination: {
-        type: ObjectConstructor;
-        required: true;
-    };
-    length: {
-        type: NumberConstructor;
+        type: PropType<PaginatorSerializer>;
         required: true;
     };
 }>> & {

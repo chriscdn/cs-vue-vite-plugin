@@ -24,6 +24,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    disabled: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, unknown, unknown, {
     localValue: {
         get(): string | number | Record<string, any>;
@@ -97,6 +101,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    disabled: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
@@ -105,6 +113,7 @@ declare const _default: import("vue").DefineComponent<{
     itemValue: string;
     itemText: string;
     loading: boolean;
+    disabled: boolean;
     multiple: boolean;
 }>;
 export default _default;

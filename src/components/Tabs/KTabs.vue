@@ -51,8 +51,8 @@ export default defineComponent({
     tabs(): Array<Tab> {
       const isTab = (node: any) => node.type.name === 'KTabItem'
 
-      const isFragment = (node: any) =>
-        typeof node.type === 'symbol' && node.type.description === 'Fragment'
+      // This fragment condition doesn't resolve to true on the production build.
+      const isFragment = (node: any) => typeof node.type === 'symbol' // && node.type.description === 'Fragment'
 
       const hasTabs = (node: any) =>
         node.children && node.children.length && node.children.some(isTab)
