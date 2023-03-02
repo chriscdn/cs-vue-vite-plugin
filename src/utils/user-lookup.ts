@@ -48,14 +48,7 @@ class UserLookupQueue {
       const responses: Array<RHUserSerializer> = await rpcClient.batch(true)
 
       responses.forEach((user, index) => {
-        // const value: number = item.userid
-        // const type: number = item.type
-        // const text: string = item.displayname
-
-        // const user = { type, text, value }
-
         const resolveFunc = queueItems[index].resolveFunc
-
         resolveFunc(user)
       })
     } catch {
@@ -78,53 +71,31 @@ class UserLookup {
     items.forEach((user) => (this.users[user.userid] = user))
   }
 
-  async lookup(session: Session, userId: number): Promise<RHUserSerializer> {
-    await semaphore.acquire(userId)
-
-    if (this.users[userId]) {
-      semaphore.release(userId)
-      return this.users[userId]
-    } else {
-      // The userLookupQueue makes a single request for a batch of independent
-      // requests.
-      return new Promise((resolve) => {
-        const resolver = (user: RHUserSerializer) => {
-          this.users[userId] = user
-
-          resolve(user)
-          semaphore.release(userId)
-        }
-
-        this.userLookupQueue.queue(session, resolver, userId)
-      })
-    }
-  }
-
-  async lookup2(session: Session, userId: number) {
-    try {
+  async lookup(
+    session: Session,
+    userId: number | null,
+  ): Promise<RHUserSerializer | null> {
+    if (userId) {
       await semaphore.acquire(userId)
 
-      if (!this.users[userId]) {
-        const rpcClient = session.rpcClient('/api/v1/rh/rpc/user/')
+      if (this.users[userId]) {
+        semaphore.release(userId)
+        return this.users[userId]
+      } else {
+        // The userLookupQueue makes a single request for a batch of independent
+        // requests.
+        return new Promise((resolve) => {
+          const resolver = (user: RHUserSerializer) => {
+            this.users[userId] = user
+            resolve(user)
+            semaphore.release(userId)
+          }
 
-        // RHUserSerializer
-        const userInfo: Record<string, any> = await rpcClient.request(
-          'UserLookup',
-          { userId },
-        )
-
-        const value: number = userInfo.userid
-        const type: number = userInfo.type
-        const text: string = userInfo.displayname
-
-        if (value) {
-          this.users[userId] = { type, text, value }
-        }
+          this.userLookupQueue.queue(session, resolver, userId)
+        })
       }
-
-      return this.users[userId]
-    } finally {
-      semaphore.release(userId)
+    } else {
+      return null
     }
   }
 }

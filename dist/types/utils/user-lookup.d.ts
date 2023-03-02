@@ -14,8 +14,7 @@ declare class UserLookup {
     userLookupQueue: UserLookupQueue;
     constructor();
     registerUsers(items: Array<RHUserSerializer>): void;
-    lookup(session: Session, userId: number): Promise<RHUserSerializer>;
-    lookup2(session: Session, userId: number): Promise<any>;
+    lookup(session: Session, userId: number | null): Promise<RHUserSerializer | null>;
 }
 declare const _default: UserLookup;
 export default _default;

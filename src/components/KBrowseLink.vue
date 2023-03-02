@@ -41,7 +41,7 @@ export default defineComponent({
   },
   data() {
     return {
-      nodeRecLocal: null as null | RHNodeSerializer,
+      nodeRecLocal: null as RHNodeSerializer | null,
     }
   },
   computed: {

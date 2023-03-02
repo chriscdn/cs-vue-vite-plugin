@@ -23,13 +23,13 @@ export default {
         const componentName = item
           ?.split('/')
           ?.pop()
-          ?.replace(/\.\w+$/, '')
+          ?.replace(/\.\w+$/, '')!
 
-        app.component(componentName!, definition.default)
+        app.component(componentName, definition.default)
       },
     )
 
-    const session = new Session(options)
+    const session: Session = new Session(options)
 
     const configuration: Configuration = {
       img: options.img,
@@ -42,3 +42,6 @@ export default {
     app.provide(configKey, configuration)
   },
 }
+
+export { default as nodeLookup } from './utils/node-lookup'
+export { default as userLookup } from './utils/user-lookup'

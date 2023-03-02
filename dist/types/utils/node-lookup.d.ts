@@ -14,7 +14,7 @@ declare class NodeLookup {
     nodeLookupQueue: NodeLookupQueue;
     constructor();
     registerUsers(items: Array<RHNodeSerializer>): void;
-    lookup(session: Session, dataId: number): Promise<RHNodeSerializer>;
+    lookup(session: Session, dataId: number | null): Promise<RHNodeSerializer | null>;
 }
 declare const _default: NodeLookup;
 export default _default;

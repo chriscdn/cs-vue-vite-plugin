@@ -71,24 +71,31 @@ class NodeLookup {
     items.forEach((user) => (this.nodes[user.dataid] = user))
   }
 
-  async lookup(session: Session, dataId: number): Promise<RHNodeSerializer> {
-    await semaphore.acquire(dataId)
+  async lookup(
+    session: Session,
+    dataId: number | null,
+  ): Promise<RHNodeSerializer | null> {
+    if (dataId) {
+      await semaphore.acquire(dataId)
 
-    if (this.nodes[dataId]) {
-      semaphore.release(dataId)
-      return this.nodes[dataId]
+      if (this.nodes[dataId]) {
+        semaphore.release(dataId)
+        return this.nodes[dataId]
+      } else {
+        // The nodeLookupQueue makes a single request for a batch of independent
+        // requests.
+        return new Promise((resolve) => {
+          const resolver = (user: RHNodeSerializer) => {
+            this.nodes[dataId] = user
+            resolve(user)
+            semaphore.release(dataId)
+          }
+
+          this.nodeLookupQueue.queue(session, resolver, dataId)
+        })
+      }
     } else {
-      // The nodeLookupQueue makes a single request for a batch of independent
-      // requests.
-      return new Promise((resolve) => {
-        const resolver = (user: RHNodeSerializer) => {
-          this.nodes[dataId] = user
-          resolve(user)
-          semaphore.release(dataId)
-        }
-
-        this.nodeLookupQueue.queue(session, resolver, dataId)
-      })
+      return null
     }
   }
 }

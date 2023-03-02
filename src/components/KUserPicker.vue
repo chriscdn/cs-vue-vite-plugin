@@ -212,7 +212,7 @@ export default defineComponent({
           this.readonly = true
           this.loading = true
 
-          const user: RHUserSerializer = await userLookup.lookup(
+          const user: RHUserSerializer | null = await userLookup.lookup(
             this.session,
             initialValue,
           )
