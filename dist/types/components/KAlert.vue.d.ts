@@ -1,13 +1,4 @@
-declare const _default: import("vue").DefineComponent<{
-    visible: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-}, unknown, {
-    visibleLocal: boolean;
-}, {}, {
-    dismiss(): void;
-}, import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").DefineComponent<{
     color: {
         type: import("vue").PropType<string>;
         default: null;
@@ -27,12 +18,5 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     color: string;
-}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    visible: {
-        type: BooleanConstructor;
-        default: boolean;
-    };
-}>>, {
-    visible: boolean;
-}>;
+}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
 export default _default;

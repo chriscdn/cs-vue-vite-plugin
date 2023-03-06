@@ -10,8 +10,6 @@ export default defineComponent({
   computed: {
     resolvedColor(): string {
       return this.color
-      //   const color = get(colors, this.color)
-      //   return typeof color == 'string' ? color : this.color
     },
 
     colorableTextStyle() {

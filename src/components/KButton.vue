@@ -54,7 +54,7 @@ export default defineComponent({
   @apply transition bg-white border-gray-600;
   @apply hover:text-white hover:bg-gray-600 active:bg-gray-700;
   @apply whitespace-nowrap;
-
+  @apply cursor-pointer;
   min-width: 5rem;
 
   &.k-button--small {
@@ -64,7 +64,7 @@ export default defineComponent({
 
   &.k-button--text {
     background: none;
-    @apply border-none p-0 m-0 cursor-pointer;
+    @apply border-none p-0 m-0;
     min-width: 0;
   }
 
