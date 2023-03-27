@@ -5,15 +5,21 @@
     :error-messages="errorMessages"
   >
     <div class="k-select">
-      <select v-model="localValue" :class="classObj" :disabled="disabled">
+      <select
+        v-model="localValue"
+        :class="classObj"
+        :disabled="disabledResolved"
+      >
         <option
           v-for="item in items"
           :key="getItemValue(item)"
           :value="getItemValue(item)"
+          :disabled="getItemDisabled(item)"
         >
           {{ getItemText(item) }}
         </option>
       </select>
+
       <transition name="fade">
         <KSpinner v-if="loading" class="k-select--spinner" />
       </transition>
@@ -52,13 +58,24 @@ export default defineComponent({
       type: String as PropType<string>,
       default: 'text',
     },
+    itemDisabled: {
+      type: String as PropType<string>,
+      default: 'disabled',
+    },
     disabled: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    readonly: {
       type: Boolean as PropType<boolean>,
       default: false,
     },
   },
   emits: ['update:modelValue'],
   computed: {
+    disabledResolved() {
+      return this.disabled || this.readonly
+    },
     localValue: {
       get() {
         return this.multiple ? this.arrify(this.modelValue) : this.modelValue
@@ -76,11 +93,16 @@ export default defineComponent({
         !(obj instanceof Array)
       )
     },
-    getItemText(item: string) {
+    getItemText(item: string | object): string {
       return this.isObject(item) ? get(item, this.itemText) : item
     },
-    getItemValue(item: any) {
+
+    getItemValue(item: string | object): any {
       return this.isObject(item) ? get(item, this.itemValue) : item
+    },
+
+    getItemDisabled(item: string | object): boolean {
+      return this.isObject(item) ? get(item, this.itemDisabled, false) : false
     },
 
     arrify(item: any): Array<any> {

@@ -24,19 +24,29 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    itemDisabled: {
+        type: PropType<string>;
+        default: string;
+    };
     disabled: {
         type: PropType<boolean>;
         default: boolean;
     };
+    readonly: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, unknown, unknown, {
+    disabledResolved(): boolean;
     localValue: {
         get(): string | number | Record<string, any>;
         set(value: any): void;
     };
 }, {
     isObject(obj: any): boolean;
-    getItemText(item: string): any;
-    getItemValue(item: any): any;
+    getItemText(item: string | object): string;
+    getItemValue(item: string | object): any;
+    getItemDisabled(item: string | object): boolean;
     arrify(item: any): Array<any>;
 }, import("vue").DefineComponent<{
     label: {
@@ -101,7 +111,15 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    itemDisabled: {
+        type: PropType<string>;
+        default: string;
+    };
     disabled: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    readonly: {
         type: PropType<boolean>;
         default: boolean;
     };
@@ -114,6 +132,8 @@ declare const _default: import("vue").DefineComponent<{
     itemText: string;
     loading: boolean;
     disabled: boolean;
+    readonly: boolean;
     multiple: boolean;
+    itemDisabled: string;
 }>;
 export default _default;

@@ -55,7 +55,10 @@ export default defineComponent({
       const isFragment = (node: any) => typeof node.type === 'symbol' // && node.type.description === 'Fragment'
 
       const hasTabs = (node: any) =>
-        node.children && node.children.length && node.children.some(isTab)
+        node.children &&
+        Array.isArray(node.children) &&
+        node.children.length &&
+        node.children.some(isTab)
 
       const isTabParent = (node: any) => isFragment(node) && hasTabs(node)
 

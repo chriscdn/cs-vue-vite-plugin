@@ -1,5 +1,5 @@
 <template>
-  <div class="k-switch" :class="classObj" @click="on = !on">
+  <div class="k-switch" :class="classObj" @click="toggle">
     <span class="k-switch-slider" />
   </div>
 </template>
@@ -14,6 +14,10 @@ export default defineComponent({
       type: Boolean as PropType<boolean>,
       default: false,
     },
+    readonly: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
   emits: ['update:modelValue'],
 
@@ -23,6 +27,14 @@ export default defineComponent({
       height: 26,
       trans: 20,
     }
+  },
+
+  methods: {
+    toggle() {
+      if (!this.readonly) {
+        this.on = !this.on
+      }
+    },
   },
 
   computed: {
@@ -38,6 +50,7 @@ export default defineComponent({
     classObj() {
       return {
         'k-switch--on': this.on,
+        'k-switch--readonly': this.readonly,
       }
     },
     innerSize() {
@@ -92,5 +105,9 @@ export default defineComponent({
   .k-switch-slider {
     transform: v-bind(transPx);
   }
+}
+.k-switch--readonly {
+  @apply bg-gray-400;
+  @apply cursor-not-allowed;
 }
 </style>

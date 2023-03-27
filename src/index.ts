@@ -14,6 +14,8 @@ const globalComponents = import.meta.glob('./components/**/*.vue', {
   eager: true,
 })
 
+let session: Session
+
 export default {
   install(app: App, options: WindowInitialState) {
     Object.entries(globalComponents).forEach(
@@ -29,7 +31,7 @@ export default {
       },
     )
 
-    const session: Session = new Session(options)
+    session = new Session(options)
 
     const configuration: Configuration = {
       img: options.img,
@@ -45,3 +47,5 @@ export default {
 
 export { default as nodeLookup } from './utils/node-lookup'
 export { default as userLookup } from './utils/user-lookup'
+
+export const useSession = () => session

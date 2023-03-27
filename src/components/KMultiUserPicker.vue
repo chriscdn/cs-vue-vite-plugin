@@ -1,5 +1,5 @@
 <template>
-  <KMulti2 v-model="userIdsLocal">
+  <KMulti2 v-model="userIdsLocal" :readonly="readonly">
     <template #readonly="{ value }">
       <KUserLink :user="value" gif />
     </template>
@@ -28,6 +28,10 @@ export default defineComponent({
       default: true,
     },
     groups: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    readonly: {
       type: Boolean as PropType<boolean>,
       default: false,
     },

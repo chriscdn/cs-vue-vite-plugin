@@ -18,13 +18,13 @@
  */
 import { type InjectionKey } from 'vue';
 import type { Session } from '@kweli/cs-rest';
-export interface WindowInitialState {
+export type WindowInitialState = {
     baseUrl: string;
     img: string;
     otcsticket: string;
     datelong: string;
     dateshort: string;
-}
+};
 declare global {
     interface Window {
         __INITIAL_STATE__: WindowInitialState;
@@ -33,12 +33,12 @@ declare global {
         location: Location;
     }
 }
-export interface Configuration {
+export type Configuration = {
     img: string;
     baseUrl: string;
     jsLongDateFormat: string;
     jsShortDateFormat: string;
-}
+};
 declare function injectStrict<T>(key: InjectionKey<T>, fallback?: T): NonNullable<T>;
 type ConfirmDialogParameters = {
     noLabel?: string;

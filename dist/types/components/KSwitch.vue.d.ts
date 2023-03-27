@@ -4,6 +4,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    readonly: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, unknown, {
     padding: number;
     height: number;
@@ -15,6 +19,7 @@ declare const _default: import("vue").DefineComponent<{
     };
     classObj(): {
         'k-switch--on': boolean;
+        'k-switch--readonly': boolean;
     };
     innerSize(): number;
     heightPx(): string | undefined;
@@ -22,8 +27,14 @@ declare const _default: import("vue").DefineComponent<{
     paddingPx(): string | undefined;
     switchWidthPx(): string | undefined;
     transPx(): string;
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {
+    toggle(): void;
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    readonly: {
         type: PropType<boolean>;
         default: boolean;
     };
@@ -31,5 +42,6 @@ declare const _default: import("vue").DefineComponent<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
     modelValue: boolean;
+    readonly: boolean;
 }>;
 export default _default;

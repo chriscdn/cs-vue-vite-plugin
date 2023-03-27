@@ -10,20 +10,18 @@
           <slot name="readonly" :index="index" :value="value">{{ value }}</slot>
         </div>
 
-        <div class="k-multi-buttons">
-          <KButton text @click="remove(index)">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"
-              />
-            </svg>
-          </KButton>
-        </div>
+        <KButton text @click="remove(index)" v-if="!readonly">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z"
+            />
+          </svg>
+        </KButton>
       </div>
     </transition-group>
     <slot name="add" :add="add" v-if="canAdd" />
@@ -86,20 +84,19 @@ export default defineComponent({
 <style lang="postcss">
 .k-multi {
   .k-multi-item {
-    @apply flex;
-    @apply my-2;
+    @apply flex items-center gap-2;
 
     .k-multi-widget {
       @apply whitespace-nowrap;
       @apply flex-grow;
     }
 
-    .k-multi-buttons {
-      @apply whitespace-nowrap;
-      > * {
-        @apply ml-1;
-      }
-    }
+    /* .k-multi-buttons { */
+    /* @apply whitespace-nowrap; */
+    /* > * { */
+    /* @apply ml-1; */
+    /* } */
+    /* } */
   }
 }
 </style>
