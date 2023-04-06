@@ -47,7 +47,7 @@ export default defineComponent({
   /* border-collapse: collapse;
   border-spacing: 0; */
   border: 1px solid #b4b4b4;
-  margin-bottom: 1.67em;
+  /* margin-bottom: 1.67em; */
   width: 100%;
 
   thead {

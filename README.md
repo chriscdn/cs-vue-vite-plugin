@@ -12,7 +12,7 @@ This package is an opinionated Vue component library for creating user interface
 ## Installation
 
 ```bash
-$ yarn add https://github.com/chriscdn/cs-vue-vite-plugin
+$ yarn add https://github.com/chriscdn/cs-vue-vite-plugin.git
 ```
 
 In your Vue/Vite project (likely in `main.js`):

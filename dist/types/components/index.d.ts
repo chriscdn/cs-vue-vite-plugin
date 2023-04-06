@@ -39,5 +39,6 @@ export { default as KTextField } from './KTextField.vue';
 export { default as KUserGIF } from './KUserGIF.vue';
 export { default as KUserLink } from './KUserLink.vue';
 export { default as KUserPicker } from './KUserPicker.vue';
+export { default as KUserPickerLegacy } from './KUserPickerLegacy.vue';
 export { default as KTabItem } from './Tabs/KTabItem.vue';
 export { default as KTabs } from './Tabs/KTabs.vue';

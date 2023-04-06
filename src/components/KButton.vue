@@ -28,10 +28,6 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    // icon: {
-    //     type: Boolean,
-    //     default: false,
-    // },
   },
   emits: ['click'],
   computed: {
