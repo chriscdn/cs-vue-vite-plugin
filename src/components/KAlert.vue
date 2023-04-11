@@ -1,6 +1,9 @@
 <template>
   <!-- <transition name="fade"> -->
-  <div class="k-alert" :style="[colorableBackgroundStyle]">
+  <div
+    class="k-alert"
+    :style="[colorableBackgroundStyle, colorableTextStyleForBackground]"
+  >
     <div class="flex-grow">
       <slot name="default" />
     </div>
@@ -19,6 +22,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .k-alert {
-  @apply flex items-center rounded text-white p-2;
+  @apply flex items-center rounded p-2;
 }
 </style>

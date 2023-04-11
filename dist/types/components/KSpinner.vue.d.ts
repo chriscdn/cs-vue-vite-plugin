@@ -66,10 +66,10 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     height: string | number;
     maxHeight: string | number;
-    maxWidth: string | number;
     minHeight: string | number;
-    minWidth: string | number;
     width: string | number;
+    maxWidth: string | number;
+    minWidth: string | number;
 }>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     color: {
         type: StringConstructor;
@@ -84,8 +84,8 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    color: string;
     maxHeight: string | number;
     maxWidth: string | number;
+    color: string;
 }>;
 export default _default;

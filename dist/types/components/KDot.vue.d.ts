@@ -49,9 +49,9 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }>>, {
+    outlineWidth: string | number;
     color: string;
     size: string | number;
     outline: boolean;
-    outlineWidth: string | number;
 }>;
 export default _default;

@@ -92,10 +92,10 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     height: string | number;
     maxHeight: string | number;
-    maxWidth: string | number;
     minHeight: string | number;
-    minWidth: string | number;
     width: string | number;
+    maxWidth: string | number;
+    minWidth: string | number;
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: BooleanConstructor;
@@ -124,11 +124,11 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
+    zIndex: number;
     maxHeight: string | number;
     width: string | number;
     modelValue: boolean;
     persistent: boolean;
     scrollable: boolean;
-    zIndex: number;
 }>;
 export default _default;
