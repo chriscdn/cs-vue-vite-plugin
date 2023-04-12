@@ -39,7 +39,7 @@ declare const _default: import("vue").DefineComponent<{
 }, unknown, unknown, {
     disabledResolved(): boolean;
     localValue: {
-        get(): string | number | Record<string, any>;
+        get(): string | number | any[] | Record<string, any>;
         set(value: any): void;
     };
 }, {

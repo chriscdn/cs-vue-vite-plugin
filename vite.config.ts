@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
-import pkg from './package.json'
+import { dependencies } from './package.json'
 
 // https://jivancic.com/posts/build-a-component-library.html
 export default defineConfig({
@@ -20,10 +20,14 @@ export default defineConfig({
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
-      external: [...Object.keys(pkg.dependencies || [])],
+      external: [...Object.keys(dependencies || [])],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
+        // Provide global variables to use in the UMD build for externalized deps
+        // manualChunks: Object.keys(dependencies).reduce((a, dep) => {
+        //   a[dep] = [dep]
+        //   return a
+        // }, {} as any),
+
         globals: {
           vue: 'Vue',
         },
