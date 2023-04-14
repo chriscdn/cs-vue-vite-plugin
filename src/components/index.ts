@@ -25,6 +25,7 @@ export { default as KPageDropZone } from './KPageDropZone.vue'
 export { default as KPageTitle } from './KPageTitle.vue'
 export { default as KPagination } from './KPagination.vue'
 export { default as KPagination2 } from './KPagination2.vue'
+export { default as KPleaseWait } from './KPleaseWait.vue'
 export { default as KRadioGroup } from './KRadioGroup.vue'
 export { default as KScratch } from './KScratch.vue'
 export { default as KSelect } from './KSelect.vue'
@@ -42,3 +43,5 @@ export { default as KUserPicker } from './KUserPicker.vue'
 export { default as KUserPickerLegacy } from './KUserPickerLegacy.vue'
 export { default as KTabItem } from './Tabs/KTabItem.vue'
 export { default as KTabs } from './Tabs/KTabs.vue'
+
+export default {}
