@@ -27,7 +27,7 @@ export default defineConfig({
         //   a[dep] = [dep]
         //   return a
         // }, {} as any),
-
+        // preserveModules: true,
         globals: {
           vue: 'Vue',
         },
