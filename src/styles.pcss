@@ -1,0 +1,26 @@
+.k-app {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 250ms;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .fade-move,
+  .slide-move {
+    transition: transform 250ms;
+  }
+
+  .slide-leave-active,
+  .slide-enter-active {
+    transition: 250ms;
+  }
+  .slide-enter-from,
+  .slide-leave-to {
+    transform: translate(100%, 0);
+    opacity: 0;
+  }
+}

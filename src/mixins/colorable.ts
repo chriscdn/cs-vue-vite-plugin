@@ -2,7 +2,7 @@ import { PropType, defineComponent } from 'vue'
 
 // https://tailwindcss.com/docs/customizing-colors
 import resolveConfig from 'tailwindcss/resolveConfig'
-import myConfig from '../../tailwind.config.cjs'
+import myConfig from '../../tailwind.config.mjs'
 import get from 'lodash.get'
 
 const tailwindConfig = resolveConfig(myConfig)

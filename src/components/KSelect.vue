@@ -35,7 +35,9 @@ export default defineComponent({
   mixins: [mixin],
   props: {
     modelValue: {
-      type: [String, Object, Number],
+      type: [String, Object, Number] as PropType<
+        string | number | null | Record<string, any>
+      >,
       default: null,
     },
     multiple: {

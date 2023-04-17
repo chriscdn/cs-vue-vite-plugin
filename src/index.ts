@@ -1,5 +1,6 @@
 import { Session } from '@kweli/cs-rest'
-import './styles.css'
+import './tailwind.pcss'
+import './styles.pcss'
 import type { App } from 'vue'
 import { sessionKey, configKey, WindowInitialState } from './injection'
 import type { Configuration } from './injection'

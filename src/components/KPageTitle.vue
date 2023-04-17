@@ -1,10 +1,10 @@
 <template>
-  <h1>
+  <div class="text-xl">
     {{ title
     }}<span v-if="subtitle"
       >: <span class="rhmuted">{{ subtitle }} - 2</span></span
     >
-  </h1>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'

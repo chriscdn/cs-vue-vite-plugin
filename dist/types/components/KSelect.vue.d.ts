@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: (StringConstructor | ObjectConstructor | NumberConstructor)[];
+        type: PropType<string | number | Record<string, any> | null>;
         default: null;
     };
     multiple: {
@@ -39,7 +39,7 @@ declare const _default: import("vue").DefineComponent<{
 }, unknown, unknown, {
     disabledResolved(): boolean;
     localValue: {
-        get(): string | number | any[] | Record<string, any>;
+        get(): string | number | any[] | Record<string, any> | null;
         set(value: any): void;
     };
 }, {
@@ -88,7 +88,7 @@ declare const _default: import("vue").DefineComponent<{
     errorMessages: unknown[];
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (StringConstructor | ObjectConstructor | NumberConstructor)[];
+        type: PropType<string | number | Record<string, any> | null>;
         default: null;
     };
     multiple: {
@@ -127,7 +127,7 @@ declare const _default: import("vue").DefineComponent<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
     items: string | Record<string, any>;
-    modelValue: string | number | Record<string, any>;
+    modelValue: string | number | Record<string, any> | null;
     itemValue: string;
     itemText: string;
     loading: boolean;
