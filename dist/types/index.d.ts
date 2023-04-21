@@ -1,14 +1,14 @@
-import { Session } from '@kweli/cs-rest';
-import './tailwind.pcss';
-import './styles.pcss';
-import type { App } from 'vue';
-import { WindowInitialState } from './injection';
-export * from './injection';
+import { Session } from "@kweli/cs-rest";
+import "./tailwind.pcss";
+import "./styles.pcss";
+import type { App } from "vue";
+import { WindowInitialState } from "./injection";
+export * from "./injection";
 declare const _default: {
     install(app: App, options: WindowInitialState): void;
 };
 export default _default;
-export { default as nodeLookup } from './utils/node-lookup';
-export { default as userLookup } from './utils/user-lookup';
+export { default as nodeLookup } from "./utils/node-lookup";
+export { default as userLookup } from "./utils/user-lookup";
 export declare const useSession: () => Session;
-export { useSmartUI } from './composables/useSmartUI';
+export { useSmartUI } from "./composables/useSmartUI";
