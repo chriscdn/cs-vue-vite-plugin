@@ -4,6 +4,7 @@ import './styles.pcss'
 import type { App } from 'vue'
 import { sessionKey, configKey, WindowInitialState } from './injection'
 import type { Configuration } from './injection'
+import { useSmartUI } from './composables/useSmartUI'
 
 export * from './injection'
 
@@ -50,3 +51,4 @@ export { default as nodeLookup } from './utils/node-lookup'
 export { default as userLookup } from './utils/user-lookup'
 
 export const useSession = () => session
+export  {useSmartUI} from './composables/useSmartUI'

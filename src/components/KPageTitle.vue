@@ -2,7 +2,7 @@
   <div class="text-xl">
     {{ title
     }}<span v-if="subtitle"
-      >: <span class="rhmuted">{{ subtitle }} - 2</span></span
+      >: <span class="rhmuted">{{ subtitle }}</span></span
     >
   </div>
 </template>

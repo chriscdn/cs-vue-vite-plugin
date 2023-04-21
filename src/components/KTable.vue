@@ -44,10 +44,7 @@ export default defineComponent({
   @apply border-collapse;
 
   background-color: #ffffff;
-  /* border-collapse: collapse;
-  border-spacing: 0; */
   border: 1px solid #b4b4b4;
-  /* margin-bottom: 1.67em; */
   width: 100%;
 
   thead {
@@ -62,6 +59,7 @@ export default defineComponent({
       font-weight: 700;
       padding: 10px 8px;
       white-space: nowrap;
+      @apply align-middle;
       &.min-width {
         width: 1%;
       }
@@ -72,6 +70,7 @@ export default defineComponent({
     td {
       border-top: 1px solid #cccccc;
       padding: 10px 8px;
+      @apply align-middle;
 
       &:first-child {
         border-left: 1px solid #b4b4b4;
@@ -85,8 +84,9 @@ export default defineComponent({
 
   tfoot {
     td {
+      @apply align-middle;
       padding: 10px 8px;
-      text-align: center;
+      @apply text-center;
     }
   }
 
