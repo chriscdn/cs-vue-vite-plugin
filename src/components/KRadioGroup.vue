@@ -104,14 +104,23 @@ export default defineComponent({
 
 <style lang="postcss">
 .k-radiogroup {
-  @apply flex;
-
+  @apply flex gap-4;
+ 
   .k-radiogroup-item {
-    @apply mb-1;
+    @apply flex items-center gap-1;
   }
 
   &.k-radiogroup--vertical {
-    @apply flex-col;
+    @apply flex-col gap-2;
+  }
+}
+
+/* SmartUI adds a margin. Reset it here. */
+.k-smart-ui-panel {
+  .k-radiogroup-item {
+    input[type="radio"] {
+      @apply m-0 !important;
+    }
   }
 }
 </style>

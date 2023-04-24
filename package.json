@@ -1,6 +1,6 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "module": "./dist/bundle.es.js",
   "types": "./dist/types/index.d.ts",
@@ -9,7 +9,8 @@
     "build__": "vite build",
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "watch": "vite build --watch",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "generate:index": "deno run --allow-read --allow-write ./scripts/generate-component-index.ts"
   },
   "dependencies": {
     "@chriscdn/promise-semaphore": "^2.0.1",

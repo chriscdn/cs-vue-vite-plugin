@@ -4,7 +4,6 @@ import "./styles.pcss";
 import type { App } from "vue";
 import { configKey, sessionKey, WindowInitialState } from "./injection";
 import type { Configuration } from "./injection";
-import { useSmartUI } from "./composables/useSmartUI";
 
 export * from "./injection";
 
