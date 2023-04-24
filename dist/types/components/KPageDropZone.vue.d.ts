@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 /**
  *
  * Example:

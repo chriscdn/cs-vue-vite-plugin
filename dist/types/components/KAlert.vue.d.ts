@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").DefineComponent<{
     color: {
         type: import("vue").PropType<string>;

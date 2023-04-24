@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 import { SnackbarParameters } from '../injection';
 interface SnackbarQueueInterface extends SnackbarParameters {
     index: number;

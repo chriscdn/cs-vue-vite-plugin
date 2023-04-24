@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
@@ -38,7 +39,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    maxItems: number;
     readonly: boolean;
+    maxItems: number;
 }>;
 export default _default;

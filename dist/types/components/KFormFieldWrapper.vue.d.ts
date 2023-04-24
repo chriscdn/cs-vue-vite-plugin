@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 declare const mixin: import("vue").DefineComponent<{
     label: {
         type: StringConstructor;

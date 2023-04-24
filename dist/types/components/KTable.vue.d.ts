@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     properties: {
         type: BooleanConstructor;

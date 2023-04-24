@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 import { PropType } from 'vue';
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
@@ -131,8 +132,8 @@ declare const _default: import("vue").DefineComponent<{
     itemValue: string;
     itemText: string;
     loading: boolean;
-    disabled: boolean;
     readonly: boolean;
+    disabled: boolean;
     multiple: boolean;
     itemDisabled: string;
 }>;

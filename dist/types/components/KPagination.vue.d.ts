@@ -1,3 +1,4 @@
+/** __vue_virtual_code_placeholder */
 import { PropType } from 'vue';
 import { PaginatorSerializer } from '@/types/PaginatorSerializer';
 declare const _default: import("vue").DefineComponent<{
