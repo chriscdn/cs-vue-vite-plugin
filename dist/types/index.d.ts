@@ -12,3 +12,5 @@ export { default as nodeLookup } from "./utils/node-lookup";
 export { default as userLookup } from "./utils/user-lookup";
 export declare const useSession: () => Session;
 export { useSmartUI } from "./composables/useSmartUI";
+export * from "./types/RHNodeSerializer";
+export * from "./types/RHUserSerializer";
