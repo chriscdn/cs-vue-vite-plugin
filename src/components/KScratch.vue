@@ -5,16 +5,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  inject: ['ksnackbar'],
+  inject: ["ksnackbar"],
   methods: {
     click() {
       // success({ message: 'hello' })
     },
   },
-})
+});
 </script>
 
 <style></style>

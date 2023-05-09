@@ -23,68 +23,68 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { confirmDialogKey } from '../injection'
+import { defineComponent } from "vue";
+import { confirmDialogKey } from "../injection";
 
 export default defineComponent({
   provide() {
     return {
       // @ts-ignore - not sure why this complains
       [confirmDialogKey]: this,
-    }
+    };
   },
   data() {
     return {
       dialog: false as boolean,
-      noLabel: 'Cancel' as string | null,
-      yesLabel: 'OK' as string | null,
+      noLabel: "Cancel" as string | null,
+      yesLabel: "OK" as string | null,
       title: null as string | null,
       message: null as string | null,
       resolve: null as Function | null,
-    }
+    };
   },
   methods: {
     dismiss(bool: boolean) {
-      this.dialog = false
+      this.dialog = false;
       if (this.resolve) {
-        this.resolve(bool)
-        this.resolve = null
+        this.resolve(bool);
+        this.resolve = null;
       }
     },
 
     alert({
-      yesLabel = 'OK',
+      yesLabel = "OK",
       title,
       message,
     }: {
-      yesLabel: string
-      title: string | null
-      message: string | null
+      yesLabel: string;
+      title: string | null;
+      message: string | null;
     }) {
-      return this.confirm({ yesLabel, title, message })
+      return this.confirm({ yesLabel, title, message });
     },
 
     confirm({
-      noLabel = 'Cancel',
-      yesLabel = 'OK',
+      noLabel = "Cancel",
+      yesLabel = "OK",
       title,
       message,
     }: {
-      noLabel?: string
-      yesLabel: string
-      title: string | null
-      message: string | null
+      noLabel?: string;
+      yesLabel: string;
+      title: string | null;
+      message: string | null;
     }) {
-      this.noLabel = noLabel
-      this.yesLabel = yesLabel
-      this.title = title
-      this.message = message
+      this.noLabel = noLabel;
+      this.yesLabel = yesLabel;
+      this.title = title;
+      this.message = message;
 
       return new Promise((resolve) => {
-        this.resolve = resolve
-        this.dialog = true
-      })
+        this.resolve = resolve;
+        this.dialog = true;
+      });
     },
   },
-})
+});
 </script>

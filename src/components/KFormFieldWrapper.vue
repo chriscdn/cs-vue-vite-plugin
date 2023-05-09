@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 const mixin = defineComponent({
   props: {
     label: {
@@ -40,26 +40,26 @@ const mixin = defineComponent({
   },
   computed: {
     hasSuccess() {
-      return Boolean(this.successMessages.length)
+      return Boolean(this.successMessages.length);
     },
     hasError() {
-      return Boolean(this.errorMessages.length)
+      return Boolean(this.errorMessages.length);
     },
     classObj() {
       return {
-        'k-input': true,
-        'k-input--success': this.hasSuccess && !this.hasError,
-        'k-input--error': this.hasError,
-      }
+        "k-input": true,
+        "k-input--success": this.hasSuccess && !this.hasError,
+        "k-input--error": this.hasError,
+      };
     },
   },
-})
+});
 
 export default {
   mixins: [mixin],
-}
+};
 
-export { mixin }
+export { mixin };
 </script>
 
 <style lang="postcss">

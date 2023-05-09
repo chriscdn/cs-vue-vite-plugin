@@ -1,6 +1,5 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
-import { type RHUserSerializer } from '@/types/RHUserSerializer';
+import { PropType } from "vue";
+import { type RHUserSerializer } from "@/types/RHUserSerializer";
 declare global {
     interface Window {
         baseUrl?: Function;

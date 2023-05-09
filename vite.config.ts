@@ -29,9 +29,10 @@ export default defineConfig({
         // }, [] as any),
         // preserveModules: true,
 
-        globals: {
-          vue: "Vue",
-        },
+        // only needed for UMD builds?
+        // globals: {
+        //   vue: "Vue",
+        // },
       },
     },
   },

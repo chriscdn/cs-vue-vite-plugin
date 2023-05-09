@@ -25,9 +25,9 @@
 <script lang="ts">
 declare global {
   interface Window {
-    functionMenuExpansionStatus?: any
-    setSectionName?: Function
-    showFunctionMenu2: Function
+    functionMenuExpansionStatus?: any;
+    setSectionName?: Function;
+    showFunctionMenu2: Function;
   }
 }
 
@@ -39,12 +39,12 @@ declare global {
  * ```
  */
 
-import { defineComponent, PropType } from 'vue'
-import { configKey, injectStrict } from '@/injection'
+import { defineComponent, PropType } from "vue";
+import { configKey, injectStrict } from "@/injection";
 export default defineComponent({
   setup() {
-    const config = injectStrict(configKey)
-    return { config }
+    const config = injectStrict(configKey);
+    return { config };
   },
   props: {
     // The DataId of the node.
@@ -54,64 +54,64 @@ export default defineComponent({
     },
     func: {
       type: String as PropType<string>,
-      default: '',
+      default: "",
     },
   },
   data() {
     return {
-      image: '',
-    }
+      image: "",
+    };
   },
   computed: {
     uniqueid() {
-      return Math.random().toString(36).substring(2, 15)
+      return Math.random().toString(36).substring(2, 15);
     },
     isModernFunctionMenu() {
-      return Boolean(window.functionMenuExpansionStatus)
+      return Boolean(window.functionMenuExpansionStatus);
     },
     aid() {
-      return this.isModernFunctionMenu ? this.xid : undefined
+      return this.isModernFunctionMenu ? this.xid : undefined;
     },
     xid() {
-      return `x${this.dataid}${this.uniqueid}`
+      return `x${this.dataid}${this.uniqueid}`;
     },
     zid() {
-      return `z${this.dataid}${this.uniqueid}`
+      return `z${this.dataid}${this.uniqueid}`;
     },
   },
   watch: {
     // reset the cached menu
     dataid() {
-      const ele = this.$refs.functionMenuDiv as Element
+      const ele = this.$refs.functionMenuDiv as Element;
       if (ele) {
         while (ele.firstChild) {
-          ele.removeChild(ele.firstChild)
+          ele.removeChild(ele.firstChild);
         }
       }
     },
   },
   mounted() {
     if (!this.isModernFunctionMenu) {
-      this.onmouseout()
+      this.onmouseout();
     }
   },
   methods: {
     onclick(event: Event) {
       if (window.setSectionName && window.showFunctionMenu2) {
-        window.setSectionName(this.uniqueid)
-        window.showFunctionMenu2('', this.dataid, event, '', this.func)
-        window.setSectionName('')
-        return false
+        window.setSectionName(this.uniqueid);
+        window.showFunctionMenu2("", this.dataid, event, "", this.func);
+        window.setSectionName("");
+        return false;
       } else {
-        throw new Error('KFunctionMenu window global functions missing.')
+        throw new Error("KFunctionMenu window global functions missing.");
       }
     },
     onmouseover() {
-      this.image = `${this.config.img}webdoc/actions_hover.png`
+      this.image = `${this.config.img}webdoc/actions_hover.png`;
     },
     onmouseout() {
-      this.image = `${this.config.img}webdoc/actions.png`
+      this.image = `${this.config.img}webdoc/actions.png`;
     },
   },
-})
+});
 </script>

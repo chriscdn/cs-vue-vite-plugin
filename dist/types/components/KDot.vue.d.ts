@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     color: {
         type: StringConstructor;
@@ -50,8 +49,8 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }>>, {
-    outlineWidth: string | number;
     color: string;
+    outlineWidth: string | number;
     size: string | number;
     outline: boolean;
 }>;

@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { type PropType } from 'vue';
+import { type PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<number[]>;

@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     properties: {
         type: BooleanConstructor;
@@ -14,8 +13,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, unknown, unknown, {
     classObj(): {
-        'k-table--properties': boolean;
-        'k-table--striped': boolean;
+        "k-table--properties": boolean;
+        "k-table--striped": boolean;
     };
     isStriped(): boolean;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{

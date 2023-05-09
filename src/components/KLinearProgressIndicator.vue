@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({})
+import { defineComponent } from "vue";
+export default defineComponent({});
 </script>
 
 <style lang="postcss">
@@ -20,7 +20,7 @@ export default defineComponent({})
 }
 .k-progress-line:before {
   background-color: #05447e;
-  content: '';
+  content: "";
   -webkit-animation: k-progress-running-progress 2s cubic-bezier(0.4, 0, 0.2, 1)
     infinite;
   animation: k-progress-running-progress 2s cubic-bezier(0.4, 0, 0.2, 1)

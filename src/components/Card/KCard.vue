@@ -1,7 +1,7 @@
 <script lang="ts">
-import { defineComponent, h } from 'vue'
-import clickable from '../../mixins/clickable'
-import measurables from '../../mixins/measurables'
+import { defineComponent, h } from "vue";
+import clickable from "../../mixins/clickable";
+import measurables from "../../mixins/measurables";
 
 export default defineComponent({
   mixins: [measurables, clickable],
@@ -9,14 +9,14 @@ export default defineComponent({
   computed: {
     classObj() {
       return {
-        'k-card': true,
-        'k-card-clickable': this.isClickable,
-      }
+        "k-card": true,
+        "k-card-clickable": this.isClickable,
+      };
     },
   },
   methods: {
     renderCard() {
-      const { tag, data } = this.generateRouteLink()
+      const { tag, data } = this.generateRouteLink();
 
       return h(
         tag,
@@ -25,15 +25,15 @@ export default defineComponent({
           class: this.classObj,
           style: [this.measurableStyles],
         },
-        [...this.$slots.default!()],
-      )
+        [...this.$slots.default!()]
+      );
     },
   },
   render() {
     // return h('div', {}, [this.renderLoading(), this.renderCard()])
-    return this.renderCard()
+    return this.renderCard();
   },
-})
+});
 </script>
 
 <style lang="postcss">

@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: BooleanConstructor;
@@ -29,7 +28,7 @@ declare const _default: import("vue").DefineComponent<{
     mounted: boolean;
 }, {
     classObj(): {
-        'k-dialog--scrollable': boolean;
+        "k-dialog--scrollable": boolean;
     };
     style(): {
         zIndex: number;

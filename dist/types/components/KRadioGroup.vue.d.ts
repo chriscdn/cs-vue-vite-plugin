@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: (StringConstructor | ObjectConstructor | NumberConstructor)[];
@@ -31,7 +30,7 @@ declare const _default: import("vue").DefineComponent<{
         set(value: any): void;
     };
     classObj(): {
-        'k-radiogroup--vertical': boolean;
+        "k-radiogroup--vertical": boolean;
     };
 }, {
     isObject(obj: any): boolean;
@@ -55,9 +54,9 @@ declare const _default: import("vue").DefineComponent<{
     hasSuccess(): boolean;
     hasError(): boolean;
     classObj(): {
-        'k-input': boolean;
-        'k-input--success': boolean;
-        'k-input--error': boolean;
+        "k-input": boolean;
+        "k-input--success": boolean;
+        "k-input--error": boolean;
     };
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     label: {

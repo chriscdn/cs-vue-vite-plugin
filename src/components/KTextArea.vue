@@ -17,8 +17,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
-import { mixin } from './KFormFieldWrapper.vue'
+import { defineComponent, type PropType } from "vue";
+import { mixin } from "./KFormFieldWrapper.vue";
 
 export default defineComponent({
   mixins: [mixin],
@@ -33,42 +33,42 @@ export default defineComponent({
       default: 5,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
 
   computed: {
     valueLocal: {
       // The <textarea> element expects a string or undefined.
       get(): string | undefined {
-        return this.modelValue || undefined
+        return this.modelValue || undefined;
       },
       // We emit a string or null.
       set(value: string | null) {
-        this.$emit('update:modelValue', value || null)
+        this.$emit("update:modelValue", value || null);
       },
     },
   },
   methods: {
     tabber(event: Event) {
-      const target = event.target as HTMLInputElement
+      const target = event.target as HTMLInputElement;
 
-      const text = this.valueLocal
-      const originalSelectionStart = target.selectionStart
+      const text = this.valueLocal;
+      const originalSelectionStart = target.selectionStart;
 
       if (text && originalSelectionStart) {
-        const textStart = text.slice(0, originalSelectionStart)
-        const textEnd = text.slice(originalSelectionStart)
+        const textStart = text.slice(0, originalSelectionStart);
+        const textEnd = text.slice(originalSelectionStart);
 
-        const newText = `${textStart}\t${textEnd}`
+        const newText = `${textStart}\t${textEnd}`;
 
-        this.valueLocal = newText
+        this.valueLocal = newText;
 
-        target.value = newText
-        target.selectionStart = originalSelectionStart + 1
-        target.selectionEnd = originalSelectionStart + 1
+        target.value = newText;
+        target.selectionStart = originalSelectionStart + 1;
+        target.selectionEnd = originalSelectionStart + 1;
       }
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

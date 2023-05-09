@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").DefineComponent<{
     color: {
         type: import("vue").PropType<string>;
@@ -33,7 +32,7 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import
         default: null;
     };
 }>>, {
-    textColor: string;
     color: string;
+    textColor: string;
 }>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
 export default _default;

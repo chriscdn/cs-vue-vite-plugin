@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { type PropType } from 'vue';
+import { type PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<string | null>;
@@ -33,9 +32,9 @@ declare const _default: import("vue").DefineComponent<{
     hasSuccess(): boolean;
     hasError(): boolean;
     classObj(): {
-        'k-input': boolean;
-        'k-input--success': boolean;
-        'k-input--error': boolean;
+        "k-input": boolean;
+        "k-input--success": boolean;
+        "k-input--error": boolean;
     };
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     label: {

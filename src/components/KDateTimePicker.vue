@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { format } from 'date-fns'
+import { defineComponent, PropType } from "vue";
+import { format } from "date-fns";
 export default defineComponent({
   props: {
     modelValue: {
@@ -31,42 +31,42 @@ export default defineComponent({
       default: true,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     type() {
-      return this.time ? 'datetime-local' : 'date'
+      return this.time ? "datetime-local" : "date";
     },
     localModelValue: {
       set(value: string | Date | null) {
-        this.$emit('update:modelValue', this.formatForDatePicker(value))
+        this.$emit("update:modelValue", this.formatForDatePicker(value));
       },
       get(): string | Date | null {
-        return this.formatForDatePicker(this.modelValue)
+        return this.formatForDatePicker(this.modelValue);
       },
     },
   },
   methods: {
     parse(value: string | Date | null) {
-      return value ? new Date(value) : null
+      return value ? new Date(value) : null;
     },
     setToNow() {
-      this.localModelValue = new Date()
+      this.localModelValue = new Date();
     },
     formatForDatePicker(value: string | Date | null): string | null {
-      const d = this.parse(value)
+      const d = this.parse(value);
 
       if (d) {
         if (this.time) {
-          return format(d, "yyyy-MM-dd'T'HH:mm:ss")
+          return format(d, "yyyy-MM-dd'T'HH:mm:ss");
         } else {
-          return format(d, 'yyyy-MM-dd')
+          return format(d, "yyyy-MM-dd");
         }
       } else {
-        return null
+        return null;
       }
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

@@ -1,6 +1,5 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
-import { PaginatorSerializer } from '@/types/PaginatorSerializer';
+import { PropType } from "vue";
+import { PaginatorSerializer } from "@/types/PaginatorSerializer";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: NumberConstructor;
@@ -23,7 +22,7 @@ declare const _default: import("vue").DefineComponent<{
     hasNext(): boolean;
 }, {
     classObj(pageNumber: number): {
-        'k-pagination-button-selected': boolean;
+        "k-pagination-button-selected": boolean;
     };
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "update:pageSize")[], "update:modelValue" | "update:pageSize", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {

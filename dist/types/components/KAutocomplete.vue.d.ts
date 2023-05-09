@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<string | number | Record<string, any> | null>;
@@ -55,7 +54,7 @@ declare const _default: import("vue").DefineComponent<{
     };
     itemsFiltered(): (string | Record<string, any>)[];
     placeholderText(): string | undefined;
-    localValue: {
+    valueLocal: {
         set(value: any): void;
         get(): any;
     };
@@ -114,13 +113,13 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     filter: Function;
+    placeholder: string;
     width: string | number;
     items: (string | Record<string, any>)[];
     modelValue: string | number | Record<string, any> | null;
     itemValue: string;
     itemText: string;
     returnObject: boolean;
-    placeholder: string;
     loading: boolean;
     combobox: boolean;
     editable: boolean;

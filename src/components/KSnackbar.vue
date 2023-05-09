@@ -26,12 +26,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 // import { emitter, type SnackbarParameters } from '../snackbar'
-import { snackbarKey, SnackbarParameters } from '../injection'
+import { snackbarKey, SnackbarParameters } from "../injection";
 interface SnackbarQueueInterface extends SnackbarParameters {
-  index: number
-  type: 'success' | 'error'
+  index: number;
+  type: "success" | "error";
 }
 
 export default defineComponent({
@@ -39,18 +39,18 @@ export default defineComponent({
     return {
       // @ts-ignore - not sure why this complains
       [snackbarKey]: this,
-    }
+    };
   },
 
   data() {
     return {
       index: 0,
       nitems: {} as Array<SnackbarQueueInterface>,
-    }
+    };
   },
   computed: {
     items() {
-      return Object.values(this.nitems).sort((a, b) => b.index - a.index)
+      return Object.values(this.nitems).sort((a, b) => b.index - a.index);
     },
   },
   // mounted() {
@@ -67,50 +67,50 @@ export default defineComponent({
   methods: {
     classObj(item: SnackbarQueueInterface) {
       return {
-        'k-snackbar-item--success': item.type === 'success',
-        'k-snackbar-item--error': item.type === 'error',
-      }
+        "k-snackbar-item--success": item.type === "success",
+        "k-snackbar-item--error": item.type === "error",
+      };
     },
     action(item: SnackbarQueueInterface) {
-      const cb = item.action
+      const cb = item.action;
       if (cb) {
-        cb(() => this.dismiss(item.index))
+        cb(() => this.dismiss(item.index));
       }
     },
     dismiss(index: number) {
-      delete this.nitems[index]
+      delete this.nitems[index];
     },
     nextIndex() {
-      this.index += 1
-      return this.index
+      this.index += 1;
+      return this.index;
     },
 
     success(params: SnackbarParameters) {
       // debugger
-      this.queue('success', params)
+      this.queue("success", params);
     },
     error(params: SnackbarParameters) {
-      this.queue('error', params)
+      this.queue("error", params);
     },
 
     queue(
-      type: 'success' | 'error',
+      type: "success" | "error",
       {
         title,
         message,
         timeout = 6000,
-        actionLabel = 'close',
+        actionLabel = "close",
         action,
-      }: SnackbarParameters,
+      }: SnackbarParameters
     ) {
-      const index = this.nextIndex()
+      const index = this.nextIndex();
       // const timeout = snackbar.timeout ?? 6000
 
       // let { action } = snackbar
 
       if (action == null) {
         // if no action is specified, then make the default the close action
-        action = () => this.dismiss(index)
+        action = () => this.dismiss(index);
       }
 
       const item: SnackbarQueueInterface = {
@@ -121,7 +121,7 @@ export default defineComponent({
         action,
         type,
         index,
-      }
+      };
       // const item: SnackbarQueueInterface = {
       //   ...snackbar,
       //   index,
@@ -129,15 +129,15 @@ export default defineComponent({
       //   action,
       // }
 
-      this.nitems[index] = item
+      this.nitems[index] = item;
 
-      console.log(timeout)
+      console.log(timeout);
       // console.log(this.nitems)
 
-      setInterval(() => this.dismiss(index), timeout)
+      setInterval(() => this.dismiss(index), timeout);
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

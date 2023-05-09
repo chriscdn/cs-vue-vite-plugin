@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 /**
  *
  * Example:
@@ -29,60 +29,62 @@ export default defineComponent({
     return {
       active: false,
       lastTarget: null as EventTarget | null,
-    }
+    };
   },
   mounted() {
-    window.addEventListener('dragenter', this.dragenter)
-    window.addEventListener('dragleave', this.dragleave)
-    window.addEventListener('dragover', this.dragover)
-    window.addEventListener('drop', this.drop)
+    window.addEventListener("dragenter", this.dragenter);
+    window.addEventListener("dragleave", this.dragleave);
+    window.addEventListener("dragover", this.dragover);
+    window.addEventListener("drop", this.drop);
   },
   beforeUnmount() {
-    window.removeEventListener('dragenter', this.dragenter)
-    window.removeEventListener('dragleave', this.dragleave)
-    window.removeEventListener('dragover', this.dragover)
-    window.removeEventListener('drop', this.drop)
+    window.removeEventListener("dragenter", this.dragenter);
+    window.removeEventListener("dragleave", this.dragleave);
+    window.removeEventListener("dragover", this.dragover);
+    window.removeEventListener("drop", this.drop);
   },
   methods: {
     isFile(event: DragEvent): boolean {
-      return event.dataTransfer?.types.some((item) => item === 'Files') ?? false
+      return (
+        event.dataTransfer?.types.some((item) => item === "Files") ?? false
+      );
     },
     dragenter(event: DragEvent) {
       if (this.isFile(event)) {
-        this.lastTarget = event.target
-        this.active = true
+        this.lastTarget = event.target;
+        this.active = true;
       }
     },
     dragleave(event: DragEvent) {
-      event.preventDefault()
+      event.preventDefault();
 
       if (
         event.target === this.lastTarget ||
         event.target === window.document
       ) {
-        this.active = false
+        this.active = false;
       }
     },
     dragover(event: DragEvent) {
-      event.preventDefault()
+      event.preventDefault();
     },
     drop(event: DragEvent) {
-      event.preventDefault()
+      event.preventDefault();
 
       if (event.dataTransfer && event.dataTransfer.files.length) {
-        this.$emit('predrop')
+        this.$emit("predrop");
 
-        let files = Array.from(event.dataTransfer.files)
+        let files = Array.from(event.dataTransfer.files);
 
         if (this.mimetypes) {
-          files = files.filter((file) => this.mimetypes.includes(file.type))
+          files = files.filter((file) => this.mimetypes.includes(file.type));
         }
 
-        this.$emit('drop', files)
+        this.$emit("drop", files);
       }
 
-      this.active = false
+      this.active = false;
     },
   },
-})
+});
 </script>

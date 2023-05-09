@@ -1,4 +1,4 @@
-import type { Session } from '@kweli/cs-rest';
+import type { Session } from "@kweli/cs-rest";
 declare class AncestorLookup {
     nodes: Record<number, Array<Record<string, any>>>;
     constructor();

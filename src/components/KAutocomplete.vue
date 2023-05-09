@@ -1,6 +1,6 @@
 <template>
   <div v-click-away="setBlur" class="k-autocomplete" :style="[style]">
-    <slot name="prepend" :item="localValue" />
+    <slot name="prepend" :item="valueLocal" />
     <div class="k-autocomplete-input">
       <input
         ref="input"
@@ -44,10 +44,10 @@
 </template>
 
 <script lang="ts">
-import { directive } from 'vue3-click-away'
-import get from 'lodash.get'
-import { defineComponent, PropType } from 'vue'
-import { convertToUnit } from '../mixins/measurables'
+import { directive } from "vue3-click-away";
+import get from "lodash.get";
+import { defineComponent, PropType } from "vue";
+import { convertToUnit } from "../mixins/measurables";
 export default defineComponent({
   directives: {
     ClickAway: directive,
@@ -65,11 +65,11 @@ export default defineComponent({
     },
     itemValue: {
       type: String,
-      default: 'value',
+      default: "value",
     },
     itemText: {
       type: String,
-      default: 'text',
+      default: "text",
     },
     returnObject: {
       type: Boolean as PropType<boolean>,
@@ -77,7 +77,7 @@ export default defineComponent({
     },
     placeholder: {
       type: String,
-      default: 'Start typing...',
+      default: "Start typing...",
     },
     // readonly: {
     //  type: Boolean,
@@ -85,7 +85,7 @@ export default defineComponent({
     // },
     width: {
       type: [String, Number],
-      default: '100%',
+      default: "100%",
     },
     items: {
       type: Array as PropType<Array<string | Record<string, any>>>,
@@ -114,73 +114,73 @@ export default defineComponent({
       currentFocus: -1,
       focus: false,
       // captureKeyStrokes: true,
-    }
+    };
   },
   computed: {
     style() {
       return {
         width: convertToUnit(this.width),
-      }
+      };
     },
 
     itemsFiltered() {
       return this.items.filter((item: string | Record<string, any>) =>
-        this.filter(item),
-      )
+        this.filter(item)
+      );
     },
 
     placeholderText() {
-      return this.editable ? this.placeholder : undefined
+      return this.editable ? this.placeholder : undefined;
     },
 
-    localValue: {
+    valueLocal: {
       set(value: any) {
         if (!value) {
-          this.$emit('update:modelValue', null)
+          this.$emit("update:modelValue", null);
         } else if (this.returnObject) {
-          this.$emit('update:modelValue', value)
+          this.$emit("update:modelValue", value);
         } else {
-          this.$emit('update:modelValue', get(value, this.itemValue, value))
+          this.$emit("update:modelValue", get(value, this.itemValue, value));
         }
       },
       get(): any {
         return this.isObject(this.modelValue)
           ? this.modelValue
           : this.items.find(
-              (item: any) => get(item, this.itemValue, item) == this.modelValue,
-            )
+              (item: any) => get(item, this.itemValue, item) == this.modelValue
+            );
       },
     },
     isValidSelection() {
-      return !!this.localValue
+      return !!this.valueLocal;
     },
   },
   watch: {
     inputText(value) {
-      this.$emit('update:search-input', value)
+      this.$emit("update:search-input", value);
     },
 
     items() {
-      this.currentFocus = -1
+      this.currentFocus = -1;
 
-      if (this.localValue) {
+      if (this.valueLocal) {
         if (!this.combobox) {
           this.inputText = String(
-            this.isObject(this.localValue)
-              ? get(this.localValue, this.itemText, '')
-              : this.localValue,
-          )
+            this.isObject(this.valueLocal)
+              ? get(this.valueLocal, this.itemText, "")
+              : this.valueLocal
+          );
         }
       }
     },
 
-    value: {
+    valueLocal: {
       handler(v) {
         // this.destroyWatcher()
 
         // this check needs to be tested with combobox
-        // if (this.localValue) {
-        this.inputText = get(this.localValue, this.itemText, v)
+        // if (this.valueLocal) {
+        this.inputText = get(this.valueLocal, this.itemText, v);
         // }
       },
       immediate: true,
@@ -191,12 +191,12 @@ export default defineComponent({
         // focus
       } else {
         // blur
-        if (this.localValue) {
+        if (this.valueLocal) {
           // all good, keep it
         } else if (!this.combobox) {
           // otherwise, clear the text field
           // this.createWatcher()
-          this.inputText = null
+          this.inputText = null;
         }
       }
     },
@@ -207,60 +207,60 @@ export default defineComponent({
       // default to first item
 
       if (!this.combobox) {
-        index = Math.max(index, 0)
+        index = Math.max(index, 0);
       }
 
-      const selectedItem = this.items[index]
+      const selectedItem = this.items[index];
 
       if (this.combobox) {
         if (selectedItem) {
-          this.localValue = selectedItem
+          this.valueLocal = selectedItem;
         }
       } else {
-        this.localValue = selectedItem
+        this.valueLocal = selectedItem;
         // this.destroyWatcher()
         this.inputText = get(
           selectedItem,
           this.itemText,
-          selectedItem,
-        ) as string
+          selectedItem
+        ) as string;
       }
 
       // Let the reactive system all sync before blurring the field.
-      await this.$nextTick()
+      await this.$nextTick();
 
-      this.setBlur()
+      this.setBlur();
     },
 
     setFocus() {
-      this.focus = true
+      this.focus = true;
     },
 
     setBlur() {
-      const inputElmenet = this.$refs.input as HTMLInputElement
-      inputElmenet.blur()
-      this.focus = false
+      const inputElmenet = this.$refs.input as HTMLInputElement;
+      inputElmenet.blur();
+      this.focus = false;
     },
     isObject(obj: any): boolean {
       return (
-        typeof obj == 'object' &&
+        typeof obj == "object" &&
         obj instanceof Object &&
         !(obj instanceof Array)
-      )
+      );
     },
     clearInput() {
-      this.localValue = null
+      this.valueLocal = null;
     },
 
     keyup() {
       if (this.combobox) {
-        this.localValue = this.inputText
+        this.valueLocal = this.inputText;
       } else {
-        this.localValue = null
+        this.valueLocal = null;
       }
     },
   },
-})
+});
 </script>
 <style lang="postcss">
 .k-autocomplete {

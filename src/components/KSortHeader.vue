@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
   props: {
     keypath: {
@@ -25,24 +25,24 @@ export default defineComponent({
   },
   computed: {
     sortKey() {
-      return this.modelValue.sortKey
+      return this.modelValue.sortKey;
     },
     sortAsc() {
-      return Boolean(this.modelValue.sortAsc)
+      return Boolean(this.modelValue.sortAsc);
     },
     isActive() {
-      return this.keypath == this.sortKey
+      return this.keypath == this.sortKey;
     },
   },
   methods: {
     emitClick() {
-      return this.$emit('update:modelValue', {
+      return this.$emit("update:modelValue", {
         sortKey: this.keypath,
         sortAsc: this.isActive ? !this.sortAsc : true,
-      })
+      });
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

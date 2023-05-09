@@ -1,6 +1,5 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
-import { RHUserSerializer } from '@/types/RHUserSerializer';
+import { PropType } from "vue";
+import { RHUserSerializer } from "@/types/RHUserSerializer";
 declare const _default: import("vue").DefineComponent<{
     userRec: {
         type: PropType<RHUserSerializer>;
@@ -101,9 +100,9 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }>>, {
+    type: number;
     height: string | number;
     width: string | number;
-    type: number;
     userRec: RHUserSerializer;
 }>;
 export default _default;

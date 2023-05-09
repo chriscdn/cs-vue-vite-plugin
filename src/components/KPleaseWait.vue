@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { PropType, defineComponent } from 'vue'
-import KSpinner from './KSpinner.vue'
+import { PropType, defineComponent } from "vue";
+import KSpinner from "./KSpinner.vue";
 export default defineComponent({
   components: { KSpinner },
   props: {
@@ -19,7 +19,7 @@ export default defineComponent({
       default: 100,
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

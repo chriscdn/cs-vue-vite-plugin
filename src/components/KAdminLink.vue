@@ -4,11 +4,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from 'vue'
+import { defineComponent, inject } from "vue";
 export default defineComponent({
   setup() {
-    const config: any = inject('config', {})
-    return { config }
+    const config: any = inject("config", {});
+    return { config };
   },
-})
+});
 </script>

@@ -20,12 +20,12 @@
 </template>
 
 <script lang="ts">
-import { configKey, injectStrict, sessionKey } from '@/injection'
-import buildUrl from '@googlicius/build-url'
-import cookies from 'js-cookie'
-import ancestorLookup from '../utils/ancestor-lookup'
-import KNodeAncestor from './KNodeAncestor.vue'
-import { defineComponent, PropType } from 'vue'
+import { configKey, injectStrict, sessionKey } from "@/injection";
+import buildUrl from "@googlicius/build-url";
+import cookies from "js-cookie";
+import ancestorLookup from "../utils/ancestor-lookup";
+import KNodeAncestor from "./KNodeAncestor.vue";
+import { defineComponent, PropType } from "vue";
 
 // declare global {
 //   interface Window {
@@ -40,7 +40,7 @@ export default defineComponent({
     return {
       session: injectStrict(sessionKey),
       config: injectStrict(configKey),
-    }
+    };
   },
   props: {
     modelValue: {
@@ -49,7 +49,7 @@ export default defineComponent({
     },
     title: {
       type: String as PropType<string>,
-      default: 'Target Browse',
+      default: "Target Browse",
     },
     objid: {
       type: Number as PropType<number>,
@@ -73,7 +73,7 @@ export default defineComponent({
     },
     browseButtonLabel: {
       type: String as PropType<string>,
-      default: 'Browse Content Server...',
+      default: "Browse Content Server...",
     },
     clearable: {
       type: Boolean as PropType<boolean>,
@@ -81,27 +81,27 @@ export default defineComponent({
     },
     clearButtonLabel: {
       type: String as PropType<string>,
-      default: 'clear',
+      default: "clear",
     },
   },
   data() {
     return {
       breadcrumb: [] as Array<Record<string, any>>,
-    }
+    };
   },
   computed: {
     dataid: {
       set(value: number) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
       get(): number | null {
-        return this.modelValue
+        return this.modelValue;
       },
     },
 
     uniqueid() {
-      const id = Math.random().toString(36).substring(2, 15)
-      return `targetbrowse_${id}`
+      const id = Math.random().toString(36).substring(2, 15);
+      return `targetbrowse_${id}`;
     },
     // breadcrumbString() {
     //   if (this.breadcrumb) {
@@ -111,49 +111,49 @@ export default defineComponent({
     //   }
     // },
     globalCallbackFunctionName(): string {
-      return `${this.uniqueid}_DoSelection`
+      return `${this.uniqueid}_DoSelection`;
     },
     selectScreenString() {
       if (this.selectScreen.length) {
         return {
-          selectScreen: `{${this.selectScreen.join(',')}}`,
-        }
+          selectScreen: `{${this.selectScreen.join(",")}}`,
+        };
       } else {
-        return null
+        return null;
       }
     },
     urlParams() {
       return {
-        func: 'll',
-        objAction: 'TargetBrowse',
+        func: "ll",
+        objAction: "TargetBrowse",
         headerLabel: this.title,
         objid: String(this.targetBrowseObjID()),
         selectPerm: String(this.selectPerm),
         ...this.selectScreenString,
-        formname: 'theFormName',
+        formname: "theFormName",
         fieldPrefix: this.uniqueid,
-      }
+      };
     },
     url() {
       return buildUrl(this.config.baseUrl, {
         queryParams: this.urlParams,
-      })
+      });
     },
     name() {
-      return this.breadcrumb[this.breadcrumb.length - 1]?.name
+      return this.breadcrumb[this.breadcrumb.length - 1]?.name;
     },
     windowParams() {
       const windowParams = {
         width: this.width,
         height: this.height,
-        resizable: 'yes',
-        menubar: 'no',
-        scrollbars: 'yes',
-        toolbar: 'yes',
-      }
+        resizable: "yes",
+        menubar: "no",
+        scrollbars: "yes",
+        toolbar: "yes",
+      };
       return Object.entries(windowParams)
         .map(([key, value]) => `${key}=${value}`)
-        .join(',')
+        .join(",");
     },
   },
   watch: {
@@ -162,10 +162,10 @@ export default defineComponent({
         if (this.dataid) {
           this.breadcrumb = await ancestorLookup.lookup(
             this.session,
-            this.dataid,
-          )
+            this.dataid
+          );
         } else {
-          this.breadcrumb = []
+          this.breadcrumb = [];
         }
       },
       immediate: true,
@@ -173,11 +173,11 @@ export default defineComponent({
   },
   async mounted() {
     // @ts-ignore
-    window[this.globalCallbackFunctionName] = this.callback
+    window[this.globalCallbackFunctionName] = this.callback;
   },
   beforeUnmount() {
     // @ts-ignore
-    delete window[this.globalCallbackFunctionName]
+    delete window[this.globalCallbackFunctionName];
   },
 
   // async mounted() {
@@ -188,40 +188,40 @@ export default defineComponent({
   // },
   methods: {
     openWindow() {
-      window.open(this.url, 'WindowName', this.windowParams)
+      window.open(this.url, "WindowName", this.windowParams);
 
-      const inputElmenet = this.$refs.input as HTMLInputElement
+      const inputElmenet = this.$refs.input as HTMLInputElement;
 
       if (inputElmenet) {
-        inputElmenet.blur()
+        inputElmenet.blur();
       }
     },
     targetBrowseObjID(): number {
       // not computed, since cookies are not reactive
-      return this.objid ?? parseInt(cookies.get('TargetBrowseObjID') ?? '0')
+      return this.objid ?? parseInt(cookies.get("TargetBrowseObjID") ?? "0");
     },
     didCloseWindow() {
-      console.log('didClose')
+      console.log("didClose");
     },
     // callback(dataid: number, breadcrumb: string) {
     callback(dataid: number) {
       // debugger
       // this.breadcrumb = breadcrumb.split(':')
-      this.dataid = dataid
+      this.dataid = dataid;
     },
     clear() {
-      this.breadcrumb = []
-      this.dataid = null
+      this.breadcrumb = [];
+      this.dataid = null;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">
 .k-node-picker-field {
   @apply bg-gray-100 rounded p-2;
 
-  input[type='text'] {
+  input[type="text"] {
     width: 20em;
   }
 

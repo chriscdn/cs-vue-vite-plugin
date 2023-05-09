@@ -1,6 +1,5 @@
-/** __vue_virtual_code_placeholder */
-import { type RHNodeSerializer } from '@/types/RHNodeSerializer';
-import { type PropType } from 'vue';
+import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { type PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     nodeRec: {
         type: PropType<RHNodeSerializer | null>;

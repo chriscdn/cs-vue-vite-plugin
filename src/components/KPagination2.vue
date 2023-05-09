@@ -58,8 +58,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import get from 'lodash.get'
+import { defineComponent } from "vue";
+import get from "lodash.get";
 
 // const schema = {
 //   type: 'object',
@@ -81,97 +81,97 @@ export default defineComponent({
   data() {
     return {
       pageSizes: [10, 25, 50, 100],
-    }
+    };
   },
   computed: {
     pageSize: {
       get() {
-        return this.limit
+        return this.limit;
       },
       set(value: number) {
-        this.$emit('update:modelValue', {
+        this.$emit("update:modelValue", {
           ...this.pagination,
           offset: 0,
           limit: value,
-        })
+        });
       },
     },
 
     pagination() {
-      return this.modelValue
+      return this.modelValue;
     },
     offset() {
-      return get(this.pagination, 'offset', 0)
+      return get(this.pagination, "offset", 0);
     },
 
     limit() {
-      return get(this.pagination, 'limit', 0)
+      return get(this.pagination, "limit", 0);
     },
 
     count() {
-      return get(this.pagination, 'count', 0)
+      return get(this.pagination, "count", 0);
     },
 
     lastPageNumber0() {
-      return Math.ceil(this.count / this.limit) - 1
+      return Math.ceil(this.count / this.limit) - 1;
     },
 
     lastPageNumber() {
-      return this.lastPageNumber0 + 1
+      return this.lastPageNumber0 + 1;
     },
 
     pageCount() {
-      return this.lastPageNumber
+      return this.lastPageNumber;
     },
 
     pageRange0() {
-      const rang = []
+      const rang = [];
 
-      const plusMinus = 5
-      const plusMinus2 = 2 * plusMinus
+      const plusMinus = 5;
+      const plusMinus2 = 2 * plusMinus;
 
-      const min1 = Math.max(0, this.pageNumber0 - plusMinus)
-      const max = Math.min(this.lastPageNumber0, min1 + plusMinus2)
-      const min = Math.max(0, max - plusMinus2)
+      const min1 = Math.max(0, this.pageNumber0 - plusMinus);
+      const max = Math.min(this.lastPageNumber0, min1 + plusMinus2);
+      const min = Math.max(0, max - plusMinus2);
 
       for (let i = min; i <= max; i++) {
-        rang.push(i)
+        rang.push(i);
       }
-      return rang
+      return rang;
     },
 
     pageNumber0() {
-      return Math.floor(this.offset / this.limit)
+      return Math.floor(this.offset / this.limit);
     },
 
     pageNumber() {
-      return this.pageNumber0 + 1
+      return this.pageNumber0 + 1;
     },
 
     hasPrevious() {
-      return this.pageNumber0 > 0
+      return this.pageNumber0 > 0;
     },
 
     hasNext() {
-      return this.pageNumber0 < this.lastPageNumber0
+      return this.pageNumber0 < this.lastPageNumber0;
     },
   },
   methods: {
     classObj(pageNumber: number) {
       return {
-        'k-pagination2-button-selected': pageNumber == this.pageNumber0,
-      }
+        "k-pagination2-button-selected": pageNumber == this.pageNumber0,
+      };
     },
     clickedPageNumber(pageNumber0: number) {
-      const p = Math.max(0, Math.min(pageNumber0, this.lastPageNumber0))
+      const p = Math.max(0, Math.min(pageNumber0, this.lastPageNumber0));
 
-      this.$emit('update:modelValue', {
+      this.$emit("update:modelValue", {
         ...this.pagination,
         offset: p * this.limit,
-      })
+      });
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

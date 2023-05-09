@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 type Tab = {
     name: string;
     title: string;
@@ -23,8 +22,8 @@ declare const _default: import("vue").DefineComponent<{
     initialSelectedTab(): string;
     selectTab(tabName: string): void;
     classObj(tab: Tab): {
-        'k-tabs-nav-tab': boolean;
-        'k-tabs-active': boolean;
+        "k-tabs-nav-tab": boolean;
+        "k-tabs-active": boolean;
     };
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {

@@ -30,12 +30,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 /**
  * This component is based on KSelect
  */
-import get from 'lodash.get'
-import { mixin } from './KFormFieldWrapper.vue'
+import get from "lodash.get";
+import { mixin } from "./KFormFieldWrapper.vue";
 export default defineComponent({
   mixins: [mixin],
   props: {
@@ -54,58 +54,58 @@ export default defineComponent({
     },
     itemValue: {
       type: String,
-      default: 'value',
+      default: "value",
     },
     itemText: {
       type: String,
-      default: 'text',
+      default: "text",
     },
     vertical: {
       type: Boolean,
       default: false,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     localValue: {
       get() {
-        return this.modelValue
+        return this.modelValue;
       },
       set(value: any) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
     },
     classObj() {
       return {
-        'k-radiogroup--vertical': this.vertical,
-      }
+        "k-radiogroup--vertical": this.vertical,
+      };
     },
   },
   methods: {
     isObject(obj: any) {
       return (
-        typeof obj == 'object' &&
+        typeof obj == "object" &&
         obj instanceof Object &&
         !(obj instanceof Array)
-      )
+      );
     },
     getItemText(item: string) {
-      return this.isObject(item) ? get(item, this.itemText) : item
+      return this.isObject(item) ? get(item, this.itemText) : item;
     },
     getItemValue(item: any) {
-      return this.isObject(item) ? get(item, this.itemValue) : item
+      return this.isObject(item) ? get(item, this.itemValue) : item;
     },
     getItemDisabled(item: any) {
-      return this.isObject(item) ? get(item, 'disabled', false) : false
+      return this.isObject(item) ? get(item, "disabled", false) : false;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">
 .k-radiogroup {
   @apply flex gap-4;
- 
+
   .k-radiogroup-item {
     @apply flex items-center gap-1;
   }

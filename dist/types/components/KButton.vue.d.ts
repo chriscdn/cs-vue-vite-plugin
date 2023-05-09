@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     small: {
         type: BooleanConstructor;
@@ -14,9 +13,9 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, unknown, unknown, {
     classObj(): {
-        'k-button--small': boolean;
-        'k-button--text': boolean;
-        'k-button--disabled': boolean;
+        "k-button--small": boolean;
+        "k-button--text": boolean;
+        "k-button--disabled": boolean;
     };
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     small: {

@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     color: {
         type: StringConstructor;
@@ -85,8 +84,8 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
+    color: string;
     maxHeight: string | number;
     maxWidth: string | number;
-    color: string;
 }>;
 export default _default;

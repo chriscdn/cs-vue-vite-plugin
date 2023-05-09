@@ -12,12 +12,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import colorable from '../mixins/colorable'
+import { defineComponent } from "vue";
+import colorable from "../mixins/colorable";
 
 export default defineComponent({
   mixins: [colorable],
-})
+});
 </script>
 
 <style lang="postcss">

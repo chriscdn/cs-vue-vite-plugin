@@ -13,7 +13,7 @@ y
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
   props: {
     small: {
@@ -29,18 +29,18 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['click'],
+  emits: ["click"],
   computed: {
     classObj() {
       return {
-        'k-button--small': this.small,
-        'k-button--text': this.text,
-        'k-button--disabled': this.disabled,
+        "k-button--small": this.small,
+        "k-button--text": this.text,
+        "k-button--disabled": this.disabled,
         // 'k-button--icon': this.icon,
-      }
+      };
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

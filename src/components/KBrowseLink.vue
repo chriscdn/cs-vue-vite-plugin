@@ -12,14 +12,14 @@
 </template>
 
 <script lang="ts">
-import { injectStrict, sessionKey } from '@/injection'
-import { type RHNodeSerializer } from '@/types/RHNodeSerializer'
-import { defineComponent, type PropType } from 'vue'
-import nodeLookup from '../utils/node-lookup'
+import { injectStrict, sessionKey } from "@/injection";
+import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { defineComponent, type PropType } from "vue";
+import nodeLookup from "../utils/node-lookup";
 
 export default defineComponent({
   setup() {
-    return { session: injectStrict(sessionKey) }
+    return { session: injectStrict(sessionKey) };
   },
   props: {
     nodeRec: {
@@ -42,22 +42,22 @@ export default defineComponent({
   data() {
     return {
       nodeRecLocal: null as RHNodeSerializer | null,
-    }
+    };
   },
   computed: {
     nodeRecResolved() {
-      return this.nodeRec ?? this.nodeRecLocal
+      return this.nodeRec ?? this.nodeRecLocal;
     },
   },
   watch: {
     dataid: {
       async handler(value) {
         if (value) {
-          this.nodeRecLocal = await nodeLookup.lookup(this.session, value)
+          this.nodeRecLocal = await nodeLookup.lookup(this.session, value);
         }
       },
       immediate: true,
     },
   },
-})
+});
 </script>

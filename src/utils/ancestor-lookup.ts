@@ -1,14 +1,14 @@
-import Semaphore from '@chriscdn/promise-semaphore'
-import type { Session } from '@kweli/cs-rest'
-import get from 'lodash.get'
+import Semaphore from "@chriscdn/promise-semaphore";
+import type { Session } from "@kweli/cs-rest";
+import get from "lodash.get";
 
-const semaphore = new Semaphore()
+const semaphore = new Semaphore();
 
 class AncestorLookup {
-  nodes: Record<number, Array<Record<string, any>>>
+  nodes: Record<number, Array<Record<string, any>>>;
 
   constructor() {
-    this.nodes = {}
+    this.nodes = {};
   }
 
   // registerNodes(items: Array<Record<string, any>>) {
@@ -22,20 +22,20 @@ class AncestorLookup {
     dataId: number,
   ): Promise<Array<Record<string, any>>> {
     try {
-      await semaphore.acquire(dataId)
+      await semaphore.acquire(dataId);
 
       if (!this.nodes[dataId]) {
-        const response = await session.nodes.ancestors(dataId)
-        this.nodes[dataId] = get(response, 'data.ancestors', []) as Array<
+        const response = await session.nodes.ancestors(dataId);
+        this.nodes[dataId] = get(response, "data.ancestors", []) as Array<
           Record<string, any>
-        >
+        >;
       }
 
-      return this.nodes[dataId]
+      return this.nodes[dataId];
     } finally {
-      semaphore.release(dataId)
+      semaphore.release(dataId);
     }
   }
 }
 
-export default new AncestorLookup()
+export default new AncestorLookup();

@@ -46,7 +46,7 @@
   </KCard>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 export default defineComponent({
   props: {
     modelValue: {
@@ -67,45 +67,45 @@ export default defineComponent({
       default: null,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     valueLocal: {
       get() {
-        return this.modelValue.length == 0 ? [this.template] : this.modelValue
+        return this.modelValue.length == 0 ? [this.template] : this.modelValue;
       },
       set(value: Array<any>) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
     },
     canAdd() {
-      return this.count < this.maxItems
+      return this.count < this.maxItems;
     },
     canRemove() {
-      return this.minItems < this.count
+      return this.minItems < this.count;
     },
     count() {
-      return this.valueLocal.length
+      return this.valueLocal.length;
     },
   },
   methods: {
     add(index: number) {
       // debugger
-      const items = [...this.valueLocal]
-      items.splice(index + 1, 0, this.template)
-      this.valueLocal = items
+      const items = [...this.valueLocal];
+      items.splice(index + 1, 0, this.template);
+      this.valueLocal = items;
     },
     remove(index: number) {
-      const myArray = [...this.valueLocal]
-      myArray.splice(index, 1)
-      this.valueLocal = myArray
+      const myArray = [...this.valueLocal];
+      myArray.splice(index, 1);
+      this.valueLocal = myArray;
     },
     update(index: number, value: any) {
-      const items = [...this.valueLocal]
-      items[index] = value
-      this.valueLocal = items
+      const items = [...this.valueLocal];
+      items[index] = value;
+      this.valueLocal = items;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

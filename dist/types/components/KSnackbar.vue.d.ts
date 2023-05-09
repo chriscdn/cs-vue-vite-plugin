@@ -1,8 +1,7 @@
-/** __vue_virtual_code_placeholder */
-import { SnackbarParameters } from '../injection';
+import { SnackbarParameters } from "../injection";
 interface SnackbarQueueInterface extends SnackbarParameters {
     index: number;
-    type: 'success' | 'error';
+    type: "success" | "error";
 }
 declare const _default: import("vue").DefineComponent<{}, {}, {
     index: number;
@@ -19,14 +18,14 @@ declare const _default: import("vue").DefineComponent<{}, {}, {
     }[];
 }, {
     classObj(item: SnackbarQueueInterface): {
-        'k-snackbar-item--success': boolean;
-        'k-snackbar-item--error': boolean;
+        "k-snackbar-item--success": boolean;
+        "k-snackbar-item--error": boolean;
     };
     action(item: SnackbarQueueInterface): void;
     dismiss(index: number): void;
     nextIndex(): number;
     success(params: SnackbarParameters): void;
     error(params: SnackbarParameters): void;
-    queue(type: 'success' | 'error', { title, message, timeout, actionLabel, action, }: SnackbarParameters): void;
+    queue(type: "success" | "error", { title, message, timeout, actionLabel, action, }: SnackbarParameters): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
 export default _default;

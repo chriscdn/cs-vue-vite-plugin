@@ -16,47 +16,47 @@
  *
  * Motivated by this blog post: https://logaretm.com/blog/type-safe-provide-inject/
  */
-import { inject, type InjectionKey } from 'vue'
-import type { Session } from '@kweli/cs-rest'
+import { inject, type InjectionKey } from "vue";
+import type { Session } from "@kweli/cs-rest";
 
 export type WindowInitialState = {
-  baseUrl: string
-  img: string
-  otcsticket: string
-  datelong: string
-  dateshort: string
-}
+  baseUrl: string;
+  img: string;
+  otcsticket: string;
+  datelong: string;
+  dateshort: string;
+};
 
 declare global {
   interface Window {
-    __INITIAL_STATE__: WindowInitialState
+    __INITIAL_STATE__: WindowInitialState;
   }
   interface document {
-    location: Location
+    location: Location;
   }
 }
 
 export type Configuration = {
-  img: string
-  baseUrl: string
-  jsLongDateFormat: string
-  jsShortDateFormat: string
-}
+  img: string;
+  baseUrl: string;
+  jsLongDateFormat: string;
+  jsShortDateFormat: string;
+};
 
 function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
-  const resolved = inject(key, fallback)
+  const resolved = inject(key, fallback);
   if (!resolved) {
-    throw new Error(`Could not resolve ${key.description}`)
+    throw new Error(`Could not resolve ${key.description}`);
   }
-  return resolved
+  return resolved;
 }
 
 type ConfirmDialogParameters = {
-  noLabel?: string
-  yesLabel?: string
-  title?: string
-  message?: string
-}
+  noLabel?: string;
+  yesLabel?: string;
+  title?: string;
+  message?: string;
+};
 
 interface ConfirmDialog {
   confirm({
@@ -64,18 +64,20 @@ interface ConfirmDialog {
     yesLabel,
     title,
     message,
-  }: ConfirmDialogParameters): Promise<boolean>
+  }: ConfirmDialogParameters): Promise<boolean>;
 
-  alert({ yesLabel, title, message }: ConfirmDialogParameters): Promise<boolean>
+  alert(
+    { yesLabel, title, message }: ConfirmDialogParameters,
+  ): Promise<boolean>;
 }
 
 export type SnackbarParameters = {
-  title?: string
-  message?: string
-  timeout?: number
-  actionLabel?: string
-  action?(cb: Function): void
-}
+  title?: string;
+  message?: string;
+  timeout?: number;
+  actionLabel?: string;
+  action?(cb: Function): void;
+};
 
 type Snackbar = {
   success({
@@ -84,19 +86,21 @@ type Snackbar = {
     timeout,
     actionLabel,
     action,
-  }: SnackbarParameters): void
+  }: SnackbarParameters): void;
   error({
     title,
     message,
     timeout,
     actionLabel,
     action,
-  }: SnackbarParameters): void
-}
+  }: SnackbarParameters): void;
+};
 
-const sessionKey: InjectionKey<Session> = Symbol('session')
-const configKey: InjectionKey<Configuration> = Symbol('config')
-const snackbarKey: InjectionKey<Snackbar> = Symbol('snackbar')
-const confirmDialogKey: InjectionKey<ConfirmDialog> = Symbol('confirmDialogKey')
+const sessionKey: InjectionKey<Session> = Symbol("session");
+const configKey: InjectionKey<Configuration> = Symbol("config");
+const snackbarKey: InjectionKey<Snackbar> = Symbol("snackbar");
+const confirmDialogKey: InjectionKey<ConfirmDialog> = Symbol(
+  "confirmDialogKey",
+);
 
-export { injectStrict, sessionKey, configKey, snackbarKey, confirmDialogKey }
+export { configKey, confirmDialogKey, injectStrict, sessionKey, snackbarKey };

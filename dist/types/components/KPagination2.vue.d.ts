@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: ObjectConstructor;
@@ -25,7 +24,7 @@ declare const _default: import("vue").DefineComponent<{
     hasNext(): boolean;
 }, {
     classObj(pageNumber: number): {
-        'k-pagination2-button-selected': boolean;
+        "k-pagination2-button-selected": boolean;
     };
     clickedPageNumber(pageNumber0: number): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{

@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 export default defineComponent({
   props: {
     modelValue: {
@@ -45,40 +45,40 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     valueLocal: {
       get() {
-        return this.modelValue
+        return this.modelValue;
       },
       set(value: Array<any>) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
     },
 
     count(): number {
-      return this.valueLocal?.length ?? 0
+      return this.valueLocal?.length ?? 0;
     },
 
     canAdd(): boolean {
-      return this.count < this.maxItems && !this.readonly
+      return this.count < this.maxItems && !this.readonly;
     },
   },
   methods: {
     add(item: any) {
       if (item) {
         this.valueLocal = [...this.valueLocal, item].filter(
-          (item, index, items) => items.indexOf(item) === index,
-        )
+          (item, index, items) => items.indexOf(item) === index
+        );
       }
     },
     remove(index: number) {
-      const myArray = [...this.valueLocal]
-      myArray.splice(index, 1)
-      this.valueLocal = myArray
+      const myArray = [...this.valueLocal];
+      myArray.splice(index, 1);
+      this.valueLocal = myArray;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

@@ -5,17 +5,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { convertToUnit } from '../mixins/measurables'
+import { defineComponent } from "vue";
+import { convertToUnit } from "../mixins/measurables";
 export default defineComponent({
   props: {
     color: {
       type: String,
-      default: 'green',
+      default: "green",
     },
     size: {
       type: [String, Number],
-      default: '0.75em',
+      default: "0.75em",
     },
 
     outline: {
@@ -31,28 +31,28 @@ export default defineComponent({
 
   computed: {
     style() {
-      const size = convertToUnit(this.size)
+      const size = convertToUnit(this.size);
 
       if (this.outline) {
-        const borderSize = convertToUnit(this.outlineWidth)
+        const borderSize = convertToUnit(this.outlineWidth);
 
         return {
-          borderStyle: 'solid',
+          borderStyle: "solid",
           borderWidth: borderSize,
           borderColor: this.color,
           width: size,
           height: size,
-        }
+        };
       } else {
         return {
           width: size,
           height: size,
           backgroundColor: this.color,
-        }
+        };
       }
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

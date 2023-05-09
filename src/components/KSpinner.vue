@@ -15,25 +15,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import measurables from '../mixins/measurables'
+import { defineComponent } from "vue";
+import measurables from "../mixins/measurables";
 export default defineComponent({
   mixins: [measurables],
   props: {
     color: {
       type: String,
-      default: '#05447e',
+      default: "#05447e",
     },
     maxHeight: {
       type: [Number, String],
-      default: '1.25rem',
+      default: "1.25rem",
     },
     maxWidth: {
       type: [Number, String],
-      default: '1.25rem',
+      default: "1.25rem",
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

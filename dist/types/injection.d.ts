@@ -16,8 +16,8 @@
  *
  * Motivated by this blog post: https://logaretm.com/blog/type-safe-provide-inject/
  */
-import { type InjectionKey } from 'vue';
-import type { Session } from '@kweli/cs-rest';
+import { type InjectionKey } from "vue";
+import type { Session } from "@kweli/cs-rest";
 export type WindowInitialState = {
     baseUrl: string;
     img: string;
@@ -65,4 +65,4 @@ declare const sessionKey: InjectionKey<Session>;
 declare const configKey: InjectionKey<Configuration>;
 declare const snackbarKey: InjectionKey<Snackbar>;
 declare const confirmDialogKey: InjectionKey<ConfirmDialog>;
-export { injectStrict, sessionKey, configKey, snackbarKey, confirmDialogKey };
+export { configKey, confirmDialogKey, injectStrict, sessionKey, snackbarKey };

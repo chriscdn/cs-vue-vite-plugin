@@ -1,6 +1,6 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import CSVueVite from './index'
+import { createApp } from "vue";
+import App from "./App.vue";
+import CSVueVite from "./index";
 
 // import './assets/tailwind.css'
 
@@ -11,14 +11,14 @@ import CSVueVite from './index'
  */
 
 const options = {
-  baseURL: '/Livelink100/livelink.exe',
-  img: '/img/',
-  username: 'Admin',
-  password: 'livelink',
-  datelong: 'MM/DD/YYYY HH:mm',
-  dateshort: 'MM/DD/YYYY',
-}
+  baseURL: "/Livelink100/livelink.exe",
+  img: "/img/",
+  username: "Admin",
+  password: "livelink",
+  datelong: "MM/DD/YYYY HH:mm",
+  dateshort: "MM/DD/YYYY",
+};
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(CSVueVite, options).mount('#app')
+app.use(CSVueVite, options).mount("#app");

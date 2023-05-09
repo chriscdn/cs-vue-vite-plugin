@@ -1,5 +1,5 @@
-import { type RHNodeSerializer } from '@/types/RHNodeSerializer';
-import { Session } from '@kweli/cs-rest';
+import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { Session } from "@kweli/cs-rest";
 declare class NodeLookupQueue {
     session: Session | null;
     private queueItems;

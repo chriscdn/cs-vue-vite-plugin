@@ -3,18 +3,18 @@
 </template>
 
 <script lang="ts">
-import get from 'lodash.get'
-import { defineComponent, PropType } from 'vue'
-import measurable from '../mixins/measurables'
-import { configKey, sessionKey, injectStrict } from '@/injection'
-import { RHUserSerializer } from '@/types/RHUserSerializer'
+import get from "lodash.get";
+import { defineComponent, PropType } from "vue";
+import measurable from "../mixins/measurables";
+import { configKey, sessionKey, injectStrict } from "@/injection";
+import { RHUserSerializer } from "@/types/RHUserSerializer";
 
 export default defineComponent({
   setup() {
     return {
       config: injectStrict(configKey),
       session: injectStrict(sessionKey),
-    }
+    };
   },
   mixins: [measurable],
   props: {
@@ -37,23 +37,23 @@ export default defineComponent({
   },
   computed: {
     userType() {
-      return get(this.userRec, 'type', this.type)
+      return get(this.userRec, "type", this.type);
     },
 
     url() {
       if (this.userType === this.session.members.USER) {
         // user
-        return `${this.config.img}guy.gif`
+        return `${this.config.img}guy.gif`;
       } else if (this.userType === this.session.members.GROUP) {
         // group
-        return `${this.config.img}2-guys.gif`
+        return `${this.config.img}2-guys.gif`;
       } else if (this.userType > 0) {
         // role?
-        return `${this.config.img}projectgroup.gif`
+        return `${this.config.img}projectgroup.gif`;
       } else {
-        return null
+        return null;
       }
     },
   },
-})
+});
 </script>

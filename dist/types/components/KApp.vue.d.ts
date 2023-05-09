@@ -5,9 +5,5 @@ export default _default;
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {
         $slots: S;
-        $props: __VLS_PropsChildren<S>;
     };
-};
-type __VLS_PropsChildren<S> = {
-    [K in keyof (boolean extends (JSX.ElementChildrenAttribute extends never ? true : false) ? never : JSX.ElementChildrenAttribute)]?: S;
 };

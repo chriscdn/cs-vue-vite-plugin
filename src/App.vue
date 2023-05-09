@@ -27,9 +27,9 @@ export default {
     return {
       scope: [2000, 2000],
       errors: {
-        abc: ['aaaa'],
+        abc: ["aaaa"],
       },
-    }
+    };
   },
-}
+};
 </script>

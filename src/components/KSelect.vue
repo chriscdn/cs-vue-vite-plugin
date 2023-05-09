@@ -28,9 +28,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import get from 'lodash.get'
-import { mixin } from './KFormFieldWrapper.vue'
+import { defineComponent, PropType } from "vue";
+import get from "lodash.get";
+import { mixin } from "./KFormFieldWrapper.vue";
 export default defineComponent({
   mixins: [mixin],
   props: {
@@ -54,15 +54,15 @@ export default defineComponent({
     },
     itemValue: {
       type: String as PropType<string>,
-      default: 'value',
+      default: "value",
     },
     itemText: {
       type: String as PropType<string>,
-      default: 'text',
+      default: "text",
     },
     itemDisabled: {
       type: String as PropType<string>,
-      default: 'disabled',
+      default: "disabled",
     },
     disabled: {
       type: Boolean as PropType<boolean>,
@@ -73,45 +73,45 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     disabledResolved() {
-      return this.disabled || this.readonly
+      return this.disabled || this.readonly;
     },
     localValue: {
       get() {
-        return this.multiple ? this.arrify(this.modelValue) : this.modelValue
+        return this.multiple ? this.arrify(this.modelValue) : this.modelValue;
       },
       set(value: any) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
     },
   },
   methods: {
     isObject(obj: any) {
       return (
-        typeof obj == 'object' &&
+        typeof obj == "object" &&
         obj instanceof Object &&
         !(obj instanceof Array)
-      )
+      );
     },
     getItemText(item: string | object): string {
-      return this.isObject(item) ? get(item, this.itemText) : item
+      return this.isObject(item) ? get(item, this.itemText) : item;
     },
 
     getItemValue(item: string | object): any {
-      return this.isObject(item) ? get(item, this.itemValue) : item
+      return this.isObject(item) ? get(item, this.itemValue) : item;
     },
 
     getItemDisabled(item: string | object): boolean {
-      return this.isObject(item) ? get(item, this.itemDisabled, false) : false
+      return this.isObject(item) ? get(item, this.itemDisabled, false) : false;
     },
 
     arrify(item: any): Array<any> {
-      return Array.isArray(item) ? item : [item]
+      return Array.isArray(item) ? item : [item];
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

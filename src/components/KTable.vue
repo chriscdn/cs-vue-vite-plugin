@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
   props: {
     properties: {
@@ -28,15 +28,15 @@ export default defineComponent({
   computed: {
     classObj() {
       return {
-        'k-table--properties': this.properties,
-        'k-table--striped': this.isStriped,
-      }
+        "k-table--properties": this.properties,
+        "k-table--striped": this.isStriped,
+      };
     },
     isStriped() {
-      return this.striped && !this.properties
+      return this.striped && !this.properties;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

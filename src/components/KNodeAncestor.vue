@@ -8,12 +8,12 @@
 </template>
 
 <script lang="ts">
-import { injectStrict, sessionKey } from '@/injection'
-import { defineComponent } from 'vue'
-import ancestorLookup from '../utils/ancestor-lookup'
+import { injectStrict, sessionKey } from "@/injection";
+import { defineComponent } from "vue";
+import ancestorLookup from "../utils/ancestor-lookup";
 export default defineComponent({
   setup() {
-    return { session: injectStrict(sessionKey) }
+    return { session: injectStrict(sessionKey) };
   },
 
   props: {
@@ -26,20 +26,20 @@ export default defineComponent({
   data() {
     return {
       breadcrumb: [] as Array<Record<string, any>>,
-    }
+    };
   },
 
   watch: {
     dataid: {
       async handler(value) {
         if (value) {
-          this.breadcrumb = await ancestorLookup.lookup(this.session, value)
+          this.breadcrumb = await ancestorLookup.lookup(this.session, value);
         }
       },
       immediate: true,
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

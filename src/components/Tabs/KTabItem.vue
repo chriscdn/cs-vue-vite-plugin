@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts">
-import get from 'lodash.get'
-import { defineComponent } from 'vue'
+import get from "lodash.get";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'KTabItem', // Name required by KTabs to detecting which children are tabs
-  inject: ['tabs'],
+  name: "KTabItem", // Name required by KTabs to detecting which children are tabs
+  inject: ["tabs"],
   props: {
     title: {
       type: String,
@@ -23,8 +23,8 @@ export default defineComponent({
   },
   computed: {
     isSelected() {
-      return this.name == get(this.tabs, 'selectedTab')
+      return this.name == get(this.tabs, "selectedTab");
     },
   },
-})
+});
 </script>

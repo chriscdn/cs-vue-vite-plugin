@@ -1,19 +1,19 @@
 export const convertToUnit = (
   str: number | string | null,
-  unit = 'px',
+  unit = "px",
 ): string | undefined => {
-  if (str == null || str === '') {
-    return undefined
+  if (str == null || str === "") {
+    return undefined;
   } else if (isNaN(+str)) {
-    return String(str)
+    return String(str);
   } else {
-    return `${Number(str)}${unit}`
+    return `${Number(str)}${unit}`;
   }
-}
+};
 
 // export { convertToUnit }
 
-import { CSSProperties, defineComponent } from 'vue'
+import { CSSProperties, defineComponent } from "vue";
 
 // type StyleObjectType = {
 //   height?: string
@@ -54,23 +54,23 @@ export default defineComponent({
 
   computed: {
     measurableStyles(): CSSProperties {
-      const styles: CSSProperties = {}
+      const styles: CSSProperties = {};
 
-      const height = convertToUnit(this.height)
-      const minHeight = convertToUnit(this.minHeight)
-      const minWidth = convertToUnit(this.minWidth)
-      const maxHeight = convertToUnit(this.maxHeight)
-      const maxWidth = convertToUnit(this.maxWidth)
-      const width = convertToUnit(this.width)
+      const height = convertToUnit(this.height);
+      const minHeight = convertToUnit(this.minHeight);
+      const minWidth = convertToUnit(this.minWidth);
+      const maxHeight = convertToUnit(this.maxHeight);
+      const maxWidth = convertToUnit(this.maxWidth);
+      const width = convertToUnit(this.width);
 
-      if (height) styles.height = height
-      if (minHeight) styles.minHeight = minHeight
-      if (minWidth) styles.minWidth = minWidth
-      if (maxHeight) styles.maxHeight = maxHeight
-      if (maxWidth) styles.maxWidth = maxWidth
-      if (width) styles.width = width
+      if (height) styles.height = height;
+      if (minHeight) styles.minHeight = minHeight;
+      if (minWidth) styles.minWidth = minWidth;
+      if (maxHeight) styles.maxHeight = maxHeight;
+      if (maxWidth) styles.maxWidth = maxWidth;
+      if (width) styles.width = width;
 
-      return styles
+      return styles;
     },
   },
-})
+});

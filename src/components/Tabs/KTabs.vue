@@ -15,20 +15,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 
 type Tab = {
-  name: string
-  title: string
-}
+  name: string;
+  title: string;
+};
 
 export default defineComponent({
   provide() {
     return {
       tabs: this,
-    }
+    };
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   props: {
     modelValue: {
       type: String as PropType<string>,
@@ -39,7 +39,7 @@ export default defineComponent({
   data() {
     return {
       selectedTab: this.modelValue,
-    }
+    };
   },
 
   computed: {
@@ -49,20 +49,20 @@ export default defineComponent({
      * takes care of that.
      */
     tabs(): Array<Tab> {
-      const isTab = (node: any) => node.type.name === 'KTabItem'
+      const isTab = (node: any) => node.type.name === "KTabItem";
 
       // This fragment condition doesn't resolve to true on the production build.
-      const isFragment = (node: any) => typeof node.type === 'symbol' // && node.type.description === 'Fragment'
+      const isFragment = (node: any) => typeof node.type === "symbol"; // && node.type.description === 'Fragment'
 
       const hasTabs = (node: any) =>
         node.children &&
         Array.isArray(node.children) &&
         node.children.length &&
-        node.children.some(isTab)
+        node.children.some(isTab);
 
-      const isTabParent = (node: any) => isFragment(node) && hasTabs(node)
+      const isTabParent = (node: any) => isFragment(node) && hasTabs(node);
 
-      const slots = this.$slots.default ? this.$slots.default() : []
+      const slots = this.$slots.default ? this.$slots.default() : [];
 
       return slots
         .filter((node) => isTab(node) || isTabParent(node))
@@ -71,52 +71,52 @@ export default defineComponent({
           return {
             name: node.props.name,
             title: node.props.title,
-          } as Tab
-        })
+          } as Tab;
+        });
     },
 
     tabNames() {
-      return this.tabs.map((tab) => tab.name)
+      return this.tabs.map((tab) => tab.name);
     },
   },
 
   mounted() {
-    this.selectedTab = this.initialSelectedTab()
+    this.selectedTab = this.initialSelectedTab();
   },
 
   watch: {
     selectedTab(value) {
-      this.$emit('update:modelValue', value)
+      this.$emit("update:modelValue", value);
     },
     modelValue(value) {
-      this.selectTab(value)
+      this.selectTab(value);
     },
   },
 
   methods: {
     initialSelectedTab(): string {
-      const hash = window.location.hash.replace('#', '')
-      const firstTab = this.tabNames[0]
+      const hash = window.location.hash.replace("#", "");
+      const firstTab = this.tabNames[0];
 
       return [this.selectedTab, hash, firstTab].find((item) =>
-        Boolean(item),
-      ) as string
+        Boolean(item)
+      ) as string;
     },
 
     selectTab(tabName: string) {
       this.selectedTab = this.tabNames.includes(tabName)
         ? tabName
-        : this.tabNames[0]
+        : this.tabNames[0];
     },
 
     classObj(tab: Tab) {
       return {
-        'k-tabs-nav-tab': true,
-        'k-tabs-active': this.selectedTab == tab.name,
-      }
+        "k-tabs-nav-tab": true,
+        "k-tabs-active": this.selectedTab == tab.name,
+      };
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

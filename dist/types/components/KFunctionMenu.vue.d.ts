@@ -1,4 +1,3 @@
-/** __vue_virtual_code_placeholder */
 declare global {
     interface Window {
         functionMenuExpansionStatus?: any;
@@ -13,7 +12,7 @@ declare global {
  * <KFunctionMenu :dataid="2000" />
  * ```
  */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     dataid: {
         type: PropType<number>;

@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts">
-import { mixin } from './KFormFieldWrapper.vue'
+import { mixin } from "./KFormFieldWrapper.vue";
 
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 export default defineComponent({
   mixins: [mixin],
   props: {
@@ -29,18 +29,18 @@ export default defineComponent({
       default: undefined,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   computed: {
     value: {
       get(): string | undefined {
-        return this.modelValue || undefined
+        return this.modelValue || undefined;
       },
       set(value: string | null) {
-        this.$emit('update:modelValue', value || null)
+        this.$emit("update:modelValue", value || null);
       },
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

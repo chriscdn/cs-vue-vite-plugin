@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent, type PropType } from "vue";
 
 export default defineComponent({
   props: {
@@ -40,12 +40,12 @@ export default defineComponent({
   computed: {
     userIdsLocal: {
       set(value: Array<number | null>) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
       get(): Array<number | null> {
-        return this.modelValue
+        return this.modelValue;
       },
     },
   },
-})
+});
 </script>

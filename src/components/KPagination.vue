@@ -54,9 +54,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import get from 'lodash.get'
-import { PaginatorSerializer } from '@/types/PaginatorSerializer'
+import { defineComponent, PropType } from "vue";
+import get from "lodash.get";
+import { PaginatorSerializer } from "@/types/PaginatorSerializer";
 export default defineComponent({
   props: {
     modelValue: {
@@ -72,45 +72,45 @@ export default defineComponent({
     //   required: true,
     // },
   },
-  emits: ['update:modelValue', 'update:pageSize'],
+  emits: ["update:modelValue", "update:pageSize"],
   computed: {
     potentiallyMultiplePages() {
-      const smallestPageSize = Math.min(...this.pageSizes)
-      return smallestPageSize < this.pagination.count
+      const smallestPageSize = Math.min(...this.pageSizes);
+      return smallestPageSize < this.pagination.count;
     },
 
     pageRange(): Array<number | string> {
-      return get(this.pagination, 'pageRange', [])
+      return get(this.pagination, "pageRange", []);
     },
     pageSizes(): Array<number> {
-      return get(this.pagination, 'pageSizes', [])
+      return get(this.pagination, "pageSizes", []);
     },
     pageNumber(): number {
-      return get(this.pagination, 'pageNumber', 0)
+      return get(this.pagination, "pageNumber", 0);
     },
     pageSize: {
       get() {
-        return get(this.pagination, 'pageSize', 0)
+        return get(this.pagination, "pageSize", 0);
       },
       set(value: number) {
-        this.$emit('update:pageSize', value)
+        this.$emit("update:pageSize", value);
       },
     },
     hasPrevious(): boolean {
-      return get(this.pagination, 'hasPrevious', false)
+      return get(this.pagination, "hasPrevious", false);
     },
     hasNext(): boolean {
-      return get(this.pagination, 'hasNext', false)
+      return get(this.pagination, "hasNext", false);
     },
   },
   methods: {
     classObj(pageNumber: number) {
       return {
-        'k-pagination-button-selected': pageNumber == this.pageNumber,
-      }
+        "k-pagination-button-selected": pageNumber == this.pageNumber,
+      };
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

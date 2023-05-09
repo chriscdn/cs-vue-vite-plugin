@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<boolean>;
@@ -19,8 +18,8 @@ declare const _default: import("vue").DefineComponent<{
         set(value: boolean): void;
     };
     classObj(): {
-        'k-switch--on': boolean;
-        'k-switch--readonly': boolean;
+        "k-switch--on": boolean;
+        "k-switch--readonly": boolean;
     };
     innerSize(): number;
     heightPx(): string | undefined;

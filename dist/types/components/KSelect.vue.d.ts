@@ -1,5 +1,4 @@
-/** __vue_virtual_code_placeholder */
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<string | number | Record<string, any> | null>;
@@ -66,9 +65,9 @@ declare const _default: import("vue").DefineComponent<{
     hasSuccess(): boolean;
     hasError(): boolean;
     classObj(): {
-        'k-input': boolean;
-        'k-input--success': boolean;
-        'k-input--error': boolean;
+        "k-input": boolean;
+        "k-input--success": boolean;
+        "k-input--error": boolean;
     };
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     label: {
@@ -127,14 +126,14 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
+    disabled: boolean;
     items: string | Record<string, any>;
     modelValue: string | number | Record<string, any> | null;
     itemValue: string;
     itemText: string;
     loading: boolean;
-    readonly: boolean;
-    disabled: boolean;
     multiple: boolean;
+    readonly: boolean;
     itemDisabled: string;
 }>;
 export default _default;

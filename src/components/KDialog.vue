@@ -18,10 +18,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { directive } from 'vue3-click-away'
-import measurables from '../mixins/measurables'
+import { defineComponent } from "vue";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { directive } from "vue3-click-away";
+import measurables from "../mixins/measurables";
 
 export default defineComponent({
   directives: {
@@ -44,74 +44,74 @@ export default defineComponent({
     },
     width: {
       type: [Number, String],
-      default: '75vw',
+      default: "75vw",
     },
     maxHeight: {
       type: [Number, String],
-      default: '90%',
+      default: "90%",
     },
     zIndex: {
       type: [Number],
       default: 10,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
   data() {
     return {
       dialog: false,
       mounted: false,
-    }
+    };
   },
   computed: {
     classObj() {
       return {
-        'k-dialog--scrollable': this.scrollable,
-      }
+        "k-dialog--scrollable": this.scrollable,
+      };
     },
     style() {
       return {
         zIndex: this.zIndex,
-      }
+      };
     },
   },
   watch: {
     modelValue: {
       handler(value) {
-        this.dialog = value
+        this.dialog = value;
       },
       immediate: true,
     },
     async dialog(value) {
-      this.$emit('update:modelValue', value)
+      this.$emit("update:modelValue", value);
 
       if (value) {
-        await this.$nextTick()
-        disableBodyScroll(this.$refs.content as Element)
+        await this.$nextTick();
+        disableBodyScroll(this.$refs.content as Element);
       } else {
-        enableBodyScroll(this.$refs.content as Element)
+        enableBodyScroll(this.$refs.content as Element);
       }
     },
   },
   mounted() {
     // this ensures the target .k-app is rendered before we try to teleport to it
-    this.mounted = true
+    this.mounted = true;
   },
   methods: {
     clickAway() {
       if (!this.persistent) {
-        this.closeDialog()
+        this.closeDialog();
       }
     },
     closeDialog() {
       if (this.dialog) {
-        this.dialog = false
+        this.dialog = false;
       }
     },
     on() {
-      this.dialog = !this.dialog
+      this.dialog = !this.dialog;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

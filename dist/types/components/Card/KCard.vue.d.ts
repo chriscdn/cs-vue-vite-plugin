@@ -1,8 +1,7 @@
-/** __vue_virtual_code_placeholder */
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {
     classObj(): {
-        'k-card': boolean;
-        'k-card-clickable': any;
+        "k-card": boolean;
+        "k-card-clickable": any;
     };
 }, {
     renderCard(): import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {

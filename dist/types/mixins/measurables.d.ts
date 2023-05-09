@@ -1,5 +1,5 @@
 export declare const convertToUnit: (str: number | string | null, unit?: string) => string | undefined;
-import { CSSProperties } from 'vue';
+import { CSSProperties } from "vue";
 declare const _default: import("vue").DefineComponent<{
     height: {
         type: (StringConstructor | NumberConstructor)[];

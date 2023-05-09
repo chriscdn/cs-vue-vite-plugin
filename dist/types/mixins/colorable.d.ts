@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     color: {
         type: PropType<string>;
@@ -33,7 +33,7 @@ declare const _default: import("vue").DefineComponent<{
         default: null;
     };
 }>>, {
-    textColor: string;
     color: string;
+    textColor: string;
 }>;
 export default _default;

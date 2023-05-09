@@ -33,23 +33,23 @@
 </template>
 
 <script lang="ts">
-import get from 'lodash.get'
-import { defineComponent, PropType } from 'vue'
-import { mixin } from './KFormFieldWrapper.vue'
-import userLookup from '../utils/user-lookup'
-import { injectStrict, sessionKey } from '@/injection'
-import { RHUserSerializer } from '@/types/RHUserSerializer'
+import get from "lodash.get";
+import { defineComponent, PropType } from "vue";
+import { mixin } from "./KFormFieldWrapper.vue";
+import userLookup from "../utils/user-lookup";
+import { injectStrict, sessionKey } from "@/injection";
+import { RHUserSerializer } from "@/types/RHUserSerializer";
 
 type UserPickerItem = {
-  text: string
-  type: number
-  value: number
-}
+  text: string;
+  type: number;
+  value: number;
+};
 
 export default defineComponent({
   mixins: [mixin],
   setup() {
-    return { session: injectStrict(sessionKey) }
+    return { session: injectStrict(sessionKey) };
   },
 
   props: {
@@ -67,7 +67,7 @@ export default defineComponent({
     },
     width: {
       type: [String, Number],
-      default: '100%',
+      default: "100%",
     },
     returnObject: {
       type: Boolean as PropType<boolean>,
@@ -83,7 +83,7 @@ export default defineComponent({
       default: true,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
 
   data() {
     return {
@@ -93,67 +93,67 @@ export default defineComponent({
       searchText: null,
       items: [] as Array<UserPickerItem>,
       select: null as any,
-    }
+    };
   },
 
   computed: {
     USER() {
-      return this.session.members.USER
+      return this.session.members.USER;
     },
     GROUP() {
-      return this.session.members.GROUP
+      return this.session.members.GROUP;
     },
     valueLocal: {
       /**
        * @param {number} value
        */
       set(value: number) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
       get() {
-        return this.modelValue
+        return this.modelValue;
       },
     },
 
     options() {
-      let whereType: number | null = null
+      let whereType: number | null = null;
 
       if (this.users && this.groups) {
-        whereType = null // defaults to both
+        whereType = null; // defaults to both
       } else if (this.users) {
-        whereType = this.USER
+        whereType = this.USER;
       } else if (this.groups) {
-        whereType = this.GROUP
+        whereType = this.GROUP;
       }
 
       return {
         where_type: whereType,
-      }
+      };
     },
     placeholder() {
       if (this.pleaseWait) {
-        return 'Loading...'
+        return "Loading...";
       } else if (this.users && this.groups) {
-        return 'Search for user or group...'
+        return "Search for user or group...";
       } else if (this.users) {
-        return 'Search for user...'
+        return "Search for user...";
       } else if (this.groups) {
-        return 'Search for group...'
+        return "Search for group...";
       } else {
-        return ''
+        return "";
       }
     },
   },
   watch: {
     searchText(val) {
-      val && val !== this.select && this.querySelections(val)
+      val && val !== this.select && this.querySelections(val);
     },
     valueLocal: {
       handler() {
         // TODO: this catches ALL changes, including edits using the widget.
         // this might not be so bad... but it does create extra network requests
         // to think about ....
-        this.loadInitialValue()
+        this.loadInitialValue();
       },
       immediate: true,
     },
@@ -161,22 +161,22 @@ export default defineComponent({
   methods: {
     // querySelections: debounce(async function (v) {
     async querySelections(v: string) {
-      console.log('KUserPicker: needs debounce')
+      console.log("KUserPicker: needs debounce");
 
       try {
-        this.loading = true
+        this.loading = true;
 
         const response = await this.session.members.userQuery(
           v,
           this.options,
-          'v1',
-        )
+          "v1"
+        );
 
         this.items = response.data.data.map((item: Record<string, any>) => ({
-          text: get(item, 'name_formatted'),
-          value: get(item, 'id'),
-          type: get(item, 'type'),
-        }))
+          text: get(item, "name_formatted"),
+          value: get(item, "id"),
+          type: get(item, "type"),
+        }));
 
         // userLookup.registerUsers(this.items)
 
@@ -193,7 +193,7 @@ export default defineComponent({
         //     type: item.data.properties.type,
         // }))
       } finally {
-        this.loading = false
+        this.loading = false;
       }
     },
     // }, 500),
@@ -203,19 +203,19 @@ export default defineComponent({
     // },
 
     async loadInitialValue() {
-      const initialValue = this.modelValue
+      const initialValue = this.modelValue;
 
       if (initialValue) {
         // && !this.combobox) {
         try {
-          this.pleaseWait = true
-          this.readonly = true
-          this.loading = true
+          this.pleaseWait = true;
+          this.readonly = true;
+          this.loading = true;
 
           const user: RHUserSerializer | null = await userLookup.lookup(
             this.session,
-            initialValue,
-          )
+            initialValue
+          );
 
           if (user) {
             this.items = [
@@ -224,18 +224,18 @@ export default defineComponent({
                 type: user.type,
                 value: user.userid,
               },
-            ]
-            this.select = user.displayname
+            ];
+            this.select = user.displayname;
           }
         } finally {
-          this.pleaseWait = false
-          this.readonly = false
-          this.loading = false
+          this.pleaseWait = false;
+          this.readonly = false;
+          this.loading = false;
         }
       }
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">

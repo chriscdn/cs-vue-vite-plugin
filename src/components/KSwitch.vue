@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from "vue";
 // https://www.w3schools.com/howto/howto_css_switch.asp
-import { convertToUnit } from '../mixins/measurables'
+import { convertToUnit } from "../mixins/measurables";
 export default defineComponent({
   props: {
     modelValue: {
@@ -19,20 +19,20 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ["update:modelValue"],
 
   data() {
     return {
       padding: 4,
       height: 26,
       trans: 20,
-    }
+    };
   },
 
   methods: {
     toggle() {
       if (!this.readonly) {
-        this.on = !this.on
+        this.on = !this.on;
       }
     },
   },
@@ -40,40 +40,40 @@ export default defineComponent({
   computed: {
     on: {
       get() {
-        return this.modelValue
+        return this.modelValue;
       },
       set(value: boolean) {
-        this.$emit('update:modelValue', value)
+        this.$emit("update:modelValue", value);
       },
     },
 
     classObj() {
       return {
-        'k-switch--on': this.on,
-        'k-switch--readonly': this.readonly,
-      }
+        "k-switch--on": this.on,
+        "k-switch--readonly": this.readonly,
+      };
     },
     innerSize() {
-      return this.height - 2 * this.padding
+      return this.height - 2 * this.padding;
     },
     heightPx() {
-      return convertToUnit(this.height)
+      return convertToUnit(this.height);
     },
     innerSizePx() {
-      return convertToUnit(this.innerSize)
+      return convertToUnit(this.innerSize);
     },
     paddingPx() {
-      return convertToUnit(this.padding)
+      return convertToUnit(this.padding);
     },
     switchWidthPx() {
       // Why height? Because it's also the width of the circle thingie
-      return convertToUnit(this.trans + this.height)
+      return convertToUnit(this.trans + this.height);
     },
     transPx() {
-      return `translateX(${convertToUnit(this.trans)})`
+      return `translateX(${convertToUnit(this.trans)})`;
     },
   },
-})
+});
 </script>
 
 <style lang="postcss">
