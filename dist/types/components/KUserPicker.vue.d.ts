@@ -18,7 +18,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     returnObject: {
@@ -107,7 +107,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     returnObject: {

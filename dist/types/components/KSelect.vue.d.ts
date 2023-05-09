@@ -126,9 +126,9 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
+    modelValue: string | number | Record<string, any> | null;
     disabled: boolean;
     items: string | Record<string, any>;
-    modelValue: string | number | Record<string, any> | null;
     itemValue: string;
     itemText: string;
     loading: boolean;

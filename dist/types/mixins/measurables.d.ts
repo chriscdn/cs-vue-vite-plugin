@@ -2,62 +2,62 @@ export declare const convertToUnit: (str: number | string | null, unit?: string)
 import { CSSProperties } from "vue";
 declare const _default: import("vue").DefineComponent<{
     height: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
 }, unknown, unknown, {
     measurableStyles(): CSSProperties;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     height: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
 }>>, {
     height: string | number;
     maxHeight: string | number;
-    minHeight: string | number;
-    width: string | number;
     maxWidth: string | number;
+    minHeight: string | number;
     minWidth: string | number;
+    width: string | number;
 }>;
 export default _default;

@@ -12,8 +12,8 @@
 
     <KDialog :z-index="100">
       <template #activator="{ on }">
-        <button @click="on">click</button></template
-      >
+        <button @click="on">click</button>
+      </template>
       <KCard>
         <KTextArea> adsfasdf </KTextArea>
       </KCard>
@@ -21,8 +21,11 @@
   </KApp>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+import KDialog from "./components/KDialog.vue";
+export default defineComponent({
+  components: { KDialog },
   data() {
     return {
       scope: [2000, 2000],
@@ -31,5 +34,5 @@ export default {
       },
     };
   },
-};
+});
 </script>

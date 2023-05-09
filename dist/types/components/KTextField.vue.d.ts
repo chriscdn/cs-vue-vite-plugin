@@ -63,7 +63,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    placeholder: string | undefined;
     modelValue: string | null;
+    placeholder: string | undefined;
 }>;
 export default _default;

@@ -4,7 +4,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     size: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     outline: {
@@ -12,7 +12,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     outlineWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: number;
     };
 }, unknown, unknown, {
@@ -37,7 +37,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     size: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     outline: {
@@ -45,7 +45,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     outlineWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: number;
     };
 }>>, {

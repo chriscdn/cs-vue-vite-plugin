@@ -1,7 +1,7 @@
 <template>
   <span v-if="userRecLocal" class="k-user-link">
-    <KUserGIF v-if="gif" :user-rec="userRecLocal" />&nbsp;
-
+    <KUserGIF v-if="gif" :user-rec="userRecLocal" />
+    &nbsp;
     <a href="#" @click.prevent="click">
       {{ displayName }}
     </a>

@@ -12,11 +12,11 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     zIndex: {
@@ -39,63 +39,63 @@ declare const _default: import("vue").DefineComponent<{
     on(): void;
 }, import("vue").DefineComponent<{
     height: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
 }, unknown, unknown, {
     measurableStyles(): import("vue").CSSProperties;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     height: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: null;
     };
 }>>, {
     height: string | number;
     maxHeight: string | number;
-    minHeight: string | number;
-    width: string | number;
     maxWidth: string | number;
+    minHeight: string | number;
     minWidth: string | number;
+    width: string | number;
 }>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: BooleanConstructor;
@@ -110,11 +110,11 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     width: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     maxHeight: {
-        type: (StringConstructor | NumberConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
         default: string;
     };
     zIndex: {
@@ -124,11 +124,11 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    zIndex: number;
     maxHeight: string | number;
     width: string | number;
     modelValue: boolean;
     persistent: boolean;
     scrollable: boolean;
+    zIndex: number;
 }>;
 export default _default;
