@@ -10,11 +10,15 @@ declare const _default: import("vue").DefineComponent<{
         default: null;
     };
     image: {
-        type: PropType<boolean | null>;
+        type: PropType<boolean>;
         default: boolean;
     };
     clickable: {
-        type: PropType<boolean | null>;
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    legacy: {
+        type: PropType<boolean>;
         default: boolean;
     };
 }, {
@@ -33,17 +37,22 @@ declare const _default: import("vue").DefineComponent<{
         default: null;
     };
     image: {
-        type: PropType<boolean | null>;
+        type: PropType<boolean>;
         default: boolean;
     };
     clickable: {
-        type: PropType<boolean | null>;
+        type: PropType<boolean>;
+        default: boolean;
+    };
+    legacy: {
+        type: PropType<boolean>;
         default: boolean;
     };
 }>>, {
-    image: boolean | null;
+    image: boolean;
     dataid: number | null;
     nodeRec: RHNodeSerializer | null;
-    clickable: boolean | null;
+    clickable: boolean;
+    legacy: boolean;
 }, {}>;
 export default _default;

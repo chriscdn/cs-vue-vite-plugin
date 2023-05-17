@@ -4,6 +4,34 @@ import Semaphore from "@chriscdn/promise-semaphore";
 
 const semaphore = new Semaphore();
 
+function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
+  const properties = nodeInfo.results.data.properties;
+  const versions: Array<any> = nodeInfo.results.data.versions;
+  const latestVersion = versions[versions.length - 1];
+
+  return {
+    dataid: properties.id,
+    name: properties.name,
+    subtype: properties.type,
+    subtypename: properties.type_name,
+    comment: properties.description,
+    mimetype: properties.mime_type,
+    parentid: properties.parent_id,
+    createdate: properties.create_date,
+    modifydate: properties.modify_date,
+    gif: properties.icon,
+    gif32: properties.icon_large,
+    giflarge: properties.icon_large,
+    ownerid: properties.owner_user_id,
+    groupid: properties.owner_group_id,
+    version: latestVersion?.version_number,
+    versionnum: latestVersion?.version_number_name,
+    modifiedImageCallback: "",
+    categories: {},
+    url: "",
+  };
+}
+
 class NodeLookupQueue {
   session: Session | null;
   private queueItems: Array<{ resolveFunc: Function; dataId: number }>;
@@ -59,7 +87,7 @@ class NodeLookupQueue {
 }
 
 class NodeLookup {
-  nodes: Record<number, any>;
+  nodes: Record<number, RHNodeSerializer>;
   nodeLookupQueue: NodeLookupQueue;
 
   constructor() {
@@ -71,7 +99,33 @@ class NodeLookup {
     items.forEach((user) => (this.nodes[user.dataid] = user));
   }
 
-  async lookup(
+  async lookupLegacy(
+    session: Session,
+    dataId: number | null,
+  ): Promise<any> {
+    if (dataId) {
+      try {
+        await semaphore.acquire(dataId);
+
+        if (this.nodes[dataId]) {
+          return this.nodes[dataId];
+        } else {
+          const response = await session.nodes.node({ dataid: dataId });
+
+          // Not a perfect conversion
+          const nodeInfo = responseToRHNodeSerializer(response.data);
+
+          this.nodes[dataId] = nodeInfo;
+
+          return nodeInfo;
+        }
+      } finally {
+        semaphore.release(dataId);
+      }
+    }
+  }
+
+  async lookupRPC(
     session: Session,
     dataId: number | null,
   ): Promise<RHNodeSerializer | null> {
@@ -97,6 +151,16 @@ class NodeLookup {
     } else {
       return null;
     }
+  }
+
+  async lookup(
+    session: Session,
+    dataId: number | null,
+    legacy: boolean = false,
+  ): Promise<RHNodeSerializer | null> {
+    return legacy
+      ? this.lookupLegacy(session, dataId)
+      : this.lookupRPC(session, dataId);
   }
 }
 

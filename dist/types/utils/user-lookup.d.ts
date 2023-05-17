@@ -10,11 +10,13 @@ declare class UserLookupQueue {
     processQueue(): Promise<void>;
 }
 declare class UserLookup {
-    users: Record<number, any>;
+    users: Record<number, RHUserSerializer>;
     userLookupQueue: UserLookupQueue;
     constructor();
     registerUsers(items: Array<RHUserSerializer>): void;
-    lookup(session: Session, userId: number | null): Promise<RHUserSerializer | null>;
+    lookupLegacy(session: Session, userId: number | null): Promise<RHUserSerializer | null>;
+    lookupRPC(session: Session, userId: number | null): Promise<RHUserSerializer | null>;
+    lookup(session: Session, userId: number | null, legacy?: boolean): Promise<RHUserSerializer | null>;
 }
 declare const _default: UserLookup;
 export default _default;

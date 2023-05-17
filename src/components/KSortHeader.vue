@@ -11,7 +11,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { TSort } from "@/types";
+import { PropType, defineComponent } from "vue";
+
 export default defineComponent({
   props: {
     keypath: {
@@ -19,7 +21,7 @@ export default defineComponent({
       required: true,
     },
     modelValue: {
-      type: Object,
+      type: Object as PropType<TSort>,
       default: () => {},
     },
   },

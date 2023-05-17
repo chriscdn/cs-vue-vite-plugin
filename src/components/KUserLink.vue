@@ -54,6 +54,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    legacy: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
 
   data() {
@@ -85,7 +89,11 @@ export default defineComponent({
     user: {
       async handler(value) {
         if (this.isInteger(value)) {
-          this.userRecLocal = await userLookup.lookup(this.session, value);
+          this.userRecLocal = await userLookup.lookup(
+            this.session,
+            value,
+            this.legacy
+          );
         } else {
           this.userRecLocal = value;
         }

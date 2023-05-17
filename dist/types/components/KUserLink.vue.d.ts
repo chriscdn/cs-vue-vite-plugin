@@ -16,6 +16,10 @@ declare const _default: import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    legacy: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, {
     session: import("@kweli/cs-rest").Session;
 }, {
@@ -36,7 +40,12 @@ declare const _default: import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    legacy: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>>, {
+    legacy: boolean;
     gif: boolean;
     user: number | RHUserSerializer | null;
 }, {}>;

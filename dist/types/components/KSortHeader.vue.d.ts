@@ -1,14 +1,16 @@
+import { TSort } from "@/types";
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     keypath: {
         type: StringConstructor;
         required: true;
     };
     modelValue: {
-        type: ObjectConstructor;
+        type: PropType<TSort>;
         default: () => void;
     };
 }, unknown, unknown, {
-    sortKey(): any;
+    sortKey(): string | null;
     sortAsc(): boolean;
     isActive(): boolean;
 }, {
@@ -19,10 +21,10 @@ declare const _default: import("vue").DefineComponent<{
         required: true;
     };
     modelValue: {
-        type: ObjectConstructor;
+        type: PropType<TSort>;
         default: () => void;
     };
 }>>, {
-    modelValue: Record<string, any>;
+    modelValue: TSort;
 }, {}>;
 export default _default;

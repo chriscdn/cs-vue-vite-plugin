@@ -31,12 +31,16 @@ export default defineComponent({
       default: null,
     },
     image: {
-      type: Boolean as PropType<boolean | null>,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     clickable: {
-      type: Boolean as PropType<boolean | null>,
+      type: Boolean as PropType<boolean>,
       default: true,
+    },
+    legacy: {
+      type: Boolean as PropType<boolean>,
+      default: false,
     },
   },
   data() {
@@ -53,7 +57,11 @@ export default defineComponent({
     dataid: {
       async handler(value) {
         if (value) {
-          this.nodeRecLocal = await nodeLookup.lookup(this.session, value);
+          this.nodeRecLocal = await nodeLookup.lookup(
+            this.session,
+            value,
+            this.legacy
+          );
         }
       },
       immediate: true,

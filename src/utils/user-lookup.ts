@@ -4,6 +4,39 @@ import { Session } from "@kweli/cs-rest";
 
 const semaphore = new Semaphore();
 
+/**
+ * Convert a v1 API call to something that resembles RHUserSerializer.
+ *
+ * @param userInfo
+ * @returns
+ */
+function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
+  const properties = userInfo.results.data.properties;
+
+  return {
+    name: properties.name,
+    userid: properties.id,
+    displayname: properties.name_formatted,
+    gif: null,
+    type: properties.type,
+    isDeleted: properties.deleted,
+    firstName: properties.first_name,
+    lastName: properties.last_name,
+    email: properties.business_email,
+    groupid: properties.group_id,
+    title: properties.title,
+    isUser: properties.type === 0,
+    isGroup: properties.type === 1,
+    isRole: properties.type >= 2000,
+    isRecordsManager: false,
+    canLogin: properties.privilege_login,
+    isAdmin: properties.privilege_system_admin_rights,
+    locale: properties.display_language,
+    userdata: null,
+    photoid: null,
+  };
+}
+
 class UserLookupQueue {
   session: Session | null;
   private queueItems: Array<{ resolveFunc: Function; userId: number }>;
@@ -59,7 +92,7 @@ class UserLookupQueue {
 }
 
 class UserLookup {
-  users: Record<number, any>;
+  users: Record<number, RHUserSerializer>;
   userLookupQueue: UserLookupQueue;
 
   constructor() {
@@ -71,7 +104,32 @@ class UserLookup {
     items.forEach((user) => (this.users[user.userid] = user));
   }
 
-  async lookup(
+  async lookupLegacy(
+    session: Session,
+    userId: number | null,
+  ): Promise<RHUserSerializer | null> {
+    if (userId) {
+      try {
+        await semaphore.acquire(userId);
+
+        if (this.users[userId]) {
+          return this.users[userId];
+        } else {
+          const response = await session.members.member(userId);
+          const userInfo = responseToRHUserSerializer(response.data);
+          this.users[userId] = userInfo;
+
+          return userInfo;
+        }
+      } finally {
+        semaphore.release(userId);
+      }
+    } else {
+      return null;
+    }
+  }
+
+  async lookupRPC(
     session: Session,
     userId: number | null,
   ): Promise<RHUserSerializer | null> {
@@ -97,6 +155,16 @@ class UserLookup {
     } else {
       return null;
     }
+  }
+
+  async lookup(
+    session: Session,
+    userId: number | null,
+    legacy: boolean = false,
+  ): Promise<RHUserSerializer | null> {
+    return legacy
+      ? this.lookupLegacy(session, userId)
+      : this.lookupRPC(session, userId);
   }
 }
 
