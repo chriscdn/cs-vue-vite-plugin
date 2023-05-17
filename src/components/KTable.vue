@@ -41,11 +41,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .k-table {
-  @apply border-collapse;
+  @apply border-collapse table-auto  w-full;
 
   background-color: #ffffff;
   border: 1px solid #b4b4b4;
-  width: 100%;
 
   thead {
     td,

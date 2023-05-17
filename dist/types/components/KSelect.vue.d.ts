@@ -86,7 +86,7 @@ declare const _default: import("vue").DefineComponent<{
     label: string;
     successMessages: unknown[];
     errorMessages: unknown[];
-}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: PropType<string | number | Record<string, any> | null>;
         default: null;
@@ -135,5 +135,5 @@ declare const _default: import("vue").DefineComponent<{
     multiple: boolean;
     readonly: boolean;
     itemDisabled: string;
-}>;
+}, {}>;
 export default _default;

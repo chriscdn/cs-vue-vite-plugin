@@ -36,5 +36,5 @@ declare const _default: import("vue").DefineComponent<{
     small: boolean;
     text: boolean;
     disabled: boolean;
-}>;
+}, {}>;
 export default _default;

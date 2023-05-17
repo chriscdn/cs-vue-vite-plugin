@@ -123,5 +123,5 @@ declare const _default: import("vue").DefineComponent<{
     loading: boolean;
     combobox: boolean;
     editable: boolean;
-}>;
+}, {}>;
 export default _default;

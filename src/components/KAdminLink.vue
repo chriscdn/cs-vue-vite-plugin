@@ -1,14 +1,16 @@
 <template>
-  <hr />
-  <a :href="`${config.baseURL}?func=admin.index`">Admin Home</a>
+  <div clsas="space-y-2">
+    <hr />
+    <a :href="`${config.baseUrl}?func=admin.index`">Admin Home</a>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from "vue";
+import { defineComponent } from "vue";
+import { configKey, injectStrict } from "..";
 export default defineComponent({
   setup() {
-    const config: any = inject("config", {});
-    return { config };
+    return { config: injectStrict(configKey) };
   },
 });
 </script>

@@ -36,5 +36,5 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     "onUpdate:pageSize"?: ((...args: any[]) => any) | undefined;
-}, {}>;
+}, {}, {}>;
 export default _default;

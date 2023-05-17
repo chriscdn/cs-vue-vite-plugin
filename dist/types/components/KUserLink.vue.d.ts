@@ -39,5 +39,5 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     gif: boolean;
     user: number | RHUserSerializer | null;
-}>;
+}, {}>;
 export default _default;

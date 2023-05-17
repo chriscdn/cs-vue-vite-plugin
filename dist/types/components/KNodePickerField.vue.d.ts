@@ -125,5 +125,5 @@ declare const _default: import("vue").DefineComponent<{
     selectScreen: number[];
     browseButtonLabel: string;
     clearButtonLabel: string;
-}>;
+}, {}>;
 export default _default;

@@ -31,5 +31,5 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     mimetypes: unknown[];
-}>;
+}, {}>;
 export default _default;

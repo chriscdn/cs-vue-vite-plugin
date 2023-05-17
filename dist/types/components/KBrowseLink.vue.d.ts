@@ -45,5 +45,5 @@ declare const _default: import("vue").DefineComponent<{
     dataid: number | null;
     nodeRec: RHNodeSerializer | null;
     clickable: boolean | null;
-}>;
+}, {}>;
 export default _default;

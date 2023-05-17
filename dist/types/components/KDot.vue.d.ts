@@ -53,5 +53,5 @@ declare const _default: import("vue").DefineComponent<{
     outlineWidth: string | number;
     size: string | number;
     outline: boolean;
-}>;
+}, {}>;
 export default _default;

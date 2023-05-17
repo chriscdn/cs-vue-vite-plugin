@@ -82,7 +82,7 @@ declare const _default: import("vue").DefineComponent<{
     minHeight: string | number;
     minWidth: string | number;
     width: string | number;
-}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     userRec: {
         type: PropType<RHUserSerializer>;
         default: null;
@@ -104,5 +104,5 @@ declare const _default: import("vue").DefineComponent<{
     width: string | number;
     type: number;
     userRec: RHUserSerializer;
-}>;
+}, {}>;
 export default _default;

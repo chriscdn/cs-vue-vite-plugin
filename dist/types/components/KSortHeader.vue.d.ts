@@ -24,5 +24,5 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     modelValue: Record<string, any>;
-}>;
+}, {}>;
 export default _default;

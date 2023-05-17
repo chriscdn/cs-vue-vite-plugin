@@ -43,5 +43,5 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     modelValue: boolean;
     readonly: boolean;
-}>;
+}, {}>;
 export default _default;

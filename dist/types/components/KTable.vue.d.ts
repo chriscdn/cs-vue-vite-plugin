@@ -34,5 +34,5 @@ declare const _default: import("vue").DefineComponent<{
     loading: boolean;
     properties: boolean;
     striped: boolean;
-}>;
+}, {}>;
 export default _default;

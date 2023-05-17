@@ -51,5 +51,5 @@ declare const _default: import("vue").DefineComponent<{
     template: Record<string, any>;
     minItems: number;
     maxItems: number;
-}>;
+}, {}>;
 export default _default;

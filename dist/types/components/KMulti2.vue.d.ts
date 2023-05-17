@@ -40,5 +40,5 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     readonly: boolean;
     maxItems: number;
-}>;
+}, {}>;
 export default _default;

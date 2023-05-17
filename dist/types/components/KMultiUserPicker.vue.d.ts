@@ -42,5 +42,5 @@ declare const _default: import("vue").DefineComponent<{
     readonly: boolean;
     users: boolean;
     groups: boolean;
-}>;
+}, {}>;
 export default _default;

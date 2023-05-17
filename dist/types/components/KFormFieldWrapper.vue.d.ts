@@ -36,7 +36,7 @@ declare const mixin: import("vue").DefineComponent<{
     label: string;
     successMessages: unknown[];
     errorMessages: unknown[];
-}>;
+}, {}>;
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").DefineComponent<{
     label: {
         type: StringConstructor;
@@ -75,6 +75,6 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import
     label: string;
     successMessages: unknown[];
     errorMessages: unknown[];
-}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
+}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;
 export { mixin };

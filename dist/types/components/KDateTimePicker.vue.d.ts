@@ -41,5 +41,5 @@ declare const _default: import("vue").DefineComponent<{
     modelValue: string | Date | null;
     time: boolean;
     editable: boolean;
-}>;
+}, {}>;
 export default _default;

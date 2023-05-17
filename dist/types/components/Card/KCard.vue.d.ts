@@ -66,7 +66,7 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {
     minHeight: string | number;
     minWidth: string | number;
     width: string | number;
-}> | {
+}, {}> | {
     props: {
         disabled: {
             type: BooleanConstructor;
@@ -103,5 +103,5 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {
             data: {};
         };
     };
-}, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
+}, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;

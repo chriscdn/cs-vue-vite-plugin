@@ -59,5 +59,5 @@ declare const _default: import("vue").DefineComponent<{
     minHeight: string | number;
     minWidth: string | number;
     width: string | number;
-}>;
+}, {}>;
 export default _default;

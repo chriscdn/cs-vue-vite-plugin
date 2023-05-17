@@ -70,7 +70,7 @@ declare const _default: import("vue").DefineComponent<{
     minHeight: string | number;
     minWidth: string | number;
     width: string | number;
-}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     color: {
         type: StringConstructor;
         default: string;
@@ -87,5 +87,5 @@ declare const _default: import("vue").DefineComponent<{
     maxHeight: string | number;
     maxWidth: string | number;
     color: string;
-}>;
+}, {}>;
 export default _default;

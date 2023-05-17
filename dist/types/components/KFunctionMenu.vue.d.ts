@@ -47,5 +47,5 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     func: string;
-}>;
+}, {}>;
 export default _default;

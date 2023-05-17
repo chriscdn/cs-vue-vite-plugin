@@ -19,5 +19,5 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     label: string;
     loading: boolean;
-}>;
+}, {}>;
 export default _default;

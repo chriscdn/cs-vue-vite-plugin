@@ -18,5 +18,5 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     subtitle: string;
-}>;
+}, {}>;
 export default _default;

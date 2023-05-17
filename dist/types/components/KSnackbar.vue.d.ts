@@ -27,5 +27,5 @@ declare const _default: import("vue").DefineComponent<{}, {}, {
     success(params: SnackbarParameters): void;
     error(params: SnackbarParameters): void;
     queue(type: "success" | "error", { title, message, timeout, actionLabel, action, }: SnackbarParameters): void;
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}>;
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;

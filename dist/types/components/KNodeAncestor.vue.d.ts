@@ -12,5 +12,5 @@ declare const _default: import("vue").DefineComponent<{
         type: NumberConstructor;
         required: true;
     };
-}>>, {}>;
+}>>, {}, {}>;
 export default _default;

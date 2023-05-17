@@ -32,5 +32,5 @@ declare const _default: import("vue").DefineComponent<{
         type: ObjectConstructor;
         required: true;
     };
-}>>, {}>;
+}>>, {}, {}>;
 export default _default;
