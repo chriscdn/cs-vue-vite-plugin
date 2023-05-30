@@ -21,6 +21,11 @@ export default defineComponent({});
 </script>
 
 <style lang="postcss">
+.k-smart-ui-panel-header,
+.k-smart-ui-panel-footer {
+  @apply hidden;
+}
+
 .binf-widgets {
   .rhcore-smartui {
     @apply relative;
@@ -33,6 +38,8 @@ export default defineComponent({});
         @apply border-b border-solid;
         border-color: #ccc;
         background-color: #dce4e8;
+        /* undo the hide in classic case */
+        @apply block;
       }
 
       .k-smart-ui-panel-body {
@@ -44,6 +51,8 @@ export default defineComponent({});
         @apply border-t border-solid;
         border-color: #ccc;
         background-color: #e8e8e8;
+        /* undo the hide in classic case */
+        @apply block;
       }
     }
   }

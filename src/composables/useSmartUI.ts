@@ -4,13 +4,6 @@ declare global {
   }
 }
 
-// type TSmartUIModalAlert = {
-//   callback?: (result: boolean | undefined) => void;
-//   message?: string;
-//   title?: string;
-//   options?: {};
-// };
-
 function generateShow(name: string) {
   return (
     message: string,
@@ -44,13 +37,11 @@ function generateConfirm(name: string) {
 
 export const useSmartUI = () => ({
   showSuccess: generateShow("showSuccess"),
-  // showInfo: generateShow("showInfo"),
   showInformation: generateShow("showInformation"),
   showWarning: generateShow("showWarning"),
   showError: generateShow("showError"),
   showMessage: generateShow("showMessage"),
   confirmSuccess: generateConfirm("confirmSuccess"),
-  // confirmInfo: generateConfirm("confirmInfo"),
   confirmInformation: generateConfirm("confirmInformation"),
   confirmWarning: generateConfirm("confirmWarning"),
   confirmError: generateConfirm("confirmError"),
