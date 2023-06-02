@@ -6227,7 +6227,7 @@ function Vs(e, t, n, i, a, s) {
       mode: "out-in"
     }, {
       default: L(() => [
-        e.isActive && e.sortAsc ? (u(), f("span", zs, "↓")) : e.isActive ? (u(), f("span", Ls, "↑")) : A("", !0)
+        e.isActive && e.sortAsc ? (u(), f("span", zs, "↑")) : e.isActive ? (u(), f("span", Ls, "↓")) : A("", !0)
       ]),
       _: 1
     })

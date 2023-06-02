@@ -61,16 +61,6 @@
 import { defineComponent } from "vue";
 import get from "lodash.get";
 
-// const schema = {
-//   type: 'object',
-//   properties: {
-//     offset: { type: 'integer' },
-//     limit: { type: 'integer' },
-//     count: { type: 'integer' },
-//   },
-//   required: ['offset', 'limit', 'count'],
-// }
-
 export default defineComponent({
   props: {
     modelValue: {

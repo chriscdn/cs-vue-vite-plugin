@@ -3,9 +3,9 @@
     <slot />
     <transition name="fade" mode="out-in">
       <span v-if="isActive && sortAsc" class="j-sort-header-arrow"
-        >&#8595;</span
+        >&#8593;</span
       >
-      <span v-else-if="isActive" class="j-sort-header-arrow">&#8593;</span>
+      <span v-else-if="isActive" class="j-sort-header-arrow">&#8595;</span>
     </transition>
   </a>
 </template>
