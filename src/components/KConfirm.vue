@@ -1,7 +1,8 @@
 <template>
   <slot />
 
-  <KDialog v-model="dialog" max-width="30vw" min-width="20vw">
+  <!-- z-index greater than default dialog -->
+  <KDialog v-model="dialog" max-width="30vw" min-width="20vw" :z-index="50">
     <KCard>
       <KCardTitle v-if="title">
         {{ title }}

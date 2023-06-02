@@ -36,9 +36,13 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    clearable: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, unknown, unknown, {
     disabledResolved(): boolean;
-    localValue: {
+    valueLocal: {
         get(): string | number | any[] | Record<string, any> | null;
         set(value: any): void;
     };
@@ -123,6 +127,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    clearable: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
@@ -134,6 +142,7 @@ declare const _default: import("vue").DefineComponent<{
     loading: boolean;
     multiple: boolean;
     readonly: boolean;
+    clearable: boolean;
     itemDisabled: string;
 }, {}>;
 export default _default;

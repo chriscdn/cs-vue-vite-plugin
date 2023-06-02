@@ -35,6 +35,7 @@ export default {
     session = new Session(options);
 
     const configuration: Configuration = {
+      userId: options.userId,
       img: options.img,
       baseUrl: options.baseUrl,
       jsLongDateFormat: options.datelong,

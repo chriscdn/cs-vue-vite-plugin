@@ -52,7 +52,7 @@ export default defineComponent({
     },
     zIndex: {
       type: [Number],
-      default: 10,
+      default: 0,
     },
   },
   emits: ["update:modelValue"],

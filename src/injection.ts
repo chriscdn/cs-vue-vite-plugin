@@ -21,6 +21,7 @@ import type { Session } from "@kweli/cs-rest";
 
 export type WindowInitialState = {
   baseUrl: string;
+  userId: number;
   img: string;
   otcsticket: string;
   datelong: string;
@@ -38,6 +39,7 @@ declare global {
 
 export type Configuration = {
   img: string;
+  userId: number;
   baseUrl: string;
   jsLongDateFormat: string;
   jsShortDateFormat: string;

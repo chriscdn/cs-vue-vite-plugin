@@ -6,7 +6,7 @@
   >
     <div class="k-select">
       <select
-        v-model="localValue"
+        v-model="valueLocal"
         :class="classObj"
         :disabled="disabledResolved"
       >
@@ -19,6 +19,8 @@
           {{ getItemText(item) }}
         </option>
       </select>
+
+      <KButton v-if="clearable" @click="valueLocal = null" small>clear</KButton>
 
       <transition name="fade">
         <KSpinner v-if="loading" class="k-select--spinner" />
@@ -72,13 +74,17 @@ export default defineComponent({
       type: Boolean as PropType<boolean>,
       default: false,
     },
+    clearable: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
   emits: ["update:modelValue"],
   computed: {
     disabledResolved() {
       return this.disabled || this.readonly;
     },
-    localValue: {
+    valueLocal: {
       get() {
         return this.multiple ? this.arrify(this.modelValue) : this.modelValue;
       },
@@ -116,7 +122,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .k-select {
-  @apply flex items-center;
+  @apply flex items-center gap-2;
   .k-select--spinner {
     @apply ml-1;
   }
