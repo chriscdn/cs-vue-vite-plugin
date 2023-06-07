@@ -58,13 +58,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import get from "lodash.get";
+import { PropType, defineComponent } from "vue";
+
+export type TPaginiation = {
+  offset: number;
+  limit: number;
+  count: number;
+};
 
 export default defineComponent({
   props: {
     modelValue: {
-      type: Object,
+      type: Object as PropType<TPaginiation>,
       required: true,
     },
   },
@@ -74,6 +79,11 @@ export default defineComponent({
     };
   },
   computed: {
+    pagination(): TPaginiation {
+      const { offset, limit, count }: TPaginiation = this.modelValue;
+      return { offset, limit, count };
+    },
+
     pageSize: {
       get() {
         return this.limit;
@@ -87,19 +97,16 @@ export default defineComponent({
       },
     },
 
-    pagination() {
-      return this.modelValue;
-    },
     offset() {
-      return get(this.pagination, "offset", 0);
+      return this.pagination.offset ?? 0;
     },
 
     limit() {
-      return get(this.pagination, "limit", 0);
+      return this.pagination.limit ?? 0;
     },
 
     count() {
-      return get(this.pagination, "count", 0);
+      return this.pagination.count ?? 0;
     },
 
     lastPageNumber0() {
