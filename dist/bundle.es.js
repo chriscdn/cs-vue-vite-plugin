@@ -1,5 +1,5 @@
-import { defineComponent as j, h as ft, openBlock as u, createElementBlock as f, renderSlot as U, createElementVNode as k, normalizeStyle as ie, resolveComponent as z, createVNode as D, withCtx as L, resolveDirective as Ne, withDirectives as oe, normalizeClass as J, withKeys as pe, withModifiers as re, vModelText as $e, Fragment as q, renderList as Z, createTextVNode as G, toDisplayString as F, createCommentVNode as A, inject as mt, createBlock as B, mergeProps as Ee, vModelDynamic as gt, Teleport as ht, Transition as me, setBlockTracking as Ae, TransitionGroup as ke, useCssVars as Ue, vModelRadio as _t, vModelSelect as bt } from "vue";
-import M from "lodash.get";
+import { defineComponent as j, h as ft, openBlock as u, createElementBlock as f, renderSlot as U, createElementVNode as k, normalizeStyle as ie, resolveComponent as M, createVNode as D, withCtx as L, resolveDirective as Ne, withDirectives as oe, normalizeClass as J, withKeys as pe, withModifiers as re, vModelText as $e, Fragment as q, renderList as Z, createTextVNode as G, toDisplayString as F, createCommentVNode as A, inject as mt, createBlock as B, mergeProps as Ee, vModelDynamic as gt, Teleport as ht, Transition as me, setBlockTracking as Ae, TransitionGroup as ke, useCssVars as Ue, vModelRadio as _t, vModelSelect as bt } from "vue";
+import z from "lodash.get";
 import { directive as De } from "vue3-click-away";
 import we from "@chriscdn/promise-semaphore";
 import { format as Me } from "date-fns";
@@ -3873,7 +3873,7 @@ const nn = j({
   },
   methods: {
     resolveColor(e) {
-      const t = M(en, ["theme", "colors"]), n = M(t, e);
+      const t = z(en, ["theme", "colors"]), n = z(t, e);
       return typeof n == "string" ? n : e;
     },
     fontColorForBackgroundColor(e) {
@@ -3903,7 +3903,7 @@ const an = /* @__PURE__ */ K(rn, [["render", sn]]), ln = /* @__PURE__ */ Object.
 }, Symbol.toStringTag, { value: "Module" }));
 const un = {}, dn = { class: "k-app" };
 function cn(e, t) {
-  const n = z("KSnackbar"), i = z("KConfirm");
+  const n = M("KSnackbar"), i = M("KConfirm");
   return u(), f("div", dn, [
     D(i, null, {
       default: L(() => [
@@ -4004,11 +4004,11 @@ const pn = /* @__PURE__ */ K(un, [["render", cn]]), fn = /* @__PURE__ */ Object.
     },
     valueLocal: {
       set(e) {
-        e ? this.returnObject ? this.$emit("update:modelValue", e) : this.$emit("update:modelValue", M(e, this.itemValue, e)) : this.$emit("update:modelValue", null);
+        e ? this.returnObject ? this.$emit("update:modelValue", e) : this.$emit("update:modelValue", z(e, this.itemValue, e)) : this.$emit("update:modelValue", null);
       },
       get() {
         return this.isObject(this.modelValue) ? this.modelValue : this.items.find(
-          (e) => M(e, this.itemValue, e) == this.modelValue
+          (e) => z(e, this.itemValue, e) == this.modelValue
         );
       }
     },
@@ -4022,12 +4022,12 @@ const pn = /* @__PURE__ */ K(un, [["render", cn]]), fn = /* @__PURE__ */ Object.
     },
     items() {
       this.currentFocus = -1, this.valueLocal && (this.combobox || (this.inputText = String(
-        this.isObject(this.valueLocal) ? M(this.valueLocal, this.itemText, "") : this.valueLocal
+        this.isObject(this.valueLocal) ? z(this.valueLocal, this.itemText, "") : this.valueLocal
       )));
     },
     valueLocal: {
       handler(e) {
-        this.inputText = M(this.valueLocal, this.itemText, e);
+        this.inputText = z(this.valueLocal, this.itemText, e);
       },
       immediate: !0
     },
@@ -4039,7 +4039,7 @@ const pn = /* @__PURE__ */ K(un, [["render", cn]]), fn = /* @__PURE__ */ Object.
     async select(e) {
       this.combobox || (e = Math.max(e, 0));
       const t = this.items[e];
-      this.combobox ? t && (this.valueLocal = t) : (this.valueLocal = t, this.inputText = M(
+      this.combobox ? t && (this.valueLocal = t) : (this.valueLocal = t, this.inputText = z(
         t,
         this.itemText,
         t
@@ -4263,7 +4263,7 @@ const Cn = new xn(), Pn = j({
   }
 }), jn = { key: 0 }, Tn = ["src"], Kn = ["href"], An = ["innerHTML"];
 function Mn(e, t, n, i, a, s) {
-  const r = z("KFunctionMenu");
+  const r = M("KFunctionMenu");
   return e.nodeRecResolved ? (u(), f("span", jn, [
     e.image ? (u(), f("img", {
       key: 0,
@@ -4368,7 +4368,7 @@ const Nn = /* @__PURE__ */ K(Vn, [["render", Bn]]), En = /* @__PURE__ */ Object.
   }
 });
 function Dn(e, t, n, i, a, s) {
-  const r = z("KCardTitle"), l = z("KCardText"), d = z("KSpacer"), o = z("KButton"), p = z("KCardActions"), b = z("KCard"), _ = z("KDialog");
+  const r = M("KCardTitle"), l = M("KCardText"), d = M("KSpacer"), o = M("KButton"), p = M("KCardActions"), b = M("KCard"), _ = M("KDialog");
   return u(), f(q, null, [
     U(e.$slots, "default"),
     D(_, {
@@ -4474,7 +4474,7 @@ const Rn = /* @__PURE__ */ K(Un, [["render", Dn]]), In = /* @__PURE__ */ Object.
 });
 const qn = { class: "k-date-time-picker" }, Hn = ["type", "readonly"];
 function Gn(e, t, n, i, a, s) {
-  const r = z("KButton");
+  const r = M("KButton");
   return u(), f("div", qn, [
     oe(k("input", {
       "onUpdate:modelValue": t[0] || (t[0] = (l) => e.localModelValue = l),
@@ -4896,7 +4896,7 @@ const Sr = { class: "k-multi-widget" }, Or = { class: "k-multi-buttons" }, xr = 
   /* @__PURE__ */ k("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" })
 ], -1);
 function Pr(e, t, n, i, a, s) {
-  const r = z("KButton"), l = z("KCard");
+  const r = M("KButton"), l = M("KCard");
   return u(), B(l, { class: "k-multi" }, {
     default: L(() => [
       D(ke, {
@@ -5001,7 +5001,7 @@ const Ar = { class: "k-multi-widget" }, Mr = /* @__PURE__ */ k("svg", {
   /* @__PURE__ */ k("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" })
 ], -1);
 function zr(e, t, n, i, a, s) {
-  const r = z("KButton"), l = z("KCard");
+  const r = M("KButton"), l = M("KCard");
   return u(), B(l, { class: "k-multi" }, {
     default: L(() => [
       D(ke, {
@@ -5077,7 +5077,7 @@ const Lr = /* @__PURE__ */ K(Kr, [["render", zr]]), Vr = /* @__PURE__ */ Object.
   }
 });
 function Br(e, t, n, i, a, s) {
-  const r = z("KUserLink"), l = z("KUserPicker"), d = z("KMulti2");
+  const r = M("KUserLink"), l = M("KUserPicker"), d = M("KMulti2");
   return u(), B(d, {
     modelValue: e.userIdsLocal,
     "onUpdate:modelValue": t[0] || (t[0] = (o) => e.userIdsLocal = o),
@@ -5117,7 +5117,7 @@ class Ur {
     try {
       if (await ze.acquire(n), !this.nodes[n]) {
         const i = await t.nodes.ancestors(n);
-        this.nodes[n] = M(i, "data.ancestors", []);
+        this.nodes[n] = z(i, "data.ancestors", []);
       }
       return this.nodes[n];
     } finally {
@@ -5326,7 +5326,7 @@ const ut = /* @__PURE__ */ K(Dr, [["render", Ir]]), Wr = /* @__PURE__ */ Object.
 });
 const Hr = { class: "k-node-picker-field" }, Gr = ["value"];
 function Qr(e, t, n, i, a, s) {
-  const r = z("KButton"), l = z("KNodeAncestor");
+  const r = M("KButton"), l = M("KNodeAncestor");
   return u(), f("div", Hr, [
     k("input", {
       ref: "input",
@@ -5377,7 +5377,7 @@ const Yr = /* @__PURE__ */ K(qr, [["render", Qr]]), Xr = /* @__PURE__ */ Object.
 });
 const Zr = { class: "k-one-moment" }, eo = { class: "k-one-moment-label" };
 function to(e, t, n, i, a, s) {
-  const r = z("KSpinner"), l = z("KDialog");
+  const r = M("KSpinner"), l = M("KDialog");
   return u(), B(l, { "model-value": e.loading }, {
     default: L(() => [
       k("div", Zr, [
@@ -5490,27 +5490,27 @@ const mo = /* @__PURE__ */ K(lo, [["render", fo], ["__scopeId", "data-v-c72c9204
       return Math.min(...this.pageSizes) < this.pagination.count;
     },
     pageRange() {
-      return M(this.pagination, "pageRange", []);
+      return z(this.pagination, "pageRange", []);
     },
     pageSizes() {
-      return M(this.pagination, "pageSizes", []);
+      return z(this.pagination, "pageSizes", []);
     },
     pageNumber() {
-      return M(this.pagination, "pageNumber", 0);
+      return z(this.pagination, "pageNumber", 0);
     },
     pageSize: {
       get() {
-        return M(this.pagination, "pageSize", 0);
+        return z(this.pagination, "pageSize", 0);
       },
       set(e) {
         this.$emit("update:pageSize", e);
       }
     },
     hasPrevious() {
-      return M(this.pagination, "hasPrevious", !1);
+      return z(this.pagination, "hasPrevious", !1);
     },
     hasNext() {
-      return M(this.pagination, "hasNext", !1);
+      return z(this.pagination, "hasNext", !1);
     }
   },
   methods: {
@@ -5550,7 +5550,7 @@ const _o = { class: "k-pagination" }, bo = {
   Oo
 ], Co = { key: 2 };
 function Po(e, t, n, i, a, s) {
-  const r = z("KSelect");
+  const r = M("KSelect");
   return u(), f("div", _o, [
     e.potentiallyMultiplePages ? (u(), B(r, {
       key: 0,
@@ -5589,6 +5589,10 @@ const jo = /* @__PURE__ */ K(ho, [["render", Po]]), To = /* @__PURE__ */ Object.
     };
   },
   computed: {
+    pagination() {
+      const { offset: e, limit: t, count: n } = this.modelValue;
+      return { offset: e, limit: t, count: n };
+    },
     pageSize: {
       get() {
         return this.limit;
@@ -5601,17 +5605,14 @@ const jo = /* @__PURE__ */ K(ho, [["render", Po]]), To = /* @__PURE__ */ Object.
         });
       }
     },
-    pagination() {
-      return this.modelValue;
-    },
     offset() {
-      return M(this.pagination, "offset", 0);
+      return this.pagination.offset ?? 0;
     },
     limit() {
-      return M(this.pagination, "limit", 0);
+      return this.pagination.limit ?? 0;
     },
     count() {
-      return M(this.pagination, "count", 0);
+      return this.pagination.count ?? 0;
     },
     lastPageNumber0() {
       return Math.ceil(this.count / this.limit) - 1;
@@ -5676,7 +5677,7 @@ const Ao = { class: "k-pagination2" }, Mo = { class: "k-pagination2-buttons" }, 
   Fo
 ];
 function No(e, t, n, i, a, s) {
-  const r = z("KSelect");
+  const r = M("KSelect");
   return u(), f("div", Ao, [
     k("div", null, [
       D(r, {
@@ -5776,7 +5777,7 @@ const Go = {
   class: "centerOverlay"
 };
 function Qo(e, t, n, i, a, s) {
-  const r = z("KSpinner");
+  const r = M("KSpinner");
   return e.loading ? (u(), f("div", Go, [
     D(r, {
       "max-width": e.size,
@@ -5836,19 +5837,19 @@ const Yo = /* @__PURE__ */ K(Ho, [["render", Qo]]), Xo = /* @__PURE__ */ Object.
       return typeof e == "object" && e instanceof Object && !(e instanceof Array);
     },
     getItemText(e) {
-      return this.isObject(e) ? M(e, this.itemText) : e;
+      return this.isObject(e) ? z(e, this.itemText) : e;
     },
     getItemValue(e) {
-      return this.isObject(e) ? M(e, this.itemValue) : e;
+      return this.isObject(e) ? z(e, this.itemValue) : e;
     },
     getItemDisabled(e) {
-      return this.isObject(e) ? M(e, "disabled", !1) : !1;
+      return this.isObject(e) ? z(e, "disabled", !1) : !1;
     }
   }
 });
 const Zo = ["id", "value", "disabled"], es = ["for"];
 function ts(e, t, n, i, a, s) {
-  const r = z("KSpinner"), l = z("KFormFieldWrapper");
+  const r = M("KSpinner"), l = M("KFormFieldWrapper");
   return u(), f("div", null, [
     D(l, {
       label: e.label,
@@ -5974,13 +5975,13 @@ const is = /* @__PURE__ */ K(os, [["render", ss]]), as = /* @__PURE__ */ Object.
       return typeof e == "object" && e instanceof Object && !(e instanceof Array);
     },
     getItemText(e) {
-      return this.isObject(e) ? M(e, this.itemText) : e;
+      return this.isObject(e) ? z(e, this.itemText) : e;
     },
     getItemValue(e) {
-      return this.isObject(e) ? M(e, this.itemValue) : e;
+      return this.isObject(e) ? z(e, this.itemValue) : e;
     },
     getItemDisabled(e) {
-      return this.isObject(e) ? M(e, this.itemDisabled, !1) : !1;
+      return this.isObject(e) ? z(e, this.itemDisabled, !1) : !1;
     },
     arrify(e) {
       return Array.isArray(e) ? e : [e];
@@ -5989,7 +5990,7 @@ const is = /* @__PURE__ */ K(os, [["render", ss]]), as = /* @__PURE__ */ Object.
 });
 const us = { class: "k-select" }, ds = ["disabled"], cs = ["value", "disabled"];
 function ps(e, t, n, i, a, s) {
-  const r = z("KButton"), l = z("KSpinner"), d = z("KFormFieldWrapper");
+  const r = M("KButton"), l = M("KSpinner"), d = M("KFormFieldWrapper");
   return u(), B(d, {
     label: e.label,
     "success-messages": e.successMessages,
@@ -6352,7 +6353,7 @@ const Hs = /* @__PURE__ */ K(Te, [["render", qs]]), Gs = /* @__PURE__ */ Object.
   }
 });
 function Ys(e, t, n, i, a, s) {
-  const r = z("KLinearProgressIndicator");
+  const r = M("KLinearProgressIndicator");
   return u(), f("div", null, [
     e.loading ? (u(), B(r, { key: 0 })) : A("", !0),
     k("table", {
@@ -6403,7 +6404,7 @@ const Xs = /* @__PURE__ */ K(Qs, [["render", Ys]]), Js = /* @__PURE__ */ Object.
 });
 const ei = ["rows"];
 function ti(e, t, n, i, a, s) {
-  const r = z("KFormFieldWrapper");
+  const r = M("KFormFieldWrapper");
   return u(), B(r, {
     label: e.label,
     "success-messages": e.successMessages,
@@ -6453,7 +6454,7 @@ const ni = /* @__PURE__ */ K(Zs, [["render", ti]]), ri = /* @__PURE__ */ Object.
 });
 const si = ["placeholder"];
 function ii(e, t, n, i, a, s) {
-  const r = z("KFormFieldWrapper");
+  const r = M("KFormFieldWrapper");
   return u(), B(r, {
     label: e.label,
     "success-messages": e.successMessages,
@@ -6502,7 +6503,7 @@ const ai = /* @__PURE__ */ K(oi, [["render", ii]]), li = /* @__PURE__ */ Object.
   },
   computed: {
     userType() {
-      return M(this.userRec, "type", this.type);
+      return z(this.userRec, "type", this.type);
     },
     url() {
       return this.userType === this.session.members.USER ? `${this.config.img}guy.gif` : this.userType === this.session.members.GROUP ? `${this.config.img}2-guys.gif` : this.userType > 0 ? `${this.config.img}projectgroup.gif` : null;
@@ -6648,16 +6649,16 @@ const ct = new hi(), _i = j({
   },
   computed: {
     userIdLocal() {
-      return M(this.userRecLocal, "id") ?? M(this.userRecLocal, "userid");
+      return z(this.userRecLocal, "id") ?? z(this.userRecLocal, "userid");
     },
     // userLocal() {
     //   return this.user ?? this.userid ?? this.userRec
     // },
     displayName() {
-      return M(this.userRecLocal, "display_name") ?? M(this.userRecLocal, "displayname") ?? M(this.userRecLocal, "name");
+      return z(this.userRecLocal, "display_name") ?? z(this.userRecLocal, "displayname") ?? z(this.userRecLocal, "name");
     },
     type() {
-      return M(this.userRecLocal, "type");
+      return z(this.userRecLocal, "type");
     }
   },
   watch: {
@@ -6686,7 +6687,7 @@ const bi = {
   class: "k-user-link"
 };
 function yi(e, t, n, i, a, s) {
-  const r = z("KUserGIF");
+  const r = M("KUserGIF");
   return e.userRecLocal ? (u(), f("span", bi, [
     e.gif ? (u(), B(r, {
       key: 0,
@@ -6800,9 +6801,9 @@ const vi = /* @__PURE__ */ K(_i, [["render", yi]]), $i = /* @__PURE__ */ Object.
           "v1"
         );
         this.items = t.data.data.map((n) => ({
-          text: M(n, "name_formatted"),
-          value: M(n, "id"),
-          type: M(n, "type")
+          text: z(n, "name_formatted"),
+          value: z(n, "id"),
+          type: z(n, "type")
         }));
       } finally {
         this.loading = !1;
@@ -6836,7 +6837,7 @@ const vi = /* @__PURE__ */ K(_i, [["render", yi]]), $i = /* @__PURE__ */ Object.
 });
 const wi = { class: "flex items-center gap-1" };
 function Si(e, t, n, i, a, s) {
-  const r = z("KUserGIF"), l = z("KAutocomplete"), d = z("KUserLink"), o = z("KFormFieldWrapper");
+  const r = M("KUserGIF"), l = M("KAutocomplete"), d = M("KUserLink"), o = M("KFormFieldWrapper");
   return u(), B(o, {
     label: e.label,
     "success-messages": e.successMessages,
@@ -6903,7 +6904,7 @@ const pt = /* @__PURE__ */ K(ki, [["render", Si]]), Oi = /* @__PURE__ */ Object.
   },
   computed: {
     isSelected() {
-      return this.name == M(this.tabs, "selectedTab");
+      return this.name == z(this.tabs, "selectedTab");
     }
   }
 }), Ci = { key: 0 };
@@ -7015,12 +7016,12 @@ const Fi = /* @__PURE__ */ K(Ki, [["render", Vi]]), Bi = /* @__PURE__ */ Object.
           const t = await this.session.members.member(
             e,
             "v1"
-          ), n = M(t, "data.data.first_name"), i = M(t, "data.data.last_name"), a = M(t, "data.data.name"), s = `${n} ${i} (${a})`;
+          ), n = z(t, "data.data.first_name"), i = z(t, "data.data.last_name"), a = z(t, "data.data.name"), s = `${n} ${i} (${a})`;
           this.items = [
             {
               text: s,
-              value: M(t, "data.data.id"),
-              type: M(t, "data.data.type")
+              value: z(t, "data.data.id"),
+              type: z(t, "data.data.type")
             }
           ], this.select = s;
         } finally {
@@ -7068,7 +7069,7 @@ const Xi = () => ({
   const n = t.sortKey, a = t.sortAsc ? 1 : -1;
   return [...e].sort((s, r) => {
     if (n) {
-      const l = String(M(s, n, "") ?? ""), d = String(M(r, n, "") ?? "");
+      const l = String(z(s, n, "") ?? ""), d = String(z(r, n, "") ?? "");
       return a * l.toLowerCase().localeCompare(d.toLowerCase());
     } else
       return 0;

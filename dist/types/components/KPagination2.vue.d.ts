@@ -1,19 +1,25 @@
+import { PropType } from "vue";
+export type TPaginiation = {
+    offset: number;
+    limit: number;
+    count: number;
+};
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: ObjectConstructor;
+        type: PropType<TPaginiation>;
         required: true;
     };
 }, unknown, {
     pageSizes: number[];
 }, {
+    pagination(): TPaginiation;
     pageSize: {
-        get(): any;
+        get(): number;
         set(value: number): void;
     };
-    pagination(): Record<string, any>;
-    offset(): any;
-    limit(): any;
-    count(): any;
+    offset(): number;
+    limit(): number;
+    count(): number;
     lastPageNumber0(): number;
     lastPageNumber(): number;
     pageCount(): number;
@@ -29,7 +35,7 @@ declare const _default: import("vue").DefineComponent<{
     clickedPageNumber(pageNumber0: number): void;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: ObjectConstructor;
+        type: PropType<TPaginiation>;
         required: true;
     };
 }>>, {}, {}>;
