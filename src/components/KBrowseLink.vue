@@ -1,5 +1,5 @@
 <template>
-  <span v-if="nodeRecResolved">
+  <div v-if="nodeRecResolved" class="flex">
     <img v-if="image" :src="nodeRecResolved.gif" />&nbsp;<a
       :href="nodeRecResolved.url!"
     >
@@ -8,7 +8,7 @@
     <KFunctionMenu v-if="clickable" :dataid="nodeRecResolved.dataid" />
     <!-- eslint-disable-next-line vue/no-v-html -->
     <span v-html="nodeRecResolved.modifiedImageCallback" />
-  </span>
+  </div>
 </template>
 
 <script lang="ts">

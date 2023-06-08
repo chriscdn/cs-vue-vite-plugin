@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ["./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
   variants: {
     extend: {
-      backgroundColor: ['active'], // permits active:bg-red-50 type classes
+      backgroundColor: ["active"], // permits active:bg-red-50 type classes
     },
   },
   plugins: [],
@@ -17,6 +17,7 @@ export default {
     // https://tailwindcss.com/docs/preflight
     preflight: false,
   },
+  // safelist: ["hidden"],
 
   // important: '.k-app',
-}
+};

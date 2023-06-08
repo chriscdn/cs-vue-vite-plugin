@@ -27,10 +27,17 @@ export default {
   },
 
   computed: {
+    // OnClick added with Vue3... ?
     isClickable() {
       return (
         !this.disabled &&
-        Boolean(this.$attrs.click || this.link || this.to || this.href)
+        Boolean(
+          this.$attrs.onClick ||
+            // this.$attrs.click ||
+            this.link ||
+            this.to ||
+            this.href
+        )
       );
     },
   },
@@ -45,10 +52,10 @@ export default {
       if (this.href) {
         tag = "a";
         data = {
-          attrs: {
-            href: this.href,
-            target: this.target,
-          },
+          // attrs: {
+          href: this.href,
+          target: this.target,
+          // },
         };
       } else if (this.to) {
         tag = this.nuxt ? "nuxt-link" : "router-link";
