@@ -19,5 +19,5 @@ export default {
   },
   // safelist: ["hidden"],
 
-  // important: '.k-app',
+  important: ".k-app",
 };

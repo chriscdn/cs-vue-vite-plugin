@@ -1,10 +1,11 @@
 <template>
   <div class="k-menu" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
-    <div ref="menuButton" v-click-away="clickAway">
+    <div ref="menuActivator" v-click-away="clickAway">
       <slot name="activator" :on="{ click: toggleMenu }"></slot>
     </div>
 
     <div
+      ref="menuItems"
       class="k-menu-items"
       :class="dropDownMenuItemsClassObj"
       :style="styleDropDownItems"
@@ -15,19 +16,37 @@
 </template>
 
 <script lang="ts">
-import { ref, PropType, defineComponent } from "vue";
+import { ref, PropType, defineComponent, Ref } from "vue";
 import { convertToUnit } from "@/mixins/measurables";
 import { directive } from "vue3-click-away";
+
+type TSize = {
+  width: number;
+  height: number;
+};
+
+type TBox = TSize & {
+  top: number;
+  left: number;
+  topRelativeToViewport: number;
+  leftRelativeToViewport: number;
+};
 
 export default defineComponent({
   directives: {
     ClickAway: directive,
   },
   setup() {
-    const menuButton = ref();
-    return { menuButton };
+    const menuActivator: Ref<HTMLDivElement | null> = ref(null);
+    const menuItems: Ref<HTMLDivElement | null> = ref(null);
+    return { menuItems, menuActivator };
   },
+
   props: {
+    modelValue: {
+      type: Boolean as PropType<boolean | null>,
+      default: null,
+    },
     submenu: {
       type: Boolean as PropType<boolean>,
       default: false,
@@ -36,26 +55,57 @@ export default defineComponent({
 
   data() {
     return {
-      visible: false,
-      left: 0,
-      top: 0,
-      height: 0,
-      width: 0,
+      visibleLocal: this.modelValue ?? false,
+      activatorBox: {
+        top: 0,
+        left: 0,
+        width: 0,
+        height: 0,
+        topRelativeToViewport: 0,
+        leftRelativeToViewport: 0,
+      } as TBox,
+      menuItemsSize: {
+        width: 0,
+        height: 0,
+      } as TSize,
+      viewportSize: {
+        width: 0,
+        height: 0,
+      },
     };
   },
-
+  emits: ["update:modelValue"],
   computed: {
+    visible: {
+      get() {
+        return this.modelValue ?? this.visibleLocal;
+      },
+      set(value: boolean) {
+        this.visibleLocal = value;
+        this.$emit("update:modelValue", value);
+      },
+    },
+
     styleDropDownItems() {
+      const bottom: number =
+        this.activatorBox.topRelativeToViewport + this.menuItemsSize.height;
+
+      const viewportHeight: number = window.innerHeight;
+      const offset: number = Math.max(bottom - viewportHeight, 0) + 24;
+
       return this.submenu
         ? {
-            left: convertToUnit(this.width),
-            top: convertToUnit(0),
+            top: convertToUnit(-offset),
+            left: convertToUnit(
+              this.activatorBox.left + this.activatorBox.width
+            ),
           }
         : {
-            left: convertToUnit(this.left),
-            top: convertToUnit(this.height),
+            top: convertToUnit(-offset),
+            left: convertToUnit(this.activatorBox.left),
           };
     },
+
     dropDownMenuItemsClassObj() {
       return {
         hidden: !this.visible,
@@ -69,16 +119,38 @@ export default defineComponent({
         this.showMenu(false);
       }
     },
-    updatePosition() {
-      if (this.menuButton) {
-        this.left = this.menuButton.offsetLeft;
-        this.height = this.menuButton.offsetHeight;
-        this.width = this.menuButton.offsetWidth;
+    updateViewportSize() {
+      this.viewportSize = {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      };
+    },
+    async updatePosition() {
+      // We need the DOM to render everything before repositioning it.
+      if (this.menuActivator && this.menuItems) {
+        await this.$nextTick();
+
+        const boundingRect: DOMRect =
+          this.menuActivator.getBoundingClientRect();
+
+        this.activatorBox = {
+          left: this.menuActivator.offsetLeft,
+          top: this.menuActivator.offsetTop,
+          width: this.menuActivator.offsetWidth,
+          height: this.menuActivator.offsetHeight,
+          topRelativeToViewport: boundingRect.top,
+          leftRelativeToViewport: boundingRect.left,
+        };
+
+        this.menuItemsSize = {
+          width: this.menuItems.offsetWidth,
+          height: this.menuItems.offsetHeight,
+        };
       }
     },
     showMenu(visibility: boolean) {
-      this.updatePosition();
       this.visible = visibility;
+      this.updatePosition();
     },
     toggleMenu() {
       this.showMenu(!this.visible);
@@ -97,22 +169,14 @@ export default defineComponent({
 });
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .k-menu {
   @apply relative;
-
-  .k-menu-button {
-    @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
-  }
 
   .k-menu-items {
     @apply transition absolute;
     @apply inset-y-auto inset-x-0;
-    @apply z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700;
-
-    .k-menu-item {
-      @apply block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white;
-    }
+    @apply z-10 bg-white rounded-lg w-44 shadow-2xl border border-solid border-gray-300;
   }
 }
 </style>

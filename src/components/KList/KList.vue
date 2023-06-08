@@ -11,16 +11,20 @@ export default defineComponent({});
 </script>
 
 <style lang="postcss">
-.k-list {
+div.k-list {
   @apply py-2;
 }
+</style>
 
+<style lang="postcss">
 .k-menu {
   .k-list {
-    @apply shadow;
-
-    a {
+    .k-list-item {
       @apply no-underline;
+      &:link,
+      &:visited {
+        @apply text-inherit;
+      }
     }
   }
 }

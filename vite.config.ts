@@ -22,6 +22,7 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled into your library
       external: [...Object.keys(dependencies || [])],
       output: {
+        // preserveModules: true
         // NO! we use external, above
         // manualChunks: Object.keys(dependencies).reduce((a, dep) => {
         //   a[dep] = [dep];

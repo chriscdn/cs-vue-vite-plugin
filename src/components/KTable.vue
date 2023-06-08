@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-.k-table {
+table.k-table {
   @apply border-collapse table-auto  w-full;
 
   background-color: #ffffff;

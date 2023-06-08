@@ -36,22 +36,12 @@ export default defineComponent({
       ? h(KListItemSubTitle, {}, { default: () => [this.subtitle] })
       : null;
 
-    /*
-    const bodySlot = this.$slots.default
-      ? this.$slots.default()
-      : h(
-          "div",
-          { class: "flex-grow" },
-          {
-            default: () =>
-              [titleSlot, subtitleSlot].filter((item) => Boolean(item)),
-          }
-        );
-        */
-
-    const bodySlotContents = this.$slots.default
-      ? this.$slots.default()
-      : [titleSlot, subtitleSlot].filter((item) => Boolean(item));
+    const bodySlotContents =
+      titleSlot || subtitleSlot
+        ? [titleSlot, subtitleSlot].filter((item) => Boolean(item))
+        : this.$slots.default
+        ? this.$slots.default()
+        : null;
 
     const bodySlot = h(
       "div",
@@ -91,26 +81,14 @@ export default defineComponent({
     );
 
     return struct;
-
-    // return h(
-    //   tag,
-    //   {
-    //     ...data,
-    //     class: this.classObj,
-    //   },
-    //   { default: () => [struct] }
-    // );
   },
 });
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
+/* a.k-list-item  added to increase prescendence in SmartUI */
 .k-list-item {
-  @apply px-4 py-1 flex gap-2;
-
-  /* &a { */
-  /* @apply no-underline; */
-  /* } */
+  @apply px-4 py-2 flex gap-2 items-center;
 
   .k-list-item-prepend {
     @apply flex-grow-0;

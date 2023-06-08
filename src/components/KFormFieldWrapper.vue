@@ -69,11 +69,11 @@ export { mixin };
 }
 
 .k-input {
-  min-width: 7rem;
+  min-width: 8rem;
   @apply rounded p-1;
-  @apply border border-solid rounded border-gray-300;
-  /* @apply focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-600; */
-  @apply focus:border-transparent  focus:outline-blue-500;
+  @apply border border-solid rounded-md border-gray-300;
+  /* @apply focus:border-transparent focus:outline-blue-500; */
+  @apply focus:border-blue-300 focus:outline-none;
 
   &.k-input--success {
     @apply border-green-700;
