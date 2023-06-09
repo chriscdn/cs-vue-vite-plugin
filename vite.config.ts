@@ -1,16 +1,18 @@
 import { defineConfig } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
+
+// @ts-ignore
 import { dependencies } from "./package.json";
 
 // https://jivancic.com/posts/build-a-component-library.html
 export default defineConfig({
   plugins: [vue()],
-  resolve: {
-    alias: {
-      "@/": new URL("./src/", import.meta.url).pathname,
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     "@/": new URL("./src/", import.meta.url).pathname,
+  //   },
+  // },
   build: {
     target: "esnext",
     lib: {
