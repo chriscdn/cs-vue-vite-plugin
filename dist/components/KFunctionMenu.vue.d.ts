@@ -23,7 +23,7 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }, {
-    config: import("@/injection").Configuration;
+    config: import("../injection").Configuration;
 }, {
     image: string;
 }, {

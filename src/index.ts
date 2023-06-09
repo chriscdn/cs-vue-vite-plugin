@@ -53,6 +53,7 @@ export { default as userLookup } from "./utils/user-lookup";
 export const useSession = () => session;
 export { useSmartUI } from "./composables/useSmartUI";
 
+export * from "./components";
 export * from "./types/RHNodeSerializer";
 export * from "./types/RHUserSerializer";
 export * from "./types/index";

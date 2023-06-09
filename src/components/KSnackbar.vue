@@ -27,8 +27,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import { emitter, type SnackbarParameters } from '../snackbar'
 import { snackbarKey, SnackbarParameters } from "../injection";
+
 interface SnackbarQueueInterface extends SnackbarParameters {
   index: number;
   type: "success" | "error";

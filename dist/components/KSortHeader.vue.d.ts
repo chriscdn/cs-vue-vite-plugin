@@ -1,4 +1,4 @@
-import { TSort } from "@/types";
+import { TSort } from "../types";
 import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     keypath: {

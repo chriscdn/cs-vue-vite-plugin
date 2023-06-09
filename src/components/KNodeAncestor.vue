@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { injectStrict, sessionKey } from "@/injection";
+import { injectStrict, sessionKey } from "../injection";
 import { defineComponent } from "vue";
 import ancestorLookup from "../utils/ancestor-lookup";
 export default defineComponent({

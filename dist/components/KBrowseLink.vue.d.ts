@@ -1,4 +1,4 @@
-import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { type RHNodeSerializer } from "../types/RHNodeSerializer";
 import { type PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     nodeRec: {
@@ -51,8 +51,8 @@ declare const _default: import("vue").DefineComponent<{
 }>>, {
     image: boolean;
     dataid: number | null;
+    legacy: boolean;
     nodeRec: RHNodeSerializer | null;
     clickable: boolean;
-    legacy: boolean;
 }, {}>;
 export default _default;

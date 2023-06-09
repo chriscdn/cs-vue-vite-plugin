@@ -12,8 +12,8 @@
 import get from "lodash.get";
 import { defineComponent, PropType } from "vue";
 import userLookup from "../utils/user-lookup";
-import { sessionKey, injectStrict } from "@/injection";
-import { type RHUserSerializer } from "@/types/RHUserSerializer";
+import { sessionKey, injectStrict } from "../injection";
+import { type RHUserSerializer } from "../types/RHUserSerializer";
 
 declare global {
   interface Window {

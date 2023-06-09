@@ -1,4 +1,6 @@
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   props: {
     disabled: {
       type: Boolean,
@@ -28,7 +30,7 @@ export default {
 
   computed: {
     // OnClick added with Vue3... ?
-    isClickable() {
+    isClickable(): boolean {
       return (
         !this.disabled &&
         Boolean(
@@ -36,13 +38,13 @@ export default {
             // this.$attrs.click ||
             this.link ||
             this.to ||
-            this.href
+            this.href,
         )
       );
     },
   },
   methods: {
-    click(e) {
+    click(e: Event) {
       this.$emit("click", e);
     },
     generateRouteLink() {
@@ -69,4 +71,4 @@ export default {
       return { tag, data };
     },
   },
-};
+});

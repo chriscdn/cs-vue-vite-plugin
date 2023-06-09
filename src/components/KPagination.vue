@@ -56,7 +56,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import get from "lodash.get";
-import { PaginatorSerializer } from "@/types/PaginatorSerializer";
+import { PaginatorSerializer } from "../types/PaginatorSerializer";
 export default defineComponent({
   props: {
     modelValue: {

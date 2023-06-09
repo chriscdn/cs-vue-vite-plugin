@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { injectStrict, sessionKey } from "@/injection";
-import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { injectStrict, sessionKey } from "../injection";
+import { type RHNodeSerializer } from "../types/RHNodeSerializer";
 import { defineComponent, type PropType } from "vue";
 import nodeLookup from "../utils/node-lookup";
 

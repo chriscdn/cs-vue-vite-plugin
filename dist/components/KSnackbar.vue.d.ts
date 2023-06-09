@@ -9,7 +9,7 @@ declare const _default: import("vue").DefineComponent<{}, {}, {
 }, {
     items(): {
         index: number;
-        type: "error" | "success";
+        type: "success" | "error";
         title?: string | undefined;
         message?: string | undefined;
         timeout?: number | undefined;

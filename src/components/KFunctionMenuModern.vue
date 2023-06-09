@@ -5,10 +5,10 @@
     </template>
 
     <KList>
-      <template v-for="(action, index) in actions" :key="index">
-        <KDivider v-if="action.signature === '-'" />
+      <template v-for="(action, index) in actions">
+        <KDivider v-if="action.signature === '-'" :key="`${index}`" />
 
-        <KMenu v-else-if="action.children.length" submenu>
+        <KMenu v-else-if="action.children.length" submenu :key="`a${index}`">
           <template #activator="{ on }">
             <KListItem :title="action.name" v-on="on">
               <template #append>
@@ -19,14 +19,19 @@
           <KList>
             <KListItem
               v-for="(subaction, index) in action.children"
-              :key="index"
+              :key="`b${index}`"
               :title="subaction.name"
               :href="subaction.url"
             />
           </KList>
         </KMenu>
 
-        <KListItem :title="action.name" v-else :href="action.url" />
+        <KListItem
+          :title="action.name"
+          v-else
+          :href="action.url"
+          :key="`c${index}`"
+        />
       </template>
     </KList>
   </KMenu>
@@ -40,7 +45,7 @@ type TAction = {
   signature: string;
 };
 
-import { PropType, defineComponent, ref } from "vue";
+import { PropType, defineComponent } from "vue";
 import KMenuDownIcon from "./Icons/KMenuDownIcon.vue";
 import { useSession } from "..";
 import KListItem from "./KList/KListItem.vue";
@@ -51,7 +56,7 @@ const semaphore = new Semaphore();
 
 export default defineComponent({
   components: { KMenuDownIcon, KListItem, KDivider },
-  setup(props) {
+  setup() {
     const session = useSession();
 
     return { session };

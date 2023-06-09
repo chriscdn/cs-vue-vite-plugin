@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { ref, PropType, defineComponent, Ref } from "vue";
-import { convertToUnit } from "@/mixins/measurables";
+import { convertToUnit } from "../../mixins/measurables";
 import { directive } from "vue3-click-away";
 
 type TSize = {

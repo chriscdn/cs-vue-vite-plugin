@@ -37,8 +37,8 @@ import get from "lodash.get";
 import { defineComponent, PropType } from "vue";
 import { mixin } from "./KFormFieldWrapper.vue";
 import userLookup from "../utils/user-lookup";
-import { injectStrict, sessionKey } from "@/injection";
-import { RHUserSerializer } from "@/types/RHUserSerializer";
+import { injectStrict, sessionKey } from "../injection";
+import { RHUserSerializer } from "../types/RHUserSerializer";
 
 type UserPickerItem = {
   text: string;

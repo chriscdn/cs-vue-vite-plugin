@@ -42,7 +42,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, {
     session: import("@kweli/cs-rest").Session;
-    config: import("@/injection").Configuration;
+    config: import("../injection").Configuration;
 }, {
     breadcrumb: Record<string, any>[];
 }, {

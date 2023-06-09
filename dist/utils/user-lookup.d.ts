@@ -1,4 +1,4 @@
-import { type RHUserSerializer } from "@/types/RHUserSerializer";
+import { type RHUserSerializer } from "../types/RHUserSerializer";
 import { Session } from "@kweli/cs-rest";
 declare class UserLookupQueue {
     session: Session | null;

@@ -117,11 +117,11 @@ declare const _default: import("vue").DefineComponent<{
     modelValue: string | number | Record<string, any> | null;
     placeholder: string;
     items: (string | Record<string, any>)[];
+    loading: boolean;
     itemValue: string;
     itemText: string;
     returnObject: boolean;
-    loading: boolean;
-    combobox: boolean;
     editable: boolean;
+    combobox: boolean;
 }, {}>;
 export default _default;

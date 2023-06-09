@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-import { PaginatorSerializer } from "@/types/PaginatorSerializer";
+import { PaginatorSerializer } from "../types/PaginatorSerializer";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: NumberConstructor;

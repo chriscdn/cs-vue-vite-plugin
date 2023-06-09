@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-import { type RHUserSerializer } from "@/types/RHUserSerializer";
+import { type RHUserSerializer } from "../types/RHUserSerializer";
 declare global {
     interface Window {
         baseUrl?: Function;
@@ -45,8 +45,8 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
 }>>, {
-    legacy: boolean;
-    gif: boolean;
     user: number | RHUserSerializer | null;
+    gif: boolean;
+    legacy: boolean;
 }, {}>;
 export default _default;

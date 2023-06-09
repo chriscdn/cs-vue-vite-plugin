@@ -6,8 +6,8 @@
 import get from "lodash.get";
 import { defineComponent, PropType } from "vue";
 import measurable from "../mixins/measurables";
-import { configKey, sessionKey, injectStrict } from "@/injection";
-import { RHUserSerializer } from "@/types/RHUserSerializer";
+import { configKey, sessionKey, injectStrict } from "../injection";
+import { RHUserSerializer } from "../types/RHUserSerializer";
 
 export default defineComponent({
   setup() {

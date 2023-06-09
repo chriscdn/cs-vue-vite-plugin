@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { TSort } from "@/types";
+import { TSort } from "../types";
 import { PropType, defineComponent } from "vue";
 
 export default defineComponent({

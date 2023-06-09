@@ -1,4 +1,4 @@
-import { type RHNodeSerializer } from "@/types/RHNodeSerializer";
+import { type RHNodeSerializer } from "../types/RHNodeSerializer";
 import { Session } from "@kweli/cs-rest";
 import Semaphore from "@chriscdn/promise-semaphore";
 

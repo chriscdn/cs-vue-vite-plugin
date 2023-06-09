@@ -1,4 +1,4 @@
-import { type RHUserSerializer } from "@/types/RHUserSerializer";
+import { type RHUserSerializer } from "../types/RHUserSerializer";
 import Semaphore from "@chriscdn/promise-semaphore";
 import { Session } from "@kweli/cs-rest";
 

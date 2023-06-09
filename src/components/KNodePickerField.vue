@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { configKey, injectStrict, sessionKey } from "@/injection";
+import { configKey, injectStrict, sessionKey } from "../injection";
 import buildUrl from "@googlicius/build-url";
 import cookies from "js-cookie";
 import ancestorLookup from "../utils/ancestor-lookup";

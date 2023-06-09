@@ -40,7 +40,7 @@ declare global {
  */
 
 import { defineComponent, PropType } from "vue";
-import { configKey, injectStrict } from "@/injection";
+import { configKey, injectStrict } from "../injection";
 export default defineComponent({
   setup() {
     const config = injectStrict(configKey);

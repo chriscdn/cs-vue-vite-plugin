@@ -1,7 +1,7 @@
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {
     classObj(): {
         "k-card": boolean;
-        "k-card-clickable": any;
+        "k-card-clickable": boolean;
     };
 }, {
     renderCard(): import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
@@ -66,42 +66,70 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {
     minHeight: string | number;
     minWidth: string | number;
     width: string | number;
-}, {}> | {
-    props: {
-        disabled: {
-            type: BooleanConstructor;
-            default: boolean;
-        };
-        link: {
-            type: BooleanConstructor;
-            default: boolean;
-        };
-        target: {
-            type: StringConstructor;
-            default: string;
-        };
-        nuxt: {
-            type: BooleanConstructor;
-            default: boolean;
-        };
-        to: {
-            type: (StringConstructor | ObjectConstructor)[];
-            default: null;
-        };
-        href: {
-            type: StringConstructor;
-            default: null;
-        };
+}, {}> | import("vue").DefineComponent<{
+    disabled: {
+        type: BooleanConstructor;
+        default: boolean;
     };
-    computed: {
-        isClickable(): any;
+    link: {
+        type: BooleanConstructor;
+        default: boolean;
     };
-    methods: {
-        click(e: any): void;
-        generateRouteLink(): {
-            tag: string;
-            data: {};
-        };
+    target: {
+        type: StringConstructor;
+        default: string;
     };
-}, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
+    nuxt: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    to: {
+        type: (StringConstructor | ObjectConstructor)[];
+        default: null;
+    };
+    href: {
+        type: StringConstructor;
+        default: null;
+    };
+}, unknown, unknown, {
+    isClickable(): boolean;
+}, {
+    click(e: Event): void;
+    generateRouteLink(): {
+        tag: string;
+        data: {};
+    };
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    disabled: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    link: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    target: {
+        type: StringConstructor;
+        default: string;
+    };
+    nuxt: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    to: {
+        type: (StringConstructor | ObjectConstructor)[];
+        default: null;
+    };
+    href: {
+        type: StringConstructor;
+        default: null;
+    };
+}>>, {
+    link: boolean;
+    disabled: boolean;
+    href: string;
+    target: string;
+    to: string | Record<string, any>;
+    nuxt: boolean;
+}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;

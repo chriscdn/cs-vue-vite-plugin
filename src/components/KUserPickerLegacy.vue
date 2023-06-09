@@ -1,5 +1,5 @@
 <script lang="ts">
-import { injectStrict, sessionKey } from "@/injection";
+import { injectStrict, sessionKey } from "../injection";
 import { KUserPicker } from ".";
 import { defineComponent } from "vue";
 import get from "lodash.get";

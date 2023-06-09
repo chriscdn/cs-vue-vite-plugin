@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-import { RHUserSerializer } from "@/types/RHUserSerializer";
+import { RHUserSerializer } from "../types/RHUserSerializer";
 declare const _default: import("vue").DefineComponent<{
     userRec: {
         type: PropType<RHUserSerializer>;
@@ -18,7 +18,7 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }, {
-    config: import("@/injection").Configuration;
+    config: import("../injection").Configuration;
     session: import("@kweli/cs-rest").Session;
 }, unknown, {
     userType(): number;

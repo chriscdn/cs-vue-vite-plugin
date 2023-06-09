@@ -1,57 +1,42 @@
 import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: PropType<string | number | Record<string, any> | null>;
+        type: (NumberConstructor | StringConstructor | ObjectConstructor)[];
         default: null;
     };
-    multiple: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
     items: {
-        type: PropType<string | Record<string, any>>;
+        type: PropType<any[]>;
         default: () => never[];
     };
     loading: {
-        type: PropType<boolean>;
+        type: BooleanConstructor;
         default: boolean;
     };
     itemValue: {
-        type: PropType<string>;
+        type: StringConstructor;
         default: string;
     };
     itemText: {
-        type: PropType<string>;
+        type: StringConstructor;
         default: string;
     };
-    itemDisabled: {
-        type: PropType<string>;
-        default: string;
-    };
-    disabled: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
-    readonly: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
-    clearable: {
-        type: PropType<boolean>;
+    vertical: {
+        type: BooleanConstructor;
         default: boolean;
     };
 }, unknown, unknown, {
-    disabledResolved(): boolean;
-    valueLocal: {
-        get(): string | number | any[] | Record<string, any> | null;
+    localValue: {
+        get(): string | number | Record<string, any>;
         set(value: any): void;
+    };
+    classObj(): {
+        "k-radiogroup--vertical": boolean;
     };
 }, {
     isObject(obj: any): boolean;
-    getItemText(item: string | object): string;
-    getItemValue(item: string | object): any;
-    getItemDisabled(item: string | object): boolean;
-    arrify(item: any): Array<any>;
+    getItemText(item: string): any;
+    getItemValue(item: any): any;
+    getItemDisabled(item: any): any;
 }, import("vue").DefineComponent<{
     label: {
         type: StringConstructor;
@@ -92,57 +77,37 @@ declare const _default: import("vue").DefineComponent<{
     errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: PropType<string | number | Record<string, any> | null>;
+        type: (NumberConstructor | StringConstructor | ObjectConstructor)[];
         default: null;
     };
-    multiple: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
     items: {
-        type: PropType<string | Record<string, any>>;
+        type: PropType<any[]>;
         default: () => never[];
     };
     loading: {
-        type: PropType<boolean>;
+        type: BooleanConstructor;
         default: boolean;
     };
     itemValue: {
-        type: PropType<string>;
+        type: StringConstructor;
         default: string;
     };
     itemText: {
-        type: PropType<string>;
+        type: StringConstructor;
         default: string;
     };
-    itemDisabled: {
-        type: PropType<string>;
-        default: string;
-    };
-    disabled: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
-    readonly: {
-        type: PropType<boolean>;
-        default: boolean;
-    };
-    clearable: {
-        type: PropType<boolean>;
+    vertical: {
+        type: BooleanConstructor;
         default: boolean;
     };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: string | number | Record<string, any> | null;
-    disabled: boolean;
-    items: string | Record<string, any>;
+    modelValue: string | number | Record<string, any>;
+    items: any[];
+    loading: boolean;
     itemValue: string;
     itemText: string;
-    loading: boolean;
-    multiple: boolean;
-    readonly: boolean;
-    clearable: boolean;
-    itemDisabled: string;
+    vertical: boolean;
 }, {}>;
 export default _default;
