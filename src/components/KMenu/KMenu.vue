@@ -10,7 +10,10 @@
       :class="dropDownMenuItemsClassObj"
       :style="styleDropDownItems"
     >
-      <slot name="default" />
+      <div v-if="loading" class="flex items-center justify-center p-2">
+        <KSpinner />
+      </div>
+      <slot v-else name="default" />
     </div>
   </div>
 </template>
@@ -28,6 +31,7 @@ type TSize = {
 type TBox = TSize & {
   top: number;
   left: number;
+
   topRelativeToViewport: number;
   leftRelativeToViewport: number;
 };
@@ -51,6 +55,10 @@ export default defineComponent({
       type: Boolean as PropType<boolean>,
       default: false,
     },
+    loading: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
 
   data() {
@@ -68,10 +76,10 @@ export default defineComponent({
         width: 0,
         height: 0,
       } as TSize,
-      viewportSize: {
-        width: 0,
-        height: 0,
-      },
+      // viewportSize: {
+      //   width: 0,
+      //   height: 0,
+      // },
     };
   },
   emits: ["update:modelValue"],
@@ -87,11 +95,34 @@ export default defineComponent({
     },
 
     styleDropDownItems() {
-      const bottom: number =
+      // const top: number = this.activatorBox.topRelativeToViewport;
+
+      // const topRelativeToDocument =
+      //   this.activatorBox.topRelativeToViewport + this.activatorBox.scrollTop;
+
+      const topRelativeToViewport: number =
+        this.activatorBox.topRelativeToViewport;
+
+      const bottomRelativeToViewport: number =
         this.activatorBox.topRelativeToViewport + this.menuItemsSize.height;
 
       const viewportHeight: number = window.innerHeight;
-      const offset: number = Math.max(bottom - viewportHeight, 0) + 24;
+
+      // const offset: number = Math.max(
+      //   Math.min(
+      //     topRelativeToViewport - 24,
+      //     bottomRelativeToViewport + 24 - viewportHeight
+      //   ),
+      //   0
+      // );
+
+      const offset: number = Math.max(
+        Math.min(
+          topRelativeToViewport - 16,
+          bottomRelativeToViewport + 16 - viewportHeight
+        ),
+        0
+      );
 
       return this.submenu
         ? {
@@ -112,24 +143,32 @@ export default defineComponent({
       };
     },
   },
-
+  watch: {
+    loading: {
+      async handler(value) {
+        if (!value) {
+          this.updatePosition();
+        }
+      },
+    },
+  },
   methods: {
     clickAway() {
       if (this.visible) {
         this.showMenu(false);
       }
     },
-    updateViewportSize() {
-      this.viewportSize = {
-        height: window.innerHeight,
-        width: window.innerWidth,
-      };
-    },
+
     async updatePosition() {
       // We need the DOM to render everything before repositioning it.
       if (this.menuActivator && this.menuItems) {
         await this.$nextTick();
 
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+        // https://developer.mozilla.org/en-US/docs/Web/API/DOMRect
+
+        // getBoundingClientRect is relative to the viewport  See docs on this
+        // method for relative to document.
         const boundingRect: DOMRect =
           this.menuActivator.getBoundingClientRect();
 
@@ -176,7 +215,7 @@ export default defineComponent({
   .k-menu-items {
     @apply transition absolute;
     @apply inset-y-auto inset-x-0;
-    @apply z-10 bg-white rounded-lg w-44 shadow-2xl border border-solid border-gray-300;
+    @apply z-10 bg-white rounded-lg w-64 shadow-2xl border border-solid border-gray-300;
   }
 }
 </style>

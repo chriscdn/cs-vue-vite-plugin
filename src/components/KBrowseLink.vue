@@ -1,13 +1,24 @@
 <template>
-  <div v-if="nodeRecResolved" class="flex">
-    <img v-if="image" :src="nodeRecResolved.gif" />&nbsp;<a
-      :href="nodeRecResolved.url!"
-    >
-      {{ nodeRecResolved.name }}
-    </a>
+  <div v-if="nodeRecResolved" class="flex items-center gap-2">
+    <div class="flex items-center gap-1">
+      <img
+        v-if="image"
+        :src="nodeRecResolved.gif"
+        width="16"
+        height="16"
+      />&nbsp;<a :href="nodeRecResolved.url!">
+        {{ nodeRecResolved.name }}
+      </a>
+    </div>
+
+    <KFunctionMenuModern v-if="clickable" :dataid="nodeRecResolved.dataid" />
     <KFunctionMenu v-if="clickable" :dataid="nodeRecResolved.dataid" />
+
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <span v-html="nodeRecResolved.modifiedImageCallback" />
+    <div
+      class="flex items-center"
+      v-html="nodeRecResolved.modifiedImageCallback"
+    />
   </div>
 </template>
 

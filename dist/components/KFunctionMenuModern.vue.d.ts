@@ -19,6 +19,7 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     visible: boolean;
     actions: TAction[];
+    loading: Boolean;
 }, {}, {
     refreshActions(): Promise<void>;
 }, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{

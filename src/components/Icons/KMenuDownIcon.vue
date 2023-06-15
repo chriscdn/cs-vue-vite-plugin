@@ -12,7 +12,7 @@
       class="material-design-icon__svg"
       :width="size"
       :height="size"
-      viewBox="0 0 24 24"
+      viewBox="7 10 10 5"
     >
       <path d="M7,10L12,15L17,10H7Z">
         <title v-if="title">{{ title }}</title>
@@ -40,7 +40,7 @@ export default defineComponent({
     },
     size: {
       type: Number,
-      default: 24,
+      default: 16,
     },
   },
 });

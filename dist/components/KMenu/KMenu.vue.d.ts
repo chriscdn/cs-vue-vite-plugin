@@ -18,6 +18,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    loading: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, {
     menuItems: Ref<HTMLDivElement | null>;
     menuActivator: Ref<HTMLDivElement | null>;
@@ -25,10 +29,6 @@ declare const _default: import("vue").DefineComponent<{
     visibleLocal: boolean;
     activatorBox: TBox;
     menuItemsSize: TSize;
-    viewportSize: {
-        width: number;
-        height: number;
-    };
 }, {
     visible: {
         get(): boolean;
@@ -43,7 +43,6 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, {
     clickAway(): void;
-    updateViewportSize(): void;
     updatePosition(): Promise<void>;
     showMenu(visibility: boolean): void;
     toggleMenu(): void;
@@ -58,10 +57,15 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    loading: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
     modelValue: boolean | null;
+    loading: boolean;
     submenu: boolean;
 }, {}>;
 export default _default;

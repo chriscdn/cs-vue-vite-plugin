@@ -1,7 +1,7 @@
 <template>
-  <KMenu v-model="visible">
+  <KMenu v-model="visible" :loading="loading">
     <template #activator="{ on }">
-      <KMenuDownIcon :size="size" v-on="on" />
+      <KMenuDownIcon :size="size" v-on="on" class="cursor-pointer" />
     </template>
 
     <KList>
@@ -47,10 +47,10 @@ type TAction = {
 
 import { PropType, defineComponent } from "vue";
 import KMenuDownIcon from "./Icons/KMenuDownIcon.vue";
-import { useSession } from "..";
 import KListItem from "./KList/KListItem.vue";
 import KDivider from "./KDivider.vue";
 import Semaphore from "@chriscdn/promise-semaphore";
+import { useSession } from "../index";
 
 const semaphore = new Semaphore();
 
@@ -68,13 +68,14 @@ export default defineComponent({
     },
     size: {
       type: Number as PropType<number>,
-      default: 32,
+      default: 12,
     },
   },
   data() {
     return {
       visible: false,
       actions: [] as TAction[],
+      loading: false as Boolean,
     };
   },
   watch: {
@@ -92,18 +93,17 @@ export default defineComponent({
         await semaphore.acquire(this.dataid);
 
         if (this.actions.length === 0) {
+          this.loading = true;
           const { data } = await this.session.get(
             `/api/v1/nodes/${this.dataid}/actions`
           );
           this.actions = data.actions as TAction[];
         }
       } finally {
+        this.loading = false;
         semaphore.release(this.dataid);
       }
     },
-  },
-  mounted() {
-    this.refreshActions();
   },
 });
 </script>

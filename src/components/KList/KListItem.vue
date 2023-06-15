@@ -88,7 +88,7 @@ export default defineComponent({
 <style lang="postcss" scoped>
 /* a.k-list-item  added to increase prescendence in SmartUI */
 .k-list-item {
-  @apply px-4 py-2 flex gap-2 items-center;
+  @apply px-3 py-1 flex gap-2 items-center;
 
   .k-list-item-prepend {
     @apply flex-grow-0;

@@ -10,6 +10,6 @@ export default defineComponent({});
 
 <style lang="postcss">
 .k-list-item-title {
-  @apply font-medium;
+  @apply font-medium text-sm;
 }
 </style>
