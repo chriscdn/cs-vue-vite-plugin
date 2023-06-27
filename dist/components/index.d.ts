@@ -40,6 +40,7 @@ export { default as KSortHeader } from './KSortHeader.vue';
 export { default as KPagination } from './KPagination.vue';
 export { default as KSwitch } from './KSwitch.vue';
 export { default as KLinearProgressIndicator } from './KLinearProgressIndicator.vue';
+export { default as KFunctionMenuSmartUI } from './KFunctionMenuSmartUI.vue';
 export { default as KRightCaret } from './KMenu/KRightCaret.vue';
 export { default as KMenu } from './KMenu/KMenu.vue';
 export { default as KList } from './KList/KList.vue';

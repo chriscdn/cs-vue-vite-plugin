@@ -12,7 +12,7 @@
     </div>
 
     <KFunctionMenuModern v-if="clickable" :dataid="nodeRecResolved.dataid" />
-    <KFunctionMenu v-if="clickable" :dataid="nodeRecResolved.dataid" />
+    <!-- <KFunctionMenu v-if="clickable" :dataid="nodeRecResolved.dataid" /> -->
 
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div

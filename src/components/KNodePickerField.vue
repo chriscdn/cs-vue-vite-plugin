@@ -205,8 +205,6 @@ export default defineComponent({
     },
     // callback(dataid: number, breadcrumb: string) {
     callback(dataid: number) {
-      // debugger
-      // this.breadcrumb = breadcrumb.split(':')
       this.dataid = dataid;
     },
     clear() {

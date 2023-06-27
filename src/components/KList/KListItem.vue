@@ -87,6 +87,15 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 /* a.k-list-item  added to increase prescendence in SmartUI */
+
+a.k-list-item {
+  @apply no-underline;
+  &:link,
+  &:visited {
+    @apply text-inherit;
+  }
+}
+
 .k-list-item {
   @apply px-3 py-1 flex gap-2 items-center;
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="k-smart-ui-panel">
+  <div class="k-smart-ui-panel" :style="style">
     <div class="k-smart-ui-panel-header" v-if="$slots.header">
       <slot name="header" />
     </div>
@@ -15,9 +15,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { PropType, defineComponent } from "vue";
+import { convertToUnit } from "../mixins/measurables";
 
-export default defineComponent({});
+export default defineComponent({
+  props: {
+    fontSize: {
+      type: Number as PropType<number>,
+      default: 12,
+    },
+  },
+  computed: {
+    style() {
+      return {
+        fontSize: convertToUnit(this.fontSize),
+      };
+    },
+  },
+});
 </script>
 
 <style lang="postcss">

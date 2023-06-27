@@ -15,17 +15,3 @@ div.k-list {
   @apply py-2;
 }
 </style>
-
-<style lang="postcss">
-.k-menu {
-  .k-list {
-    .k-list-item {
-      @apply no-underline;
-      &:link,
-      &:visited {
-        @apply text-inherit;
-      }
-    }
-  }
-}
-</style>

@@ -1,6 +1,6 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -19,6 +19,7 @@
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest.git",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.30.0",
+    "intl-dateformat": "^0.1.4",
     "js-cookie": "^3.0.5",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",

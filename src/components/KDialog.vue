@@ -117,12 +117,13 @@ export default defineComponent({
 <style lang="postcss">
 .k-dialog {
   @apply fixed inset-0;
-  @apply bg-gray-900 bg-opacity-50;
+  @apply bg-gray-600 bg-opacity-70;
   @apply flex justify-center items-center;
 
   .k-dialog-content {
     @apply bg-white p-3 rounded;
     @apply overflow-y-auto;
+    @apply shadow-2xl;
   }
 
   .k-dialog--scrollable {

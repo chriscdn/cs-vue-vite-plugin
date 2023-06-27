@@ -13,5 +13,6 @@
   * {
     @apply box-border;
   }
+  @apply relative;
 }
 </style>

@@ -1,14 +1,9 @@
 import { PropType, Ref } from "vue";
-type TSize = {
-    width: number;
-    height: number;
-};
-type TBox = TSize & {
-    top: number;
-    left: number;
-    topRelativeToViewport: number;
-    leftRelativeToViewport: number;
-};
+/**
+ * Menu Items are teleported to the KApp (or .k-app) component, which has
+ * `position:relative;`. This is done to allow menus to show in dialogs, which
+ * would otherwise clip the menu due to overflow rules.
+ */
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
         type: PropType<boolean | null>;
@@ -27,8 +22,9 @@ declare const _default: import("vue").DefineComponent<{
     menuActivator: Ref<HTMLDivElement | null>;
 }, {
     visibleLocal: boolean;
-    activatorBox: TBox;
-    menuItemsSize: TSize;
+    appBox: DOMRect | null;
+    menuActivatorBox: DOMRect | null;
+    menuItemsBox: DOMRect | null;
 }, {
     visible: {
         get(): boolean;
@@ -37,6 +33,9 @@ declare const _default: import("vue").DefineComponent<{
     styleDropDownItems(): {
         top: string | undefined;
         left: string | undefined;
+    } | {
+        top?: undefined;
+        left?: undefined;
     };
     dropDownMenuItemsClassObj(): {
         hidden: boolean;

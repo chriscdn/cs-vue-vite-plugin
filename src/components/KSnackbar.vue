@@ -53,16 +53,6 @@ export default defineComponent({
       return Object.values(this.nitems).sort((a, b) => b.index - a.index);
     },
   },
-  // mounted() {
-  //   // debugger
-  //   emitter.on('success', this.success)
-  //   emitter.on('error', this.error)
-  // },
-
-  // unmounted() {
-  //   emitter.off('success', this.success)
-  //   emitter.off('error', this.error)
-  // },
 
   methods: {
     classObj(item: SnackbarQueueInterface) {
@@ -86,7 +76,6 @@ export default defineComponent({
     },
 
     success(params: SnackbarParameters) {
-      // debugger
       this.queue("success", params);
     },
     error(params: SnackbarParameters) {

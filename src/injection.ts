@@ -18,6 +18,7 @@
  */
 import { inject, type InjectionKey } from "vue";
 import type { Session } from "@kweli/cs-rest";
+import { DateTimeFormatter } from "./utils/date-formatter";
 
 export type WindowInitialState = {
   baseUrl: string;
@@ -101,8 +102,18 @@ type Snackbar = {
 const sessionKey: InjectionKey<Session> = Symbol("session");
 const configKey: InjectionKey<Configuration> = Symbol("config");
 const snackbarKey: InjectionKey<Snackbar> = Symbol("snackbar");
+const dateTimeFormatterKey: InjectionKey<DateTimeFormatter> = Symbol(
+  "dateTimeFormatterKey",
+);
 const confirmDialogKey: InjectionKey<ConfirmDialog> = Symbol(
   "confirmDialogKey",
 );
 
-export { configKey, confirmDialogKey, injectStrict, sessionKey, snackbarKey };
+export {
+  configKey,
+  confirmDialogKey,
+  dateTimeFormatterKey,
+  injectStrict,
+  sessionKey,
+  snackbarKey,
+};

@@ -2,8 +2,14 @@ import { Session } from "@kweli/cs-rest";
 import "./tailwind.pcss";
 import "./styles.pcss";
 import type { App } from "vue";
-import { configKey, sessionKey, WindowInitialState } from "./injection";
+import {
+  configKey,
+  dateTimeFormatterKey,
+  sessionKey,
+  WindowInitialState,
+} from "./injection";
 import type { Configuration } from "./injection";
+import { DateTimeFormatter } from "./utils/date-formatter";
 
 export * from "./injection";
 
@@ -44,6 +50,10 @@ export default {
 
     app.provide(sessionKey, session);
     app.provide(configKey, configuration);
+    app.provide(
+      dateTimeFormatterKey,
+      new DateTimeFormatter(options.datelong, options.dateshort),
+    );
   },
 };
 

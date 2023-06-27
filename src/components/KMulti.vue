@@ -89,7 +89,6 @@ export default defineComponent({
   },
   methods: {
     add(index: number) {
-      // debugger
       const items = [...this.valueLocal];
       items.splice(index + 1, 0, this.template);
       this.valueLocal = items;
