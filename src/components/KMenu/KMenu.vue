@@ -1,11 +1,12 @@
 <template>
   <div class="k-menu" @mouseenter="mouseEnter">
-    <div ref="menuActivator" v-click-away="clickAway">
+    <div ref="menuActivator" v-click-away="clickAway" @mouseleave="mouseLeave">
       <slot name="activator" :on="{ click: toggleMenu }"></slot>
     </div>
 
     <Teleport to=".k-app">
       <div
+        @mouseenter="mouseEnter"
         @mouseleave="mouseLeave"
         ref="menuItems"
         class="k-menu-items"

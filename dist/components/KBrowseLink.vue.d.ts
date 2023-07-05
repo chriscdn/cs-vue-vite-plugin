@@ -21,6 +21,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    modernMenu: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, {
     session: import("@kweli/cs-rest").Session;
 }, {
@@ -48,11 +52,16 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    modernMenu: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>>, {
     image: boolean;
     dataid: number | null;
     legacy: boolean;
     nodeRec: RHNodeSerializer | null;
     clickable: boolean;
+    modernMenu: boolean;
 }, {}>;
 export default _default;

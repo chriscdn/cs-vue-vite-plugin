@@ -3,13 +3,13 @@
     v-bind="$attrs"
     :aria-hidden="!title"
     :aria-label="title"
-    class="material-design-icon menu-down-icon"
+    class="material-design-icon menu-down-icon animate-spin"
     role="img"
     @click="$emit('click', $event)"
   >
+    <!-- :fill="fillColor" -->
     <svg
-      :fill="fillColor"
-      class="material-design-icon__svg"
+      class="fill-black hover:fill-green-500 transition-colors"
       :width="size"
       :height="size"
       viewBox="7 10 10 5"
@@ -34,10 +34,10 @@ export default defineComponent({
     title: {
       type: String,
     },
-    fillColor: {
-      type: String,
-      default: "currentColor",
-    },
+    // fillColor: {
+    //   type: String,
+    //   default: "currentColor",
+    // },
     size: {
       type: Number,
       default: 16,

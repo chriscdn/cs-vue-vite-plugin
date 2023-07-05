@@ -10,7 +10,7 @@ declare class NodeLookupQueue {
     processQueue(): Promise<void>;
 }
 declare class NodeLookup {
-    nodes: Record<number, RHNodeSerializer>;
+    nodes: Record<number, RHNodeSerializer | null>;
     nodeLookupQueue: NodeLookupQueue;
     constructor();
     registerUsers(items: Array<RHNodeSerializer>): void;

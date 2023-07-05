@@ -22,6 +22,7 @@ import { defineComponent } from "vue";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { directive } from "vue3-click-away";
 import measurables from "../mixins/measurables";
+import hotkeys from "hotkeys-js";
 
 export default defineComponent({
   directives: {
@@ -95,6 +96,17 @@ export default defineComponent({
   mounted() {
     // this ensures the target .k-app is rendered before we try to teleport to it
     this.mounted = true;
+
+    hotkeys("esc", () => {
+      if (this.persistent) {
+        // do nothing
+      } else {
+        this.dialog = false;
+      }
+    });
+  },
+  beforeUnmount() {
+    hotkeys.unbind("esc");
   },
   methods: {
     clickAway() {

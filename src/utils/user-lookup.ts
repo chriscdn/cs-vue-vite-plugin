@@ -92,7 +92,7 @@ class UserLookupQueue {
 }
 
 class UserLookup {
-  users: Record<number, RHUserSerializer>;
+  users: Record<number, RHUserSerializer | null>;
   userLookupQueue: UserLookupQueue;
 
   constructor() {
@@ -112,7 +112,7 @@ class UserLookup {
       try {
         await semaphore.acquire(userId);
 
-        if (this.users[userId]) {
+        if (this.users.hasOwnProperty(userId)) {
           return this.users[userId];
         } else {
           const response = await session.members.member(userId);
@@ -121,6 +121,9 @@ class UserLookup {
 
           return userInfo;
         }
+      } catch {
+        this.users[userId] = null;
+        return null;
       } finally {
         semaphore.release(userId);
       }
@@ -136,12 +139,12 @@ class UserLookup {
     if (userId) {
       await semaphore.acquire(userId);
 
-      if (this.users[userId]) {
+      // if (this.users[userId]) {
+      if (this.users.hasOwnProperty(userId)) {
         semaphore.release(userId);
         return this.users[userId];
       } else {
-        // The userLookupQueue makes a single request for a batch of independent
-        // requests.
+        // The userLookupQueue makes a single request for a batch of independent requests.
         return new Promise((resolve) => {
           const resolver = (user: RHUserSerializer) => {
             this.users[userId] = user;

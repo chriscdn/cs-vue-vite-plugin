@@ -10,7 +10,7 @@ declare class UserLookupQueue {
     processQueue(): Promise<void>;
 }
 declare class UserLookup {
-    users: Record<number, RHUserSerializer>;
+    users: Record<number, RHUserSerializer | null>;
     userLookupQueue: UserLookupQueue;
     constructor();
     registerUsers(items: Array<RHUserSerializer>): void;

@@ -19,6 +19,7 @@
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest.git",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.30.0",
+    "hotkeys-js": "^3.10.3",
     "intl-dateformat": "^0.1.4",
     "js-cookie": "^3.0.5",
     "lodash.debounce": "^4.0.8",

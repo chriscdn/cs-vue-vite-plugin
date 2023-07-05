@@ -59,17 +59,16 @@
 
 <script lang="ts">
 import { PropType, defineComponent } from "vue";
+import { TPaginationLimitOffset } from "../types";
 
-export type TPaginiation = {
-  offset: number;
-  limit: number;
+type TPagination = TPaginationLimitOffset & {
   count: number;
 };
 
 export default defineComponent({
   props: {
     modelValue: {
-      type: Object as PropType<TPaginiation>,
+      type: Object as PropType<TPagination>,
       required: true,
     },
   },
@@ -79,8 +78,8 @@ export default defineComponent({
     };
   },
   computed: {
-    pagination(): TPaginiation {
-      const { offset, limit, count }: TPaginiation = this.modelValue;
+    pagination(): TPagination {
+      const { offset, limit, count }: TPagination = this.modelValue;
       return { offset, limit, count };
     },
 

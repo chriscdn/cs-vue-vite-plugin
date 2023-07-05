@@ -87,7 +87,7 @@ class NodeLookupQueue {
 }
 
 class NodeLookup {
-  nodes: Record<number, RHNodeSerializer>;
+  nodes: Record<number, RHNodeSerializer | null>;
   nodeLookupQueue: NodeLookupQueue;
 
   constructor() {
@@ -107,18 +107,20 @@ class NodeLookup {
       try {
         await semaphore.acquire(dataId);
 
-        if (this.nodes[dataId]) {
+        if (this.nodes.hasOwnProperty(dataId)) {
           return this.nodes[dataId];
         } else {
           const response = await session.nodes.node({ dataid: dataId });
 
           // Not a perfect conversion
           const nodeInfo = responseToRHNodeSerializer(response.data);
-
           this.nodes[dataId] = nodeInfo;
 
           return nodeInfo;
         }
+      } catch {
+        this.nodes[dataId] = null;
+        return null;
       } finally {
         semaphore.release(dataId);
       }
@@ -132,7 +134,7 @@ class NodeLookup {
     if (dataId) {
       await semaphore.acquire(dataId);
 
-      if (this.nodes[dataId]) {
+      if (this.nodes.hasOwnProperty(dataId)) {
         semaphore.release(dataId);
         return this.nodes[dataId];
       } else {

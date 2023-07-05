@@ -1,19 +1,17 @@
 <template>
   <div v-if="nodeRecResolved" class="flex items-center gap-2">
-    <div class="flex items-center gap-1">
-      <img
-        v-if="image"
-        :src="nodeRecResolved.gif"
-        width="16"
-        height="16"
-      />&nbsp;<a :href="nodeRecResolved.url!">
+    <div class="flex items-center gap-2">
+      <img v-if="image" :src="nodeRecResolved.gif" width="16" height="16" />
+
+      <a :href="nodeRecResolved.url!">
         {{ nodeRecResolved.name }}
       </a>
     </div>
 
-    <KFunctionMenuModern v-if="clickable" :dataid="nodeRecResolved.dataid" />
-    <!-- <KFunctionMenu v-if="clickable" :dataid="nodeRecResolved.dataid" /> -->
-
+    <template v-if="clickable">
+      <KFunctionMenuModern v-if="modernMenu" :dataid="nodeRecResolved.dataid" />
+      <KFunctionMenu v-else :dataid="nodeRecResolved.dataid" />
+    </template>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div
       class="flex items-center"
@@ -50,6 +48,10 @@ export default defineComponent({
       default: true,
     },
     legacy: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    modernMenu: {
       type: Boolean as PropType<boolean>,
       default: false,
     },

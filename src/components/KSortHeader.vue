@@ -32,15 +32,21 @@ export default defineComponent({
     sortAsc() {
       return Boolean(this.modelValue.sortAsc);
     },
+
     isActive() {
       return this.keypath == this.sortKey;
     },
   },
   methods: {
     emitClick() {
+      const sortKey = this.keypath;
+      const sortAsc = this.isActive ? !this.sortAsc : true;
+      const sortResolved = sortAsc ? sortKey : `-${sortKey}`;
+
       return this.$emit("update:modelValue", {
-        sortKey: this.keypath,
-        sortAsc: this.isActive ? !this.sortAsc : true,
+        sortKey,
+        sortAsc,
+        sortResolved,
       });
     },
   },

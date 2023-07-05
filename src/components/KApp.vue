@@ -13,6 +13,7 @@
   * {
     @apply box-border;
   }
-  @apply relative;
+  /* z-index:10 useful when displaying modals over the browsetables.   */
+  @apply relative z-10;
 }
 </style>
