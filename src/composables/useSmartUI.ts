@@ -36,34 +36,34 @@ function generateConfirm(name: string) {
   };
 }
 
-function test() {
-  window.csui.require(
-    [
-      "rhcore/router/generic.model.factory",
-    ],
-    function (
-      RHCoreRouterModelContextFactory: any,
-    ) {
-      const context: any = window._rhcore_smartui_view_context;
+// function test() {
+//   window.csui.require(
+//     [
+//       "rhcore/router/generic.model.factory",
+//     ],
+//     function (
+//       RHCoreRouterModelContextFactory: any,
+//     ) {
+//       const context: any = window._rhcore_smartui_view_context;
 
-      const routerModel = context
-        .getModel(RHCoreRouterModelContextFactory);
+//       const routerModel = context
+//         .getModel(RHCoreRouterModelContextFactory);
 
-      // applicationScope.set("id", "greetings", { zzz: "canthis works" });
+//       // applicationScope.set("id", "greetings", { zzz: "canthis works" });
 
-      // const greetz = context
-      //   .getModel(GreetingSubjectModelFactory);
+//       // const greetz = context
+//       //   .getModel(GreetingSubjectModelFactory);
 
-      // greetz.set("id", { zz: "hello_world" });
+//       // greetz.set("id", { zz: "hello_world" });
 
-      routerModel.set({
-        id: "greetingsId",
-        params: { id: "abcdddd" },
-        query: { a: "1 2 3" },
-      });
-    },
-  );
-}
+//       routerModel.set({
+//         id: "greetingsId",
+//         params: { id: "abcdddd" },
+//         query: { a: "1 2 3" },
+//       });
+//     },
+//   );
+// }
 
 function openDataId(
   { dataId, selectedTab = undefined, selectedProperty = undefined }: {
@@ -126,5 +126,4 @@ export const useSmartUI = () => ({
   confirmQuestion: generateConfirm("confirmQuestion"),
   confirmMessage: generateConfirm("confirmMessage"),
   openDataId,
-  test,
 });
