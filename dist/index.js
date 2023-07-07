@@ -4971,7 +4971,7 @@ const Ve = /* @__PURE__ */ O(Qr, [["__scopeId", "data-v-f06ea25f"]]), Yr = /* @_
 }, Symbol.toStringTag, { value: "Module" })), We = new be(), Xr = S({
   components: { KMenuDownIcon: Me, KListItem: Ve, KDivider: ze },
   setup() {
-    return { session: Gl() };
+    return { session: Hl() };
   },
   props: {
     dataid: {
@@ -7651,21 +7651,7 @@ function de(e) {
     );
   });
 }
-function Wl() {
-  window.csui.require(
-    [
-      "rhcore/router/generic.model.factory"
-    ],
-    function(e) {
-      window._rhcore_smartui_view_context.getModel(e).set({
-        id: "greetingsId",
-        params: { id: "abcdddd" },
-        query: { a: "1 2 3" }
-      });
-    }
-  );
-}
-function ql({ dataId: e, selectedTab: t = void 0, selectedProperty: n = void 0 }) {
+function Wl({ dataId: e, selectedTab: t = void 0, selectedProperty: n = void 0 }) {
   window.csui.require(
     [
       "csui/utils/contexts/factories/next.node",
@@ -7683,7 +7669,7 @@ function ql({ dataId: e, selectedTab: t = void 0, selectedProperty: n = void 0 }
     }
   );
 }
-const ia = () => ({
+const sa = () => ({
   showSuccess: me("showSuccess"),
   showInformation: me("showInformation"),
   showWarning: me("showWarning"),
@@ -7695,9 +7681,8 @@ const ia = () => ({
   confirmError: de("confirmError"),
   confirmQuestion: de("confirmQuestion"),
   confirmMessage: de("confirmMessage"),
-  openDataId: ql,
-  test: Wl
-}), la = (e, t) => {
+  openDataId: Wl
+}), ia = (e, t) => {
   const n = t.sortKey, l = t.sortAsc ? 1 : -1;
   return [...e].sort((i, r) => {
     if (n) {
@@ -7706,7 +7691,7 @@ const ia = () => ({
     } else
       return 0;
   });
-}, Hl = /* @__PURE__ */ Object.assign({
+}, ql = /* @__PURE__ */ Object.assign({
   "./components/Card/KCard.vue": Vt,
   "./components/Card/KCardActions.vue": It,
   "./components/Card/KCardText.vue": qt,
@@ -7765,9 +7750,9 @@ const ia = () => ({
   "./components/Tabs/KTabs.vue": Vl
 });
 let Se;
-const aa = {
+const la = {
   install(e, t) {
-    Object.entries(Hl).forEach(
+    Object.entries(ql).forEach(
       ([s, l]) => {
         const i = s?.split("/")?.pop()?.replace(/\.\w+$/, "");
         e.component(i, l.default);
@@ -7785,7 +7770,7 @@ const aa = {
       new Rl(t.datelong, t.dateshort)
     );
   }
-}, Gl = () => Se;
+}, Hl = () => Se;
 export {
   cn as KAdminLink,
   Sn as KAlert,
@@ -7846,13 +7831,13 @@ export {
   ce as configKey,
   In as confirmDialogKey,
   Nn as dateTimeFormatterKey,
-  aa as default,
-  la as generalSort,
+  la as default,
+  ia as generalSort,
   ee as injectStrict,
   Wn as nodeLookup,
   ie as sessionKey,
   Dn as snackbarKey,
-  Gl as useSession,
-  ia as useSmartUI,
+  Hl as useSession,
+  sa as useSmartUI,
   St as userLookup
 };

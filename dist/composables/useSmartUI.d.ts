@@ -4,7 +4,6 @@ declare global {
         _rhcore_smartui_view_context: any;
     }
 }
-declare function test(): void;
 declare function openDataId({ dataId, selectedTab, selectedProperty }: {
     dataId: number;
     selectedTab?: string;
@@ -23,6 +22,5 @@ export declare const useSmartUI: () => {
     confirmQuestion: (message: string, options?: {}) => Promise<boolean>;
     confirmMessage: (message: string, options?: {}) => Promise<boolean>;
     openDataId: typeof openDataId;
-    test: typeof test;
 };
 export {};
