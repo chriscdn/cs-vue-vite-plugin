@@ -7,7 +7,6 @@
     role="img"
     @click="$emit('click', $event)"
   >
-    <!-- :fill="fillColor" -->
     <svg
       class="fill-black hover:fill-green-500 transition-colors"
       :width="size"

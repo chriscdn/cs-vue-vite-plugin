@@ -1,22 +1,27 @@
 <template>
-  <div class="k-node-picker-field">
-    <input
-      ref="input"
-      type="text"
-      class="k-input"
-      :value="name"
-      @focus="openWindow"
-    />
-    <KButton small @click="openWindow">
-      {{ browseButtonLabel }}
-    </KButton>
+  <KFormFieldWrapper
+    :label="label"
+    :success-messages="successMessages"
+    :error-messages="errorMessages"
+  >
+    <div class="k-node-picker-field">
+      <input
+        ref="input"
+        type="text"
+        class="k-input"
+        :value="name"
+        @focus="openWindow"
+      />
 
-    <KButton small @click="clear" v-if="clearable">
-      {{ clearButtonLabel }}
-    </KButton>
+      <KButton small @click="openWindow"> {{ browseButtonLabel }} </KButton>
 
-    <KNodeAncestor :dataid="dataid" v-if="dataid" />
-  </div>
+      <KButton small @click="clear" v-if="clearable">
+        {{ clearButtonLabel }}
+      </KButton>
+
+      <KNodeAncestor :dataid="dataid" v-if="dataid" />
+    </div>
+  </KFormFieldWrapper>
 </template>
 
 <script lang="ts">
@@ -26,14 +31,9 @@ import cookies from "js-cookie";
 import ancestorLookup from "../utils/ancestor-lookup";
 import KNodeAncestor from "./KNodeAncestor.vue";
 import { defineComponent, PropType } from "vue";
-
-// declare global {
-//   interface Window {
-//     PGDLORCOJEEWEAQEFAUS?: Function
-//   }
-// }
-
+import { mixin } from "./KFormFieldWrapper.vue";
 export default defineComponent({
+  mixins: [mixin],
   components: { KNodeAncestor },
 
   setup() {
@@ -203,9 +203,8 @@ export default defineComponent({
     didCloseWindow() {
       console.log("didClose");
     },
-    // callback(dataid: number, breadcrumb: string) {
-    callback(dataid: number) {
-      this.dataid = dataid;
+    callback(dataid: string | number) {
+      this.dataid = typeof dataid === "string" ? parseInt(dataid) : dataid;
     },
     clear() {
       this.breadcrumb = [];
@@ -217,7 +216,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .k-node-picker-field {
-  @apply bg-gray-100 rounded p-2;
+  /* @apply bg-gray-100; */
+  @apply rounded;
 
   input[type="text"] {
     width: 20em;

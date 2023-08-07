@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { mixin } from "./KFormFieldWrapper.vue";
-
 import { defineComponent, PropType } from "vue";
+
 export default defineComponent({
   mixins: [mixin],
   props: {
