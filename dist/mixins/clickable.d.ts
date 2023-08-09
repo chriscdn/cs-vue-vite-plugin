@@ -58,10 +58,10 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     link: boolean;
+    to: string | Record<string, any>;
+    target: string;
     disabled: boolean;
     href: string;
-    target: string;
-    to: string | Record<string, any>;
     nuxt: boolean;
 }, {}>;
 export default _default;

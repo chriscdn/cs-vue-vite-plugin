@@ -73,10 +73,10 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     link: boolean;
+    to: string | Record<string, any>;
+    target: string;
     disabled: boolean;
     href: string;
-    target: string;
-    to: string | Record<string, any>;
     nuxt: boolean;
 }, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     title: {

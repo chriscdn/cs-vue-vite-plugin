@@ -15,7 +15,7 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }, {
-    configuration: import("../injection.js").Configuration;
+    configuration: import("../injection").Configuration;
 }, {
     visible: boolean;
     loading: Boolean;
