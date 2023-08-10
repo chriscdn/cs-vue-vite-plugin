@@ -9,7 +9,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     items: {
-        type: PropType<string | Record<string, any>>;
+        type: PropType<(string | Record<string, any>)[]>;
         default: () => never[];
     };
     loading: {
@@ -21,6 +21,10 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     itemText: {
+        type: PropType<string>;
+        default: string;
+    };
+    itemGroup: {
         type: PropType<string>;
         default: string;
     };
@@ -46,6 +50,8 @@ declare const _default: import("vue").DefineComponent<{
         get(): string | number | any[] | Record<string, any> | null;
         set(value: any): void;
     };
+    hasGroups(): boolean;
+    itemsGrouped(): Record<string, any[]> | null;
 }, {
     isObject(obj: any): boolean;
     getItemText(item: string | object): string;
@@ -100,7 +106,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     items: {
-        type: PropType<string | Record<string, any>>;
+        type: PropType<(string | Record<string, any>)[]>;
         default: () => never[];
     };
     loading: {
@@ -112,6 +118,10 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     itemText: {
+        type: PropType<string>;
+        default: string;
+    };
+    itemGroup: {
         type: PropType<string>;
         default: string;
     };
@@ -136,13 +146,14 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     modelValue: string | number | Record<string, any> | null;
     disabled: boolean;
-    items: string | Record<string, any>;
+    items: (string | Record<string, any>)[];
     loading: boolean;
     itemValue: string;
     itemText: string;
     multiple: boolean;
     readonly: boolean;
     clearable: boolean;
+    itemGroup: string;
     itemDisabled: string;
 }, {}>;
 export default _default;

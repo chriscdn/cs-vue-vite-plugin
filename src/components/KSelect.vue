@@ -4,20 +4,41 @@
     :success-messages="successMessages"
     :error-messages="errorMessages"
   >
+    <!-- {{  hasGroups }} -->
+    <!-- {{ itemsGrouped }} -->
     <div class="k-select">
       <select
         v-model="valueLocal"
         :class="classObj"
         :disabled="disabledResolved"
       >
-        <option
-          v-for="item in items"
-          :key="getItemValue(item)"
-          :value="getItemValue(item)"
-          :disabled="getItemDisabled(item)"
-        >
-          {{ getItemText(item) }}
-        </option>
+        <template v-if="hasGroups">
+          <optgroup
+            v-for="(items, group) in itemsGrouped"
+            :key="group"
+            :label="group"
+          >
+            <option
+              v-for="item in items"
+              :key="getItemValue(item)"
+              :value="getItemValue(item)"
+              :disabled="getItemDisabled(item)"
+            >
+              {{ getItemText(item) }}
+            </option>
+          </optgroup>
+        </template>
+
+        <template v-else>
+          <option
+            v-for="item in items"
+            :key="getItemValue(item)"
+            :value="getItemValue(item)"
+            :disabled="getItemDisabled(item)"
+          >
+            {{ getItemText(item) }}
+          </option>
+        </template>
       </select>
 
       <KButton v-if="clearable" @click="valueLocal = null" small>clear</KButton>
@@ -33,6 +54,7 @@
 import { defineComponent, PropType } from "vue";
 import get from "lodash.get";
 import { mixin } from "./KFormFieldWrapper.vue";
+
 export default defineComponent({
   mixins: [mixin],
   props: {
@@ -47,7 +69,7 @@ export default defineComponent({
       default: false,
     },
     items: {
-      type: Array as PropType<string | Record<string, any>>,
+      type: Array as PropType<Array<string | Record<string, any>>>,
       default: () => [],
     },
     loading: {
@@ -61,6 +83,10 @@ export default defineComponent({
     itemText: {
       type: String as PropType<string>,
       default: "text",
+    },
+    itemGroup: {
+      type: String as PropType<string>,
+      default: "group",
     },
     itemDisabled: {
       type: String as PropType<string>,
@@ -92,11 +118,40 @@ export default defineComponent({
         this.$emit("update:modelValue", value);
       },
     },
+    // Only true if each item has a grouped property
+    hasGroups() {
+      // debugger
+      const itemGroup = this.itemGroup;
+
+      return typeof itemGroup === "string" && this.items.length > 0
+        ? this.items.every((item) => Boolean(get(item, itemGroup)))
+        : false;
+    },
+    itemsGrouped() {
+      // const itemGroup = this.itemGroup;
+
+      return this.hasGroups
+        ? this.items.reduce((a: Record<string, Array<any>>, item) => {
+            const group: string = get(item, this.itemGroup);
+
+            if (!a[group]) {
+              a[group] = [];
+            }
+
+            a[group].push(item);
+
+            return a;
+          }, {})
+        : null;
+
+      // return this.hasGroups ? this.items.reduce((a,item) => {},
+      // {}:Record<string, Array<any>>) :null
+    },
   },
   methods: {
     isObject(obj: any) {
       return (
-        typeof obj == "object" &&
+        typeof obj === "object" &&
         obj instanceof Object &&
         !(obj instanceof Array)
       );
