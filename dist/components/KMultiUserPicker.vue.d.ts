@@ -16,6 +16,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    legacy: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }, unknown, unknown, {
     userIdsLocal: {
         set(value: Array<number | null>): void;
@@ -38,9 +42,14 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
+    legacy: {
+        type: PropType<boolean>;
+        default: boolean;
+    };
 }>>, {
     readonly: boolean;
     users: boolean;
     groups: boolean;
+    legacy: boolean;
 }, {}>;
 export default _default;

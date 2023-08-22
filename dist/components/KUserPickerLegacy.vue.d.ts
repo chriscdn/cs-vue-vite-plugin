@@ -27,6 +27,10 @@ declare const _default: import("vue").DefineComponent<{}, {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
+    legacy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
 }, {
     session: import("@kweli/cs-rest").Session;
 }, {
@@ -117,6 +121,10 @@ declare const _default: import("vue").DefineComponent<{}, {
         type: import("vue").PropType<boolean>;
         default: boolean;
     };
+    legacy: {
+        type: import("vue").PropType<boolean>;
+        default: boolean;
+    };
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
@@ -126,5 +134,6 @@ declare const _default: import("vue").DefineComponent<{}, {
     groups: boolean;
     returnObject: boolean;
     editable: boolean;
+    legacy: boolean;
 }, {}>, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;

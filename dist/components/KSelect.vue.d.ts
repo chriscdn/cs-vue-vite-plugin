@@ -28,6 +28,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    sortedGroupNames: {
+        type: PropType<string[]>;
+        default: () => never[];
+    };
     itemDisabled: {
         type: PropType<string>;
         default: string;
@@ -51,7 +55,7 @@ declare const _default: import("vue").DefineComponent<{
         set(value: any): void;
     };
     hasGroups(): boolean;
-    itemsGrouped(): Record<string, any[]> | null;
+    itemsGrouped(): [string, any[]][] | null;
 }, {
     isObject(obj: any): boolean;
     getItemText(item: string | object): string;
@@ -125,6 +129,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<string>;
         default: string;
     };
+    sortedGroupNames: {
+        type: PropType<string[]>;
+        default: () => never[];
+    };
     itemDisabled: {
         type: PropType<string>;
         default: string;
@@ -154,6 +162,7 @@ declare const _default: import("vue").DefineComponent<{
     readonly: boolean;
     clearable: boolean;
     itemGroup: string;
+    sortedGroupNames: string[];
     itemDisabled: string;
 }, {}>;
 export default _default;

@@ -4,8 +4,6 @@
     :success-messages="successMessages"
     :error-messages="errorMessages"
   >
-    <!-- {{  hasGroups }} -->
-    <!-- {{ itemsGrouped }} -->
     <div class="k-select">
       <select
         v-model="valueLocal"
@@ -14,12 +12,12 @@
       >
         <template v-if="hasGroups">
           <optgroup
-            v-for="(items, group) in itemsGrouped"
-            :key="group"
-            :label="group"
+            v-for="group in itemsGrouped"
+            :key="group[0]"
+            :label="group[0]"
           >
             <option
-              v-for="item in items"
+              v-for="item in group[1]"
               :key="getItemValue(item)"
               :value="getItemValue(item)"
               :disabled="getItemDisabled(item)"
@@ -88,6 +86,10 @@ export default defineComponent({
       type: String as PropType<string>,
       default: "group",
     },
+    sortedGroupNames: {
+      type: Array as PropType<Array<string>>,
+      default: () => [],
+    },
     itemDisabled: {
       type: String as PropType<string>,
       default: "disabled",
@@ -130,8 +132,9 @@ export default defineComponent({
     itemsGrouped() {
       // const itemGroup = this.itemGroup;
 
-      return this.hasGroups
-        ? this.items.reduce((a: Record<string, Array<any>>, item) => {
+      if (this.hasGroups) {
+        const items = this.items.reduce(
+          (a: Record<string, Array<any>>, item) => {
             const group: string = get(item, this.itemGroup);
 
             if (!a[group]) {
@@ -141,8 +144,22 @@ export default defineComponent({
             a[group].push(item);
 
             return a;
-          }, {})
-        : null;
+          },
+          {}
+        );
+
+        return Object.entries(items).sort((a, b) => {
+          const groupA = a[0];
+          const groupB = b[0];
+
+          const groupSortA = this.sortedGroupNames.indexOf(groupA);
+          const groupSortB = this.sortedGroupNames.indexOf(groupB);
+
+          return groupSortA - groupSortB;
+        });
+      } else {
+        return null;
+      }
 
       // return this.hasGroups ? this.items.reduce((a,item) => {},
       // {}:Record<string, Array<any>>) :null

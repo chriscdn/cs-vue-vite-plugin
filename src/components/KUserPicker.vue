@@ -82,6 +82,10 @@ export default defineComponent({
       type: Boolean as PropType<boolean>,
       default: true,
     },
+    legacy: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
   emits: ["update:modelValue"],
 
@@ -212,10 +216,9 @@ export default defineComponent({
           this.readonly = true;
           this.loading = true;
 
-          const user: RHUserSerializer | null = await userLookup.lookup(
-            this.session,
-            initialValue
-          );
+          const user: RHUserSerializer | null = this.legacy
+            ? await userLookup.lookupLegacy(this.session, initialValue)
+            : await userLookup.lookup(this.session, initialValue);
 
           if (user) {
             this.items = [
