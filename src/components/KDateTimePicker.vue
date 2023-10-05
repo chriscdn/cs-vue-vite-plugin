@@ -72,5 +72,9 @@ export default defineComponent({
 <style lang="postcss">
 .k-date-time-picker {
   @apply flex gap-2 items-center;
+  input.k-input {
+    /* forced to override SmartUI. */
+    @apply leading-normal;
+  }
 }
 </style>
