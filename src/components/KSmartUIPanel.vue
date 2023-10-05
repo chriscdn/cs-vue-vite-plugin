@@ -43,7 +43,8 @@ export default defineComponent({
 
 .binf-widgets {
   .rhcore-smartui {
-    @apply relative;
+    /* Increase the z-index to permit dialog and such to be above the SmartUI components. */
+    @apply relative z-10;
 
     .k-smart-ui-panel {
       @apply absolute inset-0 flex flex-col min-w-0 overflow-x-hidden;
@@ -51,7 +52,7 @@ export default defineComponent({
       .k-smart-ui-panel-header {
         @apply flex-grow-0 flex-shrink-0 basis-0 px-4 py-3;
         @apply border-b border-solid;
-        border-color: #ccc;
+        border-color: #cccccc;
         background-color: #dce4e8;
         /* undo the hide in classic case */
         @apply block;
@@ -64,7 +65,7 @@ export default defineComponent({
       .k-smart-ui-panel-footer {
         @apply flex-grow-0 flex-shrink-0 basis-0 px-4 py-3;
         @apply border-t border-solid;
-        border-color: #ccc;
+        border-color: #cccccc;
         background-color: #e8e8e8;
         /* undo the hide in classic case */
         @apply block;

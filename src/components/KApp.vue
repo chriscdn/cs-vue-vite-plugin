@@ -17,7 +17,8 @@
 
   /* relative removed 5.10.2023.  If you add it back, document why, and be sure to test with SmartUI. */
 
-  @apply z-10;
-  /* @apply relative z-10; */
+  /* z-index is ignored since this is a static component */
+  /* @apply z-10; */
+  /* @apply z-auto; */
 }
 </style>
