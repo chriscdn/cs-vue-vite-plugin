@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { directive } from "vue3-click-away";
 import measurables from "../mixins/measurables";
@@ -32,28 +32,28 @@ export default defineComponent({
 
   props: {
     modelValue: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       required: false,
     },
     persistent: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     scrollable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
     width: {
-      type: [Number, String],
+      type: [Number, String] as PropType<number | string>,
       default: "75vw",
     },
     maxHeight: {
-      type: [Number, String],
+      type: [Number, String] as PropType<number | string>,
       default: "90%",
     },
     zIndex: {
-      type: [Number],
-      default: 0,
+      type: [Number] as PropType<number>,
+      default: 10,
     },
   },
   emits: ["update:modelValue"],

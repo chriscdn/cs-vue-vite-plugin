@@ -1,26 +1,27 @@
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         required: false;
     };
     persistent: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         default: boolean;
     };
     scrollable: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: PropType<string | number>;
         default: string;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: PropType<string | number>;
         default: string;
     };
     zIndex: {
-        type: NumberConstructor[];
+        type: PropType<number>;
         default: number;
     };
 }, unknown, {
@@ -98,27 +99,27 @@ declare const _default: import("vue").DefineComponent<{
     width: string | number;
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         required: false;
     };
     persistent: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         default: boolean;
     };
     scrollable: {
-        type: BooleanConstructor;
+        type: PropType<boolean>;
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: PropType<string | number>;
         default: string;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: PropType<string | number>;
         default: string;
     };
     zIndex: {
-        type: NumberConstructor[];
+        type: PropType<number>;
         default: number;
     };
 }>> & {
@@ -126,7 +127,6 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     maxHeight: string | number;
     width: string | number;
-    modelValue: boolean;
     persistent: boolean;
     scrollable: boolean;
     zIndex: number;

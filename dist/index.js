@@ -4621,7 +4621,7 @@ const $r = /* @__PURE__ */ x(_r, [["render", vr]]), kr = /* @__PURE__ */ Object.
     },
     zIndex: {
       type: [Number],
-      default: 0
+      default: 10
     }
   },
   emits: ["update:modelValue"],
