@@ -13,7 +13,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
 }, unknown, unknown, {
-    type(): "datetime-local" | "date";
+    type(): "date" | "datetime-local";
     localModelValue: {
         set(value: string | Date | null): void;
         get(): string | Date | null;

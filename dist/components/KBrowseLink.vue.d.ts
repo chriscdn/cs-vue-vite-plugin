@@ -29,8 +29,10 @@ declare const _default: import("vue").DefineComponent<{
     session: import("@kweli/cs-rest").Session;
 }, {
     nodeRecLocal: RHNodeSerializer | null;
+    lookupError: boolean;
 }, {
     nodeRecResolved(): RHNodeSerializer | null;
+    isError(): boolean;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     nodeRec: {
         type: PropType<RHNodeSerializer | null>;

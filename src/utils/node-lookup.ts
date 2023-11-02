@@ -58,10 +58,15 @@ class NodeLookupQueue {
 
     clearInterval(this.intervalId);
 
-    this.intervalId = setTimeout(this.processQueue.bind(this), 50);
+    // throttle to prevent a massive batch of requests
+    if (this.queueItems.length < 20) {
+      this.intervalId = setTimeout(this.processQueue.bind(this), 50);
+    } else {
+      this.processQueue();
+    }
   }
 
-  async processQueue() {
+  private async processQueue() {
     const rpcClient = this.session!.rpcClient("/api/v1/rh/rpc/node/");
 
     const queueItems = this.queueItems;
@@ -73,7 +78,7 @@ class NodeLookupQueue {
     });
 
     try {
-      const responses: Array<RHNodeSerializer> = await rpcClient.batch(true);
+      const responses: Array<RHNodeSerializer> = await rpcClient.batch();
 
       responses.forEach((node, index) => {
         const resolveFunc = queueItems[index].resolveFunc;
@@ -95,14 +100,11 @@ class NodeLookup {
     this.nodeLookupQueue = new NodeLookupQueue();
   }
 
-  registerUsers(items: Array<RHNodeSerializer>) {
-    items.forEach((user) => (this.nodes[user.dataid] = user));
-  }
+  // registerUsers(items: Array<RHNodeSerializer>) {
+  //   items.forEach((user) => (this.nodes[user.dataid] = user));
+  // }
 
-  async lookupLegacy(
-    session: Session,
-    dataId: number | null,
-  ): Promise<any> {
+  async lookupLegacy(session: Session, dataId: number | null): Promise<any> {
     if (dataId) {
       try {
         await semaphore.acquire(dataId);
@@ -129,7 +131,7 @@ class NodeLookup {
 
   async lookupRPC(
     session: Session,
-    dataId: number | null,
+    dataId: number | null
   ): Promise<RHNodeSerializer | null> {
     if (dataId) {
       await semaphore.acquire(dataId);
@@ -140,10 +142,14 @@ class NodeLookup {
       } else {
         // The nodeLookupQueue makes a single request for a batch of independent
         // requests.
-        return new Promise((resolve) => {
-          const resolver = (user: RHNodeSerializer) => {
-            this.nodes[dataId] = user;
-            resolve(user);
+        return new Promise((resolve, reject) => {
+          const resolver = (user: RHNodeSerializer | Error) => {
+            if (user instanceof Error) {
+              reject(user);
+            } else {
+              this.nodes[dataId] = user;
+              resolve(user);
+            }
             semaphore.release(dataId);
           };
 
@@ -158,7 +164,7 @@ class NodeLookup {
   async lookup(
     session: Session,
     dataId: number | null,
-    legacy: boolean = false,
+    legacy: boolean = false
   ): Promise<RHNodeSerializer | null> {
     return legacy
       ? this.lookupLegacy(session, dataId)

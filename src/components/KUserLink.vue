@@ -89,11 +89,9 @@ export default defineComponent({
     user: {
       async handler(value) {
         if (this.isInteger(value)) {
-          this.userRecLocal = await userLookup.lookup(
-            this.session,
-            value,
-            this.legacy
-          );
+          this.userRecLocal = await userLookup
+            .lookup(this.session, value, this.legacy)
+            .catch((_) => null);
         } else {
           this.userRecLocal = value;
         }

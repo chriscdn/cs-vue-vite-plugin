@@ -63,10 +63,15 @@ class UserLookupQueue {
 
     clearInterval(this.intervalId);
 
-    this.intervalId = setTimeout(this.processQueue.bind(this), 50);
+    // throttle to prevent a massive batch of requests
+    if (this.queueItems.length < 20) {
+      this.intervalId = setTimeout(this.processQueue.bind(this), 50);
+    } else {
+      this.processQueue();
+    }
   }
 
-  async processQueue() {
+  private async processQueue() {
     const rpcClient = this.session!.rpcClient("/api/v1/rh/rpc/user/");
 
     const queueItems = this.queueItems;
@@ -78,7 +83,7 @@ class UserLookupQueue {
     });
 
     try {
-      const responses: Array<RHUserSerializer> = await rpcClient.batch(true);
+      const responses: Array<RHUserSerializer> = await rpcClient.batch();
 
       responses.forEach((user, index) => {
         const resolveFunc = queueItems[index].resolveFunc;
@@ -100,13 +105,13 @@ class UserLookup {
     this.userLookupQueue = new UserLookupQueue();
   }
 
-  registerUsers(items: Array<RHUserSerializer>) {
-    items.forEach((user) => (this.users[user.userid] = user));
-  }
+  // registerUsers(items: Array<RHUserSerializer>) {
+  //   items.forEach((user) => (this.users[user.userid] = user));
+  // }
 
   async lookupLegacy(
     session: Session,
-    userId: number | null,
+    userId: number | null
   ): Promise<RHUserSerializer | null> {
     if (userId) {
       try {
@@ -134,7 +139,7 @@ class UserLookup {
 
   async lookupRPC(
     session: Session,
-    userId: number | null,
+    userId: number | null
   ): Promise<RHUserSerializer | null> {
     if (userId) {
       await semaphore.acquire(userId);
@@ -145,11 +150,15 @@ class UserLookup {
         return this.users[userId];
       } else {
         // The userLookupQueue makes a single request for a batch of independent requests.
-        return new Promise((resolve) => {
-          const resolver = (user: RHUserSerializer) => {
-            this.users[userId] = user;
-            resolve(user);
-            semaphore.release(userId);
+        return new Promise((resolve, reject) => {
+          const resolver = (user: RHUserSerializer | Error) => {
+            if (user instanceof Error) {
+              reject(user);
+            } else {
+              this.users[userId] = user;
+              resolve(user);
+              semaphore.release(userId);
+            }
           };
 
           this.userLookupQueue.queue(session, resolver, userId);
@@ -163,7 +172,7 @@ class UserLookup {
   async lookup(
     session: Session,
     userId: number | null,
-    legacy: boolean = false,
+    legacy: boolean = false
   ): Promise<RHUserSerializer | null> {
     return legacy
       ? this.lookupLegacy(session, userId)

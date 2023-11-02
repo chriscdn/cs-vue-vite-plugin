@@ -7,13 +7,12 @@ declare class NodeLookupQueue {
     constructor();
     resetQueue(): void;
     queue(session: Session, resolveFunc: Function, dataId: number): void;
-    processQueue(): Promise<void>;
+    private processQueue;
 }
 declare class NodeLookup {
     nodes: Record<number, RHNodeSerializer | null>;
     nodeLookupQueue: NodeLookupQueue;
     constructor();
-    registerUsers(items: Array<RHNodeSerializer>): void;
     lookupLegacy(session: Session, dataId: number | null): Promise<any>;
     lookupRPC(session: Session, dataId: number | null): Promise<RHNodeSerializer | null>;
     lookup(session: Session, dataId: number | null, legacy?: boolean): Promise<RHNodeSerializer | null>;

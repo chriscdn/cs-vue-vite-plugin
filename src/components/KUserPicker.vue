@@ -217,8 +217,12 @@ export default defineComponent({
           this.loading = true;
 
           const user: RHUserSerializer | null = this.legacy
-            ? await userLookup.lookupLegacy(this.session, initialValue)
-            : await userLookup.lookup(this.session, initialValue);
+            ? await userLookup
+                .lookupLegacy(this.session, initialValue)
+                .catch((_) => null)
+            : await userLookup
+                .lookup(this.session, initialValue)
+                .catch((_) => null);
 
           if (user) {
             this.items = [
