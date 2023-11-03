@@ -1,8 +1,6 @@
 <template>
   <div class="flex items-center gap-2">
-    <template v-if="lookupError"></template>
-
-    <template v-else-if="nodeRecResolved">
+    <template v-if="nodeRecResolved">
       <div class="flex items-center gap-2">
         <img v-if="image" :src="nodeRecResolved.gif" width="16" height="16" />
 
@@ -68,27 +66,22 @@ export default defineComponent({
   data() {
     return {
       nodeRecLocal: null as RHNodeSerializer | null,
-      lookupError: false,
     };
   },
   computed: {
     nodeRecResolved() {
       return this.nodeRec ?? this.nodeRecLocal;
     },
-    isError() {
-      return this.nodeRecLocal instanceof Error;
-    },
   },
   watch: {
     dataid: {
       async handler(value) {
         if (value) {
-          this.nodeRecLocal = await nodeLookup
-            .lookup(this.session, value, this.legacy)
-            .catch((_) => {
-              this.lookupError = true;
-              return null;
-            });
+          this.nodeRecLocal = await nodeLookup.lookup(
+            this.session,
+            value,
+            this.legacy
+          );
         }
       },
       immediate: true,

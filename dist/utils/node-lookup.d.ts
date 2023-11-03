@@ -1,12 +1,13 @@
 import { type RHNodeSerializer } from "../types/RHNodeSerializer";
 import { Session } from "@kweli/cs-rest";
+type TResolveFunction = (item: RHNodeSerializer | null) => void;
 declare class NodeLookupQueue {
     session: Session | null;
     private queueItems;
     private intervalId;
     constructor();
     resetQueue(): void;
-    queue(session: Session, resolveFunc: Function, dataId: number): void;
+    queue(session: Session, resolveFunc: TResolveFunction, dataId: number): void;
     private processQueue;
 }
 declare class NodeLookup {

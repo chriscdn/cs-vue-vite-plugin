@@ -64,7 +64,7 @@ class UserLookupQueue {
     clearInterval(this.intervalId);
 
     // throttle to prevent a massive batch of requests
-    if (this.queueItems.length < 20) {
+    if (this.queueItems.length < 30) {
       this.intervalId = setTimeout(this.processQueue.bind(this), 50);
     } else {
       this.processQueue();

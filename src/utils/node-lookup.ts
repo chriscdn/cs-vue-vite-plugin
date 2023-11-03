@@ -32,9 +32,11 @@ function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
   };
 }
 
+type TResolveFunction = (item: RHNodeSerializer | null) => void;
+
 class NodeLookupQueue {
   session: Session | null;
-  private queueItems: Array<{ resolveFunc: Function; dataId: number }>;
+  private queueItems: Array<{ resolveFunc: TResolveFunction; dataId: number }>;
   private intervalId: NodeJS.Timeout;
 
   constructor() {
@@ -47,7 +49,7 @@ class NodeLookupQueue {
     this.queueItems = [];
   }
 
-  queue(session: Session, resolveFunc: Function, dataId: number) {
+  queue(session: Session, resolveFunc: TResolveFunction, dataId: number) {
     // use the last session
     this.session = session;
 
@@ -59,7 +61,7 @@ class NodeLookupQueue {
     clearInterval(this.intervalId);
 
     // throttle to prevent a massive batch of requests
-    if (this.queueItems.length < 20) {
+    if (this.queueItems.length < 30) {
       this.intervalId = setTimeout(this.processQueue.bind(this), 50);
     } else {
       this.processQueue();
@@ -72,6 +74,26 @@ class NodeLookupQueue {
     const queueItems = this.queueItems;
     this.resetQueue();
 
+    const dataids = queueItems.map((item) => item.dataId);
+
+    const nodes: RHNodeSerializer[] = await rpcClient.request("NodesLookup", {
+      dataids,
+    });
+
+    queueItems.forEach((item) => {
+      const id = item.dataId;
+      const resolveFunc = item.resolveFunc;
+
+      const node = nodes.find((node) => node.dataid === id);
+
+      resolveFunc(node ?? null);
+    });
+
+    // console.log(response);
+
+    // debugger;
+
+    /*
     queueItems.forEach((item) => {
       const dataId = item.dataId;
       rpcClient.queue("NodeLookup", { dataId });
@@ -88,6 +110,7 @@ class NodeLookupQueue {
       // we must call resolve to clear the semaphore
       queueItems.forEach((item) => item.resolveFunc(null));
     }
+    */
   }
 }
 
@@ -143,7 +166,7 @@ class NodeLookup {
         // The nodeLookupQueue makes a single request for a batch of independent
         // requests.
         return new Promise((resolve, reject) => {
-          const resolver = (user: RHNodeSerializer | Error) => {
+          const resolver = (user: RHNodeSerializer | null) => {
             if (user instanceof Error) {
               reject(user);
             } else {

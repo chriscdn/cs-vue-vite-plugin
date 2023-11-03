@@ -1,14 +1,13 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build__": "vite build",
-    "build2": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build2": "vite build",
     "watch": "vite build --watch",
     "serve": "vite preview",
     "generate:index": "deno run --allow-read --allow-write ./scripts/generate-component-index.ts"

@@ -8,13 +8,8 @@ import { dependencies } from "./package.json";
 // https://jivancic.com/posts/build-a-component-library.html
 export default defineConfig({
   plugins: [vue()],
-  // resolve: {
-  //   alias: {
-  //     "@/": new URL("./src/", import.meta.url).pathname,
-  //   },
-  // },
   build: {
-    target: "esnext",
+    // target: "esnext",
     lib: {
       formats: ["es"],
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -24,20 +19,9 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
       external: [...Object.keys(dependencies || [])],
-      output: {
-        // preserveModules: true
-        // NO! we use external, above
-        // manualChunks: Object.keys(dependencies).reduce((a, dep) => {
-        //   a[dep] = [dep];
-        //   return a;
-        // }, [] as any),
-        // preserveModules: true,
-
-        // only needed for UMD builds?
-        // globals: {
-        //   vue: "Vue",
-        // },
-      },
+      // output: {
+      //   preserveModules: true,
+      // },
     },
   },
 });
