@@ -1,6 +1,8 @@
 <template>
   <div class="flex items-center gap-2">
-    <template v-if="nodeRecResolved">
+    <div v-if="loading" class="h-3 w-36 bg-slate-200 rounded animate-pulse" />
+
+    <template v-else-if="nodeRecResolved">
       <div class="flex items-center gap-2">
         <img v-if="image" :src="nodeRecResolved.gif" width="16" height="16" />
 
@@ -66,6 +68,7 @@ export default defineComponent({
   data() {
     return {
       nodeRecLocal: null as RHNodeSerializer | null,
+      loading: false,
     };
   },
   computed: {
@@ -77,11 +80,16 @@ export default defineComponent({
     dataid: {
       async handler(value) {
         if (value) {
-          this.nodeRecLocal = await nodeLookup.lookup(
-            this.session,
-            value,
-            this.legacy
-          );
+          try {
+            this.loading = true;
+            this.nodeRecLocal = await nodeLookup.lookup(
+              this.session,
+              value,
+              this.legacy
+            );
+          } finally {
+            this.loading = false;
+          }
         }
       },
       immediate: true,

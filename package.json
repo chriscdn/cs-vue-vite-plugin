@@ -1,6 +1,6 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
