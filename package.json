@@ -1,6 +1,6 @@
 {
   "name": "@kweli/cs-vue-vite-plugin",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,14 +8,14 @@
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "build2": "vite build",
-    "watch": "vite build --watch",
+    "watch": "concurrently \"vite build --watch\" \"vue-tsc --watch --emitDeclarationOnly\"",
     "serve": "vite preview",
     "generate:index": "deno run --allow-read --allow-write ./scripts/generate-component-index.ts"
   },
   "dependencies": {
     "@chriscdn/promise-semaphore": "^2.0.1",
     "@googlicius/build-url": "^1.0.11",
-    "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest.git",
+    "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.30.0",
     "hotkeys-js": "^3.12.0",
@@ -34,6 +34,7 @@
     "@types/node": "^20.4.9",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.2",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",

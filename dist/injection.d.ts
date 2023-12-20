@@ -26,6 +26,7 @@ export type WindowInitialState = {
     otcsticket: string;
     datelong: string;
     dateshort: string;
+    registerComponents?: false;
 };
 declare global {
     interface Window {
@@ -51,7 +52,7 @@ type ConfirmDialogParameters = {
 };
 interface ConfirmDialog {
     confirm({ noLabel, yesLabel, title, message, }: ConfirmDialogParameters): Promise<boolean>;
-    alert({ yesLabel, title, message }: ConfirmDialogParameters): Promise<boolean>;
+    alert({ yesLabel, title, message, }: ConfirmDialogParameters): Promise<boolean>;
 }
 export type SnackbarParameters = {
     title?: string;

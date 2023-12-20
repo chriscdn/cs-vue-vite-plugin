@@ -1,30 +1,38 @@
 import { Session } from "@kweli/cs-rest";
-import "./tailwind.pcss";
-import "./styles.pcss";
-import type { App } from "vue";
+import { DateTimeFormatter } from "./utils/date-formatter";
 import {
   configKey,
   dateTimeFormatterKey,
   sessionKey,
   WindowInitialState,
 } from "./injection";
-import type { Configuration } from "./injection";
-import { DateTimeFormatter } from "./utils/date-formatter";
 
-export * from "./injection";
+import "./tailwind.pcss";
+import "./styles.pcss";
 
+import { type App } from "vue";
+import { type Configuration } from "./injection";
 /**
  * This variable gets assigned in the install, and is made available to the
  * useSession composible.
  */
-const globalComponents = import.meta.glob("./components/**/*.vue", {
-  eager: true,
-});
 
-let session: Session;
+let session = null as Session | null;
 
-export default {
-  install(app: App, options: WindowInitialState) {
+type TOptions = {
+  registerComponents?: boolean;
+  includeComponents?: string[];
+};
+
+export const createVueVitePlugin = (
+  initialState: WindowInitialState,
+  options: Partial<TOptions> = {}
+) => {
+  const registerComponents = (app: App) => {
+    const globalComponents = import.meta.glob("./components/**/*.vue", {
+      eager: true,
+    });
+
     Object.entries(globalComponents).forEach(
       ([item, definition]: [string, any]) => {
         // Get name of component, based on filename
@@ -35,37 +43,47 @@ export default {
           ?.replace(/\.\w+$/, "")!;
 
         app.component(componentName, definition.default);
-      },
+      }
     );
+  };
 
-    session = new Session(options);
+  const plugin = {
+    install(app: App) {
+      session = new Session(initialState);
 
-    const configuration: Configuration = {
-      userId: options.userId,
-      img: options.img,
-      baseUrl: options.baseUrl,
-      jsLongDateFormat: options.datelong,
-      jsShortDateFormat: options.dateshort,
-    };
+      if (options.registerComponents) {
+        registerComponents(app);
+      }
 
-    app.provide(sessionKey, session);
-    app.provide(configKey, configuration);
-    app.provide(
-      dateTimeFormatterKey,
-      new DateTimeFormatter(options.datelong, options.dateshort),
-    );
-  },
+      const configuration: Configuration = {
+        userId: initialState.userId,
+        img: initialState.img,
+        baseUrl: initialState.baseUrl,
+        jsLongDateFormat: initialState.datelong,
+        jsShortDateFormat: initialState.dateshort,
+      };
+
+      app.provide(sessionKey, session);
+      app.provide(configKey, configuration);
+
+      app.provide(
+        dateTimeFormatterKey,
+        new DateTimeFormatter(initialState.datelong, initialState.dateshort)
+      );
+    },
+  };
+
+  return plugin;
 };
 
 export { default as nodeLookup } from "./utils/node-lookup";
 export { default as userLookup } from "./utils/user-lookup";
-
-export const useSession = () => session;
 export { useSmartUI } from "./composables/useSmartUI";
-
 export * from "./components";
 export * from "./types/RHNodeSerializer";
 export * from "./types/RHUserSerializer";
 export * from "./types/index";
-
 export { default as generalSort } from "./utils/general-sort";
+export * from "./injection";
+
+export const useSession = (): Session => session!;

@@ -4,7 +4,7 @@ declare global {
         _rhcore_smartui_view_context: any;
     }
 }
-declare function openDataId({ dataId, selectedTab, selectedProperty }: {
+declare function openDataId({ dataId, selectedTab, selectedProperty, }: {
     dataId: number;
     selectedTab?: string;
     selectedProperty?: string;

@@ -1,3 +1,5 @@
+import { useSession } from "..";
+
 declare global {
   interface Window {
     csui: any;
@@ -6,81 +8,70 @@ declare global {
 }
 
 function generateShow(name: string) {
-  return (
-    message: string,
-    options = {},
-  ): Promise<void> => {
+  return (message: string, options = {}): Promise<void> => {
     return new Promise((resolve) => {
       window.csui.require(
         ["csui/dialogs/modal.alert/modal.alert"],
         function (ModalAlert: any) {
           ModalAlert[name](resolve, message, null, options);
-        },
+        }
       );
     });
   };
 }
+
 function generateConfirm(name: string) {
-  return (
-    message: string,
-    options = {},
-  ): Promise<boolean> => {
+  return (message: string, options = {}): Promise<boolean> => {
     return new Promise((resolve) => {
       window.csui.require(
         ["csui/dialogs/modal.alert/modal.alert"],
         function (ModalAlert: any) {
           ModalAlert[name](resolve, message, null, options);
-        },
+        }
       );
     });
   };
 }
 
-// function test() {
-//   window.csui.require(
-//     [
-//       "rhcore/router/generic.model.factory",
-//     ],
-//     function (
-//       RHCoreRouterModelContextFactory: any,
-//     ) {
-//       const context: any = window._rhcore_smartui_view_context;
+function openDataId({
+  dataId,
+  selectedTab = undefined,
+  selectedProperty = undefined,
+}: {
+  dataId: number;
+  selectedTab?: string; // "properties" | "audit" | "versions"
+  selectedProperty?: string; // "general" | category name
+}) {
+  if (window.csui) {
+    _openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
+  } else {
+    _openDataIdClassicUI({ dataId });
+  }
+}
 
-//       const routerModel = context
-//         .getModel(RHCoreRouterModelContextFactory);
+function _openDataIdClassicUI({ dataId }: { dataId: number }) {
+  const session = useSession();
 
-//       // applicationScope.set("id", "greetings", { zzz: "canthis works" });
+  window.location.href = `${session.baseUrl}/open/${dataId}`;
 
-//       // const greetz = context
-//       //   .getModel(GreetingSubjectModelFactory);
+  // console.log(`dataId: ${dataId}`);
+}
 
-//       // greetz.set("id", { zz: "hello_world" });
-
-//       routerModel.set({
-//         id: "greetingsId",
-//         params: { id: "abcdddd" },
-//         query: { a: "1 2 3" },
-//       });
-//     },
-//   );
-// }
-
-function openDataId(
-  { dataId, selectedTab = undefined, selectedProperty = undefined }: {
-    dataId: number;
-    selectedTab?: string; // "properties" | "audit" | "versions"
-    selectedProperty?: string; // "general" | category name
-  },
-) {
+function _openDataIdSmartUI({
+  dataId,
+  selectedTab = undefined,
+  selectedProperty = undefined,
+}: {
+  dataId: number;
+  selectedTab?: string; // "properties" | "audit" | "versions"
+  selectedProperty?: string; // "general" | category name
+}) {
   window.csui.require(
     [
       "csui/utils/contexts/factories/next.node",
       "csui/utils/contexts/factories/metadata.factory",
     ],
-    function (
-      NextNode: any,
-      MetadataFactory: any,
-    ) {
+    function (NextNode: any, MetadataFactory: any) {
       // The SmartUI program context.
       const context: any = window._rhcore_smartui_view_context;
 
@@ -109,7 +100,7 @@ function openDataId(
       //   // selectedProperty: "Validity",
       //   // selectedProperty: "General", // Can be a category name.
       // });
-    },
+    }
   );
 }
 

@@ -1,19 +1,22 @@
 import { Session } from "@kweli/cs-rest";
+import { WindowInitialState } from "./injection";
 import "./tailwind.pcss";
 import "./styles.pcss";
-import type { App } from "vue";
-import { WindowInitialState } from "./injection";
-export * from "./injection";
-declare const _default: {
-    install(app: App, options: WindowInitialState): void;
+import { type App } from "vue";
+type TOptions = {
+    registerComponents?: boolean;
+    includeComponents?: string[];
 };
-export default _default;
+export declare const createVueVitePlugin: (initialState: WindowInitialState, options?: Partial<TOptions>) => {
+    install(app: App): void;
+};
 export { default as nodeLookup } from "./utils/node-lookup";
 export { default as userLookup } from "./utils/user-lookup";
-export declare const useSession: () => Session;
 export { useSmartUI } from "./composables/useSmartUI";
 export * from "./components";
 export * from "./types/RHNodeSerializer";
 export * from "./types/RHUserSerializer";
 export * from "./types/index";
 export { default as generalSort } from "./utils/general-sort";
+export * from "./injection";
+export declare const useSession: () => Session;

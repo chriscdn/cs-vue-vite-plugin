@@ -27,6 +27,7 @@ export type WindowInitialState = {
   otcsticket: string;
   datelong: string;
   dateshort: string;
+  registerComponents?: false;
 };
 
 declare global {
@@ -69,9 +70,11 @@ interface ConfirmDialog {
     message,
   }: ConfirmDialogParameters): Promise<boolean>;
 
-  alert(
-    { yesLabel, title, message }: ConfirmDialogParameters,
-  ): Promise<boolean>;
+  alert({
+    yesLabel,
+    title,
+    message,
+  }: ConfirmDialogParameters): Promise<boolean>;
 }
 
 export type SnackbarParameters = {
@@ -103,11 +106,10 @@ const sessionKey: InjectionKey<Session> = Symbol("session");
 const configKey: InjectionKey<Configuration> = Symbol("config");
 const snackbarKey: InjectionKey<Snackbar> = Symbol("snackbar");
 const dateTimeFormatterKey: InjectionKey<DateTimeFormatter> = Symbol(
-  "dateTimeFormatterKey",
+  "dateTimeFormatterKey"
 );
-const confirmDialogKey: InjectionKey<ConfirmDialog> = Symbol(
-  "confirmDialogKey",
-);
+const confirmDialogKey: InjectionKey<ConfirmDialog> =
+  Symbol("confirmDialogKey");
 
 export {
   configKey,
