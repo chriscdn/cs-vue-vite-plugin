@@ -3,6 +3,10 @@ import { WindowInitialState } from "./injection";
 import "./tailwind.pcss";
 import "./styles.pcss";
 import { type App } from "vue";
+/**
+ * This variable gets assigned in the install, and is made available to the
+ * useSession composible.
+ */
 type TOptions = {
     registerComponents?: boolean;
     includeComponents?: string[];

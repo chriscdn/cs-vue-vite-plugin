@@ -10,14 +10,14 @@ import {
 import "./tailwind.pcss";
 import "./styles.pcss";
 
-import { type App } from "vue";
+import { inject, type App } from "vue";
 import { type Configuration } from "./injection";
 /**
  * This variable gets assigned in the install, and is made available to the
  * useSession composible.
  */
 
-let session = null as Session | null;
+// let session = null as Session | null;
 
 type TOptions = {
   registerComponents?: boolean;
@@ -28,6 +28,8 @@ export const createVueVitePlugin = (
   initialState: WindowInitialState,
   options: Partial<TOptions> = {}
 ) => {
+  const session = new Session(initialState);
+
   const registerComponents = (app: App) => {
     const globalComponents = import.meta.glob("./components/**/*.vue", {
       eager: true,
@@ -49,8 +51,6 @@ export const createVueVitePlugin = (
 
   const plugin = {
     install(app: App) {
-      session = new Session(initialState);
-
       if (options.registerComponents) {
         registerComponents(app);
       }
@@ -86,4 +86,12 @@ export * from "./types/index";
 export { default as generalSort } from "./utils/general-sort";
 export * from "./injection";
 
-export const useSession = (): Session => session!;
+export const useSession = (): Session => {
+  const session = inject(sessionKey, null) as Session | null;
+  if (!session) {
+    throw new Error(
+      "Failed to inject session. Make sure @kweli/cs-vue-vite-plugin is set up properly."
+    );
+  }
+  return session;
+};
