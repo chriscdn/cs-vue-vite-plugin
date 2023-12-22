@@ -19,41 +19,41 @@ import { type Configuration } from "./injection";
 
 // let session = null as Session | null;
 
-type TOptions = {
-  registerComponents?: boolean;
-  includeComponents?: string[];
-};
+// type TOptions = {
+//   registerComponents?: boolean;
+//   includeComponents?: string[];
+// };
 
 export const createVueVitePlugin = (
-  initialState: WindowInitialState,
-  options: Partial<TOptions> = {}
+  initialState: WindowInitialState
+  // options: Partial<TOptions> = {}
 ) => {
   const session = new Session(initialState);
 
-  const registerComponents = (app: App) => {
-    const globalComponents = import.meta.glob("./components/**/*.vue", {
-      eager: true,
-    });
+  // const registerComponents = (app: App) => {
+  //   const globalComponents = import.meta.glob("./components/**/*.vue", {
+  //     eager: true,
+  //   });
 
-    Object.entries(globalComponents).forEach(
-      ([item, definition]: [string, any]) => {
-        // Get name of component, based on filename
-        // "./components/Fruits.vue" will become "Fruits"
-        const componentName = item
-          ?.split("/")
-          ?.pop()
-          ?.replace(/\.\w+$/, "")!;
+  //   Object.entries(globalComponents).forEach(
+  //     ([item, definition]: [string, any]) => {
+  //       // Get name of component, based on filename
+  //       // "./components/Fruits.vue" will become "Fruits"
+  //       const componentName = item
+  //         ?.split("/")
+  //         ?.pop()
+  //         ?.replace(/\.\w+$/, "")!;
 
-        app.component(componentName, definition.default);
-      }
-    );
-  };
+  //       app.component(componentName, definition.default);
+  //     }
+  //   );
+  // };
 
   const plugin = {
     install(app: App) {
-      if (options.registerComponents) {
-        registerComponents(app);
-      }
+      // if (options.registerComponents) {
+      // registerComponents(app);
+      // }
 
       const configuration: Configuration = {
         userId: initialState.userId,
@@ -76,16 +76,51 @@ export const createVueVitePlugin = (
   return plugin;
 };
 
-export { default as nodeLookup } from "./utils/node-lookup";
-export { default as userLookup } from "./utils/user-lookup";
-export { useSmartUI } from "./composables/useSmartUI";
-export { useAsyncData } from "./composables/useAsyncData";
+export const createVueViteRegisterComponentsPlugin = () => {
+  const globalComponents = import.meta.glob("./components/**/*.vue", {
+    eager: true,
+  });
+
+  const registerComponents = (app: App) => {
+    const globalComponents = import.meta.glob("./components/**/*.vue", {
+      eager: true,
+    });
+
+    Object.entries(globalComponents).forEach(
+      ([item, definition]: [string, any]) => {
+        // Get name of component, based on filename
+        // "./components/Fruits.vue" will become "Fruits"
+        const componentName = item
+          ?.split("/")
+          ?.pop()
+          ?.replace(/\.\w+$/, "")!;
+
+        app.component(componentName, definition.default);
+      }
+    );
+  };
+
+  const plugin = {
+    install(app: App) {
+      registerComponents(app);
+    },
+  };
+
+  return plugin;
+};
+
 export * from "./components";
 export * from "./types/RHNodeSerializer";
 export * from "./types/RHUserSerializer";
 export * from "./types/index";
-export { default as generalSort } from "./utils/general-sort";
 export * from "./injection";
+
+export { default as generalSort } from "./utils/general-sort";
+export { default as nodeLookup } from "./utils/node-lookup";
+export { default as userLookup } from "./utils/user-lookup";
+
+export { useSmartUI } from "./composables/useSmartUI";
+export { useAsyncData } from "./composables/useAsyncData";
 
 export const useSession = (): Session => {
   const session = inject(sessionKey, null) as Session | null;
