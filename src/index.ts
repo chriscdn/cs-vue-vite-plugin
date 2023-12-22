@@ -30,31 +30,8 @@ export const createVueVitePlugin = (
 ) => {
   const session = new Session(initialState);
 
-  // const registerComponents = (app: App) => {
-  //   const globalComponents = import.meta.glob("./components/**/*.vue", {
-  //     eager: true,
-  //   });
-
-  //   Object.entries(globalComponents).forEach(
-  //     ([item, definition]: [string, any]) => {
-  //       // Get name of component, based on filename
-  //       // "./components/Fruits.vue" will become "Fruits"
-  //       const componentName = item
-  //         ?.split("/")
-  //         ?.pop()
-  //         ?.replace(/\.\w+$/, "")!;
-
-  //       app.component(componentName, definition.default);
-  //     }
-  //   );
-  // };
-
   const plugin = {
     install(app: App) {
-      // if (options.registerComponents) {
-      // registerComponents(app);
-      // }
-
       const configuration: Configuration = {
         userId: initialState.userId,
         img: initialState.img,
@@ -63,6 +40,7 @@ export const createVueVitePlugin = (
         jsShortDateFormat: initialState.dateshort,
       };
 
+      // TODO: Create composables for fetching this.
       app.provide(sessionKey, session);
       app.provide(configKey, configuration);
 
@@ -77,10 +55,6 @@ export const createVueVitePlugin = (
 };
 
 export const createVueViteRegisterComponentsPlugin = () => {
-  const globalComponents = import.meta.glob("./components/**/*.vue", {
-    eager: true,
-  });
-
   const registerComponents = (app: App) => {
     const globalComponents = import.meta.glob("./components/**/*.vue", {
       eager: true,
@@ -121,6 +95,8 @@ export { default as userLookup } from "./utils/user-lookup";
 
 export { useSmartUI } from "./composables/useSmartUI";
 export { useAsyncData } from "./composables/useAsyncData";
+
+// TODO: Create composables for fetching other injected items...
 
 export const useSession = (): Session => {
   const session = inject(sessionKey, null) as Session | null;
