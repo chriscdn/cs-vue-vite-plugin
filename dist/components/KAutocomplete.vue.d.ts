@@ -115,13 +115,13 @@ declare const _default: import("vue").DefineComponent<{
     filter: Function;
     width: string | number;
     modelValue: string | number | Record<string, any> | null;
-    placeholder: string;
     items: (string | Record<string, any>)[];
     loading: boolean;
     itemValue: string;
     itemText: string;
     returnObject: boolean;
     editable: boolean;
+    placeholder: string;
     combobox: boolean;
 }, {}>;
 export default _default;

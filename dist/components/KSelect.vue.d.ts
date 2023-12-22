@@ -153,14 +153,14 @@ declare const _default: import("vue").DefineComponent<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
     modelValue: string | number | Record<string, any> | null;
-    disabled: boolean;
     items: (string | Record<string, any>)[];
     loading: boolean;
     itemValue: string;
     itemText: string;
-    multiple: boolean;
-    readonly: boolean;
+    disabled: boolean;
     clearable: boolean;
+    readonly: boolean;
+    multiple: boolean;
     itemGroup: string;
     sortedGroupNames: string[];
     itemDisabled: string;

@@ -1,8 +1,6 @@
 import { defineConfig } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
-
-// @ts-ignore
 import { dependencies } from "./package.json";
 
 // https://jivancic.com/posts/build-a-component-library.html

@@ -18,7 +18,7 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
 }>>, {
-    loading: boolean;
     size: number;
+    loading: boolean;
 }, {}>;
 export default _default;

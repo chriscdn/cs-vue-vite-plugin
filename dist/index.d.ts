@@ -17,6 +17,7 @@ export declare const createVueVitePlugin: (initialState: WindowInitialState, opt
 export { default as nodeLookup } from "./utils/node-lookup";
 export { default as userLookup } from "./utils/user-lookup";
 export { useSmartUI } from "./composables/useSmartUI";
+export { useAsyncData } from "./composables/useAsyncData";
 export * from "./components";
 export * from "./types/RHNodeSerializer";
 export * from "./types/RHUserSerializer";
