@@ -19,6 +19,11 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@chriscdn/build-url@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@chriscdn/build-url/-/build-url-1.0.8.tgz#d85df412f99aac64941ed1e3ebbe18abc46cb49d"
+  integrity sha512-6p5WDB9mU1durvCdngnpTxdMxSdOvzrm3hXbzmCjSydS4I2HmzzVdc1CnUvgcQc/d7GBewEGGh7OS4o+Lwczkg==
+
 "@chriscdn/promise-semaphore@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@chriscdn/promise-semaphore/-/promise-semaphore-2.0.1.tgz#b7eb0881fffb266e14c2091cc69a61fe08c47fdb"
@@ -133,11 +138,6 @@
   version "0.18.20"
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.18.20.tgz#786c5f41f043b07afb1af37683d7c33668858f6d"
   integrity sha512-kTdfRcSiDfQca/y9QIkng02avJ+NCaQvrMejlsB3RRv5sE9rRoeBPISaZpKxHELzRxZyLvNts1P27W3wV+8geQ==
-
-"@googlicius/build-url@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@googlicius/build-url/-/build-url-1.0.11.tgz#1c10e01662d5a40abcc5307754cee7c6ce8f16cf"
-  integrity sha512-lsY5Mf9+Vrf1mPsDgUNzMzU1SIQHIPc7aGaGthkrZMg4Ppmniaprai2yArYjHYVg/Sacf+oretpBpIoSVpSSRQ==
 
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"

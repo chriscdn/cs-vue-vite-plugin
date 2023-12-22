@@ -13,8 +13,8 @@
     "generate:index": "deno run --allow-read --allow-write ./scripts/generate-component-index.ts"
   },
   "dependencies": {
+    "@chriscdn/build-url": "^1.0.8",
     "@chriscdn/promise-semaphore": "^2.0.1",
-    "@googlicius/build-url": "^1.0.11",
     "@kweli/cs-rest": "https://github.com/chriscdn/cs-rest",
     "body-scroll-lock": "^4.0.0-beta.0",
     "date-fns": "^2.30.0",

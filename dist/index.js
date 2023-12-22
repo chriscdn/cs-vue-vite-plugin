@@ -8,7 +8,7 @@ import ve from "@chriscdn/promise-semaphore";
 import { format as Ee } from "date-fns";
 import { disableBodyScroll as Lt, enableBodyScroll as At } from "body-scroll-lock";
 import Re from "hotkeys-js";
-import zt from "@googlicius/build-url";
+import zt from "@chriscdn/build-url";
 import Vt from "js-cookie";
 import { Session as Bt } from "@kweli/cs-rest";
 import We from "intl-dateformat";

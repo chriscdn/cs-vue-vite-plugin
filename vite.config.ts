@@ -18,6 +18,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
+      // external: ["vue"],
       external: [...Object.keys(dependencies || [])],
       // output: {
       //   preserveModules: true,

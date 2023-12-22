@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { configKey, injectStrict, sessionKey } from "../injection";
-import buildUrl from "@googlicius/build-url";
+import buildUrl from "@chriscdn/build-url";
 import cookies from "js-cookie";
 import ancestorLookup from "../utils/ancestor-lookup";
 import KNodeAncestor from "./KNodeAncestor.vue";
