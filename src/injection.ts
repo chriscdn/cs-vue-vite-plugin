@@ -62,7 +62,7 @@ type ConfirmDialogParameters = {
   message?: string;
 };
 
-interface ConfirmDialog {
+type ConfirmDialog = {
   confirm({
     noLabel,
     yesLabel,
@@ -75,7 +75,7 @@ interface ConfirmDialog {
     title,
     message,
   }: ConfirmDialogParameters): Promise<boolean>;
-}
+};
 
 export type SnackbarParameters = {
   title?: string;

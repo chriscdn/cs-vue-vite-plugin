@@ -50,10 +50,10 @@ type ConfirmDialogParameters = {
     title?: string;
     message?: string;
 };
-interface ConfirmDialog {
+type ConfirmDialog = {
     confirm({ noLabel, yesLabel, title, message, }: ConfirmDialogParameters): Promise<boolean>;
     alert({ yesLabel, title, message, }: ConfirmDialogParameters): Promise<boolean>;
-}
+};
 export type SnackbarParameters = {
     title?: string;
     message?: string;

@@ -23,4 +23,6 @@ export { default as nodeLookup } from "./utils/node-lookup";
 export { default as userLookup } from "./utils/user-lookup";
 export { useSmartUI } from "./composables/useSmartUI";
 export { useAsyncData } from "./composables/useAsyncData";
+export { useSnackbar } from "./composables/useSnackbar";
+export { useConfirmDialog } from "./composables/useConfirmDialog";
 export declare const useSession: () => Session;
