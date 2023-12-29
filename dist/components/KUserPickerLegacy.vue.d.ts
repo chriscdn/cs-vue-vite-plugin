@@ -79,7 +79,7 @@ declare const _default: import("vue").DefineComponent<{}, {
         "k-input--success": boolean;
         "k-input--error": boolean;
     };
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     label: {
         type: StringConstructor;
         default: null;
@@ -96,7 +96,7 @@ declare const _default: import("vue").DefineComponent<{}, {
     label: string;
     errorMessages: unknown[];
     successMessages: unknown[];
-}, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: import("vue").PropType<number | null>;
         default: null;
@@ -135,5 +135,5 @@ declare const _default: import("vue").DefineComponent<{}, {
     returnObject: boolean;
     editable: boolean;
     legacy: boolean;
-}, {}>, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
+}, {}>, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;

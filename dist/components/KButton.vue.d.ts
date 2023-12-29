@@ -17,7 +17,7 @@ declare const _default: import("vue").DefineComponent<{
         "k-button--text": boolean;
         "k-button--disabled": boolean;
     };
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     small: {
         type: BooleanConstructor;
         default: boolean;

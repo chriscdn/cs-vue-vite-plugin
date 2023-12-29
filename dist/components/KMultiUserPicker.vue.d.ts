@@ -25,7 +25,7 @@ declare const _default: import("vue").DefineComponent<{
         set(value: Array<number | null>): void;
         get(): Array<number | null>;
     };
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: PropType<number[]>;
         required: true;

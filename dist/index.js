@@ -7903,7 +7903,7 @@ function Pl(e, t) {
     try {
       i.value = !0, a.value = await e(), r.value = null;
     } catch (d) {
-      r.value = d;
+      a.value = n(), r.value = d;
     } finally {
       i.value = !1;
     }

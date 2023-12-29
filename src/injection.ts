@@ -27,7 +27,7 @@ export type WindowInitialState = {
   otcsticket: string;
   datelong: string;
   dateshort: string;
-  registerComponents?: false;
+  dataid?: number;
 };
 
 declare global {

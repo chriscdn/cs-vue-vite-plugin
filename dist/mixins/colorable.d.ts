@@ -23,7 +23,7 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     resolveColor(txt: string): string;
     fontColorForBackgroundColor(backgroundColor: string): "#000" | "#fff";
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     color: {
         type: PropType<string>;
         default: null;

@@ -36,6 +36,7 @@ function useAsyncData<T, DefaultT = null>(
       data.value = await promiseFunc();
       error.value = null;
     } catch (e) {
+      data.value = defaultFunc();
       error.value = e;
     } finally {
       pending.value = false;

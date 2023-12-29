@@ -24,7 +24,7 @@ declare const _default: import("vue").DefineComponent<{
     classObj(pageNumber: number): {
         "k-pagination-button-selected": boolean;
     };
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "update:pageSize")[], "update:modelValue" | "update:pageSize", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "update:pageSize")[], "update:modelValue" | "update:pageSize", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: NumberConstructor;
         required: true;

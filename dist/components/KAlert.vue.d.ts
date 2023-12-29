@@ -22,7 +22,7 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import
 }, {
     resolveColor(txt: string): string;
     fontColorForBackgroundColor(backgroundColor: string): "#000" | "#fff";
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     color: {
         type: import("vue").PropType<string>;
         default: null;
@@ -34,5 +34,5 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import
 }>>, {
     color: string;
     textColor: string;
-}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
+}, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;
