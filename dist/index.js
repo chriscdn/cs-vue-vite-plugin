@@ -7899,16 +7899,16 @@ const Tl = () => ({
   openDataId: ml
 });
 function Pl(e, t) {
-  const n = (t == null ? void 0 : t.default) ?? (() => null), o = (t == null ? void 0 : t.watch) ?? [], a = ve(n()), i = ve(!1), r = ve(null), u = async () => {
+  const n = (t == null ? void 0 : t.default) ?? (() => null), o = (t == null ? void 0 : t.watch) ?? [], a = (t == null ? void 0 : t.immediate) ?? !0, i = ve(n()), r = ve(!1), u = ve(null), d = async () => {
     try {
-      i.value = !0, a.value = await e(), r.value = null;
-    } catch (d) {
-      a.value = n(), r.value = d;
+      r.value = !0, i.value = await e(), u.value = null;
+    } catch (s) {
+      i.value = n(), u.value = s;
     } finally {
-      i.value = !1;
+      r.value = !1;
     }
   };
-  return o.map((d) => Rt(d, u)), u(), { data: a, pending: i, error: r, refresh: u };
+  return o.map((s) => Rt(s, d)), a && d(), { data: i, pending: r, error: u, refresh: d };
 }
 const Kl = () => Z(Mt), Al = () => Z(Tt), Ll = (e) => {
   const t = new Qt(e);

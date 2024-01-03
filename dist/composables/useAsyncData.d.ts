@@ -9,6 +9,7 @@ import { ComputedRef, Ref } from "vue";
 type TAsyncDataOptions<R = null> = {
     default: () => R;
     watch: Array<Ref<any> | ComputedRef<any> | (() => any)>;
+    immediate: boolean;
 };
 type TAsyncDataResponse<T> = {
     data: Ref<T>;
