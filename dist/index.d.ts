@@ -25,3 +25,4 @@ export { useAsyncData } from "./composables/useAsyncData";
 export { useSnackbar } from "./composables/useSnackbar";
 export { useConfirmDialog } from "./composables/useConfirmDialog";
 export { useSession } from "./composables/useSession";
+export { useConfig } from "./composables/useConfig";

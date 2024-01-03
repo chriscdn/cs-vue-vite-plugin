@@ -1,4 +1,4 @@
-import { useSession } from "./useSession";
+import { useConfig } from "./useConfig";
 
 declare global {
   interface Window {
@@ -33,11 +33,13 @@ function generateConfirm(name: string) {
   };
 }
 
-function openDataId({
+function _openDataId({
+  baseUrl,
   dataId,
   selectedTab = undefined,
   selectedProperty = undefined,
 }: {
+  baseUrl: string;
   dataId: number;
   selectedTab?: string; // "properties" | "audit" | "versions"
   selectedProperty?: string; // "general" | category name
@@ -45,16 +47,18 @@ function openDataId({
   if (window.csui) {
     _openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
   } else {
-    _openDataIdClassicUI({ dataId });
+    _openDataIdClassicUI({ baseUrl, dataId });
   }
 }
 
-function _openDataIdClassicUI({ dataId }: { dataId: number }) {
-  const session = useSession();
-
-  window.location.href = `${session.baseUrl}/open/${dataId}`;
-
-  // console.log(`dataId: ${dataId}`);
+function _openDataIdClassicUI({
+  baseUrl,
+  dataId,
+}: {
+  baseUrl: string;
+  dataId: number;
+}) {
+  window.location.href = `${baseUrl}/open/${dataId}`;
 }
 
 function _openDataIdSmartUI({
@@ -104,17 +108,29 @@ function _openDataIdSmartUI({
   );
 }
 
-export const useSmartUI = () => ({
-  showSuccess: generateShow("showSuccess"),
-  showInformation: generateShow("showInformation"),
-  showWarning: generateShow("showWarning"),
-  showError: generateShow("showError"),
-  showMessage: generateShow("showMessage"),
-  confirmSuccess: generateConfirm("confirmSuccess"),
-  confirmInformation: generateConfirm("confirmInformation"),
-  confirmWarning: generateConfirm("confirmWarning"),
-  confirmError: generateConfirm("confirmError"),
-  confirmQuestion: generateConfirm("confirmQuestion"),
-  confirmMessage: generateConfirm("confirmMessage"),
-  openDataId,
-});
+export const useSmartUI = () => {
+  const { baseUrl } = useConfig();
+
+  return {
+    showSuccess: generateShow("showSuccess"),
+    showInformation: generateShow("showInformation"),
+    showWarning: generateShow("showWarning"),
+    showError: generateShow("showError"),
+    showMessage: generateShow("showMessage"),
+    confirmSuccess: generateConfirm("confirmSuccess"),
+    confirmInformation: generateConfirm("confirmInformation"),
+    confirmWarning: generateConfirm("confirmWarning"),
+    confirmError: generateConfirm("confirmError"),
+    confirmQuestion: generateConfirm("confirmQuestion"),
+    confirmMessage: generateConfirm("confirmMessage"),
+    openDataId: ({
+      dataId,
+      selectedTab,
+      selectedProperty,
+    }: {
+      dataId: number;
+      selectedTab?: string;
+      selectedProperty?: string;
+    }) => _openDataId({ baseUrl, dataId, selectedTab, selectedProperty }),
+  };
+};

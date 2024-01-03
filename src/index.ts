@@ -10,7 +10,7 @@ import {
 import "./tailwind.pcss";
 import "./styles.pcss";
 
-import { inject, type App } from "vue";
+import { type App } from "vue";
 import { type Configuration } from "./injection";
 /**
  * This variable gets assigned in the install, and is made available to the
@@ -24,11 +24,8 @@ import { type Configuration } from "./injection";
 //   includeComponents?: string[];
 // };
 
-export const createVueVitePlugin = (
-  initialState: WindowInitialState
-  // options: Partial<TOptions> = {}
-) => {
-  const session = new Session(initialState);
+export const createVueVitePlugin = (initialState: WindowInitialState) => {
+  const session: Session = new Session(initialState);
 
   const plugin = {
     install(app: App) {
@@ -40,7 +37,6 @@ export const createVueVitePlugin = (
         jsShortDateFormat: initialState.dateshort,
       };
 
-      // TODO: Create composables for fetching this.
       app.provide(sessionKey, session);
       app.provide(configKey, configuration);
 
@@ -98,5 +94,4 @@ export { useAsyncData } from "./composables/useAsyncData";
 export { useSnackbar } from "./composables/useSnackbar";
 export { useConfirmDialog } from "./composables/useConfirmDialog";
 export { useSession } from "./composables/useSession";
-
-// TODO: Create composables for fetching other injected items...
+export { useConfig } from "./composables/useConfig";
