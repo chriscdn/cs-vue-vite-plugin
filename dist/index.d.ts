@@ -1,4 +1,3 @@
-import { Session } from "@kweli/cs-rest";
 import { WindowInitialState } from "./injection";
 import "./tailwind.pcss";
 import "./styles.pcss";
@@ -25,4 +24,4 @@ export { useSmartUI } from "./composables/useSmartUI";
 export { useAsyncData } from "./composables/useAsyncData";
 export { useSnackbar } from "./composables/useSnackbar";
 export { useConfirmDialog } from "./composables/useConfirmDialog";
-export declare const useSession: () => Session;
+export { useSession } from "./composables/useSession";

@@ -1,4 +1,4 @@
-import { useSession } from "..";
+import { useSession } from "./useSession";
 
 declare global {
   interface Window {

@@ -97,15 +97,6 @@ export { useSmartUI } from "./composables/useSmartUI";
 export { useAsyncData } from "./composables/useAsyncData";
 export { useSnackbar } from "./composables/useSnackbar";
 export { useConfirmDialog } from "./composables/useConfirmDialog";
+export { useSession } from "./composables/useSession";
 
 // TODO: Create composables for fetching other injected items...
-
-export const useSession = (): Session => {
-  const session = inject(sessionKey, null) as Session | null;
-  if (!session) {
-    throw new Error(
-      "Failed to inject session. Make sure @kweli/cs-vue-vite-plugin is set up properly."
-    );
-  }
-  return session;
-};

@@ -7830,6 +7830,13 @@ const Ml = (e, t) => {
     } else
       return 0;
   });
+}, Bt = () => {
+  const e = it(ae, null);
+  if (!e)
+    throw new Error(
+      "Failed to inject session. Make sure @kweli/cs-vue-vite-plugin is set up properly."
+    );
+  return e;
 };
 function _e(e) {
   return (t, n = {}) => new Promise((o) => {
@@ -8000,13 +8007,6 @@ const Kl = () => Z(Mt), Al = () => Z(Tt), Ll = (e) => {
       e(n);
     }
   };
-}, Bt = () => {
-  const e = it(ae, null);
-  if (!e)
-    throw new Error(
-      "Failed to inject session. Make sure @kweli/cs-vue-vite-plugin is set up properly."
-    );
-  return e;
 };
 export {
   An as KAdminLink,
