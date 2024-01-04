@@ -13,6 +13,7 @@
   * {
     @apply box-border;
   }
+
   /* z-index:10 useful when displaying modals over the browsetables.   */
 
   /* relative removed 5.10.2023.  If you add it back, document why, and be sure to test with SmartUI. */

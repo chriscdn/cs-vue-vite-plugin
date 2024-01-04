@@ -44,11 +44,15 @@ function _openDataId({
   selectedTab?: string; // "properties" | "audit" | "versions"
   selectedProperty?: string; // "general" | category name
 }) {
-  if (window.csui) {
+  if (isSmartUI()) {
     _openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
   } else {
     _openDataIdClassicUI({ baseUrl, dataId });
   }
+}
+
+function isSmartUI() {
+  return Boolean(window.csui);
 }
 
 function _openDataIdClassicUI({
@@ -123,6 +127,7 @@ export const useSmartUI = () => {
     confirmError: generateConfirm("confirmError"),
     confirmQuestion: generateConfirm("confirmQuestion"),
     confirmMessage: generateConfirm("confirmMessage"),
+    isSmartUI,
     openDataId: ({
       dataId,
       selectedTab,

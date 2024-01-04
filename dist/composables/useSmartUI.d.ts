@@ -4,6 +4,7 @@ declare global {
         _rhcore_smartui_view_context: any;
     }
 }
+declare function isSmartUI(): boolean;
 export declare const useSmartUI: () => {
     showSuccess: (message: string, options?: {}) => Promise<void>;
     showInformation: (message: string, options?: {}) => Promise<void>;
@@ -16,9 +17,11 @@ export declare const useSmartUI: () => {
     confirmError: (message: string, options?: {}) => Promise<boolean>;
     confirmQuestion: (message: string, options?: {}) => Promise<boolean>;
     confirmMessage: (message: string, options?: {}) => Promise<boolean>;
+    isSmartUI: typeof isSmartUI;
     openDataId: ({ dataId, selectedTab, selectedProperty, }: {
         dataId: number;
         selectedTab?: string | undefined;
         selectedProperty?: string | undefined;
     }) => void;
 };
+export {};

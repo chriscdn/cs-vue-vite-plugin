@@ -18,4 +18,6 @@ export type RHNodeSerializer = {
     readonly modifiedImageCallback: string;
     readonly categories: object;
     readonly url: string | null;
+    readonly exatt1: string | null;
+    readonly origindataid: number | null;
 };
