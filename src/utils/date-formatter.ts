@@ -3,7 +3,7 @@ import intlDateFormat from "intl-dateformat";
 export class DateTimeFormatter {
   constructor(
     private jsLongDateFormat: string,
-    private jsShortDateFormat: string,
+    private jsShortDateFormat: string
   ) {}
 
   /**
@@ -61,8 +61,8 @@ export class DateTimeFormatter {
 
       return d
         ? intlDateFormat(d, this.jsShortDateFormat, {
-          timezone,
-        })
+            timezone,
+          })
         : null;
     } catch (e) {
       return null;
@@ -75,8 +75,8 @@ export class DateTimeFormatter {
 
       return d
         ? intlDateFormat(d, this.jsLongDateFormat, {
-          timezone,
-        })
+            timezone,
+          })
         : null;
     } catch (e) {
       return null;

@@ -31,7 +31,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     to: {
-        type: (StringConstructor | ObjectConstructor)[];
+        type: (ObjectConstructor | StringConstructor)[];
         default: null;
     };
     href: {
@@ -64,7 +64,7 @@ declare const _default: import("vue").DefineComponent<{
         default: boolean;
     };
     to: {
-        type: (StringConstructor | ObjectConstructor)[];
+        type: (ObjectConstructor | StringConstructor)[];
         default: null;
     };
     href: {

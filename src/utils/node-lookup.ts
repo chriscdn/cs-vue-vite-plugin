@@ -29,6 +29,8 @@ function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
     modifiedImageCallback: "",
     categories: {},
     url: "",
+    exatt1: null,
+    origindataid: null,
   };
 }
 

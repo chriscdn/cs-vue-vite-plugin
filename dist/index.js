@@ -1,16 +1,16 @@
-var Dt = Object.defineProperty;
-var It = (e, t, n) => t in e ? Dt(e, t, { enumerable: !0, configurable: !0, writable: !0, value: n }) : e[t] = n;
-var te = (e, t, n) => (It(e, typeof t != "symbol" ? t + "" : t, n), n);
-import { defineComponent as S, h as fe, openBlock as l, createElementBlock as c, renderSlot as I, mergeProps as pe, createElementVNode as $, toDisplayString as F, createCommentVNode as L, normalizeStyle as se, resolveComponent as x, createVNode as B, withCtx as T, resolveDirective as ze, withDirectives as ie, normalizeClass as ee, withKeys as ye, withModifiers as ue, vModelText as Ve, Fragment as N, renderList as Q, createTextVNode as X, inject as it, createBlock as z, vModelDynamic as Nt, Teleport as at, Transition as Se, setBlockTracking as Ye, toHandlers as ke, ref as ve, TransitionGroup as Be, useCssVars as lt, vModelRadio as Et, vModelSelect as Ut, watch as Rt } from "vue";
+var It = Object.defineProperty;
+var Nt = (e, t, n) => t in e ? It(e, t, { enumerable: !0, configurable: !0, writable: !0, value: n }) : e[t] = n;
+var te = (e, t, n) => (Nt(e, typeof t != "symbol" ? t + "" : t, n), n);
+import { defineComponent as S, h as fe, openBlock as l, createElementBlock as c, renderSlot as I, mergeProps as pe, createElementVNode as $, toDisplayString as F, createCommentVNode as L, normalizeStyle as se, resolveComponent as x, createVNode as B, withCtx as T, resolveDirective as ze, withDirectives as ie, normalizeClass as ee, withKeys as ye, withModifiers as ue, vModelText as Ve, Fragment as N, renderList as Q, createTextVNode as X, inject as it, createBlock as z, vModelDynamic as Et, Teleport as at, Transition as Se, setBlockTracking as Ye, toHandlers as ke, ref as ve, TransitionGroup as Be, useCssVars as lt, vModelRadio as Ut, vModelSelect as Rt, watch as Wt } from "vue";
 import V from "lodash.get";
 import { directive as Fe } from "vue3-click-away";
 import Oe from "@chriscdn/promise-semaphore";
 import { format as Xe } from "date-fns";
-import { disableBodyScroll as Wt, enableBodyScroll as qt } from "body-scroll-lock";
+import { disableBodyScroll as qt, enableBodyScroll as Ht } from "body-scroll-lock";
 import Je from "hotkeys-js";
-import Ht from "@chriscdn/build-url";
-import Gt from "js-cookie";
-import { Session as Qt } from "@kweli/cs-rest";
+import Gt from "@chriscdn/build-url";
+import Qt from "js-cookie";
+import { Session as Yt } from "@kweli/cs-rest";
 import Ze from "intl-dateformat";
 const ut = S({
   props: {
@@ -100,7 +100,7 @@ const ut = S({
       return t && (e.height = t), n && (e.minHeight = n), o && (e.minWidth = o), a && (e.maxHeight = a), i && (e.maxWidth = i), r && (e.width = r), e;
     }
   }
-}), Yt = S({
+}), Xt = S({
   mixins: [je, ut],
   computed: {
     classObj() {
@@ -127,42 +127,42 @@ const ut = S({
   render() {
     return this.renderCard();
   }
-}), Xt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}), Jt = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Yt
-}, Symbol.toStringTag, { value: "Module" })), Jt = S({}), O = (e, t) => {
+  default: Xt
+}, Symbol.toStringTag, { value: "Module" })), Zt = S({}), O = (e, t) => {
   const n = e.__vccOpts || e;
   for (const [o, a] of t)
     n[o] = a;
   return n;
-}, Zt = { class: "k-card-actions" };
-function en(e, t, n, o, a, i) {
-  return l(), c("div", Zt, [
+}, en = { class: "k-card-actions" };
+function tn(e, t, n, o, a, i) {
+  return l(), c("div", en, [
     I(e.$slots, "default")
   ]);
 }
-const tn = /* @__PURE__ */ O(Jt, [["render", en]]), nn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const nn = /* @__PURE__ */ O(Zt, [["render", tn]]), rn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: tn
-}, Symbol.toStringTag, { value: "Module" })), rn = S({}), on = { class: "k-card-text" };
-function sn(e, t, n, o, a, i) {
-  return l(), c("div", on, [
+  default: nn
+}, Symbol.toStringTag, { value: "Module" })), on = S({}), sn = { class: "k-card-text" };
+function an(e, t, n, o, a, i) {
+  return l(), c("div", sn, [
     I(e.$slots, "default")
   ]);
 }
-const an = /* @__PURE__ */ O(rn, [["render", sn]]), ln = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ln = /* @__PURE__ */ O(on, [["render", an]]), un = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: an
-}, Symbol.toStringTag, { value: "Module" })), un = S({}), dn = { class: "k-card-title" };
-function cn(e, t, n, o, a, i) {
-  return l(), c("div", dn, [
+  default: ln
+}, Symbol.toStringTag, { value: "Module" })), dn = S({}), cn = { class: "k-card-title" };
+function fn(e, t, n, o, a, i) {
+  return l(), c("div", cn, [
     I(e.$slots, "default")
   ]);
 }
-const fn = /* @__PURE__ */ O(un, [["render", cn]]), pn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const pn = /* @__PURE__ */ O(dn, [["render", fn]]), mn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: fn
-}, Symbol.toStringTag, { value: "Module" })), mn = S({
+  default: pn
+}, Symbol.toStringTag, { value: "Module" })), hn = S({
   name: "MenuDownIcon",
   emits: ["click"],
   props: {
@@ -178,8 +178,8 @@ const fn = /* @__PURE__ */ O(un, [["render", cn]]), pn = /* @__PURE__ */ Object.
       default: 16
     }
   }
-}), hn = ["aria-hidden", "aria-label"], gn = ["width", "height"], bn = { d: "M7,10L12,15L17,10H7Z" }, _n = { key: 0 };
-function yn(e, t, n, o, a, i) {
+}), gn = ["aria-hidden", "aria-label"], bn = ["width", "height"], _n = { d: "M7,10L12,15L17,10H7Z" }, yn = { key: 0 };
+function vn(e, t, n, o, a, i) {
   return l(), c("span", pe(e.$attrs, {
     "aria-hidden": !e.title,
     "aria-label": e.title,
@@ -193,47 +193,47 @@ function yn(e, t, n, o, a, i) {
       height: e.size,
       viewBox: "7 10 10 5"
     }, [
-      $("path", bn, [
-        e.title ? (l(), c("title", _n, F(e.title), 1)) : L("", !0)
+      $("path", _n, [
+        e.title ? (l(), c("title", yn, F(e.title), 1)) : L("", !0)
       ])
-    ], 8, gn))
-  ], 16, hn);
+    ], 8, bn))
+  ], 16, gn);
 }
-const De = /* @__PURE__ */ O(mn, [["render", yn]]), vn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const De = /* @__PURE__ */ O(hn, [["render", vn]]), $n = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: De
-}, Symbol.toStringTag, { value: "Module" })), $n = {}, wn = {
+}, Symbol.toStringTag, { value: "Module" })), wn = {}, kn = {
   xmlns: "http://www.w3.org/2000/svg",
   width: "16",
   height: "16",
   viewBox: "0 0 24 24"
-}, kn = /* @__PURE__ */ $("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" }, null, -1), Sn = [
-  kn
+}, Sn = /* @__PURE__ */ $("path", { d: "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-12v-2h12v2z" }, null, -1), On = [
+  Sn
 ];
-function On(e, t) {
-  return l(), c("svg", wn, Sn);
+function jn(e, t) {
+  return l(), c("svg", kn, On);
 }
-const jn = /* @__PURE__ */ O($n, [["render", On]]), Cn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Cn = /* @__PURE__ */ O(wn, [["render", jn]]), xn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: jn
-}, Symbol.toStringTag, { value: "Module" })), xn = S({
+  default: Cn
+}, Symbol.toStringTag, { value: "Module" })), Mn = S({
   setup() {
-    return { config: Z(me) };
+    return { config: J(me) };
   }
-}), Mn = { clsas: "space-y-2" }, Tn = /* @__PURE__ */ $("hr", null, null, -1), Pn = ["href"];
-function Kn(e, t, n, o, a, i) {
-  return l(), c("div", Mn, [
-    Tn,
+}), Tn = { clsas: "space-y-2" }, Pn = /* @__PURE__ */ $("hr", null, null, -1), Kn = ["href"];
+function An(e, t, n, o, a, i) {
+  return l(), c("div", Tn, [
+    Pn,
     $("a", {
       href: `${e.config.baseUrl}?func=admin.index`
-    }, "Admin Home", 8, Pn)
+    }, "Admin Home", 8, Kn)
   ]);
 }
-const An = /* @__PURE__ */ O(xn, [["render", Kn]]), Ln = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Ln = /* @__PURE__ */ O(Mn, [["render", An]]), zn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: An
+  default: Ln
 }, Symbol.toStringTag, { value: "Module" }));
-function zn(e) {
+function Vn(e) {
   return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
 }
 var dt = {}, ct = {}, Ie = {};
@@ -1999,9 +1999,9 @@ var Ee = {}, Ue = {}, St = {};
     if (_ in n.default)
       return {
         mode: "rgb",
-        color: n.default[_].map((J) => J.toString())
+        color: n.default[_].map((Z) => Z.toString())
       };
-    let q = _.replace(i, (J, le, re, g, j) => [
+    let q = _.replace(i, (Z, le, re, g, j) => [
       "#",
       le,
       le,
@@ -2018,7 +2018,7 @@ var Ee = {}, Ue = {}, St = {};
           parseInt(q[1], 16),
           parseInt(q[2], 16),
           parseInt(q[3], 16)
-        ].map((J) => J.toString()),
+        ].map((Z) => Z.toString()),
         alpha: q[4] ? (parseInt(q[4], 16) / 255).toString() : void 0
       };
     var E;
@@ -2029,14 +2029,14 @@ var Ee = {}, Ue = {}, St = {};
       H[2],
       H[3],
       H[4]
-    ].filter(Boolean).map((J) => J.toString());
+    ].filter(Boolean).map((Z) => Z.toString());
     return G.length === 2 && G[0].startsWith("var(") ? {
       mode: H[1],
       color: [
         G[0]
       ],
       alpha: G[1]
-    } : !P && G.length !== 3 || G.length < 3 && !G.some((J) => /^var\(.*?\)$/.test(J)) ? null : {
+    } : !P && G.length !== 3 || G.length < 3 && !G.some((Z) => /^var\(.*?\)$/.test(Z)) ? null : {
       mode: H[1],
       color: G,
       alpha: (D = H[5]) === null || D === void 0 || (W = D.toString) === null || W === void 0 ? void 0 : W.call(D)
@@ -2219,7 +2219,7 @@ var Re = {}, Ot = {}, Me = {};
       return H;
     },
     gradient: function() {
-      return J;
+      return Z;
     },
     position: function() {
       return re;
@@ -2296,8 +2296,8 @@ var Re = {}, Ot = {}, Me = {};
           return oe.split("").every((ce, we) => K[ne + we] === ce);
         }, Qe = function(oe) {
           let ce = 1 / 0;
-          for (let Ft of oe) {
-            let Ke = K.indexOf(Ft, ne);
+          for (let Dt of oe) {
+            let Ke = K.indexOf(Dt, ne);
             Ke !== -1 && Ke < ce && (ce = Ke);
           }
           let we = K.slice(ne, ce);
@@ -2399,7 +2399,7 @@ var Re = {}, Ot = {}, Me = {};
   }
   function H(f) {
     let M = 0;
-    return (0, a.splitAtTopLevelOnly)(f, ",").every((K) => (K = d(K), K.startsWith("var(") ? !0 : p(K) || J(K) || [
+    return (0, a.splitAtTopLevelOnly)(f, ",").every((K) => (K = d(K), K.startsWith("var(") ? !0 : p(K) || Z(K) || [
       "element(",
       "image(",
       "cross-fade(",
@@ -2414,7 +2414,7 @@ var Re = {}, Ot = {}, Me = {};
     "repeating-linear-gradient",
     "repeating-radial-gradient"
   ]);
-  function J(f) {
+  function Z(f) {
     f = d(f);
     for (let M of G)
       if (f.startsWith(`${M}(`))
@@ -2635,7 +2635,7 @@ var jt = {};
     shadow: E(a.shadow),
     size: E(r.backgroundSize)
   }, G = Object.keys(H);
-  function J(g, j) {
+  function Z(g, j) {
     let C = g.indexOf(j);
     return C === -1 ? [
       void 0,
@@ -2659,7 +2659,7 @@ var jt = {};
           ];
       }
     if (w(j)) {
-      let k = j.slice(1, -1), [b, f] = J(k, ":");
+      let k = j.slice(1, -1), [b, f] = Z(k, ":");
       if (!/^[\w-_]+$/g.test(b))
         f = k;
       else if (b !== void 0 && !G.includes(b))
@@ -2790,7 +2790,7 @@ var Ct = {};
       ...b
     ].map((A) => W(A, f, M)), H));
   }
-  function* J(h) {
+  function* Z(h) {
     let v = (0, r.toPath)(h);
     if (v.length === 0 || (yield v, Array.isArray(h)))
       return;
@@ -2802,7 +2802,7 @@ var Ct = {};
   }
   function le(h) {
     const v = (k, b) => {
-      for (const f of J(k)) {
+      for (const f of Z(k)) {
         let M = 0, A = h;
         for (; A != null && M < f.length; )
           A = A[f[M++]], A = _(A) && (f.alpha === void 0 || M <= f.length - 1) ? A(v, D) : A;
@@ -2874,7 +2874,7 @@ var Ct = {};
     }, ...v));
   }
 })(ct);
-var xt = {}, Vn = {
+var xt = {}, Bn = {
   content: [],
   presets: [],
   darkMode: "media",
@@ -3945,7 +3945,7 @@ var xt = {}, Vn = {
       return a;
     }
   });
-  const t = /* @__PURE__ */ o(Vn), n = xe;
+  const t = /* @__PURE__ */ o(Bn), n = xe;
   function o(i) {
     return i && i.__esModule ? i : {
       default: i
@@ -4007,8 +4007,8 @@ var xt = {}, Vn = {
   }
 })(dt);
 let Ae = dt;
-var Bn = (Ae.__esModule ? Ae : { default: Ae }).default;
-const Fn = /* @__PURE__ */ zn(Bn), Dn = {
+var Fn = (Ae.__esModule ? Ae : { default: Ae }).default;
+const Dn = /* @__PURE__ */ Vn(Fn), In = {
   content: ["./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {}
@@ -4028,8 +4028,8 @@ const Fn = /* @__PURE__ */ zn(Bn), Dn = {
   },
   // safelist: ["hidden"],
   important: ".k-app"
-}, In = Fn(Dn);
-function Nn(e) {
+}, Nn = Dn(In);
+function En(e) {
   e = e.replace("#", "");
   const t = parseInt(
     e.length === 3 ? e.slice(0, 1).repeat(2) : e.slice(0, 2),
@@ -4048,7 +4048,7 @@ function Nn(e) {
     alpha: a
   };
 }
-const En = S({
+const Un = S({
   props: {
     color: {
       type: String,
@@ -4084,36 +4084,36 @@ const En = S({
   },
   methods: {
     resolveColor(e) {
-      const t = V(In, ["theme", "colors"]), n = V(t, e);
+      const t = V(Nn, ["theme", "colors"]), n = V(t, e);
       return typeof n == "string" ? n : e;
     },
     fontColorForBackgroundColor(e) {
-      const t = Nn(e);
+      const t = En(e);
       return t.alpha * 255 < 150 || Math.round(
         (t.red * 299 + t.green * 587 + t.blue * 114) / 1e3
       ) > 125 ? "#000" : "#fff";
     }
   }
-}), Un = S({
-  mixins: [En]
-}), Rn = { class: "flex-grow" };
-function Wn(e, t, n, o, a, i) {
+}), Rn = S({
+  mixins: [Un]
+}), Wn = { class: "flex-grow" };
+function qn(e, t, n, o, a, i) {
   return l(), c("div", {
     class: "k-alert",
     style: se([e.colorableBackgroundStyle, e.colorableTextStyleForBackground])
   }, [
-    $("div", Rn, [
+    $("div", Wn, [
       I(e.$slots, "default")
     ])
   ], 4);
 }
-const qn = /* @__PURE__ */ O(Un, [["render", Wn]]), Hn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Hn = /* @__PURE__ */ O(Rn, [["render", qn]]), Gn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: qn
-}, Symbol.toStringTag, { value: "Module" })), Gn = {}, Qn = { class: "k-app" };
-function Yn(e, t) {
+  default: Hn
+}, Symbol.toStringTag, { value: "Module" })), Qn = {}, Yn = { class: "k-app" };
+function Xn(e, t) {
   const n = x("KSnackbar"), o = x("KConfirm");
-  return l(), c("div", Qn, [
+  return l(), c("div", Yn, [
     B(o, null, {
       default: T(() => [
         B(n, null, {
@@ -4127,10 +4127,10 @@ function Yn(e, t) {
     })
   ]);
 }
-const Xn = /* @__PURE__ */ O(Gn, [["render", Yn]]), Jn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Jn = /* @__PURE__ */ O(Qn, [["render", Xn]]), Zn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Xn
-}, Symbol.toStringTag, { value: "Module" })), Zn = S({
+  default: Jn
+}, Symbol.toStringTag, { value: "Module" })), er = S({
   directives: {
     ClickAway: Fe
   },
@@ -4270,18 +4270,18 @@ const Xn = /* @__PURE__ */ O(Gn, [["render", Yn]]), Jn = /* @__PURE__ */ Object.
       this.combobox ? this.valueLocal = this.inputText : this.valueLocal = null;
     }
   }
-}), er = { class: "k-autocomplete-input" }, tr = ["placeholder", "readonly"], nr = {
+}), tr = { class: "k-autocomplete-input" }, nr = ["placeholder", "readonly"], rr = {
   key: 0,
   class: "k-autocomplete-items"
-}, rr = ["onClick"];
-function or(e, t, n, o, a, i) {
+}, or = ["onClick"];
+function sr(e, t, n, o, a, i) {
   const r = ze("click-away");
   return ie((l(), c("div", {
     class: "k-autocomplete",
     style: se([e.style])
   }, [
     I(e.$slots, "prepend", { item: e.valueLocal }),
-    $("div", er, [
+    $("div", tr, [
       ie($("input", {
         ref: "input",
         "onUpdate:modelValue": t[0] || (t[0] = (u) => e.inputText = u),
@@ -4299,10 +4299,10 @@ function or(e, t, n, o, a, i) {
         ],
         onFocus: t[5] || (t[5] = (...u) => e.setFocus && e.setFocus(...u)),
         onKeyup: t[7] || (t[7] = (...u) => e.keyup && e.keyup(...u))
-      }, null, 42, tr), [
+      }, null, 42, nr), [
         [Ve, e.inputText]
       ]),
-      e.focus && e.items.length && e.inputText ? (l(), c("div", nr, [
+      e.focus && e.items.length && e.inputText ? (l(), c("div", rr, [
         (l(!0), c(N, null, Q(e.itemsFiltered, (u, d) => (l(), c("div", {
           key: d,
           class: ee(["k-autocomplete-item", { "k-autocomplete-active": e.currentFocus == d }]),
@@ -4311,26 +4311,26 @@ function or(e, t, n, o, a, i) {
           I(e.$slots, "item", { item: u }, () => [
             X(F(u), 1)
           ])
-        ], 10, rr))), 128))
+        ], 10, or))), 128))
       ])) : L("", !0)
     ])
   ], 4)), [
     [r, e.setBlur]
   ]);
 }
-const sr = /* @__PURE__ */ O(Zn, [["render", or]]), ir = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ir = /* @__PURE__ */ O(er, [["render", sr]]), ar = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: sr
+  default: ir
 }, Symbol.toStringTag, { value: "Module" }));
-function Z(e, t) {
+function J(e, t) {
   const n = it(e, t);
   if (!n)
     throw new Error(`Could not resolve ${e.description}`);
   return n;
 }
-const ae = Symbol("session"), me = Symbol("config"), Mt = Symbol("snackbar"), ar = Symbol(
+const ae = Symbol("session"), me = Symbol("config"), Mt = Symbol("snackbar"), Tt = Symbol(
   "dateTimeFormatterKey"
-), Tt = Symbol("confirmDialogKey"), ge = new Oe();
+), Pt = Symbol("confirmDialogKey"), ge = new Oe();
 function lr(e) {
   const t = e.results.data.properties, n = e.results.data.versions, o = n[n.length - 1];
   return {
@@ -4352,7 +4352,9 @@ function lr(e) {
     versionnum: o == null ? void 0 : o.version_number_name,
     modifiedImageCallback: "",
     categories: {},
-    url: ""
+    url: "",
+    exatt1: null,
+    origindataid: null
   };
 }
 class ur {
@@ -4422,7 +4424,7 @@ class dr {
 const cr = new dr(), fr = S({
   setup() {
     return {
-      session: Z(ae)
+      session: J(ae)
     };
   },
   props: {
@@ -4562,7 +4564,7 @@ const Or = /* @__PURE__ */ O(wr, [["render", Sr]]), jr = /* @__PURE__ */ Object.
   provide() {
     return {
       // @ts-ignore - not sure why this complains
-      [Tt]: this
+      [Pt]: this
     };
   },
   data() {
@@ -4712,7 +4714,7 @@ function Lr(e, t, n, o, a, i) {
       type: e.type,
       readonly: !e.editable
     }, null, 8, Ar), [
-      [Nt, e.localModelValue]
+      [Et, e.localModelValue]
     ]),
     e.editable ? (l(), c(N, { key: 0 }, [
       B(r, {
@@ -4797,7 +4799,7 @@ const zr = /* @__PURE__ */ O(Pr, [["render", Lr]]), Vr = /* @__PURE__ */ Object.
       immediate: !0
     },
     async dialog(e) {
-      this.$emit("update:modelValue", e), e ? (await this.$nextTick(), Wt(this.$refs.content)) : qt(this.$refs.content);
+      this.$emit("update:modelValue", e), e ? (await this.$nextTick(), qt(this.$refs.content)) : Ht(this.$refs.content);
     }
   },
   mounted() {
@@ -4964,7 +4966,7 @@ const Jr = /* @__PURE__ */ O(Qr, [["render", Xr]]), Zr = /* @__PURE__ */ Object.
   mixin: de
 }, Symbol.toStringTag, { value: "Module" })), eo = S({
   setup() {
-    return { config: Z(me) };
+    return { config: J(me) };
   },
   props: {
     // The DataId of the node.
@@ -5064,18 +5066,18 @@ function co(e, t, n, o, a, i) {
     I(e.$slots, "default")
   ]);
 }
-const Pt = /* @__PURE__ */ O(lo, [["render", co]]), fo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Kt = /* @__PURE__ */ O(lo, [["render", co]]), fo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Pt
+  default: Kt
 }, Symbol.toStringTag, { value: "Module" })), po = S({}), mo = { class: "k-list-item-subtitle" };
 function ho(e, t, n, o, a, i) {
   return l(), c("div", mo, [
     I(e.$slots, "default")
   ]);
 }
-const Kt = /* @__PURE__ */ O(po, [["render", ho]]), go = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const At = /* @__PURE__ */ O(po, [["render", ho]]), go = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Kt
+  default: At
 }, Symbol.toStringTag, { value: "Module" })), bo = S({
   mixins: [ut],
   props: {
@@ -5097,7 +5099,7 @@ const Kt = /* @__PURE__ */ O(po, [["render", ho]]), go = /* @__PURE__ */ Object.
     }
   },
   render() {
-    const { tag: e, data: t } = this.generateRouteLink(), n = this.title ? fe(Pt, {}, { default: () => [this.title] }) : null, o = this.subtitle ? fe(Kt, {}, { default: () => [this.subtitle] }) : null, a = n || o ? [n, o].filter((s) => !!s) : this.$slots.default ? this.$slots.default() : null, i = fe(
+    const { tag: e, data: t } = this.generateRouteLink(), n = this.title ? fe(Kt, {}, { default: () => [this.title] }) : null, o = this.subtitle ? fe(At, {}, { default: () => [this.subtitle] }) : null, a = n || o ? [n, o].filter((s) => !!s) : this.$slots.default ? this.$slots.default() : null, i = fe(
       "div",
       { class: "k-list-item-body" },
       {
@@ -5235,7 +5237,7 @@ const $o = /* @__PURE__ */ O(yo, [["render", vo]]), wo = /* @__PURE__ */ Object.
 }, Symbol.toStringTag, { value: "Module" })), ko = S({
   components: { KMenuDownIcon: De, KListItem: qe, KDivider: We },
   setup() {
-    return { configuration: Z(me) };
+    return { configuration: J(me) };
   },
   props: {
     dataid: {
@@ -5810,9 +5812,9 @@ class ps {
     }
   }
 }
-const At = new ps(), ms = S({
+const Lt = new ps(), ms = S({
   setup() {
-    return { session: Z(ae) };
+    return { session: J(ae) };
   },
   props: {
     dataid: {
@@ -5828,7 +5830,7 @@ const At = new ps(), ms = S({
   watch: {
     dataid: {
       async handler(e) {
-        e && (this.breadcrumb = await At.lookup(this.session, e));
+        e && (this.breadcrumb = await Lt.lookup(this.session, e));
       },
       immediate: !0
     }
@@ -5846,16 +5848,16 @@ function gs(e, t, n, o, a, i) {
     ], 64))), 128))
   ]);
 }
-const Lt = /* @__PURE__ */ O(ms, [["render", gs]]), bs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const zt = /* @__PURE__ */ O(ms, [["render", gs]]), bs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Lt
+  default: zt
 }, Symbol.toStringTag, { value: "Module" })), _s = S({
   mixins: [de],
-  components: { KNodeAncestor: Lt },
+  components: { KNodeAncestor: zt },
   setup() {
     return {
-      session: Z(ae),
-      config: Z(me)
+      session: J(ae),
+      config: J(me)
     };
   },
   props: {
@@ -5946,7 +5948,7 @@ const Lt = /* @__PURE__ */ O(ms, [["render", gs]]), bs = /* @__PURE__ */ Object.
       };
     },
     url() {
-      return Ht(this.config.baseUrl, {
+      return Gt(this.config.baseUrl, {
         queryParams: this.urlParams
       });
     },
@@ -5969,7 +5971,7 @@ const Lt = /* @__PURE__ */ O(ms, [["render", gs]]), bs = /* @__PURE__ */ Object.
   watch: {
     dataid: {
       async handler() {
-        this.dataid ? this.breadcrumb = await At.lookup(
+        this.dataid ? this.breadcrumb = await Lt.lookup(
           this.session,
           this.dataid
         ) : this.breadcrumb = [];
@@ -5996,7 +5998,7 @@ const Lt = /* @__PURE__ */ O(ms, [["render", gs]]), bs = /* @__PURE__ */ Object.
       e && e.blur();
     },
     targetBrowseObjID() {
-      return this.objid ?? parseInt(Gt.get("TargetBrowseObjID") ?? "0");
+      return this.objid ?? parseInt(Qt.get("TargetBrowseObjID") ?? "0");
     },
     didCloseWindow() {
       console.log("didClose");
@@ -6446,11 +6448,11 @@ function gi(e, t, n, o, a, i) {
     viewBox: "0 0 24 24"
   }, hi, 4);
 }
-const zt = /* @__PURE__ */ O(He, [["render", gi]]), bi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Vt = /* @__PURE__ */ O(He, [["render", gi]]), bi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: zt
+  default: Vt
 }, Symbol.toStringTag, { value: "Module" })), _i = S({
-  components: { KSpinner: zt },
+  components: { KSpinner: Vt },
   props: {
     loading: {
       type: Boolean,
@@ -6565,7 +6567,7 @@ function ji(e, t, n, o, a, i) {
                   value: e.getItemValue(d),
                   disabled: e.getItemDisabled(d)
                 }, null, 8, Si), [
-                  [Et, e.localValue]
+                  [Ut, e.localValue]
                 ]),
                 $("label", {
                   for: e.getItemValue(d)
@@ -6734,7 +6736,7 @@ function Di(e, t, n, o, a, i) {
             disabled: e.getItemDisabled(s)
           }, F(e.getItemText(s)), 9, Fi))), 128))
         ], 10, zi), [
-          [Ut, e.valueLocal]
+          [Rt, e.valueLocal]
         ]),
         e.clearable ? (l(), z(r, {
           key: 0,
@@ -7207,8 +7209,8 @@ const Aa = /* @__PURE__ */ O(Ta, [["render", Ka]]), La = /* @__PURE__ */ Object.
 }, Symbol.toStringTag, { value: "Module" })), za = S({
   setup() {
     return {
-      config: Z(me),
-      session: Z(ae)
+      config: J(me),
+      session: J(ae)
     };
   },
   mixins: [je],
@@ -7347,7 +7349,7 @@ class Ea {
 }
 const Le = new Ea(), Ua = S({
   setup() {
-    return { session: Z(ae) };
+    return { session: J(ae) };
   },
   props: {
     user: {
@@ -7432,7 +7434,7 @@ const qa = /* @__PURE__ */ O(Ua, [["render", Wa]]), Ha = /* @__PURE__ */ Object.
 }, Symbol.toStringTag, { value: "Module" })), Ga = S({
   mixins: [de],
   setup() {
-    return { session: Z(ae) };
+    return { session: J(ae) };
   },
   props: {
     modelValue: {
@@ -7611,9 +7613,9 @@ function Ya(e, t, n, o, a, i) {
     _: 1
   }, 8, ["label", "success-messages", "error-messages"]);
 }
-const Vt = /* @__PURE__ */ O(Ga, [["render", Ya]]), Xa = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Bt = /* @__PURE__ */ O(Ga, [["render", Ya]]), Xa = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: Vt
+  default: Bt
 }, Symbol.toStringTag, { value: "Module" })), Ja = S({
   provide() {
     return {
@@ -7728,9 +7730,9 @@ const ul = /* @__PURE__ */ O(il, [["render", ll]]), dl = /* @__PURE__ */ Object.
   __proto__: null,
   default: ul
 }, Symbol.toStringTag, { value: "Module" })), cl = S({
-  extends: Vt,
+  extends: Bt,
   setup() {
-    return { session: Z(ae) };
+    return { session: J(ae) };
   },
   methods: {
     async loadInitialValue() {
@@ -7830,7 +7832,7 @@ const Pl = (e, t) => {
     } else
       return 0;
   });
-}, ml = () => Z(me);
+}, ml = () => J(me);
 function _e(e) {
   return (t, n = {}) => new Promise((o) => {
     window.csui.require(
@@ -7857,9 +7859,9 @@ function hl({
   selectedTab: n = void 0,
   selectedProperty: o = void 0
 }) {
-  Bt() ? bl({ dataId: t, selectedTab: n, selectedProperty: o }) : gl({ baseUrl: e, dataId: t });
+  Ft() ? bl({ dataId: t, selectedTab: n, selectedProperty: o }) : gl({ baseUrl: e, dataId: t });
 }
-function Bt() {
+function Ft() {
   return !!window.csui;
 }
 function gl({
@@ -7904,7 +7906,7 @@ const Kl = () => {
     confirmError: he("confirmError"),
     confirmQuestion: he("confirmQuestion"),
     confirmMessage: he("confirmMessage"),
-    isSmartUI: Bt,
+    isSmartUI: Ft,
     openDataId: ({
       dataId: t,
       selectedTab: n,
@@ -7922,17 +7924,17 @@ function Al(e, t) {
       r.value = !1;
     }
   };
-  return o.map((s) => Rt(s, d)), a && d(), { data: i, pending: r, error: u, refresh: d };
+  return o.map((s) => Wt(s, d)), a && d(), { data: i, pending: r, error: u, refresh: d };
 }
-const Ll = () => Z(Mt), zl = () => Z(Tt), _l = () => {
+const Ll = () => J(Mt), zl = () => J(Pt), _l = () => {
   const e = it(ae, null);
   if (!e)
     throw new Error(
       "Failed to inject session. Make sure @kweli/cs-vue-vite-plugin is set up properly."
     );
   return e;
-}, Vl = (e) => {
-  const t = new Qt(e);
+}, Vl = () => J(Tt), Bl = (e) => {
+  const t = new Yt(e);
   return {
     install(o) {
       const a = {
@@ -7943,24 +7945,24 @@ const Ll = () => Z(Mt), zl = () => Z(Tt), _l = () => {
         jsShortDateFormat: e.dateshort
       };
       o.provide(ae, t), o.provide(me, a), o.provide(
-        ar,
+        Tt,
         new pl(e.datelong, e.dateshort)
       );
     }
   };
-}, Bl = () => {
+}, Fl = () => {
   const e = (n) => {
     Object.entries(/* @__PURE__ */ Object.assign({
-      "./components/Card/KCard.vue": Xt,
-      "./components/Card/KCardActions.vue": nn,
-      "./components/Card/KCardText.vue": ln,
-      "./components/Card/KCardTitle.vue": pn,
-      "./components/Icons/KMenuDownIcon.vue": vn,
-      "./components/Icons/KSubtractIcon.vue": Cn,
-      "./components/KAdminLink.vue": Ln,
-      "./components/KAlert.vue": Hn,
-      "./components/KApp.vue": Jn,
-      "./components/KAutocomplete.vue": ir,
+      "./components/Card/KCard.vue": Jt,
+      "./components/Card/KCardActions.vue": rn,
+      "./components/Card/KCardText.vue": un,
+      "./components/Card/KCardTitle.vue": mn,
+      "./components/Icons/KMenuDownIcon.vue": $n,
+      "./components/Icons/KSubtractIcon.vue": xn,
+      "./components/KAdminLink.vue": zn,
+      "./components/KAlert.vue": Gn,
+      "./components/KApp.vue": Zn,
+      "./components/KAutocomplete.vue": ar,
       "./components/KBrowseLink.vue": $r,
       "./components/KButton.vue": jr,
       "./components/KConfirm.vue": Tr,
@@ -8023,16 +8025,16 @@ const Ll = () => Z(Mt), zl = () => Z(Tt), _l = () => {
   };
 };
 export {
-  An as KAdminLink,
-  qn as KAlert,
-  Xn as KApp,
-  sr as KAutocomplete,
+  Ln as KAdminLink,
+  Hn as KAlert,
+  Jn as KApp,
+  ir as KAutocomplete,
   vr as KBrowseLink,
   Or as KButton,
-  Yt as KCard,
-  tn as KCardActions,
-  an as KCardText,
-  fn as KCardTitle,
+  Xt as KCard,
+  nn as KCardActions,
+  ln as KCardText,
+  pn as KCardTitle,
   Mr as KConfirm,
   zr as KDateTimePicker,
   Dr as KDialog,
@@ -8045,14 +8047,14 @@ export {
   To as KLinearProgressIndicator,
   zo as KList,
   qe as KListItem,
-  Kt as KListItemSubtitle,
-  Pt as KListItemTitle,
+  At as KListItemSubtitle,
+  Kt as KListItemTitle,
   Io as KMenu,
   De as KMenuDownIcon,
   ts as KMulti,
   as as KMulti2,
   cs as KMultiUserPicker,
-  Lt as KNodeAncestor,
+  zt as KNodeAncestor,
   ws as KNodePickerField,
   xs as KOneMoment,
   Ks as KPageDropZone,
@@ -8068,8 +8070,8 @@ export {
   ra as KSnackbar,
   ua as KSortHeader,
   ma as KSpacer,
-  zt as KSpinner,
-  jn as KSubtractIcon,
+  Vt as KSpinner,
+  Cn as KSubtractIcon,
   ya as KSwitch,
   ul as KTabItem,
   ka as KTable,
@@ -8078,21 +8080,22 @@ export {
   Aa as KTextField,
   Fa as KUserGIF,
   qa as KUserLink,
-  Vt as KUserPicker,
+  Bt as KUserPicker,
   cl as KUserPickerLegacy,
   me as configKey,
-  Tt as confirmDialogKey,
-  Vl as createVueVitePlugin,
-  Bl as createVueViteRegisterComponentsPlugin,
-  ar as dateTimeFormatterKey,
+  Pt as confirmDialogKey,
+  Bl as createVueVitePlugin,
+  Fl as createVueViteRegisterComponentsPlugin,
+  Tt as dateTimeFormatterKey,
   Pl as generalSort,
-  Z as injectStrict,
+  J as injectStrict,
   cr as nodeLookup,
   ae as sessionKey,
   Mt as snackbarKey,
   Al as useAsyncData,
   ml as useConfig,
   zl as useConfirmDialog,
+  Vl as useDateTimeFormatter,
   _l as useSession,
   Kl as useSmartUI,
   Ll as useSnackbar,
