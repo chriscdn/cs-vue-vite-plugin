@@ -1,7 +1,7 @@
 import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: (ObjectConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | ObjectConstructor)[];
         default: null;
     };
     items: {
@@ -77,7 +77,7 @@ declare const _default: import("vue").DefineComponent<{
     successMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (ObjectConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | ObjectConstructor)[];
         default: null;
     };
     items: {

@@ -2,6 +2,7 @@ export type RHNodeSerializer = {
   readonly dataid: number;
   readonly name: string;
   readonly subtype: number;
+  readonly userid: number;
   readonly subtypename: string;
   readonly comment: string | null;
   readonly mimetype: string | null;
@@ -16,8 +17,11 @@ export type RHNodeSerializer = {
   readonly version: number | null;
   readonly versionnum: string | null;
   readonly modifiedImageCallback: string;
-  readonly categories: object;
+  readonly categories: Record<string, any>;
   readonly url: string | null;
+  readonly size: string;
   readonly exatt1: string | null;
   readonly origindataid: number | null;
+  readonly reservedbyid: number | null;
+  readonly isreserved: boolean;
 };

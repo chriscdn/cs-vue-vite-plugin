@@ -9,6 +9,8 @@ function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
   const versions: Array<any> = nodeInfo.results.data.versions;
   const latestVersion = versions[versions.length - 1];
 
+  // todo
+  // @ts-ignore
   return {
     dataid: properties.id,
     name: properties.name,

@@ -154,10 +154,10 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    title: string;
     height: number;
     width: number;
     modelValue: number | null;
+    title: string;
     objid: number;
     selectPerm: number;
     selectScreen: number[];
