@@ -33,39 +33,40 @@ function generateConfirm(name: string) {
   };
 }
 
-function _openDataId({
-  baseUrl,
-  dataId,
-  selectedTab = undefined,
-  selectedProperty = undefined,
-}: {
-  baseUrl: string;
-  dataId: number;
-  selectedTab?: string; // "properties" | "audit" | "versions"
-  selectedProperty?: string; // "general" | category name
-}) {
-  if (isSmartUI()) {
-    _openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
-  } else {
-    _openDataIdClassicUI({ baseUrl, dataId });
-  }
-}
-
 function isSmartUI() {
   return Boolean(window.csui);
 }
 
-function _openDataIdClassicUI({
-  baseUrl,
-  dataId,
-}: {
-  baseUrl: string;
-  dataId: number;
-}) {
-  window.location.href = `${baseUrl}/open/${dataId}`;
+// function _openDataIdClassicUI({
+//   baseUrl,
+//   dataId,
+// }: {
+//   baseUrl: string;
+//   dataId: number;
+// }) {
+//   window.location.href = `${baseUrl}/open/${dataId}`;
+// }
+
+// function removeHash() {
+//   history.replaceState(
+//     "",
+//     document.title,
+//     window.location.pathname + window.location.search
+//   );
+// }
+
+function openAssignmentsSmartUI() {
+  window.csui.require(
+    ["csui/utils/contexts/factories/application.scope.factory"],
+    function (ApplicationScopeFactory: any) {
+      const context: any = window._rhcore_smartui_view_context;
+      const applicationScope = context.getModel(ApplicationScopeFactory);
+      applicationScope.set("id", "myassignments");
+    }
+  );
 }
 
-function _openDataIdSmartUI({
+function openDataIdSmartUI({
   dataId,
   selectedTab = undefined,
   selectedProperty = undefined,
@@ -94,6 +95,8 @@ function _openDataIdSmartUI({
       } else {
         const nextNode = context.getModel(NextNode);
         nextNode.set("id", dataId);
+
+        // setTimeout(() => removeHash(), 5000);
       }
 
       // const nextNode = context.getModel(NextNode);
@@ -128,14 +131,16 @@ export const useSmartUI = () => {
     confirmQuestion: generateConfirm("confirmQuestion"),
     confirmMessage: generateConfirm("confirmMessage"),
     isSmartUI,
-    openDataId: ({
-      dataId,
-      selectedTab,
-      selectedProperty,
-    }: {
-      dataId: number;
-      selectedTab?: string;
-      selectedProperty?: string;
-    }) => _openDataId({ baseUrl, dataId, selectedTab, selectedProperty }),
+    openDataIdSmartUI,
+    openAssignmentsSmartUI,
+    // openDataId: ({
+    //   dataId,
+    //   selectedTab,
+    //   selectedProperty,
+    // }: {
+    //   dataId: number;
+    //   selectedTab?: string;
+    //   selectedProperty?: string;
+    // }) => _openDataId({ baseUrl, dataId, selectedTab, selectedProperty }),
   };
 };

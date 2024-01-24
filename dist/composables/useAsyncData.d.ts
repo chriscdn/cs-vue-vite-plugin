@@ -1,9 +1,6 @@
 /**
  * This is a simplified version of useAsyncData from Nuxt3. I've tried to keep
  * the api the same, to permit easy migration to Nuxt.
- *
- * I tried placing this file in @kweli/cs-vue-vite-plugin, but somehow the
- * reactivity fell apart (no automatic unwrapping of the reactive return value.)
  */
 import { ComputedRef, Ref } from "vue";
 type TAsyncDataOptions<R = null> = {

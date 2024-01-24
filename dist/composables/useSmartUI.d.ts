@@ -5,6 +5,12 @@ declare global {
     }
 }
 declare function isSmartUI(): boolean;
+declare function openAssignmentsSmartUI(): void;
+declare function openDataIdSmartUI({ dataId, selectedTab, selectedProperty, }: {
+    dataId: number;
+    selectedTab?: string;
+    selectedProperty?: string;
+}): void;
 export declare const useSmartUI: () => {
     showSuccess: (message: string, options?: {}) => Promise<void>;
     showInformation: (message: string, options?: {}) => Promise<void>;
@@ -18,10 +24,7 @@ export declare const useSmartUI: () => {
     confirmQuestion: (message: string, options?: {}) => Promise<boolean>;
     confirmMessage: (message: string, options?: {}) => Promise<boolean>;
     isSmartUI: typeof isSmartUI;
-    openDataId: ({ dataId, selectedTab, selectedProperty, }: {
-        dataId: number;
-        selectedTab?: string | undefined;
-        selectedProperty?: string | undefined;
-    }) => void;
+    openDataIdSmartUI: typeof openDataIdSmartUI;
+    openAssignmentsSmartUI: typeof openAssignmentsSmartUI;
 };
 export {};

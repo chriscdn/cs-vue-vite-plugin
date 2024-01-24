@@ -24,4 +24,5 @@ export type RHNodeSerializer = {
   readonly origindataid: number | null;
   readonly reservedbyid: number | null;
   readonly isreserved: boolean;
+  readonly isreservable: boolean;
 };

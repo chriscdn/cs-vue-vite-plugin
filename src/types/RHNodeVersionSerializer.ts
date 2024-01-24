@@ -1,0 +1,22 @@
+export type RHNodeVersionSerializer = {
+  readonly dataid: number;
+  readonly filename: string;
+  readonly subtype: number;
+  readonly isrendition: boolean;
+  readonly mimetype: string;
+  readonly createdate: string;
+  readonly modifydate: string;
+  readonly thumbnailUrl: string;
+  readonly version: number;
+  readonly versionnum: string;
+  readonly img: string;
+  readonly img145: string;
+  readonly img32: string;
+  readonly islocked: boolean;
+  readonly guid: string;
+  readonly fileextension: string;
+  readonly downloadurl: string | null;
+  readonly url: string | null;
+  readonly size: string;
+  readonly ownerid: number;
+};
