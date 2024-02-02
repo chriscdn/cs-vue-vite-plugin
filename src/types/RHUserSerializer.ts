@@ -1,14 +1,14 @@
 export type RHUserSerializer = {
   readonly name: string;
-  readonly userid: number;
-  readonly displayname: string;
+  readonly userId: number;
+  readonly displayName: string;
   readonly gif: string | null;
   readonly type: number;
   readonly isDeleted: boolean;
   readonly firstName: string | null;
   readonly lastName: string | null;
   readonly email: string | null;
-  readonly groupid: number;
+  readonly groupId: number;
   readonly title: string | null;
   readonly isUser: boolean;
   readonly isGroup: boolean;
@@ -17,6 +17,6 @@ export type RHUserSerializer = {
   readonly canLogin: boolean;
   readonly isAdmin: boolean;
   readonly locale: string;
-  readonly userdata: object | null;
-  readonly photoid: string | null;
+  readonly userdata: Record<string, any> | null;
+  readonly photoId: string | null;
 };

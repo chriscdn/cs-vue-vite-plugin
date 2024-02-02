@@ -5,6 +5,15 @@ export declare const useCSUtils: () => {
         selectedTab?: string | undefined;
         selectedProperty?: string | undefined;
     }) => void;
+    openDataIdBind: (dataId: number, target?: "_self" | "_blank") => {
+        href: string;
+        target: "_self" | "_blank";
+        onClick: (event: MouseEvent) => void;
+    } | {
+        href: string;
+        target: "_self" | "_blank";
+        onClick?: undefined;
+    };
     openAssignmentsBind: () => {
         href: string;
         onClick: (event: MouseEvent) => void;

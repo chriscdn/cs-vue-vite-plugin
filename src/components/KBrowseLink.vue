@@ -14,9 +14,9 @@
       <template v-if="clickable">
         <KFunctionMenuModern
           v-if="modernMenu"
-          :dataid="nodeRecResolved.dataid"
+          :dataid="nodeRecResolved.dataId"
         />
-        <KFunctionMenu v-else :dataid="nodeRecResolved.dataid" />
+        <KFunctionMenu v-else :dataid="nodeRecResolved.dataId" />
       </template>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div

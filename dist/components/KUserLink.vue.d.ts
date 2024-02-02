@@ -25,7 +25,7 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     userRecLocal: RHUserSerializer | null;
 }, {
-    userIdLocal(): number | undefined;
+    userIdLocal(): undefined;
     displayName(): string | undefined;
     type(): number | undefined;
 }, {

@@ -29,8 +29,7 @@ export const useCSUtils = () => {
     if (smartUI.isSmartUI()) {
       smartUI.openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
     } else {
-      const baseUrl = config.baseUrl;
-      _openDataIdClassicUI({ baseUrl, dataId });
+      _openDataIdClassicUI({ baseUrl: config.baseUrl, dataId });
     }
   }
 
@@ -60,19 +59,26 @@ export const useCSUtils = () => {
         };
   }
 
-  // function openDataIdBind() {
-  //   return smartUI.isSmartUI()
-  //     ? {
-  //         href: `${config.baseUrl}/app/myassignments`,
-  //         onClick: (event: MouseEvent) => {
-  //           smartUI.openAssignmentsSmartUI();
-  //           event.preventDefault();
-  //         },
-  //       }
-  //     : {
-  //         href: `${config.baseUrl}?func=Personal.Assignments`,
-  //       };
-  // }
+  function openDataIdBind(
+    dataId: number,
+    target: "_self" | "_blank" = "_self"
+  ) {
+    return smartUI.isSmartUI()
+      ? {
+          href: `${config.baseUrl}/app/nodes/${dataId}`,
+          target,
+          onClick: (event: MouseEvent) => {
+            if (target === "_self") {
+              smartUI.openDataIdSmartUI({ dataId });
+              event.preventDefault();
+            }
+          },
+        }
+      : {
+          href: `${config.baseUrl}/open/${dataId}`,
+          target,
+        };
+  }
 
   function nodeLookup(dataId: number | undefined | null, legacy?: boolean) {
     return nodeLookupInstance.lookup(session, dataId ?? null, legacy);
@@ -85,6 +91,7 @@ export const useCSUtils = () => {
   return {
     isSmartUI: smartUI.isSmartUI,
     openDataId,
+    openDataIdBind,
     openAssignmentsBind,
     nodeLookup,
     userLookup,

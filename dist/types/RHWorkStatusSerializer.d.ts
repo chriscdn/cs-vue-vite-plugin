@@ -4,9 +4,9 @@ export type RHWorkStatusSerializer = {
     readonly statusverbose: string;
     readonly attributes: Record<string, any>;
     readonly status: WorkflowStatusEnum;
-    readonly mapid: number;
-    readonly workid: number;
-    readonly subworkid: number;
+    readonly mapId: number;
+    readonly workId: number;
+    readonly subWorkId: number;
     readonly url: string;
     readonly statuscolour: string;
     readonly due: string | null;

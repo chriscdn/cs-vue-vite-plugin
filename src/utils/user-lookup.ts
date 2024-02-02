@@ -15,15 +15,15 @@ function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
 
   return {
     name: properties.name,
-    userid: properties.id,
-    displayname: properties.name_formatted,
+    userId: properties.id,
+    displayName: properties.name_formatted,
     gif: null,
     type: properties.type,
     isDeleted: properties.deleted,
     firstName: properties.first_name,
     lastName: properties.last_name,
     email: properties.business_email,
-    groupid: properties.group_id,
+    groupId: properties.group_id,
     title: properties.title,
     isUser: properties.type === 0,
     isGroup: properties.type === 1,
@@ -33,7 +33,7 @@ function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
     isAdmin: properties.privilege_system_admin_rights,
     locale: properties.display_language,
     userdata: null,
-    photoid: null,
+    photoId: null,
   };
 }
 

@@ -12,27 +12,26 @@ function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
   // todo
   // @ts-ignore
   return {
-    dataid: properties.id,
+    dataId: properties.id,
     name: properties.name,
     subtype: properties.type,
-    subtypename: properties.type_name,
+    subtypeName: properties.type_name,
     comment: properties.description,
     mimetype: properties.mime_type,
-    parentid: properties.parent_id,
-    createdate: properties.create_date,
-    modifydate: properties.modify_date,
+    parentId: properties.parent_id,
+    createDate: properties.create_date,
+    modifyDate: properties.modify_date,
     gif: properties.icon,
     gif32: properties.icon_large,
-    giflarge: properties.icon_large,
-    ownerid: properties.owner_user_id,
-    groupid: properties.owner_group_id,
+    userId: properties.owner_user_id,
+    groupId: properties.owner_group_id,
     version: latestVersion?.version_number,
-    versionnum: latestVersion?.version_number_name,
+    versionNum: latestVersion?.version_number_name,
     modifiedImageCallback: "",
     categories: {},
     url: "",
     exatt1: null,
-    origindataid: null,
+    originDataId: null,
   };
 }
 
@@ -88,7 +87,7 @@ class NodeLookupQueue {
       const id = item.dataId;
       const resolveFunc = item.resolveFunc;
 
-      const node = nodes.find((node) => node.dataid === id);
+      const node = nodes.find((node) => node.dataId === id);
 
       resolveFunc(node ?? null);
     });

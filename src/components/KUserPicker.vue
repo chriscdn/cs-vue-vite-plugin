@@ -227,12 +227,12 @@ export default defineComponent({
           if (user) {
             this.items = [
               {
-                text: user.displayname,
+                text: user.displayName,
                 type: user.type,
-                value: user.userid,
+                value: user.userId,
               },
             ];
-            this.select = user.displayname;
+            this.select = user.displayName;
           }
         } finally {
           this.pleaseWait = false;
