@@ -4,10 +4,11 @@
  */
 import { ComputedRef, Ref, ref, watch } from "vue";
 
-type TAsyncDataOptions<R = null> = {
+type TAsyncDataOptions<T, R = null> = {
   default: () => R; // | Ref<R>;
   watch: Array<Ref<any> | ComputedRef<any> | (() => any)>;
   immediate: boolean;
+  transform?: (input: T) => T;
 };
 
 type TAsyncDataResponse<T> = {
@@ -19,12 +20,14 @@ type TAsyncDataResponse<T> = {
 
 function useAsyncData<T, DefaultT = null>(
   promiseFunc: () => Promise<T>,
-  options?: Partial<TAsyncDataOptions<DefaultT>>
+  options?: Partial<TAsyncDataOptions<T, DefaultT>>
 ): TAsyncDataResponse<T | DefaultT> {
   const defaultFunc = options?.default ?? ((() => null) as () => DefaultT);
   const watches = options?.watch ?? [];
 
   const immediate = options?.immediate ?? true;
+
+  const transform = options?.transform ?? ((item: T) => item);
 
   const data: Ref<T | DefaultT> = ref(defaultFunc()) as Ref<DefaultT>;
   const pending = ref(false);
@@ -33,7 +36,7 @@ function useAsyncData<T, DefaultT = null>(
   const refresh = async () => {
     try {
       pending.value = true;
-      data.value = await promiseFunc();
+      data.value = transform(await promiseFunc());
       error.value = null;
     } catch (e) {
       data.value = defaultFunc();

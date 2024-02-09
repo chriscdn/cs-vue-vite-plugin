@@ -7912,16 +7912,16 @@ const yl = () => (Dt(), {
   // }) => _openDataId({ baseUrl, dataId, selectedTab, selectedProperty }),
 });
 function Al(e, t) {
-  const n = (t == null ? void 0 : t.default) ?? (() => null), o = (t == null ? void 0 : t.watch) ?? [], a = (t == null ? void 0 : t.immediate) ?? !0, i = ve(n()), r = ve(!1), u = ve(null), d = async () => {
+  const n = (t == null ? void 0 : t.default) ?? (() => null), o = (t == null ? void 0 : t.watch) ?? [], a = (t == null ? void 0 : t.immediate) ?? !0, i = (t == null ? void 0 : t.transform) ?? ((c) => c), r = ve(n()), u = ve(!1), d = ve(null), s = async () => {
     try {
-      r.value = !0, i.value = await e(), u.value = null;
-    } catch (s) {
-      i.value = n(), u.value = s;
+      u.value = !0, r.value = i(await e()), d.value = null;
+    } catch (c) {
+      r.value = n(), d.value = c;
     } finally {
-      r.value = !1;
+      u.value = !1;
     }
   };
-  return o.map((s) => Ht(s, d)), a && d(), { data: i, pending: r, error: u, refresh: d };
+  return o.map((c) => Ht(c, s)), a && s(), { data: r, pending: u, error: d, refresh: s };
 }
 const Ll = () => J(xt), zl = () => J(Pt), Ft = () => {
   const e = it(ae, null);
