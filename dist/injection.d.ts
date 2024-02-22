@@ -22,6 +22,7 @@ import { DateTimeFormatter } from "./utils/date-formatter";
 export type WindowInitialState = {
     baseUrl: string;
     userId: number;
+    userLanguage: string;
     img: string;
     otcsticket: string;
     datelong: string;
