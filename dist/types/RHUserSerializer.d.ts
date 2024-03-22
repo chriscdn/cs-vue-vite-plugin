@@ -18,5 +18,6 @@ export type RHUserSerializer = {
     readonly isAdmin: boolean;
     readonly locale: string;
     readonly userdata: Record<string, any> | null;
-    readonly photoId: string | null;
+    readonly photoId: number | null;
+    readonly photoUrl: string;
 };

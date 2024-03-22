@@ -7273,7 +7273,8 @@ function Na(e) {
     isAdmin: t.privilege_system_admin_rights,
     locale: t.display_language,
     userdata: null,
-    photoId: null
+    photoId: null,
+    photoUrl: ""
   };
 }
 class Ua {

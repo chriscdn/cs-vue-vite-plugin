@@ -4,6 +4,7 @@
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "repository": "https://github.com/chriscdn/cs-vue-vite-plugin.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",

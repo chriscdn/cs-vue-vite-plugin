@@ -34,6 +34,7 @@ function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
     locale: properties.display_language,
     userdata: null,
     photoId: null,
+    photoUrl: "",
   };
 }
 
