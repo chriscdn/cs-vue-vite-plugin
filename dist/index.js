@@ -7932,55 +7932,40 @@ const Ll = () => J(xt), zl = () => J(Pt), Ft = () => {
     );
   return e;
 }, Il = () => J(Mt), Vl = () => {
-  const e = yl(), t = Dt(), n = Ft();
-  function o({
+  const e = yl(), t = Dt(), n = Ft(), o = ({
     baseUrl: c,
     dataId: h
-  }) {
+  }) => {
     window.location.href = `${c}/open/${h}`;
-  }
-  function a({
+  }, a = ({
     dataId: c,
     selectedTab: h = void 0,
     selectedProperty: m = void 0
-  }) {
+  }) => {
     e.isSmartUI() ? e.openDataIdSmartUI({ dataId: c, selectedTab: h, selectedProperty: m }) : o({ baseUrl: t.baseUrl, dataId: c });
-  }
-  function i({
+  }, i = ({
     dataId: c,
     selectedTab: h,
     selectedProperty: m
-  }) {
+  }) => {
     a({ dataId: c, selectedTab: h, selectedProperty: m });
-  }
-  function r() {
-    return e.isSmartUI() ? {
-      href: `${t.baseUrl}/app/myassignments`,
-      onClick: (c) => {
-        e.openAssignmentsSmartUI(), c.preventDefault();
-      }
-    } : {
-      href: `${t.baseUrl}?func=Personal.Assignments`
-    };
-  }
-  function u(c, h = "_self") {
-    return e.isSmartUI() ? {
-      href: `${t.baseUrl}/app/nodes/${c}`,
-      target: h,
-      onClick: (m) => {
-        h === "_self" && (e.openDataIdSmartUI({ dataId: c }), m.preventDefault());
-      }
-    } : {
-      href: `${t.baseUrl}/open/${c}`,
-      target: h
-    };
-  }
-  function d(c, h) {
-    return Kt.lookup(n, c ?? null, h);
-  }
-  function s(c, h) {
-    return Se.lookup(n, c ?? null, h);
-  }
+  }, r = () => e.isSmartUI() ? {
+    href: `${t.baseUrl}/app/myassignments`,
+    onClick: (c) => {
+      e.openAssignmentsSmartUI(), c.preventDefault();
+    }
+  } : {
+    href: `${t.baseUrl}?func=Personal.Assignments`
+  }, u = (c, h = "_self") => e.isSmartUI() ? {
+    href: `${t.baseUrl}/app/nodes/${c}`,
+    target: h,
+    onClick: (m) => {
+      h === "_self" && (e.openDataIdSmartUI({ dataId: c }), m.preventDefault());
+    }
+  } : {
+    href: `${t.baseUrl}/open/${c}`,
+    target: h
+  }, d = (c, h) => Kt.lookup(n, c ?? null, h), s = (c, h) => Se.lookup(n, c ?? null, h);
   return {
     isSmartUI: e.isSmartUI,
     openDataId: i,

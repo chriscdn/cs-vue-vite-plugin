@@ -7,17 +7,17 @@ export const useCSUtils = () => {
   const config = useConfig();
   const session = useSession();
 
-  function _openDataIdClassicUI({
+  const _openDataIdClassicUI = ({
     baseUrl,
     dataId,
   }: {
     baseUrl: string;
     dataId: number;
-  }) {
+  }) => {
     window.location.href = `${baseUrl}/open/${dataId}`;
-  }
+  };
 
-  function _openDataId({
+  const _openDataId = ({
     dataId,
     selectedTab = undefined,
     selectedProperty = undefined,
@@ -25,15 +25,15 @@ export const useCSUtils = () => {
     dataId: number;
     selectedTab?: string; // "properties" | "audit" | "versions"
     selectedProperty?: string; // "general" | category name
-  }) {
+  }) => {
     if (smartUI.isSmartUI()) {
       smartUI.openDataIdSmartUI({ dataId, selectedTab, selectedProperty });
     } else {
       _openDataIdClassicUI({ baseUrl: config.baseUrl, dataId });
     }
-  }
+  };
 
-  function openDataId({
+  const openDataId = ({
     dataId,
     selectedTab,
     selectedProperty,
@@ -41,11 +41,11 @@ export const useCSUtils = () => {
     dataId: number;
     selectedTab?: string;
     selectedProperty?: string;
-  }) {
+  }) => {
     _openDataId({ dataId, selectedTab, selectedProperty });
-  }
+  };
 
-  function openAssignmentsBind() {
+  const openAssignmentsBind = () => {
     return smartUI.isSmartUI()
       ? {
           href: `${config.baseUrl}/app/myassignments`,
@@ -57,12 +57,12 @@ export const useCSUtils = () => {
       : {
           href: `${config.baseUrl}?func=Personal.Assignments`,
         };
-  }
+  };
 
-  function openDataIdBind(
+  const openDataIdBind = (
     dataId: number,
     target: "_self" | "_blank" = "_self"
-  ) {
+  ) => {
     return smartUI.isSmartUI()
       ? {
           href: `${config.baseUrl}/app/nodes/${dataId}`,
@@ -78,15 +78,15 @@ export const useCSUtils = () => {
           href: `${config.baseUrl}/open/${dataId}`,
           target,
         };
-  }
+  };
 
-  function nodeLookup(dataId: number | undefined | null, legacy?: boolean) {
+  const nodeLookup = (dataId: number | undefined | null, legacy?: boolean) => {
     return nodeLookupInstance.lookup(session, dataId ?? null, legacy);
-  }
+  };
 
-  function userLookup(userId: number | undefined | null, legacy?: boolean) {
+  const userLookup = (userId: number | undefined | null, legacy?: boolean) => {
     return userLookupInstance.lookup(session, userId ?? null, legacy);
-  }
+  };
 
   return {
     isSmartUI: smartUI.isSmartUI,
