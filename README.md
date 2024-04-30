@@ -18,18 +18,18 @@ $ yarn add https://github.com/chriscdn/cs-vue-vite-plugin.git
 In your Vue/Vite project (likely in `main.js`):
 
 ```js
-import CSVueVite from '@kweli/cs-vue-vite-plugin'
-import '@kweli/cs-vue-vite-plugin/dist/style.css'
+import CSVueVite from "@kweli/cs-vue-vite-plugin";
+import "@kweli/cs-vue-vite-plugin/dist/style.css";
 
 const initialState = {
-  baseURL: '/otcs/cs.exe',
-  img: '/img/',
-  otcsticket: 'ZZZZZZZ',
-  datelong: 'YYYY-MM-DD HH:mm',
-  dateshort: 'YYYY-MM-DD',
-}
+  baseURL: "/otcs/cs.exe",
+  img: "/img/",
+  otcsticket: "ZZZZZZZ",
+  datelong: "YYYY-MM-DD HH:mm",
+  dateshort: "YYYY-MM-DD",
+};
 
-app.use(CSVueVite, initialState)
+app.use(CSVueVite, initialState);
 ```
 
 This automatically registers all components in `~/src/components/`.
@@ -37,7 +37,7 @@ This automatically registers all components in `~/src/components/`.
 The package also uses [@kweli/cs-rest](https://github.com/chriscdn/cs-rest) to create a global `$session` object, which can be used to issue REST and RPC calls to Content Server. E.g., from within your component:
 
 ```js
-const response = await this.$session.get('/api/v1/nodes/2000')
+const response = await this.$session.get("/api/v1/nodes/2000");
 ```
 
 ## CDN

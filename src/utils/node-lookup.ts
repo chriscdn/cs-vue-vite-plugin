@@ -91,29 +91,6 @@ class NodeLookupQueue {
 
       resolveFunc(node ?? null);
     });
-
-    // console.log(response);
-
-    // debugger;
-
-    /*
-    queueItems.forEach((item) => {
-      const dataId = item.dataId;
-      rpcClient.queue("NodeLookup", { dataId });
-    });
-
-    try {
-      const responses: Array<RHNodeSerializer> = await rpcClient.batch();
-
-      responses.forEach((node, index) => {
-        const resolveFunc = queueItems[index].resolveFunc;
-        resolveFunc(node);
-      });
-    } catch {
-      // we must call resolve to clear the semaphore
-      queueItems.forEach((item) => item.resolveFunc(null));
-    }
-    */
   }
 }
 
@@ -125,10 +102,6 @@ class NodeLookup {
     this.nodes = {};
     this.nodeLookupQueue = new NodeLookupQueue();
   }
-
-  // registerUsers(items: Array<RHNodeSerializer>) {
-  //   items.forEach((user) => (this.nodes[user.dataid] = user));
-  // }
 
   async lookupLegacy(session: Session, dataId: number | null): Promise<any> {
     if (dataId) {

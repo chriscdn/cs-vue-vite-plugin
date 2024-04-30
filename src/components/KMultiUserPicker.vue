@@ -15,42 +15,36 @@
   </KMulti2>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script lang="ts" setup>
+import { PropType, computed } from "vue";
 
-export default defineComponent({
-  props: {
-    modelValue: {
-      type: Array as PropType<number[]>,
-      required: true,
-    },
-    users: {
-      type: Boolean as PropType<boolean>,
-      default: true,
-    },
-    groups: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-    readonly: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
-    legacy: {
-      type: Boolean as PropType<boolean>,
-      default: false,
-    },
+const userIdsLocal = defineModel<number | null>({ required: true });
+
+defineProps({
+  users: {
+    type: Boolean as PropType<boolean>,
+    default: true,
   },
-
-  computed: {
-    userIdsLocal: {
-      set(value: Array<number | null>) {
-        this.$emit("update:modelValue", value);
-      },
-      get(): Array<number | null> {
-        return this.modelValue;
-      },
-    },
+  groups: {
+    type: Boolean as PropType<boolean>,
+    default: false,
+  },
+  readonly: {
+    type: Boolean as PropType<boolean>,
+    default: false,
+  },
+  legacy: {
+    type: Boolean as PropType<boolean>,
+    default: false,
   },
 });
+
+// const userIdsLocal = computed({
+//   set(value: Array<number | null>) {
+//     this.$emit("update:modelValue", value);
+//   },
+//   get(): Array<number | null> {
+//     return this.modelValue;
+//   },
+// });
 </script>

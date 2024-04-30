@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     // target: "esnext",
+    sourcemap: true,
     lib: {
       formats: ["es"],
       entry: path.resolve(__dirname, "src/index.ts"),

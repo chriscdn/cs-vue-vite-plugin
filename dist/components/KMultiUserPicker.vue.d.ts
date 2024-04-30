@@ -1,8 +1,8 @@
-import { type PropType } from "vue";
+import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
     modelValue: {
-        type: PropType<number[]>;
         required: true;
+        type: PropType<number | null>;
     };
     users: {
         type: PropType<boolean>;
@@ -20,15 +20,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}, unknown, unknown, {
-    userIdsLocal: {
-        set(value: Array<number | null>): void;
-        get(): Array<number | null>;
-    };
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: PropType<number[]>;
         required: true;
+        type: PropType<number | null>;
     };
     users: {
         type: PropType<boolean>;
