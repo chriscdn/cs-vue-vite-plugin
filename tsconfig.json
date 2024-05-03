@@ -1,7 +1,7 @@
 {
   "extends": [
-    "@tsconfig/node18/tsconfig.json",
-    "@vue/tsconfig/tsconfig.dom.json"
+    "@vue/tsconfig/tsconfig.dom.json",
+    "@vue/tsconfig/tsconfig.lib.json"
   ],
 
   "compilerOptions": {

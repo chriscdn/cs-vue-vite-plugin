@@ -2,8 +2,8 @@ export declare const useCSUtils: () => {
     isSmartUI: () => boolean;
     openDataId: ({ dataId, selectedTab, selectedProperty, }: {
         dataId: number;
-        selectedTab?: string | undefined;
-        selectedProperty?: string | undefined;
+        selectedTab?: string;
+        selectedProperty?: string;
     }) => void;
     openDataIdBind: (dataId: number, target?: "_self" | "_blank") => {
         href: string;

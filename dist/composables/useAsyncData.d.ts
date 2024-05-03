@@ -8,6 +8,7 @@ type TAsyncDataOptions<T, R = null> = {
     watch: Array<Ref<any> | ComputedRef<any> | (() => any)>;
     immediate: boolean;
     transform?: (input: T) => T;
+    deep?: boolean;
 };
 type TAsyncDataResponse<T> = {
     data: Ref<T>;

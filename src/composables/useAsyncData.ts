@@ -9,6 +9,7 @@ type TAsyncDataOptions<T, R = null> = {
   watch: Array<Ref<any> | ComputedRef<any> | (() => any)>;
   immediate: boolean;
   transform?: (input: T) => T;
+  deep?: boolean;
 };
 
 type TAsyncDataResponse<T> = {
@@ -28,6 +29,7 @@ function useAsyncData<T, DefaultT = null>(
   const immediate = options?.immediate ?? true;
 
   const transform = options?.transform ?? ((item: T) => item);
+  const deep = options?.deep ?? true;
 
   const data: Ref<T | DefaultT> = ref(defaultFunc()) as Ref<DefaultT>;
   const pending = ref(false);
@@ -46,7 +48,7 @@ function useAsyncData<T, DefaultT = null>(
     }
   };
 
-  watches.map((watchVar) => watch(watchVar, refresh));
+  watches.map((watchVar) => watch(watchVar, refresh, { deep }));
 
   // Initial load
   if (immediate) {

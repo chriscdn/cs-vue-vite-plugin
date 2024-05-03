@@ -13,7 +13,7 @@ declare const _default: import("vue").DefineComponent<{}, {}, {
         message: string | null;
     }): Promise<unknown>;
     confirm({ noLabel, yesLabel, title, message, }: {
-        noLabel?: string | undefined;
+        noLabel?: string;
         yesLabel: string;
         title: string | null;
         message: string | null;
