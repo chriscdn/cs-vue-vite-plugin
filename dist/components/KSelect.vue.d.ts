@@ -98,8 +98,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: PropType<string | number | Record<string, any> | null>;
@@ -157,9 +157,9 @@ declare const _default: import("vue").DefineComponent<{
     loading: boolean;
     itemValue: string;
     itemText: string;
+    readonly: boolean;
     disabled: boolean;
     clearable: boolean;
-    readonly: boolean;
     multiple: boolean;
     itemGroup: string;
     sortedGroupNames: string[];

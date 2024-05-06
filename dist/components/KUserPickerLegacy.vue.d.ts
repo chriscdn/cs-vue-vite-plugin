@@ -16,7 +16,7 @@ declare const _default: import("vue").DefineComponent<{}, {
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     returnObject: {
@@ -94,8 +94,8 @@ declare const _default: import("vue").DefineComponent<{}, {
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: import("vue").PropType<number | null>;
@@ -110,7 +110,7 @@ declare const _default: import("vue").DefineComponent<{}, {
         default: boolean;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: string;
     };
     returnObject: {
@@ -128,8 +128,8 @@ declare const _default: import("vue").DefineComponent<{}, {
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    width: string | number;
     modelValue: number | null;
+    width: string | number;
     users: boolean;
     groups: boolean;
     returnObject: boolean;

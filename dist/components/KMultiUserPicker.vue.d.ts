@@ -1,9 +1,5 @@
 import { PropType } from "vue";
 declare const _default: import("vue").DefineComponent<{
-    modelValue: {
-        required: true;
-        type: PropType<number | null>;
-    };
     users: {
         type: PropType<boolean>;
         default: boolean;
@@ -20,11 +16,13 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        required: true;
         type: PropType<number | null>;
+        required: true;
     };
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (modelValue: number | null) => void;
+}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     users: {
         type: PropType<boolean>;
         default: boolean;
@@ -41,10 +39,16 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}>>, {
+    modelValue: {
+        type: PropType<number | null>;
+        required: true;
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((modelValue: number | null) => any) | undefined;
+}, {
+    readonly: boolean;
     users: boolean;
     groups: boolean;
     legacy: boolean;
-    readonly: boolean;
 }, {}>;
 export default _default;

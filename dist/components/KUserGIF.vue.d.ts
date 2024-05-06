@@ -10,11 +10,11 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
 }, {
@@ -25,63 +25,63 @@ declare const _default: import("vue").DefineComponent<{
     url(): string | null;
 }, {}, import("vue").DefineComponent<{
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
 }, unknown, unknown, {
     measurableStyles(): import("vue").CSSProperties;
 }, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     maxWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minHeight: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     minWidth: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: null;
     };
 }>>, {
+    width: string | number;
     height: string | number;
     maxHeight: string | number;
-    maxWidth: string | number;
     minHeight: string | number;
+    maxWidth: string | number;
     minWidth: string | number;
-    width: string | number;
 }, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     userRec: {
         type: PropType<RHUserSerializer>;
@@ -92,17 +92,17 @@ declare const _default: import("vue").DefineComponent<{
         default: number;
     };
     height: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
     width: {
-        type: (NumberConstructor | StringConstructor)[];
+        type: (StringConstructor | NumberConstructor)[];
         default: number;
     };
 }>>, {
-    height: string | number;
-    width: string | number;
     type: number;
+    width: string | number;
+    height: string | number;
     userRec: RHUserSerializer;
 }, {}>;
 export default _default;

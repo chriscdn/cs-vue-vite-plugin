@@ -110,8 +110,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: PropType<number | null>;
@@ -154,10 +154,10 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    height: number;
-    width: number;
-    modelValue: number | null;
     title: string;
+    modelValue: number | null;
+    width: number;
+    height: number;
     objid: number;
     selectPerm: number;
     selectScreen: number[];

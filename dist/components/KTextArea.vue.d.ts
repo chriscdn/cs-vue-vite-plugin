@@ -51,8 +51,8 @@ declare const _default: import("vue").DefineComponent<{
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: PropType<string | null>;

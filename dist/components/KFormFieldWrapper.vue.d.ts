@@ -34,8 +34,8 @@ declare const mixin: import("vue").DefineComponent<{
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>;
 declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import("vue").DefineComponent<{
     label: {
@@ -73,8 +73,8 @@ declare const _default: import("vue").DefineComponent<{}, {}, {}, {}, {}, import
     };
 }>>, {
     label: string;
-    errorMessages: unknown[];
     successMessages: unknown[];
+    errorMessages: unknown[];
 }, {}>, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{}>>, {}, {}>;
 export default _default;
 export { mixin };
