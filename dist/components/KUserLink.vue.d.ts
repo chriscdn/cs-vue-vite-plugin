@@ -20,18 +20,7 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}, {
-    session: import("@kweli/cs-rest").Session;
-}, {
-    userRecLocal: RHUserSerializer | null;
-}, {
-    userIdLocal(): undefined;
-    displayName(): string | undefined;
-    type(): number | undefined;
-}, {
-    isInteger(value: any): boolean;
-    click(): void;
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     user: {
         type: PropType<number | RHUserSerializer | null>;
         default: null;

@@ -4,7 +4,7 @@ import Semaphore from "@chriscdn/promise-semaphore";
 
 const semaphore = new Semaphore();
 
-function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
+const responseToRHNodeSerializer = (nodeInfo: any): RHNodeSerializer => {
   const properties = nodeInfo.results.data.properties;
   const versions: Array<any> = nodeInfo.results.data.versions;
   const latestVersion = versions[versions.length - 1];
@@ -33,7 +33,7 @@ function responseToRHNodeSerializer(nodeInfo: any): RHNodeSerializer {
     exatt1: null,
     originDataId: null,
   };
-}
+};
 
 type TResolveFunction = (item: RHNodeSerializer | null) => void;
 
@@ -64,7 +64,7 @@ class NodeLookupQueue {
     clearInterval(this.intervalId);
 
     // throttle to prevent a massive batch of requests
-    if (this.queueItems.length < 30) {
+    if (this.queueItems.length < 20) {
       this.intervalId = setTimeout(this.processQueue.bind(this), 50);
     } else {
       this.processQueue();

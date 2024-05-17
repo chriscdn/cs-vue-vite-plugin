@@ -25,14 +25,7 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<boolean>;
         default: boolean;
     };
-}, {
-    session: import("@kweli/cs-rest").Session;
-}, {
-    nodeRecLocal: RHNodeSerializer | null;
-    loading: boolean;
-}, {
-    nodeRecResolved(): RHNodeSerializer | null;
-}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     nodeRec: {
         type: PropType<RHNodeSerializer | null>;
         default: null;

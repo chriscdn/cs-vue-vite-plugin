@@ -28,6 +28,7 @@ export { default as KDivider } from './KDivider.vue';
 export { default as KAdminLink } from './KAdminLink.vue';
 export { default as KButton } from './KButton.vue';
 export { default as KTable } from './KTable.vue';
+export { default as KSkeletonLoader } from './KSkeletonLoader.vue';
 export { default as KDialog } from './KDialog.vue';
 export { default as KMultiUserPicker } from './KMultiUserPicker.vue';
 export { default as KTextField } from './KTextField.vue';

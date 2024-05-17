@@ -10,7 +10,7 @@ const semaphore = new Semaphore();
  * @param userInfo
  * @returns
  */
-function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
+const responseToRHUserSerializer = (userInfo: any): RHUserSerializer => {
   const properties = userInfo.results.data.properties;
 
   return {
@@ -32,11 +32,11 @@ function responseToRHUserSerializer(userInfo: any): RHUserSerializer {
     canLogin: properties.privilege_login,
     isAdmin: properties.privilege_system_admin_rights,
     locale: properties.display_language,
-    userdata: null,
+    // userdata: null,
     photoId: null,
     photoUrl: "",
   };
-}
+};
 
 class UserLookupQueue {
   session: Session | null;
@@ -65,7 +65,7 @@ class UserLookupQueue {
     clearInterval(this.intervalId);
 
     // throttle to prevent a massive batch of requests
-    if (this.queueItems.length < 30) {
+    if (this.queueItems.length < 20) {
       this.intervalId = setTimeout(this.processQueue.bind(this), 50);
     } else {
       this.processQueue();
@@ -105,10 +105,6 @@ class UserLookup {
     this.users = {};
     this.userLookupQueue = new UserLookupQueue();
   }
-
-  // registerUsers(items: Array<RHUserSerializer>) {
-  //   items.forEach((user) => (this.users[user.userid] = user));
-  // }
 
   async lookupLegacy(
     session: Session,

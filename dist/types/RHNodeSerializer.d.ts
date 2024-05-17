@@ -8,7 +8,6 @@ export type RHNodeSerializer = {
     readonly parentId: number;
     readonly createDate: string;
     readonly modifyDate: string;
-    readonly guid: string;
     readonly gif: string;
     readonly gif32: string;
     readonly volumeId: number;
