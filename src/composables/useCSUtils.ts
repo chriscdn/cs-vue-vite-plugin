@@ -61,7 +61,7 @@ export const useCSUtils = () => {
 
   const openDataIdBind = (
     dataId: number,
-    target: "_self" | "_blank" = "_self"
+    target: "_self" | "_blank" = "_self",
   ) => {
     return smartUI.isSmartUI()
       ? {
@@ -80,6 +80,16 @@ export const useCSUtils = () => {
         };
   };
 
+  const openDataIdClassicBind = (
+    dataId: number,
+    target: "_self" | "_blank" = "_self",
+  ) => {
+    return {
+      href: `${config.baseUrl}/open/${dataId}`,
+      target,
+    };
+  };
+
   const nodeLookup = (dataId: number | undefined | null, legacy?: boolean) => {
     return nodeLookupInstance.lookup(session, dataId ?? null, legacy);
   };
@@ -92,6 +102,7 @@ export const useCSUtils = () => {
     isSmartUI: smartUI.isSmartUI,
     openDataId,
     openDataIdBind,
+    openDataIdClassicBind,
     openAssignmentsBind,
     nodeLookup,
     userLookup,

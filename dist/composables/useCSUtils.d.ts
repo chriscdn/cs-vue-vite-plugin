@@ -14,6 +14,10 @@ export declare const useCSUtils: () => {
         target: "_self" | "_blank";
         onClick?: undefined;
     };
+    openDataIdClassicBind: (dataId: number, target?: "_self" | "_blank") => {
+        href: string;
+        target: "_self" | "_blank";
+    };
     openAssignmentsBind: () => {
         href: string;
         onClick: (event: MouseEvent) => void;
