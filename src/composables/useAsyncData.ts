@@ -21,7 +21,7 @@ type TAsyncDataResponse<T> = {
 
 const useAsyncData = <T, DefaultT = null>(
   promiseFunc: () => Promise<T>,
-  options?: Partial<TAsyncDataOptions<T, DefaultT>>
+  options?: Partial<TAsyncDataOptions<T, DefaultT>>,
 ): TAsyncDataResponse<T | DefaultT> => {
   const defaultFunc = options?.default ?? ((() => null) as () => DefaultT);
   const watches = options?.watch ?? [];

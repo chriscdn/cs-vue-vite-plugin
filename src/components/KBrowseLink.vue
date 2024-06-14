@@ -78,13 +78,13 @@ watch(
         nodeRecLocal.value = await nodeLookup.lookup(
           session,
           value,
-          legacy.value
+          legacy.value,
         );
       } finally {
         loading.value = false;
       }
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
